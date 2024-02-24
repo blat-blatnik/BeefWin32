@@ -10,29 +10,6 @@ using Win32.System.WindowsProgramming;
 static
 {
 	#region Constants
-	public const uint32 NET_IF_OPER_STATUS_DOWN_NOT_AUTHENTICATED = 1;
-	public const uint32 NET_IF_OPER_STATUS_DOWN_NOT_MEDIA_CONNECTED = 2;
-	public const uint32 NET_IF_OPER_STATUS_DORMANT_PAUSED = 4;
-	public const uint32 NET_IF_OPER_STATUS_DORMANT_LOW_POWER = 8;
-	public const uint32 NET_IF_OID_IF_ALIAS = 1;
-	public const uint32 NET_IF_OID_COMPARTMENT_ID = 2;
-	public const uint32 NET_IF_OID_NETWORK_GUID = 3;
-	public const uint32 NET_IF_OID_IF_ENTRY = 4;
-	public const uint32 NET_SITEID_UNSPECIFIED = 0;
-	public const uint32 NET_SITEID_MAXUSER = 134217727;
-	public const uint32 NET_SITEID_MAXSYSTEM = 268435455;
-	public const uint32 NET_IFLUID_UNSPECIFIED = 0;
-	public const uint32 NIIF_HARDWARE_INTERFACE = 1;
-	public const uint32 NIIF_FILTER_INTERFACE = 2;
-	public const uint32 NIIF_NDIS_RESERVED1 = 4;
-	public const uint32 NIIF_NDIS_RESERVED2 = 8;
-	public const uint32 NIIF_NDIS_RESERVED3 = 16;
-	public const uint32 NIIF_NDIS_WDM_INTERFACE = 32;
-	public const uint32 NIIF_NDIS_ENDPOINT_INTERFACE = 64;
-	public const uint32 NIIF_NDIS_ISCSI_INTERFACE = 128;
-	public const uint32 NIIF_NDIS_RESERVED4 = 256;
-	public const uint32 IF_MAX_STRING_SIZE = 256;
-	public const uint32 IF_MAX_PHYS_ADDRESS_LENGTH = 32;
 	public const uint32 ANY_SIZE = 1;
 	public const uint32 MAXLEN_PHYSADDR = 8;
 	public const uint32 MAXLEN_IFDESCR = 256;
@@ -486,12 +463,6 @@ static
 	#endregion
 	
 	#region Enums
-	public enum ADDRESS_FAMILY : uint32
-	{
-		INET = 2,
-		INET6 = 23,
-		UNSPEC = 0,
-	}
 	public enum GET_ADAPTERS_ADDRESSES_FLAGS : uint32
 	{
 		SKIP_UNICAST = 1,
@@ -524,88 +495,6 @@ static
 		CONNECTING = 3,
 		CONNECTED = 4,
 		OPERATIONAL = 5,
-	}
-	public enum NET_IF_OPER_STATUS : int32
-	{
-		UP = 1,
-		DOWN = 2,
-		TESTING = 3,
-		UNKNOWN = 4,
-		DORMANT = 5,
-		NOT_PRESENT = 6,
-		LOWER_LAYER_DOWN = 7,
-	}
-	public enum NET_IF_ADMIN_STATUS : int32
-	{
-		UP = 1,
-		DOWN = 2,
-		TESTING = 3,
-	}
-	public enum NET_IF_RCV_ADDRESS_TYPE : int32
-	{
-		OTHER = 1,
-		VOLATILE = 2,
-		NON_VOLATILE = 3,
-	}
-	public enum NET_IF_CONNECTION_TYPE : int32
-	{
-		DEDICATED = 1,
-		PASSIVE = 2,
-		DEMAND = 3,
-		MAXIMUM = 4,
-	}
-	public enum TUNNEL_TYPE : int32
-	{
-		NONE = 0,
-		OTHER = 1,
-		DIRECT = 2,
-		_6TO4 = 11,
-		ISATAP = 13,
-		TEREDO = 14,
-		IPHTTPS = 15,
-	}
-	public enum NET_IF_ACCESS_TYPE : int32
-	{
-		LOOPBACK = 1,
-		BROADCAST = 2,
-		POINT_TO_POINT = 3,
-		POINT_TO_MULTI_POINT = 4,
-		MAXIMUM = 5,
-	}
-	public enum NET_IF_DIRECTION_TYPE : int32
-	{
-		SENDRECEIVE = 0,
-		SENDONLY = 1,
-		RECEIVEONLY = 2,
-		MAXIMUM = 3,
-	}
-	public enum NET_IF_MEDIA_CONNECT_STATE : int32
-	{
-		Unknown = 0,
-		Connected = 1,
-		Disconnected = 2,
-	}
-	public enum NET_IF_MEDIA_DUPLEX_STATE : int32
-	{
-		Unknown = 0,
-		Half = 1,
-		Full = 2,
-	}
-	public enum IF_ADMINISTRATIVE_STATE : int32
-	{
-		DISABLED = 0,
-		ENABLED = 1,
-		DEMANDDIAL = 2,
-	}
-	public enum IF_OPER_STATUS : int32
-	{
-		Up = 1,
-		Down = 2,
-		Testing = 3,
-		Unknown = 4,
-		Dormant = 5,
-		NotPresent = 6,
-		LowerLayerDown = 7,
 	}
 	public enum MIB_NOTIFICATION_TYPE : int32
 	{
@@ -919,86 +808,6 @@ static
 		public uint64 OutMcastOctets;
 		public uint64 InMcastPkts;
 		public uint64 OutMcastPkts;
-	}
-	[CRepr]
-	public struct NET_IF_RCV_ADDRESS_LH
-	{
-		public NET_IF_RCV_ADDRESS_TYPE ifRcvAddressType;
-		public uint16 ifRcvAddressLength;
-		public uint16 ifRcvAddressOffset;
-	}
-	[CRepr]
-	public struct NET_IF_ALIAS_LH
-	{
-		public uint16 ifAliasLength;
-		public uint16 ifAliasOffset;
-	}
-	[CRepr, Union]
-	public struct NET_LUID_LH
-	{
-		public uint64 Value;
-		public _Info_e__Struct Info;
-		
-		[CRepr]
-		public struct _Info_e__Struct
-		{
-			public uint64 _bitfield;
-		}
-	}
-	[CRepr]
-	public struct NET_PHYSICAL_LOCATION_LH
-	{
-		public uint32 BusNumber;
-		public uint32 SlotNumber;
-		public uint32 FunctionNumber;
-	}
-	[CRepr]
-	public struct IF_COUNTED_STRING_LH
-	{
-		public uint16 Length;
-		public char16[257] String;
-	}
-	[CRepr]
-	public struct IF_PHYSICAL_ADDRESS_LH
-	{
-		public uint16 Length;
-		public uint8[32] Address;
-	}
-	[CRepr]
-	public struct NDIS_INTERFACE_INFORMATION
-	{
-		public NET_IF_OPER_STATUS ifOperStatus;
-		public uint32 ifOperStatusFlags;
-		public NET_IF_MEDIA_CONNECT_STATE MediaConnectState;
-		public NET_IF_MEDIA_DUPLEX_STATE MediaDuplexState;
-		public uint32 ifMtu;
-		public BOOLEAN ifPromiscuousMode;
-		public BOOLEAN ifDeviceWakeUpEnable;
-		public uint64 XmitLinkSpeed;
-		public uint64 RcvLinkSpeed;
-		public uint64 ifLastChange;
-		public uint64 ifCounterDiscontinuityTime;
-		public uint64 ifInUnknownProtos;
-		public uint64 ifInDiscards;
-		public uint64 ifInErrors;
-		public uint64 ifHCInOctets;
-		public uint64 ifHCInUcastPkts;
-		public uint64 ifHCInMulticastPkts;
-		public uint64 ifHCInBroadcastPkts;
-		public uint64 ifHCOutOctets;
-		public uint64 ifHCOutUcastPkts;
-		public uint64 ifHCOutMulticastPkts;
-		public uint64 ifHCOutBroadcastPkts;
-		public uint64 ifOutErrors;
-		public uint64 ifOutDiscards;
-		public uint64 ifHCInUcastOctets;
-		public uint64 ifHCInMulticastOctets;
-		public uint64 ifHCInBroadcastOctets;
-		public uint64 ifHCOutUcastOctets;
-		public uint64 ifHCOutMulticastOctets;
-		public uint64 ifHCOutBroadcastOctets;
-		public uint32 CompartmentId;
-		public uint32 SupportedStatistics;
 	}
 	[CRepr]
 	public struct MIB_IF_ROW2

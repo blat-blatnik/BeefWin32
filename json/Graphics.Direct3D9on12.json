@@ -65,6 +65,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e7fda234-b589-4049-940d-8878977531c8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

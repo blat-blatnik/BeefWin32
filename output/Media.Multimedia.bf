@@ -2421,6 +2421,7 @@ static
 	public const int32 SEARCH_KEY = 16;
 	public const int32 SEARCH_ANY = 32;
 	public const int32 AVIERR_OK = 0;
+	public const String MCIWND_WINDOW_CLASS = "MCIWndClass";
 	public const uint32 MCIWNDOPENF_NEW = 1;
 	public const uint32 MCIWNDF_NOAUTOSIZEWINDOW = 1;
 	public const uint32 MCIWNDF_NOPLAYBAR = 2;
@@ -2842,6 +2843,8 @@ static
 	public const uint32 DRV_REMOVE = 10;
 	public const uint32 DRV_RESERVED = 2048;
 	public const uint32 DRV_USER = 16384;
+	public const String DRIVERS_SECTION = "DRIVERS32";
+	public const String MCI_SECTION = "MCI32";
 	public const uint32 DCB_NOSWITCH = 8;
 	public const uint32 DCB_TYPEMASK = 7;
 	public const uint32 DCB_NULL = 0;
@@ -2970,6 +2973,7 @@ static
 	public const uint32 TDD_GETDEVCAPS = 2060;
 	public const uint32 TDD_BEGINMINPERIOD = 2064;
 	public const uint32 TDD_ENDMINPERIOD = 2068;
+	public const String JOY_CONFIGCHANGED_MSGSTRING = "MSJSTICK_VJOYD_MSGSTR";
 	public const uint32 JDD_GETNUMDEVS = 2049;
 	public const uint32 JDD_GETDEVCAPS = 2050;
 	public const uint32 JDD_GETPOS = 2305;
@@ -4339,6 +4343,8 @@ static
 	public const uint32 VFW_USE_DEVICE_HANDLE = 1;
 	public const uint32 VFW_USE_STREAM_HANDLE = 2;
 	public const uint32 VFW_QUERY_DEV_CHANGED = 256;
+	public const String TARGET_DEVICE_FRIENDLY_NAME = "TargetDeviceFriendlyName";
+	public const String TARGET_DEVICE_OPEN_EXCLUSIVELY = "TargetDeviceOpenExclusively";
 	public const uint32 MCIERR_INVALID_DEVICE_ID = 257;
 	public const uint32 MCIERR_UNRECOGNIZED_KEYWORD = 259;
 	public const uint32 MCIERR_UNRECOGNIZED_COMMAND = 261;
@@ -6276,7 +6282,7 @@ static
 		
 		public HRESULT Cut(out int32 plStart, out int32 plLength, out IAVIStream* ppResult) mut => VT.Cut(ref this, out plStart, out plLength, out ppResult);
 		public HRESULT Copy(out int32 plStart, out int32 plLength, out IAVIStream* ppResult) mut => VT.Copy(ref this, out plStart, out plLength, out ppResult);
-		public HRESULT Paste(out int32 plPos, out int32 plLength, out IAVIStream pstream, int32 lStart, int32 lEnd) mut => VT.Paste(ref this, out plPos, out plLength, out pstream, lStart, lEnd);
+		public HRESULT Paste(out int32 plPos, out int32 plLength, ref IAVIStream pstream, int32 lStart, int32 lEnd) mut => VT.Paste(ref this, out plPos, out plLength, ref pstream, lStart, lEnd);
 		public HRESULT Clone(out IAVIStream* ppResult) mut => VT.Clone(ref this, out ppResult);
 		public HRESULT SetInfo(ref AVISTREAMINFOW lpInfo, int32 cbInfo) mut => VT.SetInfo(ref this, ref lpInfo, cbInfo);
 
@@ -6285,7 +6291,7 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIEditStream self, out int32 plStart, out int32 plLength, out IAVIStream* ppResult) Cut;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIEditStream self, out int32 plStart, out int32 plLength, out IAVIStream* ppResult) Copy;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIEditStream self, out int32 plPos, out int32 plLength, out IAVIStream pstream, int32 lStart, int32 lEnd) Paste;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIEditStream self, out int32 plPos, out int32 plLength, ref IAVIStream pstream, int32 lStart, int32 lEnd) Paste;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIEditStream self, out IAVIStream* ppResult) Clone;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIEditStream self, ref AVISTREAMINFOW lpInfo, int32 cbInfo) SetInfo;
 		}

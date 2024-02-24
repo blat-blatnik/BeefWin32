@@ -121,6 +121,41 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"PLUGIN_INSTALLREGKEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\MediaPlayer\\UIPlugins"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_INSTALLREGKEY_FRIENDLYNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FriendlyName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_INSTALLREGKEY_DESCRIPTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_INSTALLREGKEY_CAPABILITIES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Capabilities"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_INSTALLREGKEY_UNINSTALL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UninstallPath"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"PLUGIN_TYPE_BACKGROUND"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -205,6 +240,97 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"PLUGIN_MISC_PRESETCOUNT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PresetCount"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_MISC_PRESETNAMES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PresetNames"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_MISC_CURRENTPRESET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CurrentPreset"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_SEPARATEWINDOW_RESIZABLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Resizable"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_SEPARATEWINDOW_DEFAULTWIDTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DefaultWidth"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_SEPARATEWINDOW_DEFAULTHEIGHT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DefaultHeight"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_SEPARATEWINDOW_MINWIDTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MinWidth"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_SEPARATEWINDOW_MINHEIGHT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MinHeight"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_SEPARATEWINDOW_MAXWIDTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MaxWidth"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_SEPARATEWINDOW_MAXHEIGHT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MaxHeight"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_MISC_QUERYDESTROY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"QueryDestroy"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_ALL_MEDIASENDTO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MediaSendTo"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PLUGIN_ALL_PLAYLISTSENDTO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PlaylistSendTo"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SUBSCRIPTION_CAP_DEVICEAVAILABLE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -272,6 +398,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":256
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WMP_SUBSCR_DL_TYPE_BACKGROUND"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"background"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WMP_SUBSCR_DL_TYPE_REALTIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"real time"
 		,"Attrs":[]
 	}
 	,{
@@ -4843,6 +4983,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3614c646-3b3b-4de7-a81e-930e3f2127b3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4923,6 +5064,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a12dcf7d-14ab-4c1b-a8cd-63909f06025b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4957,9 +5099,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"dwIndex","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"ppErrorItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWMPErrorItem","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}},"Attrs":["Out"]}
@@ -4984,6 +5124,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"94d55e95-3fac-11d3-b155-00c04f79faa6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4993,9 +5134,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"pIWMPMedia","Type":{"Kind":"ApiRef","Name":"IWMPMedia","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pvbool","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["In","Out"]}
@@ -5239,6 +5378,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"74c09e02-f828-11d2-a74b-00a0c905f36e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5248,9 +5388,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrItem","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pIsAvailable","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["In","Out"]}
@@ -5451,6 +5589,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9104d1ab-80c9-4fed-abf0-2e6417a6df14"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5460,9 +5599,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrItem","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pIsAvailable","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["In","Out"]}
@@ -5782,6 +5919,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4f2df574-c588-11d3-9ed0-00c04fb6e937"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5904,6 +6042,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d5f0f4f1-130c-11d3-b14e-00c04f79faa6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5969,9 +6108,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"lIndex","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"pbstrAttributeName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["In","Out"]}
@@ -5984,9 +6121,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"lIndex","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"ppIWMPMedia","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWMPMedia","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}},"Attrs":["Out"]}
@@ -6025,9 +6160,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"pIWMPPlaylist","Type":{"Kind":"ApiRef","Name":"IWMPPlaylist","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pvbool","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["In","Out"]}
@@ -6102,6 +6235,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"cfab6e98-8730-11d3-b388-00c04f68574b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6151,6 +6285,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ee4c8fe2-34b2-11d3-a3bf-006097c9b344"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6201,6 +6336,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4a976298-8c0d-11d3-b389-00c04f68574b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6238,6 +6374,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8363bc22-b4b4-4b19-989d-1cd765749dd1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6405,6 +6542,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"679409c0-99f7-11d3-9fb7-00105aa620bb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6442,6 +6580,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"10a13217-23a7-439b-b1c0-d847c79b7774"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6541,6 +6680,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ec21b779-edef-462d-bba4-ad9dde2b29a7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6933,6 +7073,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d84cca99-cce2-11d2-9ecc-0000f8085981"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7232,6 +7373,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6bf52a4f-394a-11d3-b153-00c04f79faa6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPCore","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -7354,6 +7496,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0e6b01d1-d407-4c85-bf5f-1c01f6150280"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPCore","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -7532,6 +7675,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ab7c88bb-143e-4ea4-acc3-e4350b2106c3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPMedia","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -7556,6 +7700,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6f030d25-0890-480f-9775-1f7e40ab5b8e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPControls","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -7578,6 +7723,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8da61686-4668-4a5c-ae5d-803193293dbe"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7587,9 +7733,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrItem","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pIsAvailable","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["In","Out"]}
@@ -7661,6 +7805,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bc17e5b7-7561-4c18-bb90-17d485775659"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPCore","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -7685,6 +7830,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"54062b68-052a-4c25-a39f-8b63346511d4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPCore2","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -7863,6 +8009,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f75ccec0-c67c-475c-931e-8719870bee7d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPErrorItem","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -7887,6 +8034,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"cbb92747-741f-44fe-ab5b-f1a48f3b2a59"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7946,6 +8094,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"076f2fa6-ed30-448b-8cc5-3f3ef3529c7a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7968,6 +8117,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5c29bbe0-f87d-4c45-aa28-a70f0230ffa9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8034,6 +8184,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"769a72db-13d2-45e2-9c48-53ca9d5b7450"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8072,6 +8223,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f118efc7-f03a-4fb4-99c9-1c02a5c1065b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPMedia2","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -8111,6 +8263,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fda937a4-eece-4da5-a0b6-39bf89ade2c2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPSettings","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -8162,6 +8315,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a1d1110e-d545-476a-9a78-ac3e4cb1e6bd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPControls2","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -8309,6 +8463,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"350ba78b-6bc8-4113-a5f5-312056934eb6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPClosedCaption","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -8386,6 +8541,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"40897764-ceab-47be-ad4a-8e28537f9bbf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8446,6 +8602,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7587c667-628f-499f-88e7-6a6f4e888464"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPCore2","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -8483,6 +8640,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6c497d62-8919-413c-82db-e935fb3ec584"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPCore3","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -8701,6 +8859,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1d01fbdb-ade2-4c8d-9842-c190b95c3306"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8783,6 +8942,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"82a2986c-0293-4fd0-b279-b21b86c058be"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9001,6 +9161,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8b5050ff-e0a4-4808-b3a8-893a9e1ed894"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9038,6 +9199,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1bb1592f-f040-418a-9f71-17c7512b4d70"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPPlayerServices","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -9126,6 +9288,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"56e2294f-69ed-4629-a869-aea72c0dcc2c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9186,6 +9349,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bd94dbeb-417f-4928-aa06-087d56ed9b59"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9378,6 +9542,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a00918f3-a6b0-4bfb-9189-fd834c7bc5a5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9413,6 +9578,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8ba957f5-fd8c-4791-b82d-f840401ee474"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPMediaCollection","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -9483,6 +9649,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"46ad648d-53f1-4a74-92e2-2a1b68d63fd4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPStringCollection","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -9568,6 +9735,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3df47861-7df1-4c1f-a81b-4c26f0f7a7c6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9633,6 +9801,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"39c2f8d5-1cf2-4d5e-ae09-d73492cf9eaa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9670,6 +9839,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"82cba86b-9f04-474b-a365-d6dd1466e541"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9730,6 +9900,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"788c8743-e57f-439d-a468-5bc77f2e59c6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9883,6 +10054,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"88afb4b2-140a-44d2-91e6-4543da467cd1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPSyncDevice","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -9906,6 +10078,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b22c85f9-263c-4372-a0da-b518db9b4098"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPSyncDevice2","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -9940,6 +10113,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"dd578a4e-79b1-426c-bf8f-3add9072500b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPLibrary","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -9977,6 +10151,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"19a6627b-da9e-47c1-bb23-00b5e668236a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10546,6 +10721,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1e7601fa-47ea-4107-9ea9-9004ed9684ff"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPEvents","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -10632,6 +10808,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1f504270-a66b-4223-8e96-26a06c63d69f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPEvents2","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -10781,6 +10958,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"26dabcfa-306b-404d-9a6f-630a8405048d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPEvents3","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -10806,6 +10984,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6bf52a51-394a-11d3-b153-00c04f79faa6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -10816,6 +10995,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"42751198-5a50-4460-bcb4-709f8bdc8e59"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10914,6 +11094,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1491087d-2c6b-44c8-b019-b3c929d2ada9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10948,6 +11129,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"96740bfa-c56a-45d1-a3a4-762914d4ade9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10982,6 +11164,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a300415a-54aa-4081-adbf-3b13610d8958"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11008,6 +11191,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3a0daa30-908d-4789-ba87-aed879b5c49b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11034,6 +11218,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9b9199ad-780c-4eda-b816-261eba5d1575"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPWindowMessageSink","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -11057,6 +11242,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"be7017c6-ce34-4901-8106-770381aa6e3e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11080,6 +11266,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6d6cf803-1ec0-4c8d-b3ca-f18e27282074"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11104,6 +11291,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e79c6349-5997-4ce4-917c-22a3391ec564"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11142,6 +11330,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"959506c1-0314-4ec5-9e61-8528db5e5478"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11194,6 +11383,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"afb6b76b-1e20-4198-83b3-191db6e0b149"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11228,6 +11418,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"68e27045-05bd-40b2-9720-23088c78e390"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11282,6 +11473,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f1392a70-024c-42bb-a998-73dfdfe7d5a7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11362,6 +11554,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5fca444c-7ad1-479d-a4ef-40566a5309d6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11396,6 +11589,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bfb377e5-c594-4369-a970-de896d5ece74"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11443,6 +11637,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d683162f-57d4-4108-8373-4a9676d1c2e9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11479,6 +11674,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b64cbac3-401c-4327-a3e8-b9feb3a8c25c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11501,6 +11697,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"cfccfa72-c343-48c3-a2de-b7a4402e39f2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11738,6 +11935,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5357e238-fb12-4aca-a930-cab7832b84bf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11950,6 +12148,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"dc43a9d5-5015-4301-8c96-a47434b4d658"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11986,6 +12185,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4c963678-3a51-4b88-8531-98b90b6508f2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12226,6 +12426,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7964b769-234a-4bb1-a5f4-90454c8ad07e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12436,6 +12637,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a44179a4-e0f6-403b-af8d-d080f425a451"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12981,6 +13183,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ce528e77-3716-4eb7-956d-f5e37502e12a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IXFeed","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -13065,6 +13268,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1630852e-1263-465b-98e5-fe60ffec4ac2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13174,6 +13378,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e757b2f5-e73e-434e-a1bf-2bd7c3e60fcb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13390,6 +13595,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6cda2dc7-9013-4522-9970-2a9dd9ead5a3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IXFeedItem","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -13412,6 +13618,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bfbfb953-644f-4792-b69c-dfaca4cbf89a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13579,6 +13786,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a74029cc-1f1a-4906-88f0-810638d86591"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13797,6 +14005,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e3cd0028-2eed-4c60-8fae-a3225309a836"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13848,6 +14057,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"81f04ad1-4194-4d7d-86d6-11813cec163c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14098,6 +14308,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"20a59fa6-a844-4630-9e98-175f70b4d55b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14308,6 +14519,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f7f915d8-2ede-42bc-98e7-a5d05063a757"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14916,6 +15128,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"33f2ea09-1398-4ab9-b6a4-f94b49d0a42e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IFeed","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -15005,6 +15218,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"abf35c99-0681-47ea-9a8c-1436a375a99e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15114,6 +15328,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0a1e6cad-0a47-4da2-a13d-5baaa5c8bd4f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15358,6 +15573,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"79ac9ef4-f9c1-4d2b-a50b-a7ffba4dcf37"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IFeedItem","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -15382,6 +15598,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"361c26f7-90a4-4e67-ae09-3a36a546436a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15596,6 +15813,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d3984c13-c3cb-48e2-8be5-5168340b4f35"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15743,6 +15961,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"695386ec-aa3c-4618-a5e1-dd9a8b987632"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPEffects","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -15828,6 +16047,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4c5e8f9f-ad3e-4bf9-9753-fcd30d6d38dd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15986,6 +16206,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ad7f4d9c-1a9f-4ed2-9815-ecc0b58cb616"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16009,7 +16230,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pbstrPrice","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrPrice","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -16021,7 +16242,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pbstrType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -16046,7 +16267,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"idxContent","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"pbstrPrice","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pbstrPrice","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -16084,6 +16305,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a9937f78-0802-4af8-8b8d-e3f045bc8ab5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16120,7 +16342,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"idxContainer","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"ppContent","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWMPContentContainer","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppContent","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWMPContentContainer","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -16174,6 +16396,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9e8f7da2-0695-403c-b697-da10fafaa676"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16309,7 +16532,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pcContentIDs","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
-					,{"Name":"pprgIDs","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":0,"Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}}},"Attrs":["Out","Optional"]}
+					,{"Name":"pprgIDs","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":0,"Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -16361,6 +16584,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"55455073-41b5-4e75-87b8-f13bdb291d08"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16430,7 +16654,7 @@
 					,{"Name":"cItemIDs","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"prgItemIDs","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":3,"Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["In"]}
 					,{"Name":"pcItemIDs","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
-					,{"Name":"pprgItems","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":5,"Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"WMPContextMenuInfo","TargetKind":"Default","Api":"Media.MediaPlayer","Parents":[]}}},"Attrs":["Out","Optional"]}
+					,{"Name":"pprgItems","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":5,"Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"WMPContextMenuInfo","TargetKind":"Default","Api":"Media.MediaPlayer","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -16460,7 +16684,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pInfo","Type":{"Kind":"ApiRef","Name":"IWMPContentContainerList","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]},"Attrs":["In","Optional"]}
-					,{"Name":"pbstrTotalPrice","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pbstrTotalPrice","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"pSilentOK","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["Out"]}
 				]
 			}
@@ -16488,7 +16712,7 @@
 				,"Params":[
 					{"Name":"st","Type":{"Kind":"ApiRef","Name":"WMPStreamingType","TargetKind":"Default","Api":"Media.MediaPlayer","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pStreamContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]}},"Attrs":["In"]}
-					,{"Name":"pbstrURL","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pbstrURL","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -16549,7 +16773,7 @@
 					,{"Name":"dwCatalogSchemaVersion","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"catalogLCID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"pdwNewCatalogVersion","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
-					,{"Name":"pbstrCatalogURL","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pbstrCatalogURL","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"pExpirationDate","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
@@ -16569,7 +16793,7 @@
 					,{"Name":"pClickContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]}},"Attrs":["In"]}
 					,{"Name":"bstrFilter","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"bstrViewParams","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pbstrTemplateURL","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pbstrTemplateURL","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"pTemplateSize","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"WMPTemplateSize","TargetKind":"Default","Api":"Media.MediaPlayer","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
@@ -16720,6 +16944,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"376055f8-2a59-4a73-9501-dca5273a7a10"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16784,6 +17009,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"dd01d127-2dc2-4c3a-876e-63312079f9b0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16806,6 +17032,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a94c120e-d600-4ec6-b05e-ec9d56d84de0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPSubscriptionService","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -16882,6 +17109,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c9470e8e-3f6b-46a9-a0a9-452815c34297"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16995,6 +17223,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9fbb3336-6da3-479d-b8ff-67d46e20a987"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWMPDownloadItem","TargetKind":"Com","Api":"Media.MediaPlayer","Parents":[]}
 		,"Methods":[
 			{
@@ -17018,6 +17247,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0a319c7f-85f9-436c-b88e-82fd88000e1c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -17106,6 +17336,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e15e9ad1-8f20-4cc4-9ec7-1a328ca86a0d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

@@ -114,6 +114,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"0cd1c380-52d3-4678-ac6f-e929e480be9e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -141,7 +142,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"title","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"title","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -155,7 +156,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"description","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"description","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -166,6 +167,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f8334d5d-568e-4075-875f-9df341506640"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -178,7 +180,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"assessment","Type":{"Kind":"ApiRef","Name":"WINSAT_ASSESSMENT_TYPE","TargetKind":"Default","Api":"System.AssessmentTool","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppinfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IProvideWinSATAssessmentInfo","TargetKind":"Com","Api":"System.AssessmentTool","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppinfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IProvideWinSATAssessmentInfo","TargetKind":"Com","Api":"System.AssessmentTool","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -234,7 +236,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"description","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"description","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -245,6 +247,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f8ad5d1f-3b47-4bdc-9375-7c6b1da4eca7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -254,13 +257,11 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"xPath","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"namespaces","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppDomNodeList","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXMLDOMNodeList","TargetKind":"Com","Api":"Data.Xml.MsXml","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppDomNodeList","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXMLDOMNodeList","TargetKind":"Com","Api":"Data.Xml.MsXml","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -274,7 +275,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppWinSATAssessmentInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IProvideWinSATResultsInfo","TargetKind":"Com","Api":"System.AssessmentTool","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppWinSATAssessmentInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IProvideWinSATResultsInfo","TargetKind":"Com","Api":"System.AssessmentTool","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -285,6 +286,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a9f4ade0-871a-42a3-b813-3078d25162c9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -294,14 +296,12 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"bitmapSize","Type":{"Kind":"ApiRef","Name":"WINSAT_BITMAP_SIZE","TargetKind":"Default","Api":"System.AssessmentTool","Parents":[]},"Attrs":["In"]}
 					,{"Name":"state","Type":{"Kind":"ApiRef","Name":"WINSAT_ASSESSMENT_STATE","TargetKind":"Default","Api":"System.AssessmentTool","Parents":[]},"Attrs":["In"]}
 					,{"Name":"rating","Type":{"Kind":"Native","Name":"Single"},"Attrs":["In"]}
-					,{"Name":"pBitmap","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HBITMAP","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pBitmap","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HBITMAP","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -312,6 +312,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"0b89ed1d-6398-4fea-87fc-567d8d19176f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -321,13 +322,11 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"xPath","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"namespaces","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppDomNodeList","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXMLDOMNodeList","TargetKind":"Com","Api":"Data.Xml.MsXml","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppDomNodeList","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXMLDOMNodeList","TargetKind":"Com","Api":"Data.Xml.MsXml","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -338,6 +337,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"262a1918-ba0d-41d5-92c2-fab4633ee74f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -375,6 +375,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d983fc50-f5bf-49d5-b5ed-cccb18aa7fc1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -423,6 +424,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"30e6018a-94a8-4ff8-a69a-71b67413f07b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IAccessible","TargetKind":"Com","Api":"UI.Accessibility","Parents":[]}
 		,"Methods":[
 			{
@@ -447,6 +449,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bc9a6a9f-ad4e-420e-9953-b34671e9df22"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

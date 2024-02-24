@@ -9,6 +9,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"GUID_DEVINTERFACE_PWM_CONTROLLER_WSZ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{60824B4C-EED1-4C9C-B49C-1B961461A819}"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"IOCTL_PWM_CONTROLLER_GET_INFO"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"

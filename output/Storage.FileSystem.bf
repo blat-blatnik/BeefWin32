@@ -10,6 +10,9 @@ using Win32.System.WindowsProgramming;
 static
 {
 	#region Constants
+	public const String EA_CONTAINER_NAME = "ContainerName";
+	public const String EA_CONTAINER_SIZE = "ContainerSize";
+	public const String CLFS_BASELOG_EXTENSION = ".blf";
 	public const uint32 CLFS_FLAG_REENTRANT_FILE_SYSTEM = 8;
 	public const uint32 CLFS_FLAG_NON_REENTRANT_FILTER = 16;
 	public const uint32 CLFS_FLAG_REENTRANT_FILTER = 32;
@@ -21,6 +24,8 @@ static
 	public const uint32 CLFS_MARSHALLING_FLAG_DISABLE_BUFF_INIT = 1;
 	public const uint32 CLFS_FLAG_FILTER_INTERMEDIATE_LEVEL = 16;
 	public const uint32 CLFS_FLAG_FILTER_TOP_LEVEL = 32;
+	public const String CLFS_CONTAINER_STREAM_PREFIX = "%BLF%:";
+	public const String CLFS_CONTAINER_RELATIVE_PREFIX = "%BLF%\\";
 	public const uint32 TRANSACTION_MANAGER_VOLATILE = 1;
 	public const uint32 TRANSACTION_MANAGER_COMMIT_DEFAULT = 0;
 	public const uint32 TRANSACTION_MANAGER_COMMIT_SYSTEM_VOLUME = 2;
@@ -66,6 +71,10 @@ static
 	public const uint32 TRANSACTION_NOTIFY_PROMOTE_NEW = 268435456;
 	public const uint32 TRANSACTION_NOTIFY_REQUEST_OUTCOME = 536870912;
 	public const uint32 TRANSACTION_NOTIFY_COMMIT_FINALIZE = 1073741824;
+	public const String TRANSACTIONMANAGER_OBJECT_PATH = "\\TransactionManager\\";
+	public const String TRANSACTION_OBJECT_PATH = "\\Transaction\\";
+	public const String ENLISTMENT_OBJECT_PATH = "\\Enlistment\\";
+	public const String RESOURCE_MANAGER_OBJECT_PATH = "\\ResourceManager\\";
 	public const uint32 TRANSACTION_NOTIFICATION_TM_ONLINE_FLAG_IS_CLUSTERED = 1;
 	public const uint32 KTM_MARSHAL_BLOB_VERSION_MAJOR = 1;
 	public const uint32 KTM_MARSHAL_BLOB_VERSION_MINOR = 1;
@@ -1313,7 +1322,7 @@ static
 	public function uint32 CACHE_KEY_HASH(out uint8 lpbKey, uint32 cbKey);
 	public function BOOL CACHE_READ_CALLBACK(uint32 cb, out uint8 lpb, void* lpvContext);
 	public function void CACHE_DESTROY_CALLBACK(uint32 cb, out uint8 lpb);
-	public function BOOL CACHE_ACCESS_CHECK(out SECURITY_DESCRIPTOR pSecurityDescriptor, HANDLE hClientToken, uint32 dwDesiredAccess, out GENERIC_MAPPING GenericMapping, out PRIVILEGE_SET PrivilegeSet, out uint32 PrivilegeSetLength, out uint32 GrantedAccess, out int32 AccessStatus);
+	public function BOOL CACHE_ACCESS_CHECK(PSECURITY_DESCRIPTOR pSecurityDescriptor, HANDLE hClientToken, uint32 dwDesiredAccess, out GENERIC_MAPPING GenericMapping, out PRIVILEGE_SET PrivilegeSet, out uint32 PrivilegeSetLength, out uint32 GrantedAccess, out int32 AccessStatus);
 	public function uint32 PFE_EXPORT_FUNC(ref uint8 pbData, void* pvCallbackContext, uint32 ulLength);
 	public function uint32 PFE_IMPORT_FUNC(out uint8 pbData, void* pvCallbackContext, out uint32 ulLength);
 	public function uint32 LPPROGRESS_ROUTINE(LARGE_INTEGER TotalFileSize, LARGE_INTEGER TotalBytesTransferred, LARGE_INTEGER StreamSize, LARGE_INTEGER StreamBytesTransferred, uint32 dwStreamNumber, LPPROGRESS_ROUTINE_CALLBACK_REASON dwCallbackReason, HANDLE hSourceFile, HANDLE hDestinationFile, void* lpData);
@@ -2714,7 +2723,7 @@ static
 		public PWSTR shi502_path;
 		public PWSTR shi502_passwd;
 		public uint32 shi502_reserved;
-		public SECURITY_DESCRIPTOR* shi502_security_descriptor;
+		public PSECURITY_DESCRIPTOR shi502_security_descriptor;
 	}
 	[CRepr]
 	public struct SHARE_INFO_503
@@ -2729,7 +2738,7 @@ static
 		public PWSTR shi503_passwd;
 		public PWSTR shi503_servername;
 		public uint32 shi503_reserved;
-		public SECURITY_DESCRIPTOR* shi503_security_descriptor;
+		public PSECURITY_DESCRIPTOR shi503_security_descriptor;
 	}
 	[CRepr]
 	public struct SHARE_INFO_1004
@@ -2750,7 +2759,7 @@ static
 	public struct SHARE_INFO_1501
 	{
 		public uint32 shi1501_reserved;
-		public SECURITY_DESCRIPTOR* shi1501_security_descriptor;
+		public PSECURITY_DESCRIPTOR shi1501_security_descriptor;
 	}
 	[CRepr]
 	public struct SHARE_INFO_1503
@@ -3192,9 +3201,14 @@ static
 				public ULARGE_INTEGER uliTotalBytesTransferred;
 			}
 			[CRepr]
-			public struct _PollContinue_e__Struct
+			public struct _StreamStarted_e__Struct
 			{
+				public uint32 dwStreamNumber;
 				public uint32 dwReserved;
+				public HANDLE hSourceFile;
+				public HANDLE hDestinationFile;
+				public ULARGE_INTEGER uliStreamSize;
+				public ULARGE_INTEGER uliTotalFileSize;
 			}
 			[CRepr]
 			public struct _ChunkStarted_e__Struct
@@ -3209,14 +3223,9 @@ static
 				public ULARGE_INTEGER uliTotalFileSize;
 			}
 			[CRepr]
-			public struct _StreamStarted_e__Struct
+			public struct _PollContinue_e__Struct
 			{
-				public uint32 dwStreamNumber;
 				public uint32 dwReserved;
-				public HANDLE hSourceFile;
-				public HANDLE hDestinationFile;
-				public ULARGE_INTEGER uliStreamSize;
-				public ULARGE_INTEGER uliTotalFileSize;
 			}
 		}
 	}
@@ -3440,15 +3449,15 @@ static
 				public _Share_e__Struct Share;
 				
 				[CRepr]
-				public struct _Server_e__Struct
-				{
-					public uint32 Capabilities;
-				}
-				[CRepr]
 				public struct _Share_e__Struct
 				{
 					public uint32 Capabilities;
 					public uint32 CachingFlags;
+				}
+				[CRepr]
+				public struct _Server_e__Struct
+				{
+					public uint32 Capabilities;
 				}
 			}
 		}

@@ -3,7 +3,6 @@ namespace Win32.Media.WindowsMediaFormat;
 using System;
 using Win32.Foundation;
 using Win32.Graphics.Gdi;
-using Win32.Media.DirectShow;
 using Win32.System.Com;
 
 static
@@ -981,36 +980,6 @@ static
 	#endregion
 	
 	#region COM interfaces
-	[CRepr]
-	public struct IAMWMBufferPass : IUnknown
-	{
-		public const new Guid IID = .(0x6dd816d7, 0xe740, 0x4123, 0x9e, 0x24, 0x24, 0x44, 0x41, 0x26, 0x44, 0xd8);
-		
-		public new VTable* VT { get => (.)vt; }
-		
-		public HRESULT SetNotify(ref IAMWMBufferPassCallback pCallback) mut => VT.SetNotify(ref this, ref pCallback);
-
-		[CRepr]
-		public struct VTable : IUnknown.VTable
-		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWMBufferPass self, ref IAMWMBufferPassCallback pCallback) SetNotify;
-		}
-	}
-	[CRepr]
-	public struct IAMWMBufferPassCallback : IUnknown
-	{
-		public const new Guid IID = .(0xb25b8372, 0xd2d2, 0x44b2, 0x86, 0x53, 0x1b, 0x8d, 0xae, 0x33, 0x24, 0x89);
-		
-		public new VTable* VT { get => (.)vt; }
-		
-		public HRESULT Notify(ref INSSBuffer3 pNSSBuffer3, ref IPin pPin, ref int64 prtStart, ref int64 prtEnd) mut => VT.Notify(ref this, ref pNSSBuffer3, ref pPin, ref prtStart, ref prtEnd);
-
-		[CRepr]
-		public struct VTable : IUnknown.VTable
-		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWMBufferPassCallback self, ref INSSBuffer3 pNSSBuffer3, ref IPin pPin, ref int64 prtStart, ref int64 prtEnd) Notify;
-		}
-	}
 	[CRepr]
 	public struct INSSBuffer : IUnknown
 	{
@@ -3330,42 +3299,6 @@ static
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPlayerTimestampHook self, int64 rtIn, out int64 prtOut) MapTimestamp;
-		}
-	}
-	[CRepr]
-	public struct IWMCodecAMVideoAccelerator : IUnknown
-	{
-		public const new Guid IID = .(0xd98ee251, 0x34e0, 0x4a2d, 0x93, 0x12, 0x9b, 0x4c, 0x78, 0x8d, 0x9f, 0xa1);
-		
-		public new VTable* VT { get => (.)vt; }
-		
-		public HRESULT SetAcceleratorInterface(ref IAMVideoAccelerator pIAMVA) mut => VT.SetAcceleratorInterface(ref this, ref pIAMVA);
-		public HRESULT NegotiateConnection(ref AM_MEDIA_TYPE pMediaType) mut => VT.NegotiateConnection(ref this, ref pMediaType);
-		public HRESULT SetPlayerNotify(ref IWMPlayerTimestampHook pHook) mut => VT.SetPlayerNotify(ref this, ref pHook);
-
-		[CRepr]
-		public struct VTable : IUnknown.VTable
-		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecAMVideoAccelerator self, ref IAMVideoAccelerator pIAMVA) SetAcceleratorInterface;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecAMVideoAccelerator self, ref AM_MEDIA_TYPE pMediaType) NegotiateConnection;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecAMVideoAccelerator self, ref IWMPlayerTimestampHook pHook) SetPlayerNotify;
-		}
-	}
-	[CRepr]
-	public struct IWMCodecVideoAccelerator : IUnknown
-	{
-		public const new Guid IID = .(0x990641b0, 0x739f, 0x4e94, 0xa8, 0x08, 0x98, 0x88, 0xda, 0x8f, 0x75, 0xaf);
-		
-		public new VTable* VT { get => (.)vt; }
-		
-		public HRESULT NegotiateConnection(ref IAMVideoAccelerator pIAMVA, ref AM_MEDIA_TYPE pMediaType) mut => VT.NegotiateConnection(ref this, ref pIAMVA, ref pMediaType);
-		public HRESULT SetPlayerNotify(ref IWMPlayerTimestampHook pHook) mut => VT.SetPlayerNotify(ref this, ref pHook);
-
-		[CRepr]
-		public struct VTable : IUnknown.VTable
-		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecVideoAccelerator self, ref IAMVideoAccelerator pIAMVA, ref AM_MEDIA_TYPE pMediaType) NegotiateConnection;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecVideoAccelerator self, ref IWMPlayerTimestampHook pHook) SetPlayerNotify;
 		}
 	}
 	[CRepr]

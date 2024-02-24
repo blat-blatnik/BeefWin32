@@ -28,6 +28,11 @@ static
 	public const uint32 EFFECT_WINDOWEDONLY = 8;
 	public const uint32 EFFECT2_FULLSCREENEXCLUSIVE = 16;
 	public const uint32 SA_BUFFER_SIZE = 1024;
+	public const String PLUGIN_INSTALLREGKEY = "Software\\Microsoft\\MediaPlayer\\UIPlugins";
+	public const String PLUGIN_INSTALLREGKEY_FRIENDLYNAME = "FriendlyName";
+	public const String PLUGIN_INSTALLREGKEY_DESCRIPTION = "Description";
+	public const String PLUGIN_INSTALLREGKEY_CAPABILITIES = "Capabilities";
+	public const String PLUGIN_INSTALLREGKEY_UNINSTALL = "UninstallPath";
 	public const uint32 PLUGIN_TYPE_BACKGROUND = 1;
 	public const uint32 PLUGIN_TYPE_SEPARATEWINDOW = 2;
 	public const uint32 PLUGIN_TYPE_DISPLAYAREA = 3;
@@ -40,6 +45,19 @@ static
 	public const uint32 PLUGIN_FLAGS_ACCEPTSPLAYLISTS = 134217728;
 	public const uint32 PLUGIN_FLAGS_HASPRESETS = 67108864;
 	public const uint32 PLUGIN_FLAGS_HIDDEN = 33554432;
+	public const String PLUGIN_MISC_PRESETCOUNT = "PresetCount";
+	public const String PLUGIN_MISC_PRESETNAMES = "PresetNames";
+	public const String PLUGIN_MISC_CURRENTPRESET = "CurrentPreset";
+	public const String PLUGIN_SEPARATEWINDOW_RESIZABLE = "Resizable";
+	public const String PLUGIN_SEPARATEWINDOW_DEFAULTWIDTH = "DefaultWidth";
+	public const String PLUGIN_SEPARATEWINDOW_DEFAULTHEIGHT = "DefaultHeight";
+	public const String PLUGIN_SEPARATEWINDOW_MINWIDTH = "MinWidth";
+	public const String PLUGIN_SEPARATEWINDOW_MINHEIGHT = "MinHeight";
+	public const String PLUGIN_SEPARATEWINDOW_MAXWIDTH = "MaxWidth";
+	public const String PLUGIN_SEPARATEWINDOW_MAXHEIGHT = "MaxHeight";
+	public const String PLUGIN_MISC_QUERYDESTROY = "QueryDestroy";
+	public const String PLUGIN_ALL_MEDIASENDTO = "MediaSendTo";
+	public const String PLUGIN_ALL_PLAYLISTSENDTO = "PlaylistSendTo";
 	public const uint32 SUBSCRIPTION_CAP_DEVICEAVAILABLE = 16;
 	public const uint32 SUBSCRIPTION_CAP_BACKGROUNDPROCESSING = 8;
 	public const uint32 SUBSCRIPTION_CAP_IS_CONTENTPARTNER = 64;
@@ -50,6 +68,8 @@ static
 	public const uint32 SUBSCRIPTION_CAP_PREPAREFORSYNC = 32;
 	public const uint32 SUBSCRIPTION_V1_CAPS = 15;
 	public const uint32 SUBSCRIPTION_CAP_UILESSMODE_ALLOWPLAY = 256;
+	public const String WMP_SUBSCR_DL_TYPE_BACKGROUND = "background";
+	public const String WMP_SUBSCR_DL_TYPE_REALTIME = "real time";
 	public const uint32 DISPID_FEEDS_RootFolder = 4096;
 	public const uint32 DISPID_FEEDS_IsSubscribed = 4097;
 	public const uint32 DISPID_FEEDS_ExistsFeed = 4098;
@@ -3773,20 +3793,20 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT GetID(out uint32 pContentID) mut => VT.GetID(ref this, out pContentID);
-		public HRESULT GetPrice(BSTR* pbstrPrice) mut => VT.GetPrice(ref this, pbstrPrice);
-		public HRESULT ComGetType(BSTR* pbstrType) mut => VT.ComGetType(ref this, pbstrType);
+		public HRESULT GetPrice(out BSTR pbstrPrice) mut => VT.GetPrice(ref this, out pbstrPrice);
+		public HRESULT ComGetType(out BSTR pbstrType) mut => VT.ComGetType(ref this, out pbstrType);
 		public HRESULT GetContentCount(out uint32 pcContent) mut => VT.GetContentCount(ref this, out pcContent);
-		public HRESULT GetContentPrice(uint32 idxContent, BSTR* pbstrPrice) mut => VT.GetContentPrice(ref this, idxContent, pbstrPrice);
+		public HRESULT GetContentPrice(uint32 idxContent, out BSTR pbstrPrice) mut => VT.GetContentPrice(ref this, idxContent, out pbstrPrice);
 		public HRESULT GetContentID(uint32 idxContent, out uint32 pContentID) mut => VT.GetContentID(ref this, idxContent, out pContentID);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentContainer self, out uint32 pContentID) GetID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentContainer self, BSTR* pbstrPrice) GetPrice;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentContainer self, BSTR* pbstrType) ComGetType;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentContainer self, out BSTR pbstrPrice) GetPrice;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentContainer self, out BSTR pbstrType) ComGetType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentContainer self, out uint32 pcContent) GetContentCount;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentContainer self, uint32 idxContent, BSTR* pbstrPrice) GetContentPrice;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentContainer self, uint32 idxContent, out BSTR pbstrPrice) GetContentPrice;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentContainer self, uint32 idxContent, out uint32 pContentID) GetContentID;
 		}
 	}
@@ -3799,14 +3819,14 @@ static
 		
 		public HRESULT GetTransactionType(out WMPTransactionType pwmptt) mut => VT.GetTransactionType(ref this, out pwmptt);
 		public HRESULT GetContainerCount(out uint32 pcContainer) mut => VT.GetContainerCount(ref this, out pcContainer);
-		public HRESULT GetContainer(uint32 idxContainer, IWMPContentContainer** ppContent) mut => VT.GetContainer(ref this, idxContainer, ppContent);
+		public HRESULT GetContainer(uint32 idxContainer, out IWMPContentContainer* ppContent) mut => VT.GetContainer(ref this, idxContainer, out ppContent);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentContainerList self, out WMPTransactionType pwmptt) GetTransactionType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentContainerList self, out uint32 pcContainer) GetContainerCount;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentContainerList self, uint32 idxContainer, IWMPContentContainer** ppContent) GetContainer;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentContainerList self, uint32 idxContainer, out IWMPContentContainer* ppContent) GetContainer;
 		}
 	}
 	[CRepr]
@@ -3861,14 +3881,14 @@ static
 		public HRESULT GetContentPartnerInfo(BSTR bstrInfoName, out VARIANT pData) mut => VT.GetContentPartnerInfo(ref this, bstrInfoName, out pData);
 		public HRESULT GetCommands(BSTR location, ref VARIANT pLocationContext, BSTR itemLocation, uint32 cItemIDs, uint32* prgItemIDs, out uint32 pcItemIDs, WMPContextMenuInfo** pprgItems) mut => VT.GetCommands(ref this, location, ref pLocationContext, itemLocation, cItemIDs, prgItemIDs, out pcItemIDs, pprgItems);
 		public HRESULT InvokeCommand(uint32 dwCommandID, BSTR location, ref VARIANT pLocationContext, BSTR itemLocation, uint32 cItemIDs, uint32* rgItemIDs) mut => VT.InvokeCommand(ref this, dwCommandID, location, ref pLocationContext, itemLocation, cItemIDs, rgItemIDs);
-		public HRESULT CanBuySilent(IWMPContentContainerList* pInfo, BSTR* pbstrTotalPrice, out int16 pSilentOK) mut => VT.CanBuySilent(ref this, pInfo, pbstrTotalPrice, out pSilentOK);
+		public HRESULT CanBuySilent(IWMPContentContainerList* pInfo, out BSTR pbstrTotalPrice, out int16 pSilentOK) mut => VT.CanBuySilent(ref this, pInfo, out pbstrTotalPrice, out pSilentOK);
 		public HRESULT Buy(IWMPContentContainerList* pInfo, uint32 cookie) mut => VT.Buy(ref this, pInfo, cookie);
-		public HRESULT GetStreamingURL(WMPStreamingType st, ref VARIANT pStreamContext, BSTR* pbstrURL) mut => VT.GetStreamingURL(ref this, st, ref pStreamContext, pbstrURL);
+		public HRESULT GetStreamingURL(WMPStreamingType st, ref VARIANT pStreamContext, out BSTR pbstrURL) mut => VT.GetStreamingURL(ref this, st, ref pStreamContext, out pbstrURL);
 		public HRESULT Download(IWMPContentContainerList* pInfo, uint32 cookie) mut => VT.Download(ref this, pInfo, cookie);
 		public HRESULT DownloadTrackComplete(HRESULT hrResult, uint32 contentID, BSTR downloadTrackParam) mut => VT.DownloadTrackComplete(ref this, hrResult, contentID, downloadTrackParam);
 		public HRESULT RefreshLicense(uint32 dwCookie, int16 fLocal, BSTR bstrURL, WMPStreamingType type, uint32 contentID, BSTR bstrRefreshReason, ref VARIANT pReasonContext) mut => VT.RefreshLicense(ref this, dwCookie, fLocal, bstrURL, type, contentID, bstrRefreshReason, ref pReasonContext);
-		public HRESULT GetCatalogURL(uint32 dwCatalogVersion, uint32 dwCatalogSchemaVersion, uint32 catalogLCID, out uint32 pdwNewCatalogVersion, BSTR* pbstrCatalogURL, out VARIANT pExpirationDate) mut => VT.GetCatalogURL(ref this, dwCatalogVersion, dwCatalogSchemaVersion, catalogLCID, out pdwNewCatalogVersion, pbstrCatalogURL, out pExpirationDate);
-		public HRESULT GetTemplate(WMPTaskType task, BSTR location, ref VARIANT pContext, BSTR clickLocation, ref VARIANT pClickContext, BSTR bstrFilter, BSTR bstrViewParams, BSTR* pbstrTemplateURL, out WMPTemplateSize pTemplateSize) mut => VT.GetTemplate(ref this, task, location, ref pContext, clickLocation, ref pClickContext, bstrFilter, bstrViewParams, pbstrTemplateURL, out pTemplateSize);
+		public HRESULT GetCatalogURL(uint32 dwCatalogVersion, uint32 dwCatalogSchemaVersion, uint32 catalogLCID, out uint32 pdwNewCatalogVersion, out BSTR pbstrCatalogURL, out VARIANT pExpirationDate) mut => VT.GetCatalogURL(ref this, dwCatalogVersion, dwCatalogSchemaVersion, catalogLCID, out pdwNewCatalogVersion, out pbstrCatalogURL, out pExpirationDate);
+		public HRESULT GetTemplate(WMPTaskType task, BSTR location, ref VARIANT pContext, BSTR clickLocation, ref VARIANT pClickContext, BSTR bstrFilter, BSTR bstrViewParams, out BSTR pbstrTemplateURL, out WMPTemplateSize pTemplateSize) mut => VT.GetTemplate(ref this, task, location, ref pContext, clickLocation, ref pClickContext, bstrFilter, bstrViewParams, out pbstrTemplateURL, out pTemplateSize);
 		public HRESULT UpdateDevice(BSTR bstrDeviceName) mut => VT.UpdateDevice(ref this, bstrDeviceName);
 		public HRESULT GetListContents(BSTR location, ref VARIANT pContext, BSTR bstrListType, BSTR bstrParams, uint32 dwListCookie) mut => VT.GetListContents(ref this, location, ref pContext, bstrListType, bstrParams, dwListCookie);
 		public HRESULT Login(BLOB userInfo, BLOB pwdInfo, int16 fUsedCachedCreds, int16 fOkToCache) mut => VT.Login(ref this, userInfo, pwdInfo, fUsedCachedCreds, fOkToCache);
@@ -3888,14 +3908,14 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, BSTR bstrInfoName, out VARIANT pData) GetContentPartnerInfo;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, BSTR location, ref VARIANT pLocationContext, BSTR itemLocation, uint32 cItemIDs, uint32* prgItemIDs, out uint32 pcItemIDs, WMPContextMenuInfo** pprgItems) GetCommands;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, uint32 dwCommandID, BSTR location, ref VARIANT pLocationContext, BSTR itemLocation, uint32 cItemIDs, uint32* rgItemIDs) InvokeCommand;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, IWMPContentContainerList* pInfo, BSTR* pbstrTotalPrice, out int16 pSilentOK) CanBuySilent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, IWMPContentContainerList* pInfo, out BSTR pbstrTotalPrice, out int16 pSilentOK) CanBuySilent;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, IWMPContentContainerList* pInfo, uint32 cookie) Buy;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, WMPStreamingType st, ref VARIANT pStreamContext, BSTR* pbstrURL) GetStreamingURL;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, WMPStreamingType st, ref VARIANT pStreamContext, out BSTR pbstrURL) GetStreamingURL;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, IWMPContentContainerList* pInfo, uint32 cookie) Download;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, HRESULT hrResult, uint32 contentID, BSTR downloadTrackParam) DownloadTrackComplete;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, uint32 dwCookie, int16 fLocal, BSTR bstrURL, WMPStreamingType type, uint32 contentID, BSTR bstrRefreshReason, ref VARIANT pReasonContext) RefreshLicense;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, uint32 dwCatalogVersion, uint32 dwCatalogSchemaVersion, uint32 catalogLCID, out uint32 pdwNewCatalogVersion, BSTR* pbstrCatalogURL, out VARIANT pExpirationDate) GetCatalogURL;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, WMPTaskType task, BSTR location, ref VARIANT pContext, BSTR clickLocation, ref VARIANT pClickContext, BSTR bstrFilter, BSTR bstrViewParams, BSTR* pbstrTemplateURL, out WMPTemplateSize pTemplateSize) GetTemplate;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, uint32 dwCatalogVersion, uint32 dwCatalogSchemaVersion, uint32 catalogLCID, out uint32 pdwNewCatalogVersion, out BSTR pbstrCatalogURL, out VARIANT pExpirationDate) GetCatalogURL;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, WMPTaskType task, BSTR location, ref VARIANT pContext, BSTR clickLocation, ref VARIANT pClickContext, BSTR bstrFilter, BSTR bstrViewParams, out BSTR pbstrTemplateURL, out WMPTemplateSize pTemplateSize) GetTemplate;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, BSTR bstrDeviceName) UpdateDevice;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, BSTR location, ref VARIANT pContext, BSTR bstrListType, BSTR bstrParams, uint32 dwListCookie) GetListContents;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPContentPartner self, BLOB userInfo, BLOB pwdInfo, int16 fUsedCachedCreds, int16 fOkToCache) Login;

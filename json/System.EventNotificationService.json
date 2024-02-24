@@ -146,6 +146,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"d597bab1-5b9f-11d1-8dd2-00aa004abd5e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -225,6 +226,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"d597bab2-5b9f-11d1-8dd2-00aa004abd5e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -270,6 +272,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"d597bab3-5b9f-11d1-8dd2-00aa004abd5e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -364,6 +367,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"d597bab4-5b9f-11d1-8dd2-00aa004abd5e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

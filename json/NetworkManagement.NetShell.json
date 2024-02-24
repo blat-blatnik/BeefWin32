@@ -163,6 +163,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NS_GET_EVENT_IDS_FN_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GetEventIds"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"MAX_NAME_LEN"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -174,6 +181,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":20480
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NETSH_ARG_DELIMITER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"="
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NETSH_CMD_DELIMITER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":" "
 		,"Attrs":[]
 	}
 	,{
@@ -195,6 +216,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":100
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GET_RESOURCE_STRING_FN_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GetResourceString"
 		,"Attrs":[]
 	}
 ]

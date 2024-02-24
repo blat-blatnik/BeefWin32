@@ -450,174 +450,6 @@
 		,"Attrs":[]
 	}
 	,{
-		"Name":"STGM_DIRECT"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":0
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_TRANSACTED"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":65536
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_SIMPLE"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":134217728
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_READ"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":0
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_WRITE"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":1
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_READWRITE"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":2
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_SHARE_DENY_NONE"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":64
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_SHARE_DENY_READ"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":48
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_SHARE_DENY_WRITE"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":32
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_SHARE_EXCLUSIVE"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":16
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_PRIORITY"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":262144
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_DELETEONRELEASE"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":67108864
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_NOSCRATCH"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":1048576
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_CREATE"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":4096
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_CONVERT"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":131072
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_FAILIFTHERE"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":0
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_NOSNAPSHOT"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":2097152
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGM_DIRECT_SWMR"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":4194304
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGFMT_STORAGE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":0
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGFMT_NATIVE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":1
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGFMT_FILE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":3
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGFMT_ANY"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":4
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGFMT_DOCFILE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":5
-		,"Attrs":[]
-	}
-	,{
-		"Name":"STGFMT_DOCUMENT"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":0
-		,"Attrs":[]
-	}
-	,{
 		"Name":"STGOPTIONS_VERSION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -648,20 +480,50 @@
 		,"IntegerBase":"UInt32"
 	}
 	,{
-		"Name":"STGC"
+		"Name":"STGM"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Enum"
+		,"Flags":true
+		,"Scoped":false
+		,"Values":[
+			{"Name":"STGM_DIRECT","Value":0}
+			,{"Name":"STGM_TRANSACTED","Value":65536}
+			,{"Name":"STGM_SIMPLE","Value":134217728}
+			,{"Name":"STGM_READ","Value":0}
+			,{"Name":"STGM_WRITE","Value":1}
+			,{"Name":"STGM_READWRITE","Value":2}
+			,{"Name":"STGM_SHARE_DENY_NONE","Value":64}
+			,{"Name":"STGM_SHARE_DENY_READ","Value":48}
+			,{"Name":"STGM_SHARE_DENY_WRITE","Value":32}
+			,{"Name":"STGM_SHARE_EXCLUSIVE","Value":16}
+			,{"Name":"STGM_PRIORITY","Value":262144}
+			,{"Name":"STGM_DELETEONRELEASE","Value":67108864}
+			,{"Name":"STGM_NOSCRATCH","Value":1048576}
+			,{"Name":"STGM_CREATE","Value":4096}
+			,{"Name":"STGM_CONVERT","Value":131072}
+			,{"Name":"STGM_FAILIFTHERE","Value":0}
+			,{"Name":"STGM_NOSNAPSHOT","Value":2097152}
+			,{"Name":"STGM_DIRECT_SWMR","Value":4194304}
+		]
+		,"IntegerBase":"UInt32"
+	}
+	,{
+		"Name":"STGFMT"
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
 		,"Flags":false
 		,"Scoped":false
 		,"Values":[
-			{"Name":"STGC_DEFAULT","Value":0}
-			,{"Name":"STGC_OVERWRITE","Value":1}
-			,{"Name":"STGC_ONLYIFCURRENT","Value":2}
-			,{"Name":"STGC_DANGEROUSLYCOMMITMERELYTODISKCACHE","Value":4}
-			,{"Name":"STGC_CONSOLIDATE","Value":8}
+			{"Name":"STGFMT_STORAGE","Value":0}
+			,{"Name":"STGFMT_NATIVE","Value":1}
+			,{"Name":"STGFMT_FILE","Value":3}
+			,{"Name":"STGFMT_ANY","Value":4}
+			,{"Name":"STGFMT_DOCFILE","Value":5}
+			,{"Name":"STGFMT_DOCUMENT","Value":0}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"STGMOVE"
@@ -740,6 +602,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"0000000d-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -814,6 +677,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"0000000b-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -826,7 +690,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pwcsName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"grfMode","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"grfMode","Type":{"Kind":"ApiRef","Name":"STGM","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In"]}
 					,{"Name":"reserved1","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"reserved2","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"ppstm","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
@@ -843,7 +707,7 @@
 				,"Params":[
 					{"Name":"pwcsName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 					,{"Name":"reserved1","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out","Reserved"]}
-					,{"Name":"grfMode","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"grfMode","Type":{"Kind":"ApiRef","Name":"STGM","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In"]}
 					,{"Name":"reserved2","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"ppstm","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
@@ -858,7 +722,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pwcsName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"grfMode","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"grfMode","Type":{"Kind":"ApiRef","Name":"STGM","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In"]}
 					,{"Name":"reserved1","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"reserved2","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"ppstg","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IStorage","TargetKind":"Com","Api":"System.Com.StructuredStorage","Parents":[]}},"Attrs":["Out"]}
@@ -875,7 +739,7 @@
 				,"Params":[
 					{"Name":"pwcsName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 					,{"Name":"pstgPriority","Type":{"Kind":"ApiRef","Name":"IStorage","TargetKind":"Com","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In"]}
-					,{"Name":"grfMode","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"grfMode","Type":{"Kind":"ApiRef","Name":"STGM","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In"]}
 					,{"Name":"snbExclude","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt16"}}},"Attrs":["In"]}
 					,{"Name":"reserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"ppstg","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IStorage","TargetKind":"Com","Api":"System.Com.StructuredStorage","Parents":[]}},"Attrs":["Out"]}
@@ -908,7 +772,7 @@
 					{"Name":"pwcsName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 					,{"Name":"pstgDest","Type":{"Kind":"ApiRef","Name":"IStorage","TargetKind":"Com","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pwcsNewName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"grfFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"grfFlags","Type":{"Kind":"ApiRef","Name":"STGMOVE","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In"]}
 				]
 			}
 			,{
@@ -920,7 +784,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"grfCommitFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					{"Name":"grfCommitFlags","Type":{"Kind":"ApiRef","Name":"STGC","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 				]
 			}
 			,{
@@ -1035,6 +899,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"0000010a-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPersist","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1044,7 +909,9 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[]
+				,"Attrs":[
+					"PreserveSig"
+				]
 				,"Params":[
 				]
 			}
@@ -1116,6 +983,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"0000000a-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1220,6 +1088,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"00000012-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1242,6 +1111,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"99caf010-415e-11cf-8814-00aa00b569f5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1305,6 +1175,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"0e6d4d90-6738-11cf-9608-00aa00680db4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1375,6 +1246,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"0e6d4d92-6738-11cf-9608-00aa00680db4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1932,6 +1804,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"00000138-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2098,6 +1971,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"0000013a-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2162,6 +2036,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"00000139-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2171,7 +2046,9 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[]
+				,"Attrs":[
+					"PreserveSig"
+				]
 				,"Params":[
 					{"Name":"celt","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"rgelt","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":0,"Child":{"Kind":"ApiRef","Name":"STATPROPSTG","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]}},"Attrs":["Out"]}
@@ -2185,7 +2062,9 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[]
+				,"Attrs":[
+					"PreserveSig"
+				]
 				,"Params":[
 					{"Name":"celt","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 				]
@@ -2221,6 +2100,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"0000013b-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2230,7 +2110,9 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[]
+				,"Attrs":[
+					"PreserveSig"
+				]
 				,"Params":[
 					{"Name":"celt","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"rgelt","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":0,"Child":{"Kind":"ApiRef","Name":"STATPROPSETSTG","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]}},"Attrs":["Out"]}
@@ -2244,7 +2126,9 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[]
+				,"Attrs":[
+					"PreserveSig"
+				]
 				,"Params":[
 					{"Name":"celt","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 				]
@@ -2343,6 +2227,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"55272a00-42cb-11ce-8135-00aa004bb851"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2425,6 +2310,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"22f55882-280b-11d0-a8a9-00a0c90c2004"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2699,7 +2585,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"pwcsName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
-			,{"Name":"grfMode","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+			,{"Name":"grfMode","Type":{"Kind":"ApiRef","Name":"STGM","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In"]}
 			,{"Name":"reserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In","Reserved"]}
 			,{"Name":"ppstgOpen","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IStorage","TargetKind":"Com","Api":"System.Com.StructuredStorage","Parents":[]}},"Attrs":["Out"]}
 		]
@@ -2715,7 +2601,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"plkbyt","Type":{"Kind":"ApiRef","Name":"ILockBytes","TargetKind":"Com","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In"]}
-			,{"Name":"grfMode","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+			,{"Name":"grfMode","Type":{"Kind":"ApiRef","Name":"STGM","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In"]}
 			,{"Name":"reserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"ppstgOpen","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IStorage","TargetKind":"Com","Api":"System.Com.StructuredStorage","Parents":[]}},"Attrs":["Out"]}
 		]
@@ -2732,7 +2618,7 @@
 		,"Params":[
 			{"Name":"pwcsName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
 			,{"Name":"pstgPriority","Type":{"Kind":"ApiRef","Name":"IStorage","TargetKind":"Com","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In","Optional"]}
-			,{"Name":"grfMode","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+			,{"Name":"grfMode","Type":{"Kind":"ApiRef","Name":"STGM","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In"]}
 			,{"Name":"snbExclude","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt16"}}},"Attrs":["In","Optional"]}
 			,{"Name":"reserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"ppstgOpen","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IStorage","TargetKind":"Com","Api":"System.Com.StructuredStorage","Parents":[]}},"Attrs":["Out"]}
@@ -2809,11 +2695,11 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"pwcsName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
-			,{"Name":"grfMode","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"stgfmt","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+			,{"Name":"grfMode","Type":{"Kind":"ApiRef","Name":"STGM","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In"]}
+			,{"Name":"stgfmt","Type":{"Kind":"ApiRef","Name":"STGFMT","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In"]}
 			,{"Name":"grfAttrs","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"pStgOptions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"STGOPTIONS","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]}},"Attrs":["In","Out","Optional"]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["In","Optional"]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
 			,{"Name":"ppObjectOpen","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
 		]
@@ -2829,11 +2715,11 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"pwcsName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-			,{"Name":"grfMode","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"stgfmt","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+			,{"Name":"grfMode","Type":{"Kind":"ApiRef","Name":"STGM","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In"]}
+			,{"Name":"stgfmt","Type":{"Kind":"ApiRef","Name":"STGFMT","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]},"Attrs":["In"]}
 			,{"Name":"grfAttrs","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"pStgOptions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"STGOPTIONS","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]}},"Attrs":["In","Out","Optional"]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["In","Optional"]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
 			,{"Name":"ppObjectOpen","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
 		]

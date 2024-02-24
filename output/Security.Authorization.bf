@@ -11,10 +11,161 @@ static
 	#region Constants
 	public const uint32 SDDL_REVISION_1 = 1;
 	public const uint32 SDDL_REVISION = 1;
+	public const String SDDL_OWNER = "O";
+	public const String SDDL_GROUP = "G";
+	public const String SDDL_DACL = "D";
+	public const String SDDL_SACL = "S";
+	public const String SDDL_PROTECTED = "P";
+	public const String SDDL_AUTO_INHERIT_REQ = "AR";
+	public const String SDDL_AUTO_INHERITED = "AI";
+	public const String SDDL_NULL_ACL = "NO_ACCESS_CONTROL";
+	public const String SDDL_ACCESS_ALLOWED = "A";
+	public const String SDDL_ACCESS_DENIED = "D";
+	public const String SDDL_OBJECT_ACCESS_ALLOWED = "OA";
+	public const String SDDL_OBJECT_ACCESS_DENIED = "OD";
+	public const String SDDL_AUDIT = "AU";
+	public const String SDDL_ALARM = "AL";
+	public const String SDDL_OBJECT_AUDIT = "OU";
+	public const String SDDL_OBJECT_ALARM = "OL";
+	public const String SDDL_MANDATORY_LABEL = "ML";
+	public const String SDDL_PROCESS_TRUST_LABEL = "TL";
+	public const String SDDL_CALLBACK_ACCESS_ALLOWED = "XA";
+	public const String SDDL_CALLBACK_ACCESS_DENIED = "XD";
+	public const String SDDL_RESOURCE_ATTRIBUTE = "RA";
+	public const String SDDL_SCOPED_POLICY_ID = "SP";
+	public const String SDDL_CALLBACK_AUDIT = "XU";
+	public const String SDDL_CALLBACK_OBJECT_ACCESS_ALLOWED = "ZA";
+	public const String SDDL_ACCESS_FILTER = "FL";
+	public const String SDDL_INT = "TI";
+	public const String SDDL_UINT = "TU";
+	public const String SDDL_WSTRING = "TS";
+	public const String SDDL_SID = "TD";
+	public const String SDDL_BLOB = "TX";
+	public const String SDDL_BOOLEAN = "TB";
+	public const String SDDL_CONTAINER_INHERIT = "CI";
+	public const String SDDL_OBJECT_INHERIT = "OI";
+	public const String SDDL_NO_PROPAGATE = "NP";
+	public const String SDDL_INHERIT_ONLY = "IO";
+	public const String SDDL_INHERITED = "ID";
+	public const String SDDL_CRITICAL = "CR";
+	public const String SDDL_TRUST_PROTECTED_FILTER = "TP";
+	public const String SDDL_AUDIT_SUCCESS = "SA";
+	public const String SDDL_AUDIT_FAILURE = "FA";
+	public const String SDDL_READ_PROPERTY = "RP";
+	public const String SDDL_WRITE_PROPERTY = "WP";
+	public const String SDDL_CREATE_CHILD = "CC";
+	public const String SDDL_DELETE_CHILD = "DC";
+	public const String SDDL_LIST_CHILDREN = "LC";
+	public const String SDDL_SELF_WRITE = "SW";
+	public const String SDDL_LIST_OBJECT = "LO";
+	public const String SDDL_DELETE_TREE = "DT";
+	public const String SDDL_CONTROL_ACCESS = "CR";
+	public const String SDDL_READ_CONTROL = "RC";
+	public const String SDDL_WRITE_DAC = "WD";
+	public const String SDDL_WRITE_OWNER = "WO";
+	public const String SDDL_STANDARD_DELETE = "SD";
+	public const String SDDL_GENERIC_ALL = "GA";
+	public const String SDDL_GENERIC_READ = "GR";
+	public const String SDDL_GENERIC_WRITE = "GW";
+	public const String SDDL_GENERIC_EXECUTE = "GX";
+	public const String SDDL_FILE_ALL = "FA";
+	public const String SDDL_FILE_READ = "FR";
+	public const String SDDL_FILE_WRITE = "FW";
+	public const String SDDL_FILE_EXECUTE = "FX";
+	public const String SDDL_KEY_ALL = "KA";
+	public const String SDDL_KEY_READ = "KR";
+	public const String SDDL_KEY_WRITE = "KW";
+	public const String SDDL_KEY_EXECUTE = "KX";
+	public const String SDDL_NO_WRITE_UP = "NW";
+	public const String SDDL_NO_READ_UP = "NR";
+	public const String SDDL_NO_EXECUTE_UP = "NX";
 	public const uint32 SDDL_ALIAS_SIZE = 2;
+	public const String SDDL_DOMAIN_ADMINISTRATORS = "DA";
+	public const String SDDL_DOMAIN_GUESTS = "DG";
+	public const String SDDL_DOMAIN_USERS = "DU";
+	public const String SDDL_ENTERPRISE_DOMAIN_CONTROLLERS = "ED";
+	public const String SDDL_DOMAIN_DOMAIN_CONTROLLERS = "DD";
+	public const String SDDL_DOMAIN_COMPUTERS = "DC";
+	public const String SDDL_BUILTIN_ADMINISTRATORS = "BA";
+	public const String SDDL_BUILTIN_GUESTS = "BG";
+	public const String SDDL_BUILTIN_USERS = "BU";
+	public const String SDDL_LOCAL_ADMIN = "LA";
+	public const String SDDL_LOCAL_GUEST = "LG";
+	public const String SDDL_ACCOUNT_OPERATORS = "AO";
+	public const String SDDL_BACKUP_OPERATORS = "BO";
+	public const String SDDL_PRINTER_OPERATORS = "PO";
+	public const String SDDL_SERVER_OPERATORS = "SO";
+	public const String SDDL_AUTHENTICATED_USERS = "AU";
+	public const String SDDL_PERSONAL_SELF = "PS";
+	public const String SDDL_CREATOR_OWNER = "CO";
+	public const String SDDL_CREATOR_GROUP = "CG";
+	public const String SDDL_LOCAL_SYSTEM = "SY";
+	public const String SDDL_POWER_USERS = "PU";
+	public const String SDDL_EVERYONE = "WD";
+	public const String SDDL_REPLICATOR = "RE";
+	public const String SDDL_INTERACTIVE = "IU";
+	public const String SDDL_NETWORK = "NU";
+	public const String SDDL_SERVICE = "SU";
+	public const String SDDL_RESTRICTED_CODE = "RC";
+	public const String SDDL_WRITE_RESTRICTED_CODE = "WR";
+	public const String SDDL_ANONYMOUS = "AN";
+	public const String SDDL_SCHEMA_ADMINISTRATORS = "SA";
+	public const String SDDL_CERT_SERV_ADMINISTRATORS = "CA";
+	public const String SDDL_RAS_SERVERS = "RS";
+	public const String SDDL_ENTERPRISE_ADMINS = "EA";
+	public const String SDDL_GROUP_POLICY_ADMINS = "PA";
+	public const String SDDL_ALIAS_PREW2KCOMPACC = "RU";
+	public const String SDDL_LOCAL_SERVICE = "LS";
+	public const String SDDL_NETWORK_SERVICE = "NS";
+	public const String SDDL_REMOTE_DESKTOP = "RD";
+	public const String SDDL_NETWORK_CONFIGURATION_OPS = "NO";
+	public const String SDDL_PERFMON_USERS = "MU";
+	public const String SDDL_PERFLOG_USERS = "LU";
+	public const String SDDL_IIS_USERS = "IS";
+	public const String SDDL_CRYPTO_OPERATORS = "CY";
+	public const String SDDL_OWNER_RIGHTS = "OW";
+	public const String SDDL_EVENT_LOG_READERS = "ER";
+	public const String SDDL_ENTERPRISE_RO_DCs = "RO";
+	public const String SDDL_CERTSVC_DCOM_ACCESS = "CD";
+	public const String SDDL_ALL_APP_PACKAGES = "AC";
+	public const String SDDL_RDS_REMOTE_ACCESS_SERVERS = "RA";
+	public const String SDDL_RDS_ENDPOINT_SERVERS = "ES";
+	public const String SDDL_RDS_MANAGEMENT_SERVERS = "MS";
+	public const String SDDL_USER_MODE_DRIVERS = "UD";
+	public const String SDDL_HYPER_V_ADMINS = "HA";
+	public const String SDDL_CLONEABLE_CONTROLLERS = "CN";
+	public const String SDDL_ACCESS_CONTROL_ASSISTANCE_OPS = "AA";
+	public const String SDDL_REMOTE_MANAGEMENT_USERS = "RM";
+	public const String SDDL_AUTHORITY_ASSERTED = "AS";
+	public const String SDDL_SERVICE_ASSERTED = "SS";
+	public const String SDDL_PROTECTED_USERS = "AP";
+	public const String SDDL_KEY_ADMINS = "KA";
+	public const String SDDL_ENTERPRISE_KEY_ADMINS = "EK";
+	public const String SDDL_ML_LOW = "LW";
+	public const String SDDL_ML_MEDIUM = "ME";
+	public const String SDDL_ML_MEDIUM_PLUS = "MP";
+	public const String SDDL_ML_HIGH = "HI";
+	public const String SDDL_ML_SYSTEM = "SI";
+	public const String SDDL_SEPERATOR = ";";
+	public const String SDDL_DELIMINATOR = ":";
+	public const String SDDL_ACE_BEGIN = "(";
+	public const String SDDL_ACE_END = ")";
+	public const String SDDL_ACE_COND_BEGIN = "(";
+	public const String SDDL_ACE_COND_END = ")";
+	public const String SDDL_SPACE = " ";
+	public const String SDDL_ACE_COND_BLOB_PREFIX = "#";
+	public const String SDDL_ACE_COND_SID_PREFIX = "SID";
+	public const String SDDL_ACE_COND_ATTRIBUTE_PREFIX = "@";
+	public const String SDDL_ACE_COND_USER_ATTRIBUTE_PREFIX = "@USER.";
+	public const String SDDL_ACE_COND_RESOURCE_ATTRIBUTE_PREFIX = "@RESOURCE.";
+	public const String SDDL_ACE_COND_DEVICE_ATTRIBUTE_PREFIX = "@DEVICE.";
+	public const String SDDL_ACE_COND_TOKEN_ATTRIBUTE_PREFIX = "@TOKEN.";
 	public const uint32 INHERITED_ACCESS_ENTRY = 16;
 	public const uint32 INHERITED_PARENT = 268435456;
 	public const uint32 INHERITED_GRANDPARENT = 536870912;
+	public const String ACCCTRL_DEFAULT_PROVIDERA = "Windows NT Access Provider";
+	public const String ACCCTRL_DEFAULT_PROVIDERW = "Windows NT Access Provider";
+	public const String ACCCTRL_DEFAULT_PROVIDER = "Windows NT Access Provider";
 	public const int32 TRUSTEE_ACCESS_ALLOWED = 1;
 	public const int32 TRUSTEE_ACCESS_READ = 2;
 	public const int32 TRUSTEE_ACCESS_WRITE = 4;
@@ -826,9 +977,9 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Description(BSTR* pbstrDescription) mut => VT.get_Description(ref this, pbstrDescription);
+		public HRESULT get_Description(out BSTR pbstrDescription) mut => VT.get_Description(ref this, out pbstrDescription);
 		public HRESULT put_Description(BSTR bstrDescription) mut => VT.put_Description(ref this, bstrDescription);
-		public HRESULT get_ApplicationData(BSTR* pbstrApplicationData) mut => VT.get_ApplicationData(ref this, pbstrApplicationData);
+		public HRESULT get_ApplicationData(out BSTR pbstrApplicationData) mut => VT.get_ApplicationData(ref this, out pbstrApplicationData);
 		public HRESULT put_ApplicationData(BSTR bstrApplicationData) mut => VT.put_ApplicationData(ref this, bstrApplicationData);
 		public HRESULT get_DomainTimeout(out int32 plProp) mut => VT.get_DomainTimeout(ref this, out plProp);
 		public HRESULT put_DomainTimeout(int32 lProp) mut => VT.put_DomainTimeout(ref this, lProp);
@@ -852,19 +1003,19 @@ static
 		public HRESULT Initialize(AZ_PROP_CONSTANTS lFlags, BSTR bstrPolicyURL, VARIANT varReserved) mut => VT.Initialize(ref this, lFlags, bstrPolicyURL, varReserved);
 		public HRESULT UpdateCache(VARIANT varReserved) mut => VT.UpdateCache(ref this, varReserved);
 		public HRESULT Delete(VARIANT varReserved) mut => VT.Delete(ref this, varReserved);
-		public HRESULT get_Applications(IAzApplications** ppAppCollection) mut => VT.get_Applications(ref this, ppAppCollection);
-		public HRESULT OpenApplication(BSTR bstrApplicationName, VARIANT varReserved, IAzApplication** ppApplication) mut => VT.OpenApplication(ref this, bstrApplicationName, varReserved, ppApplication);
-		public HRESULT CreateApplication(BSTR bstrApplicationName, VARIANT varReserved, IAzApplication** ppApplication) mut => VT.CreateApplication(ref this, bstrApplicationName, varReserved, ppApplication);
+		public HRESULT get_Applications(out IAzApplications* ppAppCollection) mut => VT.get_Applications(ref this, out ppAppCollection);
+		public HRESULT OpenApplication(BSTR bstrApplicationName, VARIANT varReserved, out IAzApplication* ppApplication) mut => VT.OpenApplication(ref this, bstrApplicationName, varReserved, out ppApplication);
+		public HRESULT CreateApplication(BSTR bstrApplicationName, VARIANT varReserved, out IAzApplication* ppApplication) mut => VT.CreateApplication(ref this, bstrApplicationName, varReserved, out ppApplication);
 		public HRESULT DeleteApplication(BSTR bstrApplicationName, VARIANT varReserved) mut => VT.DeleteApplication(ref this, bstrApplicationName, varReserved);
-		public HRESULT get_ApplicationGroups(IAzApplicationGroups** ppGroupCollection) mut => VT.get_ApplicationGroups(ref this, ppGroupCollection);
-		public HRESULT CreateApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) mut => VT.CreateApplicationGroup(ref this, bstrGroupName, varReserved, ppGroup);
-		public HRESULT OpenApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) mut => VT.OpenApplicationGroup(ref this, bstrGroupName, varReserved, ppGroup);
+		public HRESULT get_ApplicationGroups(out IAzApplicationGroups* ppGroupCollection) mut => VT.get_ApplicationGroups(ref this, out ppGroupCollection);
+		public HRESULT CreateApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, out IAzApplicationGroup* ppGroup) mut => VT.CreateApplicationGroup(ref this, bstrGroupName, varReserved, out ppGroup);
+		public HRESULT OpenApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, out IAzApplicationGroup* ppGroup) mut => VT.OpenApplicationGroup(ref this, bstrGroupName, varReserved, out ppGroup);
 		public HRESULT DeleteApplicationGroup(BSTR bstrGroupName, VARIANT varReserved) mut => VT.DeleteApplicationGroup(ref this, bstrGroupName, varReserved);
 		public HRESULT Submit(int32 lFlags, VARIANT varReserved) mut => VT.Submit(ref this, lFlags, varReserved);
 		public HRESULT get_DelegatedPolicyUsers(out VARIANT pvarDelegatedPolicyUsers) mut => VT.get_DelegatedPolicyUsers(ref this, out pvarDelegatedPolicyUsers);
 		public HRESULT AddDelegatedPolicyUser(BSTR bstrDelegatedPolicyUser, VARIANT varReserved) mut => VT.AddDelegatedPolicyUser(ref this, bstrDelegatedPolicyUser, varReserved);
 		public HRESULT DeleteDelegatedPolicyUser(BSTR bstrDelegatedPolicyUser, VARIANT varReserved) mut => VT.DeleteDelegatedPolicyUser(ref this, bstrDelegatedPolicyUser, varReserved);
-		public HRESULT get_TargetMachine(BSTR* pbstrTargetMachine) mut => VT.get_TargetMachine(ref this, pbstrTargetMachine);
+		public HRESULT get_TargetMachine(out BSTR pbstrTargetMachine) mut => VT.get_TargetMachine(ref this, out pbstrTargetMachine);
 		public HRESULT get_ApplyStoreSacl(out BOOL pbApplyStoreSacl) mut => VT.get_ApplyStoreSacl(ref this, out pbApplyStoreSacl);
 		public HRESULT put_ApplyStoreSacl(BOOL bApplyStoreSacl) mut => VT.put_ApplyStoreSacl(ref this, bApplyStoreSacl);
 		public HRESULT get_PolicyAdministratorsName(out VARIANT pvarAdmins) mut => VT.get_PolicyAdministratorsName(ref this, out pvarAdmins);
@@ -881,9 +1032,9 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR* pbstrDescription) get_Description;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, out BSTR pbstrDescription) get_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR bstrDescription) put_Description;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR* pbstrApplicationData) get_ApplicationData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, out BSTR pbstrApplicationData) get_ApplicationData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR bstrApplicationData) put_ApplicationData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, out int32 plProp) get_DomainTimeout;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, int32 lProp) put_DomainTimeout;
@@ -907,19 +1058,19 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, AZ_PROP_CONSTANTS lFlags, BSTR bstrPolicyURL, VARIANT varReserved) Initialize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, VARIANT varReserved) UpdateCache;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, VARIANT varReserved) Delete;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, IAzApplications** ppAppCollection) get_Applications;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication** ppApplication) OpenApplication;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication** ppApplication) CreateApplication;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, out IAzApplications* ppAppCollection) get_Applications;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR bstrApplicationName, VARIANT varReserved, out IAzApplication* ppApplication) OpenApplication;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR bstrApplicationName, VARIANT varReserved, out IAzApplication* ppApplication) CreateApplication;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR bstrApplicationName, VARIANT varReserved) DeleteApplication;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, IAzApplicationGroups** ppGroupCollection) get_ApplicationGroups;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) CreateApplicationGroup;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) OpenApplicationGroup;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, out IAzApplicationGroups* ppGroupCollection) get_ApplicationGroups;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR bstrGroupName, VARIANT varReserved, out IAzApplicationGroup* ppGroup) CreateApplicationGroup;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR bstrGroupName, VARIANT varReserved, out IAzApplicationGroup* ppGroup) OpenApplicationGroup;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR bstrGroupName, VARIANT varReserved) DeleteApplicationGroup;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, int32 lFlags, VARIANT varReserved) Submit;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, out VARIANT pvarDelegatedPolicyUsers) get_DelegatedPolicyUsers;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) AddDelegatedPolicyUser;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) DeleteDelegatedPolicyUser;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BSTR* pbstrTargetMachine) get_TargetMachine;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, out BSTR pbstrTargetMachine) get_TargetMachine;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, out BOOL pbApplyStoreSacl) get_ApplyStoreSacl;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, BOOL bApplyStoreSacl) put_ApplyStoreSacl;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore self, out VARIANT pvarAdmins) get_PolicyAdministratorsName;
@@ -941,14 +1092,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT OpenApplication2(BSTR bstrApplicationName, VARIANT varReserved, IAzApplication2** ppApplication) mut => VT.OpenApplication2(ref this, bstrApplicationName, varReserved, ppApplication);
-		public HRESULT CreateApplication2(BSTR bstrApplicationName, VARIANT varReserved, IAzApplication2** ppApplication) mut => VT.CreateApplication2(ref this, bstrApplicationName, varReserved, ppApplication);
+		public HRESULT OpenApplication2(BSTR bstrApplicationName, VARIANT varReserved, out IAzApplication2* ppApplication) mut => VT.OpenApplication2(ref this, bstrApplicationName, varReserved, out ppApplication);
+		public HRESULT CreateApplication2(BSTR bstrApplicationName, VARIANT varReserved, out IAzApplication2* ppApplication) mut => VT.CreateApplication2(ref this, bstrApplicationName, varReserved, out ppApplication);
 
 		[CRepr]
 		public struct VTable : IAzAuthorizationStore.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore2 self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication2** ppApplication) OpenApplication2;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore2 self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication2** ppApplication) CreateApplication2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore2 self, BSTR bstrApplicationName, VARIANT varReserved, out IAzApplication2* ppApplication) OpenApplication2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzAuthorizationStore2 self, BSTR bstrApplicationName, VARIANT varReserved, out IAzApplication2* ppApplication) CreateApplication2;
 		}
 	}
 	[CRepr]
@@ -981,15 +1132,15 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(BSTR* pbstrName) mut => VT.get_Name(ref this, pbstrName);
+		public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
 		public HRESULT put_Name(BSTR bstrName) mut => VT.put_Name(ref this, bstrName);
-		public HRESULT get_Description(BSTR* pbstrDescription) mut => VT.get_Description(ref this, pbstrDescription);
+		public HRESULT get_Description(out BSTR pbstrDescription) mut => VT.get_Description(ref this, out pbstrDescription);
 		public HRESULT put_Description(BSTR bstrDescription) mut => VT.put_Description(ref this, bstrDescription);
-		public HRESULT get_ApplicationData(BSTR* pbstrApplicationData) mut => VT.get_ApplicationData(ref this, pbstrApplicationData);
+		public HRESULT get_ApplicationData(out BSTR pbstrApplicationData) mut => VT.get_ApplicationData(ref this, out pbstrApplicationData);
 		public HRESULT put_ApplicationData(BSTR bstrApplicationData) mut => VT.put_ApplicationData(ref this, bstrApplicationData);
-		public HRESULT get_AuthzInterfaceClsid(BSTR* pbstrProp) mut => VT.get_AuthzInterfaceClsid(ref this, pbstrProp);
+		public HRESULT get_AuthzInterfaceClsid(out BSTR pbstrProp) mut => VT.get_AuthzInterfaceClsid(ref this, out pbstrProp);
 		public HRESULT put_AuthzInterfaceClsid(BSTR bstrProp) mut => VT.put_AuthzInterfaceClsid(ref this, bstrProp);
-		public HRESULT get_Version(BSTR* pbstrProp) mut => VT.get_Version(ref this, pbstrProp);
+		public HRESULT get_Version(out BSTR pbstrProp) mut => VT.get_Version(ref this, out pbstrProp);
 		public HRESULT put_Version(BSTR bstrProp) mut => VT.put_Version(ref this, bstrProp);
 		public HRESULT get_GenerateAudits(out BOOL pbProp) mut => VT.get_GenerateAudits(ref this, out pbProp);
 		public HRESULT put_GenerateAudits(BOOL bProp) mut => VT.put_GenerateAudits(ref this, bProp);
@@ -1004,35 +1155,35 @@ static
 		public HRESULT DeletePolicyAdministrator(BSTR bstrAdmin, VARIANT varReserved) mut => VT.DeletePolicyAdministrator(ref this, bstrAdmin, varReserved);
 		public HRESULT AddPolicyReader(BSTR bstrReader, VARIANT varReserved) mut => VT.AddPolicyReader(ref this, bstrReader, varReserved);
 		public HRESULT DeletePolicyReader(BSTR bstrReader, VARIANT varReserved) mut => VT.DeletePolicyReader(ref this, bstrReader, varReserved);
-		public HRESULT get_Scopes(IAzScopes** ppScopeCollection) mut => VT.get_Scopes(ref this, ppScopeCollection);
-		public HRESULT OpenScope(BSTR bstrScopeName, VARIANT varReserved, IAzScope** ppScope) mut => VT.OpenScope(ref this, bstrScopeName, varReserved, ppScope);
-		public HRESULT CreateScope(BSTR bstrScopeName, VARIANT varReserved, IAzScope** ppScope) mut => VT.CreateScope(ref this, bstrScopeName, varReserved, ppScope);
+		public HRESULT get_Scopes(out IAzScopes* ppScopeCollection) mut => VT.get_Scopes(ref this, out ppScopeCollection);
+		public HRESULT OpenScope(BSTR bstrScopeName, VARIANT varReserved, out IAzScope* ppScope) mut => VT.OpenScope(ref this, bstrScopeName, varReserved, out ppScope);
+		public HRESULT CreateScope(BSTR bstrScopeName, VARIANT varReserved, out IAzScope* ppScope) mut => VT.CreateScope(ref this, bstrScopeName, varReserved, out ppScope);
 		public HRESULT DeleteScope(BSTR bstrScopeName, VARIANT varReserved) mut => VT.DeleteScope(ref this, bstrScopeName, varReserved);
-		public HRESULT get_Operations(IAzOperations** ppOperationCollection) mut => VT.get_Operations(ref this, ppOperationCollection);
-		public HRESULT OpenOperation(BSTR bstrOperationName, VARIANT varReserved, IAzOperation** ppOperation) mut => VT.OpenOperation(ref this, bstrOperationName, varReserved, ppOperation);
-		public HRESULT CreateOperation(BSTR bstrOperationName, VARIANT varReserved, IAzOperation** ppOperation) mut => VT.CreateOperation(ref this, bstrOperationName, varReserved, ppOperation);
+		public HRESULT get_Operations(out IAzOperations* ppOperationCollection) mut => VT.get_Operations(ref this, out ppOperationCollection);
+		public HRESULT OpenOperation(BSTR bstrOperationName, VARIANT varReserved, out IAzOperation* ppOperation) mut => VT.OpenOperation(ref this, bstrOperationName, varReserved, out ppOperation);
+		public HRESULT CreateOperation(BSTR bstrOperationName, VARIANT varReserved, out IAzOperation* ppOperation) mut => VT.CreateOperation(ref this, bstrOperationName, varReserved, out ppOperation);
 		public HRESULT DeleteOperation(BSTR bstrOperationName, VARIANT varReserved) mut => VT.DeleteOperation(ref this, bstrOperationName, varReserved);
-		public HRESULT get_Tasks(IAzTasks** ppTaskCollection) mut => VT.get_Tasks(ref this, ppTaskCollection);
-		public HRESULT OpenTask(BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) mut => VT.OpenTask(ref this, bstrTaskName, varReserved, ppTask);
-		public HRESULT CreateTask(BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) mut => VT.CreateTask(ref this, bstrTaskName, varReserved, ppTask);
+		public HRESULT get_Tasks(out IAzTasks* ppTaskCollection) mut => VT.get_Tasks(ref this, out ppTaskCollection);
+		public HRESULT OpenTask(BSTR bstrTaskName, VARIANT varReserved, out IAzTask* ppTask) mut => VT.OpenTask(ref this, bstrTaskName, varReserved, out ppTask);
+		public HRESULT CreateTask(BSTR bstrTaskName, VARIANT varReserved, out IAzTask* ppTask) mut => VT.CreateTask(ref this, bstrTaskName, varReserved, out ppTask);
 		public HRESULT DeleteTask(BSTR bstrTaskName, VARIANT varReserved) mut => VT.DeleteTask(ref this, bstrTaskName, varReserved);
-		public HRESULT get_ApplicationGroups(IAzApplicationGroups** ppGroupCollection) mut => VT.get_ApplicationGroups(ref this, ppGroupCollection);
-		public HRESULT OpenApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) mut => VT.OpenApplicationGroup(ref this, bstrGroupName, varReserved, ppGroup);
-		public HRESULT CreateApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) mut => VT.CreateApplicationGroup(ref this, bstrGroupName, varReserved, ppGroup);
+		public HRESULT get_ApplicationGroups(out IAzApplicationGroups* ppGroupCollection) mut => VT.get_ApplicationGroups(ref this, out ppGroupCollection);
+		public HRESULT OpenApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, out IAzApplicationGroup* ppGroup) mut => VT.OpenApplicationGroup(ref this, bstrGroupName, varReserved, out ppGroup);
+		public HRESULT CreateApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, out IAzApplicationGroup* ppGroup) mut => VT.CreateApplicationGroup(ref this, bstrGroupName, varReserved, out ppGroup);
 		public HRESULT DeleteApplicationGroup(BSTR bstrGroupName, VARIANT varReserved) mut => VT.DeleteApplicationGroup(ref this, bstrGroupName, varReserved);
-		public HRESULT get_Roles(IAzRoles** ppRoleCollection) mut => VT.get_Roles(ref this, ppRoleCollection);
-		public HRESULT OpenRole(BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) mut => VT.OpenRole(ref this, bstrRoleName, varReserved, ppRole);
-		public HRESULT CreateRole(BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) mut => VT.CreateRole(ref this, bstrRoleName, varReserved, ppRole);
+		public HRESULT get_Roles(out IAzRoles* ppRoleCollection) mut => VT.get_Roles(ref this, out ppRoleCollection);
+		public HRESULT OpenRole(BSTR bstrRoleName, VARIANT varReserved, out IAzRole* ppRole) mut => VT.OpenRole(ref this, bstrRoleName, varReserved, out ppRole);
+		public HRESULT CreateRole(BSTR bstrRoleName, VARIANT varReserved, out IAzRole* ppRole) mut => VT.CreateRole(ref this, bstrRoleName, varReserved, out ppRole);
 		public HRESULT DeleteRole(BSTR bstrRoleName, VARIANT varReserved) mut => VT.DeleteRole(ref this, bstrRoleName, varReserved);
-		public HRESULT InitializeClientContextFromToken(uint64 ullTokenHandle, VARIANT varReserved, IAzClientContext** ppClientContext) mut => VT.InitializeClientContextFromToken(ref this, ullTokenHandle, varReserved, ppClientContext);
+		public HRESULT InitializeClientContextFromToken(uint64 ullTokenHandle, VARIANT varReserved, out IAzClientContext* ppClientContext) mut => VT.InitializeClientContextFromToken(ref this, ullTokenHandle, varReserved, out ppClientContext);
 		public HRESULT AddPropertyItem(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut => VT.AddPropertyItem(ref this, lPropId, varProp, varReserved);
 		public HRESULT DeletePropertyItem(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut => VT.DeletePropertyItem(ref this, lPropId, varProp, varReserved);
 		public HRESULT Submit(int32 lFlags, VARIANT varReserved) mut => VT.Submit(ref this, lFlags, varReserved);
-		public HRESULT InitializeClientContextFromName(BSTR ClientName, BSTR DomainName, VARIANT varReserved, IAzClientContext** ppClientContext) mut => VT.InitializeClientContextFromName(ref this, ClientName, DomainName, varReserved, ppClientContext);
+		public HRESULT InitializeClientContextFromName(BSTR ClientName, BSTR DomainName, VARIANT varReserved, out IAzClientContext* ppClientContext) mut => VT.InitializeClientContextFromName(ref this, ClientName, DomainName, varReserved, out ppClientContext);
 		public HRESULT get_DelegatedPolicyUsers(out VARIANT pvarDelegatedPolicyUsers) mut => VT.get_DelegatedPolicyUsers(ref this, out pvarDelegatedPolicyUsers);
 		public HRESULT AddDelegatedPolicyUser(BSTR bstrDelegatedPolicyUser, VARIANT varReserved) mut => VT.AddDelegatedPolicyUser(ref this, bstrDelegatedPolicyUser, varReserved);
 		public HRESULT DeleteDelegatedPolicyUser(BSTR bstrDelegatedPolicyUser, VARIANT varReserved) mut => VT.DeleteDelegatedPolicyUser(ref this, bstrDelegatedPolicyUser, varReserved);
-		public HRESULT InitializeClientContextFromStringSid(BSTR SidString, int32 lOptions, VARIANT varReserved, IAzClientContext** ppClientContext) mut => VT.InitializeClientContextFromStringSid(ref this, SidString, lOptions, varReserved, ppClientContext);
+		public HRESULT InitializeClientContextFromStringSid(BSTR SidString, int32 lOptions, VARIANT varReserved, out IAzClientContext* ppClientContext) mut => VT.InitializeClientContextFromStringSid(ref this, SidString, lOptions, varReserved, out ppClientContext);
 		public HRESULT get_PolicyAdministratorsName(out VARIANT pvarAdmins) mut => VT.get_PolicyAdministratorsName(ref this, out pvarAdmins);
 		public HRESULT get_PolicyReadersName(out VARIANT pvarReaders) mut => VT.get_PolicyReadersName(ref this, out pvarReaders);
 		public HRESULT AddPolicyAdministratorName(BSTR bstrAdmin, VARIANT varReserved) mut => VT.AddPolicyAdministratorName(ref this, bstrAdmin, varReserved);
@@ -1046,15 +1197,15 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR* pbstrName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, out BSTR pbstrName) get_Name;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrName) put_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR* pbstrDescription) get_Description;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, out BSTR pbstrDescription) get_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrDescription) put_Description;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR* pbstrApplicationData) get_ApplicationData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, out BSTR pbstrApplicationData) get_ApplicationData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrApplicationData) put_ApplicationData;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR* pbstrProp) get_AuthzInterfaceClsid;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, out BSTR pbstrProp) get_AuthzInterfaceClsid;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrProp) put_AuthzInterfaceClsid;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR* pbstrProp) get_Version;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, out BSTR pbstrProp) get_Version;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrProp) put_Version;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, out BOOL pbProp) get_GenerateAudits;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BOOL bProp) put_GenerateAudits;
@@ -1069,35 +1220,35 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministrator;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrReader, VARIANT varReserved) AddPolicyReader;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReader;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, IAzScopes** ppScopeCollection) get_Scopes;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrScopeName, VARIANT varReserved, IAzScope** ppScope) OpenScope;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrScopeName, VARIANT varReserved, IAzScope** ppScope) CreateScope;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, out IAzScopes* ppScopeCollection) get_Scopes;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrScopeName, VARIANT varReserved, out IAzScope* ppScope) OpenScope;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrScopeName, VARIANT varReserved, out IAzScope* ppScope) CreateScope;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrScopeName, VARIANT varReserved) DeleteScope;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, IAzOperations** ppOperationCollection) get_Operations;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrOperationName, VARIANT varReserved, IAzOperation** ppOperation) OpenOperation;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrOperationName, VARIANT varReserved, IAzOperation** ppOperation) CreateOperation;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, out IAzOperations* ppOperationCollection) get_Operations;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrOperationName, VARIANT varReserved, out IAzOperation* ppOperation) OpenOperation;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrOperationName, VARIANT varReserved, out IAzOperation* ppOperation) CreateOperation;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrOperationName, VARIANT varReserved) DeleteOperation;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, IAzTasks** ppTaskCollection) get_Tasks;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) OpenTask;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) CreateTask;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, out IAzTasks* ppTaskCollection) get_Tasks;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrTaskName, VARIANT varReserved, out IAzTask* ppTask) OpenTask;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrTaskName, VARIANT varReserved, out IAzTask* ppTask) CreateTask;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrTaskName, VARIANT varReserved) DeleteTask;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, IAzApplicationGroups** ppGroupCollection) get_ApplicationGroups;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) OpenApplicationGroup;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) CreateApplicationGroup;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, out IAzApplicationGroups* ppGroupCollection) get_ApplicationGroups;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrGroupName, VARIANT varReserved, out IAzApplicationGroup* ppGroup) OpenApplicationGroup;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrGroupName, VARIANT varReserved, out IAzApplicationGroup* ppGroup) CreateApplicationGroup;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrGroupName, VARIANT varReserved) DeleteApplicationGroup;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, IAzRoles** ppRoleCollection) get_Roles;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) OpenRole;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) CreateRole;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, out IAzRoles* ppRoleCollection) get_Roles;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrRoleName, VARIANT varReserved, out IAzRole* ppRole) OpenRole;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrRoleName, VARIANT varReserved, out IAzRole* ppRole) CreateRole;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrRoleName, VARIANT varReserved) DeleteRole;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, uint64 ullTokenHandle, VARIANT varReserved, IAzClientContext** ppClientContext) InitializeClientContextFromToken;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, uint64 ullTokenHandle, VARIANT varReserved, out IAzClientContext* ppClientContext) InitializeClientContextFromToken;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, int32 lFlags, VARIANT varReserved) Submit;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR ClientName, BSTR DomainName, VARIANT varReserved, IAzClientContext** ppClientContext) InitializeClientContextFromName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR ClientName, BSTR DomainName, VARIANT varReserved, out IAzClientContext* ppClientContext) InitializeClientContextFromName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, out VARIANT pvarDelegatedPolicyUsers) get_DelegatedPolicyUsers;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) AddDelegatedPolicyUser;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) DeleteDelegatedPolicyUser;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR SidString, int32 lOptions, VARIANT varReserved, IAzClientContext** ppClientContext) InitializeClientContextFromStringSid;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR SidString, int32 lOptions, VARIANT varReserved, out IAzClientContext* ppClientContext) InitializeClientContextFromStringSid;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, out VARIANT pvarAdmins) get_PolicyAdministratorsName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, out VARIANT pvarReaders) get_PolicyReadersName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministratorName;
@@ -1116,14 +1267,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT InitializeClientContextFromToken2(uint32 ulTokenHandleLowPart, uint32 ulTokenHandleHighPart, VARIANT varReserved, IAzClientContext2** ppClientContext) mut => VT.InitializeClientContextFromToken2(ref this, ulTokenHandleLowPart, ulTokenHandleHighPart, varReserved, ppClientContext);
-		public HRESULT InitializeClientContext2(BSTR IdentifyingString, VARIANT varReserved, IAzClientContext2** ppClientContext) mut => VT.InitializeClientContext2(ref this, IdentifyingString, varReserved, ppClientContext);
+		public HRESULT InitializeClientContextFromToken2(uint32 ulTokenHandleLowPart, uint32 ulTokenHandleHighPart, VARIANT varReserved, out IAzClientContext2* ppClientContext) mut => VT.InitializeClientContextFromToken2(ref this, ulTokenHandleLowPart, ulTokenHandleHighPart, varReserved, out ppClientContext);
+		public HRESULT InitializeClientContext2(BSTR IdentifyingString, VARIANT varReserved, out IAzClientContext2* ppClientContext) mut => VT.InitializeClientContext2(ref this, IdentifyingString, varReserved, out ppClientContext);
 
 		[CRepr]
 		public struct VTable : IAzApplication.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication2 self, uint32 ulTokenHandleLowPart, uint32 ulTokenHandleHighPart, VARIANT varReserved, IAzClientContext2** ppClientContext) InitializeClientContextFromToken2;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication2 self, BSTR IdentifyingString, VARIANT varReserved, IAzClientContext2** ppClientContext) InitializeClientContext2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication2 self, uint32 ulTokenHandleLowPart, uint32 ulTokenHandleHighPart, VARIANT varReserved, out IAzClientContext2* ppClientContext) InitializeClientContextFromToken2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication2 self, BSTR IdentifyingString, VARIANT varReserved, out IAzClientContext2* ppClientContext) InitializeClientContext2;
 		}
 	}
 	[CRepr]
@@ -1135,14 +1286,14 @@ static
 		
 		public HRESULT get_Item(int32 Index, out VARIANT pvarObtPtr) mut => VT.get_Item(ref this, Index, out pvarObtPtr);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
-		public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut => VT.get__NewEnum(ref this, ppEnumPtr);
+		public HRESULT get__NewEnum(out IUnknown* ppEnumPtr) mut => VT.get__NewEnum(ref this, out ppEnumPtr);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplications self, int32 Index, out VARIANT pvarObtPtr) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplications self, out int32 plCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplications self, IUnknown** ppEnumPtr) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplications self, out IUnknown* ppEnumPtr) get__NewEnum;
 		}
 	}
 	[CRepr]
@@ -1152,11 +1303,11 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(BSTR* pbstrName) mut => VT.get_Name(ref this, pbstrName);
+		public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
 		public HRESULT put_Name(BSTR bstrName) mut => VT.put_Name(ref this, bstrName);
-		public HRESULT get_Description(BSTR* pbstrDescription) mut => VT.get_Description(ref this, pbstrDescription);
+		public HRESULT get_Description(out BSTR pbstrDescription) mut => VT.get_Description(ref this, out pbstrDescription);
 		public HRESULT put_Description(BSTR bstrDescription) mut => VT.put_Description(ref this, bstrDescription);
-		public HRESULT get_ApplicationData(BSTR* pbstrApplicationData) mut => VT.get_ApplicationData(ref this, pbstrApplicationData);
+		public HRESULT get_ApplicationData(out BSTR pbstrApplicationData) mut => VT.get_ApplicationData(ref this, out pbstrApplicationData);
 		public HRESULT put_ApplicationData(BSTR bstrApplicationData) mut => VT.put_ApplicationData(ref this, bstrApplicationData);
 		public HRESULT get_OperationID(out int32 plProp) mut => VT.get_OperationID(ref this, out plProp);
 		public HRESULT put_OperationID(int32 lProp) mut => VT.put_OperationID(ref this, lProp);
@@ -1168,11 +1319,11 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperation self, BSTR* pbstrName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperation self, out BSTR pbstrName) get_Name;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperation self, BSTR bstrName) put_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperation self, BSTR* pbstrDescription) get_Description;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperation self, out BSTR pbstrDescription) get_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperation self, BSTR bstrDescription) put_Description;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperation self, BSTR* pbstrApplicationData) get_ApplicationData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperation self, out BSTR pbstrApplicationData) get_ApplicationData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperation self, BSTR bstrApplicationData) put_ApplicationData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperation self, out int32 plProp) get_OperationID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperation self, int32 lProp) put_OperationID;
@@ -1191,14 +1342,14 @@ static
 		
 		public HRESULT get_Item(int32 Index, out VARIANT pvarObtPtr) mut => VT.get_Item(ref this, Index, out pvarObtPtr);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
-		public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut => VT.get__NewEnum(ref this, ppEnumPtr);
+		public HRESULT get__NewEnum(out IUnknown* ppEnumPtr) mut => VT.get__NewEnum(ref this, out ppEnumPtr);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperations self, int32 Index, out VARIANT pvarObtPtr) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperations self, out int32 plCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperations self, IUnknown** ppEnumPtr) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperations self, out IUnknown* ppEnumPtr) get__NewEnum;
 		}
 	}
 	[CRepr]
@@ -1208,17 +1359,17 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(BSTR* pbstrName) mut => VT.get_Name(ref this, pbstrName);
+		public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
 		public HRESULT put_Name(BSTR bstrName) mut => VT.put_Name(ref this, bstrName);
-		public HRESULT get_Description(BSTR* pbstrDescription) mut => VT.get_Description(ref this, pbstrDescription);
+		public HRESULT get_Description(out BSTR pbstrDescription) mut => VT.get_Description(ref this, out pbstrDescription);
 		public HRESULT put_Description(BSTR bstrDescription) mut => VT.put_Description(ref this, bstrDescription);
-		public HRESULT get_ApplicationData(BSTR* pbstrApplicationData) mut => VT.get_ApplicationData(ref this, pbstrApplicationData);
+		public HRESULT get_ApplicationData(out BSTR pbstrApplicationData) mut => VT.get_ApplicationData(ref this, out pbstrApplicationData);
 		public HRESULT put_ApplicationData(BSTR bstrApplicationData) mut => VT.put_ApplicationData(ref this, bstrApplicationData);
-		public HRESULT get_BizRule(BSTR* pbstrProp) mut => VT.get_BizRule(ref this, pbstrProp);
+		public HRESULT get_BizRule(out BSTR pbstrProp) mut => VT.get_BizRule(ref this, out pbstrProp);
 		public HRESULT put_BizRule(BSTR bstrProp) mut => VT.put_BizRule(ref this, bstrProp);
-		public HRESULT get_BizRuleLanguage(BSTR* pbstrProp) mut => VT.get_BizRuleLanguage(ref this, pbstrProp);
+		public HRESULT get_BizRuleLanguage(out BSTR pbstrProp) mut => VT.get_BizRuleLanguage(ref this, out pbstrProp);
 		public HRESULT put_BizRuleLanguage(BSTR bstrProp) mut => VT.put_BizRuleLanguage(ref this, bstrProp);
-		public HRESULT get_BizRuleImportedPath(BSTR* pbstrProp) mut => VT.get_BizRuleImportedPath(ref this, pbstrProp);
+		public HRESULT get_BizRuleImportedPath(out BSTR pbstrProp) mut => VT.get_BizRuleImportedPath(ref this, out pbstrProp);
 		public HRESULT put_BizRuleImportedPath(BSTR bstrProp) mut => VT.put_BizRuleImportedPath(ref this, bstrProp);
 		public HRESULT get_IsRoleDefinition(out BOOL pfProp) mut => VT.get_IsRoleDefinition(ref this, out pfProp);
 		public HRESULT put_IsRoleDefinition(BOOL fProp) mut => VT.put_IsRoleDefinition(ref this, fProp);
@@ -1238,17 +1389,17 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, BSTR* pbstrName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, out BSTR pbstrName) get_Name;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, BSTR bstrName) put_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, BSTR* pbstrDescription) get_Description;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, out BSTR pbstrDescription) get_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, BSTR bstrDescription) put_Description;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, BSTR* pbstrApplicationData) get_ApplicationData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, out BSTR pbstrApplicationData) get_ApplicationData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, BSTR bstrApplicationData) put_ApplicationData;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, BSTR* pbstrProp) get_BizRule;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, out BSTR pbstrProp) get_BizRule;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, BSTR bstrProp) put_BizRule;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, BSTR* pbstrProp) get_BizRuleLanguage;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, out BSTR pbstrProp) get_BizRuleLanguage;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, BSTR bstrProp) put_BizRuleLanguage;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, BSTR* pbstrProp) get_BizRuleImportedPath;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, out BSTR pbstrProp) get_BizRuleImportedPath;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, BSTR bstrProp) put_BizRuleImportedPath;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, out BOOL pfProp) get_IsRoleDefinition;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask self, BOOL fProp) put_IsRoleDefinition;
@@ -1275,14 +1426,14 @@ static
 		
 		public HRESULT get_Item(int32 Index, out VARIANT pvarObtPtr) mut => VT.get_Item(ref this, Index, out pvarObtPtr);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
-		public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut => VT.get__NewEnum(ref this, ppEnumPtr);
+		public HRESULT get__NewEnum(out IUnknown* ppEnumPtr) mut => VT.get__NewEnum(ref this, out ppEnumPtr);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTasks self, int32 Index, out VARIANT pvarObtPtr) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTasks self, out int32 plCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTasks self, IUnknown** ppEnumPtr) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTasks self, out IUnknown* ppEnumPtr) get__NewEnum;
 		}
 	}
 	[CRepr]
@@ -1292,11 +1443,11 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(BSTR* pbstrName) mut => VT.get_Name(ref this, pbstrName);
+		public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
 		public HRESULT put_Name(BSTR bstrName) mut => VT.put_Name(ref this, bstrName);
-		public HRESULT get_Description(BSTR* pbstrDescription) mut => VT.get_Description(ref this, pbstrDescription);
+		public HRESULT get_Description(out BSTR pbstrDescription) mut => VT.get_Description(ref this, out pbstrDescription);
 		public HRESULT put_Description(BSTR bstrDescription) mut => VT.put_Description(ref this, bstrDescription);
-		public HRESULT get_ApplicationData(BSTR* pbstrApplicationData) mut => VT.get_ApplicationData(ref this, pbstrApplicationData);
+		public HRESULT get_ApplicationData(out BSTR pbstrApplicationData) mut => VT.get_ApplicationData(ref this, out pbstrApplicationData);
 		public HRESULT put_ApplicationData(BSTR bstrApplicationData) mut => VT.put_ApplicationData(ref this, bstrApplicationData);
 		public HRESULT get_Writable(out BOOL pfProp) mut => VT.get_Writable(ref this, out pfProp);
 		public HRESULT GetProperty(int32 lPropId, VARIANT varReserved, out VARIANT pvarProp) mut => VT.GetProperty(ref this, lPropId, varReserved, out pvarProp);
@@ -1309,17 +1460,17 @@ static
 		public HRESULT DeletePolicyAdministrator(BSTR bstrAdmin, VARIANT varReserved) mut => VT.DeletePolicyAdministrator(ref this, bstrAdmin, varReserved);
 		public HRESULT AddPolicyReader(BSTR bstrReader, VARIANT varReserved) mut => VT.AddPolicyReader(ref this, bstrReader, varReserved);
 		public HRESULT DeletePolicyReader(BSTR bstrReader, VARIANT varReserved) mut => VT.DeletePolicyReader(ref this, bstrReader, varReserved);
-		public HRESULT get_ApplicationGroups(IAzApplicationGroups** ppGroupCollection) mut => VT.get_ApplicationGroups(ref this, ppGroupCollection);
-		public HRESULT OpenApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) mut => VT.OpenApplicationGroup(ref this, bstrGroupName, varReserved, ppGroup);
-		public HRESULT CreateApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) mut => VT.CreateApplicationGroup(ref this, bstrGroupName, varReserved, ppGroup);
+		public HRESULT get_ApplicationGroups(out IAzApplicationGroups* ppGroupCollection) mut => VT.get_ApplicationGroups(ref this, out ppGroupCollection);
+		public HRESULT OpenApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, out IAzApplicationGroup* ppGroup) mut => VT.OpenApplicationGroup(ref this, bstrGroupName, varReserved, out ppGroup);
+		public HRESULT CreateApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, out IAzApplicationGroup* ppGroup) mut => VT.CreateApplicationGroup(ref this, bstrGroupName, varReserved, out ppGroup);
 		public HRESULT DeleteApplicationGroup(BSTR bstrGroupName, VARIANT varReserved) mut => VT.DeleteApplicationGroup(ref this, bstrGroupName, varReserved);
-		public HRESULT get_Roles(IAzRoles** ppRoleCollection) mut => VT.get_Roles(ref this, ppRoleCollection);
-		public HRESULT OpenRole(BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) mut => VT.OpenRole(ref this, bstrRoleName, varReserved, ppRole);
-		public HRESULT CreateRole(BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) mut => VT.CreateRole(ref this, bstrRoleName, varReserved, ppRole);
+		public HRESULT get_Roles(out IAzRoles* ppRoleCollection) mut => VT.get_Roles(ref this, out ppRoleCollection);
+		public HRESULT OpenRole(BSTR bstrRoleName, VARIANT varReserved, out IAzRole* ppRole) mut => VT.OpenRole(ref this, bstrRoleName, varReserved, out ppRole);
+		public HRESULT CreateRole(BSTR bstrRoleName, VARIANT varReserved, out IAzRole* ppRole) mut => VT.CreateRole(ref this, bstrRoleName, varReserved, out ppRole);
 		public HRESULT DeleteRole(BSTR bstrRoleName, VARIANT varReserved) mut => VT.DeleteRole(ref this, bstrRoleName, varReserved);
-		public HRESULT get_Tasks(IAzTasks** ppTaskCollection) mut => VT.get_Tasks(ref this, ppTaskCollection);
-		public HRESULT OpenTask(BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) mut => VT.OpenTask(ref this, bstrTaskName, varReserved, ppTask);
-		public HRESULT CreateTask(BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) mut => VT.CreateTask(ref this, bstrTaskName, varReserved, ppTask);
+		public HRESULT get_Tasks(out IAzTasks* ppTaskCollection) mut => VT.get_Tasks(ref this, out ppTaskCollection);
+		public HRESULT OpenTask(BSTR bstrTaskName, VARIANT varReserved, out IAzTask* ppTask) mut => VT.OpenTask(ref this, bstrTaskName, varReserved, out ppTask);
+		public HRESULT CreateTask(BSTR bstrTaskName, VARIANT varReserved, out IAzTask* ppTask) mut => VT.CreateTask(ref this, bstrTaskName, varReserved, out ppTask);
 		public HRESULT DeleteTask(BSTR bstrTaskName, VARIANT varReserved) mut => VT.DeleteTask(ref this, bstrTaskName, varReserved);
 		public HRESULT Submit(int32 lFlags, VARIANT varReserved) mut => VT.Submit(ref this, lFlags, varReserved);
 		public HRESULT get_CanBeDelegated(out BOOL pfProp) mut => VT.get_CanBeDelegated(ref this, out pfProp);
@@ -1334,11 +1485,11 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR* pbstrName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, out BSTR pbstrName) get_Name;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrName) put_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR* pbstrDescription) get_Description;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, out BSTR pbstrDescription) get_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrDescription) put_Description;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR* pbstrApplicationData) get_ApplicationData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, out BSTR pbstrApplicationData) get_ApplicationData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrApplicationData) put_ApplicationData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, out BOOL pfProp) get_Writable;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, int32 lPropId, VARIANT varReserved, out VARIANT pvarProp) GetProperty;
@@ -1351,17 +1502,17 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministrator;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrReader, VARIANT varReserved) AddPolicyReader;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReader;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, IAzApplicationGroups** ppGroupCollection) get_ApplicationGroups;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) OpenApplicationGroup;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) CreateApplicationGroup;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, out IAzApplicationGroups* ppGroupCollection) get_ApplicationGroups;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrGroupName, VARIANT varReserved, out IAzApplicationGroup* ppGroup) OpenApplicationGroup;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrGroupName, VARIANT varReserved, out IAzApplicationGroup* ppGroup) CreateApplicationGroup;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrGroupName, VARIANT varReserved) DeleteApplicationGroup;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, IAzRoles** ppRoleCollection) get_Roles;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) OpenRole;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) CreateRole;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, out IAzRoles* ppRoleCollection) get_Roles;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrRoleName, VARIANT varReserved, out IAzRole* ppRole) OpenRole;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrRoleName, VARIANT varReserved, out IAzRole* ppRole) CreateRole;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrRoleName, VARIANT varReserved) DeleteRole;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, IAzTasks** ppTaskCollection) get_Tasks;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) OpenTask;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) CreateTask;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, out IAzTasks* ppTaskCollection) get_Tasks;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrTaskName, VARIANT varReserved, out IAzTask* ppTask) OpenTask;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrTaskName, VARIANT varReserved, out IAzTask* ppTask) CreateTask;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, BSTR bstrTaskName, VARIANT varReserved) DeleteTask;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, int32 lFlags, VARIANT varReserved) Submit;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope self, out BOOL pfProp) get_CanBeDelegated;
@@ -1383,14 +1534,14 @@ static
 		
 		public HRESULT get_Item(int32 Index, out VARIANT pvarObtPtr) mut => VT.get_Item(ref this, Index, out pvarObtPtr);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
-		public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut => VT.get__NewEnum(ref this, ppEnumPtr);
+		public HRESULT get__NewEnum(out IUnknown* ppEnumPtr) mut => VT.get__NewEnum(ref this, out ppEnumPtr);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScopes self, int32 Index, out VARIANT pvarObtPtr) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScopes self, out int32 plCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScopes self, IUnknown** ppEnumPtr) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScopes self, out IUnknown* ppEnumPtr) get__NewEnum;
 		}
 	}
 	[CRepr]
@@ -1400,17 +1551,17 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(BSTR* pbstrName) mut => VT.get_Name(ref this, pbstrName);
+		public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
 		public HRESULT put_Name(BSTR bstrName) mut => VT.put_Name(ref this, bstrName);
 		public HRESULT get_Type(out int32 plProp) mut => VT.get_Type(ref this, out plProp);
 		public HRESULT put_Type(int32 lProp) mut => VT.put_Type(ref this, lProp);
-		public HRESULT get_LdapQuery(BSTR* pbstrProp) mut => VT.get_LdapQuery(ref this, pbstrProp);
+		public HRESULT get_LdapQuery(out BSTR pbstrProp) mut => VT.get_LdapQuery(ref this, out pbstrProp);
 		public HRESULT put_LdapQuery(BSTR bstrProp) mut => VT.put_LdapQuery(ref this, bstrProp);
 		public HRESULT get_AppMembers(out VARIANT pvarProp) mut => VT.get_AppMembers(ref this, out pvarProp);
 		public HRESULT get_AppNonMembers(out VARIANT pvarProp) mut => VT.get_AppNonMembers(ref this, out pvarProp);
 		public HRESULT get_Members(out VARIANT pvarProp) mut => VT.get_Members(ref this, out pvarProp);
 		public HRESULT get_NonMembers(out VARIANT pvarProp) mut => VT.get_NonMembers(ref this, out pvarProp);
-		public HRESULT get_Description(BSTR* pbstrDescription) mut => VT.get_Description(ref this, pbstrDescription);
+		public HRESULT get_Description(out BSTR pbstrDescription) mut => VT.get_Description(ref this, out pbstrDescription);
 		public HRESULT put_Description(BSTR bstrDescription) mut => VT.put_Description(ref this, bstrDescription);
 		public HRESULT AddAppMember(BSTR bstrProp, VARIANT varReserved) mut => VT.AddAppMember(ref this, bstrProp, varReserved);
 		public HRESULT DeleteAppMember(BSTR bstrProp, VARIANT varReserved) mut => VT.DeleteAppMember(ref this, bstrProp, varReserved);
@@ -1436,17 +1587,17 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, BSTR* pbstrName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, out BSTR pbstrName) get_Name;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, BSTR bstrName) put_Name;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, out int32 plProp) get_Type;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, int32 lProp) put_Type;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, BSTR* pbstrProp) get_LdapQuery;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, out BSTR pbstrProp) get_LdapQuery;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, BSTR bstrProp) put_LdapQuery;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, out VARIANT pvarProp) get_AppMembers;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, out VARIANT pvarProp) get_AppNonMembers;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, out VARIANT pvarProp) get_Members;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, out VARIANT pvarProp) get_NonMembers;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, BSTR* pbstrDescription) get_Description;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, out BSTR pbstrDescription) get_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, BSTR bstrDescription) put_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, BSTR bstrProp, VARIANT varReserved) AddAppMember;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup self, BSTR bstrProp, VARIANT varReserved) DeleteAppMember;
@@ -1479,14 +1630,14 @@ static
 		
 		public HRESULT get_Item(int32 Index, out VARIANT pvarObtPtr) mut => VT.get_Item(ref this, Index, out pvarObtPtr);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
-		public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut => VT.get__NewEnum(ref this, ppEnumPtr);
+		public HRESULT get__NewEnum(out IUnknown* ppEnumPtr) mut => VT.get__NewEnum(ref this, out ppEnumPtr);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroups self, int32 Index, out VARIANT pvarObtPtr) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroups self, out int32 plCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroups self, IUnknown** ppEnumPtr) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroups self, out IUnknown* ppEnumPtr) get__NewEnum;
 		}
 	}
 	[CRepr]
@@ -1496,11 +1647,11 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(BSTR* pbstrName) mut => VT.get_Name(ref this, pbstrName);
+		public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
 		public HRESULT put_Name(BSTR bstrName) mut => VT.put_Name(ref this, bstrName);
-		public HRESULT get_Description(BSTR* pbstrDescription) mut => VT.get_Description(ref this, pbstrDescription);
+		public HRESULT get_Description(out BSTR pbstrDescription) mut => VT.get_Description(ref this, out pbstrDescription);
 		public HRESULT put_Description(BSTR bstrDescription) mut => VT.put_Description(ref this, bstrDescription);
-		public HRESULT get_ApplicationData(BSTR* pbstrApplicationData) mut => VT.get_ApplicationData(ref this, pbstrApplicationData);
+		public HRESULT get_ApplicationData(out BSTR pbstrApplicationData) mut => VT.get_ApplicationData(ref this, out pbstrApplicationData);
 		public HRESULT put_ApplicationData(BSTR bstrApplicationData) mut => VT.put_ApplicationData(ref this, bstrApplicationData);
 		public HRESULT AddAppMember(BSTR bstrProp, VARIANT varReserved) mut => VT.AddAppMember(ref this, bstrProp, varReserved);
 		public HRESULT DeleteAppMember(BSTR bstrProp, VARIANT varReserved) mut => VT.DeleteAppMember(ref this, bstrProp, varReserved);
@@ -1527,11 +1678,11 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRole self, BSTR* pbstrName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRole self, out BSTR pbstrName) get_Name;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRole self, BSTR bstrName) put_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRole self, BSTR* pbstrDescription) get_Description;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRole self, out BSTR pbstrDescription) get_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRole self, BSTR bstrDescription) put_Description;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRole self, BSTR* pbstrApplicationData) get_ApplicationData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRole self, out BSTR pbstrApplicationData) get_ApplicationData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRole self, BSTR bstrApplicationData) put_ApplicationData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRole self, BSTR bstrProp, VARIANT varReserved) AddAppMember;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRole self, BSTR bstrProp, VARIANT varReserved) DeleteAppMember;
@@ -1565,14 +1716,14 @@ static
 		
 		public HRESULT get_Item(int32 Index, out VARIANT pvarObtPtr) mut => VT.get_Item(ref this, Index, out pvarObtPtr);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
-		public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut => VT.get__NewEnum(ref this, ppEnumPtr);
+		public HRESULT get__NewEnum(out IUnknown* ppEnumPtr) mut => VT.get__NewEnum(ref this, out ppEnumPtr);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoles self, int32 Index, out VARIANT pvarObtPtr) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoles self, out int32 plCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoles self, IUnknown** ppEnumPtr) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoles self, out IUnknown* ppEnumPtr) get__NewEnum;
 		}
 	}
 	[CRepr]
@@ -1583,34 +1734,34 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT AccessCheck(BSTR bstrObjectName, VARIANT varScopeNames, VARIANT varOperations, VARIANT varParameterNames, VARIANT varParameterValues, VARIANT varInterfaceNames, VARIANT varInterfaceFlags, VARIANT varInterfaces, out VARIANT pvarResults) mut => VT.AccessCheck(ref this, bstrObjectName, varScopeNames, varOperations, varParameterNames, varParameterValues, varInterfaceNames, varInterfaceFlags, varInterfaces, out pvarResults);
-		public HRESULT GetBusinessRuleString(BSTR* pbstrBusinessRuleString) mut => VT.GetBusinessRuleString(ref this, pbstrBusinessRuleString);
-		public HRESULT get_UserDn(BSTR* pbstrProp) mut => VT.get_UserDn(ref this, pbstrProp);
-		public HRESULT get_UserSamCompat(BSTR* pbstrProp) mut => VT.get_UserSamCompat(ref this, pbstrProp);
-		public HRESULT get_UserDisplay(BSTR* pbstrProp) mut => VT.get_UserDisplay(ref this, pbstrProp);
-		public HRESULT get_UserGuid(BSTR* pbstrProp) mut => VT.get_UserGuid(ref this, pbstrProp);
-		public HRESULT get_UserCanonical(BSTR* pbstrProp) mut => VT.get_UserCanonical(ref this, pbstrProp);
-		public HRESULT get_UserUpn(BSTR* pbstrProp) mut => VT.get_UserUpn(ref this, pbstrProp);
-		public HRESULT get_UserDnsSamCompat(BSTR* pbstrProp) mut => VT.get_UserDnsSamCompat(ref this, pbstrProp);
+		public HRESULT GetBusinessRuleString(out BSTR pbstrBusinessRuleString) mut => VT.GetBusinessRuleString(ref this, out pbstrBusinessRuleString);
+		public HRESULT get_UserDn(out BSTR pbstrProp) mut => VT.get_UserDn(ref this, out pbstrProp);
+		public HRESULT get_UserSamCompat(out BSTR pbstrProp) mut => VT.get_UserSamCompat(ref this, out pbstrProp);
+		public HRESULT get_UserDisplay(out BSTR pbstrProp) mut => VT.get_UserDisplay(ref this, out pbstrProp);
+		public HRESULT get_UserGuid(out BSTR pbstrProp) mut => VT.get_UserGuid(ref this, out pbstrProp);
+		public HRESULT get_UserCanonical(out BSTR pbstrProp) mut => VT.get_UserCanonical(ref this, out pbstrProp);
+		public HRESULT get_UserUpn(out BSTR pbstrProp) mut => VT.get_UserUpn(ref this, out pbstrProp);
+		public HRESULT get_UserDnsSamCompat(out BSTR pbstrProp) mut => VT.get_UserDnsSamCompat(ref this, out pbstrProp);
 		public HRESULT GetProperty(int32 lPropId, VARIANT varReserved, out VARIANT pvarProp) mut => VT.GetProperty(ref this, lPropId, varReserved, out pvarProp);
 		public HRESULT GetRoles(BSTR bstrScopeName, out VARIANT pvarRoleNames) mut => VT.GetRoles(ref this, bstrScopeName, out pvarRoleNames);
-		public HRESULT get_RoleForAccessCheck(BSTR* pbstrProp) mut => VT.get_RoleForAccessCheck(ref this, pbstrProp);
+		public HRESULT get_RoleForAccessCheck(out BSTR pbstrProp) mut => VT.get_RoleForAccessCheck(ref this, out pbstrProp);
 		public HRESULT put_RoleForAccessCheck(BSTR bstrProp) mut => VT.put_RoleForAccessCheck(ref this, bstrProp);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, BSTR bstrObjectName, VARIANT varScopeNames, VARIANT varOperations, VARIANT varParameterNames, VARIANT varParameterValues, VARIANT varInterfaceNames, VARIANT varInterfaceFlags, VARIANT varInterfaces, out VARIANT pvarResults) AccessCheck;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, BSTR* pbstrBusinessRuleString) GetBusinessRuleString;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, BSTR* pbstrProp) get_UserDn;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, BSTR* pbstrProp) get_UserSamCompat;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, BSTR* pbstrProp) get_UserDisplay;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, BSTR* pbstrProp) get_UserGuid;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, BSTR* pbstrProp) get_UserCanonical;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, BSTR* pbstrProp) get_UserUpn;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, BSTR* pbstrProp) get_UserDnsSamCompat;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, out BSTR pbstrBusinessRuleString) GetBusinessRuleString;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, out BSTR pbstrProp) get_UserDn;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, out BSTR pbstrProp) get_UserSamCompat;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, out BSTR pbstrProp) get_UserDisplay;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, out BSTR pbstrProp) get_UserGuid;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, out BSTR pbstrProp) get_UserCanonical;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, out BSTR pbstrProp) get_UserUpn;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, out BSTR pbstrProp) get_UserDnsSamCompat;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, int32 lPropId, VARIANT varReserved, out VARIANT pvarProp) GetProperty;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, BSTR bstrScopeName, out VARIANT pvarRoleNames) GetRoles;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, BSTR* pbstrProp) get_RoleForAccessCheck;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, out BSTR pbstrProp) get_RoleForAccessCheck;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext self, BSTR bstrProp) put_RoleForAccessCheck;
 		}
 	}
@@ -1626,7 +1777,7 @@ static
 		public HRESULT AddApplicationGroups(VARIANT varApplicationGroups) mut => VT.AddApplicationGroups(ref this, varApplicationGroups);
 		public HRESULT AddStringSids(VARIANT varStringSids) mut => VT.AddStringSids(ref this, varStringSids);
 		public HRESULT put_LDAPQueryDN(BSTR bstrLDAPQueryDN) mut => VT.put_LDAPQueryDN(ref this, bstrLDAPQueryDN);
-		public HRESULT get_LDAPQueryDN(BSTR* pbstrLDAPQueryDN) mut => VT.get_LDAPQueryDN(ref this, pbstrLDAPQueryDN);
+		public HRESULT get_LDAPQueryDN(out BSTR pbstrLDAPQueryDN) mut => VT.get_LDAPQueryDN(ref this, out pbstrLDAPQueryDN);
 
 		[CRepr]
 		public struct VTable : IAzClientContext.VTable
@@ -1636,7 +1787,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext2 self, VARIANT varApplicationGroups) AddApplicationGroups;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext2 self, VARIANT varStringSids) AddStringSids;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext2 self, BSTR bstrLDAPQueryDN) put_LDAPQueryDN;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext2 self, BSTR* pbstrLDAPQueryDN) get_LDAPQueryDN;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext2 self, out BSTR pbstrLDAPQueryDN) get_LDAPQueryDN;
 		}
 	}
 	[CRepr]
@@ -1648,7 +1799,7 @@ static
 		
 		public HRESULT put_BusinessRuleResult(BOOL bResult) mut => VT.put_BusinessRuleResult(ref this, bResult);
 		public HRESULT put_BusinessRuleString(BSTR bstrBusinessRuleString) mut => VT.put_BusinessRuleString(ref this, bstrBusinessRuleString);
-		public HRESULT get_BusinessRuleString(BSTR* pbstrBusinessRuleString) mut => VT.get_BusinessRuleString(ref this, pbstrBusinessRuleString);
+		public HRESULT get_BusinessRuleString(out BSTR pbstrBusinessRuleString) mut => VT.get_BusinessRuleString(ref this, out pbstrBusinessRuleString);
 		public HRESULT GetParameter(BSTR bstrParameterName, out VARIANT pvarParameterValue) mut => VT.GetParameter(ref this, bstrParameterName, out pvarParameterValue);
 
 		[CRepr]
@@ -1656,7 +1807,7 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzBizRuleContext self, BOOL bResult) put_BusinessRuleResult;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzBizRuleContext self, BSTR bstrBusinessRuleString) put_BusinessRuleString;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzBizRuleContext self, BSTR* pbstrBusinessRuleString) get_BusinessRuleString;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzBizRuleContext self, out BSTR pbstrBusinessRuleString) get_BusinessRuleString;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzBizRuleContext self, BSTR bstrParameterName, out VARIANT pvarParameterValue) GetParameter;
 		}
 	}
@@ -1719,10 +1870,10 @@ static
 		
 		public HRESULT AccessCheck2(BSTR bstrObjectName, BSTR bstrScopeName, int32 lOperation, out uint32 plResult) mut => VT.AccessCheck2(ref this, bstrObjectName, bstrScopeName, lOperation, out plResult);
 		public HRESULT IsInRoleAssignment(BSTR bstrScopeName, BSTR bstrRoleName, out int16 pbIsInRole) mut => VT.IsInRoleAssignment(ref this, bstrScopeName, bstrRoleName, out pbIsInRole);
-		public HRESULT GetOperations(BSTR bstrScopeName, IAzOperations** ppOperationCollection) mut => VT.GetOperations(ref this, bstrScopeName, ppOperationCollection);
-		public HRESULT GetTasks(BSTR bstrScopeName, IAzTasks** ppTaskCollection) mut => VT.GetTasks(ref this, bstrScopeName, ppTaskCollection);
-		public HRESULT get_BizRuleParameters(IAzBizRuleParameters** ppBizRuleParam) mut => VT.get_BizRuleParameters(ref this, ppBizRuleParam);
-		public HRESULT get_BizRuleInterfaces(IAzBizRuleInterfaces** ppBizRuleInterfaces) mut => VT.get_BizRuleInterfaces(ref this, ppBizRuleInterfaces);
+		public HRESULT GetOperations(BSTR bstrScopeName, out IAzOperations* ppOperationCollection) mut => VT.GetOperations(ref this, bstrScopeName, out ppOperationCollection);
+		public HRESULT GetTasks(BSTR bstrScopeName, out IAzTasks* ppTaskCollection) mut => VT.GetTasks(ref this, bstrScopeName, out ppTaskCollection);
+		public HRESULT get_BizRuleParameters(out IAzBizRuleParameters* ppBizRuleParam) mut => VT.get_BizRuleParameters(ref this, out ppBizRuleParam);
+		public HRESULT get_BizRuleInterfaces(out IAzBizRuleInterfaces* ppBizRuleInterfaces) mut => VT.get_BizRuleInterfaces(ref this, out ppBizRuleInterfaces);
 		public HRESULT GetGroups(BSTR bstrScopeName, AZ_PROP_CONSTANTS ulOptions, out VARIANT pGroupArray) mut => VT.GetGroups(ref this, bstrScopeName, ulOptions, out pGroupArray);
 		public HRESULT get_Sids(out VARIANT pStringSidArray) mut => VT.get_Sids(ref this, out pStringSidArray);
 
@@ -1731,10 +1882,10 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext3 self, BSTR bstrObjectName, BSTR bstrScopeName, int32 lOperation, out uint32 plResult) AccessCheck2;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext3 self, BSTR bstrScopeName, BSTR bstrRoleName, out int16 pbIsInRole) IsInRoleAssignment;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext3 self, BSTR bstrScopeName, IAzOperations** ppOperationCollection) GetOperations;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext3 self, BSTR bstrScopeName, IAzTasks** ppTaskCollection) GetTasks;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext3 self, IAzBizRuleParameters** ppBizRuleParam) get_BizRuleParameters;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext3 self, IAzBizRuleInterfaces** ppBizRuleInterfaces) get_BizRuleInterfaces;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext3 self, BSTR bstrScopeName, out IAzOperations* ppOperationCollection) GetOperations;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext3 self, BSTR bstrScopeName, out IAzTasks* ppTaskCollection) GetTasks;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext3 self, out IAzBizRuleParameters* ppBizRuleParam) get_BizRuleParameters;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext3 self, out IAzBizRuleInterfaces* ppBizRuleInterfaces) get_BizRuleInterfaces;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext3 self, BSTR bstrScopeName, AZ_PROP_CONSTANTS ulOptions, out VARIANT pGroupArray) GetGroups;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzClientContext3 self, out VARIANT pStringSidArray) get_Sids;
 		}
@@ -1746,25 +1897,25 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_RoleDefinitions(IAzRoleDefinitions** ppRoleDefinitions) mut => VT.get_RoleDefinitions(ref this, ppRoleDefinitions);
-		public HRESULT CreateRoleDefinition(BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) mut => VT.CreateRoleDefinition(ref this, bstrRoleDefinitionName, ppRoleDefinitions);
-		public HRESULT OpenRoleDefinition(BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) mut => VT.OpenRoleDefinition(ref this, bstrRoleDefinitionName, ppRoleDefinitions);
+		public HRESULT get_RoleDefinitions(out IAzRoleDefinitions* ppRoleDefinitions) mut => VT.get_RoleDefinitions(ref this, out ppRoleDefinitions);
+		public HRESULT CreateRoleDefinition(BSTR bstrRoleDefinitionName, out IAzRoleDefinition* ppRoleDefinitions) mut => VT.CreateRoleDefinition(ref this, bstrRoleDefinitionName, out ppRoleDefinitions);
+		public HRESULT OpenRoleDefinition(BSTR bstrRoleDefinitionName, out IAzRoleDefinition* ppRoleDefinitions) mut => VT.OpenRoleDefinition(ref this, bstrRoleDefinitionName, out ppRoleDefinitions);
 		public HRESULT DeleteRoleDefinition(BSTR bstrRoleDefinitionName) mut => VT.DeleteRoleDefinition(ref this, bstrRoleDefinitionName);
-		public HRESULT get_RoleAssignments(IAzRoleAssignments** ppRoleAssignments) mut => VT.get_RoleAssignments(ref this, ppRoleAssignments);
-		public HRESULT CreateRoleAssignment(BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) mut => VT.CreateRoleAssignment(ref this, bstrRoleAssignmentName, ppRoleAssignment);
-		public HRESULT OpenRoleAssignment(BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) mut => VT.OpenRoleAssignment(ref this, bstrRoleAssignmentName, ppRoleAssignment);
+		public HRESULT get_RoleAssignments(out IAzRoleAssignments* ppRoleAssignments) mut => VT.get_RoleAssignments(ref this, out ppRoleAssignments);
+		public HRESULT CreateRoleAssignment(BSTR bstrRoleAssignmentName, out IAzRoleAssignment* ppRoleAssignment) mut => VT.CreateRoleAssignment(ref this, bstrRoleAssignmentName, out ppRoleAssignment);
+		public HRESULT OpenRoleAssignment(BSTR bstrRoleAssignmentName, out IAzRoleAssignment* ppRoleAssignment) mut => VT.OpenRoleAssignment(ref this, bstrRoleAssignmentName, out ppRoleAssignment);
 		public HRESULT DeleteRoleAssignment(BSTR bstrRoleAssignmentName) mut => VT.DeleteRoleAssignment(ref this, bstrRoleAssignmentName);
 
 		[CRepr]
 		public struct VTable : IAzScope.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope2 self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope2 self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) CreateRoleDefinition;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope2 self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) OpenRoleDefinition;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope2 self, out IAzRoleDefinitions* ppRoleDefinitions) get_RoleDefinitions;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope2 self, BSTR bstrRoleDefinitionName, out IAzRoleDefinition* ppRoleDefinitions) CreateRoleDefinition;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope2 self, BSTR bstrRoleDefinitionName, out IAzRoleDefinition* ppRoleDefinitions) OpenRoleDefinition;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope2 self, BSTR bstrRoleDefinitionName) DeleteRoleDefinition;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope2 self, IAzRoleAssignments** ppRoleAssignments) get_RoleAssignments;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope2 self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) CreateRoleAssignment;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope2 self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) OpenRoleAssignment;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope2 self, out IAzRoleAssignments* ppRoleAssignments) get_RoleAssignments;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope2 self, BSTR bstrRoleAssignmentName, out IAzRoleAssignment* ppRoleAssignment) CreateRoleAssignment;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope2 self, BSTR bstrRoleAssignmentName, out IAzRoleAssignment* ppRoleAssignment) OpenRoleAssignment;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzScope2 self, BSTR bstrRoleAssignmentName) DeleteRoleAssignment;
 		}
 	}
@@ -1776,16 +1927,16 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT ScopeExists(BSTR bstrScopeName, out int16 pbExist) mut => VT.ScopeExists(ref this, bstrScopeName, out pbExist);
-		public HRESULT OpenScope2(BSTR bstrScopeName, IAzScope2** ppScope2) mut => VT.OpenScope2(ref this, bstrScopeName, ppScope2);
-		public HRESULT CreateScope2(BSTR bstrScopeName, IAzScope2** ppScope2) mut => VT.CreateScope2(ref this, bstrScopeName, ppScope2);
+		public HRESULT OpenScope2(BSTR bstrScopeName, out IAzScope2* ppScope2) mut => VT.OpenScope2(ref this, bstrScopeName, out ppScope2);
+		public HRESULT CreateScope2(BSTR bstrScopeName, out IAzScope2* ppScope2) mut => VT.CreateScope2(ref this, bstrScopeName, out ppScope2);
 		public HRESULT DeleteScope2(BSTR bstrScopeName) mut => VT.DeleteScope2(ref this, bstrScopeName);
-		public HRESULT get_RoleDefinitions(IAzRoleDefinitions** ppRoleDefinitions) mut => VT.get_RoleDefinitions(ref this, ppRoleDefinitions);
-		public HRESULT CreateRoleDefinition(BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) mut => VT.CreateRoleDefinition(ref this, bstrRoleDefinitionName, ppRoleDefinitions);
-		public HRESULT OpenRoleDefinition(BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) mut => VT.OpenRoleDefinition(ref this, bstrRoleDefinitionName, ppRoleDefinitions);
+		public HRESULT get_RoleDefinitions(out IAzRoleDefinitions* ppRoleDefinitions) mut => VT.get_RoleDefinitions(ref this, out ppRoleDefinitions);
+		public HRESULT CreateRoleDefinition(BSTR bstrRoleDefinitionName, out IAzRoleDefinition* ppRoleDefinitions) mut => VT.CreateRoleDefinition(ref this, bstrRoleDefinitionName, out ppRoleDefinitions);
+		public HRESULT OpenRoleDefinition(BSTR bstrRoleDefinitionName, out IAzRoleDefinition* ppRoleDefinitions) mut => VT.OpenRoleDefinition(ref this, bstrRoleDefinitionName, out ppRoleDefinitions);
 		public HRESULT DeleteRoleDefinition(BSTR bstrRoleDefinitionName) mut => VT.DeleteRoleDefinition(ref this, bstrRoleDefinitionName);
-		public HRESULT get_RoleAssignments(IAzRoleAssignments** ppRoleAssignments) mut => VT.get_RoleAssignments(ref this, ppRoleAssignments);
-		public HRESULT CreateRoleAssignment(BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) mut => VT.CreateRoleAssignment(ref this, bstrRoleAssignmentName, ppRoleAssignment);
-		public HRESULT OpenRoleAssignment(BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) mut => VT.OpenRoleAssignment(ref this, bstrRoleAssignmentName, ppRoleAssignment);
+		public HRESULT get_RoleAssignments(out IAzRoleAssignments* ppRoleAssignments) mut => VT.get_RoleAssignments(ref this, out ppRoleAssignments);
+		public HRESULT CreateRoleAssignment(BSTR bstrRoleAssignmentName, out IAzRoleAssignment* ppRoleAssignment) mut => VT.CreateRoleAssignment(ref this, bstrRoleAssignmentName, out ppRoleAssignment);
+		public HRESULT OpenRoleAssignment(BSTR bstrRoleAssignmentName, out IAzRoleAssignment* ppRoleAssignment) mut => VT.OpenRoleAssignment(ref this, bstrRoleAssignmentName, out ppRoleAssignment);
 		public HRESULT DeleteRoleAssignment(BSTR bstrRoleAssignmentName) mut => VT.DeleteRoleAssignment(ref this, bstrRoleAssignmentName);
 		public HRESULT get_BizRulesEnabled(out int16 pbEnabled) mut => VT.get_BizRulesEnabled(ref this, out pbEnabled);
 		public HRESULT put_BizRulesEnabled(int16 bEnabled) mut => VT.put_BizRulesEnabled(ref this, bEnabled);
@@ -1794,16 +1945,16 @@ static
 		public struct VTable : IAzApplication2.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrScopeName, out int16 pbExist) ScopeExists;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrScopeName, IAzScope2** ppScope2) OpenScope2;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrScopeName, IAzScope2** ppScope2) CreateScope2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrScopeName, out IAzScope2* ppScope2) OpenScope2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrScopeName, out IAzScope2* ppScope2) CreateScope2;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrScopeName) DeleteScope2;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) CreateRoleDefinition;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) OpenRoleDefinition;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, out IAzRoleDefinitions* ppRoleDefinitions) get_RoleDefinitions;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrRoleDefinitionName, out IAzRoleDefinition* ppRoleDefinitions) CreateRoleDefinition;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrRoleDefinitionName, out IAzRoleDefinition* ppRoleDefinitions) OpenRoleDefinition;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrRoleDefinitionName) DeleteRoleDefinition;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, IAzRoleAssignments** ppRoleAssignments) get_RoleAssignments;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) CreateRoleAssignment;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) OpenRoleAssignment;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, out IAzRoleAssignments* ppRoleAssignments) get_RoleAssignments;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrRoleAssignmentName, out IAzRoleAssignment* ppRoleAssignment) CreateRoleAssignment;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrRoleAssignmentName, out IAzRoleAssignment* ppRoleAssignment) OpenRoleAssignment;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, BSTR bstrRoleAssignmentName) DeleteRoleAssignment;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, out int16 pbEnabled) get_BizRulesEnabled;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplication3 self, int16 bEnabled) put_BizRulesEnabled;
@@ -1816,12 +1967,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT RoleAssignments(BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) mut => VT.RoleAssignments(ref this, bstrScopeName, bRecursive, ppRoleAssignments);
+		public HRESULT RoleAssignments(BSTR bstrScopeName, int16 bRecursive, out IAzRoleAssignments* ppRoleAssignments) mut => VT.RoleAssignments(ref this, bstrScopeName, bRecursive, out ppRoleAssignments);
 
 		[CRepr]
 		public struct VTable : IAzOperation.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperation2 self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzOperation2 self, BSTR bstrScopeName, int16 bRecursive, out IAzRoleAssignments* ppRoleAssignments) RoleAssignments;
 		}
 	}
 	[CRepr]
@@ -1833,14 +1984,14 @@ static
 		
 		public HRESULT get_Item(int32 Index, out VARIANT pvarObtPtr) mut => VT.get_Item(ref this, Index, out pvarObtPtr);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
-		public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut => VT.get__NewEnum(ref this, ppEnumPtr);
+		public HRESULT get__NewEnum(out IUnknown* ppEnumPtr) mut => VT.get__NewEnum(ref this, out ppEnumPtr);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleDefinitions self, int32 Index, out VARIANT pvarObtPtr) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleDefinitions self, out int32 plCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleDefinitions self, IUnknown** ppEnumPtr) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleDefinitions self, out IUnknown* ppEnumPtr) get__NewEnum;
 		}
 	}
 	[CRepr]
@@ -1850,18 +2001,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT RoleAssignments(BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) mut => VT.RoleAssignments(ref this, bstrScopeName, bRecursive, ppRoleAssignments);
+		public HRESULT RoleAssignments(BSTR bstrScopeName, int16 bRecursive, out IAzRoleAssignments* ppRoleAssignments) mut => VT.RoleAssignments(ref this, bstrScopeName, bRecursive, out ppRoleAssignments);
 		public HRESULT AddRoleDefinition(BSTR bstrRoleDefinition) mut => VT.AddRoleDefinition(ref this, bstrRoleDefinition);
 		public HRESULT DeleteRoleDefinition(BSTR bstrRoleDefinition) mut => VT.DeleteRoleDefinition(ref this, bstrRoleDefinition);
-		public HRESULT get_RoleDefinitions(IAzRoleDefinitions** ppRoleDefinitions) mut => VT.get_RoleDefinitions(ref this, ppRoleDefinitions);
+		public HRESULT get_RoleDefinitions(out IAzRoleDefinitions* ppRoleDefinitions) mut => VT.get_RoleDefinitions(ref this, out ppRoleDefinitions);
 
 		[CRepr]
 		public struct VTable : IAzTask.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleDefinition self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleDefinition self, BSTR bstrScopeName, int16 bRecursive, out IAzRoleAssignments* ppRoleAssignments) RoleAssignments;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleDefinition self, BSTR bstrRoleDefinition) AddRoleDefinition;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleDefinition self, BSTR bstrRoleDefinition) DeleteRoleDefinition;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleDefinition self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleDefinition self, out IAzRoleDefinitions* ppRoleDefinitions) get_RoleDefinitions;
 		}
 	}
 	[CRepr]
@@ -1873,16 +2024,16 @@ static
 		
 		public HRESULT AddRoleDefinition(BSTR bstrRoleDefinition) mut => VT.AddRoleDefinition(ref this, bstrRoleDefinition);
 		public HRESULT DeleteRoleDefinition(BSTR bstrRoleDefinition) mut => VT.DeleteRoleDefinition(ref this, bstrRoleDefinition);
-		public HRESULT get_RoleDefinitions(IAzRoleDefinitions** ppRoleDefinitions) mut => VT.get_RoleDefinitions(ref this, ppRoleDefinitions);
-		public HRESULT get_Scope(IAzScope** ppScope) mut => VT.get_Scope(ref this, ppScope);
+		public HRESULT get_RoleDefinitions(out IAzRoleDefinitions* ppRoleDefinitions) mut => VT.get_RoleDefinitions(ref this, out ppRoleDefinitions);
+		public HRESULT get_Scope(out IAzScope* ppScope) mut => VT.get_Scope(ref this, out ppScope);
 
 		[CRepr]
 		public struct VTable : IAzRole.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleAssignment self, BSTR bstrRoleDefinition) AddRoleDefinition;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleAssignment self, BSTR bstrRoleDefinition) DeleteRoleDefinition;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleAssignment self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleAssignment self, IAzScope** ppScope) get_Scope;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleAssignment self, out IAzRoleDefinitions* ppRoleDefinitions) get_RoleDefinitions;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleAssignment self, out IAzScope* ppScope) get_Scope;
 		}
 	}
 	[CRepr]
@@ -1894,14 +2045,14 @@ static
 		
 		public HRESULT get_Item(int32 Index, out VARIANT pvarObtPtr) mut => VT.get_Item(ref this, Index, out pvarObtPtr);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
-		public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut => VT.get__NewEnum(ref this, ppEnumPtr);
+		public HRESULT get__NewEnum(out IUnknown* ppEnumPtr) mut => VT.get__NewEnum(ref this, out ppEnumPtr);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleAssignments self, int32 Index, out VARIANT pvarObtPtr) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleAssignments self, out int32 plCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleAssignments self, IUnknown** ppEnumPtr) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzRoleAssignments self, out IUnknown* ppEnumPtr) get__NewEnum;
 		}
 	}
 	[CRepr]
@@ -1911,14 +2062,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_NameResolver(IAzNameResolver** ppNameResolver) mut => VT.get_NameResolver(ref this, ppNameResolver);
-		public HRESULT get_ObjectPicker(IAzObjectPicker** ppObjectPicker) mut => VT.get_ObjectPicker(ref this, ppObjectPicker);
+		public HRESULT get_NameResolver(out IAzNameResolver* ppNameResolver) mut => VT.get_NameResolver(ref this, out ppNameResolver);
+		public HRESULT get_ObjectPicker(out IAzObjectPicker* ppObjectPicker) mut => VT.get_ObjectPicker(ref this, out ppObjectPicker);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzPrincipalLocator self, IAzNameResolver** ppNameResolver) get_NameResolver;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzPrincipalLocator self, IAzObjectPicker** ppObjectPicker) get_ObjectPicker;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzPrincipalLocator self, out IAzNameResolver* ppNameResolver) get_NameResolver;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzPrincipalLocator self, out IAzObjectPicker* ppObjectPicker) get_ObjectPicker;
 		}
 	}
 	[CRepr]
@@ -1928,13 +2079,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT NameFromSid(BSTR bstrSid, out int32 pSidType, BSTR* pbstrName) mut => VT.NameFromSid(ref this, bstrSid, out pSidType, pbstrName);
+		public HRESULT NameFromSid(BSTR bstrSid, out int32 pSidType, out BSTR pbstrName) mut => VT.NameFromSid(ref this, bstrSid, out pSidType, out pbstrName);
 		public HRESULT NamesFromSids(VARIANT vSids, out VARIANT pvSidTypes, out VARIANT pvNames) mut => VT.NamesFromSids(ref this, vSids, out pvSidTypes, out pvNames);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzNameResolver self, BSTR bstrSid, out int32 pSidType, BSTR* pbstrName) NameFromSid;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzNameResolver self, BSTR bstrSid, out int32 pSidType, out BSTR pbstrName) NameFromSid;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzNameResolver self, VARIANT vSids, out VARIANT pvSidTypes, out VARIANT pvNames) NamesFromSids;
 		}
 	}
@@ -1946,13 +2097,13 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT GetPrincipals(HWND hParentWnd, BSTR bstrTitle, out VARIANT pvSidTypes, out VARIANT pvNames, out VARIANT pvSids) mut => VT.GetPrincipals(ref this, hParentWnd, bstrTitle, out pvSidTypes, out pvNames, out pvSids);
-		public HRESULT get_Name(BSTR* pbstrName) mut => VT.get_Name(ref this, pbstrName);
+		public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzObjectPicker self, HWND hParentWnd, BSTR bstrTitle, out VARIANT pvSidTypes, out VARIANT pvNames, out VARIANT pvSids) GetPrincipals;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzObjectPicker self, BSTR* pbstrName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzObjectPicker self, out BSTR pbstrName) get_Name;
 		}
 	}
 	[CRepr]
@@ -1962,24 +2113,24 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_BizRule(BSTR* pbstrProp) mut => VT.get_BizRule(ref this, pbstrProp);
+		public HRESULT get_BizRule(out BSTR pbstrProp) mut => VT.get_BizRule(ref this, out pbstrProp);
 		public HRESULT put_BizRule(BSTR bstrProp) mut => VT.put_BizRule(ref this, bstrProp);
-		public HRESULT get_BizRuleLanguage(BSTR* pbstrProp) mut => VT.get_BizRuleLanguage(ref this, pbstrProp);
+		public HRESULT get_BizRuleLanguage(out BSTR pbstrProp) mut => VT.get_BizRuleLanguage(ref this, out pbstrProp);
 		public HRESULT put_BizRuleLanguage(BSTR bstrProp) mut => VT.put_BizRuleLanguage(ref this, bstrProp);
-		public HRESULT get_BizRuleImportedPath(BSTR* pbstrProp) mut => VT.get_BizRuleImportedPath(ref this, pbstrProp);
+		public HRESULT get_BizRuleImportedPath(out BSTR pbstrProp) mut => VT.get_BizRuleImportedPath(ref this, out pbstrProp);
 		public HRESULT put_BizRuleImportedPath(BSTR bstrProp) mut => VT.put_BizRuleImportedPath(ref this, bstrProp);
-		public HRESULT RoleAssignments(BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) mut => VT.RoleAssignments(ref this, bstrScopeName, bRecursive, ppRoleAssignments);
+		public HRESULT RoleAssignments(BSTR bstrScopeName, int16 bRecursive, out IAzRoleAssignments* ppRoleAssignments) mut => VT.RoleAssignments(ref this, bstrScopeName, bRecursive, out ppRoleAssignments);
 
 		[CRepr]
 		public struct VTable : IAzApplicationGroup.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup2 self, BSTR* pbstrProp) get_BizRule;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup2 self, out BSTR pbstrProp) get_BizRule;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup2 self, BSTR bstrProp) put_BizRule;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup2 self, BSTR* pbstrProp) get_BizRuleLanguage;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup2 self, out BSTR pbstrProp) get_BizRuleLanguage;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup2 self, BSTR bstrProp) put_BizRuleLanguage;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup2 self, BSTR* pbstrProp) get_BizRuleImportedPath;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup2 self, out BSTR pbstrProp) get_BizRuleImportedPath;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup2 self, BSTR bstrProp) put_BizRuleImportedPath;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup2 self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzApplicationGroup2 self, BSTR bstrScopeName, int16 bRecursive, out IAzRoleAssignments* ppRoleAssignments) RoleAssignments;
 		}
 	}
 	[CRepr]
@@ -1989,23 +2140,23 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT RoleAssignments(BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) mut => VT.RoleAssignments(ref this, bstrScopeName, bRecursive, ppRoleAssignments);
+		public HRESULT RoleAssignments(BSTR bstrScopeName, int16 bRecursive, out IAzRoleAssignments* ppRoleAssignments) mut => VT.RoleAssignments(ref this, bstrScopeName, bRecursive, out ppRoleAssignments);
 
 		[CRepr]
 		public struct VTable : IAzTask.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask2 self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask2 self, BSTR bstrScopeName, int16 bRecursive, out IAzRoleAssignments* ppRoleAssignments) RoleAssignments;
 		}
 	}
 	#endregion
 	
 	#region Functions
 	[Import("authz.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL AuthzAccessCheck(AUTHZ_ACCESS_CHECK_FLAGS Flags, AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext, ref AUTHZ_ACCESS_REQUEST pRequest, AUTHZ_AUDIT_EVENT_HANDLE hAuditEvent, ref SECURITY_DESCRIPTOR pSecurityDescriptor, SECURITY_DESCRIPTOR** OptionalSecurityDescriptorArray, uint32 OptionalSecurityDescriptorCount, out AUTHZ_ACCESS_REPLY pReply, int* phAccessCheckResults);
+	public static extern BOOL AuthzAccessCheck(AUTHZ_ACCESS_CHECK_FLAGS Flags, AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext, ref AUTHZ_ACCESS_REQUEST pRequest, AUTHZ_AUDIT_EVENT_HANDLE hAuditEvent, PSECURITY_DESCRIPTOR pSecurityDescriptor, PSECURITY_DESCRIPTOR* OptionalSecurityDescriptorArray, uint32 OptionalSecurityDescriptorCount, out AUTHZ_ACCESS_REPLY pReply, int* phAccessCheckResults);
 	[Import("authz.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AuthzCachedAccessCheck(uint32 Flags, AUTHZ_ACCESS_CHECK_RESULTS_HANDLE hAccessCheckResults, ref AUTHZ_ACCESS_REQUEST pRequest, AUTHZ_AUDIT_EVENT_HANDLE hAuditEvent, out AUTHZ_ACCESS_REPLY pReply);
 	[Import("authz.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL AuthzOpenObjectAudit(uint32 Flags, AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext, ref AUTHZ_ACCESS_REQUEST pRequest, AUTHZ_AUDIT_EVENT_HANDLE hAuditEvent, ref SECURITY_DESCRIPTOR pSecurityDescriptor, SECURITY_DESCRIPTOR** OptionalSecurityDescriptorArray, uint32 OptionalSecurityDescriptorCount, ref AUTHZ_ACCESS_REPLY pReply);
+	public static extern BOOL AuthzOpenObjectAudit(uint32 Flags, AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext, ref AUTHZ_ACCESS_REQUEST pRequest, AUTHZ_AUDIT_EVENT_HANDLE hAuditEvent, PSECURITY_DESCRIPTOR pSecurityDescriptor, PSECURITY_DESCRIPTOR* OptionalSecurityDescriptorArray, uint32 OptionalSecurityDescriptorCount, ref AUTHZ_ACCESS_REPLY pReply);
 	[Import("authz.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AuthzFreeHandle(AUTHZ_ACCESS_CHECK_RESULTS_HANDLE hAccessCheckResults);
 	[Import("authz.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2083,11 +2234,11 @@ static
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetAuditedPermissionsFromAclW(ref ACL pacl, ref TRUSTEE_W pTrustee, out uint32 pSuccessfulAuditedRights, out uint32 pFailedAuditRights);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern uint32 GetNamedSecurityInfoA(PSTR pObjectName, SE_OBJECT_TYPE ObjectType, OBJECT_SECURITY_INFORMATION SecurityInfo, PSID* ppsidOwner, PSID* ppsidGroup, ACL** ppDacl, ACL** ppSacl, out SECURITY_DESCRIPTOR* ppSecurityDescriptor);
+	public static extern WIN32_ERROR GetNamedSecurityInfoA(PSTR pObjectName, SE_OBJECT_TYPE ObjectType, OBJECT_SECURITY_INFORMATION SecurityInfo, PSID* ppsidOwner, PSID* ppsidGroup, ACL** ppDacl, ACL** ppSacl, out PSECURITY_DESCRIPTOR ppSecurityDescriptor);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern uint32 GetNamedSecurityInfoW(PWSTR pObjectName, SE_OBJECT_TYPE ObjectType, OBJECT_SECURITY_INFORMATION SecurityInfo, PSID* ppsidOwner, PSID* ppsidGroup, ACL** ppDacl, ACL** ppSacl, out SECURITY_DESCRIPTOR* ppSecurityDescriptor);
+	public static extern WIN32_ERROR GetNamedSecurityInfoW(PWSTR pObjectName, SE_OBJECT_TYPE ObjectType, OBJECT_SECURITY_INFORMATION SecurityInfo, PSID* ppsidOwner, PSID* ppsidGroup, ACL** ppDacl, ACL** ppSacl, out PSECURITY_DESCRIPTOR ppSecurityDescriptor);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern uint32 GetSecurityInfo(HANDLE handle, SE_OBJECT_TYPE ObjectType, uint32 SecurityInfo, PSID* ppsidOwner, PSID* ppsidGroup, ACL** ppDacl, ACL** ppSacl, SECURITY_DESCRIPTOR** ppSecurityDescriptor);
+	public static extern WIN32_ERROR GetSecurityInfo(HANDLE handle, SE_OBJECT_TYPE ObjectType, uint32 SecurityInfo, PSID* ppsidOwner, PSID* ppsidGroup, ACL** ppDacl, ACL** ppSacl, PSECURITY_DESCRIPTOR* ppSecurityDescriptor);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetNamedSecurityInfoA(PSTR pObjectName, SE_OBJECT_TYPE ObjectType, OBJECT_SECURITY_INFORMATION SecurityInfo, PSID psidOwner, PSID psidGroup, ACL* pDacl, ACL* pSacl);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2109,13 +2260,13 @@ static
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 TreeSetNamedSecurityInfoW(PWSTR pObjectName, SE_OBJECT_TYPE ObjectType, uint32 SecurityInfo, PSID pOwner, PSID pGroup, ACL* pDacl, ACL* pSacl, TREE_SEC_INFO dwAction, FN_PROGRESS fnProgress, PROG_INVOKE_SETTING ProgressInvokeSetting, void* Args);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern uint32 BuildSecurityDescriptorA(TRUSTEE_A* pOwner, TRUSTEE_A* pGroup, uint32 cCountOfAccessEntries, EXPLICIT_ACCESS_A* pListOfAccessEntries, uint32 cCountOfAuditEntries, EXPLICIT_ACCESS_A* pListOfAuditEntries, SECURITY_DESCRIPTOR* pOldSD, out uint32 pSizeNewSD, out SECURITY_DESCRIPTOR* pNewSD);
+	public static extern uint32 BuildSecurityDescriptorA(TRUSTEE_A* pOwner, TRUSTEE_A* pGroup, uint32 cCountOfAccessEntries, EXPLICIT_ACCESS_A* pListOfAccessEntries, uint32 cCountOfAuditEntries, EXPLICIT_ACCESS_A* pListOfAuditEntries, PSECURITY_DESCRIPTOR pOldSD, out uint32 pSizeNewSD, out PSECURITY_DESCRIPTOR pNewSD);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern uint32 BuildSecurityDescriptorW(TRUSTEE_W* pOwner, TRUSTEE_W* pGroup, uint32 cCountOfAccessEntries, EXPLICIT_ACCESS_W* pListOfAccessEntries, uint32 cCountOfAuditEntries, EXPLICIT_ACCESS_W* pListOfAuditEntries, SECURITY_DESCRIPTOR* pOldSD, out uint32 pSizeNewSD, out SECURITY_DESCRIPTOR* pNewSD);
+	public static extern uint32 BuildSecurityDescriptorW(TRUSTEE_W* pOwner, TRUSTEE_W* pGroup, uint32 cCountOfAccessEntries, EXPLICIT_ACCESS_W* pListOfAccessEntries, uint32 cCountOfAuditEntries, EXPLICIT_ACCESS_W* pListOfAuditEntries, PSECURITY_DESCRIPTOR pOldSD, out uint32 pSizeNewSD, out PSECURITY_DESCRIPTOR pNewSD);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern uint32 LookupSecurityDescriptorPartsA(TRUSTEE_A** ppOwner, TRUSTEE_A** ppGroup, uint32* pcCountOfAccessEntries, EXPLICIT_ACCESS_A** ppListOfAccessEntries, uint32* pcCountOfAuditEntries, EXPLICIT_ACCESS_A** ppListOfAuditEntries, ref SECURITY_DESCRIPTOR pSD);
+	public static extern uint32 LookupSecurityDescriptorPartsA(TRUSTEE_A** ppOwner, TRUSTEE_A** ppGroup, uint32* pcCountOfAccessEntries, EXPLICIT_ACCESS_A** ppListOfAccessEntries, uint32* pcCountOfAuditEntries, EXPLICIT_ACCESS_A** ppListOfAuditEntries, PSECURITY_DESCRIPTOR pSD);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern uint32 LookupSecurityDescriptorPartsW(TRUSTEE_W** ppOwner, TRUSTEE_W** ppGroup, uint32* pcCountOfAccessEntries, EXPLICIT_ACCESS_W** ppListOfAccessEntries, uint32* pcCountOfAuditEntries, EXPLICIT_ACCESS_W** ppListOfAuditEntries, ref SECURITY_DESCRIPTOR pSD);
+	public static extern uint32 LookupSecurityDescriptorPartsW(TRUSTEE_W** ppOwner, TRUSTEE_W** ppGroup, uint32* pcCountOfAccessEntries, EXPLICIT_ACCESS_W** ppListOfAccessEntries, uint32* pcCountOfAuditEntries, EXPLICIT_ACCESS_W** ppListOfAuditEntries, PSECURITY_DESCRIPTOR pSD);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern void BuildExplicitAccessWithNameA(out EXPLICIT_ACCESS_A pExplicitAccess, PSTR pTrusteeName, uint32 AccessPermissions, ACCESS_MODE AccessMode, ACE_FLAGS Inheritance);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2173,12 +2324,12 @@ static
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ConvertStringSidToSidW(PWSTR StringSid, out PSID Sid);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL ConvertStringSecurityDescriptorToSecurityDescriptorA(PSTR StringSecurityDescriptor, uint32 StringSDRevision, out SECURITY_DESCRIPTOR* SecurityDescriptor, uint32* SecurityDescriptorSize);
+	public static extern BOOL ConvertStringSecurityDescriptorToSecurityDescriptorA(PSTR StringSecurityDescriptor, uint32 StringSDRevision, out PSECURITY_DESCRIPTOR SecurityDescriptor, uint32* SecurityDescriptorSize);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL ConvertStringSecurityDescriptorToSecurityDescriptorW(PWSTR StringSecurityDescriptor, uint32 StringSDRevision, out SECURITY_DESCRIPTOR* SecurityDescriptor, uint32* SecurityDescriptorSize);
+	public static extern BOOL ConvertStringSecurityDescriptorToSecurityDescriptorW(PWSTR StringSecurityDescriptor, uint32 StringSDRevision, out PSECURITY_DESCRIPTOR SecurityDescriptor, uint32* SecurityDescriptorSize);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL ConvertSecurityDescriptorToStringSecurityDescriptorA(ref SECURITY_DESCRIPTOR SecurityDescriptor, uint32 RequestedStringSDRevision, uint32 SecurityInformation, out PSTR StringSecurityDescriptor, uint32* StringSecurityDescriptorLen);
+	public static extern BOOL ConvertSecurityDescriptorToStringSecurityDescriptorA(PSECURITY_DESCRIPTOR SecurityDescriptor, uint32 RequestedStringSDRevision, uint32 SecurityInformation, out PSTR StringSecurityDescriptor, uint32* StringSecurityDescriptorLen);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL ConvertSecurityDescriptorToStringSecurityDescriptorW(ref SECURITY_DESCRIPTOR SecurityDescriptor, uint32 RequestedStringSDRevision, uint32 SecurityInformation, out PWSTR StringSecurityDescriptor, uint32* StringSecurityDescriptorLen);
+	public static extern BOOL ConvertSecurityDescriptorToStringSecurityDescriptorW(PSECURITY_DESCRIPTOR SecurityDescriptor, uint32 RequestedStringSDRevision, uint32 SecurityInformation, out PWSTR StringSecurityDescriptor, uint32* StringSecurityDescriptorLen);
 	#endregion
 }

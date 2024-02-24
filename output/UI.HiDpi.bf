@@ -3,6 +3,7 @@ namespace Win32.UI.HiDpi;
 using System;
 using Win32.Foundation;
 using Win32.Graphics.Gdi;
+using Win32.UI.WindowsAndMessaging;
 
 static
 {
@@ -75,7 +76,7 @@ static
 	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetSystemMetricsForDpi(int32 nIndex, uint32 dpi);
 	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL AdjustWindowRectExForDpi(out RECT lpRect, uint32 dwStyle, BOOL bMenu, uint32 dwExStyle, uint32 dpi);
+	public static extern BOOL AdjustWindowRectExForDpi(out RECT lpRect, WINDOW_STYLE dwStyle, BOOL bMenu, WINDOW_EX_STYLE dwExStyle, uint32 dpi);
 	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL LogicalToPhysicalPointForPerMonitorDPI(HWND hWnd, out POINT lpPoint);
 	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]

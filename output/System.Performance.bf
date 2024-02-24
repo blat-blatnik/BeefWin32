@@ -39,6 +39,8 @@ static
 	public const uint64 PERF_ATTRIB_DISPLAY_AS_REAL = 8uL;
 	public const uint64 PERF_ATTRIB_DISPLAY_AS_HEX = 16uL;
 	public const uint32 PERF_WILDCARD_COUNTER = 4294967295;
+	public const String PERF_WILDCARD_INSTANCE = "*";
+	public const String PERF_AGGREGATE_INSTANCE = "_Total";
 	public const uint32 PERF_MAX_INSTANCE_NAME = 1024;
 	public const uint32 PERF_ADD_COUNTER = 1;
 	public const uint32 PERF_REMOVE_COUNTER = 2;
@@ -1016,22 +1018,22 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_DataCollectors(IDataCollectorCollection** collectors) mut => VT.get_DataCollectors(ref this, collectors);
+		public HRESULT get_DataCollectors(out IDataCollectorCollection* collectors) mut => VT.get_DataCollectors(ref this, out collectors);
 		public HRESULT get_Duration(out uint32 seconds) mut => VT.get_Duration(ref this, out seconds);
 		public HRESULT put_Duration(uint32 seconds) mut => VT.put_Duration(ref this, seconds);
-		public HRESULT get_Description(BSTR* description) mut => VT.get_Description(ref this, description);
+		public HRESULT get_Description(out BSTR description) mut => VT.get_Description(ref this, out description);
 		public HRESULT put_Description(BSTR description) mut => VT.put_Description(ref this, description);
-		public HRESULT get_DescriptionUnresolved(BSTR* Descr) mut => VT.get_DescriptionUnresolved(ref this, Descr);
-		public HRESULT get_DisplayName(BSTR* DisplayName) mut => VT.get_DisplayName(ref this, DisplayName);
+		public HRESULT get_DescriptionUnresolved(out BSTR Descr) mut => VT.get_DescriptionUnresolved(ref this, out Descr);
+		public HRESULT get_DisplayName(out BSTR DisplayName) mut => VT.get_DisplayName(ref this, out DisplayName);
 		public HRESULT put_DisplayName(BSTR DisplayName) mut => VT.put_DisplayName(ref this, DisplayName);
-		public HRESULT get_DisplayNameUnresolved(BSTR* name) mut => VT.get_DisplayNameUnresolved(ref this, name);
-		public HRESULT get_Keywords(SAFEARRAY** keywords) mut => VT.get_Keywords(ref this, keywords);
+		public HRESULT get_DisplayNameUnresolved(out BSTR name) mut => VT.get_DisplayNameUnresolved(ref this, out name);
+		public HRESULT get_Keywords(out SAFEARRAY* keywords) mut => VT.get_Keywords(ref this, out keywords);
 		public HRESULT put_Keywords(ref SAFEARRAY keywords) mut => VT.put_Keywords(ref this, ref keywords);
-		public HRESULT get_LatestOutputLocation(BSTR* path) mut => VT.get_LatestOutputLocation(ref this, path);
+		public HRESULT get_LatestOutputLocation(out BSTR path) mut => VT.get_LatestOutputLocation(ref this, out path);
 		public HRESULT put_LatestOutputLocation(BSTR path) mut => VT.put_LatestOutputLocation(ref this, path);
-		public HRESULT get_Name(BSTR* name) mut => VT.get_Name(ref this, name);
-		public HRESULT get_OutputLocation(BSTR* path) mut => VT.get_OutputLocation(ref this, path);
-		public HRESULT get_RootPath(BSTR* folder) mut => VT.get_RootPath(ref this, folder);
+		public HRESULT get_Name(out BSTR name) mut => VT.get_Name(ref this, out name);
+		public HRESULT get_OutputLocation(out BSTR path) mut => VT.get_OutputLocation(ref this, out path);
+		public HRESULT get_RootPath(out BSTR folder) mut => VT.get_RootPath(ref this, out folder);
 		public HRESULT put_RootPath(BSTR folder) mut => VT.put_RootPath(ref this, folder);
 		public HRESULT get_Segment(out int16 segment) mut => VT.get_Segment(ref this, out segment);
 		public HRESULT put_Segment(int16 segment) mut => VT.put_Segment(ref this, segment);
@@ -1041,61 +1043,61 @@ static
 		public HRESULT put_SegmentMaxSize(uint32 size) mut => VT.put_SegmentMaxSize(ref this, size);
 		public HRESULT get_SerialNumber(out uint32 index) mut => VT.get_SerialNumber(ref this, out index);
 		public HRESULT put_SerialNumber(uint32 index) mut => VT.put_SerialNumber(ref this, index);
-		public HRESULT get_Server(BSTR* server) mut => VT.get_Server(ref this, server);
+		public HRESULT get_Server(out BSTR server) mut => VT.get_Server(ref this, out server);
 		public HRESULT get_Status(out DataCollectorSetStatus status) mut => VT.get_Status(ref this, out status);
-		public HRESULT get_Subdirectory(BSTR* folder) mut => VT.get_Subdirectory(ref this, folder);
+		public HRESULT get_Subdirectory(out BSTR folder) mut => VT.get_Subdirectory(ref this, out folder);
 		public HRESULT put_Subdirectory(BSTR folder) mut => VT.put_Subdirectory(ref this, folder);
 		public HRESULT get_SubdirectoryFormat(out AutoPathFormat format) mut => VT.get_SubdirectoryFormat(ref this, out format);
 		public HRESULT put_SubdirectoryFormat(AutoPathFormat format) mut => VT.put_SubdirectoryFormat(ref this, format);
-		public HRESULT get_SubdirectoryFormatPattern(BSTR* pattern) mut => VT.get_SubdirectoryFormatPattern(ref this, pattern);
+		public HRESULT get_SubdirectoryFormatPattern(out BSTR pattern) mut => VT.get_SubdirectoryFormatPattern(ref this, out pattern);
 		public HRESULT put_SubdirectoryFormatPattern(BSTR pattern) mut => VT.put_SubdirectoryFormatPattern(ref this, pattern);
-		public HRESULT get_Task(BSTR* task) mut => VT.get_Task(ref this, task);
+		public HRESULT get_Task(out BSTR task) mut => VT.get_Task(ref this, out task);
 		public HRESULT put_Task(BSTR task) mut => VT.put_Task(ref this, task);
 		public HRESULT get_TaskRunAsSelf(out int16 RunAsSelf) mut => VT.get_TaskRunAsSelf(ref this, out RunAsSelf);
 		public HRESULT put_TaskRunAsSelf(int16 RunAsSelf) mut => VT.put_TaskRunAsSelf(ref this, RunAsSelf);
-		public HRESULT get_TaskArguments(BSTR* task) mut => VT.get_TaskArguments(ref this, task);
+		public HRESULT get_TaskArguments(out BSTR task) mut => VT.get_TaskArguments(ref this, out task);
 		public HRESULT put_TaskArguments(BSTR task) mut => VT.put_TaskArguments(ref this, task);
-		public HRESULT get_TaskUserTextArguments(BSTR* UserText) mut => VT.get_TaskUserTextArguments(ref this, UserText);
+		public HRESULT get_TaskUserTextArguments(out BSTR UserText) mut => VT.get_TaskUserTextArguments(ref this, out UserText);
 		public HRESULT put_TaskUserTextArguments(BSTR UserText) mut => VT.put_TaskUserTextArguments(ref this, UserText);
-		public HRESULT get_Schedules(IScheduleCollection** ppSchedules) mut => VT.get_Schedules(ref this, ppSchedules);
+		public HRESULT get_Schedules(out IScheduleCollection* ppSchedules) mut => VT.get_Schedules(ref this, out ppSchedules);
 		public HRESULT get_SchedulesEnabled(out int16 enabled) mut => VT.get_SchedulesEnabled(ref this, out enabled);
 		public HRESULT put_SchedulesEnabled(int16 enabled) mut => VT.put_SchedulesEnabled(ref this, enabled);
-		public HRESULT get_UserAccount(BSTR* user) mut => VT.get_UserAccount(ref this, user);
-		public HRESULT get_Xml(BSTR* xml) mut => VT.get_Xml(ref this, xml);
-		public HRESULT get_Security(BSTR* pbstrSecurity) mut => VT.get_Security(ref this, pbstrSecurity);
+		public HRESULT get_UserAccount(out BSTR user) mut => VT.get_UserAccount(ref this, out user);
+		public HRESULT get_Xml(out BSTR xml) mut => VT.get_Xml(ref this, out xml);
+		public HRESULT get_Security(out BSTR pbstrSecurity) mut => VT.get_Security(ref this, out pbstrSecurity);
 		public HRESULT put_Security(BSTR bstrSecurity) mut => VT.put_Security(ref this, bstrSecurity);
 		public HRESULT get_StopOnCompletion(out int16 Stop) mut => VT.get_StopOnCompletion(ref this, out Stop);
 		public HRESULT put_StopOnCompletion(int16 Stop) mut => VT.put_StopOnCompletion(ref this, Stop);
-		public HRESULT get_DataManager(IDataManager** DataManager) mut => VT.get_DataManager(ref this, DataManager);
+		public HRESULT get_DataManager(out IDataManager* DataManager) mut => VT.get_DataManager(ref this, out DataManager);
 		public HRESULT SetCredentials(BSTR user, BSTR password) mut => VT.SetCredentials(ref this, user, password);
 		public HRESULT Query(BSTR name, BSTR server) mut => VT.Query(ref this, name, server);
-		public HRESULT Commit(BSTR name, BSTR server, CommitMode mode, IValueMap** validation) mut => VT.Commit(ref this, name, server, mode, validation);
+		public HRESULT Commit(BSTR name, BSTR server, CommitMode mode, out IValueMap* validation) mut => VT.Commit(ref this, name, server, mode, out validation);
 		public HRESULT Delete() mut => VT.Delete(ref this);
 		public HRESULT Start(int16 Synchronous) mut => VT.Start(ref this, Synchronous);
 		public HRESULT Stop(int16 Synchronous) mut => VT.Stop(ref this, Synchronous);
-		public HRESULT SetXml(BSTR xml, IValueMap** validation) mut => VT.SetXml(ref this, xml, validation);
+		public HRESULT SetXml(BSTR xml, out IValueMap* validation) mut => VT.SetXml(ref this, xml, out validation);
 		public HRESULT SetValue(BSTR key, BSTR value) mut => VT.SetValue(ref this, key, value);
-		public HRESULT GetValue(BSTR key, BSTR* value) mut => VT.GetValue(ref this, key, value);
+		public HRESULT GetValue(BSTR key, out BSTR value) mut => VT.GetValue(ref this, key, out value);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, IDataCollectorCollection** collectors) get_DataCollectors;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out IDataCollectorCollection* collectors) get_DataCollectors;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out uint32 seconds) get_Duration;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, uint32 seconds) put_Duration;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* description) get_Description;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR description) get_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR description) put_Description;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* Descr) get_DescriptionUnresolved;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* DisplayName) get_DisplayName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR Descr) get_DescriptionUnresolved;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR DisplayName) get_DisplayName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR DisplayName) put_DisplayName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* name) get_DisplayNameUnresolved;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, SAFEARRAY** keywords) get_Keywords;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR name) get_DisplayNameUnresolved;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out SAFEARRAY* keywords) get_Keywords;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, ref SAFEARRAY keywords) put_Keywords;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* path) get_LatestOutputLocation;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR path) get_LatestOutputLocation;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR path) put_LatestOutputLocation;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* name) get_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* path) get_OutputLocation;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* folder) get_RootPath;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR name) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR path) get_OutputLocation;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR folder) get_RootPath;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR folder) put_RootPath;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out int16 segment) get_Segment;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, int16 segment) put_Segment;
@@ -1105,41 +1107,41 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, uint32 size) put_SegmentMaxSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out uint32 index) get_SerialNumber;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, uint32 index) put_SerialNumber;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* server) get_Server;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR server) get_Server;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out DataCollectorSetStatus status) get_Status;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* folder) get_Subdirectory;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR folder) get_Subdirectory;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR folder) put_Subdirectory;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out AutoPathFormat format) get_SubdirectoryFormat;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, AutoPathFormat format) put_SubdirectoryFormat;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* pattern) get_SubdirectoryFormatPattern;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR pattern) get_SubdirectoryFormatPattern;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR pattern) put_SubdirectoryFormatPattern;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* task) get_Task;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR task) get_Task;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR task) put_Task;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out int16 RunAsSelf) get_TaskRunAsSelf;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, int16 RunAsSelf) put_TaskRunAsSelf;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* task) get_TaskArguments;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR task) get_TaskArguments;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR task) put_TaskArguments;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* UserText) get_TaskUserTextArguments;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR UserText) get_TaskUserTextArguments;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR UserText) put_TaskUserTextArguments;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, IScheduleCollection** ppSchedules) get_Schedules;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out IScheduleCollection* ppSchedules) get_Schedules;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out int16 enabled) get_SchedulesEnabled;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, int16 enabled) put_SchedulesEnabled;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* user) get_UserAccount;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* xml) get_Xml;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* pbstrSecurity) get_Security;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR user) get_UserAccount;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR xml) get_Xml;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out BSTR pbstrSecurity) get_Security;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR bstrSecurity) put_Security;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out int16 Stop) get_StopOnCompletion;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, int16 Stop) put_StopOnCompletion;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, IDataManager** DataManager) get_DataManager;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out IDataManager* DataManager) get_DataManager;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR user, BSTR password) SetCredentials;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR name, BSTR server) Query;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR name, BSTR server, CommitMode mode, IValueMap** validation) Commit;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR name, BSTR server, CommitMode mode, out IValueMap* validation) Commit;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self) Delete;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, int16 Synchronous) Start;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, int16 Synchronous) Stop;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR xml, IValueMap** validation) SetXml;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR xml, out IValueMap* validation) SetXml;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR key, BSTR value) SetValue;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR key, BSTR* value) GetValue;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR key, out BSTR value) GetValue;
 		}
 	}
 	[CRepr]
@@ -1161,18 +1163,18 @@ static
 		public HRESULT put_MaxFolderCount(uint32 ulMaxFolderCount) mut => VT.put_MaxFolderCount(ref this, ulMaxFolderCount);
 		public HRESULT get_ResourcePolicy(out ResourcePolicy pPolicy) mut => VT.get_ResourcePolicy(ref this, out pPolicy);
 		public HRESULT put_ResourcePolicy(ResourcePolicy Policy) mut => VT.put_ResourcePolicy(ref this, Policy);
-		public HRESULT get_FolderActions(IFolderActionCollection** Actions) mut => VT.get_FolderActions(ref this, Actions);
-		public HRESULT get_ReportSchema(BSTR* ReportSchema) mut => VT.get_ReportSchema(ref this, ReportSchema);
+		public HRESULT get_FolderActions(out IFolderActionCollection* Actions) mut => VT.get_FolderActions(ref this, out Actions);
+		public HRESULT get_ReportSchema(out BSTR ReportSchema) mut => VT.get_ReportSchema(ref this, out ReportSchema);
 		public HRESULT put_ReportSchema(BSTR ReportSchema) mut => VT.put_ReportSchema(ref this, ReportSchema);
-		public HRESULT get_ReportFileName(BSTR* pbstrFilename) mut => VT.get_ReportFileName(ref this, pbstrFilename);
+		public HRESULT get_ReportFileName(out BSTR pbstrFilename) mut => VT.get_ReportFileName(ref this, out pbstrFilename);
 		public HRESULT put_ReportFileName(BSTR pbstrFilename) mut => VT.put_ReportFileName(ref this, pbstrFilename);
-		public HRESULT get_RuleTargetFileName(BSTR* Filename) mut => VT.get_RuleTargetFileName(ref this, Filename);
+		public HRESULT get_RuleTargetFileName(out BSTR Filename) mut => VT.get_RuleTargetFileName(ref this, out Filename);
 		public HRESULT put_RuleTargetFileName(BSTR Filename) mut => VT.put_RuleTargetFileName(ref this, Filename);
-		public HRESULT get_EventsFileName(BSTR* pbstrFilename) mut => VT.get_EventsFileName(ref this, pbstrFilename);
+		public HRESULT get_EventsFileName(out BSTR pbstrFilename) mut => VT.get_EventsFileName(ref this, out pbstrFilename);
 		public HRESULT put_EventsFileName(BSTR pbstrFilename) mut => VT.put_EventsFileName(ref this, pbstrFilename);
-		public HRESULT get_Rules(BSTR* pbstrXml) mut => VT.get_Rules(ref this, pbstrXml);
+		public HRESULT get_Rules(out BSTR pbstrXml) mut => VT.get_Rules(ref this, out pbstrXml);
 		public HRESULT put_Rules(BSTR bstrXml) mut => VT.put_Rules(ref this, bstrXml);
-		public HRESULT Run(DataManagerSteps Steps, BSTR bstrFolder, IValueMap** Errors) mut => VT.Run(ref this, Steps, bstrFolder, Errors);
+		public HRESULT Run(DataManagerSteps Steps, BSTR bstrFolder, out IValueMap* Errors) mut => VT.Run(ref this, Steps, bstrFolder, out Errors);
 		public HRESULT Extract(BSTR CabFilename, BSTR DestinationPath) mut => VT.Extract(ref this, CabFilename, DestinationPath);
 
 		[CRepr]
@@ -1190,18 +1192,18 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, uint32 ulMaxFolderCount) put_MaxFolderCount;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, out ResourcePolicy pPolicy) get_ResourcePolicy;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, ResourcePolicy Policy) put_ResourcePolicy;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, IFolderActionCollection** Actions) get_FolderActions;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR* ReportSchema) get_ReportSchema;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, out IFolderActionCollection* Actions) get_FolderActions;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, out BSTR ReportSchema) get_ReportSchema;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR ReportSchema) put_ReportSchema;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR* pbstrFilename) get_ReportFileName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, out BSTR pbstrFilename) get_ReportFileName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR pbstrFilename) put_ReportFileName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR* Filename) get_RuleTargetFileName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, out BSTR Filename) get_RuleTargetFileName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR Filename) put_RuleTargetFileName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR* pbstrFilename) get_EventsFileName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, out BSTR pbstrFilename) get_EventsFileName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR pbstrFilename) put_EventsFileName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR* pbstrXml) get_Rules;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, out BSTR pbstrXml) get_Rules;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR bstrXml) put_Rules;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, DataManagerSteps Steps, BSTR bstrFolder, IValueMap** Errors) Run;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, DataManagerSteps Steps, BSTR bstrFolder, out IValueMap* Errors) Run;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR CabFilename, BSTR DestinationPath) Extract;
 		}
 	}
@@ -1218,7 +1220,7 @@ static
 		public HRESULT put_Size(uint32 ulAge) mut => VT.put_Size(ref this, ulAge);
 		public HRESULT get_Actions(out FolderActionSteps Steps) mut => VT.get_Actions(ref this, out Steps);
 		public HRESULT put_Actions(FolderActionSteps Steps) mut => VT.put_Actions(ref this, Steps);
-		public HRESULT get_SendCabTo(BSTR* pbstrDestination) mut => VT.get_SendCabTo(ref this, pbstrDestination);
+		public HRESULT get_SendCabTo(out BSTR pbstrDestination) mut => VT.get_SendCabTo(ref this, out pbstrDestination);
 		public HRESULT put_SendCabTo(BSTR bstrDestination) mut => VT.put_SendCabTo(ref this, bstrDestination);
 
 		[CRepr]
@@ -1230,7 +1232,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderAction self, uint32 ulAge) put_Size;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderAction self, out FolderActionSteps Steps) get_Actions;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderAction self, FolderActionSteps Steps) put_Actions;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderAction self, BSTR* pbstrDestination) get_SendCabTo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderAction self, out BSTR pbstrDestination) get_SendCabTo;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderAction self, BSTR bstrDestination) put_SendCabTo;
 		}
 	}
@@ -1242,25 +1244,25 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Count(out uint32 Count) mut => VT.get_Count(ref this, out Count);
-		public HRESULT get_Item(VARIANT Index, IFolderAction** Action) mut => VT.get_Item(ref this, Index, Action);
-		public HRESULT get__NewEnum(IUnknown** Enum) mut => VT.get__NewEnum(ref this, Enum);
+		public HRESULT get_Item(VARIANT Index, out IFolderAction* Action) mut => VT.get_Item(ref this, Index, out Action);
+		public HRESULT get__NewEnum(out IUnknown* Enum) mut => VT.get__NewEnum(ref this, out Enum);
 		public HRESULT Add(IFolderAction* Action) mut => VT.Add(ref this, Action);
 		public HRESULT Remove(VARIANT Index) mut => VT.Remove(ref this, Index);
 		public HRESULT Clear() mut => VT.Clear(ref this);
 		public HRESULT AddRange(IFolderActionCollection* Actions) mut => VT.AddRange(ref this, Actions);
-		public HRESULT CreateFolderAction(IFolderAction** FolderAction) mut => VT.CreateFolderAction(ref this, FolderAction);
+		public HRESULT CreateFolderAction(out IFolderAction* FolderAction) mut => VT.CreateFolderAction(ref this, out FolderAction);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, out uint32 Count) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, VARIANT Index, IFolderAction** Action) get_Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, IUnknown** Enum) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, VARIANT Index, out IFolderAction* Action) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, out IUnknown* Enum) get__NewEnum;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, IFolderAction* Action) Add;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, VARIANT Index) Remove;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self) Clear;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, IFolderActionCollection* Actions) AddRange;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, IFolderAction** FolderAction) CreateFolderAction;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, out IFolderAction* FolderAction) CreateFolderAction;
 		}
 	}
 	[CRepr]
@@ -1270,16 +1272,16 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_DataCollectorSet(IDataCollectorSet** group) mut => VT.get_DataCollectorSet(ref this, group);
+		public HRESULT get_DataCollectorSet(out IDataCollectorSet* group) mut => VT.get_DataCollectorSet(ref this, out group);
 		public HRESULT put_DataCollectorSet(IDataCollectorSet* group) mut => VT.put_DataCollectorSet(ref this, group);
 		public HRESULT get_DataCollectorType(out DataCollectorType type) mut => VT.get_DataCollectorType(ref this, out type);
-		public HRESULT get_FileName(BSTR* name) mut => VT.get_FileName(ref this, name);
+		public HRESULT get_FileName(out BSTR name) mut => VT.get_FileName(ref this, out name);
 		public HRESULT put_FileName(BSTR name) mut => VT.put_FileName(ref this, name);
 		public HRESULT get_FileNameFormat(out AutoPathFormat format) mut => VT.get_FileNameFormat(ref this, out format);
 		public HRESULT put_FileNameFormat(AutoPathFormat format) mut => VT.put_FileNameFormat(ref this, format);
-		public HRESULT get_FileNameFormatPattern(BSTR* pattern) mut => VT.get_FileNameFormatPattern(ref this, pattern);
+		public HRESULT get_FileNameFormatPattern(out BSTR pattern) mut => VT.get_FileNameFormatPattern(ref this, out pattern);
 		public HRESULT put_FileNameFormatPattern(BSTR pattern) mut => VT.put_FileNameFormatPattern(ref this, pattern);
-		public HRESULT get_LatestOutputLocation(BSTR* path) mut => VT.get_LatestOutputLocation(ref this, path);
+		public HRESULT get_LatestOutputLocation(out BSTR path) mut => VT.get_LatestOutputLocation(ref this, out path);
 		public HRESULT put_LatestOutputLocation(BSTR path) mut => VT.put_LatestOutputLocation(ref this, path);
 		public HRESULT get_LogAppend(out int16 @append) mut => VT.get_LogAppend(ref this, out @append);
 		public HRESULT put_LogAppend(int16 @append) mut => VT.put_LogAppend(ref this, @append);
@@ -1287,28 +1289,28 @@ static
 		public HRESULT put_LogCircular(int16 circular) mut => VT.put_LogCircular(ref this, circular);
 		public HRESULT get_LogOverwrite(out int16 overwrite) mut => VT.get_LogOverwrite(ref this, out overwrite);
 		public HRESULT put_LogOverwrite(int16 overwrite) mut => VT.put_LogOverwrite(ref this, overwrite);
-		public HRESULT get_Name(BSTR* name) mut => VT.get_Name(ref this, name);
+		public HRESULT get_Name(out BSTR name) mut => VT.get_Name(ref this, out name);
 		public HRESULT put_Name(BSTR name) mut => VT.put_Name(ref this, name);
-		public HRESULT get_OutputLocation(BSTR* path) mut => VT.get_OutputLocation(ref this, path);
+		public HRESULT get_OutputLocation(out BSTR path) mut => VT.get_OutputLocation(ref this, out path);
 		public HRESULT get_Index(out int32 index) mut => VT.get_Index(ref this, out index);
 		public HRESULT put_Index(int32 index) mut => VT.put_Index(ref this, index);
-		public HRESULT get_Xml(BSTR* Xml) mut => VT.get_Xml(ref this, Xml);
-		public HRESULT SetXml(BSTR Xml, IValueMap** Validation) mut => VT.SetXml(ref this, Xml, Validation);
-		public HRESULT CreateOutputLocation(int16 Latest, BSTR* Location) mut => VT.CreateOutputLocation(ref this, Latest, Location);
+		public HRESULT get_Xml(out BSTR Xml) mut => VT.get_Xml(ref this, out Xml);
+		public HRESULT SetXml(BSTR Xml, out IValueMap* Validation) mut => VT.SetXml(ref this, Xml, out Validation);
+		public HRESULT CreateOutputLocation(int16 Latest, out BSTR Location) mut => VT.CreateOutputLocation(ref this, Latest, out Location);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, IDataCollectorSet** group) get_DataCollectorSet;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out IDataCollectorSet* group) get_DataCollectorSet;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, IDataCollectorSet* group) put_DataCollectorSet;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out DataCollectorType type) get_DataCollectorType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR* name) get_FileName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out BSTR name) get_FileName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR name) put_FileName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out AutoPathFormat format) get_FileNameFormat;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, AutoPathFormat format) put_FileNameFormat;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR* pattern) get_FileNameFormatPattern;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out BSTR pattern) get_FileNameFormatPattern;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR pattern) put_FileNameFormatPattern;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR* path) get_LatestOutputLocation;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out BSTR path) get_LatestOutputLocation;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR path) put_LatestOutputLocation;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out int16 @append) get_LogAppend;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, int16 @append) put_LogAppend;
@@ -1316,14 +1318,14 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, int16 circular) put_LogCircular;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out int16 overwrite) get_LogOverwrite;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, int16 overwrite) put_LogOverwrite;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR* name) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out BSTR name) get_Name;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR name) put_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR* path) get_OutputLocation;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out BSTR path) get_OutputLocation;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out int32 index) get_Index;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, int32 index) put_Index;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR* Xml) get_Xml;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR Xml, IValueMap** Validation) SetXml;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, int16 Latest, BSTR* Location) CreateOutputLocation;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out BSTR Xml) get_Xml;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR Xml, out IValueMap* Validation) SetXml;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, int16 Latest, out BSTR Location) CreateOutputLocation;
 		}
 	}
 	[CRepr]
@@ -1333,9 +1335,9 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_DataSourceName(BSTR* dsn) mut => VT.get_DataSourceName(ref this, dsn);
+		public HRESULT get_DataSourceName(out BSTR dsn) mut => VT.get_DataSourceName(ref this, out dsn);
 		public HRESULT put_DataSourceName(BSTR dsn) mut => VT.put_DataSourceName(ref this, dsn);
-		public HRESULT get_PerformanceCounters(SAFEARRAY** counters) mut => VT.get_PerformanceCounters(ref this, counters);
+		public HRESULT get_PerformanceCounters(out SAFEARRAY* counters) mut => VT.get_PerformanceCounters(ref this, out counters);
 		public HRESULT put_PerformanceCounters(ref SAFEARRAY counters) mut => VT.put_PerformanceCounters(ref this, ref counters);
 		public HRESULT get_LogFileFormat(out FileFormat format) mut => VT.get_LogFileFormat(ref this, out format);
 		public HRESULT put_LogFileFormat(FileFormat format) mut => VT.put_LogFileFormat(ref this, format);
@@ -1347,9 +1349,9 @@ static
 		[CRepr]
 		public struct VTable : IDataCollector.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, BSTR* dsn) get_DataSourceName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, out BSTR dsn) get_DataSourceName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, BSTR dsn) put_DataSourceName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, SAFEARRAY** counters) get_PerformanceCounters;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, out SAFEARRAY* counters) get_PerformanceCounters;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, ref SAFEARRAY counters) put_PerformanceCounters;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, out FileFormat format) get_LogFileFormat;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, FileFormat format) put_LogFileFormat;
@@ -1399,13 +1401,13 @@ static
 		public HRESULT put_RealTimeBuffersLost(uint32 buffers) mut => VT.put_RealTimeBuffersLost(ref this, buffers);
 		public HRESULT get_SessionId(out uint64 id) mut => VT.get_SessionId(ref this, out id);
 		public HRESULT put_SessionId(uint64 id) mut => VT.put_SessionId(ref this, id);
-		public HRESULT get_SessionName(BSTR* name) mut => VT.get_SessionName(ref this, name);
+		public HRESULT get_SessionName(out BSTR name) mut => VT.get_SessionName(ref this, out name);
 		public HRESULT put_SessionName(BSTR name) mut => VT.put_SessionName(ref this, name);
 		public HRESULT get_SessionThreadId(out uint32 tid) mut => VT.get_SessionThreadId(ref this, out tid);
 		public HRESULT put_SessionThreadId(uint32 tid) mut => VT.put_SessionThreadId(ref this, tid);
 		public HRESULT get_StreamMode(out StreamMode mode) mut => VT.get_StreamMode(ref this, out mode);
 		public HRESULT put_StreamMode(StreamMode mode) mut => VT.put_StreamMode(ref this, mode);
-		public HRESULT get_TraceDataProviders(ITraceDataProviderCollection** providers) mut => VT.get_TraceDataProviders(ref this, providers);
+		public HRESULT get_TraceDataProviders(out ITraceDataProviderCollection* providers) mut => VT.get_TraceDataProviders(ref this, out providers);
 
 		[CRepr]
 		public struct VTable : IDataCollector.VTable
@@ -1443,13 +1445,13 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint32 buffers) put_RealTimeBuffersLost;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out uint64 id) get_SessionId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint64 id) put_SessionId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, BSTR* name) get_SessionName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out BSTR name) get_SessionName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, BSTR name) put_SessionName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out uint32 tid) get_SessionThreadId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint32 tid) put_SessionThreadId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out StreamMode mode) get_StreamMode;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, StreamMode mode) put_StreamMode;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, ITraceDataProviderCollection** providers) get_TraceDataProviders;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out ITraceDataProviderCollection* providers) get_TraceDataProviders;
 		}
 	}
 	[CRepr]
@@ -1465,17 +1467,17 @@ static
 		public HRESULT put_FileMaxRecursiveDepth(uint32 depth) mut => VT.put_FileMaxRecursiveDepth(ref this, depth);
 		public HRESULT get_FileMaxTotalSize(out uint32 size) mut => VT.get_FileMaxTotalSize(ref this, out size);
 		public HRESULT put_FileMaxTotalSize(uint32 size) mut => VT.put_FileMaxTotalSize(ref this, size);
-		public HRESULT get_Files(SAFEARRAY** Files) mut => VT.get_Files(ref this, Files);
+		public HRESULT get_Files(out SAFEARRAY* Files) mut => VT.get_Files(ref this, out Files);
 		public HRESULT put_Files(ref SAFEARRAY Files) mut => VT.put_Files(ref this, ref Files);
-		public HRESULT get_ManagementQueries(SAFEARRAY** Queries) mut => VT.get_ManagementQueries(ref this, Queries);
+		public HRESULT get_ManagementQueries(out SAFEARRAY* Queries) mut => VT.get_ManagementQueries(ref this, out Queries);
 		public HRESULT put_ManagementQueries(ref SAFEARRAY Queries) mut => VT.put_ManagementQueries(ref this, ref Queries);
 		public HRESULT get_QueryNetworkAdapters(out int16 network) mut => VT.get_QueryNetworkAdapters(ref this, out network);
 		public HRESULT put_QueryNetworkAdapters(int16 network) mut => VT.put_QueryNetworkAdapters(ref this, network);
-		public HRESULT get_RegistryKeys(SAFEARRAY** query) mut => VT.get_RegistryKeys(ref this, query);
+		public HRESULT get_RegistryKeys(out SAFEARRAY* query) mut => VT.get_RegistryKeys(ref this, out query);
 		public HRESULT put_RegistryKeys(ref SAFEARRAY query) mut => VT.put_RegistryKeys(ref this, ref query);
 		public HRESULT get_RegistryMaxRecursiveDepth(out uint32 depth) mut => VT.get_RegistryMaxRecursiveDepth(ref this, out depth);
 		public HRESULT put_RegistryMaxRecursiveDepth(uint32 depth) mut => VT.put_RegistryMaxRecursiveDepth(ref this, depth);
-		public HRESULT get_SystemStateFile(BSTR* FileName) mut => VT.get_SystemStateFile(ref this, FileName);
+		public HRESULT get_SystemStateFile(out BSTR FileName) mut => VT.get_SystemStateFile(ref this, out FileName);
 		public HRESULT put_SystemStateFile(BSTR FileName) mut => VT.put_SystemStateFile(ref this, FileName);
 
 		[CRepr]
@@ -1487,17 +1489,17 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, uint32 depth) put_FileMaxRecursiveDepth;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, out uint32 size) get_FileMaxTotalSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, uint32 size) put_FileMaxTotalSize;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, SAFEARRAY** Files) get_Files;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, out SAFEARRAY* Files) get_Files;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, ref SAFEARRAY Files) put_Files;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, SAFEARRAY** Queries) get_ManagementQueries;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, out SAFEARRAY* Queries) get_ManagementQueries;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, ref SAFEARRAY Queries) put_ManagementQueries;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, out int16 network) get_QueryNetworkAdapters;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, int16 network) put_QueryNetworkAdapters;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, SAFEARRAY** query) get_RegistryKeys;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, out SAFEARRAY* query) get_RegistryKeys;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, ref SAFEARRAY query) put_RegistryKeys;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, out uint32 depth) get_RegistryMaxRecursiveDepth;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, uint32 depth) put_RegistryMaxRecursiveDepth;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, BSTR* FileName) get_SystemStateFile;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, out BSTR FileName) get_SystemStateFile;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, BSTR FileName) put_SystemStateFile;
 		}
 	}
@@ -1508,41 +1510,41 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_AlertThresholds(SAFEARRAY** alerts) mut => VT.get_AlertThresholds(ref this, alerts);
+		public HRESULT get_AlertThresholds(out SAFEARRAY* alerts) mut => VT.get_AlertThresholds(ref this, out alerts);
 		public HRESULT put_AlertThresholds(ref SAFEARRAY alerts) mut => VT.put_AlertThresholds(ref this, ref alerts);
 		public HRESULT get_EventLog(out int16 log) mut => VT.get_EventLog(ref this, out log);
 		public HRESULT put_EventLog(int16 log) mut => VT.put_EventLog(ref this, log);
 		public HRESULT get_SampleInterval(out uint32 interval) mut => VT.get_SampleInterval(ref this, out interval);
 		public HRESULT put_SampleInterval(uint32 interval) mut => VT.put_SampleInterval(ref this, interval);
-		public HRESULT get_Task(BSTR* task) mut => VT.get_Task(ref this, task);
+		public HRESULT get_Task(out BSTR task) mut => VT.get_Task(ref this, out task);
 		public HRESULT put_Task(BSTR task) mut => VT.put_Task(ref this, task);
 		public HRESULT get_TaskRunAsSelf(out int16 RunAsSelf) mut => VT.get_TaskRunAsSelf(ref this, out RunAsSelf);
 		public HRESULT put_TaskRunAsSelf(int16 RunAsSelf) mut => VT.put_TaskRunAsSelf(ref this, RunAsSelf);
-		public HRESULT get_TaskArguments(BSTR* task) mut => VT.get_TaskArguments(ref this, task);
+		public HRESULT get_TaskArguments(out BSTR task) mut => VT.get_TaskArguments(ref this, out task);
 		public HRESULT put_TaskArguments(BSTR task) mut => VT.put_TaskArguments(ref this, task);
-		public HRESULT get_TaskUserTextArguments(BSTR* task) mut => VT.get_TaskUserTextArguments(ref this, task);
+		public HRESULT get_TaskUserTextArguments(out BSTR task) mut => VT.get_TaskUserTextArguments(ref this, out task);
 		public HRESULT put_TaskUserTextArguments(BSTR task) mut => VT.put_TaskUserTextArguments(ref this, task);
-		public HRESULT get_TriggerDataCollectorSet(BSTR* name) mut => VT.get_TriggerDataCollectorSet(ref this, name);
+		public HRESULT get_TriggerDataCollectorSet(out BSTR name) mut => VT.get_TriggerDataCollectorSet(ref this, out name);
 		public HRESULT put_TriggerDataCollectorSet(BSTR name) mut => VT.put_TriggerDataCollectorSet(ref this, name);
 
 		[CRepr]
 		public struct VTable : IDataCollector.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, SAFEARRAY** alerts) get_AlertThresholds;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, out SAFEARRAY* alerts) get_AlertThresholds;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, ref SAFEARRAY alerts) put_AlertThresholds;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, out int16 log) get_EventLog;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, int16 log) put_EventLog;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, out uint32 interval) get_SampleInterval;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, uint32 interval) put_SampleInterval;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR* task) get_Task;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, out BSTR task) get_Task;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR task) put_Task;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, out int16 RunAsSelf) get_TaskRunAsSelf;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, int16 RunAsSelf) put_TaskRunAsSelf;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR* task) get_TaskArguments;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, out BSTR task) get_TaskArguments;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR task) put_TaskArguments;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR* task) get_TaskUserTextArguments;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, out BSTR task) get_TaskUserTextArguments;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR task) put_TaskUserTextArguments;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR* name) get_TriggerDataCollectorSet;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, out BSTR name) get_TriggerDataCollectorSet;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR name) put_TriggerDataCollectorSet;
 		}
 	}
@@ -1557,15 +1559,15 @@ static
 		public HRESULT put_LogApiNamesOnly(int16 logapinames) mut => VT.put_LogApiNamesOnly(ref this, logapinames);
 		public HRESULT get_LogApisRecursively(out int16 logrecursively) mut => VT.get_LogApisRecursively(ref this, out logrecursively);
 		public HRESULT put_LogApisRecursively(int16 logrecursively) mut => VT.put_LogApisRecursively(ref this, logrecursively);
-		public HRESULT get_ExePath(BSTR* exepath) mut => VT.get_ExePath(ref this, exepath);
+		public HRESULT get_ExePath(out BSTR exepath) mut => VT.get_ExePath(ref this, out exepath);
 		public HRESULT put_ExePath(BSTR exepath) mut => VT.put_ExePath(ref this, exepath);
-		public HRESULT get_LogFilePath(BSTR* logfilepath) mut => VT.get_LogFilePath(ref this, logfilepath);
+		public HRESULT get_LogFilePath(out BSTR logfilepath) mut => VT.get_LogFilePath(ref this, out logfilepath);
 		public HRESULT put_LogFilePath(BSTR logfilepath) mut => VT.put_LogFilePath(ref this, logfilepath);
-		public HRESULT get_IncludeModules(SAFEARRAY** includemodules) mut => VT.get_IncludeModules(ref this, includemodules);
+		public HRESULT get_IncludeModules(out SAFEARRAY* includemodules) mut => VT.get_IncludeModules(ref this, out includemodules);
 		public HRESULT put_IncludeModules(ref SAFEARRAY includemodules) mut => VT.put_IncludeModules(ref this, ref includemodules);
-		public HRESULT get_IncludeApis(SAFEARRAY** includeapis) mut => VT.get_IncludeApis(ref this, includeapis);
+		public HRESULT get_IncludeApis(out SAFEARRAY* includeapis) mut => VT.get_IncludeApis(ref this, out includeapis);
 		public HRESULT put_IncludeApis(ref SAFEARRAY includeapis) mut => VT.put_IncludeApis(ref this, ref includeapis);
-		public HRESULT get_ExcludeApis(SAFEARRAY** excludeapis) mut => VT.get_ExcludeApis(ref this, excludeapis);
+		public HRESULT get_ExcludeApis(out SAFEARRAY* excludeapis) mut => VT.get_ExcludeApis(ref this, out excludeapis);
 		public HRESULT put_ExcludeApis(ref SAFEARRAY excludeapis) mut => VT.put_ExcludeApis(ref this, ref excludeapis);
 
 		[CRepr]
@@ -1575,15 +1577,15 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, int16 logapinames) put_LogApiNamesOnly;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, out int16 logrecursively) get_LogApisRecursively;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, int16 logrecursively) put_LogApisRecursively;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, BSTR* exepath) get_ExePath;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, out BSTR exepath) get_ExePath;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, BSTR exepath) put_ExePath;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, BSTR* logfilepath) get_LogFilePath;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, out BSTR logfilepath) get_LogFilePath;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, BSTR logfilepath) put_LogFilePath;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, SAFEARRAY** includemodules) get_IncludeModules;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, out SAFEARRAY* includemodules) get_IncludeModules;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, ref SAFEARRAY includemodules) put_IncludeModules;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, SAFEARRAY** includeapis) get_IncludeApis;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, out SAFEARRAY* includeapis) get_IncludeApis;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, ref SAFEARRAY includeapis) put_IncludeApis;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, SAFEARRAY** excludeapis) get_ExcludeApis;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, out SAFEARRAY* excludeapis) get_ExcludeApis;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, ref SAFEARRAY excludeapis) put_ExcludeApis;
 		}
 	}
@@ -1595,27 +1597,27 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Count(out int32 retVal) mut => VT.get_Count(ref this, out retVal);
-		public HRESULT get_Item(VARIANT index, IDataCollector** collector) mut => VT.get_Item(ref this, index, collector);
-		public HRESULT get__NewEnum(IUnknown** retVal) mut => VT.get__NewEnum(ref this, retVal);
+		public HRESULT get_Item(VARIANT index, out IDataCollector* collector) mut => VT.get_Item(ref this, index, out collector);
+		public HRESULT get__NewEnum(out IUnknown* retVal) mut => VT.get__NewEnum(ref this, out retVal);
 		public HRESULT Add(IDataCollector* collector) mut => VT.Add(ref this, collector);
 		public HRESULT Remove(VARIANT collector) mut => VT.Remove(ref this, collector);
 		public HRESULT Clear() mut => VT.Clear(ref this);
 		public HRESULT AddRange(IDataCollectorCollection* collectors) mut => VT.AddRange(ref this, collectors);
-		public HRESULT CreateDataCollectorFromXml(BSTR bstrXml, IValueMap** pValidation, IDataCollector** pCollector) mut => VT.CreateDataCollectorFromXml(ref this, bstrXml, pValidation, pCollector);
-		public HRESULT CreateDataCollector(DataCollectorType Type, IDataCollector** Collector) mut => VT.CreateDataCollector(ref this, Type, Collector);
+		public HRESULT CreateDataCollectorFromXml(BSTR bstrXml, out IValueMap* pValidation, out IDataCollector* pCollector) mut => VT.CreateDataCollectorFromXml(ref this, bstrXml, out pValidation, out pCollector);
+		public HRESULT CreateDataCollector(DataCollectorType Type, out IDataCollector* Collector) mut => VT.CreateDataCollector(ref this, Type, out Collector);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, out int32 retVal) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, VARIANT index, IDataCollector** collector) get_Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, IUnknown** retVal) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, VARIANT index, out IDataCollector* collector) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, out IUnknown* retVal) get__NewEnum;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, IDataCollector* collector) Add;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, VARIANT collector) Remove;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self) Clear;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, IDataCollectorCollection* collectors) AddRange;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, BSTR bstrXml, IValueMap** pValidation, IDataCollector** pCollector) CreateDataCollectorFromXml;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, DataCollectorType Type, IDataCollector** Collector) CreateDataCollector;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, BSTR bstrXml, out IValueMap* pValidation, out IDataCollector* pCollector) CreateDataCollectorFromXml;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, DataCollectorType Type, out IDataCollector* Collector) CreateDataCollector;
 		}
 	}
 	[CRepr]
@@ -1626,8 +1628,8 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Count(out int32 retVal) mut => VT.get_Count(ref this, out retVal);
-		public HRESULT get_Item(VARIANT index, IDataCollectorSet** set) mut => VT.get_Item(ref this, index, set);
-		public HRESULT get__NewEnum(IUnknown** retVal) mut => VT.get__NewEnum(ref this, retVal);
+		public HRESULT get_Item(VARIANT index, out IDataCollectorSet* set) mut => VT.get_Item(ref this, index, out set);
+		public HRESULT get__NewEnum(out IUnknown* retVal) mut => VT.get__NewEnum(ref this, out retVal);
 		public HRESULT Add(IDataCollectorSet* set) mut => VT.Add(ref this, set);
 		public HRESULT Remove(VARIANT set) mut => VT.Remove(ref this, set);
 		public HRESULT Clear() mut => VT.Clear(ref this);
@@ -1638,8 +1640,8 @@ static
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self, out int32 retVal) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self, VARIANT index, IDataCollectorSet** set) get_Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self, IUnknown** retVal) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self, VARIANT index, out IDataCollectorSet* set) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self, out IUnknown* retVal) get__NewEnum;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self, IDataCollectorSet* set) Add;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self, VARIANT set) Remove;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self) Clear;
@@ -1654,48 +1656,48 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_DisplayName(BSTR* name) mut => VT.get_DisplayName(ref this, name);
+		public HRESULT get_DisplayName(out BSTR name) mut => VT.get_DisplayName(ref this, out name);
 		public HRESULT put_DisplayName(BSTR name) mut => VT.put_DisplayName(ref this, name);
 		public HRESULT get_Guid(out Guid guid) mut => VT.get_Guid(ref this, out guid);
 		public HRESULT put_Guid(Guid guid) mut => VT.put_Guid(ref this, guid);
-		public HRESULT get_Level(IValueMap** ppLevel) mut => VT.get_Level(ref this, ppLevel);
-		public HRESULT get_KeywordsAny(IValueMap** ppKeywords) mut => VT.get_KeywordsAny(ref this, ppKeywords);
-		public HRESULT get_KeywordsAll(IValueMap** ppKeywords) mut => VT.get_KeywordsAll(ref this, ppKeywords);
-		public HRESULT get_Properties(IValueMap** ppProperties) mut => VT.get_Properties(ref this, ppProperties);
+		public HRESULT get_Level(out IValueMap* ppLevel) mut => VT.get_Level(ref this, out ppLevel);
+		public HRESULT get_KeywordsAny(out IValueMap* ppKeywords) mut => VT.get_KeywordsAny(ref this, out ppKeywords);
+		public HRESULT get_KeywordsAll(out IValueMap* ppKeywords) mut => VT.get_KeywordsAll(ref this, out ppKeywords);
+		public HRESULT get_Properties(out IValueMap* ppProperties) mut => VT.get_Properties(ref this, out ppProperties);
 		public HRESULT get_FilterEnabled(out int16 FilterEnabled) mut => VT.get_FilterEnabled(ref this, out FilterEnabled);
 		public HRESULT put_FilterEnabled(int16 FilterEnabled) mut => VT.put_FilterEnabled(ref this, FilterEnabled);
 		public HRESULT get_FilterType(out uint32 pulType) mut => VT.get_FilterType(ref this, out pulType);
 		public HRESULT put_FilterType(uint32 ulType) mut => VT.put_FilterType(ref this, ulType);
-		public HRESULT get_FilterData(SAFEARRAY** ppData) mut => VT.get_FilterData(ref this, ppData);
+		public HRESULT get_FilterData(out SAFEARRAY* ppData) mut => VT.get_FilterData(ref this, out ppData);
 		public HRESULT put_FilterData(ref SAFEARRAY pData) mut => VT.put_FilterData(ref this, ref pData);
 		public HRESULT Query(BSTR bstrName, BSTR bstrServer) mut => VT.Query(ref this, bstrName, bstrServer);
 		public HRESULT Resolve(IDispatch* pFrom) mut => VT.Resolve(ref this, pFrom);
 		public HRESULT SetSecurity(BSTR Sddl) mut => VT.SetSecurity(ref this, Sddl);
-		public HRESULT GetSecurity(uint32 SecurityInfo, BSTR* Sddl) mut => VT.GetSecurity(ref this, SecurityInfo, Sddl);
-		public HRESULT GetRegisteredProcesses(IValueMap** Processes) mut => VT.GetRegisteredProcesses(ref this, Processes);
+		public HRESULT GetSecurity(uint32 SecurityInfo, out BSTR Sddl) mut => VT.GetSecurity(ref this, SecurityInfo, out Sddl);
+		public HRESULT GetRegisteredProcesses(out IValueMap* Processes) mut => VT.GetRegisteredProcesses(ref this, out Processes);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, BSTR* name) get_DisplayName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, out BSTR name) get_DisplayName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, BSTR name) put_DisplayName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, out Guid guid) get_Guid;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, Guid guid) put_Guid;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, IValueMap** ppLevel) get_Level;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, IValueMap** ppKeywords) get_KeywordsAny;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, IValueMap** ppKeywords) get_KeywordsAll;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, IValueMap** ppProperties) get_Properties;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, out IValueMap* ppLevel) get_Level;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, out IValueMap* ppKeywords) get_KeywordsAny;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, out IValueMap* ppKeywords) get_KeywordsAll;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, out IValueMap* ppProperties) get_Properties;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, out int16 FilterEnabled) get_FilterEnabled;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, int16 FilterEnabled) put_FilterEnabled;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, out uint32 pulType) get_FilterType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, uint32 ulType) put_FilterType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, SAFEARRAY** ppData) get_FilterData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, out SAFEARRAY* ppData) get_FilterData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, ref SAFEARRAY pData) put_FilterData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, BSTR bstrName, BSTR bstrServer) Query;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, IDispatch* pFrom) Resolve;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, BSTR Sddl) SetSecurity;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, uint32 SecurityInfo, BSTR* Sddl) GetSecurity;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, IValueMap** Processes) GetRegisteredProcesses;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, uint32 SecurityInfo, out BSTR Sddl) GetSecurity;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, out IValueMap* Processes) GetRegisteredProcesses;
 		}
 	}
 	[CRepr]
@@ -1706,13 +1708,13 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Count(out int32 retVal) mut => VT.get_Count(ref this, out retVal);
-		public HRESULT get_Item(VARIANT index, ITraceDataProvider** ppProvider) mut => VT.get_Item(ref this, index, ppProvider);
-		public HRESULT get__NewEnum(IUnknown** retVal) mut => VT.get__NewEnum(ref this, retVal);
+		public HRESULT get_Item(VARIANT index, out ITraceDataProvider* ppProvider) mut => VT.get_Item(ref this, index, out ppProvider);
+		public HRESULT get__NewEnum(out IUnknown* retVal) mut => VT.get__NewEnum(ref this, out retVal);
 		public HRESULT Add(ITraceDataProvider* pProvider) mut => VT.Add(ref this, pProvider);
 		public HRESULT Remove(VARIANT vProvider) mut => VT.Remove(ref this, vProvider);
 		public HRESULT Clear() mut => VT.Clear(ref this);
 		public HRESULT AddRange(ITraceDataProviderCollection* providers) mut => VT.AddRange(ref this, providers);
-		public HRESULT CreateTraceDataProvider(ITraceDataProvider** Provider) mut => VT.CreateTraceDataProvider(ref this, Provider);
+		public HRESULT CreateTraceDataProvider(out ITraceDataProvider* Provider) mut => VT.CreateTraceDataProvider(ref this, out Provider);
 		public HRESULT GetTraceDataProviders(BSTR server) mut => VT.GetTraceDataProviders(ref this, server);
 		public HRESULT GetTraceDataProvidersByProcess(BSTR Server, uint32 Pid) mut => VT.GetTraceDataProvidersByProcess(ref this, Server, Pid);
 
@@ -1720,13 +1722,13 @@ static
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, out int32 retVal) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, VARIANT index, ITraceDataProvider** ppProvider) get_Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, IUnknown** retVal) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, VARIANT index, out ITraceDataProvider* ppProvider) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, out IUnknown* retVal) get__NewEnum;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, ITraceDataProvider* pProvider) Add;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, VARIANT vProvider) Remove;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self) Clear;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, ITraceDataProviderCollection* providers) AddRange;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, ITraceDataProvider** Provider) CreateTraceDataProvider;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, out ITraceDataProvider* Provider) CreateTraceDataProvider;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, BSTR server) GetTraceDataProviders;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, BSTR Server, uint32 Pid) GetTraceDataProvidersByProcess;
 		}
@@ -1768,25 +1770,25 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Count(out int32 retVal) mut => VT.get_Count(ref this, out retVal);
-		public HRESULT get_Item(VARIANT index, ISchedule** ppSchedule) mut => VT.get_Item(ref this, index, ppSchedule);
-		public HRESULT get__NewEnum(IUnknown** ienum) mut => VT.get__NewEnum(ref this, ienum);
+		public HRESULT get_Item(VARIANT index, out ISchedule* ppSchedule) mut => VT.get_Item(ref this, index, out ppSchedule);
+		public HRESULT get__NewEnum(out IUnknown* ienum) mut => VT.get__NewEnum(ref this, out ienum);
 		public HRESULT Add(ISchedule* pSchedule) mut => VT.Add(ref this, pSchedule);
 		public HRESULT Remove(VARIANT vSchedule) mut => VT.Remove(ref this, vSchedule);
 		public HRESULT Clear() mut => VT.Clear(ref this);
 		public HRESULT AddRange(IScheduleCollection* pSchedules) mut => VT.AddRange(ref this, pSchedules);
-		public HRESULT CreateSchedule(ISchedule** Schedule) mut => VT.CreateSchedule(ref this, Schedule);
+		public HRESULT CreateSchedule(out ISchedule* Schedule) mut => VT.CreateSchedule(ref this, out Schedule);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, out int32 retVal) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, VARIANT index, ISchedule** ppSchedule) get_Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, IUnknown** ienum) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, VARIANT index, out ISchedule* ppSchedule) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, out IUnknown* ienum) get__NewEnum;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, ISchedule* pSchedule) Add;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, VARIANT vSchedule) Remove;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self) Clear;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, IScheduleCollection* pSchedules) AddRange;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, ISchedule** Schedule) CreateSchedule;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, out ISchedule* Schedule) CreateSchedule;
 		}
 	}
 	[CRepr]
@@ -1796,11 +1798,11 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Description(BSTR* description) mut => VT.get_Description(ref this, description);
+		public HRESULT get_Description(out BSTR description) mut => VT.get_Description(ref this, out description);
 		public HRESULT put_Description(BSTR description) mut => VT.put_Description(ref this, description);
 		public HRESULT get_Enabled(out int16 enabled) mut => VT.get_Enabled(ref this, out enabled);
 		public HRESULT put_Enabled(int16 enabled) mut => VT.put_Enabled(ref this, enabled);
-		public HRESULT get_Key(BSTR* key) mut => VT.get_Key(ref this, key);
+		public HRESULT get_Key(out BSTR key) mut => VT.get_Key(ref this, out key);
 		public HRESULT put_Key(BSTR key) mut => VT.put_Key(ref this, key);
 		public HRESULT get_Value(out VARIANT Value) mut => VT.get_Value(ref this, out Value);
 		public HRESULT put_Value(VARIANT Value) mut => VT.put_Value(ref this, Value);
@@ -1810,11 +1812,11 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, BSTR* description) get_Description;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, out BSTR description) get_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, BSTR description) put_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, out int16 enabled) get_Enabled;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, int16 enabled) put_Enabled;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, BSTR* key) get_Key;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, out BSTR key) get_Key;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, BSTR key) put_Key;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, out VARIANT Value) get_Value;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, VARIANT Value) put_Value;
@@ -1830,9 +1832,9 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Count(out int32 retVal) mut => VT.get_Count(ref this, out retVal);
-		public HRESULT get_Item(VARIANT index, IValueMapItem** value) mut => VT.get_Item(ref this, index, value);
-		public HRESULT get__NewEnum(IUnknown** retVal) mut => VT.get__NewEnum(ref this, retVal);
-		public HRESULT get_Description(BSTR* description) mut => VT.get_Description(ref this, description);
+		public HRESULT get_Item(VARIANT index, out IValueMapItem* value) mut => VT.get_Item(ref this, index, out value);
+		public HRESULT get__NewEnum(out IUnknown* retVal) mut => VT.get__NewEnum(ref this, out retVal);
+		public HRESULT get_Description(out BSTR description) mut => VT.get_Description(ref this, out description);
 		public HRESULT put_Description(BSTR description) mut => VT.put_Description(ref this, description);
 		public HRESULT get_Value(out VARIANT Value) mut => VT.get_Value(ref this, out Value);
 		public HRESULT put_Value(VARIANT Value) mut => VT.put_Value(ref this, Value);
@@ -1842,15 +1844,15 @@ static
 		public HRESULT Remove(VARIANT value) mut => VT.Remove(ref this, value);
 		public HRESULT Clear() mut => VT.Clear(ref this);
 		public HRESULT AddRange(IValueMap* map) mut => VT.AddRange(ref this, map);
-		public HRESULT CreateValueMapItem(IValueMapItem** Item) mut => VT.CreateValueMapItem(ref this, Item);
+		public HRESULT CreateValueMapItem(out IValueMapItem* Item) mut => VT.CreateValueMapItem(ref this, out Item);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, out int32 retVal) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, VARIANT index, IValueMapItem** value) get_Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, IUnknown** retVal) get__NewEnum;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, BSTR* description) get_Description;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, VARIANT index, out IValueMapItem* value) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, out IUnknown* retVal) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, out BSTR description) get_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, BSTR description) put_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, out VARIANT Value) get_Value;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, VARIANT Value) put_Value;
@@ -1860,7 +1862,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, VARIANT value) Remove;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self) Clear;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, IValueMap* map) AddRange;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, IValueMapItem** Item) CreateValueMapItem;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, out IValueMapItem* Item) CreateValueMapItem;
 		}
 	}
 	[CRepr]
@@ -1879,7 +1881,7 @@ static
 		public HRESULT get_LineStyle(out int32 piValue) mut => VT.get_LineStyle(ref this, out piValue);
 		public HRESULT put_ScaleFactor(int32 iScale) mut => VT.put_ScaleFactor(ref this, iScale);
 		public HRESULT get_ScaleFactor(out int32 piValue) mut => VT.get_ScaleFactor(ref this, out piValue);
-		public HRESULT get_Path(BSTR* pstrValue) mut => VT.get_Path(ref this, pstrValue);
+		public HRESULT get_Path(out BSTR pstrValue) mut => VT.get_Path(ref this, out pstrValue);
 		public HRESULT GetValue(out double Value, out int32 Status) mut => VT.GetValue(ref this, out Value, out Status);
 		public HRESULT GetStatistics(out double Max, out double Min, out double Avg, out int32 Status) mut => VT.GetStatistics(ref this, out Max, out Min, out Avg, out Status);
 
@@ -1895,7 +1897,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, out int32 piValue) get_LineStyle;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, int32 iScale) put_ScaleFactor;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, out int32 piValue) get_ScaleFactor;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, BSTR* pstrValue) get_Path;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, out BSTR pstrValue) get_Path;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, out double Value, out int32 Status) GetValue;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, out double Max, out double Min, out double Avg, out int32 Status) GetStatistics;
 		}
@@ -1939,7 +1941,7 @@ static
 		public HRESULT get_LineStyle(out int32 piValue) mut => VT.get_LineStyle(ref this, out piValue);
 		public HRESULT put_ScaleFactor(int32 iScale) mut => VT.put_ScaleFactor(ref this, iScale);
 		public HRESULT get_ScaleFactor(out int32 piValue) mut => VT.get_ScaleFactor(ref this, out piValue);
-		public HRESULT get_Path(BSTR* pstrValue) mut => VT.get_Path(ref this, pstrValue);
+		public HRESULT get_Path(out BSTR pstrValue) mut => VT.get_Path(ref this, out pstrValue);
 		public HRESULT GetValue(out double Value, out int32 Status) mut => VT.GetValue(ref this, out Value, out Status);
 		public HRESULT GetStatistics(out double Max, out double Min, out double Avg, out int32 Status) mut => VT.GetStatistics(ref this, out Max, out Min, out Avg, out Status);
 		public HRESULT put_Selected(int16 bState) mut => VT.put_Selected(ref this, bState);
@@ -1960,7 +1962,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, out int32 piValue) get_LineStyle;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, int32 iScale) put_ScaleFactor;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, out int32 piValue) get_ScaleFactor;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, BSTR* pstrValue) get_Path;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, out BSTR pstrValue) get_Path;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, out double Value, out int32 Status) GetValue;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, out double Max, out double Min, out double Avg, out int32 Status) GetStatistics;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, int16 bState) put_Selected;
@@ -1988,18 +1990,18 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Count(out int32 pLong) mut => VT.get_Count(ref this, out pLong);
-		public HRESULT get__NewEnum(IUnknown** ppIunk) mut => VT.get__NewEnum(ref this, ppIunk);
-		public HRESULT get_Item(VARIANT index, DICounterItem** ppI) mut => VT.get_Item(ref this, index, ppI);
-		public HRESULT Add(BSTR pathname, DICounterItem** ppI) mut => VT.Add(ref this, pathname, ppI);
+		public HRESULT get__NewEnum(out IUnknown* ppIunk) mut => VT.get__NewEnum(ref this, out ppIunk);
+		public HRESULT get_Item(VARIANT index, out DICounterItem* ppI) mut => VT.get_Item(ref this, index, out ppI);
+		public HRESULT Add(BSTR pathname, out DICounterItem* ppI) mut => VT.Add(ref this, pathname, out ppI);
 		public HRESULT Remove(VARIANT index) mut => VT.Remove(ref this, index);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounters self, out int32 pLong) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounters self, IUnknown** ppIunk) get__NewEnum;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounters self, VARIANT index, DICounterItem** ppI) get_Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounters self, BSTR pathname, DICounterItem** ppI) Add;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounters self, out IUnknown* ppIunk) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounters self, VARIANT index, out DICounterItem* ppI) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounters self, BSTR pathname, out DICounterItem* ppI) Add;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounters self, VARIANT index) Remove;
 		}
 	}
@@ -2010,12 +2012,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Path(BSTR* pstrValue) mut => VT.get_Path(ref this, pstrValue);
+		public HRESULT get_Path(out BSTR pstrValue) mut => VT.get_Path(ref this, out pstrValue);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFileItem self, BSTR* pstrValue) get_Path;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFileItem self, out BSTR pstrValue) get_Path;
 		}
 	}
 	[CRepr]
@@ -2036,18 +2038,18 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Count(out int32 pLong) mut => VT.get_Count(ref this, out pLong);
-		public HRESULT get__NewEnum(IUnknown** ppIunk) mut => VT.get__NewEnum(ref this, ppIunk);
-		public HRESULT get_Item(VARIANT index, DILogFileItem** ppI) mut => VT.get_Item(ref this, index, ppI);
-		public HRESULT Add(BSTR pathname, DILogFileItem** ppI) mut => VT.Add(ref this, pathname, ppI);
+		public HRESULT get__NewEnum(out IUnknown* ppIunk) mut => VT.get__NewEnum(ref this, out ppIunk);
+		public HRESULT get_Item(VARIANT index, out DILogFileItem* ppI) mut => VT.get_Item(ref this, index, out ppI);
+		public HRESULT Add(BSTR pathname, out DILogFileItem* ppI) mut => VT.Add(ref this, pathname, out ppI);
 		public HRESULT Remove(VARIANT index) mut => VT.Remove(ref this, index);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFiles self, out int32 pLong) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFiles self, IUnknown** ppIunk) get__NewEnum;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFiles self, VARIANT index, DILogFileItem** ppI) get_Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFiles self, BSTR pathname, DILogFileItem** ppI) Add;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFiles self, out IUnknown* ppIunk) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFiles self, VARIANT index, out DILogFileItem* ppI) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFiles self, BSTR pathname, out DILogFileItem* ppI) Add;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFiles self, VARIANT index) Remove;
 		}
 	}
@@ -2066,9 +2068,9 @@ static
 		public HRESULT put_BorderStyle(int32 iBorderStyle) mut => VT.put_BorderStyle(ref this, iBorderStyle);
 		public HRESULT get_ForeColor(out uint32 pColor) mut => VT.get_ForeColor(ref this, out pColor);
 		public HRESULT put_ForeColor(uint32 Color) mut => VT.put_ForeColor(ref this, Color);
-		public HRESULT get_Font(IFontDisp** ppFont) mut => VT.get_Font(ref this, ppFont);
+		public HRESULT get_Font(out IFontDisp* ppFont) mut => VT.get_Font(ref this, out ppFont);
 		public HRESULT putref_Font(IFontDisp* pFont) mut => VT.putref_Font(ref this, pFont);
-		public HRESULT get_Counters(ICounters** ppICounters) mut => VT.get_Counters(ref this, ppICounters);
+		public HRESULT get_Counters(out ICounters* ppICounters) mut => VT.get_Counters(ref this, out ppICounters);
 		public HRESULT put_ShowVerticalGrid(int16 bState) mut => VT.put_ShowVerticalGrid(ref this, bState);
 		public HRESULT get_ShowVerticalGrid(out int16 pbState) mut => VT.get_ShowVerticalGrid(ref this, out pbState);
 		public HRESULT put_ShowHorizontalGrid(int16 bState) mut => VT.put_ShowHorizontalGrid(ref this, bState);
@@ -2090,20 +2092,20 @@ static
 		public HRESULT put_ManualUpdate(int16 bState) mut => VT.put_ManualUpdate(ref this, bState);
 		public HRESULT get_ManualUpdate(out int16 pbState) mut => VT.get_ManualUpdate(ref this, out pbState);
 		public HRESULT put_GraphTitle(BSTR bsTitle) mut => VT.put_GraphTitle(ref this, bsTitle);
-		public HRESULT get_GraphTitle(BSTR* pbsTitle) mut => VT.get_GraphTitle(ref this, pbsTitle);
+		public HRESULT get_GraphTitle(out BSTR pbsTitle) mut => VT.get_GraphTitle(ref this, out pbsTitle);
 		public HRESULT put_YAxisLabel(BSTR bsTitle) mut => VT.put_YAxisLabel(ref this, bsTitle);
-		public HRESULT get_YAxisLabel(BSTR* pbsTitle) mut => VT.get_YAxisLabel(ref this, pbsTitle);
+		public HRESULT get_YAxisLabel(out BSTR pbsTitle) mut => VT.get_YAxisLabel(ref this, out pbsTitle);
 		public HRESULT CollectSample() mut => VT.CollectSample(ref this);
 		public HRESULT UpdateGraph() mut => VT.UpdateGraph(ref this);
 		public HRESULT BrowseCounters() mut => VT.BrowseCounters(ref this);
 		public HRESULT DisplayProperties() mut => VT.DisplayProperties(ref this);
-		public HRESULT Counter(int32 iIndex, ICounterItem** ppICounter) mut => VT.Counter(ref this, iIndex, ppICounter);
-		public HRESULT AddCounter(BSTR bsPath, ICounterItem** ppICounter) mut => VT.AddCounter(ref this, bsPath, ppICounter);
+		public HRESULT Counter(int32 iIndex, out ICounterItem* ppICounter) mut => VT.Counter(ref this, iIndex, out ppICounter);
+		public HRESULT AddCounter(BSTR bsPath, out ICounterItem* ppICounter) mut => VT.AddCounter(ref this, bsPath, out ppICounter);
 		public HRESULT DeleteCounter(ICounterItem* pCtr) mut => VT.DeleteCounter(ref this, pCtr);
 		public HRESULT get_BackColorCtl(out uint32 pColor) mut => VT.get_BackColorCtl(ref this, out pColor);
 		public HRESULT put_BackColorCtl(uint32 Color) mut => VT.put_BackColorCtl(ref this, Color);
 		public HRESULT put_LogFileName(BSTR bsFileName) mut => VT.put_LogFileName(ref this, bsFileName);
-		public HRESULT get_LogFileName(BSTR* bsFileName) mut => VT.get_LogFileName(ref this, bsFileName);
+		public HRESULT get_LogFileName(out BSTR bsFileName) mut => VT.get_LogFileName(ref this, out bsFileName);
 		public HRESULT put_LogViewStart(double StartTime) mut => VT.put_LogViewStart(ref this, StartTime);
 		public HRESULT get_LogViewStart(out double StartTime) mut => VT.get_LogViewStart(ref this, out StartTime);
 		public HRESULT put_LogViewStop(double StopTime) mut => VT.put_LogViewStop(ref this, StopTime);
@@ -2127,13 +2129,13 @@ static
 		public HRESULT get_MonitorDuplicateInstances(out int16 pbState) mut => VT.get_MonitorDuplicateInstances(ref this, out pbState);
 		public HRESULT put_DisplayFilter(int32 iValue) mut => VT.put_DisplayFilter(ref this, iValue);
 		public HRESULT get_DisplayFilter(out int32 piValue) mut => VT.get_DisplayFilter(ref this, out piValue);
-		public HRESULT get_LogFiles(ILogFiles** ppILogFiles) mut => VT.get_LogFiles(ref this, ppILogFiles);
+		public HRESULT get_LogFiles(out ILogFiles* ppILogFiles) mut => VT.get_LogFiles(ref this, out ppILogFiles);
 		public HRESULT put_DataSourceType(DataSourceTypeConstants eDataSourceType) mut => VT.put_DataSourceType(ref this, eDataSourceType);
 		public HRESULT get_DataSourceType(out DataSourceTypeConstants peDataSourceType) mut => VT.get_DataSourceType(ref this, out peDataSourceType);
 		public HRESULT put_SqlDsnName(BSTR bsSqlDsnName) mut => VT.put_SqlDsnName(ref this, bsSqlDsnName);
-		public HRESULT get_SqlDsnName(BSTR* bsSqlDsnName) mut => VT.get_SqlDsnName(ref this, bsSqlDsnName);
+		public HRESULT get_SqlDsnName(out BSTR bsSqlDsnName) mut => VT.get_SqlDsnName(ref this, out bsSqlDsnName);
 		public HRESULT put_SqlLogSetName(BSTR bsSqlLogSetName) mut => VT.put_SqlLogSetName(ref this, bsSqlLogSetName);
-		public HRESULT get_SqlLogSetName(BSTR* bsSqlLogSetName) mut => VT.get_SqlLogSetName(ref this, bsSqlLogSetName);
+		public HRESULT get_SqlLogSetName(out BSTR bsSqlLogSetName) mut => VT.get_SqlLogSetName(ref this, out bsSqlLogSetName);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -2146,9 +2148,9 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int32 iBorderStyle) put_BorderStyle;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out uint32 pColor) get_ForeColor;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, uint32 Color) put_ForeColor;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, IFontDisp** ppFont) get_Font;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out IFontDisp* ppFont) get_Font;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, IFontDisp* pFont) putref_Font;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, ICounters** ppICounters) get_Counters;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out ICounters* ppICounters) get_Counters;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int16 bState) put_ShowVerticalGrid;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowVerticalGrid;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int16 bState) put_ShowHorizontalGrid;
@@ -2170,20 +2172,20 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int16 bState) put_ManualUpdate;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int16 pbState) get_ManualUpdate;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR bsTitle) put_GraphTitle;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR* pbsTitle) get_GraphTitle;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out BSTR pbsTitle) get_GraphTitle;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR bsTitle) put_YAxisLabel;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR* pbsTitle) get_YAxisLabel;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out BSTR pbsTitle) get_YAxisLabel;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self) CollectSample;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self) UpdateGraph;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self) BrowseCounters;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self) DisplayProperties;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int32 iIndex, ICounterItem** ppICounter) Counter;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int32 iIndex, out ICounterItem* ppICounter) Counter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR bsPath, out ICounterItem* ppICounter) AddCounter;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, ICounterItem* pCtr) DeleteCounter;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out uint32 pColor) get_BackColorCtl;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, uint32 Color) put_BackColorCtl;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR bsFileName) put_LogFileName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR* bsFileName) get_LogFileName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out BSTR bsFileName) get_LogFileName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, double StartTime) put_LogViewStart;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out double StartTime) get_LogViewStart;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, double StopTime) put_LogViewStop;
@@ -2207,13 +2209,13 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int16 pbState) get_MonitorDuplicateInstances;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int32 iValue) put_DisplayFilter;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int32 piValue) get_DisplayFilter;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, ILogFiles** ppILogFiles) get_LogFiles;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out ILogFiles* ppILogFiles) get_LogFiles;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out DataSourceTypeConstants peDataSourceType) get_DataSourceType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR bsSqlDsnName) put_SqlDsnName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR* bsSqlDsnName) get_SqlDsnName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out BSTR bsSqlDsnName) get_SqlDsnName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR bsSqlLogSetName) put_SqlLogSetName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out BSTR bsSqlLogSetName) get_SqlLogSetName;
 		}
 	}
 	[CRepr]
@@ -2284,9 +2286,9 @@ static
 		public HRESULT put_BorderStyle(int32 iBorderStyle) mut => VT.put_BorderStyle(ref this, iBorderStyle);
 		public HRESULT get_ForeColor(out uint32 pColor) mut => VT.get_ForeColor(ref this, out pColor);
 		public HRESULT put_ForeColor(uint32 Color) mut => VT.put_ForeColor(ref this, Color);
-		public HRESULT get_Font(IFontDisp** ppFont) mut => VT.get_Font(ref this, ppFont);
+		public HRESULT get_Font(out IFontDisp* ppFont) mut => VT.get_Font(ref this, out ppFont);
 		public HRESULT putref_Font(IFontDisp* pFont) mut => VT.putref_Font(ref this, pFont);
-		public HRESULT get_Counters(ICounters** ppICounters) mut => VT.get_Counters(ref this, ppICounters);
+		public HRESULT get_Counters(out ICounters* ppICounters) mut => VT.get_Counters(ref this, out ppICounters);
 		public HRESULT put_ShowVerticalGrid(int16 bState) mut => VT.put_ShowVerticalGrid(ref this, bState);
 		public HRESULT get_ShowVerticalGrid(out int16 pbState) mut => VT.get_ShowVerticalGrid(ref this, out pbState);
 		public HRESULT put_ShowHorizontalGrid(int16 bState) mut => VT.put_ShowHorizontalGrid(ref this, bState);
@@ -2308,20 +2310,20 @@ static
 		public HRESULT put_ManualUpdate(int16 bState) mut => VT.put_ManualUpdate(ref this, bState);
 		public HRESULT get_ManualUpdate(out int16 pbState) mut => VT.get_ManualUpdate(ref this, out pbState);
 		public HRESULT put_GraphTitle(BSTR bsTitle) mut => VT.put_GraphTitle(ref this, bsTitle);
-		public HRESULT get_GraphTitle(BSTR* pbsTitle) mut => VT.get_GraphTitle(ref this, pbsTitle);
+		public HRESULT get_GraphTitle(out BSTR pbsTitle) mut => VT.get_GraphTitle(ref this, out pbsTitle);
 		public HRESULT put_YAxisLabel(BSTR bsTitle) mut => VT.put_YAxisLabel(ref this, bsTitle);
-		public HRESULT get_YAxisLabel(BSTR* pbsTitle) mut => VT.get_YAxisLabel(ref this, pbsTitle);
+		public HRESULT get_YAxisLabel(out BSTR pbsTitle) mut => VT.get_YAxisLabel(ref this, out pbsTitle);
 		public HRESULT CollectSample() mut => VT.CollectSample(ref this);
 		public HRESULT UpdateGraph() mut => VT.UpdateGraph(ref this);
 		public HRESULT BrowseCounters() mut => VT.BrowseCounters(ref this);
 		public HRESULT DisplayProperties() mut => VT.DisplayProperties(ref this);
-		public HRESULT Counter(int32 iIndex, ICounterItem** ppICounter) mut => VT.Counter(ref this, iIndex, ppICounter);
-		public HRESULT AddCounter(BSTR bsPath, ICounterItem** ppICounter) mut => VT.AddCounter(ref this, bsPath, ppICounter);
+		public HRESULT Counter(int32 iIndex, out ICounterItem* ppICounter) mut => VT.Counter(ref this, iIndex, out ppICounter);
+		public HRESULT AddCounter(BSTR bsPath, out ICounterItem* ppICounter) mut => VT.AddCounter(ref this, bsPath, out ppICounter);
 		public HRESULT DeleteCounter(ICounterItem* pCtr) mut => VT.DeleteCounter(ref this, pCtr);
 		public HRESULT get_BackColorCtl(out uint32 pColor) mut => VT.get_BackColorCtl(ref this, out pColor);
 		public HRESULT put_BackColorCtl(uint32 Color) mut => VT.put_BackColorCtl(ref this, Color);
 		public HRESULT put_LogFileName(BSTR bsFileName) mut => VT.put_LogFileName(ref this, bsFileName);
-		public HRESULT get_LogFileName(BSTR* bsFileName) mut => VT.get_LogFileName(ref this, bsFileName);
+		public HRESULT get_LogFileName(out BSTR bsFileName) mut => VT.get_LogFileName(ref this, out bsFileName);
 		public HRESULT put_LogViewStart(double StartTime) mut => VT.put_LogViewStart(ref this, StartTime);
 		public HRESULT get_LogViewStart(out double StartTime) mut => VT.get_LogViewStart(ref this, out StartTime);
 		public HRESULT put_LogViewStop(double StopTime) mut => VT.put_LogViewStop(ref this, StopTime);
@@ -2345,13 +2347,13 @@ static
 		public HRESULT get_MonitorDuplicateInstances(out int16 pbState) mut => VT.get_MonitorDuplicateInstances(ref this, out pbState);
 		public HRESULT put_DisplayFilter(int32 iValue) mut => VT.put_DisplayFilter(ref this, iValue);
 		public HRESULT get_DisplayFilter(out int32 piValue) mut => VT.get_DisplayFilter(ref this, out piValue);
-		public HRESULT get_LogFiles(ILogFiles** ppILogFiles) mut => VT.get_LogFiles(ref this, ppILogFiles);
+		public HRESULT get_LogFiles(out ILogFiles* ppILogFiles) mut => VT.get_LogFiles(ref this, out ppILogFiles);
 		public HRESULT put_DataSourceType(DataSourceTypeConstants eDataSourceType) mut => VT.put_DataSourceType(ref this, eDataSourceType);
 		public HRESULT get_DataSourceType(out DataSourceTypeConstants peDataSourceType) mut => VT.get_DataSourceType(ref this, out peDataSourceType);
 		public HRESULT put_SqlDsnName(BSTR bsSqlDsnName) mut => VT.put_SqlDsnName(ref this, bsSqlDsnName);
-		public HRESULT get_SqlDsnName(BSTR* bsSqlDsnName) mut => VT.get_SqlDsnName(ref this, bsSqlDsnName);
+		public HRESULT get_SqlDsnName(out BSTR bsSqlDsnName) mut => VT.get_SqlDsnName(ref this, out bsSqlDsnName);
 		public HRESULT put_SqlLogSetName(BSTR bsSqlLogSetName) mut => VT.put_SqlLogSetName(ref this, bsSqlLogSetName);
-		public HRESULT get_SqlLogSetName(BSTR* bsSqlLogSetName) mut => VT.get_SqlLogSetName(ref this, bsSqlLogSetName);
+		public HRESULT get_SqlLogSetName(out BSTR bsSqlLogSetName) mut => VT.get_SqlLogSetName(ref this, out bsSqlLogSetName);
 		public HRESULT put_EnableDigitGrouping(int16 bState) mut => VT.put_EnableDigitGrouping(ref this, bState);
 		public HRESULT get_EnableDigitGrouping(out int16 pbState) mut => VT.get_EnableDigitGrouping(ref this, out pbState);
 		public HRESULT put_EnableToolTips(int16 bState) mut => VT.put_EnableToolTips(ref this, bState);
@@ -2384,9 +2386,9 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int32 iBorderStyle) put_BorderStyle;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_ForeColor;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_ForeColor;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, IFontDisp** ppFont) get_Font;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out IFontDisp* ppFont) get_Font;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, IFontDisp* pFont) putref_Font;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, ICounters** ppICounters) get_Counters;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out ICounters* ppICounters) get_Counters;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowVerticalGrid;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowVerticalGrid;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowHorizontalGrid;
@@ -2408,20 +2410,20 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ManualUpdate;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ManualUpdate;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bsTitle) put_GraphTitle;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR* pbsTitle) get_GraphTitle;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out BSTR pbsTitle) get_GraphTitle;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bsTitle) put_YAxisLabel;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR* pbsTitle) get_YAxisLabel;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out BSTR pbsTitle) get_YAxisLabel;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self) CollectSample;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self) UpdateGraph;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self) BrowseCounters;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self) DisplayProperties;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int32 iIndex, ICounterItem** ppICounter) Counter;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int32 iIndex, out ICounterItem* ppICounter) Counter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bsPath, out ICounterItem* ppICounter) AddCounter;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, ICounterItem* pCtr) DeleteCounter;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_BackColorCtl;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_BackColorCtl;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bsFileName) put_LogFileName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR* bsFileName) get_LogFileName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out BSTR bsFileName) get_LogFileName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, double StartTime) put_LogViewStart;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out double StartTime) get_LogViewStart;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, double StopTime) put_LogViewStop;
@@ -2445,13 +2447,13 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_MonitorDuplicateInstances;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int32 iValue) put_DisplayFilter;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int32 piValue) get_DisplayFilter;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, ILogFiles** ppILogFiles) get_LogFiles;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out ILogFiles* ppILogFiles) get_LogFiles;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out DataSourceTypeConstants peDataSourceType) get_DataSourceType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bsSqlDsnName) put_SqlDsnName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR* bsSqlDsnName) get_SqlDsnName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out BSTR bsSqlDsnName) get_SqlDsnName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bsSqlLogSetName) put_SqlLogSetName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out BSTR bsSqlLogSetName) get_SqlLogSetName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_EnableDigitGrouping;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_EnableDigitGrouping;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_EnableToolTips;

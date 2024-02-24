@@ -22,6 +22,8 @@ static
 	public const uint32 HANGUP_PENDING = 4;
 	public const uint32 HANGUP_COMPLETE = 5;
 	public const uint32 SESSION_ABORTED = 6;
+	public const String ALL_TRANSPORTS = "M\x00\x00\x00";
+	public const String MS_NBF = "MNBF";
 	public const uint32 NCBCALL = 16;
 	public const uint32 NCBLISTEN = 17;
 	public const uint32 NCBHANGUP = 18;

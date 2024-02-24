@@ -507,6 +507,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"ClosePseudoConsole"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"COORD"
@@ -833,7 +834,7 @@
 ,"Functions":[
 	{
 		"Name":"AllocConsole"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -845,7 +846,7 @@
 	}
 	,{
 		"Name":"FreeConsole"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -857,7 +858,7 @@
 	}
 	,{
 		"Name":"AttachConsole"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -870,7 +871,7 @@
 	}
 	,{
 		"Name":"GetConsoleCP"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
@@ -882,7 +883,7 @@
 	}
 	,{
 		"Name":"GetConsoleOutputCP"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
@@ -894,7 +895,7 @@
 	}
 	,{
 		"Name":"GetConsoleMode"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -908,7 +909,7 @@
 	}
 	,{
 		"Name":"SetConsoleMode"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -922,7 +923,7 @@
 	}
 	,{
 		"Name":"GetNumberOfConsoleInputEvents"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -936,7 +937,7 @@
 	}
 	,{
 		"Name":"ReadConsoleInputA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -952,7 +953,7 @@
 	}
 	,{
 		"Name":"ReadConsoleInputW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -968,7 +969,7 @@
 	}
 	,{
 		"Name":"PeekConsoleInputA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -984,7 +985,7 @@
 	}
 	,{
 		"Name":"PeekConsoleInputW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1000,7 +1001,7 @@
 	}
 	,{
 		"Name":"ReadConsoleA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1017,7 +1018,7 @@
 	}
 	,{
 		"Name":"ReadConsoleW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1034,7 +1035,7 @@
 	}
 	,{
 		"Name":"WriteConsoleA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1051,7 +1052,7 @@
 	}
 	,{
 		"Name":"WriteConsoleW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1068,7 +1069,7 @@
 	}
 	,{
 		"Name":"SetConsoleCtrlHandler"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1126,7 +1127,7 @@
 	}
 	,{
 		"Name":"FillConsoleOutputCharacterA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1143,7 +1144,7 @@
 	}
 	,{
 		"Name":"FillConsoleOutputCharacterW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1160,7 +1161,7 @@
 	}
 	,{
 		"Name":"FillConsoleOutputAttribute"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1177,7 +1178,7 @@
 	}
 	,{
 		"Name":"GenerateConsoleCtrlEvent"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1191,7 +1192,7 @@
 	}
 	,{
 		"Name":"CreateConsoleScreenBuffer"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1208,7 +1209,7 @@
 	}
 	,{
 		"Name":"SetConsoleActiveScreenBuffer"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1221,7 +1222,7 @@
 	}
 	,{
 		"Name":"FlushConsoleInputBuffer"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1234,7 +1235,7 @@
 	}
 	,{
 		"Name":"SetConsoleCP"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1247,7 +1248,7 @@
 	}
 	,{
 		"Name":"SetConsoleOutputCP"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1260,7 +1261,7 @@
 	}
 	,{
 		"Name":"GetConsoleCursorInfo"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1274,7 +1275,7 @@
 	}
 	,{
 		"Name":"SetConsoleCursorInfo"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1288,7 +1289,7 @@
 	}
 	,{
 		"Name":"GetConsoleScreenBufferInfo"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1302,7 +1303,7 @@
 	}
 	,{
 		"Name":"GetConsoleScreenBufferInfoEx"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1316,7 +1317,7 @@
 	}
 	,{
 		"Name":"SetConsoleScreenBufferInfoEx"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1330,7 +1331,7 @@
 	}
 	,{
 		"Name":"SetConsoleScreenBufferSize"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1344,7 +1345,7 @@
 	}
 	,{
 		"Name":"SetConsoleCursorPosition"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1358,7 +1359,7 @@
 	}
 	,{
 		"Name":"GetLargestConsoleWindowSize"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"COORD","TargetKind":"Default","Api":"System.Console","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1371,7 +1372,7 @@
 	}
 	,{
 		"Name":"SetConsoleTextAttribute"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1385,7 +1386,7 @@
 	}
 	,{
 		"Name":"SetConsoleWindowInfo"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1400,7 +1401,7 @@
 	}
 	,{
 		"Name":"WriteConsoleOutputCharacterA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1417,7 +1418,7 @@
 	}
 	,{
 		"Name":"WriteConsoleOutputCharacterW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1434,7 +1435,7 @@
 	}
 	,{
 		"Name":"WriteConsoleOutputAttribute"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1451,7 +1452,7 @@
 	}
 	,{
 		"Name":"ReadConsoleOutputCharacterA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1468,7 +1469,7 @@
 	}
 	,{
 		"Name":"ReadConsoleOutputCharacterW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1485,7 +1486,7 @@
 	}
 	,{
 		"Name":"ReadConsoleOutputAttribute"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1502,7 +1503,7 @@
 	}
 	,{
 		"Name":"WriteConsoleInputA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1518,7 +1519,7 @@
 	}
 	,{
 		"Name":"WriteConsoleInputW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1534,7 +1535,7 @@
 	}
 	,{
 		"Name":"ScrollConsoleScreenBufferA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1551,7 +1552,7 @@
 	}
 	,{
 		"Name":"ScrollConsoleScreenBufferW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1568,7 +1569,7 @@
 	}
 	,{
 		"Name":"WriteConsoleOutputA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1585,7 +1586,7 @@
 	}
 	,{
 		"Name":"WriteConsoleOutputW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1602,7 +1603,7 @@
 	}
 	,{
 		"Name":"ReadConsoleOutputA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1619,7 +1620,7 @@
 	}
 	,{
 		"Name":"ReadConsoleOutputW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1636,7 +1637,7 @@
 	}
 	,{
 		"Name":"GetConsoleTitleA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
@@ -1650,7 +1651,7 @@
 	}
 	,{
 		"Name":"GetConsoleTitleW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
@@ -1664,7 +1665,7 @@
 	}
 	,{
 		"Name":"GetConsoleOriginalTitleA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
@@ -1678,7 +1679,7 @@
 	}
 	,{
 		"Name":"GetConsoleOriginalTitleW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
@@ -1692,7 +1693,7 @@
 	}
 	,{
 		"Name":"SetConsoleTitleA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1705,7 +1706,7 @@
 	}
 	,{
 		"Name":"SetConsoleTitleW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1718,7 +1719,7 @@
 	}
 	,{
 		"Name":"GetNumberOfConsoleMouseButtons"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1731,7 +1732,7 @@
 	}
 	,{
 		"Name":"GetConsoleFontSize"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"COORD","TargetKind":"Default","Api":"System.Console","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1745,7 +1746,7 @@
 	}
 	,{
 		"Name":"GetCurrentConsoleFont"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1760,7 +1761,7 @@
 	}
 	,{
 		"Name":"GetCurrentConsoleFontEx"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1775,7 +1776,7 @@
 	}
 	,{
 		"Name":"SetCurrentConsoleFontEx"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1790,7 +1791,7 @@
 	}
 	,{
 		"Name":"GetConsoleSelectionInfo"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1803,7 +1804,7 @@
 	}
 	,{
 		"Name":"GetConsoleHistoryInfo"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1816,7 +1817,7 @@
 	}
 	,{
 		"Name":"SetConsoleHistoryInfo"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1829,7 +1830,7 @@
 	}
 	,{
 		"Name":"GetConsoleDisplayMode"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1842,7 +1843,7 @@
 	}
 	,{
 		"Name":"SetConsoleDisplayMode"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1869,7 +1870,7 @@
 	}
 	,{
 		"Name":"AddConsoleAliasA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1884,7 +1885,7 @@
 	}
 	,{
 		"Name":"AddConsoleAliasW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -1899,7 +1900,7 @@
 	}
 	,{
 		"Name":"GetConsoleAliasA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
@@ -1915,7 +1916,7 @@
 	}
 	,{
 		"Name":"GetConsoleAliasW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
@@ -1981,7 +1982,7 @@
 	}
 	,{
 		"Name":"GetConsoleAliasesA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
@@ -1996,7 +1997,7 @@
 	}
 	,{
 		"Name":"GetConsoleAliasesW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
@@ -2011,7 +2012,7 @@
 	}
 	,{
 		"Name":"GetConsoleAliasExesA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
@@ -2025,7 +2026,7 @@
 	}
 	,{
 		"Name":"GetConsoleAliasExesW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
@@ -2149,7 +2150,7 @@
 	}
 	,{
 		"Name":"GetConsoleProcessList"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
@@ -2163,7 +2164,7 @@
 	}
 	,{
 		"Name":"GetStdHandle"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -2176,7 +2177,7 @@
 	}
 	,{
 		"Name":"SetStdHandle"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"KERNEL32"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]

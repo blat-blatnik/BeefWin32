@@ -205,18 +205,18 @@ static
 			public _Region_e__Struct Region;
 			
 			[CRepr]
-			public struct _Block_e__Struct
-			{
-				public HANDLE hMem;
-				public uint32[3] dwReserved;
-			}
-			[CRepr]
 			public struct _Region_e__Struct
 			{
 				public uint32 dwCommittedSize;
 				public uint32 dwUnCommittedSize;
 				public void* lpFirstBlock;
 				public void* lpLastBlock;
+			}
+			[CRepr]
+			public struct _Block_e__Struct
+			{
+				public HANDLE hMem;
+				public uint32[3] dwReserved;
 			}
 		}
 	}
@@ -319,6 +319,13 @@ static
 	{
 		public uint Offset;
 		public uint Flags;
+	}
+	[CRepr]
+	public struct MEM_ADDRESS_REQUIREMENTS
+	{
+		public void* LowestStartingAddress;
+		public void* HighestEndingAddress;
+		public uint Alignment;
 	}
 	[CRepr]
 	public struct MEM_EXTENDED_PARAMETER

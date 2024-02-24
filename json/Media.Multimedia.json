@@ -16858,6 +16858,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"MCIWND_WINDOW_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MCIWndClass"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"MCIWNDOPENF_NEW"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -19805,6 +19812,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"DRIVERS_SECTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DRIVERS32"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MCI_SECTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MCI32"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"DCB_NOSWITCH"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -20698,6 +20719,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2068
+		,"Attrs":[]
+	}
+	,{
+		"Name":"JOY_CONFIGCHANGED_MSGSTRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSJSTICK_VJOYD_MSGSTR"
 		,"Attrs":[]
 	}
 	,{
@@ -30284,6 +30312,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"TARGET_DEVICE_FRIENDLY_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TargetDeviceFriendlyName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"TARGET_DEVICE_OPEN_EXCLUSIVELY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TargetDeviceOpenExclusively"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"MCIERR_INVALID_DEVICE_ID"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -32506,6 +32548,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HDRVR"
@@ -32515,6 +32558,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HIC"
@@ -32524,6 +32568,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HVIDEO"
@@ -32533,6 +32578,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"KSDATAFORMAT_SUBTYPE_IEEE_FLOAT"
@@ -35209,6 +35255,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"00020021-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35375,6 +35422,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"00020022-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35410,6 +35458,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"00020024-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35451,7 +35500,7 @@
 				,"Params":[
 					{"Name":"plPos","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["In","Out"]}
 					,{"Name":"plLength","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["In","Out"]}
-					,{"Name":"pstream","Type":{"Kind":"ApiRef","Name":"IAVIStream","TargetKind":"Com","Api":"Media.Multimedia","Parents":[]},"Attrs":["In","Out"]}
+					,{"Name":"pstream","Type":{"Kind":"ApiRef","Name":"IAVIStream","TargetKind":"Com","Api":"Media.Multimedia","Parents":[]},"Attrs":["In"]}
 					,{"Name":"lStart","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"lEnd","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 				]
@@ -35489,6 +35538,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"00020025-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPersistFile","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35510,6 +35560,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"00020020-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35612,6 +35663,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"00020023-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38600,7 +38652,7 @@
 		,"Platform":null
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"lpfn","Type":{"Kind":"ApiRef","Name":"LPTASKCALLBACK","TargetKind":"FunctionPointer","Api":"Media.Multimedia","Parents":[]},"Attrs":["In","Out"]}
+			{"Name":"lpfn","Type":{"Kind":"ApiRef","Name":"LPTASKCALLBACK","TargetKind":"FunctionPointer","Api":"Media.Multimedia","Parents":[]},"Attrs":["In"]}
 			,{"Name":"lph","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["In","Out"]}
 			,{"Name":"dwInst","Type":{"Kind":"Native","Name":"UIntPtr"},"Attrs":["In"]}
 		]

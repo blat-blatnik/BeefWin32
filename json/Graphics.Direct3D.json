@@ -695,6 +695,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8ba5fb08-5195-40e2-ac58-0d989c3a0102"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -740,6 +743,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"a06eb39a-50da-425b-8c31-4eecd6c270f3"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -792,6 +798,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":null
 		,"Methods":[
 			{

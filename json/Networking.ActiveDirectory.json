@@ -408,6 +408,41 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"CFSTR_DSOBJECTNAMES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DsObjectNames"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CFSTR_DS_DISPLAY_SPEC_OPTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DsDisplaySpecOptions"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CFSTR_DSDISPLAYSPECOPTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DsDisplaySpecOptions"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DS_PROP_SHELL_PREFIX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"shell"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DS_PROP_ADMIN_PREFIX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"admin"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"DSDSOF_HASUSERANDSERVERINFO"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -433,6 +468,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1073741824
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CFSTR_DSPROPERTYPAGEINFO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DsPropPageInfo"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DSPROP_ATTRCHANGED_MSG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DsPropAttrChanged"
 		,"Attrs":[]
 	}
 	,{
@@ -1276,6 +1325,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"CFSTR_DSQUERYPARAMS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DsQueryParameters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CFSTR_DSQUERYSCOPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DsQueryScope"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"DSQPM_GETCLASSLIST"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1469,6 +1532,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":7
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DS_SYNCED_EVENT_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NTDSInitialSyncsCompleted"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DS_SYNCED_EVENT_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NTDSInitialSyncsCompleted"
 		,"Attrs":[]
 	}
 	,{
@@ -2354,6 +2431,174 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"GUID_USERS_CONTAINER_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"a9d1ca15768811d1aded00c04fd8d5cd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_COMPUTRS_CONTAINER_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"aa312825768811d1aded00c04fd8d5cd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_SYSTEMS_CONTAINER_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ab1d30f3768811d1aded00c04fd8d5cd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_DOMAIN_CONTROLLERS_CONTAINER_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"a361b2ffffd211d1aa4b00c04fd7d83a"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_INFRASTRUCTURE_CONTAINER_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"2fbac1870ade11d297c400c04fd8d5cd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_DELETED_OBJECTS_CONTAINER_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"18e2ea80684f11d2b9aa00c04f79f805"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_LOSTANDFOUND_CONTAINER_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ab8153b7768811d1aded00c04fd8d5cd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_FOREIGNSECURITYPRINCIPALS_CONTAINER_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"22b70c67d56e4efb91e9300fca3dc1aa"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_PROGRAM_DATA_CONTAINER_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"09460c08ae1e4a4ea0f64aee7daa1e5a"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_MICROSOFT_PROGRAM_DATA_CONTAINER_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"f4be92a4c777485e878e9421d53087db"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_NTDS_QUOTAS_CONTAINER_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"6227f0af1fc2410d8e3bb10615bb5b0f"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_USERS_CONTAINER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"a9d1ca15768811d1aded00c04fd8d5cd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_COMPUTRS_CONTAINER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"aa312825768811d1aded00c04fd8d5cd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_SYSTEMS_CONTAINER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ab1d30f3768811d1aded00c04fd8d5cd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_DOMAIN_CONTROLLERS_CONTAINER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"a361b2ffffd211d1aa4b00c04fd7d83a"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_INFRASTRUCTURE_CONTAINER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"2fbac1870ade11d297c400c04fd8d5cd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_DELETED_OBJECTS_CONTAINER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"18e2ea80684f11d2b9aa00c04f79f805"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_LOSTANDFOUND_CONTAINER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ab8153b7768811d1aded00c04fd8d5cd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_FOREIGNSECURITYPRINCIPALS_CONTAINER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"22b70c67d56e4efb91e9300fca3dc1aa"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_PROGRAM_DATA_CONTAINER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"09460c08ae1e4a4ea0f64aee7daa1e5a"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_MICROSOFT_PROGRAM_DATA_CONTAINER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"f4be92a4c777485e878e9421d53087db"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_NTDS_QUOTAS_CONTAINER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"6227f0af1fc2410d8e3bb10615bb5b0f"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_MANAGED_SERVICE_ACCOUNTS_CONTAINER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1EB93889E40C45DF9F0C64D23BBB6237"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_KEYS_CONTAINER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"683A24E2E8164BD3AF86AC3C2CF3F981"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"DS_REPSYNCALL_NO_OPTIONS"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -2655,6 +2900,90 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"ADAM_SCP_SITE_NAME_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"site:"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ADAM_SCP_SITE_NAME_STRING_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"site:"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ADAM_SCP_PARTITION_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"partition:"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ADAM_SCP_PARTITION_STRING_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"partition:"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ADAM_SCP_INSTANCE_NAME_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"instance:"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ADAM_SCP_INSTANCE_NAME_STRING_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"instance:"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ADAM_SCP_FSMO_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"fsmo:"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ADAM_SCP_FSMO_STRING_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"fsmo:"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ADAM_SCP_FSMO_NAMING_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"naming"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ADAM_SCP_FSMO_NAMING_STRING_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"naming"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ADAM_SCP_FSMO_SCHEMA_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"schema"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ADAM_SCP_FSMO_SCHEMA_STRING_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"schema"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"ADAM_REPL_AUTHENTICATION_MODE_NEGOTIATE_PASS_THROUGH"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -2701,6 +3030,41 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":8
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_RECYCLE_BIN_OPTIONAL_FEATURE_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"d8dc6d76d0ac5e44f3b9a7f9b6744f2a"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_RECYCLE_BIN_OPTIONAL_FEATURE_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"d8dc6d76d0ac5e44f3b9a7f9b6744f2a"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_PRIVILEGED_ACCESS_MANAGEMENT_OPTIONAL_FEATURE_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"73e843ece8cc4046b4ab07ffe4ab5bcd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GUID_PRIVILEGED_ACCESS_MANAGEMENT_OPTIONAL_FEATURE_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"73e843ece8cc4046b4ab07ffe4ab5bcd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CFSTR_DSOP_DS_SELECTION_LIST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CFSTR_DSOP_DS_SELECTION_LIST"
 		,"Attrs":[]
 	}
 	,{
@@ -3243,6 +3607,1308 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"hrNone"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrNyi"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-1073741823
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidParam"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589631
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrError"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589630
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidHandle"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589629
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrRestoreInProgress"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589628
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrAlreadyOpen"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589627
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidRecips"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589626
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrCouldNotConnect"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589625
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrRestoreMapExists"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589624
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrIncrementalBackupDisabled"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589623
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrLogFileNotFound"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589622
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrCircularLogging"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589621
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrNoFullRestore"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589620
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrCommunicationError"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589619
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrFullBackupNotTaken"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589618
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrMissingExpiryToken"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589617
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrUnknownExpiryTokenFormat"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589616
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrContentsExpired"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939589615
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrFileClose"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523994
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrOutOfThreads"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523993
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTooManyIO"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523991
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrBFNotSynchronous"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013265720
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrBFPageNotFound"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013265719
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrBFInUse"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523894
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrPMRecDeleted"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523794
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrRemainingVersions"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013265599
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrFLDKeyTooBig"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013265520
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrFLDTooManySegments"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523695
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrFLDNullKey"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013265518
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrLogFileCorrupt"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523595
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrNoBackupDirectory"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523593
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrBackupDirectoryNotEmpty"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523592
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrBackupInProgress"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523591
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrMissingPreviousLogFile"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523587
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrLogWriteFail"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523586
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrBadLogVersion"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523582
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidLogSequence"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523581
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrLoggingDisabled"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523580
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrLogBufferTooSmall"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523579
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrLogSequenceEnd"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523577
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrNoBackup"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523576
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidBackupSequence"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523575
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrBackupNotAllowedYet"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523573
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrDeleteBackupFileFail"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523572
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrMakeBackupDirectoryFail"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523571
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidBackup"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523570
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrRecoveredWithErrors"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523569
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrMissingLogFile"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523568
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrLogDiskFull"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523567
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrBadLogSignature"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523566
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrBadDbSignature"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523565
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrBadCheckpointSignature"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523564
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrCheckpointCorrupt"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523563
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrDatabaseInconsistent"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523546
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrConsistentTimeMismatch"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523545
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrPatchFileMismatch"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523544
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrRestoreLogTooLow"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523543
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrRestoreLogTooHigh"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523542
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrGivenLogFileHasBadSignature"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523541
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrGivenLogFileIsNotContiguous"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523540
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrMissingRestoreLogFiles"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523539
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrExistingLogFileHasBadSignature"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013265362
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrExistingLogFileIsNotContiguous"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013265361
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrMissingFullBackup"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523536
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrBadBackupDatabaseSize"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523535
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTermInProgress"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523096
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrFeatureNotAvailable"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523095
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidName"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523094
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidParameter"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523093
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrColumnNull"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013264916
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrBufferTruncated"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013264914
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrDatabaseAttached"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013264913
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidDatabaseId"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523086
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrOutOfMemory"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523085
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrOutOfDatabaseSpace"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523084
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrOutOfCursors"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523083
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrOutOfBuffers"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523082
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTooManyIndexes"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523081
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTooManyKeys"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523080
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrRecordDeleted"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523079
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrReadVerifyFailure"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523078
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrOutOfFileHandles"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523076
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrDiskIO"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523074
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidPath"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523073
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrRecordTooBig"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523070
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTooManyOpenDatabases"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523069
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidDatabase"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523068
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrNotInitialized"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523067
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrAlreadyInitialized"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523066
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrFileAccessDenied"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523064
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrBufferTooSmall"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523058
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrSeekNotEqual"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013264881
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTooManyColumns"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523056
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrContainerNotEmpty"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523053
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidFilename"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523052
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidBookmark"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523051
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrColumnInUse"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523050
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidBufferSize"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523049
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrColumnNotUpdatable"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523048
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrIndexInUse"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523045
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrNullKeyDisallowed"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523043
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrNotInTransaction"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523042
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrNoIdleActivity"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013264862
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTooManyActiveUsers"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523037
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidCountry"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523035
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidLanguageId"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523034
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidCodePage"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523033
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrNoWriteLock"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013264853
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrColumnSetNull"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013264852
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrVersionStoreOutOfMemory"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523027
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrCurrencyStackOutOfMemory"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939523026
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrOutOfSessions"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522995
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrWriteConflict"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522994
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTransTooDeep"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522993
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidSesid"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522992
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrSessionWriteConflict"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522989
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInTransaction"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522988
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrDatabaseDuplicate"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522895
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrDatabaseInUse"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522894
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrDatabaseNotFound"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522893
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrDatabaseInvalidName"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522892
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrDatabaseInvalidPages"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522891
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrDatabaseCorrupted"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522890
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrDatabaseLocked"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522889
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTableEmpty"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013264619
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTableLocked"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522794
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTableDuplicate"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522793
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTableInUse"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522792
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrObjectNotFound"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522791
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrCannotRename"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522790
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrDensityInvalid"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522789
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTableNotEmpty"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522788
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidTableId"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522786
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTooManyOpenTables"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522785
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrIllegalOperation"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522784
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrObjectDuplicate"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522782
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidObject"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522780
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrIndexCantBuild"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522695
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrIndexHasPrimary"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522694
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrIndexDuplicate"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522693
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrIndexNotFound"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522692
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrIndexMustStay"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522691
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrIndexInvalidDef"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522690
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrIndexHasClustered"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522688
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrCreateIndexFailed"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013264511
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTooManyOpenIndexes"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522686
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrColumnLong"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522595
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrColumnDoesNotFit"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522593
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrNullInvalid"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522592
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrColumnIndexed"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522591
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrColumnTooBig"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522590
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrColumnNotFound"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522589
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrColumnDuplicate"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522588
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrColumn2ndSysMaint"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522586
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidColumnType"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522585
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrColumnMaxTruncated"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013264408
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrColumnCannotIndex"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522583
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTaggedNotNULL"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522582
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrNoCurrentIndex"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522581
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrKeyIsMade"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522580
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrBadColumnId"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522579
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrBadItagSequence"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522578
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrCannotBeTagged"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522575
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrRecordNotFound"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522495
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrNoCurrentRecord"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522493
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrRecordClusteredChanged"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522492
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrKeyDuplicate"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522491
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrAlreadyPrepared"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522489
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrKeyNotMade"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522488
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrUpdateNotPrepared"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522487
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrwrnDataHasChanged"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013264310
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrerrDataHasChanged"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522485
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrKeyChanged"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013264302
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTooManySorts"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522395
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidOnSort"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522394
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTempFileOpenError"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522293
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrTooManyAttachedDatabases"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522291
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrDiskFull"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522288
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrPermissionDenied"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522287
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrFileNotFound"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522285
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrFileOpenReadOnly"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-2013264107
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrAfterInitialization"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522246
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrLogCorrupted"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522244
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrInvalidOperation"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522190
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrAccessDenied"
+		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":-939522189
+		,"Attrs":[]
+	}
+	,{
 		"Name":"CLSID_DsObjectPicker"
 		,"Type":{"Kind":"Native","Name":"Guid"}
 		,"ValueType":"String"
@@ -3341,6 +5007,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8cfcee30-39bd-11d0-b8d1-00a024ab2dbb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3389,6 +5056,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"1a3114b8-a62e-11d0-a6c5-00a0c906af45"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPersist","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3530,6 +5198,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"ab50dec0-6f1d-11d0-a1c4-00aa00c16e65"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4742,6 +6411,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"fd8256d0-fd15-11ce-abc4-02608c9e7553"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4755,7 +6425,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4769,7 +6439,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4783,7 +6453,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4797,7 +6467,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4811,7 +6481,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4825,7 +6495,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4924,6 +6594,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"001677d0-fd16-11ce-abc4-02608c9e7553"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4951,7 +6622,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5021,7 +6692,7 @@
 				,"Params":[
 					{"Name":"ClassName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"RelativeName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5035,7 +6706,7 @@
 				,"Params":[
 					{"Name":"ClassName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"RelativeName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5062,7 +6733,7 @@
 				,"Params":[
 					{"Name":"SourceName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"NewName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5076,7 +6747,7 @@
 				,"Params":[
 					{"Name":"SourceName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"NewName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -5087,6 +6758,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"72b945e0-253b-11cf-a988-00aa006bc149"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5100,7 +6772,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppEnumerator","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppEnumerator","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5149,6 +6821,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"451a0030-72ec-11cf-b03b-00aa006e0975"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5176,7 +6849,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppEnumerator","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppEnumerator","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5215,6 +6888,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"c6f602b6-8f69-11d0-8528-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5238,7 +6912,9 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[]
+				,"Attrs":[
+					"PreserveSig"
+				]
 				,"Params":[
 					{"Name":"pVariant","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
@@ -5250,7 +6926,9 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[]
+				,"Attrs":[
+					"PreserveSig"
+				]
 				,"Params":[
 					{"Name":"cElements","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 				]
@@ -5336,6 +7014,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"05792c8e-941f-11d0-8529-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5360,7 +7039,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5469,6 +7148,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"79fa9ad0-a97c-11d0-8534-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5521,7 +7201,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5549,7 +7229,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5577,7 +7257,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5605,7 +7285,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5633,7 +7313,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5745,7 +7425,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5773,7 +7453,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5826,6 +7506,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"306e831c-5bc7-11d1-a3b8-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5862,6 +7543,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"86ab4bbe-65f6-11d1-8c13-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5899,7 +7581,7 @@
 				,"Params":[
 					{"Name":"itinfo","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"lcid","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"pptinfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITypeInfo","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pptinfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITypeInfo","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5912,7 +7594,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"rgszNames","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt16"}}},"Attrs":["In","Optional"]}
+					,{"Name":"rgszNames","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt16"}}},"Attrs":["In"]}
 					,{"Name":"cNames","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"lcid","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"rgdispid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
@@ -5945,6 +7627,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"89126bab-6ead-11d1-8c18-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5980,6 +7663,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"3d35553c-d2b0-11d1-b17b-0000f87593a0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6007,7 +7691,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"rgszNames","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt16"}}},"Attrs":["In","Optional"]}
+					,{"Name":"rgszNames","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt16"}}},"Attrs":["In"]}
 					,{"Name":"cNames","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"lcid","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"rgDispid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
@@ -6040,6 +7724,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b2bd0902-8878-11d1-8c21-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6062,6 +7747,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"28b96ba0-b330-11cf-a9ad-00aa006bc149"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -6075,7 +7761,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6100,6 +7786,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"c8f93dd0-4ae0-11cf-9e73-00aa004a5691"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -6113,7 +7800,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6127,7 +7814,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6155,7 +7842,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6463,7 +8150,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6517,7 +8204,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppQualifiers","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IADsCollection","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppQualifiers","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IADsCollection","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -6528,6 +8215,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"c8f93dd3-4ae0-11cf-9e73-00aa004a5691"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -6541,7 +8229,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6569,7 +8257,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6679,7 +8367,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppQualifiers","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IADsCollection","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppQualifiers","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IADsCollection","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -6690,6 +8378,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"c8f93dd2-4ae0-11cf-9e73-00aa004a5691"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -6728,6 +8417,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a05e03a2-effe-11cf-8abc-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -6741,7 +8431,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6769,7 +8459,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6797,7 +8487,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6850,6 +8540,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a1cd2dc6-effe-11cf-8abc-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -6863,7 +8554,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6891,7 +8582,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6919,7 +8610,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6947,7 +8638,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6975,7 +8666,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7028,6 +8719,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a2f733b8-effe-11cf-8abc-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -7041,7 +8733,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7069,7 +8761,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7097,7 +8789,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7125,7 +8817,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7153,7 +8845,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7209,7 +8901,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7234,6 +8926,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"00e4c220-fd16-11ce-abc4-02608c9e7553"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -7482,6 +9175,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"efe3cc70-1d9f-11cf-b1f3-02608c9e7553"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -7495,7 +9189,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7509,7 +9203,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7523,7 +9217,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7551,7 +9245,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7579,7 +9273,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7607,7 +9301,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7635,7 +9329,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7663,7 +9357,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7691,7 +9385,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7719,7 +9413,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7747,7 +9441,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7775,7 +9469,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7803,7 +9497,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7831,7 +9525,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7859,7 +9553,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7887,7 +9581,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7940,6 +9634,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"ef497680-1d9f-11cf-b1f3-02608c9e7553"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -7951,7 +9646,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7974,6 +9669,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"27636b00-410f-11cf-b1ff-02608c9e7553"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -7987,7 +9683,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8013,7 +9709,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppMembers","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IADsMembers","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppMembers","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IADsMembers","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8061,6 +9757,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"3e37e320-17e2-11cf-abc4-02608c9e7553"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -8074,7 +9771,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8158,7 +9855,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8186,7 +9883,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8214,7 +9911,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8242,7 +9939,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8270,7 +9967,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8298,7 +9995,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8326,7 +10023,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8354,7 +10051,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8382,7 +10079,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8410,7 +10107,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8438,7 +10135,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8466,7 +10163,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9110,7 +10807,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9138,7 +10835,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9194,7 +10891,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9222,7 +10919,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9278,7 +10975,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9304,7 +11001,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppGroups","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IADsMembers","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppGroups","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IADsMembers","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9340,6 +11037,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b15160d0-1226-11cf-a985-00aa006bc149"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -9353,7 +11051,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9381,7 +11079,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9409,7 +11107,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9437,7 +11135,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9465,7 +11163,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9493,7 +11191,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9633,7 +11331,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9714,6 +11412,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"124be5c0-156e-11cf-a986-00aa006bc149"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -9739,7 +11438,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IADsCollection","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IADsCollection","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9783,6 +11482,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"32fb6780-1ed0-11cf-a988-00aa006bc149"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -9796,7 +11496,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9810,7 +11510,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9824,7 +11524,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9880,7 +11580,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9992,7 +11692,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10020,7 +11720,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10045,6 +11745,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9a52db30-1ecf-11cf-a988-00aa006bc149"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -10147,6 +11848,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"68af66e0-31ca-11cf-a98a-00aa006bc149"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -10160,7 +11862,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10188,7 +11890,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10216,7 +11918,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10300,7 +12002,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10328,7 +12030,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10384,7 +12086,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10412,7 +12114,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10440,7 +12142,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10493,6 +12195,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"5d7b33f0-31ca-11cf-a98a-00aa006bc149"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -10573,6 +12276,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a89d1900-31ca-11cf-a98a-00aa006bc149"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADsService","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -10586,7 +12290,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10639,6 +12343,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a02ded10-31ca-11cf-a98a-00aa006bc149"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADsServiceOperations","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -10650,7 +12355,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppSessions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IADsCollection","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppSessions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IADsCollection","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10662,7 +12367,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppResources","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IADsCollection","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppResources","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IADsCollection","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -10673,6 +12378,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"eb6dcaf0-4b83-11cf-a995-00aa006bc149"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -10700,7 +12406,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10728,7 +12434,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10756,7 +12462,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10809,6 +12515,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"398b7da0-4aab-11cf-ae2c-00aa006ebfb9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -10822,7 +12529,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10836,7 +12543,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10850,7 +12557,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10864,7 +12571,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10903,6 +12610,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"34a05b20-4aab-11cf-ae2c-00aa006ebfb9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IADs","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -10916,7 +12624,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10930,7 +12638,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10944,7 +12652,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10969,6 +12677,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"ddf2891e-0f9c-11d0-8ad4-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10984,7 +12693,7 @@
 					,{"Name":"lpszUserName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"lpszPassword","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"lnReserved","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppOleDsObj","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppOleDsObj","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -10995,6 +12704,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"e798de2c-22e4-11d0-84fe-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11006,7 +12716,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppObjInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ADS_OBJECT_INFO","TargetKind":"Default","Api":"Networking.ActiveDirectory","Parents":[]}}},"Attrs":["Out","Optional"]}
+					{"Name":"ppObjInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ADS_OBJECT_INFO","TargetKind":"Default","Api":"Networking.ActiveDirectory","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11018,9 +12728,9 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pAttributeNames","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["In","Optional"]}
+					{"Name":"pAttributeNames","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["In"]}
 					,{"Name":"dwNumberAttributes","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"ppAttributeEntries","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ADS_ATTR_INFO","TargetKind":"Default","Api":"Networking.ActiveDirectory","Parents":[]}}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppAttributeEntries","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ADS_ATTR_INFO","TargetKind":"Default","Api":"Networking.ActiveDirectory","Parents":[]}}},"Attrs":["Out"]}
 					,{"Name":"pdwNumAttributesReturned","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
 				]
 			}
@@ -11050,7 +12760,7 @@
 					{"Name":"pszRDNName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pAttributeEntries","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ADS_ATTR_INFO","TargetKind":"Default","Api":"Networking.ActiveDirectory","Parents":[]}},"Attrs":["In"]}
 					,{"Name":"dwNumAttributes","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11073,6 +12783,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"109ba8ec-92f0-11d0-a790-00c04fd8d5a8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11098,9 +12809,9 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pszSearchFilter","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pAttributeNames","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["In","Optional"]}
+					,{"Name":"pAttributeNames","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["In"]}
 					,{"Name":"dwNumberAttributes","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"phSearchResult","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"IntPtr"}},"Attrs":["Out","Optional"]}
+					,{"Name":"phSearchResult","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"IntPtr"}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11122,7 +12833,9 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[]
+				,"Attrs":[
+					"PreserveSig"
+				]
 				,"Params":[
 					{"Name":"hSearchResult","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":["In"]}
 				]
@@ -11134,7 +12847,9 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[]
+				,"Attrs":[
+					"PreserveSig"
+				]
 				,"Params":[
 					{"Name":"hSearchResult","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":["In"]}
 				]
@@ -11146,7 +12861,9 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[]
+				,"Attrs":[
+					"PreserveSig"
+				]
 				,"Params":[
 					{"Name":"hSearchResult","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":["In"]}
 				]
@@ -11158,10 +12875,12 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[]
+				,"Attrs":[
+					"PreserveSig"
+				]
 				,"Params":[
 					{"Name":"hSearchHandle","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":["In"]}
-					,{"Name":"ppszColumnName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppszColumnName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11210,6 +12929,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"75db3b9c-a4d8-11d0-a79c-00c04fd8d5a8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11221,9 +12941,9 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppszAttrNames","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["In","Optional"]}
+					{"Name":"ppszAttrNames","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["In"]}
 					,{"Name":"dwNumAttributes","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"ppAttrDefinition","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ADS_ATTR_DEF","TargetKind":"Default","Api":"Networking.ActiveDirectory","Parents":[]}}},"Attrs":["In","Optional"]}
+					,{"Name":"ppAttrDefinition","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ADS_ATTR_DEF","TargetKind":"Default","Api":"Networking.ActiveDirectory","Parents":[]}}},"Attrs":["In"]}
 					,{"Name":"pdwNumAttributes","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["In"]}
 				]
 			}
@@ -11274,9 +12994,9 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppszClassNames","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["In","Optional"]}
+					{"Name":"ppszClassNames","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["In"]}
 					,{"Name":"dwNumClasses","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"ppClassDefinition","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ADS_CLASS_DEF","TargetKind":"Default","Api":"Networking.ActiveDirectory","Parents":[]}}},"Attrs":["In","Optional"]}
+					,{"Name":"ppClassDefinition","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ADS_CLASS_DEF","TargetKind":"Default","Api":"Networking.ActiveDirectory","Parents":[]}}},"Attrs":["In"]}
 					,{"Name":"pdwNumClasses","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["In"]}
 				]
 			}
@@ -11326,6 +13046,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1346ce8c-9039-11d0-8528-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11383,6 +13104,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"52db5fb0-941f-11d0-8529-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11416,6 +13138,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b4f3a14c-9bdd-11d0-852c-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11541,7 +13264,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11569,7 +13292,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11597,7 +13320,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11622,6 +13345,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b7ee91cc-9bdd-11d0-852c-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11713,7 +13437,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppAccessControlList","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppAccessControlList","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11727,7 +13451,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -11738,6 +13462,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b8c787ca-9bdd-11d0-852c-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11807,7 +13532,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11863,7 +13588,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11919,7 +13644,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11975,7 +13700,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12029,7 +13754,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -12040,6 +13765,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9068270b-0939-11d1-8be1-00c04fd8d503"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12106,6 +13832,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b1b272a3-3625-11d1-a3a4-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12174,7 +13901,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"lnFormatType","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"pbstrADsPath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pbstrADsPath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12211,6 +13938,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"7b66b533-4680-11d1-a3b4-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12249,6 +13977,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a910dea9-4680-11d1-a3b4-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12262,7 +13991,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12315,6 +14044,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b21a50a9-4080-11d1-a3ac-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12381,6 +14111,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"7b28b80f-4680-11d1-a3b4-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12419,6 +14150,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"97af011a-478e-11d1-a3b4-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12460,7 +14192,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12485,6 +14217,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b287fcd5-4080-11d1-a3ac-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12526,7 +14259,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12554,7 +14287,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12579,6 +14312,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f60fb803-4080-11d1-a3ac-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12592,7 +14326,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12729,6 +14463,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8452d3ab-0869-11d1-a377-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12742,7 +14477,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12770,7 +14505,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12824,7 +14559,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppAcl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppAcl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -12835,6 +14570,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b2f5a901-4080-11d1-a3ac-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12901,6 +14637,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"7adecf29-4680-11d1-a3b4-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12939,6 +14676,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"fd1302bd-4080-11d1-a3ac-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12980,7 +14718,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13005,6 +14743,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b371a349-4080-11d1-a3ac-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13018,7 +14757,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13099,6 +14838,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b3eb3b37-4080-11d1-a3ac-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13112,7 +14852,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13165,6 +14905,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"46f14fda-232b-11d1-a808-00c04fd8d5a8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13201,6 +14942,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d592aed4-f420-11d0-a36e-00c04fb950dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13238,7 +14980,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"lnFormatType","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"pbstrADsPath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pbstrADsPath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13263,7 +15005,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"lnElementIndex","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"pbstrElement","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pbstrElement","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13298,7 +15040,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppAdsPath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppAdsPath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13312,7 +15054,7 @@
 				,"Params":[
 					{"Name":"lnReserved","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"bstrInStr","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pbstrOutStr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pbstrOutStr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13351,6 +15093,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"5bb11929-afd1-11d2-9cb9-0000f87a369e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13364,7 +15107,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13378,7 +15121,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13392,7 +15135,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13406,7 +15149,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13420,7 +15163,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13434,7 +15177,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13448,7 +15191,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13462,7 +15205,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13488,7 +15231,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pszDCName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pszDCName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13501,7 +15244,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"szServer","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pszSiteName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pszSiteName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13535,6 +15278,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"6c6d65dc-afd1-11d2-9cb9-0000f87a369e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13548,7 +15292,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13562,7 +15306,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13576,7 +15320,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13590,7 +15334,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -13601,6 +15345,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"7e99c0a2-f935-11d2-ba96-00c04fb6d0d1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13642,7 +15387,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13667,6 +15412,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"370df02e-f934-11d2-ba96-00c04fb6d0d1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13680,7 +15426,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13708,7 +15454,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -13733,6 +15479,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a63251b2-5f21-474b-ab52-4a8efad10895"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13915,6 +15662,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"7cabcf1e-78f5-11d2-960c-00c04fa31a86"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14022,6 +15770,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"1ab4a8c0-6a0b-11d2-ad49-00c04fa31a86"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14382,6 +16131,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"0c87e64e-3b7a-11d2-b9e0-00c04fd8dbf7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14417,6 +16167,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"e2d3ec9b-d041-445a-8f16-4748de8fb1cf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDsObjectPicker","TargetKind":"Com","Api":"Networking.ActiveDirectory","Parents":[]}
 		,"Methods":[
 			{
@@ -14511,6 +16262,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"53554a38-f902-11d2-82b9-00c04f68928b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14548,6 +16300,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f2573587-e6fc-11d2-82af-00c04f68928b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14584,6 +16337,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"be2b487e-f904-11d2-82b9-00c04f68928b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14633,6 +16387,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"6088eae2-e7bf-11d2-82af-00c04f68928b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14723,6 +16478,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"e4a2b8b3-5a18-11d2-97c1-00a0c9a06d2d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16125,6 +17881,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DsGetDcCloseW"
+		,"InvalidHandleValue":0
 	}
 ]
 
@@ -16433,7 +18190,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["In","Out"]}
+			{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["In"]}
 			,{"Name":"pVarsec","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]}},"Attrs":["In","Out"]}
 			,{"Name":"pszServerName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 			,{"Name":"userName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
@@ -16452,7 +18209,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"vVarSecDes","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
-			,{"Name":"ppSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}}},"Attrs":["In","Out"]}
+			,{"Name":"ppSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["In","Out"]}
 			,{"Name":"pdwSDLength","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["In","Out"]}
 			,{"Name":"pszServerName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 			,{"Name":"userName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}

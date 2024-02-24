@@ -39,6 +39,25 @@ static
 	public const uint32 SYNCHRONIZATION_BARRIER_FLAGS_SPIN_ONLY = 1;
 	public const uint32 SYNCHRONIZATION_BARRIER_FLAGS_BLOCK_ONLY = 2;
 	public const uint32 SYNCHRONIZATION_BARRIER_FLAGS_NO_DELETE = 4;
+	public const uint32 PROC_THREAD_ATTRIBUTE_PARENT_PROCESS = 131072;
+	public const uint32 PROC_THREAD_ATTRIBUTE_HANDLE_LIST = 131074;
+	public const uint32 PROC_THREAD_ATTRIBUTE_GROUP_AFFINITY = 196611;
+	public const uint32 PROC_THREAD_ATTRIBUTE_PREFERRED_NODE = 131076;
+	public const uint32 PROC_THREAD_ATTRIBUTE_IDEAL_PROCESSOR = 196613;
+	public const uint32 PROC_THREAD_ATTRIBUTE_UMS_THREAD = 196614;
+	public const uint32 PROC_THREAD_ATTRIBUTE_MITIGATION_POLICY = 131079;
+	public const uint32 PROC_THREAD_ATTRIBUTE_SECURITY_CAPABILITIES = 131081;
+	public const uint32 PROC_THREAD_ATTRIBUTE_PROTECTION_LEVEL = 131083;
+	public const uint32 PROC_THREAD_ATTRIBUTE_PSEUDOCONSOLE = 131094;
+	public const uint32 PROC_THREAD_ATTRIBUTE_MACHINE_TYPE = 131097;
+	public const uint32 PROC_THREAD_ATTRIBUTE_ENABLE_OPTIONAL_XSTATE_FEATURES = 196635;
+	public const uint32 PROC_THREAD_ATTRIBUTE_WIN32K_FILTER = 131088;
+	public const uint32 PROC_THREAD_ATTRIBUTE_JOB_LIST = 131085;
+	public const uint32 PROC_THREAD_ATTRIBUTE_CHILD_PROCESS_POLICY = 131086;
+	public const uint32 PROC_THREAD_ATTRIBUTE_ALL_APPLICATION_PACKAGES_POLICY = 131087;
+	public const uint32 PROC_THREAD_ATTRIBUTE_DESKTOP_APP_POLICY = 131090;
+	public const uint32 PROC_THREAD_ATTRIBUTE_MITIGATION_AUDIT_POLICY = 131096;
+	public const uint32 PROC_THREAD_ATTRIBUTE_COMPONENT_FILTER = 131098;
 	#endregion
 	
 	#region Typedefs
@@ -306,6 +325,14 @@ static
 		FailFastOnCommitFailure = 0,
 		Max = 1,
 	}
+	public enum AVRT_PRIORITY : int32
+	{
+		VERYLOW = -2,
+		LOW = -1,
+		NORMAL = 0,
+		HIGH = 1,
+		CRITICAL = 2,
+	}
 	public enum PROCESS_MITIGATION_POLICY : int32
 	{
 		ProcessDEPPolicy = 0,
@@ -346,6 +373,29 @@ static
 		LOW = 2,
 		INVALID = 3,
 		COUNT = 3,
+	}
+	public enum PROC_THREAD_ATTRIBUTE_NUM : uint32
+	{
+		ParentProcess = 0,
+		HandleList = 2,
+		GroupAffinity = 3,
+		PreferredNode = 4,
+		IdealProcessor = 5,
+		UmsThread = 6,
+		MitigationPolicy = 7,
+		SecurityCapabilities = 9,
+		ProtectionLevel = 11,
+		JobList = 13,
+		ChildProcessPolicy = 14,
+		AllApplicationPackagesPolicy = 15,
+		Win32kFilter = 16,
+		SafeOpenPromptOriginClaim = 17,
+		DesktopAppPolicy = 18,
+		PseudoConsole = 22,
+		MitigationAuditPolicy = 24,
+		MachineType = 25,
+		ComponentFilter = 26,
+		EnableOptionalXStateFeatures = 27,
 	}
 	public enum PROCESSINFOCLASS : int32
 	{
@@ -1175,6 +1225,34 @@ static
 	public static extern BOOL GetThreadGroupAffinity(HANDLE hThread, out GROUP_AFFINITY GroupAffinity);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetThreadGroupAffinity(HANDLE hThread, in GROUP_AFFINITY GroupAffinity, GROUP_AFFINITY* PreviousGroupAffinity);
+	[Import("avrt.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HANDLE AvSetMmThreadCharacteristicsA(PSTR TaskName, out uint32 TaskIndex);
+	[Import("avrt.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HANDLE AvSetMmThreadCharacteristicsW(PWSTR TaskName, out uint32 TaskIndex);
+	[Import("avrt.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HANDLE AvSetMmMaxThreadCharacteristicsA(PSTR FirstTask, PSTR SecondTask, out uint32 TaskIndex);
+	[Import("avrt.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HANDLE AvSetMmMaxThreadCharacteristicsW(PWSTR FirstTask, PWSTR SecondTask, out uint32 TaskIndex);
+	[Import("avrt.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern BOOL AvRevertMmThreadCharacteristics(HANDLE AvrtHandle);
+	[Import("avrt.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern BOOL AvSetMmThreadPriority(HANDLE AvrtHandle, AVRT_PRIORITY Priority);
+	[Import("avrt.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern BOOL AvRtCreateThreadOrderingGroup(out HANDLE Context, ref LARGE_INTEGER Period, out Guid ThreadOrderingGuid, LARGE_INTEGER* Timeout);
+	[Import("avrt.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern BOOL AvRtCreateThreadOrderingGroupExA(out HANDLE Context, ref LARGE_INTEGER Period, out Guid ThreadOrderingGuid, LARGE_INTEGER* Timeout, PSTR TaskName);
+	[Import("avrt.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern BOOL AvRtCreateThreadOrderingGroupExW(out HANDLE Context, ref LARGE_INTEGER Period, out Guid ThreadOrderingGuid, LARGE_INTEGER* Timeout, PWSTR TaskName);
+	[Import("avrt.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern BOOL AvRtJoinThreadOrderingGroup(out HANDLE Context, ref Guid ThreadOrderingGuid, BOOL Before);
+	[Import("avrt.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern BOOL AvRtWaitOnThreadOrderingGroup(HANDLE Context);
+	[Import("avrt.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern BOOL AvRtLeaveThreadOrderingGroup(HANDLE Context);
+	[Import("avrt.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern BOOL AvRtDeleteThreadOrderingGroup(HANDLE Context);
+	[Import("avrt.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern BOOL AvQuerySystemResponsiveness(HANDLE AvrtHandle, out uint32 SystemResponsivenessValue);
 	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AttachThreadInput(uint32 idAttach, uint32 idAttachTo, BOOL fAttach);
 	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]

@@ -13,6 +13,15 @@ using Win32.System.WinRT;
 static
 {
 	#region Constants
+	public const String DIALPROP_USERNAME = "UserName";
+	public const String DIALPROP_PASSWORD = "Password";
+	public const String DIALPROP_DOMAIN = "Domain";
+	public const String DIALPROP_SAVEPASSWORD = "SavePassword";
+	public const String DIALPROP_REDIALCOUNT = "RedialCount";
+	public const String DIALPROP_REDIALINTERVAL = "RedialInterval";
+	public const String DIALPROP_PHONENUMBER = "PhoneNumber";
+	public const String DIALPROP_LASTERROR = "LastError";
+	public const String DIALPROP_RESOLVEDPHONE = "ResolvedPhone";
 	public const uint32 DIALENG_OperationComplete = 65536;
 	public const uint32 DIALENG_RedialAttempt = 65537;
 	public const uint32 DIALENG_RedialWait = 65538;
@@ -289,6 +298,26 @@ static
 	public const uint32 MAX_GOPHER_CATEGORY_NAME = 128;
 	public const uint32 MAX_GOPHER_ATTRIBUTE_NAME = 128;
 	public const uint32 MIN_GOPHER_ATTRIBUTE_LENGTH = 256;
+	public const String GOPHER_INFO_CATEGORY = "+INFO";
+	public const String GOPHER_ADMIN_CATEGORY = "+ADMIN";
+	public const String GOPHER_VIEWS_CATEGORY = "+VIEWS";
+	public const String GOPHER_ABSTRACT_CATEGORY = "+ABSTRACT";
+	public const String GOPHER_VERONICA_CATEGORY = "+VERONICA";
+	public const String GOPHER_ADMIN_ATTRIBUTE = "Admin";
+	public const String GOPHER_MOD_DATE_ATTRIBUTE = "Mod-Date";
+	public const String GOPHER_TTL_ATTRIBUTE = "TTL";
+	public const String GOPHER_SCORE_ATTRIBUTE = "Score";
+	public const String GOPHER_RANGE_ATTRIBUTE = "Score-range";
+	public const String GOPHER_SITE_ATTRIBUTE = "Site";
+	public const String GOPHER_ORG_ATTRIBUTE = "Org";
+	public const String GOPHER_LOCATION_ATTRIBUTE = "Loc";
+	public const String GOPHER_GEOG_ATTRIBUTE = "Geog";
+	public const String GOPHER_TIMEZONE_ATTRIBUTE = "TZ";
+	public const String GOPHER_PROVIDER_ATTRIBUTE = "Provider";
+	public const String GOPHER_VERSION_ATTRIBUTE = "Version";
+	public const String GOPHER_ABSTRACT_ATTRIBUTE = "Abstract";
+	public const String GOPHER_VIEW_ATTRIBUTE = "View";
+	public const String GOPHER_TREEWALK_ATTRIBUTE = "treewalk";
 	public const uint32 GOPHER_ATTRIBUTE_ID_BASE = 2882325504;
 	public const uint32 GOPHER_CATEGORY_ID_ALL = 2882325505;
 	public const uint32 GOPHER_CATEGORY_ID_INFO = 2882325506;
@@ -317,6 +346,8 @@ static
 	public const uint32 GOPHER_ATTRIBUTE_ID_UNKNOWN = 2882325529;
 	public const uint32 HTTP_MAJOR_VERSION = 1;
 	public const uint32 HTTP_MINOR_VERSION = 0;
+	public const String HTTP_VERSIONA = "HTTP/1.0";
+	public const String HTTP_VERSIONW = "HTTP/1.0";
 	public const uint32 HTTP_QUERY_MIME_VERSION = 0;
 	public const uint32 HTTP_QUERY_CONTENT_TYPE = 1;
 	public const uint32 HTTP_QUERY_CONTENT_TRANSFER_ENCODING = 2;
@@ -594,8 +625,6 @@ static
 	public const uint32 INTERENT_GOONLINE_REFRESH = 1;
 	public const uint32 INTERENT_GOONLINE_NOPROMPT = 2;
 	public const uint32 INTERENT_GOONLINE_MASK = 3;
-	public const uint32 INTERNET_CONNECTION_LAN = 2;
-	public const uint32 INTERNET_CONNECTION_OFFLINE = 32;
 	public const uint32 INTERNET_CUSTOMDIAL_CONNECT = 0;
 	public const uint32 INTERNET_CUSTOMDIAL_UNATTENDED = 1;
 	public const uint32 INTERNET_CUSTOMDIAL_DISCONNECT = 2;
@@ -894,6 +923,10 @@ static
 	public const uint32 INTERNET_AUTOPROXY_INIT_DOWNLOADSYNC = 2;
 	public const uint32 INTERNET_AUTOPROXY_INIT_QUERYSTATE = 4;
 	public const uint32 INTERNET_AUTOPROXY_INIT_ONLYQUERY = 8;
+	public const String REGSTR_DIAL_AUTOCONNECT = "AutoConnect";
+	public const String REGSTR_LEASH_LEGACY_COOKIES = "LeashLegacyCookies";
+	public const String LOCAL_NAMESPACE_PREFIX = "Local\\";
+	public const String LOCAL_NAMESPACE_PREFIX_W = "Local\\";
 	public const uint32 INTERNET_SUPPRESS_COOKIE_PERSIST = 3;
 	public const uint32 INTERNET_SUPPRESS_COOKIE_PERSIST_RESET = 4;
 	public const uint32 HTTP_WEB_SOCKET_MAX_CLOSE_REASON_LENGTH = 123;
@@ -931,10 +964,10 @@ static
 	public enum INTERNET_CONNECTION : uint32
 	{
 		CONNECTION_CONFIGURED = 64,
-		CONNECTION_LAN_ = 2,
+		CONNECTION_LAN = 2,
 		CONNECTION_MODEM = 1,
 		CONNECTION_MODEM_BUSY = 8,
-		CONNECTION_OFFLINE_ = 32,
+		CONNECTION_OFFLINE = 32,
 		CONNECTION_PROXY = 4,
 		RAS_INSTALLED = 16,
 	}

@@ -58,6 +58,27 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_KEY_DDHW_DESCRIPTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_DDHW_DRIVERNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_DDHW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Hardware\\DirectDrawDrivers"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"DDCREATE_HARDWAREONLY"
 		,"Type":{"Kind":"Native","Name":"Int32"}
 		,"ValueType":"Int32"
@@ -3436,6 +3457,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":13
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DDHAL_DRIVER_DLLNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DDRAW16.DLL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DDHAL_APP_DLLNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DDRAW.DLL"
 		,"Attrs":[]
 	}
 	,{
@@ -7539,6 +7574,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6c14db80-a733-11ce-a521-0020af0be560"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7806,6 +7842,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b3a6f3e0-2b43-11cf-a2de-00aa00b93356"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8089,6 +8126,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9c59509a-39bd-11d1-8c4a-00c04fd930c5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8420,6 +8458,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"15e65ec0-3b9c-11d2-b92f-00609797ea5b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8778,6 +8817,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6c14db84-a733-11ce-a521-0020af0be560"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8844,6 +8884,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6c14db85-a733-11ce-a521-0020af0be560"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8931,6 +8972,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6c14db81-a733-11ce-a521-0020af0be560"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9364,6 +9406,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"57805885-6eec-11cf-9441-a82303c10e27"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9833,6 +9876,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"da044e00-69b2-11d0-a1d5-00aa00b8dfbb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10315,6 +10359,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0b2b8630-ad35-11d0-8ea6-00609797ea5b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10861,6 +10906,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"06675a80-3b9b-11d2-b92f-00609797ea5b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11455,6 +11501,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4b9f0ee0-0d7e-11d0-9b06-00a0c903a3b8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11489,6 +11536,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"69c11c3e-b46b-11d1-ad7a-00c04fc29b4e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11772,6 +11820,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6c142760-a733-11ce-a521-0020af0be560"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11839,6 +11888,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b36d93e0-2b43-11cf-a2de-00aa00b93356"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12029,6 +12079,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a655fb94-0589-4e57-b333-567a89468c88"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12215,6 +12266,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8d56c120-6a08-11d0-9b06-00a0c903a3b8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12260,6 +12312,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"60755da0-6a40-11d0-9b06-00a0c903a3b8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

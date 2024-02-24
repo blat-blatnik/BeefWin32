@@ -5637,174 +5637,6 @@
 		,"Attrs":[]
 	}
 	,{
-		"Name":"PFD_TYPE_RGBA"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":0
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_TYPE_COLORINDEX"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":1
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_MAIN_PLANE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":0
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_OVERLAY_PLANE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":1
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_UNDERLAY_PLANE"
-		,"Type":{"Kind":"Native","Name":"Int32"}
-		,"ValueType":"Int32"
-		,"Value":-1
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_DOUBLEBUFFER"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":1
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_STEREO"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":2
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_DRAW_TO_WINDOW"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":4
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_DRAW_TO_BITMAP"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":8
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_SUPPORT_GDI"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":16
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_SUPPORT_OPENGL"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":32
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_GENERIC_FORMAT"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":64
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_NEED_PALETTE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":128
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_NEED_SYSTEM_PALETTE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":256
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_SWAP_EXCHANGE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":512
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_SWAP_COPY"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":1024
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_SWAP_LAYER_BUFFERS"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":2048
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_GENERIC_ACCELERATED"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":4096
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_SUPPORT_DIRECTDRAW"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":8192
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_DIRECT3D_ACCELERATED"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":16384
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_SUPPORT_COMPOSITION"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":32768
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_DEPTH_DONTCARE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":536870912
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_DOUBLEBUFFER_DONTCARE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":1073741824
-		,"Attrs":[]
-	}
-	,{
-		"Name":"PFD_STEREO_DONTCARE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":2147483648
-		,"Attrs":[]
-	}
-	,{
 		"Name":"DC_BINADJUST"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -6138,34 +5970,6 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":10
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ICM_OFF"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":1
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ICM_ON"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":2
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ICM_QUERY"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":3
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ICM_DONE_OUTSIDEDC"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":4
 		,"Attrs":[]
 	}
 	,{
@@ -8691,6 +8495,34 @@
 		,"IntegerBase":"UInt32"
 	}
 	,{
+		"Name":"MONITORINFOEXA"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Struct"
+		,"Size":0
+		,"PackingSize":0
+		,"Fields":[
+			{"Name":"monitorInfo","Type":{"Kind":"ApiRef","Name":"MONITORINFO","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]},"Attrs":[]}
+			,{"Name":"szDevice","Type":{"Kind":"Array","Shape":{"Size":32},"Child":{"Kind":"ApiRef","Name":"CHAR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":[]}
+		]
+		,"NestedTypes":[
+		]
+	}
+	,{
+		"Name":"MONITORINFOEXW"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Struct"
+		,"Size":0
+		,"PackingSize":0
+		,"Fields":[
+			{"Name":"monitorInfo","Type":{"Kind":"ApiRef","Name":"MONITORINFO","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]},"Attrs":[]}
+			,{"Name":"szDevice","Type":{"Kind":"Array","Shape":{"Size":32},"Child":{"Kind":"Native","Name":"Char"}},"Attrs":[]}
+		]
+		,"NestedTypes":[
+		]
+	}
+	,{
 		"Name":"DRAWEDGE_FLAGS"
 		,"Architectures":[]
 		,"Platform":null
@@ -9560,6 +9392,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"ReleaseDC"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"CreatedHDC"
@@ -9569,6 +9402,7 @@
 		,"AlsoUsableFor":"HDC"
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DeleteDC"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HBITMAP"
@@ -9578,6 +9412,7 @@
 		,"AlsoUsableFor":"HGDIOBJ"
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DeleteObject"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HRGN"
@@ -9587,6 +9422,7 @@
 		,"AlsoUsableFor":"HGDIOBJ"
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DeleteObject"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HPEN"
@@ -9596,6 +9432,7 @@
 		,"AlsoUsableFor":"HGDIOBJ"
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DeleteObject"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HBRUSH"
@@ -9605,6 +9442,7 @@
 		,"AlsoUsableFor":"HGDIOBJ"
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DeleteObject"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HFONT"
@@ -9614,6 +9452,7 @@
 		,"AlsoUsableFor":"HGDIOBJ"
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DeleteObject"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HMETAFILE"
@@ -9623,6 +9462,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DeleteMetaFile"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HENHMETAFILE"
@@ -9632,6 +9472,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DeleteEnhMetaFile"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HPALETTE"
@@ -9641,6 +9482,7 @@
 		,"AlsoUsableFor":"HGDIOBJ"
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DeleteObject"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HdcMetdataFileHandle"
@@ -9650,6 +9492,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DeleteMetaFile"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HdcMetdataEnhFileHandle"
@@ -9659,6 +9502,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DeleteEnhMetaFile"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HGDIOBJ"
@@ -9668,6 +9512,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HMONITOR"
@@ -9677,6 +9522,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"XFORM"
@@ -12862,34 +12708,6 @@
 			,{"Name":"rcMonitor","Type":{"Kind":"ApiRef","Name":"RECT","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"rcWork","Type":{"Kind":"ApiRef","Name":"RECT","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"dwFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"MONITORINFOEXA"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"__AnonymousBase_winuser_L13567_C43","Type":{"Kind":"ApiRef","Name":"MONITORINFO","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]},"Attrs":[]}
-			,{"Name":"szDevice","Type":{"Kind":"Array","Shape":{"Size":32},"Child":{"Kind":"ApiRef","Name":"CHAR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"MONITORINFOEXW"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"__AnonymousBase_winuser_L13571_C43","Type":{"Kind":"ApiRef","Name":"MONITORINFO","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]},"Attrs":[]}
-			,{"Name":"szDevice","Type":{"Kind":"Array","Shape":{"Size":32},"Child":{"Kind":"Native","Name":"Char"}},"Attrs":[]}
 		]
 		,"NestedTypes":[
 		]
@@ -19012,7 +18830,8 @@
 ]
 
 ,"UnicodeAliases":[
-	"TEXTMETRIC"
+	"MONITORINFOEX"
+	,"TEXTMETRIC"
 	,"NEWTEXTMETRIC"
 	,"LOGFONT"
 	,"ENUMLOGFONT"
@@ -19027,7 +18846,6 @@
 	,"AXISINFO"
 	,"AXESLIST"
 	,"ENUMLOGFONTEXDV"
-	,"MONITORINFOEX"
 	,"GetObject"
 	,"AddFontResource"
 	,"CopyMetaFile"

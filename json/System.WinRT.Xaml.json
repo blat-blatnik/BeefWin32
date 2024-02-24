@@ -17,6 +17,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e9edc1-d307-4525-9886-0fafaa44163c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -64,6 +65,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"dbf2e947-8e6c-4254-9eee-7738f71386c9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -85,6 +87,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e9550983-360b-4f53-b391-afd695078691"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISurfaceImageSourceNative","TargetKind":"Com","Api":"System.WinRT.Xaml","Parents":[]}
 		,"Methods":[
 			{
@@ -169,6 +172,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"43bebd4e-add5-4035-8f85-5608d08e9dc9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -191,6 +195,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4c8798b7-1d88-4a0f-b59b-b93f600de8c8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -213,6 +218,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"54298223-41e1-4a41-9c08-02e8256864a1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -283,6 +289,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f92f19d2-3ade-45a6-a20c-f6f1ea90554b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -305,6 +312,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d5a2f60c-37b2-44a2-937b-8d8eb9726821"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISwapChainPanelNative","TargetKind":"Com","Api":"System.WinRT.Xaml","Parents":[]}
 		,"Methods":[
 			{
@@ -327,6 +335,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3cbcf1bf-2f76-4e9c-96ab-e84b37972554"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -363,6 +372,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e3dcd8c7-3057-4692-99c3-7b7720afda31"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDesktopWindowXamlSourceNative","TargetKind":"Com","Api":"System.WinRT.Xaml","Parents":[]}
 		,"Methods":[
 			{
@@ -386,6 +396,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"64bd43f8-bfee-4ec4-b7eb-2935158dae21"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -440,6 +451,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"11d3b13a-180e-4789-a8be-7712882893e6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -529,6 +541,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3cf184b4-7ccb-4dda-8455-7e6ce99a3298"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -585,6 +598,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"04b3486c-4687-4229-8d14-505ab584dd88"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -620,6 +634,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"29a71c6a-3c42-4416-a39d-e2825a07a773"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -701,6 +716,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4e897caa-59d5-4613-8f8c-f7ebd1f399b0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -724,6 +740,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"eb24c20b-9816-4ac7-8cff-36f67a118f4e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

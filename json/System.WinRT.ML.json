@@ -10,6 +10,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1adaa23a-eb67-41f3-aad8-5d984e9bacd4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32,6 +33,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"52f547ef-5b03-49b5-82d6-565f1ee0dd49"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -67,6 +69,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"39d055a4-66f6-4ebc-95d9-7a29ebe7690a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -92,6 +95,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1e9b31a1-662e-4ae0-af67-f63bb337e634"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -115,6 +119,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c71e953f-37b4-4564-8658-d8396866db0d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

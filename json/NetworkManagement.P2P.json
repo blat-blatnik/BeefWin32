@@ -65,10 +65,38 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WSZ_SCOPE_GLOBAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GLOBAL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WSZ_SCOPE_SITELOCAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SITELOCAL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WSZ_SCOPE_LINKLOCAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LINKLOCAL"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"PNRP_MAX_EXTENDED_PAYLOAD_BYTES"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4096
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PEER_PNRP_ALL_LINK_CLOUDS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PEER_PNRP_ALL_LINKS"
 		,"Attrs":[]
 	}
 	,{
@@ -4915,7 +4943,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"hSearchContext","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
-			,{"Name":"ulSearchResultSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In","Out"]}
+			,{"Name":"ulSearchResultSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"pSearchResult","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DRT_SEARCH_RESULT","TargetKind":"Default","Api":"NetworkManagement.P2P","Parents":[]}},"Attrs":["Out"]}
 		]
 	}
@@ -4944,7 +4972,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"hSearchContext","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
-			,{"Name":"ulSearchPathSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In","Out"]}
+			,{"Name":"ulSearchPathSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"pSearchPath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DRT_ADDRESS_LIST","TargetKind":"Default","Api":"NetworkManagement.P2P","Parents":[]}},"Attrs":["Out"]}
 		]
 	}

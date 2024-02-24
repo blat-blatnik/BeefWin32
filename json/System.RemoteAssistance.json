@@ -81,6 +81,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9ba4b1dd-8b0c-48b7-9e7c-2f25857c8df5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -108,7 +109,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"bstrUserName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"bstrUserName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -158,6 +159,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"3fa19cf8-64c4-4f53-ae60-635b3806eca6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -168,6 +170,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"4f4d070b-a275-49fb-b10d-8ec26387b50d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

@@ -104,6 +104,7 @@ static
 	public const uint32 HTTP_REQUEST_PROPERTY_SNI_HOST_MAX_LENGTH = 255;
 	public const uint32 HTTP_REQUEST_PROPERTY_SNI_FLAG_SNI_USED = 1;
 	public const uint32 HTTP_REQUEST_PROPERTY_SNI_FLAG_NO_SNI = 2;
+	public const String HTTP_VERSION = "HTTP/1.0";
 	#endregion
 	
 	#region Enums
@@ -612,7 +613,7 @@ static
 		public uint16 MaxRecordSize;
 		public HTTP_LOGGING_ROLLOVER_TYPE RolloverType;
 		public uint32 RolloverSize;
-		public SECURITY_DESCRIPTOR* pSecurityDescriptor;
+		public PSECURITY_DESCRIPTOR pSecurityDescriptor;
 	}
 	[CRepr]
 	public struct HTTP_BINDING_INFO
@@ -845,7 +846,7 @@ static
 	public struct HTTP_REQUEST_AUTH_INFO
 	{
 		public HTTP_AUTH_STATUS AuthStatus;
-		public int32 SecStatus;
+		public HRESULT SecStatus;
 		public uint32 Flags;
 		public HTTP_REQUEST_AUTH_TYPE AuthType;
 		public HANDLE AccessToken;

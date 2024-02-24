@@ -30,6 +30,34 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WM_CONTEXTMENU"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":123
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WM_UNICHAR"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":265
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WM_PRINTCLIENT"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":792
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WM_NOTIFY"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":78
+		,"Attrs":[]
+	}
+	,{
 		"Name":"RT_CURSOR"
 		,"Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ValueType":"Int32"
@@ -4255,13 +4283,6 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":8194
-		,"Attrs":[]
-	}
-	,{
-		"Name":"SM_SYSTEMDOCKED"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":8196
 		,"Attrs":[]
 	}
 	,{
@@ -10921,7 +10942,7 @@
 			,{"Name":"SM_SLOWMACHINE","Value":73}
 			,{"Name":"SM_STARTER","Value":88}
 			,{"Name":"SM_SWAPBUTTON","Value":23}
-			,{"Name":"SM_SYSTEMDOCKED_","Value":8196}
+			,{"Name":"SM_SYSTEMDOCKED","Value":8196}
 			,{"Name":"SM_TABLETPC","Value":86}
 			,{"Name":"SM_XVIRTUALSCREEN","Value":76}
 			,{"Name":"SM_YVIRTUALSCREEN","Value":77}
@@ -11250,6 +11271,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"UnhookWindowsHookEx"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HICON"
@@ -11259,6 +11281,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DestroyIcon"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HMENU"
@@ -11268,6 +11291,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DestroyMenu"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HCURSOR"
@@ -11277,6 +11301,7 @@
 		,"AlsoUsableFor":"HICON"
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DestroyCursor"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HACCEL"
@@ -11286,6 +11311,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DestroyAcceleratorTable"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"MESSAGE_RESOURCE_ENTRY"
@@ -12929,7 +12955,7 @@
 		,"Params":[
 			{"Name":"hInstance","Type":{"Kind":"ApiRef","Name":"HINSTANCE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"uID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"lpBuffer","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":3,"Child":{"Kind":"Native","Name":"Byte"}},"Attrs":["Out"]}
+			,{"Name":"lpBuffer","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Out"]}
 			,{"Name":"cchBufferMax","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 		]
 	}
@@ -12945,7 +12971,7 @@
 		,"Params":[
 			{"Name":"hInstance","Type":{"Kind":"ApiRef","Name":"HINSTANCE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"uID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"lpBuffer","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":3,"Child":{"Kind":"Native","Name":"Char"}},"Attrs":["Out"]}
+			,{"Name":"lpBuffer","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Out"]}
 			,{"Name":"cchBufferMax","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 		]
 	}
@@ -13249,8 +13275,8 @@
 		,"Params":[
 			{"Name":"hWnd","Type":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"Msg","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"wParam","Type":{"Kind":"ApiRef","Name":"WPARAM","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Out","Optional"]}
-			,{"Name":"lParam","Type":{"Kind":"ApiRef","Name":"LPARAM","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Out","Optional"]}
+			,{"Name":"wParam","Type":{"Kind":"ApiRef","Name":"WPARAM","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Optional"]}
+			,{"Name":"lParam","Type":{"Kind":"ApiRef","Name":"LPARAM","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Optional"]}
 		]
 	}
 	,{
@@ -13265,8 +13291,8 @@
 		,"Params":[
 			{"Name":"hWnd","Type":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"Msg","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"wParam","Type":{"Kind":"ApiRef","Name":"WPARAM","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Out","Optional"]}
-			,{"Name":"lParam","Type":{"Kind":"ApiRef","Name":"LPARAM","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Out","Optional"]}
+			,{"Name":"wParam","Type":{"Kind":"ApiRef","Name":"WPARAM","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Optional"]}
+			,{"Name":"lParam","Type":{"Kind":"ApiRef","Name":"LPARAM","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Optional"]}
 		]
 	}
 	,{

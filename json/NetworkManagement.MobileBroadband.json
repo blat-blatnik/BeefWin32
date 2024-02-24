@@ -38,6 +38,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-ffff-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -764,6 +765,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-200d-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -777,7 +779,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ConnectionID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ConnectionID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -791,7 +793,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"InterfaceID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"InterfaceID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -830,7 +832,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"ConnectionState","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MBN_ACTIVATION_STATE","TargetKind":"Default","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out"]}
-					,{"Name":"ProfileName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ProfileName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -865,6 +867,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-200e-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -927,6 +930,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2001-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -940,7 +944,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"InterfaceID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"InterfaceID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1012,7 +1016,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"preferredProviders","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out","Optional"]}
+					{"Name":"preferredProviders","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1073,6 +1077,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2002-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1183,6 +1188,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-201b-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1195,7 +1201,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"interfaceID","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"mbnInterface","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnInterface","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"mbnInterface","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnInterface","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1207,7 +1213,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"mbnInterfaces","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out","Optional"]}
+					{"Name":"mbnInterfaces","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -1218,6 +1224,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-201c-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1252,6 +1259,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2009-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1287,7 +1295,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"providerID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"providerID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1299,7 +1307,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"providerName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"providerName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1311,7 +1319,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"roamingText","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"roamingText","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1385,6 +1393,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-200a-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1445,6 +1454,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-201d-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1457,7 +1467,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"connectionID","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"mbnConnection","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnConnection","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"mbnConnection","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnConnection","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1469,7 +1479,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"mbnConnections","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out","Optional"]}
+					{"Name":"mbnConnections","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -1480,6 +1490,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-201e-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1514,6 +1525,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2005-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1525,7 +1537,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pinList","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out","Optional"]}
+					{"Name":"pinList","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1538,7 +1550,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pinType","Type":{"Kind":"ApiRef","Name":"MBN_PIN_TYPE","TargetKind":"Default","Api":"NetworkManagement.MobileBroadband","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pin","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnPin","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pin","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnPin","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1561,6 +1573,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2006-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1598,6 +1611,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2008-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1683,6 +1697,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"459ecc43-bcf5-11dc-a8a8-001321f1405f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1696,7 +1711,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"SubscriberID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"SubscriberID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1710,7 +1725,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"SimIccID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"SimIccID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1724,7 +1739,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"TelephoneNumbers","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out","Optional"]}
+					{"Name":"TelephoneNumbers","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -1735,6 +1750,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2003-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1769,6 +1785,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2004-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1791,6 +1808,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-200b-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1802,7 +1820,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"provisionedContexts","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out","Optional"]}
+					{"Name":"provisionedContexts","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1827,6 +1845,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-200c-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1863,6 +1882,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-200f-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1875,7 +1895,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"mbnInterface","Type":{"Kind":"ApiRef","Name":"IMbnInterface","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]},"Attrs":["In"]}
-					,{"Name":"connectionProfiles","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out","Optional"]}
+					,{"Name":"connectionProfiles","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1889,7 +1909,7 @@
 				,"Params":[
 					{"Name":"mbnInterface","Type":{"Kind":"ApiRef","Name":"IMbnInterface","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]},"Attrs":["In"]}
 					,{"Name":"profileName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"connectionProfile","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnConnectionProfile","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"connectionProfile","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnConnectionProfile","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1912,6 +1932,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2010-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1923,7 +1944,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"profileData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"profileData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1957,6 +1978,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2011-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1979,6 +2001,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2012-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1992,7 +2015,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"scAddress","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"scAddress","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2073,6 +2096,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2013-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2114,7 +2138,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"PduData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"PduData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2128,7 +2152,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Message","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out","Optional"]}
+					{"Name":"Message","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2139,6 +2163,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2014-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2180,7 +2205,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Address","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Address","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2194,7 +2219,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Timestamp","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Timestamp","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2250,7 +2275,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Message","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out","Optional"]}
+					{"Name":"Message","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2261,6 +2286,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2015-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2272,7 +2298,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"smsConfiguration","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnSmsConfiguration","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"smsConfiguration","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnSmsConfiguration","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2379,6 +2405,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2016-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2486,6 +2513,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2017-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2509,6 +2537,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2018-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2535,6 +2564,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2019-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2558,6 +2588,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-201a-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2595,6 +2626,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-201f-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2629,6 +2661,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dccccab6-201f-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2680,6 +2713,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcdddab6-201f-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2716,6 +2750,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2020-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2740,7 +2775,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"preferredMulticarrierProviders","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out","Optional"]}
+					{"Name":"preferredMulticarrierProviders","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2765,7 +2800,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"cellularClasses","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out","Optional"]}
+					{"Name":"cellularClasses","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SAFEARRAY","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2800,6 +2835,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"dcdddab6-2021-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2874,6 +2910,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5d3ff196-89ee-49d8-8b60-33ffddffc58d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2897,6 +2934,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"20a26258-6811-4478-ac1d-13324e45e41c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2909,7 +2947,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"networkInterfaceID","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"mbnDevicesContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnDeviceServicesContext","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"mbnDevicesContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnDeviceServicesContext","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2920,6 +2958,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"fc5ac347-1592-4068-80bb-6a57580150d8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2944,7 +2983,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"deviceServiceID","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"mbnDeviceService","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnDeviceService","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"mbnDeviceService","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnDeviceService","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2983,6 +3022,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"0a900c19-6824-4e97-b76e-cf239d0ca642"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3150,6 +3190,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"b3bb9a71-dc70-4be9-a4da-7886ae8b191b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3264,7 +3305,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"InterfaceID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"InterfaceID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -3278,7 +3319,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"DeviceServiceID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"DeviceServiceID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -3356,6 +3397,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dcbbbab6-2007-4bbb-aaee-338e368af6fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3504,7 +3546,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pinManager","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnPinManager","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pinManager","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMbnPinManager","TargetKind":"Com","Api":"NetworkManagement.MobileBroadband","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]

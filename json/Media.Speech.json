@@ -2,6 +2,342 @@
 
 "Constants":[
 	{
+		"Name":"SPDUI_EngineProperties"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EngineProperties"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPDUI_AddRemoveWord"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddRemoveWord"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPDUI_UserTraining"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UserTraining"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPDUI_MicTraining"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MicTraining"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPDUI_RecoProfileProperties"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RecoProfileProperties"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPDUI_AudioProperties"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AudioProperties"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPDUI_AudioVolume"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AudioVolume"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPDUI_UserEnrollment"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UserEnrollment"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPDUI_ShareData"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShareData"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPDUI_Tutorial"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Tutorial"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPREG_USER_ROOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPREG_LOCAL_MACHINE_ROOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPCAT_AUDIOOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioOutput"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPCAT_AUDIOIN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioInput"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPCAT_VOICES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\Voices"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPCAT_RECOGNIZERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\Recognizers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPCAT_APPLEXICONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AppLexicons"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPCAT_PHONECONVERTERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\PhoneConverters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPCAT_TEXTNORMALIZERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\TextNormalizers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPCAT_RECOPROFILES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\\RecoProfiles"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPMMSYS_AUDIO_IN_TOKEN_ID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioInput\\TokenEnums\\MMAudioIn\\"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPMMSYS_AUDIO_OUT_TOKEN_ID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioOutput\\TokenEnums\\MMAudioOut\\"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPCURRENT_USER_LEXICON_TOKEN_ID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\\CurrentUserLexicon"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPCURRENT_USER_SHORTCUT_TOKEN_ID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\\CurrentUserShortcut"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPTOKENVALUE_CLSID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CLSID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPTOKENKEY_FILES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Files"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPTOKENKEY_UI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UI"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPTOKENKEY_ATTRIBUTES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Attributes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPTOKENKEY_RETAINEDAUDIO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SecondsPerRetainedAudioEvent"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPTOKENKEY_AUDIO_LATENCY_WARNING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LatencyWarningThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPTOKENKEY_AUDIO_LATENCY_TRUNCATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LatencyTruncateThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPTOKENKEY_AUDIO_LATENCY_UPDATE_INTERVAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LatencyUpdateInterval"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPVOICECATEGORY_TTSRATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DefaultTTSRate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPPROP_RESOURCE_USAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResourceUsage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPPROP_HIGH_CONFIDENCE_THRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HighConfidenceThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPPROP_NORMAL_CONFIDENCE_THRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NormalConfidenceThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPPROP_LOW_CONFIDENCE_THRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LowConfidenceThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPPROP_RESPONSE_SPEED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResponseSpeed"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPPROP_COMPLEX_RESPONSE_SPEED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ComplexResponseSpeed"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPPROP_ADAPTATION_ON"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AdaptationOn"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPPROP_PERSISTED_BACKGROUND_ADAPTATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersistedBackgroundAdaptation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPPROP_PERSISTED_LANGUAGE_MODEL_ADAPTATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersistedLanguageModelAdaptation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPPROP_UX_IS_LISTENING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UXIsListening"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPTOPIC_SPELLING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Spelling"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPWILDCARD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"..."
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPDICTATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"*"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPINFDICTATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"*+"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPREG_SAFE_USER_TOKENS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\UserTokens"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SP_LOW_CONFIDENCE"
 		,"Type":{"Kind":"Native","Name":"Int32"}
 		,"ValueType":"Int32"
@@ -69,6 +405,27 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":20
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPRECOEXTENSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RecoExtension"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPALTERNATESCLSID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AlternatesCLSID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SR_LOCALIZED_DESCRIPTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
 		,"Attrs":[]
 	}
 	,{
@@ -422,6 +779,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":null
 		,"Methods":[
 			{
@@ -459,6 +817,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5eff4aef-8487-11d2-961c-00c04f8ee628"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -558,6 +917,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"259684dc-37c3-11d2-9603-00c04f8ee628"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -579,6 +939,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"aca16614-5d3d-11d2-960e-00c04f8ee628"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpNotifySink","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -668,6 +1029,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"14056581-e16c-11d2-bb90-00c04f8ee6c0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -834,6 +1196,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"92a66e2b-c830-4149-83df-6fc2ba1e7a5b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpDataKey","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -857,6 +1220,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2d3d3845-39af-4850-bbf9-40b49780011d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpDataKey","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -943,6 +1307,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"14056589-e16c-11d2-bb90-00c04f8ee6c0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpDataKey","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -1094,6 +1459,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b8aab0cf-346f-49d8-9499-c8b03f161d51"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpObjectToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -1118,6 +1484,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"06b64f9e-7fda-11d2-b4f2-00c04f797396"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1202,6 +1569,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5b559f40-e952-11d2-bb91-00c04f8ee6c0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1225,7 +1593,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppToken","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpObjectToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppToken","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpObjectToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -1236,6 +1604,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"93384e18-5014-43d5-adbb-a78e055926bd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IServiceProvider","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1264,7 +1633,7 @@
 					,{"Name":"ObjectCLSID","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
 					,{"Name":"ObjectIID","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
 					,{"Name":"fReleaseWhenLastExternalRefReleased","Type":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -1507,6 +1876,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"be7a9cce-5f9e-11d2-960f-00c04f8ee628"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpNotifySource","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -1556,6 +1926,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2373a435-6a4b-429e-a6ac-d4231a61975b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpEventSource","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -1580,6 +1951,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"be7a9cc9-5f9e-11d2-960f-00c04f8ee628"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1615,6 +1987,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bed530be-2606-4f4d-a1c0-54c5cda5566f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1627,7 +2000,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pguidFormatId","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In"]}
-					,{"Name":"ppCoMemWaveFormatEx","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"WAVEFORMATEX","TargetKind":"Default","Api":"Media.Audio","Parents":[]}}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppCoMemWaveFormatEx","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"WAVEFORMATEX","TargetKind":"Default","Api":"Media.Audio","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -1654,6 +2027,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"12e3cca9-7518-44c5-a5e7-ba5a79cb929e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpStreamFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -1717,6 +2091,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"678a932c-ea71-4446-9b41-78fda6280a29"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpStreamFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -1742,7 +2117,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpStreamFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpStreamFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1852,6 +2227,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c05c768f-fae8-4ec2-8e07-338321c12452"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpStreamFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -1996,6 +2372,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"15806f6e-1d70-4b48-98e6-3b1a007509ab"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpAudio","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -2066,6 +2443,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"10f63bce-201a-11d3-ac70-00c04f8ee6c0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2077,7 +2455,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppszTranscript","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszTranscript","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2579,6 +2957,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"da41a7c2-5383-4db2-916b-6c1719e3db58"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2675,6 +3054,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8565572f-c094-41cc-b56e-10bd9c3ff044"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpLexicon","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -2749,6 +3129,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3df681e2-ea56-11d9-8bde-f66bad1e3f3a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2868,6 +3249,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8445c581-0cac-4a38-abfe-9b2ce2826455"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpObjectWithToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -2904,6 +3286,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"133adcd4-19b4-4020-9fdc-842e78253b17"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2980,6 +3363,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b2745efd-42ce-48ca-81f1-a96e02538a90"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3177,6 +3561,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6c44df74-72b9-4992-a1ec-ef996e0422d4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpEventSource","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -3499,6 +3884,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1a5c0354-b621-4b5a-8791-d306ed379e53"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3561,6 +3947,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8fcebc98-4e49-4067-9c6c-d86a0e092e3d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpPhrase","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -3610,6 +3997,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f264da52-e457-4696-b856-a737b717af79"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpPhrase","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -3688,6 +4076,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"20b053be-e235-43cd-9a2a-8d17a48b7842"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpPhrase","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -3806,6 +4195,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"27cac6c4-88f2-41f2-8817-0c95e59f1e6e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpRecoResult","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -3857,6 +4247,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ae39362b-45a8-4074-9b9e-ccf49aa2d0b6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpRecoResult","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -4015,6 +4406,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8137828f-591a-4a42-be58-49ea7ebaac68"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4151,6 +4543,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2177db29-7f45-47d0-8554-067e91c80502"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpGrammarBuilder","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -4426,6 +4819,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8ab10026-20cc-4b20-8c22-a49c9ba78f60"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4463,6 +4857,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4b37bc9e-9ed6-44a3-93d3-18f022b79ec3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4580,6 +4975,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b9ac5783-fcd0-4b21-b119-b4f8da8fd2c3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4678,6 +5074,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f740a62f-7c15-489e-8234-940a33d9272d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpEventSource","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -4970,6 +5367,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bead311c-52ff-437f-9464-6b21054ca73d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5020,6 +5418,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5b4fb971-b115-4de1-ad97-e482e3bf6ee4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5131,6 +5530,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c2b5f241-daa0-4507-9e16-5a1eaa2b7a5c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpProperties","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -5342,6 +5742,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"21b501a0-0ec7-46c9-92c3-a2bc784c54b9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5353,7 +5754,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppbData","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}}},"Attrs":["Out","Optional"]}
+					{"Name":"ppbData","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}}},"Attrs":["Out"]}
 					,{"Name":"pulSize","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
 					,{"Name":"dwReserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 				]
@@ -5380,6 +5781,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8fc6d974-c81e-4098-93c5-0147f61ed4d3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5441,6 +5843,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c360ce4b-76d1-4214-ad68-52657d5083da"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5512,6 +5915,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c8d7c7e2-0dde-44b7-afe3-b0c991fbeb5e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7099,6 +7503,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ce17c09b-4efa-44d5-a4c9-59d9585ab0cd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7150,7 +7555,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"ValueName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"Value","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Value","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7189,7 +7594,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"SubKeyName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"SubKey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechDataKey","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"SubKey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechDataKey","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7202,7 +7607,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"SubKeyName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"SubKey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechDataKey","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"SubKey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechDataKey","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7239,7 +7644,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"SubKeyName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"SubKeyName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7252,7 +7657,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ValueName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ValueName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -7263,6 +7668,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c74a3adc-b727-4500-a84a-b526721c8b8c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7276,7 +7682,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ObjectId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ObjectId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7290,7 +7696,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"DataKey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechDataKey","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"DataKey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechDataKey","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7304,7 +7710,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Category","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectTokenCategory","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Category","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectTokenCategory","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7317,7 +7723,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Locale","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"Description","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Description","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7344,7 +7750,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"AttributeName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"AttributeValue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"AttributeValue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7358,7 +7764,7 @@
 				,"Params":[
 					{"Name":"pUnkOuter","Type":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Optional"]}
 					,{"Name":"ClsContext","Type":{"Kind":"ApiRef","Name":"SpeechTokenContext","TargetKind":"Default","Api":"Media.Speech","Parents":[]},"Attrs":["In"]}
-					,{"Name":"Object","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Object","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7386,7 +7792,7 @@
 					,{"Name":"KeyName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"FileName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"Folder","Type":{"Kind":"ApiRef","Name":"SpeechTokenShellFolder","TargetKind":"Default","Api":"Media.Speech","Parents":[]},"Attrs":["In"]}
-					,{"Name":"FilePath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"FilePath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7455,6 +7861,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9285b776-2e7b-4bc0-b53e-580eb6fa967f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7481,7 +7888,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"Token","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Token","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7495,7 +7902,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppEnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppEnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -7506,6 +7913,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ca7eac50-2d01-4145-86d4-5ae7d70f4469"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7519,7 +7927,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Id","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Id","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7547,7 +7955,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"TokenId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"TokenId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7573,7 +7981,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Location","Type":{"Kind":"ApiRef","Name":"SpeechDataKeyLocation","TargetKind":"Default","Api":"Media.Speech","Parents":[]},"Attrs":["In"]}
-					,{"Name":"DataKey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechDataKey","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"DataKey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechDataKey","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7587,7 +7995,7 @@
 				,"Params":[
 					{"Name":"RequiredAttributes","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"OptionalAttributes","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"Tokens","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectTokens","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Tokens","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectTokens","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -7598,6 +8006,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"11b103d8-1142-4edf-a093-82fb3915f8cc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7692,6 +8101,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c62d9c91-7458-47f6-862d-1ef86fb0b278"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7772,6 +8182,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e6e9c590-3e18-40e3-8299-061f98bde7c7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7813,7 +8224,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Guid","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Guid","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7839,7 +8250,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"SpeechWaveFormatEx","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechWaveFormatEx","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"SpeechWaveFormatEx","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechWaveFormatEx","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7862,6 +8273,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7a1ef0d5-1581-4741-88e4-209a49f11a10"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8068,6 +8480,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6450336f-7d49-4ced-8097-49d6dee37294"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8081,7 +8494,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"AudioFormat","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"AudioFormat","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8145,6 +8558,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"af67f125-ab39-4e93-b4a2-cc2e66e182a7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpeechBaseStream","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -8180,6 +8594,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"eeb14b68-808b-4abe-a5ea-b51da7588008"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpeechBaseStream","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -8214,6 +8629,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1a9e9f4f-104f-4db8-a115-efd7fd0c97ae"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpeechBaseStream","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -8227,7 +8643,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppUnkStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppUnkStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8250,6 +8666,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"cff8e175-019e-11d3-a08e-00c04f8ef9b5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpeechBaseStream","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -8263,7 +8680,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Status","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioStatus","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Status","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioStatus","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8277,7 +8694,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"BufferInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioBufferInfo","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"BufferInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioBufferInfo","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8291,7 +8708,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"StreamFormat","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"StreamFormat","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8384,6 +8801,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3c76af6d-1fd7-4831-81d1-3b71d5a13c44"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpeechAudio","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -8464,6 +8882,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"269316d8-57bd-11d2-9eee-00c04f797396"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8477,7 +8896,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Status","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechVoiceStatus","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Status","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechVoiceStatus","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8491,7 +8910,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Voice","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Voice","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8517,7 +8936,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"AudioOutput","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"AudioOutput","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8543,7 +8962,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"AudioOutputStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechBaseStream","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"AudioOutputStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechBaseStream","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8829,7 +9248,7 @@
 				,"Params":[
 					{"Name":"RequiredAttributes","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"OptionalAttributes","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ObjectTokens","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectTokens","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ObjectTokens","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectTokens","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8843,7 +9262,7 @@
 				,"Params":[
 					{"Name":"RequiredAttributes","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"OptionalAttributes","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ObjectTokens","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectTokens","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ObjectTokens","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectTokens","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8908,6 +9327,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8be47b07-57f6-11d2-9eee-00c04f797396"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9033,7 +9453,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Bookmark","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Bookmark","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9086,6 +9506,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a372acd1-3bef-4bbd-8ffb-cb3e2b416af8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -9096,6 +9517,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2d5f1c0c-bd75-4b08-9478-3b11fea2586c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9121,7 +9543,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Recognizer","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Recognizer","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9175,7 +9597,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"AudioInput","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"AudioInput","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9201,7 +9623,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"AudioInputStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechBaseStream","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"AudioInputStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechBaseStream","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9257,7 +9679,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Status","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecognizerStatus","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Status","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecognizerStatus","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9283,7 +9705,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Profile","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Profile","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectToken","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9309,7 +9731,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"NewContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoContext","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"NewContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoContext","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9322,7 +9744,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Type","Type":{"Kind":"ApiRef","Name":"SpeechFormatType","TargetKind":"Default","Api":"Media.Speech","Parents":[]},"Attrs":["In"]}
-					,{"Name":"Format","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Format","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9377,7 +9799,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Name","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"Value","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["In","Out","Optional"]}
+					,{"Name":"Value","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["In","Out"]}
 					,{"Name":"Supported","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["Out"]}
 				]
 			}
@@ -9421,7 +9843,7 @@
 				,"Params":[
 					{"Name":"RequiredAttributes","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"OptionalAttributes","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ObjectTokens","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectTokens","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ObjectTokens","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectTokens","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9435,7 +9857,7 @@
 				,"Params":[
 					{"Name":"RequiredAttributes","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"OptionalAttributes","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ObjectTokens","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectTokens","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ObjectTokens","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectTokens","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9449,7 +9871,7 @@
 				,"Params":[
 					{"Name":"RequiredAttributes","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"OptionalAttributes","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ObjectTokens","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectTokens","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ObjectTokens","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechObjectTokens","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -9460,6 +9882,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bff9e781-53ec-484e-bb8a-0e1b5551e35c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9473,7 +9896,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"AudioStatus","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioStatus","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"AudioStatus","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioStatus","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9529,7 +9952,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ClsidEngine","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ClsidEngine","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9554,6 +9977,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"580aa49d-7e1e-4809-b8e2-57da806104b8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9567,7 +9991,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Recognizer","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecognizer","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Recognizer","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecognizer","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9595,7 +10019,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"UIType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"UIType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9621,7 +10045,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Voice","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechVoice","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Voice","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechVoice","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9815,7 +10239,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Format","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Format","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9850,7 +10274,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"GrammarId","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
-					,{"Name":"Grammar","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoGrammar","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Grammar","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoGrammar","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9863,7 +10287,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"ResultBlock","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]}},"Attrs":["In"]}
-					,{"Name":"Result","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoResult","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Result","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoResult","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9900,6 +10324,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b6d6f79f-2158-4e50-b5bc-9a9ccd852a09"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9927,7 +10352,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"RecoContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoContext","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"RecoContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoContext","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9969,7 +10394,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Rules","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRules","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Rules","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRules","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10164,6 +10589,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7b8fcb42-0e9d-4f00-a048-7b04d6179d3d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -10174,6 +10600,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"afe719cf-5dd1-44f2-999c-7a399f1cfccc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10201,7 +10628,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"State","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRuleState","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"State","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRuleState","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10215,7 +10642,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Name","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Name","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10265,7 +10692,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"State","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRuleState","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"State","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRuleState","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -10276,6 +10703,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6ffa3b44-fc2d-40d1-8afc-32911c7f1ad1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10302,7 +10730,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"RuleNameOrId","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
-					,{"Name":"Rule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Rule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10315,7 +10743,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"Rule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Rule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10329,7 +10757,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10358,7 +10786,7 @@
 					{"Name":"RuleName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"Attributes","Type":{"Kind":"ApiRef","Name":"SpeechRuleAttributes","TargetKind":"Default","Api":"Media.Speech","Parents":[]},"Attrs":["In"]}
 					,{"Name":"RuleId","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"Rule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Rule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10381,7 +10809,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ErrorText","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ErrorText","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"SaveStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
@@ -10393,6 +10821,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d4286f2c-ee67-45ae-b928-28d695362eda"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10406,7 +10835,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Rule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Rule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10420,7 +10849,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Transitions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRuleStateTransitions","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Transitions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRuleStateTransitions","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10484,6 +10913,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"cafd1db1-41d1-4a06-9863-e2e81da17a9a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10511,7 +10941,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Text","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Text","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10525,7 +10955,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Rule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Rule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10553,7 +10983,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"PropertyName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"PropertyName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10595,7 +11025,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"NextState","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRuleState","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"NextState","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRuleState","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -10606,6 +11036,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"eabce657-75bc-44a2-aa7f-c56476742963"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10632,7 +11063,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"Transition","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRuleStateTransition","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Transition","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechGrammarRuleStateTransition","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10646,7 +11077,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -10657,6 +11088,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3b9c7e7a-6eee-4ded-9092-11657279adbe"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10779,6 +11211,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ed2879cf-ced9-4ee6-a534-de0191d5468d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10792,7 +11225,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"RecoContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoContext","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"RecoContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoContext","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10806,7 +11239,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Times","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoResultTimes","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Times","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoResultTimes","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10832,7 +11265,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Format","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Format","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10846,7 +11279,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"PhraseInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseInfo","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"PhraseInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseInfo","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10861,7 +11294,7 @@
 					{"Name":"RequestCount","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"StartElement","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"Elements","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"Alternates","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseAlternates","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Alternates","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseAlternates","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10875,7 +11308,7 @@
 				,"Params":[
 					{"Name":"StartElement","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"Elements","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"Stream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechMemoryStream","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Stream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechMemoryStream","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10925,6 +11358,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8e0a246d-d3c8-45de-8657-04290c458c3c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpeechRecoResult","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -10948,6 +11382,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"62b3b8fb-f6e7-41be-bdcb-056b1c29efc0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11014,6 +11449,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"27864a2a-2b9f-4cb8-92d3-0d2722fd1e73"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11027,7 +11463,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"RecoResult","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoResult","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"RecoResult","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoResult","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11069,7 +11505,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"PhraseInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseInfo","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"PhraseInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseInfo","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11091,6 +11527,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b238b6d5-f276-4c3d-a6c1-2974801c3cc2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11117,7 +11554,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"PhraseAlternate","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseAlternate","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"PhraseAlternate","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseAlternate","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11131,7 +11568,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -11142,6 +11579,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"961559cf-4e67-4662-8bf0-d93f1fcd61b3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11253,7 +11691,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Rule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Rule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11267,7 +11705,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Properties","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseProperties","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Properties","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseProperties","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11281,7 +11719,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Elements","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseElements","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Elements","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseElements","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11295,7 +11733,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Replacements","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseReplacements","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Replacements","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseReplacements","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11309,7 +11747,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"EngineIdGuid","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"EngineIdGuid","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11350,7 +11788,7 @@
 					{"Name":"StartElement","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"Elements","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"UseReplacements","Type":{"Kind":"Native","Name":"Int16"},"Attrs":["In"]}
-					,{"Name":"Text","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Text","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11376,6 +11814,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e6176f96-e373-4801-b223-3b62c068c0b4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11473,7 +11912,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"DisplayText","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"DisplayText","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11487,7 +11926,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"LexicalForm","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"LexicalForm","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11568,6 +12007,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0626b328-3478-467d-a0b3-d0853b93dda3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11594,7 +12034,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"Element","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseElement","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Element","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseElement","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11608,7 +12048,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -11619,6 +12059,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2890a410-53a7-4fb5-94ec-06d4998e3d02"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11646,7 +12087,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Text","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Text","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11685,6 +12126,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"38bc662f-2257-4525-959e-2069d2596c05"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11711,7 +12153,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"Reps","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseReplacement","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Reps","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseReplacement","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11725,7 +12167,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -11736,6 +12178,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ce563d48-961e-4732-a2e1-378a42b430be"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11749,7 +12192,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Name","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Name","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11847,7 +12290,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ParentProperty","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseProperty","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ParentProperty","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseProperty","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11861,7 +12304,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Children","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseProperties","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Children","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseProperties","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -11872,6 +12315,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"08166b47-102e-4b23-a599-bdb98dbfd1f4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11898,7 +12342,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"Property","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseProperty","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Property","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseProperty","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11912,7 +12356,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -11923,6 +12367,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a7bfe112-a4a0-48d9-b602-c313843f6964"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11936,7 +12381,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Name","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Name","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11992,7 +12437,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Parent","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Parent","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12006,7 +12451,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Children","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseRules","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Children","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseRules","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12045,6 +12490,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9047d593-01dd-4b72-81a3-e4a0ca69f407"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12071,7 +12517,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"Rule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Rule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseRule","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12085,7 +12531,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -12096,6 +12542,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3da7627a-c7ae-4b23-8708-638c50362c25"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12123,7 +12570,7 @@
 				,"Params":[
 					{"Name":"Flags","Type":{"Kind":"ApiRef","Name":"SpeechLexiconType","TargetKind":"Default","Api":"Media.Speech","Parents":[]},"Attrs":["In"]}
 					,{"Name":"GenerationID","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
-					,{"Name":"Words","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechLexiconWords","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Words","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechLexiconWords","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12198,7 +12645,7 @@
 					{"Name":"bstrWord","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"LangId","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"TypeFlags","Type":{"Kind":"ApiRef","Name":"SpeechLexiconType","TargetKind":"Default","Api":"Media.Speech","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppPronunciations","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechLexiconPronunciations","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppPronunciations","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechLexiconPronunciations","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12211,7 +12658,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"GenerationID","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["In","Out"]}
-					,{"Name":"ppWords","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechLexiconWords","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppWords","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechLexiconWords","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -12222,6 +12669,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8d199862-415e-47d5-ac4f-faa608b424e6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12248,7 +12696,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"Word","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechLexiconWord","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Word","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechLexiconWord","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12262,7 +12710,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -12273,6 +12721,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4e5b933c-c9be-48ed-8842-1ee51bb1d4ff"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12314,7 +12763,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Word","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Word","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12328,7 +12777,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Pronunciations","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechLexiconPronunciations","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Pronunciations","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechLexiconPronunciations","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -12339,6 +12788,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"72829128-5682-4704-a0d4-3e2bb6f2ead3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12365,7 +12815,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"Pronunciation","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechLexiconPronunciation","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Pronunciation","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechLexiconPronunciation","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12379,7 +12829,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"EnumVARIANT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -12390,6 +12840,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"95252c5d-9e43-4f4a-9899-48ee73352f9f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12459,7 +12910,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Symbolic","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Symbolic","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -12470,6 +12921,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"aaec54af-8f85-4924-944d-b79d39d72e19"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpeechRecoResult","TargetKind":"Com","Api":"Media.Speech","Parents":[]}
 		,"Methods":[
 			{
@@ -12482,7 +12934,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Options","Type":{"Kind":"ApiRef","Name":"SPXMLRESULTOPTIONS","TargetKind":"Default","Api":"Media.Speech","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pResult","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pResult","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12495,9 +12947,9 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"LineNumber","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
-					,{"Name":"ScriptLine","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
-					,{"Name":"Source","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
-					,{"Name":"Description","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ScriptLine","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					,{"Name":"Source","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					,{"Name":"Description","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"ResultCode","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
 					,{"Name":"IsError","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["Out"]}
 				]
@@ -12510,6 +12962,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6d60eb64-aced-40a6-bbf3-4e557f71dee2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12523,7 +12976,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"RecoContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoContext","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"RecoContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoContext","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12537,7 +12990,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Times","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoResultTimes","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Times","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechRecoResultTimes","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12563,7 +13016,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"Format","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"Format","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechAudioFormat","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12577,7 +13030,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"PhraseInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseInfo","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"PhraseInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseInfo","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12592,7 +13045,7 @@
 					{"Name":"RequestCount","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"StartElement","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"Elements","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"Alternates","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseAlternates","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Alternates","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseAlternates","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12606,7 +13059,7 @@
 				,"Params":[
 					{"Name":"StartElement","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"Elements","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"Stream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechMemoryStream","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Stream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechMemoryStream","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12658,7 +13111,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Options","Type":{"Kind":"ApiRef","Name":"SPXMLRESULTOPTIONS","TargetKind":"Default","Api":"Media.Speech","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pResult","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pResult","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12671,9 +13124,9 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"LineNumber","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
-					,{"Name":"ScriptLine","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
-					,{"Name":"Source","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
-					,{"Name":"Description","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ScriptLine","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					,{"Name":"Source","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					,{"Name":"Description","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"ResultCode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"IsError","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["Out"]}
 				]
@@ -12699,6 +13152,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3b151836-df3a-4e0a-846c-d2adc9334333"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12711,7 +13165,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"PhraseInMemory","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]}},"Attrs":["In"]}
-					,{"Name":"PhraseInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseInfo","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"PhraseInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISpeechPhraseInfo","TargetKind":"Com","Api":"Media.Speech","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -12722,6 +13176,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c3e4f353-433f-43d6-89a1-6a62a7054c3d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12775,7 +13230,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"IdArray","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"Phonemes","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Phonemes","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]

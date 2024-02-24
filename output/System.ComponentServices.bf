@@ -8,6 +8,8 @@ using Win32.System.DistributedTransactionCoordinator;
 static
 {
 	#region Constants
+	public const String TRACKER_STARTSTOP_EVENT = "Global\\COM+ Tracker Push Event";
+	public const String TRACKER_INIT_EVENT = "Global\\COM+ Tracker Init Event";
 	public const uint32 GUID_STRING_SIZE = 40;
 	public const uint32 DATA_NOT_AVAILABLE = 4294967295;
 	public const uint32 MTXDM_E_ENLISTRESOURCEFAILED = 2147803392;
@@ -884,14 +886,14 @@ static
 		
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
 		public HRESULT get_Item(BSTR name, out VARIANT pItem) mut => VT.get_Item(ref this, name, out pItem);
-		public HRESULT get__NewEnum(IUnknown** ppEnum) mut => VT.get__NewEnum(ref this, ppEnum);
+		public HRESULT get__NewEnum(out IUnknown* ppEnum) mut => VT.get__NewEnum(ref this, out ppEnum);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityIdentityColl self, out int32 plCount) get_Count;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityIdentityColl self, BSTR name, out VARIANT pItem) get_Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityIdentityColl self, IUnknown** ppEnum) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityIdentityColl self, out IUnknown* ppEnum) get__NewEnum;
 		}
 	}
 	[CRepr]
@@ -902,15 +904,15 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
-		public HRESULT get_Item(int32 lIndex, ISecurityIdentityColl** pObj) mut => VT.get_Item(ref this, lIndex, pObj);
-		public HRESULT get__NewEnum(IUnknown** ppEnum) mut => VT.get__NewEnum(ref this, ppEnum);
+		public HRESULT get_Item(int32 lIndex, out ISecurityIdentityColl* pObj) mut => VT.get_Item(ref this, lIndex, out pObj);
+		public HRESULT get__NewEnum(out IUnknown* ppEnum) mut => VT.get__NewEnum(ref this, out ppEnum);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityCallersColl self, out int32 plCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityCallersColl self, int32 lIndex, ISecurityIdentityColl** pObj) get_Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityCallersColl self, IUnknown** ppEnum) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityCallersColl self, int32 lIndex, out ISecurityIdentityColl* pObj) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityCallersColl self, out IUnknown* ppEnum) get__NewEnum;
 		}
 	}
 	[CRepr]
@@ -922,7 +924,7 @@ static
 		
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
 		public HRESULT get_Item(BSTR name, out VARIANT pItem) mut => VT.get_Item(ref this, name, out pItem);
-		public HRESULT get__NewEnum(IUnknown** ppEnum) mut => VT.get__NewEnum(ref this, ppEnum);
+		public HRESULT get__NewEnum(out IUnknown* ppEnum) mut => VT.get__NewEnum(ref this, out ppEnum);
 		public HRESULT IsCallerInRole(BSTR bstrRole, out int16 pfInRole) mut => VT.IsCallerInRole(ref this, bstrRole, out pfInRole);
 		public HRESULT IsSecurityEnabled(out int16 pfIsEnabled) mut => VT.IsSecurityEnabled(ref this, out pfIsEnabled);
 		public HRESULT IsUserInRole(ref VARIANT pUser, BSTR bstrRole, out int16 pfInRole) mut => VT.IsUserInRole(ref this, ref pUser, bstrRole, out pfInRole);
@@ -932,7 +934,7 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityCallContext self, out int32 plCount) get_Count;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityCallContext self, BSTR name, out VARIANT pItem) get_Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityCallContext self, IUnknown** ppEnum) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityCallContext self, out IUnknown* ppEnum) get__NewEnum;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityCallContext self, BSTR bstrRole, out int16 pfInRole) IsCallerInRole;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityCallContext self, out int16 pfIsEnabled) IsSecurityEnabled;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityCallContext self, ref VARIANT pUser, BSTR bstrRole, out int16 pfInRole) IsUserInRole;
@@ -945,12 +947,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetSecurityCallContext(ISecurityCallContext** ppObject) mut => VT.GetSecurityCallContext(ref this, ppObject);
+		public HRESULT GetSecurityCallContext(out ISecurityCallContext* ppObject) mut => VT.GetSecurityCallContext(ref this, out ppObject);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetSecurityCallContext self, ISecurityCallContext** ppObject) GetSecurityCallContext;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetSecurityCallContext self, out ISecurityCallContext* ppObject) GetSecurityCallContext;
 		}
 	}
 	[CRepr]
@@ -960,18 +962,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetDirectCallerName(BSTR* bstrUserName) mut => VT.GetDirectCallerName(ref this, bstrUserName);
-		public HRESULT GetDirectCreatorName(BSTR* bstrUserName) mut => VT.GetDirectCreatorName(ref this, bstrUserName);
-		public HRESULT GetOriginalCallerName(BSTR* bstrUserName) mut => VT.GetOriginalCallerName(ref this, bstrUserName);
-		public HRESULT GetOriginalCreatorName(BSTR* bstrUserName) mut => VT.GetOriginalCreatorName(ref this, bstrUserName);
+		public HRESULT GetDirectCallerName(out BSTR bstrUserName) mut => VT.GetDirectCallerName(ref this, out bstrUserName);
+		public HRESULT GetDirectCreatorName(out BSTR bstrUserName) mut => VT.GetDirectCreatorName(ref this, out bstrUserName);
+		public HRESULT GetOriginalCallerName(out BSTR bstrUserName) mut => VT.GetOriginalCallerName(ref this, out bstrUserName);
+		public HRESULT GetOriginalCreatorName(out BSTR bstrUserName) mut => VT.GetOriginalCreatorName(ref this, out bstrUserName);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref SecurityProperty self, BSTR* bstrUserName) GetDirectCallerName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref SecurityProperty self, BSTR* bstrUserName) GetDirectCreatorName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref SecurityProperty self, BSTR* bstrUserName) GetOriginalCallerName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref SecurityProperty self, BSTR* bstrUserName) GetOriginalCreatorName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref SecurityProperty self, out BSTR bstrUserName) GetDirectCallerName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref SecurityProperty self, out BSTR bstrUserName) GetDirectCreatorName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref SecurityProperty self, out BSTR bstrUserName) GetOriginalCallerName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref SecurityProperty self, out BSTR bstrUserName) GetOriginalCreatorName;
 		}
 	}
 	[CRepr]
@@ -982,19 +984,19 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT IsInTransaction(out int16 pbIsInTx) mut => VT.IsInTransaction(ref this, out pbIsInTx);
-		public HRESULT GetTransaction(IUnknown** ppTx) mut => VT.GetTransaction(ref this, ppTx);
-		public HRESULT GetTransactionId(BSTR* pbstrTxId) mut => VT.GetTransactionId(ref this, pbstrTxId);
-		public HRESULT GetActivityId(BSTR* pbstrActivityId) mut => VT.GetActivityId(ref this, pbstrActivityId);
-		public HRESULT GetContextId(BSTR* pbstrCtxId) mut => VT.GetContextId(ref this, pbstrCtxId);
+		public HRESULT GetTransaction(out IUnknown* ppTx) mut => VT.GetTransaction(ref this, out ppTx);
+		public HRESULT GetTransactionId(out BSTR pbstrTxId) mut => VT.GetTransactionId(ref this, out pbstrTxId);
+		public HRESULT GetActivityId(out BSTR pbstrActivityId) mut => VT.GetActivityId(ref this, out pbstrActivityId);
+		public HRESULT GetContextId(out BSTR pbstrCtxId) mut => VT.GetContextId(ref this, out pbstrCtxId);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextInfo self, out int16 pbIsInTx) IsInTransaction;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextInfo self, IUnknown** ppTx) GetTransaction;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextInfo self, BSTR* pbstrTxId) GetTransactionId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextInfo self, BSTR* pbstrActivityId) GetActivityId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextInfo self, BSTR* pbstrCtxId) GetContextId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextInfo self, out IUnknown* ppTx) GetTransaction;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextInfo self, out BSTR pbstrTxId) GetTransactionId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextInfo self, out BSTR pbstrActivityId) GetActivityId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextInfo self, out BSTR pbstrCtxId) GetContextId;
 		}
 	}
 	[CRepr]
@@ -1004,16 +1006,16 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetPartitionId(BSTR* __MIDL__ContextInfo20000) mut => VT.GetPartitionId(ref this, __MIDL__ContextInfo20000);
-		public HRESULT GetApplicationId(BSTR* __MIDL__ContextInfo20001) mut => VT.GetApplicationId(ref this, __MIDL__ContextInfo20001);
-		public HRESULT GetApplicationInstanceId(BSTR* __MIDL__ContextInfo20002) mut => VT.GetApplicationInstanceId(ref this, __MIDL__ContextInfo20002);
+		public HRESULT GetPartitionId(out BSTR __MIDL__ContextInfo20000) mut => VT.GetPartitionId(ref this, out __MIDL__ContextInfo20000);
+		public HRESULT GetApplicationId(out BSTR __MIDL__ContextInfo20001) mut => VT.GetApplicationId(ref this, out __MIDL__ContextInfo20001);
+		public HRESULT GetApplicationInstanceId(out BSTR __MIDL__ContextInfo20002) mut => VT.GetApplicationInstanceId(ref this, out __MIDL__ContextInfo20002);
 
 		[CRepr]
 		public struct VTable : ContextInfo.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextInfo2 self, BSTR* __MIDL__ContextInfo20000) GetPartitionId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextInfo2 self, BSTR* __MIDL__ContextInfo20001) GetApplicationId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextInfo2 self, BSTR* __MIDL__ContextInfo20002) GetApplicationInstanceId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextInfo2 self, out BSTR __MIDL__ContextInfo20000) GetPartitionId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextInfo2 self, out BSTR __MIDL__ContextInfo20001) GetApplicationId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextInfo2 self, out BSTR __MIDL__ContextInfo20002) GetApplicationInstanceId;
 		}
 	}
 	[CRepr]
@@ -1033,9 +1035,9 @@ static
 		public HRESULT IsCallerInRole(BSTR bstrRole, out int16 pbInRole) mut => VT.IsCallerInRole(ref this, bstrRole, out pbInRole);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
 		public HRESULT get_Item(BSTR name, out VARIANT pItem) mut => VT.get_Item(ref this, name, out pItem);
-		public HRESULT get__NewEnum(IUnknown** ppEnum) mut => VT.get__NewEnum(ref this, ppEnum);
-		public HRESULT get_Security(SecurityProperty** ppSecurityProperty) mut => VT.get_Security(ref this, ppSecurityProperty);
-		public HRESULT get_ContextInfo(ContextInfo** ppContextInfo) mut => VT.get_ContextInfo(ref this, ppContextInfo);
+		public HRESULT get__NewEnum(out IUnknown* ppEnum) mut => VT.get__NewEnum(ref this, out ppEnum);
+		public HRESULT get_Security(out SecurityProperty* ppSecurityProperty) mut => VT.get_Security(ref this, out ppSecurityProperty);
+		public HRESULT get_ContextInfo(out ContextInfo* ppContextInfo) mut => VT.get_ContextInfo(ref this, out ppContextInfo);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
@@ -1050,9 +1052,9 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ObjectContext self, BSTR bstrRole, out int16 pbInRole) IsCallerInRole;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ObjectContext self, out int32 plCount) get_Count;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ObjectContext self, BSTR name, out VARIANT pItem) get_Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ObjectContext self, IUnknown** ppEnum) get__NewEnum;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ObjectContext self, SecurityProperty** ppSecurityProperty) get_Security;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ObjectContext self, ContextInfo** ppContextInfo) get_ContextInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ObjectContext self, out IUnknown* ppEnum) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ObjectContext self, out SecurityProperty* ppSecurityProperty) get_Security;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ObjectContext self, out ContextInfo* ppContextInfo) get_ContextInfo;
 		}
 	}
 	[CRepr]
@@ -1633,13 +1635,13 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT PropCount(out uint32 pCount) mut => VT.PropCount(ref this, out pCount);
-		public HRESULT GetPropName(uint32 ulIndex, PWSTR* ppszPropName) mut => VT.GetPropName(ref this, ulIndex, ppszPropName);
+		public HRESULT GetPropName(uint32 ulIndex, out PWSTR ppszPropName) mut => VT.GetPropName(ref this, ulIndex, out ppszPropName);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IComTrackingInfoProperties self, out uint32 pCount) PropCount;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IComTrackingInfoProperties self, uint32 ulIndex, PWSTR* ppszPropName) GetPropName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IComTrackingInfoProperties self, uint32 ulIndex, out PWSTR ppszPropName) GetPropName;
 		}
 	}
 	[CRepr]
@@ -1763,8 +1765,8 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_PackageName(BSTR* pVal) mut => VT.get_PackageName(ref this, pVal);
-		public HRESULT get_PackageGuid(BSTR* pVal) mut => VT.get_PackageGuid(ref this, pVal);
+		public HRESULT get_PackageName(out BSTR pVal) mut => VT.get_PackageName(ref this, out pVal);
+		public HRESULT get_PackageGuid(out BSTR pVal) mut => VT.get_PackageGuid(ref this, out pVal);
 		public HRESULT PostEvent(ref VARIANT vEvent) mut => VT.PostEvent(ref this, ref vEvent);
 		public HRESULT get_FireEvents(out int16 pVal) mut => VT.get_FireEvents(ref this, out pVal);
 		public HRESULT GetProcessID(out int32 id) mut => VT.GetProcessID(ref this, out id);
@@ -1772,8 +1774,8 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsEvents self, BSTR* pVal) get_PackageName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsEvents self, BSTR* pVal) get_PackageGuid;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsEvents self, out BSTR pVal) get_PackageName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsEvents self, out BSTR pVal) get_PackageGuid;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsEvents self, ref VARIANT vEvent) PostEvent;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsEvents self, out int16 pVal) get_FireEvents;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsEvents self, out int32 id) GetProcessID;
@@ -1786,18 +1788,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Names(IUnknown** pUnk) mut => VT.get_Names(ref this, pUnk);
-		public HRESULT get_DisplayName(BSTR* sDisplayName) mut => VT.get_DisplayName(ref this, sDisplayName);
-		public HRESULT get_EventID(BSTR* sGuidEventID) mut => VT.get_EventID(ref this, sGuidEventID);
+		public HRESULT get_Names(out IUnknown* pUnk) mut => VT.get_Names(ref this, out pUnk);
+		public HRESULT get_DisplayName(out BSTR sDisplayName) mut => VT.get_DisplayName(ref this, out sDisplayName);
+		public HRESULT get_EventID(out BSTR sGuidEventID) mut => VT.get_EventID(ref this, out sGuidEventID);
 		public HRESULT get_Count(out int32 lCount) mut => VT.get_Count(ref this, out lCount);
 		public HRESULT get_Value(BSTR sKey, out VARIANT pVal) mut => VT.get_Value(ref this, sKey, out pVal);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsEventInfo self, IUnknown** pUnk) get_Names;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsEventInfo self, BSTR* sDisplayName) get_DisplayName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsEventInfo self, BSTR* sGuidEventID) get_EventID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsEventInfo self, out IUnknown* pUnk) get_Names;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsEventInfo self, out BSTR sDisplayName) get_DisplayName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsEventInfo self, out BSTR sGuidEventID) get_EventID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsEventInfo self, out int32 lCount) get_Count;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsEventInfo self, BSTR sKey, out VARIANT pVal) get_Value;
 		}
@@ -1809,12 +1811,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetEventDispatcher(IUnknown** pUnk) mut => VT.GetEventDispatcher(ref this, pUnk);
+		public HRESULT GetEventDispatcher(out IUnknown* pUnk) mut => VT.GetEventDispatcher(ref this, out pUnk);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMTSLocator self, IUnknown** pUnk) GetEventDispatcher;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMTSLocator self, out IUnknown* pUnk) GetEventDispatcher;
 		}
 	}
 	[CRepr]
@@ -1825,14 +1827,14 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
-		public HRESULT Item(int32 lIndex, IUnknown** ppUnkDispatcher) mut => VT.Item(ref this, lIndex, ppUnkDispatcher);
+		public HRESULT Item(int32 lIndex, out IUnknown* ppUnkDispatcher) mut => VT.Item(ref this, lIndex, out ppUnkDispatcher);
 		public HRESULT Refresh() mut => VT.Refresh(ref this);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsGrp self, out int32 pVal) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsGrp self, int32 lIndex, IUnknown** ppUnkDispatcher) Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsGrp self, int32 lIndex, out IUnknown* ppUnkDispatcher) Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMtsGrp self) Refresh;
 		}
 	}
@@ -1843,9 +1845,9 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_SourcePath(BSTR* pVal) mut => VT.get_SourcePath(ref this, pVal);
+		public HRESULT get_SourcePath(out BSTR pVal) mut => VT.get_SourcePath(ref this, out pVal);
 		public HRESULT put_SourcePath(BSTR newVal) mut => VT.put_SourcePath(ref this, newVal);
-		public HRESULT get_DestPath(BSTR* pVal) mut => VT.get_DestPath(ref this, pVal);
+		public HRESULT get_DestPath(out BSTR pVal) mut => VT.get_DestPath(ref this, out pVal);
 		public HRESULT put_DestPath(BSTR newVal) mut => VT.put_DestPath(ref this, newVal);
 		public HRESULT get_CommitBatchSize(out int32 pVal) mut => VT.get_CommitBatchSize(ref this, out pVal);
 		public HRESULT put_CommitBatchSize(int32 newVal) mut => VT.put_CommitBatchSize(ref this, newVal);
@@ -1854,9 +1856,9 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMessageMover self, BSTR* pVal) get_SourcePath;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMessageMover self, out BSTR pVal) get_SourcePath;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMessageMover self, BSTR newVal) put_SourcePath;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMessageMover self, BSTR* pVal) get_DestPath;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMessageMover self, out BSTR pVal) get_DestPath;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMessageMover self, BSTR newVal) put_DestPath;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMessageMover self, out int32 pVal) get_CommitBatchSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMessageMover self, int32 newVal) put_CommitBatchSize;
@@ -1872,14 +1874,14 @@ static
 		
 		public HRESULT StartTraceGuid(BSTR bstrguidEvent, BSTR bstrguidFilter, int32 lPidFilter) mut => VT.StartTraceGuid(ref this, bstrguidEvent, bstrguidFilter, lPidFilter);
 		public HRESULT StopTraceGuid(BSTR bstrguidEvent, BSTR bstrguidFilter, int32 lPidFilter) mut => VT.StopTraceGuid(ref this, bstrguidEvent, bstrguidFilter, lPidFilter);
-		public HRESULT EnumTraceGuid(out int32 plCntGuids, BSTR* pbstrGuidList) mut => VT.EnumTraceGuid(ref this, out plCntGuids, pbstrGuidList);
+		public HRESULT EnumTraceGuid(out int32 plCntGuids, out BSTR pbstrGuidList) mut => VT.EnumTraceGuid(ref this, out plCntGuids, out pbstrGuidList);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventServerTrace self, BSTR bstrguidEvent, BSTR bstrguidFilter, int32 lPidFilter) StartTraceGuid;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventServerTrace self, BSTR bstrguidEvent, BSTR bstrguidFilter, int32 lPidFilter) StopTraceGuid;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventServerTrace self, out int32 plCntGuids, BSTR* pbstrGuidList) EnumTraceGuid;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventServerTrace self, out int32 plCntGuids, out BSTR pbstrGuidList) EnumTraceGuid;
 		}
 	}
 	[CRepr]
@@ -1894,7 +1896,7 @@ static
 		public HRESULT GetApplicationsInProcess(in Guid ApplicationInstanceId, uint32 ProcessId, in Guid PartitionId, uint32 Flags, out uint32 NumApplicationsInProcess, ApplicationSummary** Applications) mut => VT.GetApplicationsInProcess(ref this, ApplicationInstanceId, ProcessId, PartitionId, Flags, out NumApplicationsInProcess, Applications);
 		public HRESULT GetComponentsInProcess(in Guid ApplicationInstanceId, uint32 ProcessId, in Guid PartitionId, in Guid ApplicationId, uint32 Flags, out uint32 NumComponentsInProcess, ComponentSummary** Components) mut => VT.GetComponentsInProcess(ref this, ApplicationInstanceId, ProcessId, PartitionId, ApplicationId, Flags, out NumComponentsInProcess, Components);
 		public HRESULT GetComponentDetails(in Guid ApplicationInstanceId, uint32 ProcessId, in Guid Clsid, uint32 Flags, ComponentSummary* Summary, ComponentStatistics* Statistics, ComponentHangMonitorInfo* HangMonitorInfo) mut => VT.GetComponentDetails(ref this, ApplicationInstanceId, ProcessId, Clsid, Flags, Summary, Statistics, HangMonitorInfo);
-		public HRESULT GetTrackerDataAsCollectionObject(IUnknown** TopLevelCollection) mut => VT.GetTrackerDataAsCollectionObject(ref this, TopLevelCollection);
+		public HRESULT GetTrackerDataAsCollectionObject(out IUnknown* TopLevelCollection) mut => VT.GetTrackerDataAsCollectionObject(ref this, out TopLevelCollection);
 		public HRESULT GetSuggestedPollingInterval(out uint32 PollingIntervalInSeconds) mut => VT.GetSuggestedPollingInterval(ref this, out PollingIntervalInSeconds);
 
 		[CRepr]
@@ -1905,7 +1907,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetAppTrackerData self, in Guid ApplicationInstanceId, uint32 ProcessId, in Guid PartitionId, uint32 Flags, out uint32 NumApplicationsInProcess, ApplicationSummary** Applications) GetApplicationsInProcess;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetAppTrackerData self, in Guid ApplicationInstanceId, uint32 ProcessId, in Guid PartitionId, in Guid ApplicationId, uint32 Flags, out uint32 NumComponentsInProcess, ComponentSummary** Components) GetComponentsInProcess;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetAppTrackerData self, in Guid ApplicationInstanceId, uint32 ProcessId, in Guid Clsid, uint32 Flags, ComponentSummary* Summary, ComponentStatistics* Statistics, ComponentHangMonitorInfo* HangMonitorInfo) GetComponentDetails;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetAppTrackerData self, IUnknown** TopLevelCollection) GetTrackerDataAsCollectionObject;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetAppTrackerData self, out IUnknown* TopLevelCollection) GetTrackerDataAsCollectionObject;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetAppTrackerData self, out uint32 PollingIntervalInSeconds) GetSuggestedPollingInterval;
 		}
 	}
@@ -2174,18 +2176,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT CreatePropertyByPosition(int32 Index, out int16 fExists, ISharedProperty** ppProp) mut => VT.CreatePropertyByPosition(ref this, Index, out fExists, ppProp);
-		public HRESULT get_PropertyByPosition(int32 Index, ISharedProperty** ppProperty) mut => VT.get_PropertyByPosition(ref this, Index, ppProperty);
-		public HRESULT CreateProperty(BSTR Name, out int16 fExists, ISharedProperty** ppProp) mut => VT.CreateProperty(ref this, Name, out fExists, ppProp);
-		public HRESULT get_Property(BSTR Name, ISharedProperty** ppProperty) mut => VT.get_Property(ref this, Name, ppProperty);
+		public HRESULT CreatePropertyByPosition(int32 Index, out int16 fExists, out ISharedProperty* ppProp) mut => VT.CreatePropertyByPosition(ref this, Index, out fExists, out ppProp);
+		public HRESULT get_PropertyByPosition(int32 Index, out ISharedProperty* ppProperty) mut => VT.get_PropertyByPosition(ref this, Index, out ppProperty);
+		public HRESULT CreateProperty(BSTR Name, out int16 fExists, out ISharedProperty* ppProp) mut => VT.CreateProperty(ref this, Name, out fExists, out ppProp);
+		public HRESULT get_Property(BSTR Name, out ISharedProperty* ppProperty) mut => VT.get_Property(ref this, Name, out ppProperty);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISharedPropertyGroup self, int32 Index, out int16 fExists, ISharedProperty** ppProp) CreatePropertyByPosition;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISharedPropertyGroup self, int32 Index, ISharedProperty** ppProperty) get_PropertyByPosition;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISharedPropertyGroup self, BSTR Name, out int16 fExists, ISharedProperty** ppProp) CreateProperty;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISharedPropertyGroup self, BSTR Name, ISharedProperty** ppProperty) get_Property;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISharedPropertyGroup self, int32 Index, out int16 fExists, out ISharedProperty* ppProp) CreatePropertyByPosition;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISharedPropertyGroup self, int32 Index, out ISharedProperty* ppProperty) get_PropertyByPosition;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISharedPropertyGroup self, BSTR Name, out int16 fExists, out ISharedProperty* ppProp) CreateProperty;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISharedPropertyGroup self, BSTR Name, out ISharedProperty* ppProperty) get_Property;
 		}
 	}
 	[CRepr]
@@ -2195,16 +2197,16 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT CreatePropertyGroup(BSTR Name, out int32 dwIsoMode, out int32 dwRelMode, out int16 fExists, ISharedPropertyGroup** ppGroup) mut => VT.CreatePropertyGroup(ref this, Name, out dwIsoMode, out dwRelMode, out fExists, ppGroup);
-		public HRESULT get_Group(BSTR Name, ISharedPropertyGroup** ppGroup) mut => VT.get_Group(ref this, Name, ppGroup);
-		public HRESULT get__NewEnum(IUnknown** retval) mut => VT.get__NewEnum(ref this, retval);
+		public HRESULT CreatePropertyGroup(BSTR Name, out int32 dwIsoMode, out int32 dwRelMode, out int16 fExists, out ISharedPropertyGroup* ppGroup) mut => VT.CreatePropertyGroup(ref this, Name, out dwIsoMode, out dwRelMode, out fExists, out ppGroup);
+		public HRESULT get_Group(BSTR Name, out ISharedPropertyGroup* ppGroup) mut => VT.get_Group(ref this, Name, out ppGroup);
+		public HRESULT get__NewEnum(out IUnknown* retval) mut => VT.get__NewEnum(ref this, out retval);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISharedPropertyGroupManager self, BSTR Name, out int32 dwIsoMode, out int32 dwRelMode, out int16 fExists, ISharedPropertyGroup** ppGroup) CreatePropertyGroup;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISharedPropertyGroupManager self, BSTR Name, ISharedPropertyGroup** ppGroup) get_Group;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISharedPropertyGroupManager self, IUnknown** retval) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISharedPropertyGroupManager self, BSTR Name, out int32 dwIsoMode, out int32 dwRelMode, out int16 fExists, out ISharedPropertyGroup* ppGroup) CreatePropertyGroup;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISharedPropertyGroupManager self, BSTR Name, out ISharedPropertyGroup* ppGroup) get_Group;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISharedPropertyGroupManager self, out IUnknown* retval) get__NewEnum;
 		}
 	}
 	[CRepr]
@@ -2443,7 +2445,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_TransactionUOW(BSTR* pVal) mut => VT.get_TransactionUOW(ref this, pVal);
+		public HRESULT get_TransactionUOW(out BSTR pVal) mut => VT.get_TransactionUOW(ref this, out pVal);
 		public HRESULT RegisterCompensator(PWSTR lpcwstrProgIdCompensator, PWSTR lpcwstrDescription, int32 lCrmRegFlags) mut => VT.RegisterCompensator(ref this, lpcwstrProgIdCompensator, lpcwstrDescription, lCrmRegFlags);
 		public HRESULT WriteLogRecordVariants(ref VARIANT pLogRecord) mut => VT.WriteLogRecordVariants(ref this, ref pLogRecord);
 		public HRESULT ForceLog() mut => VT.ForceLog(ref this);
@@ -2454,7 +2456,7 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICrmLogControl self, BSTR* pVal) get_TransactionUOW;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICrmLogControl self, out BSTR pVal) get_TransactionUOW;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICrmLogControl self, PWSTR lpcwstrProgIdCompensator, PWSTR lpcwstrDescription, int32 lCrmRegFlags) RegisterCompensator;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICrmLogControl self, ref VARIANT pLogRecord) WriteLogRecordVariants;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICrmLogControl self) ForceLog;
@@ -2560,7 +2562,7 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT Item(VARIANT Index, out VARIANT pItem) mut => VT.Item(ref this, Index, out pItem);
-		public HRESULT get__NewEnum(IUnknown** pVal) mut => VT.get__NewEnum(ref this, pVal);
+		public HRESULT get__NewEnum(out IUnknown* pVal) mut => VT.get__NewEnum(ref this, out pVal);
 		public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
 		public HRESULT ProgIdCompensator(VARIANT Index, out VARIANT pItem) mut => VT.ProgIdCompensator(ref this, Index, out pItem);
 		public HRESULT Description(VARIANT Index, out VARIANT pItem) mut => VT.Description(ref this, Index, out pItem);
@@ -2571,7 +2573,7 @@ static
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICrmMonitorClerks self, VARIANT Index, out VARIANT pItem) Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICrmMonitorClerks self, IUnknown** pVal) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICrmMonitorClerks self, out IUnknown* pVal) get__NewEnum;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICrmMonitorClerks self, out int32 pVal) get_Count;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICrmMonitorClerks self, VARIANT Index, out VARIANT pItem) ProgIdCompensator;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICrmMonitorClerks self, VARIANT Index, out VARIANT pItem) Description;
@@ -2586,13 +2588,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetClerks(ICrmMonitorClerks** pClerks) mut => VT.GetClerks(ref this, pClerks);
+		public HRESULT GetClerks(out ICrmMonitorClerks* pClerks) mut => VT.GetClerks(ref this, out pClerks);
 		public HRESULT HoldClerk(VARIANT Index, out VARIANT pItem) mut => VT.HoldClerk(ref this, Index, out pItem);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICrmMonitor self, ICrmMonitorClerks** pClerks) GetClerks;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICrmMonitor self, out ICrmMonitorClerks* pClerks) GetClerks;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICrmMonitor self, VARIANT Index, out VARIANT pItem) HoldClerk;
 		}
 	}
@@ -3130,12 +3132,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetModules(BSTR applicationDir, BSTR applicationName, BSTR assemblyName, SAFEARRAY** pModules) mut => VT.GetModules(ref this, applicationDir, applicationName, assemblyName, pModules);
+		public HRESULT GetModules(BSTR applicationDir, BSTR applicationName, BSTR assemblyName, out SAFEARRAY* pModules) mut => VT.GetModules(ref this, applicationDir, applicationName, assemblyName, out pModules);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyLocator self, BSTR applicationDir, BSTR applicationName, BSTR assemblyName, SAFEARRAY** pModules) GetModules;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyLocator self, BSTR applicationDir, BSTR applicationName, BSTR assemblyName, out SAFEARRAY* pModules) GetModules;
 		}
 	}
 	[CRepr]

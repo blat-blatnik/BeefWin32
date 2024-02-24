@@ -811,30 +811,6 @@ static
 	public const uint32 GCPGLYPH_LINKAFTER = 16384;
 	public const uint32 TT_AVAILABLE = 1;
 	public const uint32 TT_ENABLED = 2;
-	public const uint32 PFD_TYPE_RGBA = 0;
-	public const uint32 PFD_TYPE_COLORINDEX = 1;
-	public const uint32 PFD_MAIN_PLANE = 0;
-	public const uint32 PFD_OVERLAY_PLANE = 1;
-	public const int32 PFD_UNDERLAY_PLANE = -1;
-	public const uint32 PFD_DOUBLEBUFFER = 1;
-	public const uint32 PFD_STEREO = 2;
-	public const uint32 PFD_DRAW_TO_WINDOW = 4;
-	public const uint32 PFD_DRAW_TO_BITMAP = 8;
-	public const uint32 PFD_SUPPORT_GDI = 16;
-	public const uint32 PFD_SUPPORT_OPENGL = 32;
-	public const uint32 PFD_GENERIC_FORMAT = 64;
-	public const uint32 PFD_NEED_PALETTE = 128;
-	public const uint32 PFD_NEED_SYSTEM_PALETTE = 256;
-	public const uint32 PFD_SWAP_EXCHANGE = 512;
-	public const uint32 PFD_SWAP_COPY = 1024;
-	public const uint32 PFD_SWAP_LAYER_BUFFERS = 2048;
-	public const uint32 PFD_GENERIC_ACCELERATED = 4096;
-	public const uint32 PFD_SUPPORT_DIRECTDRAW = 8192;
-	public const uint32 PFD_DIRECT3D_ACCELERATED = 16384;
-	public const uint32 PFD_SUPPORT_COMPOSITION = 32768;
-	public const uint32 PFD_DEPTH_DONTCARE = 536870912;
-	public const uint32 PFD_DOUBLEBUFFER_DONTCARE = 1073741824;
-	public const uint32 PFD_STEREO_DONTCARE = 2147483648;
 	public const uint32 DC_BINADJUST = 19;
 	public const uint32 DC_EMF_COMPLIANT = 20;
 	public const uint32 DC_DATATYPE_PRODUCED = 21;
@@ -883,10 +859,6 @@ static
 	public const uint32 DI_APPBANDING = 1;
 	public const uint32 DI_ROPS_READ_DESTINATION = 2;
 	public const uint32 FONTMAPPER_MAX = 10;
-	public const uint32 ICM_OFF = 1;
-	public const uint32 ICM_ON = 2;
-	public const uint32 ICM_QUERY = 3;
-	public const uint32 ICM_DONE_OUTSIDEDC = 4;
 	public const uint32 ENHMETA_SIGNATURE = 1179469088;
 	public const uint32 ENHMETA_STOCK_OBJECT = 2147483648;
 	public const uint32 EMR_HEADER = 1;
@@ -1885,6 +1857,18 @@ static
 	#endregion
 	
 	#region Structs
+	[CRepr]
+	public struct MONITORINFOEXA
+	{
+		public MONITORINFO monitorInfo;
+		public CHAR[32] szDevice;
+	}
+	[CRepr]
+	public struct MONITORINFOEXW
+	{
+		public MONITORINFO monitorInfo;
+		public char16[32] szDevice;
+	}
 	[CRepr]
 	public struct XFORM
 	{
@@ -3611,18 +3595,6 @@ static
 		public RECT rcMonitor;
 		public RECT rcWork;
 		public uint32 dwFlags;
-	}
-	[CRepr]
-	public struct MONITORINFOEXA
-	{
-		public MONITORINFO __AnonymousBase_winuser_L13567_C43;
-		public CHAR[32] szDevice;
-	}
-	[CRepr]
-	public struct MONITORINFOEXW
-	{
-		public MONITORINFO __AnonymousBase_winuser_L13571_C43;
-		public char16[32] szDevice;
 	}
 	#endregion
 	

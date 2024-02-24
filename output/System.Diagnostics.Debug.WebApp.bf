@@ -133,12 +133,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_AuthoringClientBinary(BSTR* designModeDllPath) mut => VT.get_AuthoringClientBinary(ref this, designModeDllPath);
+		public HRESULT get_AuthoringClientBinary(out BSTR designModeDllPath) mut => VT.get_AuthoringClientBinary(ref this, out designModeDllPath);
 
 		[CRepr]
 		public struct VTable : IServiceProvider.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationAuthoringMode self, BSTR* designModeDllPath) get_AuthoringClientBinary;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationAuthoringMode self, out BSTR designModeDllPath) get_AuthoringClientBinary;
 		}
 	}
 	#endregion

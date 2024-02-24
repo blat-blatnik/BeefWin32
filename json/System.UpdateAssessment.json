@@ -92,6 +92,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"2347bbef-1a3b-45a4-902d-3e09c269b45e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

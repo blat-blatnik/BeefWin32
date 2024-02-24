@@ -2,6 +2,69 @@
 
 "Constants":[
 	{
+		"Name":"DIALPROP_USERNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UserName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIALPROP_PASSWORD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Password"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIALPROP_DOMAIN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Domain"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIALPROP_SAVEPASSWORD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SavePassword"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIALPROP_REDIALCOUNT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RedialCount"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIALPROP_REDIALINTERVAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RedialInterval"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIALPROP_PHONENUMBER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PhoneNumber"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIALPROP_LASTERROR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LastError"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIALPROP_RESOLVEDPHONE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResolvedPhone"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"DIALENG_OperationComplete"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1934,6 +1997,146 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"GOPHER_INFO_CATEGORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"+INFO"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_ADMIN_CATEGORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"+ADMIN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_VIEWS_CATEGORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"+VIEWS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_ABSTRACT_CATEGORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"+ABSTRACT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_VERONICA_CATEGORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"+VERONICA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_ADMIN_ATTRIBUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Admin"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_MOD_DATE_ATTRIBUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Mod-Date"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_TTL_ATTRIBUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TTL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_SCORE_ATTRIBUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Score"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_RANGE_ATTRIBUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Score-range"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_SITE_ATTRIBUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Site"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_ORG_ATTRIBUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Org"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_LOCATION_ATTRIBUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Loc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_GEOG_ATTRIBUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Geog"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_TIMEZONE_ATTRIBUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TZ"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_PROVIDER_ATTRIBUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Provider"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_VERSION_ATTRIBUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Version"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_ABSTRACT_ATTRIBUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Abstract"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_VIEW_ATTRIBUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"View"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GOPHER_TREEWALK_ATTRIBUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"treewalk"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"GOPHER_ATTRIBUTE_ID_BASE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -2127,6 +2330,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HTTP_VERSIONA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HTTP/1.0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HTTP_VERSIONW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HTTP/1.0"
 		,"Attrs":[]
 	}
 	,{
@@ -4066,20 +4283,6 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3
-		,"Attrs":[]
-	}
-	,{
-		"Name":"INTERNET_CONNECTION_LAN"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":2
-		,"Attrs":[]
-	}
-	,{
-		"Name":"INTERNET_CONNECTION_OFFLINE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":32
 		,"Attrs":[]
 	}
 	,{
@@ -6169,6 +6372,34 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_DIAL_AUTOCONNECT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AutoConnect"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_LEASH_LEGACY_COOKIES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LeashLegacyCookies"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LOCAL_NAMESPACE_PREFIX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Local\\"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LOCAL_NAMESPACE_PREFIX_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Local\\"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"INTERNET_SUPPRESS_COOKIE_PERSIST"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -6252,10 +6483,10 @@
 		,"Scoped":false
 		,"Values":[
 			{"Name":"INTERNET_CONNECTION_CONFIGURED","Value":64}
-			,{"Name":"INTERNET_CONNECTION_LAN_","Value":2}
+			,{"Name":"INTERNET_CONNECTION_LAN","Value":2}
 			,{"Name":"INTERNET_CONNECTION_MODEM","Value":1}
 			,{"Name":"INTERNET_CONNECTION_MODEM_BUSY","Value":8}
-			,{"Name":"INTERNET_CONNECTION_OFFLINE_","Value":32}
+			,{"Name":"INTERNET_CONNECTION_OFFLINE","Value":32}
 			,{"Name":"INTERNET_CONNECTION_PROXY","Value":4}
 			,{"Name":"INTERNET_RAS_INSTALLED","Value":16}
 		]
@@ -6413,6 +6644,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"INTERNET_SCHEME"
@@ -7468,6 +7700,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2d86f4ff-6e2d-4488-b2e9-6934afd41bea"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7491,6 +7724,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"39fd782b-7905-40d5-9148-3c9b190423d5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7587,6 +7821,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8aecafa9-4306-43cc-8c5a-765f2979cc16"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8428,6 +8663,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"cdaece56-4edf-43df-b113-88e4556fa1bb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8452,6 +8688,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"15e41407-b42f-4ae7-9966-34a087b2d713"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9067,7 +9304,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"hLockRequestInfo","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Out"]}
+			{"Name":"hLockRequestInfo","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{

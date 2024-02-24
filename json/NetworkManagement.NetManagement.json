@@ -296,6 +296,34 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"MESSAGE_FILENAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NETMSG"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"OS2MSG_FILENAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BASE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HELP_MSG_FILENAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NETH"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"BACKUP_MSG_FILENAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BAK.MSG"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"PLATFORM_ID_DOS"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -2935,6 +2963,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NULL_USERSETINFO_PASSWD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"              "
+		,"Attrs":[]
+	}
+	,{
 		"Name":"UNITS_PER_DAY"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -3100,6 +3135,34 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":32768
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GROUP_SPECIALGRP_USERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"USERS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GROUP_SPECIALGRP_ADMINS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ADMINS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GROUP_SPECIALGRP_GUESTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GUESTS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GROUP_SPECIALGRP_LOCAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LOCAL"
 		,"Attrs":[]
 	}
 	,{
@@ -3275,6 +3338,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ACCESS_LETTERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RWCXDAP         "
 		,"Attrs":[]
 	}
 	,{
@@ -3502,6 +3572,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SERVICE_ACCOUNT_PASSWORD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"_SA_{262E99C9-6160-4871-ACEC-4E61736B6F21}"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_ACCOUNT_SECRET_PREFIX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"_SC_{262E99C9-6160-4871-ACEC-4E61736B6F21}_"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"ServiceAccountPasswordGUID"
 		,"Type":{"Kind":"Native","Name":"Guid"}
 		,"ValueType":"String"
@@ -3534,6 +3618,48 @@
 		,"Type":{"Kind":"Native","Name":"Int32"}
 		,"ValueType":"Int32"
 		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ALERTER_MAILSLOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\\\.\\MAILSLOT\\Alerter"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ALERT_PRINT_EVENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PRINTING"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ALERT_MESSAGE_EVENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MESSAGE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ALERT_ERRORLOG_EVENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ERRORLOG"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ALERT_ADMIN_EVENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ADMIN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ALERT_USER_EVENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"USER"
 		,"Attrs":[]
 	}
 	,{
@@ -7349,6 +7475,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1024
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_DOS_ENCRYPTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ENCRYPT"
 		,"Attrs":[]
 	}
 	,{
@@ -12875,6 +13008,503 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SERVICE_WORKSTATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LanmanWorkstation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_WORKSTATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WORKSTATION"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WORKSTATION_DISPLAY_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Workstation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_SERVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LanmanServer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_SERVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SERVER"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVER_DISPLAY_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Server"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_BROWSER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BROWSER"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_BROWSER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BROWSER"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_MESSENGER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MESSENGER"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_MESSENGER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MESSENGER"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_NETRUN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NETRUN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_NETRUN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NETRUN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_SPOOLER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SPOOLER"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_SPOOLER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SPOOLER"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_ALERTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ALERTER"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_ALERTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ALERTER"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_NETLOGON"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NETLOGON"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_NETLOGON"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NETLOGON"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_NETPOPUP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NETPOPUP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_NETPOPUP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NETPOPUP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_SQLSERVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SQLSERVER"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_SQLSERVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SQLSERVER"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_REPL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"REPLICATOR"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_REPL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"REPLICATOR"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_RIPL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"REMOTEBOOT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_RIPL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"REMOTEBOOT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_TIMESOURCE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TIMESOURCE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_TIMESOURCE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TIMESOURCE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_AFP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AFP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_AFP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AFP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_UPS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UPS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_UPS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UPS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_XACTSRV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"XACTSRV"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_XACTSRV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"XACTSRV"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_TCPIP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TCPIP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_TCPIP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TCPIP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_NBT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NBT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_NBT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NBT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LMHOSTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LMHOSTS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_LMHOSTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LMHOSTS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_TELNET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Telnet"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_TELNET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Telnet"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_SCHEDULE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Schedule"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_SCHEDULE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Schedule"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_NTLMSSP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NtLmSsp"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_DHCP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DHCP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_DHCP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DHCP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_NWSAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NwSapAgent"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_NWSAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NwSapAgent"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NWSAP_DISPLAY_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NW Sap Agent"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_NWCS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NWCWorkstation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_DNS_CACHE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DnsCache"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_W32TIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"w32time"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVCE_LM20_W32TIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"w32time"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_KDC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"kdc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_KDC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"kdc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_RPCLOCATOR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RPCLOCATOR"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_RPCLOCATOR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RPCLOCATOR"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_TRKSVR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TrkSvr"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_TRKSVR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TrkSvr"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_TRKWKS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TrkWks"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_TRKWKS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TrkWks"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_NTFRS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NtFrs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_NTFRS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NtFrs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_ISMSERV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IsmServ"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_ISMSERV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IsmServ"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_NTDS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NTDS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_NTDS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NTDS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_ADWS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ADWS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_DSROLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DsRoleSvc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICE_LM20_DSROLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DsRoleSvc"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"NETCFG_E_ALREADY_INITIALIZED"
 		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ValueType":"Int32"
@@ -12984,6 +13614,83 @@
 		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ValueType":"Int32"
 		,"Value":303141
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NETCFG_CLIENT_CID_MS_MSClient"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ms_msclient"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NETCFG_SERVICE_CID_MS_SERVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ms_server"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NETCFG_SERVICE_CID_MS_NETBIOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ms_netbios"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NETCFG_SERVICE_CID_MS_PSCHED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ms_pschedpc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NETCFG_SERVICE_CID_MS_WLBS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ms_wlbs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NETCFG_TRANS_CID_MS_APPLETALK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ms_appletalk"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NETCFG_TRANS_CID_MS_NETBEUI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ms_netbeui"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NETCFG_TRANS_CID_MS_NETMON"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ms_netmon"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NETCFG_TRANS_CID_MS_NWIPX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ms_nwipx"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NETCFG_TRANS_CID_MS_NWSPX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ms_nwspx"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NETCFG_TRANS_CID_MS_TCPIP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ms_tcpip"
 		,"Attrs":[]
 	}
 	,{
@@ -13663,6 +14370,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":13
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGISTER_PROTOCOL_ENTRY_POINT_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RegisterProtocol"
 		,"Attrs":[]
 	}
 	,{
@@ -18759,6 +19473,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0e8ae90-306e-11d1-aacf-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18818,6 +19533,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0e8ae91-306e-11d1-aacf-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18877,6 +19593,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0e8ae92-306e-11d1-aacf-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18936,6 +19653,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0e8ae93-306e-11d1-aacf-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19031,6 +19749,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0e8ae9f-306e-11d1-aacf-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19078,6 +19797,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0e8ae94-306e-11d1-aacf-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19124,6 +19844,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0e8ae96-306e-11d1-aacf-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19229,6 +19950,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0e8ae97-306e-11d1-aacf-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19296,6 +20018,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0e8ae9d-306e-11d1-aacf-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19352,6 +20075,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0e8aea0-306e-11d1-aacf-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"INetCfgClassSetup","TargetKind":"Com","Api":"NetworkManagement.NetManagement","Parents":[]}
 		,"Methods":[
 			{
@@ -19415,6 +20139,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0e8ae99-306e-11d1-aacf-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19597,6 +20322,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0e8ae9e-306e-11d1-aacf-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19707,6 +20433,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0e8ae98-306e-11d1-aacf-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19786,6 +20513,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8d84bd35-e227-11d2-b700-00a0c98a6a85"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19812,6 +20540,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"932238df-bea1-11d0-9298-00c04fc99dcf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19900,6 +20629,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"932238e3-bea1-11d0-9298-00c04fc99dcf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19971,6 +20701,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"932238e0-bea1-11d0-9298-00c04fc99dcf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -20077,6 +20808,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"932238e1-bea1-11d0-9298-00c04fc99dcf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -20113,6 +20845,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"932238e2-bea1-11d0-9298-00c04fc99dcf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -20174,6 +20907,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"932238e4-bea1-11d0-9298-00c04fc99dcf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -20199,6 +20933,8 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
+					{"Name":"pAdapter","Type":{"Kind":"ApiRef","Name":"INetCfgComponent","TargetKind":"Com","Api":"NetworkManagement.NetManagement","Parents":[]},"Attrs":["In"]}
+					,{"Name":"dwNumInterfaces","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 				]
 			}
 			,{
@@ -20223,6 +20959,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c08956a6-1cd3-11d1-b1c5-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -20299,6 +21036,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"faedcf58-31fe-11d1-aad2-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -20321,6 +21059,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0e8ae9a-306e-11d1-aacf-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -20366,6 +21105,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c96fbd50-24dd-11d8-89fb-00904b2ea9c6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -20403,6 +21143,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c96fbd51-24dd-11d8-89fb-00904b2ea9c6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

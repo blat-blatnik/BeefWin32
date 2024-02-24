@@ -2,6 +2,20 @@
 
 "Constants":[
 	{
+		"Name":"JET_VERSION"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1280
+		,"Attrs":[]
+	}
+	,{
+		"Name":"JET_wszConfigStoreReadControl"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CsReadControl"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"JET_bitConfigStoreReadControlInhibitRead"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -20,6 +34,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"JET_wszConfigStoreRelPathSysParamDefault"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SysParamDefault"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"JET_wszConfigStoreRelPathSysParamOverride"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SysParamOverride"
 		,"Attrs":[]
 	}
 	,{
@@ -195,6 +223,27 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":67108864
+		,"Attrs":[]
+	}
+	,{
+		"Name":"cObjectInfoCols"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":9
+		,"Attrs":[]
+	}
+	,{
+		"Name":"cColumnInfoCols"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":14
+		,"Attrs":[]
+	}
+	,{
+		"Name":"cIndexInfoCols"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":15
 		,"Attrs":[]
 	}
 	,{
@@ -3775,6 +3824,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"wrnBTNotVisibleRejected"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":352
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wrnBTNotVisibleAccumulated"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":353
+		,"Attrs":[]
+	}
+	,{
 		"Name":"JET_errBadLineCount"
 		,"Type":{"Kind":"Native","Name":"Int32"}
 		,"ValueType":"Int32"
@@ -6592,6 +6655,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"UIntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"JET_LS"
@@ -6601,6 +6665,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"UIntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"JET_INDEXID"

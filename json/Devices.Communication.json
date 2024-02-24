@@ -829,6 +829,36 @@
 		,"IntegerBase":"UInt32"
 	}
 	,{
+		"Name":"DCB_STOP_BITS"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Enum"
+		,"Flags":false
+		,"Scoped":false
+		,"Values":[
+			{"Name":"ONESTOPBIT","Value":0}
+			,{"Name":"ONE5STOPBITS","Value":1}
+			,{"Name":"TWOSTOPBITS","Value":2}
+		]
+		,"IntegerBase":"Byte"
+	}
+	,{
+		"Name":"DCB_PARITY"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Enum"
+		,"Flags":false
+		,"Scoped":false
+		,"Values":[
+			{"Name":"EVENPARITY","Value":2}
+			,{"Name":"MARKPARITY","Value":3}
+			,{"Name":"NOPARITY","Value":0}
+			,{"Name":"ODDPARITY","Value":1}
+			,{"Name":"SPACEPARITY","Value":4}
+		]
+		,"IntegerBase":"Byte"
+	}
+	,{
 		"Name":"MODEMDEVCAPS"
 		,"Architectures":[]
 		,"Platform":null
@@ -944,8 +974,8 @@
 			,{"Name":"XonLim","Type":{"Kind":"Native","Name":"UInt16"},"Attrs":[]}
 			,{"Name":"XoffLim","Type":{"Kind":"Native","Name":"UInt16"},"Attrs":[]}
 			,{"Name":"ByteSize","Type":{"Kind":"Native","Name":"Byte"},"Attrs":[]}
-			,{"Name":"Parity","Type":{"Kind":"Native","Name":"Byte"},"Attrs":[]}
-			,{"Name":"StopBits","Type":{"Kind":"Native","Name":"Byte"},"Attrs":[]}
+			,{"Name":"Parity","Type":{"Kind":"ApiRef","Name":"DCB_PARITY","TargetKind":"Default","Api":"Devices.Communication","Parents":[]},"Attrs":[]}
+			,{"Name":"StopBits","Type":{"Kind":"ApiRef","Name":"DCB_STOP_BITS","TargetKind":"Default","Api":"Devices.Communication","Parents":[]},"Attrs":[]}
 			,{"Name":"XonChar","Type":{"Kind":"ApiRef","Name":"CHAR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"XoffChar","Type":{"Kind":"ApiRef","Name":"CHAR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"ErrorChar","Type":{"Kind":"ApiRef","Name":"CHAR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}

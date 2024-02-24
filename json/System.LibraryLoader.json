@@ -351,7 +351,9 @@
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
-		,"Attrs":[]
+		,"Attrs":[
+			"DoesNotReturn"
+		]
 		,"Params":[
 			{"Name":"hLibModule","Type":{"Kind":"ApiRef","Name":"HINSTANCE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"dwExitCode","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}

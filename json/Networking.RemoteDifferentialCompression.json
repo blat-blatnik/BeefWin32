@@ -510,6 +510,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a71-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -571,6 +572,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a72-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -629,6 +631,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a73-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -669,6 +672,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a74-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -719,6 +723,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a75-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRdcFileReader","TargetKind":"Com","Api":"Networking.RemoteDifferentialCompression","Parents":[]}
 		,"Methods":[
 			{
@@ -765,6 +770,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a76-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -800,6 +806,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a77-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -826,6 +833,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a78-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -931,6 +939,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a7a-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -953,6 +962,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a7b-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -978,6 +988,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a7c-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1038,6 +1049,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a7d-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1139,6 +1151,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a7e-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1243,6 +1256,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a7f-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1346,6 +1360,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a80-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1379,6 +1394,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a81-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1414,6 +1430,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96236a83-9dbc-11da-9e3f-0011114ae311"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

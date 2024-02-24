@@ -67,23 +67,23 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_ProductName(BSTR* pVal) mut => VT.get_ProductName(ref this, pVal);
+		public HRESULT get_ProductName(out BSTR pVal) mut => VT.get_ProductName(ref this, out pVal);
 		public HRESULT get_ProductState(out WSC_SECURITY_PRODUCT_STATE pVal) mut => VT.get_ProductState(ref this, out pVal);
 		public HRESULT get_SignatureStatus(out WSC_SECURITY_SIGNATURE_STATUS pVal) mut => VT.get_SignatureStatus(ref this, out pVal);
-		public HRESULT get_RemediationPath(BSTR* pVal) mut => VT.get_RemediationPath(ref this, pVal);
-		public HRESULT get_ProductStateTimestamp(BSTR* pVal) mut => VT.get_ProductStateTimestamp(ref this, pVal);
-		public HRESULT get_ProductGuid(BSTR* pVal) mut => VT.get_ProductGuid(ref this, pVal);
+		public HRESULT get_RemediationPath(out BSTR pVal) mut => VT.get_RemediationPath(ref this, out pVal);
+		public HRESULT get_ProductStateTimestamp(out BSTR pVal) mut => VT.get_ProductStateTimestamp(ref this, out pVal);
+		public HRESULT get_ProductGuid(out BSTR pVal) mut => VT.get_ProductGuid(ref this, out pVal);
 		public HRESULT get_ProductIsDefault(out BOOL pVal) mut => VT.get_ProductIsDefault(ref this, out pVal);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, BSTR* pVal) get_ProductName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, out BSTR pVal) get_ProductName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, out WSC_SECURITY_PRODUCT_STATE pVal) get_ProductState;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, out WSC_SECURITY_SIGNATURE_STATUS pVal) get_SignatureStatus;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, BSTR* pVal) get_RemediationPath;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, BSTR* pVal) get_ProductStateTimestamp;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, BSTR* pVal) get_ProductGuid;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, out BSTR pVal) get_RemediationPath;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, out BSTR pVal) get_ProductStateTimestamp;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, out BSTR pVal) get_ProductGuid;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, out BOOL pVal) get_ProductIsDefault;
 		}
 	}
@@ -136,14 +136,14 @@ static
 		
 		public HRESULT Initialize(WSC_SECURITY_PROVIDER provider) mut => VT.Initialize(ref this, provider);
 		public HRESULT get_Count(out int32 pVal) mut => VT.get_Count(ref this, out pVal);
-		public HRESULT get_Item(uint32 index, IWscProduct** pVal) mut => VT.get_Item(ref this, index, pVal);
+		public HRESULT get_Item(uint32 index, out IWscProduct* pVal) mut => VT.get_Item(ref this, index, out pVal);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSCProductList self, WSC_SECURITY_PROVIDER provider) Initialize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSCProductList self, out int32 pVal) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSCProductList self, uint32 index, IWscProduct** pVal) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSCProductList self, uint32 index, out IWscProduct* pVal) get_Item;
 		}
 	}
 	[CRepr]

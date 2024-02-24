@@ -3143,6 +3143,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c8263aac-9e0c-4a2d-9b8e-007521a3317c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3206,6 +3207,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6dbd6437-96fd-423f-a98c-ae5e7c2a573f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDMLObject","TargetKind":"Com","Api":"AI.MachineLearning.DirectML","Parents":[]}
 		,"Methods":[
 			{
@@ -3353,6 +3355,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"27e83142-8165-49e3-974e-2fd66e4cb69d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDMLObject","TargetKind":"Com","Api":"AI.MachineLearning.DirectML","Parents":[]}
 		,"Methods":[
 			{
@@ -3376,6 +3379,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b1ab0825-4542-4a4b-8617-6dde6e8f6201"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDMLDeviceChild","TargetKind":"Com","Api":"AI.MachineLearning.DirectML","Parents":[]}
 		,"Methods":[
 		]
@@ -3386,6 +3390,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"26caae7a-3081-4633-9581-226fbe57695d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDMLDeviceChild","TargetKind":"Com","Api":"AI.MachineLearning.DirectML","Parents":[]}
 		,"Methods":[
 		]
@@ -3411,6 +3416,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"dcb821a8-1039-441e-9f1c-b1759c2f3cec"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDMLPageable","TargetKind":"Com","Api":"AI.MachineLearning.DirectML","Parents":[]}
 		,"Methods":[
 			{
@@ -3432,6 +3438,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6b15e56a-bf5c-4902-92d8-da3a650afea4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDMLDispatchable","TargetKind":"Com","Api":"AI.MachineLearning.DirectML","Parents":[]}
 		,"Methods":[
 		]
@@ -3442,6 +3449,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"427c1113-435c-469c-8676-4d5dd072f813"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDMLDispatchable","TargetKind":"Com","Api":"AI.MachineLearning.DirectML","Parents":[]}
 		,"Methods":[
 			{
@@ -3522,6 +3530,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"29c687dc-de74-4e3b-ab00-1168f2fc3cfc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDMLDeviceChild","TargetKind":"Com","Api":"AI.MachineLearning.DirectML","Parents":[]}
 		,"Methods":[
 			{
@@ -3594,6 +3603,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e6857a76-2e3e-4fdd-bff4-5d2ba10fb453"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDMLDeviceChild","TargetKind":"Com","Api":"AI.MachineLearning.DirectML","Parents":[]}
 		,"Methods":[
 			{
@@ -3618,6 +3628,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7d6f3ac9-394a-4ac3-92a7-390cc57a8217"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3781,6 +3792,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a0884f9a-d2be-4355-aa5d-5901281ad1d2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDMLDevice","TargetKind":"Com","Api":"AI.MachineLearning.DirectML","Parents":[]}
 		,"Methods":[
 			{

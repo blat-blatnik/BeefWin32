@@ -12,6 +12,14 @@ static
 	public const uint32 WSMAN_OPERATION_INFOV1 = 0;
 	public const uint32 WSMAN_OPERATION_INFOV2 = 2864434397;
 	public const uint32 WSMAN_DEFAULT_TIMEOUT_MS = 60000;
+	public const String WSMAN_STREAM_ID_STDIN = "stdin";
+	public const String WSMAN_STREAM_ID_STDOUT = "stdout";
+	public const String WSMAN_STREAM_ID_STDERR = "stderr";
+	public const String WSMAN_SHELL_NS = "http://schemas.microsoft.com/wbem/wsman/1/windows/shell";
+	public const String WSMAN_CMDSHELL_OPTION_CODEPAGE = "WINRS_CODEPAGE";
+	public const String WSMAN_SHELL_OPTION_NOPROFILE = "WINRS_NOPROFILE";
+	public const String WSMAN_CMDSHELL_OPTION_CONSOLEMODE_STDIN = "WINRS_CONSOLEMODE_STDIN";
+	public const String WSMAN_CMDSHELL_OPTION_SKIP_CMD_SHELL = "WINRS_SKIP_CMD_SHELL";
 	public const uint32 WSMAN_FLAG_RECEIVE_RESULT_NO_MORE_DATA = 1;
 	public const uint32 WSMAN_FLAG_RECEIVE_FLUSH = 2;
 	public const uint32 WSMAN_FLAG_RECEIVE_RESULT_DATA_BOUNDARY = 4;

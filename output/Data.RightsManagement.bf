@@ -48,6 +48,8 @@ static
 	public const uint32 DRM_SERVICE_TYPE_SILENT = 16;
 	public const uint32 DRM_SERVICE_LOCATION_INTERNET = 1;
 	public const uint32 DRM_SERVICE_LOCATION_ENTERPRISE = 2;
+	public const String DRM_DEFAULTGROUPIDTYPE_WINDOWSAUTH = "WindowsAuthProvider";
+	public const String DRM_DEFAULTGROUPIDTYPE_PASSPORT = "PassportAuthProvider";
 	public const uint32 DRM_SIGN_ONLINE = 1;
 	public const uint32 DRM_SIGN_OFFLINE = 2;
 	public const uint32 DRM_SIGN_CANCEL = 4;

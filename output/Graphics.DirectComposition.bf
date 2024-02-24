@@ -2,7 +2,6 @@ namespace Win32.Graphics.DirectComposition;
 
 using System;
 using Win32.Foundation;
-using Win32.Graphics;
 using Win32.Graphics.Direct2D.Common;
 using Win32.Graphics.Direct3D;
 using Win32.Graphics.Dxgi;

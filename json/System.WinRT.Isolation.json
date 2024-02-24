@@ -10,6 +10,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"85713c2e-8e62-46c5-8de2-c647e1d54636"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

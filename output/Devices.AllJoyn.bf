@@ -21,6 +21,7 @@ static
 	public const uint32 ALLJOYN_PROXIMITY_ANY = 255;
 	public const uint32 ALLJOYN_PROXIMITY_PHYSICAL = 1;
 	public const uint32 ALLJOYN_PROXIMITY_NETWORK = 2;
+	public const String ALLJOYN_NAMED_PIPE_CONNECT_SPEC = "npipe:";
 	public const uint32 ALLJOYN_READ_READY = 1;
 	public const uint32 ALLJOYN_WRITE_READY = 2;
 	public const uint32 ALLJOYN_DISCONNECTED = 4;

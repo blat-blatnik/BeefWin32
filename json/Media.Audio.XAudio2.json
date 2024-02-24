@@ -261,6 +261,48 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"XAUDIO2_DLL_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"xaudio2_9.dll"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XAUDIO2_DLL_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"xaudio2_9.dll"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XAUDIO2D_DLL_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"xaudio2_9d.dll"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XAUDIO2D_DLL_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"xaudio2_9d.dll"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XAUDIO2_DLL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"xaudio2_9.dll"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XAUDIO2D_DLL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"xaudio2_9d.dll"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"XAUDIO2_MAX_BUFFER_BYTES"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1600,6 +1642,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a410b984-9839-4819-a0be-2856ae6b3adb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1740,6 +1783,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"26d95c66-80f2-499a-ad54-5ae7f01c6d98"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2083,6 +2127,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2b02e3cf-2e0b-4ec3-be45-1b2a3fe7210d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2230,6 +2275,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"84ac29bb-d619-44d2-b197-e4acf7df3ed6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2265,6 +2311,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":null
 		,"Methods":[
 			{
@@ -2525,6 +2572,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IXAudio2Voice","TargetKind":"Com","Api":"Media.Audio.XAudio2","Parents":[]}
 		,"Methods":[
 			{
@@ -2658,6 +2706,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IXAudio2Voice","TargetKind":"Com","Api":"Media.Audio.XAudio2","Parents":[]}
 		,"Methods":[
 		]
@@ -2668,6 +2717,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IXAudio2Voice","TargetKind":"Com","Api":"Media.Audio.XAudio2","Parents":[]}
 		,"Methods":[
 			{
@@ -2690,6 +2740,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":null
 		,"Methods":[
 			{
@@ -2734,6 +2785,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":null
 		,"Methods":[
 			{
@@ -3061,6 +3113,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"15b3cd66-e9de-4464-b6e6-2bc3cf63d455"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

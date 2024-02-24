@@ -9,10 +9,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DIP_DEV_ID_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Unique Device ID"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DIP_VEND_DESC"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DIP_VEND_DESC_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Manufacturer"
 		,"Attrs":[]
 	}
 	,{
@@ -23,10 +37,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DIP_DEV_DESC_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DIP_DEV_TYPE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":5
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DIP_DEV_TYPE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Type"
 		,"Attrs":[]
 	}
 	,{
@@ -37,10 +65,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DIP_PORT_NAME_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Port"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DIP_DEV_NAME"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":7
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DIP_DEV_NAME_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
 		,"Attrs":[]
 	}
 	,{
@@ -51,10 +93,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DIP_SERVER_NAME_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Server"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DIP_REMOTE_DEV_ID"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":9
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DIP_REMOTE_DEV_ID_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Remote Device ID"
 		,"Attrs":[]
 	}
 	,{
@@ -65,10 +121,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DIP_UI_CLSID_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UI Class ID"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DIP_HW_CONFIG"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":11
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DIP_HW_CONFIG_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Hardware Configuration"
 		,"Attrs":[]
 	}
 	,{
@@ -79,10 +149,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DIP_BAUDRATE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BaudRate"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DIP_STI_GEN_CAPABILITIES"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":13
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DIP_STI_GEN_CAPABILITIES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"STI Generic Capabilities"
 		,"Attrs":[]
 	}
 	,{
@@ -93,10 +177,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DIP_WIA_VERSION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WIA Version"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DIP_DRIVER_VERSION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":15
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DIP_DRIVER_VERSION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Driver Version"
 		,"Attrs":[]
 	}
 	,{
@@ -107,10 +205,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DIP_PNP_ID_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PnP ID String"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DIP_STI_DRIVER_VERSION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":17
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DIP_STI_DRIVER_VERSION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"STI Driver Version"
 		,"Attrs":[]
 	}
 	,{
@@ -121,10 +233,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPA_FIRMWARE_VERSION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Firmware Version"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPA_CONNECT_STATUS"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1027
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPA_CONNECT_STATUS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Connect Status"
 		,"Attrs":[]
 	}
 	,{
@@ -135,10 +261,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPA_DEVICE_TIME_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Device Time"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_PICTURES_TAKEN"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2050
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_PICTURES_TAKEN_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Pictures Taken"
 		,"Attrs":[]
 	}
 	,{
@@ -149,10 +289,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_PICTURES_REMAINING_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Pictures Remaining"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_EXPOSURE_MODE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2052
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_EXPOSURE_MODE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Exposure Mode"
 		,"Attrs":[]
 	}
 	,{
@@ -163,10 +317,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_EXPOSURE_COMP_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Exposure Compensation"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_EXPOSURE_TIME"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2054
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_EXPOSURE_TIME_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Exposure Time"
 		,"Attrs":[]
 	}
 	,{
@@ -177,10 +345,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_FNUMBER_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"F Number"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_FLASH_MODE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2056
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_FLASH_MODE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Flash Mode"
 		,"Attrs":[]
 	}
 	,{
@@ -191,10 +373,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_FOCUS_MODE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Focus Mode"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_FOCUS_MANUAL_DIST"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2058
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_FOCUS_MANUAL_DIST_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Focus Manual Dist"
 		,"Attrs":[]
 	}
 	,{
@@ -205,10 +401,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_ZOOM_POSITION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Zoom Position"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_PAN_POSITION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2060
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_PAN_POSITION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Pan Position"
 		,"Attrs":[]
 	}
 	,{
@@ -219,10 +429,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_TILT_POSITION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Tilt Position"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_TIMER_MODE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2062
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_TIMER_MODE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Timer Mode"
 		,"Attrs":[]
 	}
 	,{
@@ -233,10 +457,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_TIMER_VALUE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Timer Value"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_POWER_MODE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2064
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_POWER_MODE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Power Mode"
 		,"Attrs":[]
 	}
 	,{
@@ -247,10 +485,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_BATTERY_STATUS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Battery Status"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_THUMB_WIDTH"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2066
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_THUMB_WIDTH_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Thumbnail Width"
 		,"Attrs":[]
 	}
 	,{
@@ -261,10 +513,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_THUMB_HEIGHT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Thumbnail Height"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_PICT_WIDTH"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2068
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_PICT_WIDTH_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Picture Width"
 		,"Attrs":[]
 	}
 	,{
@@ -275,10 +541,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_PICT_HEIGHT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Picture Height"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_DIMENSION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2070
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_DIMENSION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Dimension"
 		,"Attrs":[]
 	}
 	,{
@@ -289,10 +569,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_COMPRESSION_SETTING_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Compression Setting"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_FOCUS_METERING"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2072
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_FOCUS_METERING_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Focus Metering Mode"
 		,"Attrs":[]
 	}
 	,{
@@ -303,10 +597,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_TIMELAPSE_INTERVAL_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Timelapse Interval"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_TIMELAPSE_NUMBER"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2074
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_TIMELAPSE_NUMBER_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Timelapse Number"
 		,"Attrs":[]
 	}
 	,{
@@ -317,10 +625,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_BURST_INTERVAL_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Burst Interval"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_BURST_NUMBER"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2076
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_BURST_NUMBER_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Burst Number"
 		,"Attrs":[]
 	}
 	,{
@@ -331,10 +653,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_EFFECT_MODE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Effect Mode"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_DIGITAL_ZOOM"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2078
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_DIGITAL_ZOOM_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Digital Zoom"
 		,"Attrs":[]
 	}
 	,{
@@ -345,10 +681,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_SHARPNESS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Sharpness"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_CONTRAST"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2080
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_CONTRAST_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Contrast"
 		,"Attrs":[]
 	}
 	,{
@@ -359,10 +709,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_CAPTURE_MODE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Capture Mode"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_CAPTURE_DELAY"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2082
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_CAPTURE_DELAY_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Capture Delay"
 		,"Attrs":[]
 	}
 	,{
@@ -373,10 +737,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_EXPOSURE_INDEX_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Exposure Index"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_EXPOSURE_METERING_MODE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2084
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_EXPOSURE_METERING_MODE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Exposure Metering Mode"
 		,"Attrs":[]
 	}
 	,{
@@ -387,10 +765,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_FOCUS_METERING_MODE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Focus Metering Mode"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_FOCUS_DISTANCE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2086
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_FOCUS_DISTANCE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Focus Distance"
 		,"Attrs":[]
 	}
 	,{
@@ -401,10 +793,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_FOCAL_LENGTH_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Focus Length"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_RGB_GAIN"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2088
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_RGB_GAIN_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RGB Gain"
 		,"Attrs":[]
 	}
 	,{
@@ -415,10 +821,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_WHITE_BALANCE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"White Balance"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_UPLOAD_URL"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2090
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_UPLOAD_URL_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Upload URL"
 		,"Attrs":[]
 	}
 	,{
@@ -429,10 +849,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPC_ARTIST_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Artist"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPC_COPYRIGHT_INFO"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2092
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPC_COPYRIGHT_INFO_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Copyright Info"
 		,"Attrs":[]
 	}
 	,{
@@ -443,10 +877,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_HORIZONTAL_BED_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Horizontal Bed Size"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_VERTICAL_BED_SIZE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3075
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_VERTICAL_BED_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Vertical Bed Size"
 		,"Attrs":[]
 	}
 	,{
@@ -457,10 +905,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_HORIZONTAL_SHEET_FEED_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Horizontal Sheet Feed Size"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_VERTICAL_SHEET_FEED_SIZE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3077
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_VERTICAL_SHEET_FEED_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Vertical Sheet Feed Size"
 		,"Attrs":[]
 	}
 	,{
@@ -471,10 +933,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_SHEET_FEEDER_REGISTRATION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Sheet Feeder Registration"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_HORIZONTAL_BED_REGISTRATION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3079
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_HORIZONTAL_BED_REGISTRATION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Horizontal Bed Registration"
 		,"Attrs":[]
 	}
 	,{
@@ -485,10 +961,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_VERTICAL_BED_REGISTRATION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Vertical Bed Registration"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_PLATEN_COLOR"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3081
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_PLATEN_COLOR_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Platen Color"
 		,"Attrs":[]
 	}
 	,{
@@ -499,10 +989,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_PAD_COLOR_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Pad Color"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_FILTER_SELECT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3083
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_FILTER_SELECT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Filter Select"
 		,"Attrs":[]
 	}
 	,{
@@ -513,10 +1017,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_DITHER_SELECT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Dither Select"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_DITHER_PATTERN_DATA"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3085
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_DITHER_PATTERN_DATA_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Dither Pattern Data"
 		,"Attrs":[]
 	}
 	,{
@@ -527,10 +1045,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_DOCUMENT_HANDLING_CAPABILITIES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Document Handling Capabilities"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_DOCUMENT_HANDLING_STATUS"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3087
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_DOCUMENT_HANDLING_STATUS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Document Handling Status"
 		,"Attrs":[]
 	}
 	,{
@@ -541,10 +1073,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_DOCUMENT_HANDLING_SELECT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Document Handling Select"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_DOCUMENT_HANDLING_CAPACITY"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3089
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_DOCUMENT_HANDLING_CAPACITY_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Document Handling Capacity"
 		,"Attrs":[]
 	}
 	,{
@@ -555,10 +1101,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_OPTICAL_XRES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Horizontal Optical Resolution"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_OPTICAL_YRES"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3091
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_OPTICAL_YRES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Vertical Optical Resolution"
 		,"Attrs":[]
 	}
 	,{
@@ -569,10 +1129,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_ENDORSER_CHARACTERS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Endorser Characters"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_ENDORSER_STRING"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3093
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_ENDORSER_STRING_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Endorser String"
 		,"Attrs":[]
 	}
 	,{
@@ -583,10 +1157,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_SCAN_AHEAD_PAGES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Scan Ahead Pages"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_MAX_SCAN_TIME"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3095
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_MAX_SCAN_TIME_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Max Scan Time"
 		,"Attrs":[]
 	}
 	,{
@@ -597,10 +1185,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_PAGES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Pages"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_PAGE_SIZE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3097
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_PAGE_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Page Size"
 		,"Attrs":[]
 	}
 	,{
@@ -611,10 +1213,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_PAGE_WIDTH_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Page Width"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_PAGE_HEIGHT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3099
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_PAGE_HEIGHT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Page Height"
 		,"Attrs":[]
 	}
 	,{
@@ -625,10 +1241,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_PREVIEW_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Preview"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_TRANSPARENCY"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3101
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_TRANSPARENCY_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Transparency Adapter"
 		,"Attrs":[]
 	}
 	,{
@@ -639,10 +1269,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_TRANSPARENCY_SELECT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Transparency Adapter Select"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_SHOW_PREVIEW_CONTROL"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3103
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_SHOW_PREVIEW_CONTROL_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Show preview control"
 		,"Attrs":[]
 	}
 	,{
@@ -653,10 +1297,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_MIN_HORIZONTAL_SHEET_FEED_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Minimum Horizontal Sheet Feed Size"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_MIN_VERTICAL_SHEET_FEED_SIZE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3105
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_MIN_VERTICAL_SHEET_FEED_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Minimum Vertical Sheet Feed Size"
 		,"Attrs":[]
 	}
 	,{
@@ -667,10 +1325,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_TRANSPARENCY_CAPABILITIES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Transparency Adapter Capabilities"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_TRANSPARENCY_STATUS"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3107
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_TRANSPARENCY_STATUS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Transparency Adapter Status"
 		,"Attrs":[]
 	}
 	,{
@@ -681,10 +1353,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPF_MOUNT_POINT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Directory mount point"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPV_LAST_PICTURE_TAKEN"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3586
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPV_LAST_PICTURE_TAKEN_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Last Picture Taken"
 		,"Attrs":[]
 	}
 	,{
@@ -695,10 +1381,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPV_IMAGES_DIRECTORY_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Images Directory"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPV_DSHOW_DEVICE_PATH"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3588
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPV_DSHOW_DEVICE_PATH_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Directshow Device Path"
 		,"Attrs":[]
 	}
 	,{
@@ -709,10 +1409,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_ITEM_NAME_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Item Name"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_FULL_ITEM_NAME"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4099
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_FULL_ITEM_NAME_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Full Item Name"
 		,"Attrs":[]
 	}
 	,{
@@ -723,10 +1437,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_ITEM_TIME_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Item Time Stamp"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_ITEM_FLAGS"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4101
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_ITEM_FLAGS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Item Flags"
 		,"Attrs":[]
 	}
 	,{
@@ -737,10 +1465,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_ACCESS_RIGHTS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Access Rights"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_DATATYPE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4103
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_DATATYPE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Data Type"
 		,"Attrs":[]
 	}
 	,{
@@ -751,10 +1493,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_DEPTH_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Bits Per Pixel"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_PREFERRED_FORMAT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4105
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_PREFERRED_FORMAT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Preferred Format"
 		,"Attrs":[]
 	}
 	,{
@@ -765,10 +1521,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_FORMAT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Format"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_COMPRESSION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4107
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_COMPRESSION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Compression"
 		,"Attrs":[]
 	}
 	,{
@@ -779,10 +1549,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_TYMED_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Media Type"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_CHANNELS_PER_PIXEL"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4109
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_CHANNELS_PER_PIXEL_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Channels Per Pixel"
 		,"Attrs":[]
 	}
 	,{
@@ -793,10 +1577,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_BITS_PER_CHANNEL_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Bits Per Channel"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_PLANAR"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4111
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_PLANAR_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Planar"
 		,"Attrs":[]
 	}
 	,{
@@ -807,10 +1605,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_PIXELS_PER_LINE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Pixels Per Line"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_BYTES_PER_LINE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4113
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_BYTES_PER_LINE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Bytes Per Line"
 		,"Attrs":[]
 	}
 	,{
@@ -821,10 +1633,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_NUMBER_OF_LINES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Number of Lines"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_GAMMA_CURVES"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4115
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_GAMMA_CURVES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Gamma Curves"
 		,"Attrs":[]
 	}
 	,{
@@ -835,10 +1661,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_ITEM_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Item Size"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_COLOR_PROFILE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4117
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_COLOR_PROFILE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Color Profiles"
 		,"Attrs":[]
 	}
 	,{
@@ -849,10 +1689,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_MIN_BUFFER_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Buffer Size"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_BUFFER_SIZE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4118
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_BUFFER_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Buffer Size"
 		,"Attrs":[]
 	}
 	,{
@@ -863,10 +1717,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_REGION_TYPE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Region Type"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_ICM_PROFILE_NAME"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4120
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_ICM_PROFILE_NAME_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Color Profile Name"
 		,"Attrs":[]
 	}
 	,{
@@ -877,10 +1745,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_APP_COLOR_MAPPING_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Application Applies Color Mapping"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_PROP_STREAM_COMPAT_ID"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4122
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_PROP_STREAM_COMPAT_ID_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Stream Compatibility ID"
 		,"Attrs":[]
 	}
 	,{
@@ -891,10 +1773,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_FILENAME_EXTENSION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Filename extension"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_SUPPRESS_PROPERTY_PAGE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4124
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_SUPPRESS_PROPERTY_PAGE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Suppress a property page"
 		,"Attrs":[]
 	}
 	,{
@@ -905,10 +1801,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPC_THUMBNAIL_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Thumbnail Data"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPC_THUMB_WIDTH"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":5123
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPC_THUMB_WIDTH_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Thumbnail Width"
 		,"Attrs":[]
 	}
 	,{
@@ -919,10 +1829,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPC_THUMB_HEIGHT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Thumbnail Height"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPC_AUDIO_AVAILABLE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":5125
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPC_AUDIO_AVAILABLE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Audio Available"
 		,"Attrs":[]
 	}
 	,{
@@ -933,10 +1857,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPC_AUDIO_DATA_FORMAT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Audio Format"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPC_AUDIO_DATA"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":5127
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPC_AUDIO_DATA_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Audio Data"
 		,"Attrs":[]
 	}
 	,{
@@ -947,10 +1885,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPC_NUM_PICT_PER_ROW_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Pictures per Row"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPC_SEQUENCE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":5129
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPC_SEQUENCE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Sequence Number"
 		,"Attrs":[]
 	}
 	,{
@@ -961,10 +1913,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPC_TIMEDELAY_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Time Delay"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_CUR_INTENT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":6146
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_CUR_INTENT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Current Intent"
 		,"Attrs":[]
 	}
 	,{
@@ -975,10 +1941,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_XRES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Horizontal Resolution"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_YRES"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":6148
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_YRES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Vertical Resolution"
 		,"Attrs":[]
 	}
 	,{
@@ -989,10 +1969,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_XPOS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Horizontal Start Position"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_YPOS"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":6150
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_YPOS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Vertical Start Position"
 		,"Attrs":[]
 	}
 	,{
@@ -1003,10 +1997,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_XEXTENT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Horizontal Extent"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_YEXTENT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":6152
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_YEXTENT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Vertical Extent"
 		,"Attrs":[]
 	}
 	,{
@@ -1017,10 +2025,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PHOTOMETRIC_INTERP_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Photometric Interpretation"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_BRIGHTNESS"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":6154
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_BRIGHTNESS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Brightness"
 		,"Attrs":[]
 	}
 	,{
@@ -1031,10 +2053,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_CONTRAST_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Contrast"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_ORIENTATION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":6156
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_ORIENTATION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Orientation"
 		,"Attrs":[]
 	}
 	,{
@@ -1045,10 +2081,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_ROTATION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Rotation"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_MIRROR"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":6158
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_MIRROR_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Mirror"
 		,"Attrs":[]
 	}
 	,{
@@ -1059,10 +2109,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_THRESHOLD_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Threshold"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_INVERT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":6160
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_INVERT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Invert"
 		,"Attrs":[]
 	}
 	,{
@@ -1073,10 +2137,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_WARM_UP_TIME_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Lamp Warm up Time"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_USER_NAME"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3112
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_USER_NAME_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"User Name"
 		,"Attrs":[]
 	}
 	,{
@@ -1087,10 +2165,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_SERVICE_ID_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Service ID"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_DEVICE_ID"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3114
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_DEVICE_ID_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Device ID"
 		,"Attrs":[]
 	}
 	,{
@@ -1101,10 +2193,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_DPS_GLOBAL_IDENTITY_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Global Identity"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_DPS_SCAN_AVAILABLE_ITEM"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3116
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_DPS_SCAN_AVAILABLE_ITEM_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Scan Available Item"
 		,"Attrs":[]
 	}
 	,{
@@ -1115,10 +2221,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_DESKEW_X_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeskewX"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_DESKEW_Y"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":6163
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_DESKEW_Y_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeskewY"
 		,"Attrs":[]
 	}
 	,{
@@ -1129,10 +2249,38 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_SEGMENTATION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Segmentation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_SEGMENTATION_FILTER_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SegmentationFilter"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IMAGEPROC_FILTER_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ImageProcessingFilter"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_MAX_HORIZONTAL_SIZE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":6165
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_MAX_HORIZONTAL_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Maximum Horizontal Scan Size"
 		,"Attrs":[]
 	}
 	,{
@@ -1143,10 +2291,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_MAX_VERTICAL_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Maximum Vertical Scan Size"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_MIN_HORIZONTAL_SIZE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":6167
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_MIN_HORIZONTAL_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Minimum Horizontal Scan Size"
 		,"Attrs":[]
 	}
 	,{
@@ -1157,10 +2319,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_MIN_VERTICAL_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Minimum Vertical Scan Size"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_TRANSFER_CAPABILITIES"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":6169
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_TRANSFER_CAPABILITIES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Transfer Capabilities"
 		,"Attrs":[]
 	}
 	,{
@@ -1171,10 +2347,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_SHEET_FEEDER_REGISTRATION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Sheet Feeder Registration"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_DOCUMENT_HANDLING_SELECT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3088
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_DOCUMENT_HANDLING_SELECT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Document Handling Select"
 		,"Attrs":[]
 	}
 	,{
@@ -1185,10 +2375,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_OPTICAL_XRES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Horizontal Optical Resolution"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_OPTICAL_YRES"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3091
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_OPTICAL_YRES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Vertical Optical Resolution"
 		,"Attrs":[]
 	}
 	,{
@@ -1199,10 +2403,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PAGES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Pages"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PAGE_SIZE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3097
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PAGE_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Page Size"
 		,"Attrs":[]
 	}
 	,{
@@ -1213,10 +2431,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PAGE_WIDTH_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Page Width"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PAGE_HEIGHT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3099
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PAGE_HEIGHT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Page Height"
 		,"Attrs":[]
 	}
 	,{
@@ -1227,10 +2459,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PREVIEW_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Preview"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_SHOW_PREVIEW_CONTROL"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3103
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_SHOW_PREVIEW_CONTROL_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Show preview control"
 		,"Attrs":[]
 	}
 	,{
@@ -1241,10 +2487,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_FILM_SCAN_MODE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Film Scan Mode"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_LAMP"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3105
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_LAMP_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Lamp"
 		,"Attrs":[]
 	}
 	,{
@@ -1255,10 +2515,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_LAMP_AUTO_OFF_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Lamp Auto Off"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_AUTO_DESKEW"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3107
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_AUTO_DESKEW_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Automatic Deskew"
 		,"Attrs":[]
 	}
 	,{
@@ -1269,10 +2543,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_SUPPORTS_CHILD_ITEM_CREATION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Supports Child Item Creation"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_XSCALING"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3109
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_XSCALING_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Horizontal Scaling"
 		,"Attrs":[]
 	}
 	,{
@@ -1283,10 +2571,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_YSCALING_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Vertical Scaling"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PREVIEW_TYPE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3111
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PREVIEW_TYPE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Preview Type"
 		,"Attrs":[]
 	}
 	,{
@@ -1297,10 +2599,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_ITEM_CATEGORY_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Item Category"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_UPLOAD_ITEM_SIZE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4126
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_UPLOAD_ITEM_SIZE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Upload Item Size"
 		,"Attrs":[]
 	}
 	,{
@@ -1311,10 +2627,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPA_ITEMS_STORED_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Items Stored"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPA_RAW_BITS_PER_CHANNEL"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4128
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPA_RAW_BITS_PER_CHANNEL_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Raw Bits Per Channel"
 		,"Attrs":[]
 	}
 	,{
@@ -1325,10 +2655,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_FILM_NODE_NAME_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Film Node Name"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PRINTER_ENDORSER"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4130
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser"
 		,"Attrs":[]
 	}
 	,{
@@ -1339,10 +2683,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_ORDER_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Order"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PRINTER_ENDORSER_COUNTER"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4132
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_COUNTER_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Counter"
 		,"Attrs":[]
 	}
 	,{
@@ -1353,10 +2711,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_STEP_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Step"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PRINTER_ENDORSER_XOFFSET"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4134
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_XOFFSET_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Horizontal Offset"
 		,"Attrs":[]
 	}
 	,{
@@ -1367,10 +2739,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_YOFFSET_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Vertical Offset"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PRINTER_ENDORSER_NUM_LINES"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4136
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_NUM_LINES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Lines"
 		,"Attrs":[]
 	}
 	,{
@@ -1381,10 +2767,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_STRING_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser String"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PRINTER_ENDORSER_VALID_CHARACTERS"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4138
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_VALID_CHARACTERS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Valid Characters"
 		,"Attrs":[]
 	}
 	,{
@@ -1395,10 +2795,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_VALID_FORMAT_SPECIFIERS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Valid Format Specifiers"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PRINTER_ENDORSER_TEXT_UPLOAD"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4140
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_TEXT_UPLOAD_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Text Upload"
 		,"Attrs":[]
 	}
 	,{
@@ -1409,10 +2823,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_TEXT_DOWNLOAD_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Text Download"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PRINTER_ENDORSER_GRAPHICS"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4142
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_GRAPHICS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Graphics"
 		,"Attrs":[]
 	}
 	,{
@@ -1423,10 +2851,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_GRAPHICS_POSITION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Graphics Position"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MIN_WIDTH"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4144
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MIN_WIDTH_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Graphics Minimum Width"
 		,"Attrs":[]
 	}
 	,{
@@ -1437,10 +2879,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MAX_WIDTH_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Graphics Maximum Width"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MIN_HEIGHT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4146
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MIN_HEIGHT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Graphics Minimum Height"
 		,"Attrs":[]
 	}
 	,{
@@ -1451,10 +2907,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MAX_HEIGHT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Graphics Maximum Height"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PRINTER_ENDORSER_GRAPHICS_UPLOAD"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4148
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_GRAPHICS_UPLOAD_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Graphics Upload"
 		,"Attrs":[]
 	}
 	,{
@@ -1465,10 +2935,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_GRAPHICS_DOWNLOAD_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Graphics Download"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_BARCODE_READER"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4150
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_BARCODE_READER_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Barcode Reader"
 		,"Attrs":[]
 	}
 	,{
@@ -1479,10 +2963,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_MAXIMUM_BARCODES_PER_PAGE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Maximum Barcodes Per Page"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_BARCODE_SEARCH_DIRECTION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4152
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_BARCODE_SEARCH_DIRECTION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Barcode Search Direction"
 		,"Attrs":[]
 	}
 	,{
@@ -1493,10 +2991,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_MAXIMUM_BARCODE_SEARCH_RETRIES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Barcode Search Retries"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_BARCODE_SEARCH_TIMEOUT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4154
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_BARCODE_SEARCH_TIMEOUT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Barcode Search Timeout"
 		,"Attrs":[]
 	}
 	,{
@@ -1507,10 +3019,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_SUPPORTED_BARCODE_TYPES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Supported Barcode Types"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_ENABLED_BARCODE_TYPES"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4156
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_ENABLED_BARCODE_TYPES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Enabled Barcode Types"
 		,"Attrs":[]
 	}
 	,{
@@ -1521,10 +3047,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PATCH_CODE_READER_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Patch Code Reader"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_SUPPORTED_PATCH_CODE_TYPES"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4162
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_SUPPORTED_PATCH_CODE_TYPES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Supported Patch Code Types"
 		,"Attrs":[]
 	}
 	,{
@@ -1535,10 +3075,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_ENABLED_PATCH_CODE_TYPES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Enabled Path Code Types"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_MICR_READER"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4164
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_MICR_READER_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MICR Reader"
 		,"Attrs":[]
 	}
 	,{
@@ -1549,10 +3103,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_JOB_SEPARATORS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Job Separators"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_LONG_DOCUMENT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4166
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_LONG_DOCUMENT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Long Document"
 		,"Attrs":[]
 	}
 	,{
@@ -1563,10 +3131,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_BLANK_PAGES_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Blank Pages"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_MULTI_FEED"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4168
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_MULTI_FEED_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Multi-Feed"
 		,"Attrs":[]
 	}
 	,{
@@ -1577,10 +3159,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_MULTI_FEED_SENSITIVITY_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Multi-Feed Sensitivity"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_AUTO_CROP"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4170
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_AUTO_CROP_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Auto-Crop"
 		,"Attrs":[]
 	}
 	,{
@@ -1591,10 +3187,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_OVER_SCAN_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Overscan"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_OVER_SCAN_LEFT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4172
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_OVER_SCAN_LEFT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Overscan Left"
 		,"Attrs":[]
 	}
 	,{
@@ -1605,10 +3215,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_OVER_SCAN_RIGHT_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Overscan Right"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_OVER_SCAN_TOP"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4174
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_OVER_SCAN_TOP_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Overscan Top"
 		,"Attrs":[]
 	}
 	,{
@@ -1619,10 +3243,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_OVER_SCAN_BOTTOM_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Overscan Bottom"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_COLOR_DROP"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4176
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_COLOR_DROP_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Color Drop"
 		,"Attrs":[]
 	}
 	,{
@@ -1633,10 +3271,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_COLOR_DROP_RED_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Color Drop Red"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_COLOR_DROP_GREEN"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4178
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_COLOR_DROP_GREEN_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Color Drop Green"
 		,"Attrs":[]
 	}
 	,{
@@ -1647,10 +3299,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_COLOR_DROP_BLUE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Color Drop Blue"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_SCAN_AHEAD"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4180
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_SCAN_AHEAD_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Scan Ahead"
 		,"Attrs":[]
 	}
 	,{
@@ -1661,10 +3327,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_SCAN_AHEAD_CAPACITY_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Scan Ahead Capacity"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_FEEDER_CONTROL"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4182
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_FEEDER_CONTROL_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Feeder Control"
 		,"Attrs":[]
 	}
 	,{
@@ -1675,10 +3355,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_PADDING_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Padding"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PRINTER_ENDORSER_FONT_TYPE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4184
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_FONT_TYPE_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Font Type"
 		,"Attrs":[]
 	}
 	,{
@@ -1689,10 +3383,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_ALARM_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Alarm"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PRINTER_ENDORSER_INK"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4186
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_INK_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Ink"
 		,"Attrs":[]
 	}
 	,{
@@ -1703,10 +3411,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_CHARACTER_ROTATION_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Character Rotation"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PRINTER_ENDORSER_MAX_CHARACTERS"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4188
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_MAX_CHARACTERS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Maximum Characters"
 		,"Attrs":[]
 	}
 	,{
@@ -1717,10 +3439,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_MAX_GRAPHICS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Maximum Graphics"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_PRINTER_ENDORSER_COUNTER_DIGITS"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4190
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_PRINTER_ENDORSER_COUNTER_DIGITS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printer/Endorser Counter Digits"
 		,"Attrs":[]
 	}
 	,{
@@ -1731,6 +3467,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_COLOR_DROP_MULTI_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Color Drop Multiple"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_BLANK_PAGES_SENSITIVITY"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1738,10 +3481,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_IPS_BLANK_PAGES_SENSITIVITY_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Blank Pages Sensitivity"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_IPS_MULTI_FEED_DETECT_METHOD"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4193
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_IPS_MULTI_FEED_DETECT_METHOD_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Multi-Feed Detection Method"
 		,"Attrs":[]
 	}
 	,{
@@ -4181,6 +5938,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_EVENT_DEVICE_DISCONNECTED_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Device Disconnected"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_EVENT_DEVICE_CONNECTED_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Device Connected"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"TYMED_CALLBACK"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5553,6 +7324,48 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_ENDORSER_TOK_DATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"$DATE$"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_ENDORSER_TOK_TIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"$TIME$"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_ENDORSER_TOK_PAGE_COUNT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"$PAGE_COUNT$"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_ENDORSER_TOK_DAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"$DAY$"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_ENDORSER_TOK_MONTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"$MONTH$"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_ENDORSER_TOK_YEAR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"$YEAR$"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_PAGE_A4"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -6246,6 +8059,27 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SHELLEX_WIAUIEXTENSION_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WiaDialogExtensionHandlers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CFSTR_WIAITEMNAMES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WIAItemNames"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CFSTR_WIAITEMPTR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WIAItemPointer"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"GUID_DEVINTERFACE_IMAGE"
 		,"Type":{"Kind":"Native","Name":"Guid"}
 		,"ValueType":"String"
@@ -6722,10 +8556,31 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIAU_DEBUG_TSTR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"S"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"g_dwDebugFlags"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_WSD_MANUFACTURER"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":38914
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_WSD_MANUFACTURER_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Device manufacturer"
 		,"Attrs":[]
 	}
 	,{
@@ -6736,10 +8591,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_WSD_MANUFACTURER_URL_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Manufacurer URL"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_WSD_MODEL_NAME"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":38916
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_WSD_MODEL_NAME_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Model name"
 		,"Attrs":[]
 	}
 	,{
@@ -6750,10 +8619,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_WSD_MODEL_NUMBER_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Model number"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_WSD_MODEL_URL"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":38918
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_WSD_MODEL_URL_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Model URL"
 		,"Attrs":[]
 	}
 	,{
@@ -6764,10 +8647,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_WSD_PRESENTATION_URL_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Presentation URL"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_WSD_FRIENDLY_NAME"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":38920
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_WSD_FRIENDLY_NAME_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Friendly name"
 		,"Attrs":[]
 	}
 	,{
@@ -6778,10 +8675,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WIA_WSD_SERIAL_NUMBER_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Serial number"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WIA_WSD_SCAN_AVAILABLE_ITEM"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":38922
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WIA_WSD_SCAN_AVAILABLE_ITEM_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Scan Available Item"
 		,"Attrs":[]
 	}
 ]
@@ -6994,6 +8905,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"5eb2502a-8cf1-11d1-bf92-0060081ed811"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7006,7 +8918,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"lFlag","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_INFO","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_INFO","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7144,6 +9056,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"5e38b83c-8cf1-11d1-bf92-0060081ed811"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7192,7 +9105,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_INFO","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_INFO","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7215,6 +9128,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"ae6287b0-0084-11d2-973b-00a0c9068f2e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7260,6 +9174,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"a558a866-a5b0-11d2-a08f-00c04f72dc3c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7325,6 +9240,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"a6cef998-a5b0-11d2-a08f-00c04f72dc3c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7374,7 +9290,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_FORMAT_INFO","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_FORMAT_INFO","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7397,6 +9313,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"4db1ad10-3391-11d2-9a33-00c04fa36145"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7432,7 +9349,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppIEnumWiaItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWiaItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppIEnumWiaItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWiaItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7459,7 +9376,7 @@
 					{"Name":"lFlags","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"bstrItemName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"bstrFullItemName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppIWiaItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIWiaItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7473,7 +9390,7 @@
 				,"Params":[
 					{"Name":"lFlags","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"pEventGUID","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_CAPS","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_CAPS","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7487,7 +9404,7 @@
 				,"Params":[
 					{"Name":"lFlags","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"bstrFullItemName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppIWiaItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIWiaItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7517,7 +9434,7 @@
 				,"Params":[
 					{"Name":"lFlags","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"pCmdGUID","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"pIWiaItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["In","Out","Optional"]}
+					,{"Name":"pIWiaItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["In","Out"]}
 				]
 			}
 			,{
@@ -7529,7 +9446,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppIWiaItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppIWiaItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7542,7 +9459,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"lFlags","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppIEnumWIA_DEV_CAPS","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_CAPS","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIEnumWIA_DEV_CAPS","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_CAPS","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7554,7 +9471,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"bstrData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"bstrData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7566,7 +9483,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"bstrData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"bstrData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7578,7 +9495,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"bstrData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"bstrData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7602,6 +9519,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"98b5e8a0-29cc-491a-aac0-e6db4fdcceb6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7719,7 +9637,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppenum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumSTATPROPSTG","TargetKind":"Com","Api":"System.Com.StructuredStorage","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppenum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumSTATPROPSTG","TargetKind":"Com","Api":"System.Com.StructuredStorage","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7797,7 +9715,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pCompatibilityId","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["Out"]}
-					,{"Name":"ppIStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7821,6 +9739,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"5e8383fc-3391-11d2-9a33-00c04fa36145"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7869,7 +9788,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWiaItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWiaItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7910,6 +9829,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"1fcc4287-aca6-11d2-a093-00c04f72dc3c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7958,7 +9878,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_CAPS","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_CAPS","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7981,6 +9901,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"81befc5b-656d-44f1-b24c-d41d51b4dc81"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8029,7 +9950,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_FORMAT_INFO","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_FORMAT_INFO","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8052,6 +9973,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"a00c10b6-82a1-452f-8b6c-86062aad6890"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8101,6 +10023,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"af1f22ac-7a40-4787-b421-aeb47a1fbd0b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8179,6 +10102,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"70681ea0-e7bf-4291-9fb1-4e8813a3f78e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8200,6 +10124,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"6291ef2c-36ef-4532-876a-8e132593778d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8211,7 +10136,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"bstrErrorText","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"bstrErrorText","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8250,6 +10175,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6c16186c-d0a6-400c-80f4-d26986a0e734"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8261,7 +10187,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"phwnd","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"phwnd","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8287,6 +10213,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0e4a51b1-bc1f-443d-a835-72e890759ef3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8317,7 +10244,7 @@
 					{"Name":"lFlags","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"pWiaItem2","Type":{"Kind":"ApiRef","Name":"IWiaItem2","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]},"Attrs":["In","Optional"]}
 					,{"Name":"hrStatus","Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pbstrDescription","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pbstrDescription","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -8328,6 +10255,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c39d6942-2f4e-4d04-92fe-4ef4d3a1de5a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8377,7 +10305,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_FORMAT_INFO","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_FORMAT_INFO","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -8404,6 +10332,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"27d4eaaf-28a6-4ca5-9aab-e678168b9527"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8442,6 +10371,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ec46a697-ac04-4447-8f65-ff63d5154b21"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8466,6 +10396,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a8a79ffa-450b-41f1-8f87-849ccd94ebf6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8528,6 +10459,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"95c2b4fd-33f2-4d86-ad40-9431f0df08f7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8589,6 +10521,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"59970af4-cd0d-44d9-ab24-52295630e582"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8637,7 +10570,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWiaItem2","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWiaItem2","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8660,6 +10593,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6cba0075-1287-407d-9b77-cf0e030435cc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8674,7 +10608,7 @@
 					{"Name":"lItemFlags","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"lCreationFlags","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"bstrItemName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppIWiaItem2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem2","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIWiaItem2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem2","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8699,7 +10633,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pCategoryGUID","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Optional","Const"]}
-					,{"Name":"ppIEnumWiaItem2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWiaItem2","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIEnumWiaItem2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWiaItem2","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8713,7 +10647,7 @@
 				,"Params":[
 					{"Name":"lFlags","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"bstrFullItemName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppIWiaItem2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem2","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIWiaItem2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem2","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8769,7 +10703,7 @@
 				,"Params":[
 					{"Name":"lFlags","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"pCmdGUID","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppIWiaItem2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem2","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["In","Out","Optional"]}
+					,{"Name":"ppIWiaItem2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem2","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["In","Out"]}
 				]
 			}
 			,{
@@ -8782,7 +10716,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"lFlags","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppIEnumWIA_DEV_CAPS","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_CAPS","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIEnumWIA_DEV_CAPS","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_CAPS","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8824,7 +10758,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppIWiaItem2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem2","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppIWiaItem2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem2","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8836,7 +10770,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppIWiaItem2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem2","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppIWiaItem2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaItem2","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8863,7 +10797,7 @@
 				,"Params":[
 					{"Name":"lFlags","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"pEventGUID","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_CAPS","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_CAPS","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8887,6 +10821,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"79c07cf1-cbdd-41ee-8ec3-f00080cada7a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8899,7 +10834,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"lFlags","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_INFO","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumWIA_DEV_INFO","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9083,6 +11018,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d8cdee14-3c6c-11d2-9a35-00c04fa36145"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9100,8 +11036,8 @@
 					,{"Name":"__MIDL__IWiaMiniDrv0003","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"__MIDL__IWiaMiniDrv0004","Type":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Optional"]}
 					,{"Name":"__MIDL__IWiaMiniDrv0005","Type":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Optional"]}
-					,{"Name":"__MIDL__IWiaMiniDrv0006","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaDrvItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
-					,{"Name":"__MIDL__IWiaMiniDrv0007","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"__MIDL__IWiaMiniDrv0006","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaDrvItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
+					,{"Name":"__MIDL__IWiaMiniDrv0007","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"__MIDL__IWiaMiniDrv0008","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
 				]
 			}
@@ -9234,7 +11170,7 @@
 				,"Params":[
 					{"Name":"__MIDL__IWiaMiniDrv0039","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"__MIDL__IWiaMiniDrv0040","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"__MIDL__IWiaMiniDrv0041","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"__MIDL__IWiaMiniDrv0041","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"__MIDL__IWiaMiniDrv0042","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
 				]
 			}
@@ -9250,7 +11186,7 @@
 					{"Name":"__MIDL__IWiaMiniDrv0043","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}},"Attrs":["In"]}
 					,{"Name":"__MIDL__IWiaMiniDrv0044","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"__MIDL__IWiaMiniDrv0045","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"__MIDL__IWiaMiniDrv0046","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaDrvItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"__MIDL__IWiaMiniDrv0046","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaDrvItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"__MIDL__IWiaMiniDrv0047","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
 				]
 			}
@@ -9266,7 +11202,7 @@
 					{"Name":"__MIDL__IWiaMiniDrv0048","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}},"Attrs":["In"]}
 					,{"Name":"__MIDL__IWiaMiniDrv0049","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"__MIDL__IWiaMiniDrv0050","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
-					,{"Name":"__MIDL__IWiaMiniDrv0051","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"WIA_DEV_CAP_DRV","TargetKind":"Default","Api":"Devices.ImageAcquisition","Parents":[]}}},"Attrs":["Out","Optional"]}
+					,{"Name":"__MIDL__IWiaMiniDrv0051","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"WIA_DEV_CAP_DRV","TargetKind":"Default","Api":"Devices.ImageAcquisition","Parents":[]}}},"Attrs":["Out"]}
 					,{"Name":"__MIDL__IWiaMiniDrv0052","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
 				]
 			}
@@ -9310,7 +11246,7 @@
 					{"Name":"__MIDL__IWiaMiniDrv0059","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}},"Attrs":["In"]}
 					,{"Name":"__MIDL__IWiaMiniDrv0060","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"__MIDL__IWiaMiniDrv0061","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
-					,{"Name":"__MIDL__IWiaMiniDrv0062","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"WIA_FORMAT_INFO","TargetKind":"Default","Api":"Devices.ImageAcquisition","Parents":[]}}},"Attrs":["Out","Optional"]}
+					,{"Name":"__MIDL__IWiaMiniDrv0062","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"WIA_FORMAT_INFO","TargetKind":"Default","Api":"Devices.ImageAcquisition","Parents":[]}}},"Attrs":["Out"]}
 					,{"Name":"__MIDL__IWiaMiniDrv0063","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
 				]
 			}
@@ -9348,6 +11284,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"33a57d5a-3de8-11d2-9a36-00c04fa36145"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9376,6 +11313,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a9d2ee89-2ce5-4ff0-8adb-c961d1d774ca"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9414,6 +11352,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1f02b5c5-b00c-11d2-a094-00c04f72dc3c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9437,7 +11376,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"__MIDL__IWiaDrvItem0001","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}}},"Attrs":["Out","Optional"]}
+					{"Name":"__MIDL__IWiaDrvItem0001","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9449,7 +11388,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"__MIDL__IWiaDrvItem0002","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"__MIDL__IWiaDrvItem0002","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9461,7 +11400,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"__MIDL__IWiaDrvItem0003","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"__MIDL__IWiaDrvItem0003","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9511,7 +11450,7 @@
 				,"Params":[
 					{"Name":"__MIDL__IWiaDrvItem0007","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"__MIDL__IWiaDrvItem0008","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"__MIDL__IWiaDrvItem0009","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaDrvItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"__MIDL__IWiaDrvItem0009","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaDrvItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9524,7 +11463,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"__MIDL__IWiaDrvItem0010","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"__MIDL__IWiaDrvItem0011","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaDrvItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"__MIDL__IWiaDrvItem0011","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaDrvItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9536,7 +11475,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"__MIDL__IWiaDrvItem0012","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaDrvItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"__MIDL__IWiaDrvItem0012","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaDrvItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9548,7 +11487,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"__MIDL__IWiaDrvItem0013","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaDrvItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"__MIDL__IWiaDrvItem0013","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaDrvItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9560,7 +11499,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"__MIDL__IWiaDrvItem0014","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaDrvItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"__MIDL__IWiaDrvItem0014","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWiaDrvItem","TargetKind":"Com","Api":"Devices.ImageAcquisition","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9572,7 +11511,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"__MIDL__IWiaDrvItem0015","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"__MIDL__IWiaDrvItem0015","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -9877,6 +11816,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"d52920aa-db88-41f0-946c-e00dc0a19cfa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9918,7 +11858,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrImageDirectory","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrImageDirectory","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10022,7 +11962,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pbstrNewImageFilename","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrNewImageFilename","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10078,6 +12018,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"305600d7-5088-46d7-9a15-b77b09cdba7a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10133,6 +12074,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"da319113-50ee-4c80-b460-57d005d44a2c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

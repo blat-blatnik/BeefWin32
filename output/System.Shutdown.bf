@@ -128,7 +128,7 @@ static
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CheckForHiberboot(out BOOLEAN pHiberboot, BOOLEAN bClearFlag);
 	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL ExitWindowsEx(EXIT_WINDOWS_FLAGS uFlags, uint32 dwReason);
+	public static extern BOOL ExitWindowsEx(EXIT_WINDOWS_FLAGS uFlags, SHUTDOWN_REASON dwReason);
 	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL LockWorkStation();
 	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]

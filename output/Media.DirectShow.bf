@@ -314,6 +314,15 @@ static
 	public const uint32 AMDDS_YUVFLP = 128;
 	public const uint32 AMDDS_ALL = 255;
 	public const uint32 AMDDS_DEFAULT = 255;
+	public const uint32 iPALETTE_COLORS = 256;
+	public const uint32 iEGA_COLORS = 16;
+	public const uint32 iMASK_COLORS = 3;
+	public const uint32 iTRUECOLOR = 16;
+	public const uint32 iRED = 0;
+	public const uint32 iGREEN = 1;
+	public const uint32 iBLUE = 2;
+	public const uint32 iPALETTE = 8;
+	public const uint32 iMAXBITS = 8;
 	public const uint32 MAX_SIZE_MPEG1_SEQUENCE_INFO = 140;
 	public const Guid CLSID_DMOWrapperFilter = .(0x94297043, 0xbd82, 0x4dfd, 0xb0, 0xde, 0x81, 0x77, 0x73, 0x9c, 0x6d, 0x20);
 	public const Guid CLSID_DMOFilterCategory = .(0xbcd5796c, 0xbd52, 0x4d30, 0xab, 0x76, 0x70, 0xf9, 0x75, 0xb8, 0x91, 0x99);
@@ -491,6 +500,7 @@ static
 	public const HRESULT VFW_E_CODECAPI_NO_CURRENT_VALUE = -2147220716;
 	public const HRESULT VFW_E_DVD_CHAPTER_DOES_NOT_EXIST = -2147220715;
 	public const HRESULT VFW_S_DVD_RENDER_STATUS = 262944;
+	public const String CFSTR_VFW_FILTERLIST = "Video for Windows 4 Filters";
 	public const Guid DXVA_ModeNone = .(0x1b81be00, 0xa0c7, 0x11d3, 0xb9, 0x84, 0x00, 0xc0, 0x4f, 0x2e, 0x73, 0xc5);
 	public const Guid DXVA_ModeH261_A = .(0x1b81be01, 0xa0c7, 0x11d3, 0xb9, 0x84, 0x00, 0xc0, 0x4f, 0x2e, 0x73, 0xc5);
 	public const Guid DXVA_ModeH261_B = .(0x1b81be02, 0xa0c7, 0x11d3, 0xb9, 0x84, 0x00, 0xc0, 0x4f, 0x2e, 0x73, 0xc5);
@@ -1035,19 +1045,6 @@ static
 	{
 		OATRUE = -1,
 		OAFALSE = 0,
-	}
-	public enum MPEG2VIDEOINFO_FLAGS : uint32
-	{
-		DoPanScan = 1,
-		DVDLine21Field1 = 2,
-		DVDLine21Field2 = 4,
-		SourceIsLetterboxed = 8,
-		FilmCameraMode = 16,
-		LetterboxAnalogOut = 32,
-		DSS_UserData = 64,
-		DVB_UserData = 128,
-		_27MhzTimebase = 256,
-		WidescreenAnalogOut = 512,
 	}
 	public enum MPEGLAYER3WAVEFORMAT_FLAGS : uint32
 	{
@@ -4123,19 +4120,6 @@ static
 		public uint32 dwReserved1;
 	}
 	[CRepr]
-	public struct AM_MEDIA_TYPE
-	{
-		public Guid majortype;
-		public Guid subtype;
-		public BOOL bFixedSizeSamples;
-		public BOOL bTemporalCompression;
-		public uint32 lSampleSize;
-		public Guid formattype;
-		public IUnknown* pUnk;
-		public uint32 cbFormat;
-		public uint8* pbFormat;
-	}
-	[CRepr]
 	public struct ALLOCATOR_PROPERTIES
 	{
 		public int32 cBuffers;
@@ -5106,16 +5090,6 @@ static
 		public RGBQUAD[256] bmiColors;
 	}
 	[CRepr]
-	public struct VIDEOINFOHEADER
-	{
-		public RECT rcSource;
-		public RECT rcTarget;
-		public uint32 dwBitRate;
-		public uint32 dwBitErrorRate;
-		public int64 AvgTimePerFrame;
-		public BITMAPINFOHEADER bmiHeader;
-	}
-	[CRepr]
 	public struct VIDEOINFO
 	{
 		public RECT rcSource;
@@ -5133,16 +5107,6 @@ static
 			public uint32[3] dwBitMasks;
 			public TRUECOLORINFO TrueColorInfo;
 		}
-	}
-	[CRepr]
-	public struct MPEG1VIDEOINFO
-	{
-		public VIDEOINFOHEADER hdr;
-		public uint32 dwStartTimeCode;
-		public uint32 cbSequenceHeader;
-		public uint8[1] bSequenceHeader_array;
-		
-		public uint8* bSequenceHeader mut => &bSequenceHeader_array[0];
 	}
 	[CRepr]
 	public struct ANALOGVIDEOINFO
@@ -5688,42 +5652,6 @@ static
 		public uint8 RegionData;
 		public uint8 SystemRegion;
 		public uint8 ResetCount;
-	}
-	[CRepr]
-	public struct VIDEOINFOHEADER2
-	{
-		public RECT rcSource;
-		public RECT rcTarget;
-		public uint32 dwBitRate;
-		public uint32 dwBitErrorRate;
-		public int64 AvgTimePerFrame;
-		public uint32 dwInterlaceFlags;
-		public uint32 dwCopyProtectFlags;
-		public uint32 dwPictAspectRatioX;
-		public uint32 dwPictAspectRatioY;
-		public using _Anonymous_e__Union Anonymous;
-		public uint32 dwReserved2;
-		public BITMAPINFOHEADER bmiHeader;
-		
-		[CRepr, Union]
-		public struct _Anonymous_e__Union
-		{
-			public uint32 dwControlFlags;
-			public uint32 dwReserved1;
-		}
-	}
-	[CRepr]
-	public struct MPEG2VIDEOINFO
-	{
-		public VIDEOINFOHEADER2 hdr;
-		public uint32 dwStartTimeCode;
-		public uint32 cbSequenceHeader;
-		public uint32 dwProfile;
-		public uint32 dwLevel;
-		public MPEG2VIDEOINFO_FLAGS dwFlags;
-		public uint32[1] dwSequenceHeader_array;
-		
-		public uint32* dwSequenceHeader mut => &dwSequenceHeader_array[0];
 	}
 	[CRepr]
 	public struct AM_DvdKaraokeData
@@ -7518,12 +7446,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetSurface(IUnknown** ppDirect3DSurface9) mut => VT.GetSurface(ref this, ppDirect3DSurface9);
+		public HRESULT GetSurface(out IUnknown* ppDirect3DSurface9) mut => VT.GetSurface(ref this, out ppDirect3DSurface9);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample2Config self, IUnknown** ppDirect3DSurface9) GetSurface;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample2Config self, out IUnknown* ppDirect3DSurface9) GetSurface;
 		}
 	}
 	[CRepr]
@@ -11921,15 +11849,15 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
-		public HRESULT Item(int32 lItem, IUnknown** ppUnk) mut => VT.Item(ref this, lItem, ppUnk);
-		public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
+		public HRESULT Item(int32 lItem, out IUnknown* ppUnk) mut => VT.Item(ref this, lItem, out ppUnk);
+		public HRESULT get__NewEnum(out IUnknown* ppUnk) mut => VT.get__NewEnum(ref this, out ppUnk);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCollection self, out int32 plCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCollection self, int32 lItem, IUnknown** ppUnk) Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCollection self, IUnknown** ppUnk) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCollection self, int32 lItem, out IUnknown* ppUnk) Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCollection self, out IUnknown* ppUnk) get__NewEnum;
 		}
 	}
 	[CRepr]
@@ -11944,9 +11872,9 @@ static
 		public HRESULT Stop() mut => VT.Stop(ref this);
 		public HRESULT GetState(int32 msTimeout, out int32 pfs) mut => VT.GetState(ref this, msTimeout, out pfs);
 		public HRESULT RenderFile(BSTR strFilename) mut => VT.RenderFile(ref this, strFilename);
-		public HRESULT AddSourceFilter(BSTR strFilename, IDispatch** ppUnk) mut => VT.AddSourceFilter(ref this, strFilename, ppUnk);
-		public HRESULT get_FilterCollection(IDispatch** ppUnk) mut => VT.get_FilterCollection(ref this, ppUnk);
-		public HRESULT get_RegFilterCollection(IDispatch** ppUnk) mut => VT.get_RegFilterCollection(ref this, ppUnk);
+		public HRESULT AddSourceFilter(BSTR strFilename, out IDispatch* ppUnk) mut => VT.AddSourceFilter(ref this, strFilename, out ppUnk);
+		public HRESULT get_FilterCollection(out IDispatch* ppUnk) mut => VT.get_FilterCollection(ref this, out ppUnk);
+		public HRESULT get_RegFilterCollection(out IDispatch* ppUnk) mut => VT.get_RegFilterCollection(ref this, out ppUnk);
 		public HRESULT StopWhenReady() mut => VT.StopWhenReady(ref this);
 
 		[CRepr]
@@ -11957,9 +11885,9 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self) Stop;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self, int32 msTimeout, out int32 pfs) GetState;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self, BSTR strFilename) RenderFile;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self, BSTR strFilename, IDispatch** ppUnk) AddSourceFilter;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self, IDispatch** ppUnk) get_FilterCollection;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self, IDispatch** ppUnk) get_RegFilterCollection;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self, BSTR strFilename, out IDispatch* ppUnk) AddSourceFilter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self, out IDispatch* ppUnk) get_FilterCollection;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self, out IDispatch* ppUnk) get_RegFilterCollection;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self) StopWhenReady;
 		}
 	}
@@ -12071,7 +11999,7 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT put_Caption(BSTR strCaption) mut => VT.put_Caption(ref this, strCaption);
-		public HRESULT get_Caption(BSTR* strCaption) mut => VT.get_Caption(ref this, strCaption);
+		public HRESULT get_Caption(out BSTR strCaption) mut => VT.get_Caption(ref this, out strCaption);
 		public HRESULT put_WindowStyle(int32 WindowStyle) mut => VT.put_WindowStyle(ref this, WindowStyle);
 		public HRESULT get_WindowStyle(out int32 WindowStyle) mut => VT.get_WindowStyle(ref this, out WindowStyle);
 		public HRESULT put_WindowStyleEx(int32 WindowStyleEx) mut => VT.put_WindowStyleEx(ref this, WindowStyleEx);
@@ -12114,7 +12042,7 @@ static
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, BSTR strCaption) put_Caption;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, BSTR* strCaption) get_Caption;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out BSTR strCaption) get_Caption;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 WindowStyle) put_WindowStyle;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 WindowStyle) get_WindowStyle;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 WindowStyleEx) put_WindowStyleEx;
@@ -12274,14 +12202,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT InvokeAtStreamTime(IDeferredCommand** pCmd, double time, ref Guid iid, int32 dispidMethod, int16 wFlags, int32 cArgs, ref VARIANT pDispParams, out VARIANT pvarResult, out int16 puArgErr) mut => VT.InvokeAtStreamTime(ref this, pCmd, time, ref iid, dispidMethod, wFlags, cArgs, ref pDispParams, out pvarResult, out puArgErr);
-		public HRESULT InvokeAtPresentationTime(IDeferredCommand** pCmd, double time, ref Guid iid, int32 dispidMethod, int16 wFlags, int32 cArgs, ref VARIANT pDispParams, out VARIANT pvarResult, out int16 puArgErr) mut => VT.InvokeAtPresentationTime(ref this, pCmd, time, ref iid, dispidMethod, wFlags, cArgs, ref pDispParams, out pvarResult, out puArgErr);
+		public HRESULT InvokeAtStreamTime(out IDeferredCommand* pCmd, double time, ref Guid iid, int32 dispidMethod, int16 wFlags, int32 cArgs, ref VARIANT pDispParams, out VARIANT pvarResult, out int16 puArgErr) mut => VT.InvokeAtStreamTime(ref this, out pCmd, time, ref iid, dispidMethod, wFlags, cArgs, ref pDispParams, out pvarResult, out puArgErr);
+		public HRESULT InvokeAtPresentationTime(out IDeferredCommand* pCmd, double time, ref Guid iid, int32 dispidMethod, int16 wFlags, int32 cArgs, ref VARIANT pDispParams, out VARIANT pvarResult, out int16 puArgErr) mut => VT.InvokeAtPresentationTime(ref this, out pCmd, time, ref iid, dispidMethod, wFlags, cArgs, ref pDispParams, out pvarResult, out puArgErr);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueueCommand self, IDeferredCommand** pCmd, double time, ref Guid iid, int32 dispidMethod, int16 wFlags, int32 cArgs, ref VARIANT pDispParams, out VARIANT pvarResult, out int16 puArgErr) InvokeAtStreamTime;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueueCommand self, IDeferredCommand** pCmd, double time, ref Guid iid, int32 dispidMethod, int16 wFlags, int32 cArgs, ref VARIANT pDispParams, out VARIANT pvarResult, out int16 puArgErr) InvokeAtPresentationTime;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueueCommand self, out IDeferredCommand* pCmd, double time, ref Guid iid, int32 dispidMethod, int16 wFlags, int32 cArgs, ref VARIANT pDispParams, out VARIANT pvarResult, out int16 puArgErr) InvokeAtStreamTime;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueueCommand self, out IDeferredCommand* pCmd, double time, ref Guid iid, int32 dispidMethod, int16 wFlags, int32 cArgs, ref VARIANT pDispParams, out VARIANT pvarResult, out int16 puArgErr) InvokeAtPresentationTime;
 		}
 	}
 	[CRepr]
@@ -12291,25 +12219,25 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT FindPin(BSTR strPinID, IDispatch** ppUnk) mut => VT.FindPin(ref this, strPinID, ppUnk);
-		public HRESULT get_Name(BSTR* strName) mut => VT.get_Name(ref this, strName);
-		public HRESULT get_VendorInfo(BSTR* strVendorInfo) mut => VT.get_VendorInfo(ref this, strVendorInfo);
-		public HRESULT get_Filter(IUnknown** ppUnk) mut => VT.get_Filter(ref this, ppUnk);
-		public HRESULT get_Pins(IDispatch** ppUnk) mut => VT.get_Pins(ref this, ppUnk);
+		public HRESULT FindPin(BSTR strPinID, out IDispatch* ppUnk) mut => VT.FindPin(ref this, strPinID, out ppUnk);
+		public HRESULT get_Name(out BSTR strName) mut => VT.get_Name(ref this, out strName);
+		public HRESULT get_VendorInfo(out BSTR strVendorInfo) mut => VT.get_VendorInfo(ref this, out strVendorInfo);
+		public HRESULT get_Filter(out IUnknown* ppUnk) mut => VT.get_Filter(ref this, out ppUnk);
+		public HRESULT get_Pins(out IDispatch* ppUnk) mut => VT.get_Pins(ref this, out ppUnk);
 		public HRESULT get_IsFileSource(out int32 pbIsSource) mut => VT.get_IsFileSource(ref this, out pbIsSource);
-		public HRESULT get_Filename(BSTR* pstrFilename) mut => VT.get_Filename(ref this, pstrFilename);
+		public HRESULT get_Filename(out BSTR pstrFilename) mut => VT.get_Filename(ref this, out pstrFilename);
 		public HRESULT put_Filename(BSTR strFilename) mut => VT.put_Filename(ref this, strFilename);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, BSTR strPinID, IDispatch** ppUnk) FindPin;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, BSTR* strName) get_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, BSTR* strVendorInfo) get_VendorInfo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, IUnknown** ppUnk) get_Filter;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, IDispatch** ppUnk) get_Pins;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, BSTR strPinID, out IDispatch* ppUnk) FindPin;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, out BSTR strName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, out BSTR strVendorInfo) get_VendorInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, out IUnknown* ppUnk) get_Filter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, out IDispatch* ppUnk) get_Pins;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, out int32 pbIsSource) get_IsFileSource;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, BSTR* pstrFilename) get_Filename;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, out BSTR pstrFilename) get_Filename;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, BSTR strFilename) put_Filename;
 		}
 	}
@@ -12320,14 +12248,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(BSTR* strName) mut => VT.get_Name(ref this, strName);
-		public HRESULT Filter(IDispatch** ppUnk) mut => VT.Filter(ref this, ppUnk);
+		public HRESULT get_Name(out BSTR strName) mut => VT.get_Name(ref this, out strName);
+		public HRESULT Filter(out IDispatch* ppUnk) mut => VT.Filter(ref this, out ppUnk);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegFilterInfo self, BSTR* strName) get_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegFilterInfo self, IDispatch** ppUnk) Filter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegFilterInfo self, out BSTR strName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegFilterInfo self, out IDispatch* ppUnk) Filter;
 		}
 	}
 	[CRepr]
@@ -12337,14 +12265,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Type(BSTR* strType) mut => VT.get_Type(ref this, strType);
-		public HRESULT get_Subtype(BSTR* strType) mut => VT.get_Subtype(ref this, strType);
+		public HRESULT get_Type(out BSTR strType) mut => VT.get_Type(ref this, out strType);
+		public HRESULT get_Subtype(out BSTR strType) mut => VT.get_Subtype(ref this, out strType);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaTypeInfo self, BSTR* strType) get_Type;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaTypeInfo self, BSTR* strType) get_Subtype;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaTypeInfo self, out BSTR strType) get_Type;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaTypeInfo self, out BSTR strType) get_Subtype;
 		}
 	}
 	[CRepr]
@@ -12354,14 +12282,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Pin(IUnknown** ppUnk) mut => VT.get_Pin(ref this, ppUnk);
-		public HRESULT get_ConnectedTo(IDispatch** ppUnk) mut => VT.get_ConnectedTo(ref this, ppUnk);
-		public HRESULT get_ConnectionMediaType(IDispatch** ppUnk) mut => VT.get_ConnectionMediaType(ref this, ppUnk);
-		public HRESULT get_FilterInfo(IDispatch** ppUnk) mut => VT.get_FilterInfo(ref this, ppUnk);
-		public HRESULT get_Name(BSTR* ppUnk) mut => VT.get_Name(ref this, ppUnk);
+		public HRESULT get_Pin(out IUnknown* ppUnk) mut => VT.get_Pin(ref this, out ppUnk);
+		public HRESULT get_ConnectedTo(out IDispatch* ppUnk) mut => VT.get_ConnectedTo(ref this, out ppUnk);
+		public HRESULT get_ConnectionMediaType(out IDispatch* ppUnk) mut => VT.get_ConnectionMediaType(ref this, out ppUnk);
+		public HRESULT get_FilterInfo(out IDispatch* ppUnk) mut => VT.get_FilterInfo(ref this, out ppUnk);
+		public HRESULT get_Name(out BSTR ppUnk) mut => VT.get_Name(ref this, out ppUnk);
 		public HRESULT get_Direction(out int32 ppDirection) mut => VT.get_Direction(ref this, out ppDirection);
-		public HRESULT get_PinID(BSTR* strPinID) mut => VT.get_PinID(ref this, strPinID);
-		public HRESULT get_MediaTypes(IDispatch** ppUnk) mut => VT.get_MediaTypes(ref this, ppUnk);
+		public HRESULT get_PinID(out BSTR strPinID) mut => VT.get_PinID(ref this, out strPinID);
+		public HRESULT get_MediaTypes(out IDispatch* ppUnk) mut => VT.get_MediaTypes(ref this, out ppUnk);
 		public HRESULT Connect(IUnknown* pPin) mut => VT.Connect(ref this, pPin);
 		public HRESULT ConnectDirect(IUnknown* pPin) mut => VT.ConnectDirect(ref this, pPin);
 		public HRESULT ConnectWithType(IUnknown* pPin, IDispatch* pMediaType) mut => VT.ConnectWithType(ref this, pPin, pMediaType);
@@ -12371,14 +12299,14 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IUnknown** ppUnk) get_Pin;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IDispatch** ppUnk) get_ConnectedTo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IDispatch** ppUnk) get_ConnectionMediaType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IDispatch** ppUnk) get_FilterInfo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, BSTR* ppUnk) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, out IUnknown* ppUnk) get_Pin;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, out IDispatch* ppUnk) get_ConnectedTo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, out IDispatch* ppUnk) get_ConnectionMediaType;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, out IDispatch* ppUnk) get_FilterInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, out BSTR ppUnk) get_Name;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, out int32 ppDirection) get_Direction;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, BSTR* strPinID) get_PinID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IDispatch** ppUnk) get_MediaTypes;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, out BSTR strPinID) get_PinID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, out IDispatch* ppUnk) get_MediaTypes;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IUnknown* pPin) Connect;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IUnknown* pPin) ConnectDirect;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IUnknown* pPin, IDispatch* pMediaType) ConnectWithType;
@@ -12395,7 +12323,7 @@ static
 		
 		public HRESULT Reset() mut => VT.Reset(ref this);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
-		public HRESULT GetValueByIndex(int32 lIndex, BSTR* szName, out int32 lCount, out double dLast, out double dAverage, out double dStdDev, out double dMin, out double dMax) mut => VT.GetValueByIndex(ref this, lIndex, szName, out lCount, out dLast, out dAverage, out dStdDev, out dMin, out dMax);
+		public HRESULT GetValueByIndex(int32 lIndex, out BSTR szName, out int32 lCount, out double dLast, out double dAverage, out double dStdDev, out double dMin, out double dMax) mut => VT.GetValueByIndex(ref this, lIndex, out szName, out lCount, out dLast, out dAverage, out dStdDev, out dMin, out dMax);
 		public HRESULT GetValueByName(BSTR szName, out int32 lIndex, out int32 lCount, out double dLast, out double dAverage, out double dStdDev, out double dMin, out double dMax) mut => VT.GetValueByName(ref this, szName, out lIndex, out lCount, out dLast, out dAverage, out dStdDev, out dMin, out dMax);
 		public HRESULT GetIndex(BSTR szName, int32 lCreate, out int32 plIndex) mut => VT.GetIndex(ref this, szName, lCreate, out plIndex);
 		public HRESULT AddValue(int32 lIndex, double dValue) mut => VT.AddValue(ref this, lIndex, dValue);
@@ -12405,7 +12333,7 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStats self) Reset;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStats self, out int32 plCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStats self, int32 lIndex, BSTR* szName, out int32 lCount, out double dLast, out double dAverage, out double dStdDev, out double dMin, out double dMax) GetValueByIndex;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStats self, int32 lIndex, out BSTR szName, out int32 lCount, out double dLast, out double dAverage, out double dStdDev, out double dMin, out double dMax) GetValueByIndex;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStats self, BSTR szName, out int32 lIndex, out int32 lCount, out double dLast, out double dAverage, out double dStdDev, out double dMin, out double dMax) GetValueByName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStats self, BSTR szName, int32 lCreate, out int32 plIndex) GetIndex;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStats self, int32 lIndex, double dValue) AddValue;
@@ -12783,6 +12711,36 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsNodeControl self, uint32 dwNodeId) put_NodeId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsNodeControl self, void* pKsControl) put_KsControl;
+		}
+	}
+	[CRepr]
+	public struct IAMWMBufferPass : IUnknown
+	{
+		public const new Guid IID = .(0x6dd816d7, 0xe740, 0x4123, 0x9e, 0x24, 0x24, 0x44, 0x41, 0x26, 0x44, 0xd8);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT SetNotify(ref IAMWMBufferPassCallback pCallback) mut => VT.SetNotify(ref this, ref pCallback);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWMBufferPass self, ref IAMWMBufferPassCallback pCallback) SetNotify;
+		}
+	}
+	[CRepr]
+	public struct IAMWMBufferPassCallback : IUnknown
+	{
+		public const new Guid IID = .(0xb25b8372, 0xd2d2, 0x44b2, 0x86, 0x53, 0x1b, 0x8d, 0xae, 0x33, 0x24, 0x89);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT Notify(ref INSSBuffer3 pNSSBuffer3, ref IPin pPin, ref int64 prtStart, ref int64 prtEnd) mut => VT.Notify(ref this, ref pNSSBuffer3, ref pPin, ref prtStart, ref prtEnd);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWMBufferPassCallback self, ref INSSBuffer3 pNSSBuffer3, ref IPin pPin, ref int64 prtStart, ref int64 prtEnd) Notify;
 		}
 	}
 	[CRepr]
@@ -14027,14 +13985,14 @@ static
 		
 		public HRESULT ComGetFlags(out uint32 pdwFlags) mut => VT.ComGetFlags(ref this, out pdwFlags);
 		public HRESULT GetSourceCount(out uint32 pdwSources) mut => VT.GetSourceCount(ref this, out pdwSources);
-		public HRESULT GetSourceURL(uint32 dwSourceIndex, BSTR* pbstrURL) mut => VT.GetSourceURL(ref this, dwSourceIndex, pbstrURL);
+		public HRESULT GetSourceURL(uint32 dwSourceIndex, out BSTR pbstrURL) mut => VT.GetSourceURL(ref this, dwSourceIndex, out pbstrURL);
 		public HRESULT GetSourceStart(uint32 dwSourceIndex, out int64 prtStart) mut => VT.GetSourceStart(ref this, dwSourceIndex, out prtStart);
 		public HRESULT GetSourceDuration(uint32 dwSourceIndex, out int64 prtDuration) mut => VT.GetSourceDuration(ref this, dwSourceIndex, out prtDuration);
 		public HRESULT GetSourceStartMarker(uint32 dwSourceIndex, out uint32 pdwMarker) mut => VT.GetSourceStartMarker(ref this, dwSourceIndex, out pdwMarker);
 		public HRESULT GetSourceEndMarker(uint32 dwSourceIndex, out uint32 pdwMarker) mut => VT.GetSourceEndMarker(ref this, dwSourceIndex, out pdwMarker);
-		public HRESULT GetSourceStartMarkerName(uint32 dwSourceIndex, BSTR* pbstrStartMarker) mut => VT.GetSourceStartMarkerName(ref this, dwSourceIndex, pbstrStartMarker);
-		public HRESULT GetSourceEndMarkerName(uint32 dwSourceIndex, BSTR* pbstrEndMarker) mut => VT.GetSourceEndMarkerName(ref this, dwSourceIndex, pbstrEndMarker);
-		public HRESULT GetLinkURL(BSTR* pbstrURL) mut => VT.GetLinkURL(ref this, pbstrURL);
+		public HRESULT GetSourceStartMarkerName(uint32 dwSourceIndex, out BSTR pbstrStartMarker) mut => VT.GetSourceStartMarkerName(ref this, dwSourceIndex, out pbstrStartMarker);
+		public HRESULT GetSourceEndMarkerName(uint32 dwSourceIndex, out BSTR pbstrEndMarker) mut => VT.GetSourceEndMarkerName(ref this, dwSourceIndex, out pbstrEndMarker);
+		public HRESULT GetLinkURL(out BSTR pbstrURL) mut => VT.GetLinkURL(ref this, out pbstrURL);
 		public HRESULT GetScanDuration(uint32 dwSourceIndex, out int64 prtScanDuration) mut => VT.GetScanDuration(ref this, dwSourceIndex, out prtScanDuration);
 
 		[CRepr]
@@ -14042,14 +14000,14 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, out uint32 pdwFlags) ComGetFlags;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, out uint32 pdwSources) GetSourceCount;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, BSTR* pbstrURL) GetSourceURL;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out BSTR pbstrURL) GetSourceURL;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out int64 prtStart) GetSourceStart;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out int64 prtDuration) GetSourceDuration;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out uint32 pdwMarker) GetSourceStartMarker;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out uint32 pdwMarker) GetSourceEndMarker;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, BSTR* pbstrStartMarker) GetSourceStartMarkerName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, BSTR* pbstrEndMarker) GetSourceEndMarkerName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, BSTR* pbstrURL) GetLinkURL;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out BSTR pbstrStartMarker) GetSourceStartMarkerName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out BSTR pbstrEndMarker) GetSourceEndMarkerName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, out BSTR pbstrURL) GetLinkURL;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out int64 prtScanDuration) GetScanDuration;
 		}
 	}
@@ -14062,8 +14020,8 @@ static
 		
 		public HRESULT ComGetFlags(out uint32 pdwFlags) mut => VT.ComGetFlags(ref this, out pdwFlags);
 		public HRESULT GetItemCount(out uint32 pdwItems) mut => VT.GetItemCount(ref this, out pdwItems);
-		public HRESULT GetItem(uint32 dwItemIndex, IAMPlayListItem** ppItem) mut => VT.GetItem(ref this, dwItemIndex, ppItem);
-		public HRESULT GetNamedEvent(PWSTR pwszEventName, uint32 dwItemIndex, IAMPlayListItem** ppItem, out uint32 pdwFlags) mut => VT.GetNamedEvent(ref this, pwszEventName, dwItemIndex, ppItem, out pdwFlags);
+		public HRESULT GetItem(uint32 dwItemIndex, out IAMPlayListItem* ppItem) mut => VT.GetItem(ref this, dwItemIndex, out ppItem);
+		public HRESULT GetNamedEvent(PWSTR pwszEventName, uint32 dwItemIndex, out IAMPlayListItem* ppItem, out uint32 pdwFlags) mut => VT.GetNamedEvent(ref this, pwszEventName, dwItemIndex, out ppItem, out pdwFlags);
 		public HRESULT GetRepeatInfo(out uint32 pdwRepeatCount, out uint32 pdwRepeatStart, out uint32 pdwRepeatEnd) mut => VT.GetRepeatInfo(ref this, out pdwRepeatCount, out pdwRepeatStart, out pdwRepeatEnd);
 
 		[CRepr]
@@ -14071,8 +14029,8 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayList self, out uint32 pdwFlags) ComGetFlags;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayList self, out uint32 pdwItems) GetItemCount;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayList self, uint32 dwItemIndex, IAMPlayListItem** ppItem) GetItem;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayList self, PWSTR pwszEventName, uint32 dwItemIndex, IAMPlayListItem** ppItem, out uint32 pdwFlags) GetNamedEvent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayList self, uint32 dwItemIndex, out IAMPlayListItem* ppItem) GetItem;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayList self, PWSTR pwszEventName, uint32 dwItemIndex, out IAMPlayListItem* ppItem, out uint32 pdwFlags) GetNamedEvent;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayList self, out uint32 pdwRepeatCount, out uint32 pdwRepeatStart, out uint32 pdwRepeatEnd) GetRepeatInfo;
 		}
 	}
@@ -14756,7 +14714,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetCurrentLocator(ILocator** pILocator) mut => VT.GetCurrentLocator(ref this, pILocator);
+		public HRESULT GetCurrentLocator(ref ILocator* pILocator) mut => VT.GetCurrentLocator(ref this, ref pILocator);
 		public HRESULT PerformExhaustiveScan(int32 dwLowerFreq, int32 dwHigherFreq, int16 bFineTune, uint hEvent) mut => VT.PerformExhaustiveScan(ref this, dwLowerFreq, dwHigherFreq, bFineTune, hEvent);
 		public HRESULT TerminateCurrentScan(out int32 pcurrentFreq) mut => VT.TerminateCurrentScan(ref this, out pcurrentFreq);
 		public HRESULT ResumeCurrentScan(uint hEvent) mut => VT.ResumeCurrentScan(ref this, hEvent);
@@ -14768,7 +14726,7 @@ static
 		[CRepr]
 		public struct VTable : IScanningTuner.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTunerEx self, ILocator** pILocator) GetCurrentLocator;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTunerEx self, ref ILocator* pILocator) GetCurrentLocator;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTunerEx self, int32 dwLowerFreq, int32 dwHigherFreq, int16 bFineTune, uint hEvent) PerformExhaustiveScan;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTunerEx self, out int32 pcurrentFreq) TerminateCurrentScan;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTunerEx self, uint hEvent) ResumeCurrentScan;
@@ -18544,31 +18502,31 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT Initialize(IUnknown* punkMpeg2Data) mut => VT.Initialize(ref this, punkMpeg2Data);
-		public HRESULT GetPAT(IPAT** ppPAT) mut => VT.GetPAT(ref this, ppPAT);
-		public HRESULT GetCAT(uint32 dwTimeout, ICAT** ppCAT) mut => VT.GetCAT(ref this, dwTimeout, ppCAT);
-		public HRESULT GetPMT(uint16 pid, ref uint16 pwProgramNumber, IPMT** ppPMT) mut => VT.GetPMT(ref this, pid, ref pwProgramNumber, ppPMT);
-		public HRESULT GetTSDT(ITSDT** ppTSDT) mut => VT.GetTSDT(ref this, ppTSDT);
-		public HRESULT GetMGT(IATSC_MGT** ppMGT) mut => VT.GetMGT(ref this, ppMGT);
-		public HRESULT GetVCT(uint8 tableId, BOOL fGetNextTable, IATSC_VCT** ppVCT) mut => VT.GetVCT(ref this, tableId, fGetNextTable, ppVCT);
-		public HRESULT GetEIT(uint16 pid, ref uint16 pwSourceId, uint32 dwTimeout, IATSC_EIT** ppEIT) mut => VT.GetEIT(ref this, pid, ref pwSourceId, dwTimeout, ppEIT);
-		public HRESULT GetETT(uint16 pid, ref uint16 wSourceId, ref uint16 pwEventId, IATSC_ETT** ppETT) mut => VT.GetETT(ref this, pid, ref wSourceId, ref pwEventId, ppETT);
-		public HRESULT GetSTT(IATSC_STT** ppSTT) mut => VT.GetSTT(ref this, ppSTT);
-		public HRESULT GetEAS(uint16 pid, ISCTE_EAS** ppEAS) mut => VT.GetEAS(ref this, pid, ppEAS);
+		public HRESULT GetPAT(out IPAT* ppPAT) mut => VT.GetPAT(ref this, out ppPAT);
+		public HRESULT GetCAT(uint32 dwTimeout, out ICAT* ppCAT) mut => VT.GetCAT(ref this, dwTimeout, out ppCAT);
+		public HRESULT GetPMT(uint16 pid, ref uint16 pwProgramNumber, out IPMT* ppPMT) mut => VT.GetPMT(ref this, pid, ref pwProgramNumber, out ppPMT);
+		public HRESULT GetTSDT(out ITSDT* ppTSDT) mut => VT.GetTSDT(ref this, out ppTSDT);
+		public HRESULT GetMGT(out IATSC_MGT* ppMGT) mut => VT.GetMGT(ref this, out ppMGT);
+		public HRESULT GetVCT(uint8 tableId, BOOL fGetNextTable, out IATSC_VCT* ppVCT) mut => VT.GetVCT(ref this, tableId, fGetNextTable, out ppVCT);
+		public HRESULT GetEIT(uint16 pid, ref uint16 pwSourceId, uint32 dwTimeout, out IATSC_EIT* ppEIT) mut => VT.GetEIT(ref this, pid, ref pwSourceId, dwTimeout, out ppEIT);
+		public HRESULT GetETT(uint16 pid, ref uint16 wSourceId, ref uint16 pwEventId, out IATSC_ETT* ppETT) mut => VT.GetETT(ref this, pid, ref wSourceId, ref pwEventId, out ppETT);
+		public HRESULT GetSTT(out IATSC_STT* ppSTT) mut => VT.GetSTT(ref this, out ppSTT);
+		public HRESULT GetEAS(uint16 pid, out ISCTE_EAS* ppEAS) mut => VT.GetEAS(ref this, pid, out ppEAS);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, IUnknown* punkMpeg2Data) Initialize;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, IPAT** ppPAT) GetPAT;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint32 dwTimeout, ICAT** ppCAT) GetCAT;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint16 pid, ref uint16 pwProgramNumber, IPMT** ppPMT) GetPMT;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, ITSDT** ppTSDT) GetTSDT;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, IATSC_MGT** ppMGT) GetMGT;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint8 tableId, BOOL fGetNextTable, IATSC_VCT** ppVCT) GetVCT;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint16 pid, ref uint16 pwSourceId, uint32 dwTimeout, IATSC_EIT** ppEIT) GetEIT;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint16 pid, ref uint16 wSourceId, ref uint16 pwEventId, IATSC_ETT** ppETT) GetETT;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, IATSC_STT** ppSTT) GetSTT;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint16 pid, ISCTE_EAS** ppEAS) GetEAS;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, out IPAT* ppPAT) GetPAT;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint32 dwTimeout, out ICAT* ppCAT) GetCAT;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint16 pid, ref uint16 pwProgramNumber, out IPMT* ppPMT) GetPMT;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, out ITSDT* ppTSDT) GetTSDT;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, out IATSC_MGT* ppMGT) GetMGT;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint8 tableId, BOOL fGetNextTable, out IATSC_VCT* ppVCT) GetVCT;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint16 pid, ref uint16 pwSourceId, uint32 dwTimeout, out IATSC_EIT* ppEIT) GetEIT;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint16 pid, ref uint16 wSourceId, ref uint16 pwEventId, out IATSC_ETT* ppETT) GetETT;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, out IATSC_STT* ppSTT) GetSTT;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint16 pid, out ISCTE_EAS* ppEAS) GetEAS;
 		}
 	}
 	[CRepr]
@@ -18586,11 +18544,11 @@ static
 		public HRESULT GetRecordTypePid(uint32 dwRecordIndex, out uint16 ppidVal) mut => VT.GetRecordTypePid(ref this, dwRecordIndex, out ppidVal);
 		public HRESULT GetRecordVersionNumber(uint32 dwRecordIndex, out uint8 pbVal) mut => VT.GetRecordVersionNumber(ref this, dwRecordIndex, out pbVal);
 		public HRESULT GetRecordCountOfDescriptors(uint32 dwRecordIndex, out uint32 pdwVal) mut => VT.GetRecordCountOfDescriptors(ref this, dwRecordIndex, out pdwVal);
-		public HRESULT GetRecordDescriptorByIndex(uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) mut => VT.GetRecordDescriptorByIndex(ref this, dwRecordIndex, dwIndex, ppDescriptor);
-		public HRESULT GetRecordDescriptorByTag(uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) mut => VT.GetRecordDescriptorByTag(ref this, dwRecordIndex, bTag, out pdwCookie, ppDescriptor);
+		public HRESULT GetRecordDescriptorByIndex(uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) mut => VT.GetRecordDescriptorByIndex(ref this, dwRecordIndex, dwIndex, out ppDescriptor);
+		public HRESULT GetRecordDescriptorByTag(uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) mut => VT.GetRecordDescriptorByTag(ref this, dwRecordIndex, bTag, out pdwCookie, out ppDescriptor);
 		public HRESULT GetCountOfTableDescriptors(ref uint32 pdwVal) mut => VT.GetCountOfTableDescriptors(ref this, ref pdwVal);
-		public HRESULT GetTableDescriptorByIndex(uint32 dwIndex, IGenericDescriptor** ppDescriptor) mut => VT.GetTableDescriptorByIndex(ref this, dwIndex, ppDescriptor);
-		public HRESULT GetTableDescriptorByTag(uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) mut => VT.GetTableDescriptorByTag(ref this, bTag, out pdwCookie, ppDescriptor);
+		public HRESULT GetTableDescriptorByIndex(uint32 dwIndex, out IGenericDescriptor* ppDescriptor) mut => VT.GetTableDescriptorByIndex(ref this, dwIndex, out ppDescriptor);
+		public HRESULT GetTableDescriptorByTag(uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) mut => VT.GetTableDescriptorByTag(ref this, bTag, out pdwCookie, out ppDescriptor);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -18603,11 +18561,11 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, out uint16 ppidVal) GetRecordTypePid;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordVersionNumber;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, ref uint32 pdwVal) GetCountOfTableDescriptors;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
 		}
 	}
 	[CRepr]
@@ -18622,7 +18580,7 @@ static
 		public HRESULT GetTransportStreamId(out uint16 pwVal) mut => VT.GetTransportStreamId(ref this, out pwVal);
 		public HRESULT GetProtocolVersion(out uint8 pbVal) mut => VT.GetProtocolVersion(ref this, out pbVal);
 		public HRESULT GetCountOfRecords(out uint32 pdwVal) mut => VT.GetCountOfRecords(ref this, out pdwVal);
-		public HRESULT GetRecordName(uint32 dwRecordIndex, PWSTR* pwsName) mut => VT.GetRecordName(ref this, dwRecordIndex, pwsName);
+		public HRESULT GetRecordName(uint32 dwRecordIndex, out PWSTR pwsName) mut => VT.GetRecordName(ref this, dwRecordIndex, out pwsName);
 		public HRESULT GetRecordMajorChannelNumber(uint32 dwRecordIndex, out uint16 pwVal) mut => VT.GetRecordMajorChannelNumber(ref this, dwRecordIndex, out pwVal);
 		public HRESULT GetRecordMinorChannelNumber(uint32 dwRecordIndex, out uint16 pwVal) mut => VT.GetRecordMinorChannelNumber(ref this, dwRecordIndex, out pwVal);
 		public HRESULT GetRecordModulationMode(uint32 dwRecordIndex, out uint8 pbVal) mut => VT.GetRecordModulationMode(ref this, dwRecordIndex, out pbVal);
@@ -18638,11 +18596,11 @@ static
 		public HRESULT GetRecordServiceType(uint32 dwRecordIndex, out uint8 pbVal) mut => VT.GetRecordServiceType(ref this, dwRecordIndex, out pbVal);
 		public HRESULT GetRecordSourceId(uint32 dwRecordIndex, out uint16 pwVal) mut => VT.GetRecordSourceId(ref this, dwRecordIndex, out pwVal);
 		public HRESULT GetRecordCountOfDescriptors(uint32 dwRecordIndex, out uint32 pdwVal) mut => VT.GetRecordCountOfDescriptors(ref this, dwRecordIndex, out pdwVal);
-		public HRESULT GetRecordDescriptorByIndex(uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) mut => VT.GetRecordDescriptorByIndex(ref this, dwRecordIndex, dwIndex, ppDescriptor);
-		public HRESULT GetRecordDescriptorByTag(uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) mut => VT.GetRecordDescriptorByTag(ref this, dwRecordIndex, bTag, out pdwCookie, ppDescriptor);
+		public HRESULT GetRecordDescriptorByIndex(uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) mut => VT.GetRecordDescriptorByIndex(ref this, dwRecordIndex, dwIndex, out ppDescriptor);
+		public HRESULT GetRecordDescriptorByTag(uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) mut => VT.GetRecordDescriptorByTag(ref this, dwRecordIndex, bTag, out pdwCookie, out ppDescriptor);
 		public HRESULT GetCountOfTableDescriptors(ref uint32 pdwVal) mut => VT.GetCountOfTableDescriptors(ref this, ref pdwVal);
-		public HRESULT GetTableDescriptorByIndex(uint32 dwIndex, IGenericDescriptor** ppDescriptor) mut => VT.GetTableDescriptorByIndex(ref this, dwIndex, ppDescriptor);
-		public HRESULT GetTableDescriptorByTag(uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) mut => VT.GetTableDescriptorByTag(ref this, bTag, out pdwCookie, ppDescriptor);
+		public HRESULT GetTableDescriptorByIndex(uint32 dwIndex, out IGenericDescriptor* ppDescriptor) mut => VT.GetTableDescriptorByIndex(ref this, dwIndex, out ppDescriptor);
+		public HRESULT GetTableDescriptorByTag(uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) mut => VT.GetTableDescriptorByTag(ref this, bTag, out pdwCookie, out ppDescriptor);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -18652,7 +18610,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, out uint16 pwVal) GetTransportStreamId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, out uint8 pbVal) GetProtocolVersion;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, out uint32 pdwVal) GetCountOfRecords;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, PWSTR* pwsName) GetRecordName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out PWSTR pwsName) GetRecordName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordMajorChannelNumber;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordMinorChannelNumber;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordModulationMode;
@@ -18668,11 +18626,11 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordServiceType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordSourceId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, ref uint32 pdwVal) GetCountOfTableDescriptors;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
 		}
 	}
 	[CRepr]
@@ -18691,10 +18649,10 @@ static
 		public HRESULT GetRecordStartTime(uint32 dwRecordIndex, out MPEG_DATE_AND_TIME pmdtVal) mut => VT.GetRecordStartTime(ref this, dwRecordIndex, out pmdtVal);
 		public HRESULT GetRecordEtmLocation(uint32 dwRecordIndex, out uint8 pbVal) mut => VT.GetRecordEtmLocation(ref this, dwRecordIndex, out pbVal);
 		public HRESULT GetRecordDuration(uint32 dwRecordIndex, out MPEG_TIME pmdVal) mut => VT.GetRecordDuration(ref this, dwRecordIndex, out pmdVal);
-		public HRESULT GetRecordTitleText(uint32 dwRecordIndex, out uint32 pdwLength, uint8** ppText) mut => VT.GetRecordTitleText(ref this, dwRecordIndex, out pdwLength, ppText);
+		public HRESULT GetRecordTitleText(uint32 dwRecordIndex, out uint32 pdwLength, out uint8* ppText) mut => VT.GetRecordTitleText(ref this, dwRecordIndex, out pdwLength, out ppText);
 		public HRESULT GetRecordCountOfDescriptors(uint32 dwRecordIndex, out uint32 pdwVal) mut => VT.GetRecordCountOfDescriptors(ref this, dwRecordIndex, out pdwVal);
-		public HRESULT GetRecordDescriptorByIndex(uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) mut => VT.GetRecordDescriptorByIndex(ref this, dwRecordIndex, dwIndex, ppDescriptor);
-		public HRESULT GetRecordDescriptorByTag(uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) mut => VT.GetRecordDescriptorByTag(ref this, dwRecordIndex, bTag, out pdwCookie, ppDescriptor);
+		public HRESULT GetRecordDescriptorByIndex(uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) mut => VT.GetRecordDescriptorByIndex(ref this, dwRecordIndex, dwIndex, out ppDescriptor);
+		public HRESULT GetRecordDescriptorByTag(uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) mut => VT.GetRecordDescriptorByTag(ref this, dwRecordIndex, bTag, out pdwCookie, out ppDescriptor);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -18708,10 +18666,10 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out MPEG_DATE_AND_TIME pmdtVal) GetRecordStartTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordEtmLocation;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out MPEG_TIME pmdVal) GetRecordDuration;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out uint32 pdwLength, uint8** ppText) GetRecordTitleText;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out uint32 pdwLength, out uint8* ppText) GetRecordTitleText;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
 		}
 	}
 	[CRepr]
@@ -18725,7 +18683,7 @@ static
 		public HRESULT GetVersionNumber(out uint8 pbVal) mut => VT.GetVersionNumber(ref this, out pbVal);
 		public HRESULT GetProtocolVersion(out uint8 pbVal) mut => VT.GetProtocolVersion(ref this, out pbVal);
 		public HRESULT GetEtmId(out uint32 pdwVal) mut => VT.GetEtmId(ref this, out pdwVal);
-		public HRESULT GetExtendedMessageText(out uint32 pdwLength, uint8** ppText) mut => VT.GetExtendedMessageText(ref this, out pdwLength, ppText);
+		public HRESULT GetExtendedMessageText(out uint32 pdwLength, out uint8* ppText) mut => VT.GetExtendedMessageText(ref this, out pdwLength, out ppText);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -18734,7 +18692,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_ETT self, out uint8 pbVal) GetVersionNumber;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_ETT self, out uint8 pbVal) GetProtocolVersion;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_ETT self, out uint32 pdwVal) GetEtmId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_ETT self, out uint32 pdwLength, uint8** ppText) GetExtendedMessageText;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_ETT self, out uint32 pdwLength, out uint8* ppText) GetExtendedMessageText;
 		}
 	}
 	[CRepr]
@@ -18750,8 +18708,8 @@ static
 		public HRESULT GetGpsUtcOffset(out uint8 pbVal) mut => VT.GetGpsUtcOffset(ref this, out pbVal);
 		public HRESULT GetDaylightSavings(out uint16 pwVal) mut => VT.GetDaylightSavings(ref this, out pwVal);
 		public HRESULT GetCountOfTableDescriptors(out uint32 pdwVal) mut => VT.GetCountOfTableDescriptors(ref this, out pdwVal);
-		public HRESULT GetTableDescriptorByIndex(uint32 dwIndex, IGenericDescriptor** ppDescriptor) mut => VT.GetTableDescriptorByIndex(ref this, dwIndex, ppDescriptor);
-		public HRESULT GetTableDescriptorByTag(uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) mut => VT.GetTableDescriptorByTag(ref this, bTag, out pdwCookie, ppDescriptor);
+		public HRESULT GetTableDescriptorByIndex(uint32 dwIndex, out IGenericDescriptor* ppDescriptor) mut => VT.GetTableDescriptorByIndex(ref this, dwIndex, out ppDescriptor);
+		public HRESULT GetTableDescriptorByTag(uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) mut => VT.GetTableDescriptorByTag(ref this, bTag, out pdwCookie, out ppDescriptor);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -18762,8 +18720,8 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_STT self, out uint8 pbVal) GetGpsUtcOffset;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_STT self, out uint16 pwVal) GetDaylightSavings;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_STT self, out uint32 pdwVal) GetCountOfTableDescriptors;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_STT self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_STT self, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_STT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_STT self, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
 		}
 	}
 	[CRepr]
@@ -18783,7 +18741,7 @@ static
 		public HRESULT GetEASEventCode(out uint8 pbVal) mut => VT.GetEASEventCode(ref this, out pbVal);
 		public HRESULT GetRawNatureOfActivationTextLen(out uint8 pbVal) mut => VT.GetRawNatureOfActivationTextLen(ref this, out pbVal);
 		public HRESULT GetRawNatureOfActivationText(out uint8 pbVal) mut => VT.GetRawNatureOfActivationText(ref this, out pbVal);
-		public HRESULT GetNatureOfActivationText(BSTR bstrIS0639code, BSTR* pbstrString) mut => VT.GetNatureOfActivationText(ref this, bstrIS0639code, pbstrString);
+		public HRESULT GetNatureOfActivationText(BSTR bstrIS0639code, out BSTR pbstrString) mut => VT.GetNatureOfActivationText(ref this, bstrIS0639code, out pbstrString);
 		public HRESULT GetTimeRemaining(out uint8 pbVal) mut => VT.GetTimeRemaining(ref this, out pbVal);
 		public HRESULT GetStartTime(out uint32 pdwVal) mut => VT.GetStartTime(ref this, out pdwVal);
 		public HRESULT GetDuration(out uint16 pwVal) mut => VT.GetDuration(ref this, out pwVal);
@@ -18792,7 +18750,7 @@ static
 		public HRESULT GetDetailsMajor(out uint16 pwVal) mut => VT.GetDetailsMajor(ref this, out pwVal);
 		public HRESULT GetDetailsMinor(out uint16 pwVal) mut => VT.GetDetailsMinor(ref this, out pwVal);
 		public HRESULT GetDetailsAudioOOBSourceID(out uint16 pwVal) mut => VT.GetDetailsAudioOOBSourceID(ref this, out pwVal);
-		public HRESULT GetAlertText(BSTR bstrIS0639code, BSTR* pbstrString) mut => VT.GetAlertText(ref this, bstrIS0639code, pbstrString);
+		public HRESULT GetAlertText(BSTR bstrIS0639code, out BSTR pbstrString) mut => VT.GetAlertText(ref this, bstrIS0639code, out pbstrString);
 		public HRESULT GetRawAlertTextLen(out uint16 pwVal) mut => VT.GetRawAlertTextLen(ref this, out pwVal);
 		public HRESULT GetRawAlertText(out uint8 pbVal) mut => VT.GetRawAlertText(ref this, out pbVal);
 		public HRESULT GetLocationCount(out uint8 pbVal) mut => VT.GetLocationCount(ref this, out pbVal);
@@ -18800,8 +18758,8 @@ static
 		public HRESULT GetExceptionCount(out uint8 pbVal) mut => VT.GetExceptionCount(ref this, out pbVal);
 		public HRESULT GetExceptionService(uint8 bIndex, out uint8 pbIBRef, out uint16 pwFirst, out uint16 pwSecond) mut => VT.GetExceptionService(ref this, bIndex, out pbIBRef, out pwFirst, out pwSecond);
 		public HRESULT GetCountOfTableDescriptors(out uint32 pdwVal) mut => VT.GetCountOfTableDescriptors(ref this, out pdwVal);
-		public HRESULT GetTableDescriptorByIndex(uint32 dwIndex, IGenericDescriptor** ppDescriptor) mut => VT.GetTableDescriptorByIndex(ref this, dwIndex, ppDescriptor);
-		public HRESULT GetTableDescriptorByTag(uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) mut => VT.GetTableDescriptorByTag(ref this, bTag, out pdwCookie, ppDescriptor);
+		public HRESULT GetTableDescriptorByIndex(uint32 dwIndex, out IGenericDescriptor* ppDescriptor) mut => VT.GetTableDescriptorByIndex(ref this, dwIndex, out ppDescriptor);
+		public HRESULT GetTableDescriptorByTag(uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) mut => VT.GetTableDescriptorByTag(ref this, bTag, out pdwCookie, out ppDescriptor);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -18816,7 +18774,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetEASEventCode;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetRawNatureOfActivationTextLen;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetRawNatureOfActivationText;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, BSTR bstrIS0639code, BSTR* pbstrString) GetNatureOfActivationText;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, BSTR bstrIS0639code, out BSTR pbstrString) GetNatureOfActivationText;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetTimeRemaining;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint32 pdwVal) GetStartTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetDuration;
@@ -18825,7 +18783,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetDetailsMajor;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetDetailsMinor;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetDetailsAudioOOBSourceID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, BSTR bstrIS0639code, BSTR* pbstrString) GetAlertText;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, BSTR bstrIS0639code, out BSTR pbstrString) GetAlertText;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetRawAlertTextLen;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetRawAlertText;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetLocationCount;
@@ -18833,8 +18791,8 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetExceptionCount;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, uint8 bIndex, out uint8 pbIBRef, out uint16 pwFirst, out uint16 pwSecond) GetExceptionService;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint32 pdwVal) GetCountOfTableDescriptors;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
 		}
 	}
 	[CRepr]
@@ -18851,7 +18809,7 @@ static
 		public HRESULT GetRecordRatedDimensions(uint8 bIndex, out uint8 pbVal) mut => VT.GetRecordRatedDimensions(ref this, bIndex, out pbVal);
 		public HRESULT GetRecordRatingDimension(uint8 bIndexOuter, uint8 bIndexInner, out uint8 pbVal) mut => VT.GetRecordRatingDimension(ref this, bIndexOuter, bIndexInner, out pbVal);
 		public HRESULT GetRecordRatingValue(uint8 bIndexOuter, uint8 bIndexInner, out uint8 pbVal) mut => VT.GetRecordRatingValue(ref this, bIndexOuter, bIndexInner, out pbVal);
-		public HRESULT GetRecordRatingDescriptionText(uint8 bIndex, out uint8 pbLength, uint8** ppText) mut => VT.GetRecordRatingDescriptionText(ref this, bIndex, out pbLength, ppText);
+		public HRESULT GetRecordRatingDescriptionText(uint8 bIndex, out uint8 pbLength, out uint8* ppText) mut => VT.GetRecordRatingDescriptionText(ref this, bIndex, out pbLength, out ppText);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -18863,7 +18821,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscContentAdvisoryDescriptor self, uint8 bIndex, out uint8 pbVal) GetRecordRatedDimensions;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscContentAdvisoryDescriptor self, uint8 bIndexOuter, uint8 bIndexInner, out uint8 pbVal) GetRecordRatingDimension;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscContentAdvisoryDescriptor self, uint8 bIndexOuter, uint8 bIndexInner, out uint8 pbVal) GetRecordRatingValue;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscContentAdvisoryDescriptor self, uint8 bIndex, out uint8 pbLength, uint8** ppText) GetRecordRatingDescriptionText;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscContentAdvisoryDescriptor self, uint8 bIndex, out uint8 pbLength, out uint8* ppText) GetRecordRatingDescriptionText;
 		}
 	}
 	[CRepr]
@@ -21175,6 +21133,42 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideDataLoader self, ref IGuideData pGuideStore) Init;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideDataLoader self) Terminate;
+		}
+	}
+	[CRepr]
+	public struct IWMCodecAMVideoAccelerator : IUnknown
+	{
+		public const new Guid IID = .(0xd98ee251, 0x34e0, 0x4a2d, 0x93, 0x12, 0x9b, 0x4c, 0x78, 0x8d, 0x9f, 0xa1);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT SetAcceleratorInterface(ref IAMVideoAccelerator pIAMVA) mut => VT.SetAcceleratorInterface(ref this, ref pIAMVA);
+		public HRESULT NegotiateConnection(ref AM_MEDIA_TYPE pMediaType) mut => VT.NegotiateConnection(ref this, ref pMediaType);
+		public HRESULT SetPlayerNotify(ref IWMPlayerTimestampHook pHook) mut => VT.SetPlayerNotify(ref this, ref pHook);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecAMVideoAccelerator self, ref IAMVideoAccelerator pIAMVA) SetAcceleratorInterface;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecAMVideoAccelerator self, ref AM_MEDIA_TYPE pMediaType) NegotiateConnection;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecAMVideoAccelerator self, ref IWMPlayerTimestampHook pHook) SetPlayerNotify;
+		}
+	}
+	[CRepr]
+	public struct IWMCodecVideoAccelerator : IUnknown
+	{
+		public const new Guid IID = .(0x990641b0, 0x739f, 0x4e94, 0xa8, 0x08, 0x98, 0x88, 0xda, 0x8f, 0x75, 0xaf);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT NegotiateConnection(ref IAMVideoAccelerator pIAMVA, ref AM_MEDIA_TYPE pMediaType) mut => VT.NegotiateConnection(ref this, ref pIAMVA, ref pMediaType);
+		public HRESULT SetPlayerNotify(ref IWMPlayerTimestampHook pHook) mut => VT.SetPlayerNotify(ref this, ref pHook);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecVideoAccelerator self, ref IAMVideoAccelerator pIAMVA, ref AM_MEDIA_TYPE pMediaType) NegotiateConnection;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecVideoAccelerator self, ref IWMPlayerTimestampHook pHook) SetPlayerNotify;
 		}
 	}
 	#endregion

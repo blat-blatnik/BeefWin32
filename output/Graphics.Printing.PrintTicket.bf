@@ -44,16 +44,16 @@ static
 	[Import("prntvpt.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT PTReleaseMemory(void* pBuffer);
 	[Import("prntvpt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT PTGetPrintCapabilities(HPTPROVIDER hProvider, IStream* pPrintTicket, out IStream pCapabilities, BSTR* pbstrErrorMessage);
+	public static extern HRESULT PTGetPrintCapabilities(HPTPROVIDER hProvider, IStream* pPrintTicket, ref IStream pCapabilities, BSTR* pbstrErrorMessage);
 	[Import("prntvpt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT PTGetPrintDeviceCapabilities(HPTPROVIDER hProvider, IStream* pPrintTicket, out IStream pDeviceCapabilities, BSTR* pbstrErrorMessage);
+	public static extern HRESULT PTGetPrintDeviceCapabilities(HPTPROVIDER hProvider, IStream* pPrintTicket, ref IStream pDeviceCapabilities, BSTR* pbstrErrorMessage);
 	[Import("prntvpt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT PTGetPrintDeviceResources(HPTPROVIDER hProvider, PWSTR pszLocaleName, IStream* pPrintTicket, out IStream pDeviceResources, BSTR* pbstrErrorMessage);
+	public static extern HRESULT PTGetPrintDeviceResources(HPTPROVIDER hProvider, PWSTR pszLocaleName, IStream* pPrintTicket, ref IStream pDeviceResources, BSTR* pbstrErrorMessage);
 	[Import("prntvpt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT PTMergeAndValidatePrintTicket(HPTPROVIDER hProvider, ref IStream pBaseTicket, IStream* pDeltaTicket, EPrintTicketScope @scope, out IStream pResultTicket, BSTR* pbstrErrorMessage);
+	public static extern HRESULT PTMergeAndValidatePrintTicket(HPTPROVIDER hProvider, ref IStream pBaseTicket, IStream* pDeltaTicket, EPrintTicketScope @scope, ref IStream pResultTicket, BSTR* pbstrErrorMessage);
 	[Import("prntvpt.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT PTConvertPrintTicketToDevMode(HPTPROVIDER hProvider, ref IStream pPrintTicket, EDefaultDevmodeType baseDevmodeType, EPrintTicketScope @scope, out uint32 pcbDevmode, out DEVMODEA* ppDevmode, BSTR* pbstrErrorMessage);
 	[Import("prntvpt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT PTConvertDevModeToPrintTicket(HPTPROVIDER hProvider, uint32 cbDevmode, ref DEVMODEA pDevmode, EPrintTicketScope @scope, out IStream pPrintTicket);
+	public static extern HRESULT PTConvertDevModeToPrintTicket(HPTPROVIDER hProvider, uint32 cbDevmode, ref DEVMODEA pDevmode, EPrintTicketScope @scope, ref IStream pPrintTicket);
 	#endregion
 }

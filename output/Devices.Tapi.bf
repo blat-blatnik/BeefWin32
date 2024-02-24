@@ -3,6 +3,7 @@ namespace Win32.Devices.Tapi;
 using System;
 using Win32.Foundation;
 using Win32.Media.DirectShow;
+using Win32.Media.MediaFoundation;
 using Win32.System.AddressBook;
 using Win32.System.Com;
 
@@ -1121,6 +1122,17 @@ static
 	public const HRESULT TAPI_E_WRONG_STATE = -2147221416;
 	public const HRESULT TAPI_E_NOT_INITIALIZED = -2147221415;
 	public const HRESULT TAPI_E_SERVICE_NOT_RUNNING = -2147221414;
+	public const String OPENTNEFSTREAM = "OpenTnefStream";
+	public const String OPENTNEFSTREAMEX = "OpenTnefStreamEx";
+	public const String GETTNEFSTREAMCODEPAGE = "GetTnefStreamCodePage";
+	public const uint32 cbDisplayName = 41;
+	public const uint32 cbEmailName = 11;
+	public const uint32 cbSeverName = 12;
+	public const uint32 cbTYPE = 16;
+	public const uint32 cbMaxIdData = 200;
+	public const uint32 prioLow = 3;
+	public const uint32 prioNorm = 2;
+	public const uint32 prioHigh = 1;
 	public const int32 atypNull = 0;
 	public const int32 atypFile = 1;
 	public const int32 atypOle = 2;
@@ -5158,11 +5170,11 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT EnumerateAgentSessions(IEnumAgentSession** ppEnumAgentSession) mut => VT.EnumerateAgentSessions(ref this, ppEnumAgentSession);
-		public HRESULT CreateSession(ITACDGroup* pACDGroup, ITAddress* pAddress, ITAgentSession** ppAgentSession) mut => VT.CreateSession(ref this, pACDGroup, pAddress, ppAgentSession);
-		public HRESULT CreateSessionWithPIN(ITACDGroup* pACDGroup, ITAddress* pAddress, BSTR pPIN, ITAgentSession** ppAgentSession) mut => VT.CreateSessionWithPIN(ref this, pACDGroup, pAddress, pPIN, ppAgentSession);
-		public HRESULT get_ID(BSTR* ppID) mut => VT.get_ID(ref this, ppID);
-		public HRESULT get_User(BSTR* ppUser) mut => VT.get_User(ref this, ppUser);
+		public HRESULT EnumerateAgentSessions(out IEnumAgentSession* ppEnumAgentSession) mut => VT.EnumerateAgentSessions(ref this, out ppEnumAgentSession);
+		public HRESULT CreateSession(ITACDGroup* pACDGroup, ITAddress* pAddress, out ITAgentSession* ppAgentSession) mut => VT.CreateSession(ref this, pACDGroup, pAddress, out ppAgentSession);
+		public HRESULT CreateSessionWithPIN(ITACDGroup* pACDGroup, ITAddress* pAddress, BSTR pPIN, out ITAgentSession* ppAgentSession) mut => VT.CreateSessionWithPIN(ref this, pACDGroup, pAddress, pPIN, out ppAgentSession);
+		public HRESULT get_ID(out BSTR ppID) mut => VT.get_ID(ref this, out ppID);
+		public HRESULT get_User(out BSTR ppUser) mut => VT.get_User(ref this, out ppUser);
 		public HRESULT put_State(AGENT_STATE AgentState) mut => VT.put_State(ref this, AgentState);
 		public HRESULT get_State(out AGENT_STATE pAgentState) mut => VT.get_State(ref this, out pAgentState);
 		public HRESULT put_MeasurementPeriod(int32 lPeriod) mut => VT.put_MeasurementPeriod(ref this, lPeriod);
@@ -5179,11 +5191,11 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgent self, IEnumAgentSession** ppEnumAgentSession) EnumerateAgentSessions;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgent self, ITACDGroup* pACDGroup, ITAddress* pAddress, ITAgentSession** ppAgentSession) CreateSession;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgent self, ITACDGroup* pACDGroup, ITAddress* pAddress, BSTR pPIN, ITAgentSession** ppAgentSession) CreateSessionWithPIN;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgent self, BSTR* ppID) get_ID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgent self, BSTR* ppUser) get_User;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgent self, out IEnumAgentSession* ppEnumAgentSession) EnumerateAgentSessions;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgent self, ITACDGroup* pACDGroup, ITAddress* pAddress, out ITAgentSession* ppAgentSession) CreateSession;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgent self, ITACDGroup* pACDGroup, ITAddress* pAddress, BSTR pPIN, out ITAgentSession* ppAgentSession) CreateSessionWithPIN;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgent self, out BSTR ppID) get_ID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgent self, out BSTR ppUser) get_User;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgent self, AGENT_STATE AgentState) put_State;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgent self, out AGENT_STATE pAgentState) get_State;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgent self, int32 lPeriod) put_MeasurementPeriod;
@@ -5205,9 +5217,9 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Agent(ITAgent** ppAgent) mut => VT.get_Agent(ref this, ppAgent);
-		public HRESULT get_Address(ITAddress** ppAddress) mut => VT.get_Address(ref this, ppAddress);
-		public HRESULT get_ACDGroup(ITACDGroup** ppACDGroup) mut => VT.get_ACDGroup(ref this, ppACDGroup);
+		public HRESULT get_Agent(out ITAgent* ppAgent) mut => VT.get_Agent(ref this, out ppAgent);
+		public HRESULT get_Address(out ITAddress* ppAddress) mut => VT.get_Address(ref this, out ppAddress);
+		public HRESULT get_ACDGroup(out ITACDGroup* ppACDGroup) mut => VT.get_ACDGroup(ref this, out ppACDGroup);
 		public HRESULT put_State(AGENT_SESSION_STATE SessionState) mut => VT.put_State(ref this, SessionState);
 		public HRESULT get_State(out AGENT_SESSION_STATE pSessionState) mut => VT.get_State(ref this, out pSessionState);
 		public HRESULT get_SessionStartTime(out double pdateSessionStart) mut => VT.get_SessionStartTime(ref this, out pdateSessionStart);
@@ -5226,9 +5238,9 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentSession self, ITAgent** ppAgent) get_Agent;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentSession self, ITAddress** ppAddress) get_Address;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentSession self, ITACDGroup** ppACDGroup) get_ACDGroup;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentSession self, out ITAgent* ppAgent) get_Agent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentSession self, out ITAddress* ppAddress) get_Address;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentSession self, out ITACDGroup* ppACDGroup) get_ACDGroup;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentSession self, AGENT_SESSION_STATE SessionState) put_State;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentSession self, out AGENT_SESSION_STATE pSessionState) get_State;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentSession self, out double pdateSessionStart) get_SessionStartTime;
@@ -5252,15 +5264,15 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(BSTR* ppName) mut => VT.get_Name(ref this, ppName);
-		public HRESULT EnumerateQueues(IEnumQueue** ppEnumQueue) mut => VT.EnumerateQueues(ref this, ppEnumQueue);
+		public HRESULT get_Name(out BSTR ppName) mut => VT.get_Name(ref this, out ppName);
+		public HRESULT EnumerateQueues(out IEnumQueue* ppEnumQueue) mut => VT.EnumerateQueues(ref this, out ppEnumQueue);
 		public HRESULT get_Queues(out VARIANT pVariant) mut => VT.get_Queues(ref this, out pVariant);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITACDGroup self, BSTR* ppName) get_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITACDGroup self, IEnumQueue** ppEnumQueue) EnumerateQueues;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITACDGroup self, out BSTR ppName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITACDGroup self, out IEnumQueue* ppEnumQueue) EnumerateQueues;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITACDGroup self, out VARIANT pVariant) get_Queues;
 		}
 	}
@@ -5282,7 +5294,7 @@ static
 		public HRESULT get_CurrentLongestWaitTime(out int32 plWaitTime) mut => VT.get_CurrentLongestWaitTime(ref this, out plWaitTime);
 		public HRESULT get_AverageWaitTime(out int32 plWaitTime) mut => VT.get_AverageWaitTime(ref this, out plWaitTime);
 		public HRESULT get_FinalDisposition(out int32 plCalls) mut => VT.get_FinalDisposition(ref this, out plCalls);
-		public HRESULT get_Name(BSTR* ppName) mut => VT.get_Name(ref this, ppName);
+		public HRESULT get_Name(out BSTR ppName) mut => VT.get_Name(ref this, out ppName);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
@@ -5298,7 +5310,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITQueue self, out int32 plWaitTime) get_CurrentLongestWaitTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITQueue self, out int32 plWaitTime) get_AverageWaitTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITQueue self, out int32 plCalls) get_FinalDisposition;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITQueue self, BSTR* ppName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITQueue self, out BSTR ppName) get_Name;
 		}
 	}
 	[CRepr]
@@ -5308,13 +5320,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Agent(ITAgent** ppAgent) mut => VT.get_Agent(ref this, ppAgent);
+		public HRESULT get_Agent(out ITAgent* ppAgent) mut => VT.get_Agent(ref this, out ppAgent);
 		public HRESULT get_Event(out AGENT_EVENT pEvent) mut => VT.get_Event(ref this, out pEvent);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentEvent self, ITAgent** ppAgent) get_Agent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentEvent self, out ITAgent* ppAgent) get_Agent;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentEvent self, out AGENT_EVENT pEvent) get_Event;
 		}
 	}
@@ -5325,13 +5337,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Session(ITAgentSession** ppSession) mut => VT.get_Session(ref this, ppSession);
+		public HRESULT get_Session(out ITAgentSession* ppSession) mut => VT.get_Session(ref this, out ppSession);
 		public HRESULT get_Event(out AGENT_SESSION_EVENT pEvent) mut => VT.get_Event(ref this, out pEvent);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentSessionEvent self, ITAgentSession** ppSession) get_Session;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentSessionEvent self, out ITAgentSession* ppSession) get_Session;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentSessionEvent self, out AGENT_SESSION_EVENT pEvent) get_Event;
 		}
 	}
@@ -5342,13 +5354,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Group(ITACDGroup** ppGroup) mut => VT.get_Group(ref this, ppGroup);
+		public HRESULT get_Group(out ITACDGroup* ppGroup) mut => VT.get_Group(ref this, out ppGroup);
 		public HRESULT get_Event(out ACDGROUP_EVENT pEvent) mut => VT.get_Event(ref this, out pEvent);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITACDGroupEvent self, ITACDGroup** ppGroup) get_Group;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITACDGroupEvent self, out ITACDGroup* ppGroup) get_Group;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITACDGroupEvent self, out ACDGROUP_EVENT pEvent) get_Event;
 		}
 	}
@@ -5359,13 +5371,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Queue(ITQueue** ppQueue) mut => VT.get_Queue(ref this, ppQueue);
+		public HRESULT get_Queue(out ITQueue* ppQueue) mut => VT.get_Queue(ref this, out ppQueue);
 		public HRESULT get_Event(out ACDQUEUE_EVENT pEvent) mut => VT.get_Event(ref this, out pEvent);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITQueueEvent self, ITQueue** ppQueue) get_Queue;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITQueueEvent self, out ITQueue* ppQueue) get_Queue;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITQueueEvent self, out ACDQUEUE_EVENT pEvent) get_Event;
 		}
 	}
@@ -5376,13 +5388,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_AgentHandler(ITAgentHandler** ppAgentHandler) mut => VT.get_AgentHandler(ref this, ppAgentHandler);
+		public HRESULT get_AgentHandler(out ITAgentHandler* ppAgentHandler) mut => VT.get_AgentHandler(ref this, out ppAgentHandler);
 		public HRESULT get_Event(out AGENTHANDLER_EVENT pEvent) mut => VT.get_Event(ref this, out pEvent);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentHandlerEvent self, ITAgentHandler** ppAgentHandler) get_AgentHandler;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentHandlerEvent self, out ITAgentHandler* ppAgentHandler) get_AgentHandler;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentHandlerEvent self, out AGENTHANDLER_EVENT pEvent) get_Event;
 		}
 	}
@@ -5393,13 +5405,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT EnumerateAgentHandlers(IEnumAgentHandler** ppEnumHandler) mut => VT.EnumerateAgentHandlers(ref this, ppEnumHandler);
+		public HRESULT EnumerateAgentHandlers(out IEnumAgentHandler* ppEnumHandler) mut => VT.EnumerateAgentHandlers(ref this, out ppEnumHandler);
 		public HRESULT get_AgentHandlers(out VARIANT pVariant) mut => VT.get_AgentHandlers(ref this, out pVariant);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITTAPICallCenter self, IEnumAgentHandler** ppEnumHandler) EnumerateAgentHandlers;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITTAPICallCenter self, out IEnumAgentHandler* ppEnumHandler) EnumerateAgentHandlers;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITTAPICallCenter self, out VARIANT pVariant) get_AgentHandlers;
 		}
 	}
@@ -5410,22 +5422,22 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(BSTR* ppName) mut => VT.get_Name(ref this, ppName);
-		public HRESULT CreateAgent(ITAgent** ppAgent) mut => VT.CreateAgent(ref this, ppAgent);
-		public HRESULT CreateAgentWithID(BSTR pID, BSTR pPIN, ITAgent** ppAgent) mut => VT.CreateAgentWithID(ref this, pID, pPIN, ppAgent);
-		public HRESULT EnumerateACDGroups(IEnumACDGroup** ppEnumACDGroup) mut => VT.EnumerateACDGroups(ref this, ppEnumACDGroup);
-		public HRESULT EnumerateUsableAddresses(IEnumAddress** ppEnumAddress) mut => VT.EnumerateUsableAddresses(ref this, ppEnumAddress);
+		public HRESULT get_Name(out BSTR ppName) mut => VT.get_Name(ref this, out ppName);
+		public HRESULT CreateAgent(out ITAgent* ppAgent) mut => VT.CreateAgent(ref this, out ppAgent);
+		public HRESULT CreateAgentWithID(BSTR pID, BSTR pPIN, out ITAgent* ppAgent) mut => VT.CreateAgentWithID(ref this, pID, pPIN, out ppAgent);
+		public HRESULT EnumerateACDGroups(out IEnumACDGroup* ppEnumACDGroup) mut => VT.EnumerateACDGroups(ref this, out ppEnumACDGroup);
+		public HRESULT EnumerateUsableAddresses(out IEnumAddress* ppEnumAddress) mut => VT.EnumerateUsableAddresses(ref this, out ppEnumAddress);
 		public HRESULT get_ACDGroups(out VARIANT pVariant) mut => VT.get_ACDGroups(ref this, out pVariant);
 		public HRESULT get_UsableAddresses(out VARIANT pVariant) mut => VT.get_UsableAddresses(ref this, out pVariant);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentHandler self, BSTR* ppName) get_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentHandler self, ITAgent** ppAgent) CreateAgent;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentHandler self, BSTR pID, BSTR pPIN, ITAgent** ppAgent) CreateAgentWithID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentHandler self, IEnumACDGroup** ppEnumACDGroup) EnumerateACDGroups;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentHandler self, IEnumAddress** ppEnumAddress) EnumerateUsableAddresses;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentHandler self, out BSTR ppName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentHandler self, out ITAgent* ppAgent) CreateAgent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentHandler self, BSTR pID, BSTR pPIN, out ITAgent* ppAgent) CreateAgentWithID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentHandler self, out IEnumACDGroup* ppEnumACDGroup) EnumerateACDGroups;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentHandler self, out IEnumAddress* ppEnumAddress) EnumerateUsableAddresses;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentHandler self, out VARIANT pVariant) get_ACDGroups;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAgentHandler self, out VARIANT pVariant) get_UsableAddresses;
 		}
@@ -5437,18 +5449,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Next(uint32 celt, ITAgent** ppElements, out uint32 pceltFetched) mut => VT.Next(ref this, celt, ppElements, out pceltFetched);
+		public HRESULT Next(uint32 celt, out ITAgent* ppElements, out uint32 pceltFetched) mut => VT.Next(ref this, celt, out ppElements, out pceltFetched);
 		public HRESULT Reset() mut => VT.Reset(ref this);
 		public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
-		public HRESULT Clone(IEnumAgent** ppEnum) mut => VT.Clone(ref this, ppEnum);
+		public HRESULT Clone(out IEnumAgent* ppEnum) mut => VT.Clone(ref this, out ppEnum);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgent self, uint32 celt, ITAgent** ppElements, out uint32 pceltFetched) Next;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgent self, uint32 celt, out ITAgent* ppElements, out uint32 pceltFetched) Next;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgent self) Reset;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgent self, uint32 celt) Skip;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgent self, IEnumAgent** ppEnum) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgent self, out IEnumAgent* ppEnum) Clone;
 		}
 	}
 	[CRepr]
@@ -5458,18 +5470,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Next(uint32 celt, ITAgentSession** ppElements, out uint32 pceltFetched) mut => VT.Next(ref this, celt, ppElements, out pceltFetched);
+		public HRESULT Next(uint32 celt, out ITAgentSession* ppElements, out uint32 pceltFetched) mut => VT.Next(ref this, celt, out ppElements, out pceltFetched);
 		public HRESULT Reset() mut => VT.Reset(ref this);
 		public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
-		public HRESULT Clone(IEnumAgentSession** ppEnum) mut => VT.Clone(ref this, ppEnum);
+		public HRESULT Clone(out IEnumAgentSession* ppEnum) mut => VT.Clone(ref this, out ppEnum);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgentSession self, uint32 celt, ITAgentSession** ppElements, out uint32 pceltFetched) Next;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgentSession self, uint32 celt, out ITAgentSession* ppElements, out uint32 pceltFetched) Next;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgentSession self) Reset;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgentSession self, uint32 celt) Skip;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgentSession self, IEnumAgentSession** ppEnum) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgentSession self, out IEnumAgentSession* ppEnum) Clone;
 		}
 	}
 	[CRepr]
@@ -5479,18 +5491,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Next(uint32 celt, ITQueue** ppElements, out uint32 pceltFetched) mut => VT.Next(ref this, celt, ppElements, out pceltFetched);
+		public HRESULT Next(uint32 celt, out ITQueue* ppElements, out uint32 pceltFetched) mut => VT.Next(ref this, celt, out ppElements, out pceltFetched);
 		public HRESULT Reset() mut => VT.Reset(ref this);
 		public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
-		public HRESULT Clone(IEnumQueue** ppEnum) mut => VT.Clone(ref this, ppEnum);
+		public HRESULT Clone(out IEnumQueue* ppEnum) mut => VT.Clone(ref this, out ppEnum);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumQueue self, uint32 celt, ITQueue** ppElements, out uint32 pceltFetched) Next;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumQueue self, uint32 celt, out ITQueue* ppElements, out uint32 pceltFetched) Next;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumQueue self) Reset;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumQueue self, uint32 celt) Skip;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumQueue self, IEnumQueue** ppEnum) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumQueue self, out IEnumQueue* ppEnum) Clone;
 		}
 	}
 	[CRepr]
@@ -5500,18 +5512,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Next(uint32 celt, ITACDGroup** ppElements, out uint32 pceltFetched) mut => VT.Next(ref this, celt, ppElements, out pceltFetched);
+		public HRESULT Next(uint32 celt, out ITACDGroup* ppElements, out uint32 pceltFetched) mut => VT.Next(ref this, celt, out ppElements, out pceltFetched);
 		public HRESULT Reset() mut => VT.Reset(ref this);
 		public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
-		public HRESULT Clone(IEnumACDGroup** ppEnum) mut => VT.Clone(ref this, ppEnum);
+		public HRESULT Clone(out IEnumACDGroup* ppEnum) mut => VT.Clone(ref this, out ppEnum);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumACDGroup self, uint32 celt, ITACDGroup** ppElements, out uint32 pceltFetched) Next;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumACDGroup self, uint32 celt, out ITACDGroup* ppElements, out uint32 pceltFetched) Next;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumACDGroup self) Reset;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumACDGroup self, uint32 celt) Skip;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumACDGroup self, IEnumACDGroup** ppEnum) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumACDGroup self, out IEnumACDGroup* ppEnum) Clone;
 		}
 	}
 	[CRepr]
@@ -5521,18 +5533,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Next(uint32 celt, ITAgentHandler** ppElements, out uint32 pceltFetched) mut => VT.Next(ref this, celt, ppElements, out pceltFetched);
+		public HRESULT Next(uint32 celt, out ITAgentHandler* ppElements, out uint32 pceltFetched) mut => VT.Next(ref this, celt, out ppElements, out pceltFetched);
 		public HRESULT Reset() mut => VT.Reset(ref this);
 		public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
-		public HRESULT Clone(IEnumAgentHandler** ppEnum) mut => VT.Clone(ref this, ppEnum);
+		public HRESULT Clone(out IEnumAgentHandler* ppEnum) mut => VT.Clone(ref this, out ppEnum);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgentHandler self, uint32 celt, ITAgentHandler** ppElements, out uint32 pceltFetched) Next;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgentHandler self, uint32 celt, out ITAgentHandler* ppElements, out uint32 pceltFetched) Next;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgentHandler self) Reset;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgentHandler self, uint32 celt) Skip;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgentHandler self, IEnumAgentHandler** ppEnum) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumAgentHandler self, out IEnumAgentHandler* ppEnum) Clone;
 		}
 	}
 	[CRepr]
@@ -5542,13 +5554,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_MediaFormat(AM_MEDIA_TYPE** ppmt) mut => VT.get_MediaFormat(ref this, ppmt);
+		public HRESULT get_MediaFormat(out AM_MEDIA_TYPE* ppmt) mut => VT.get_MediaFormat(ref this, out ppmt);
 		public HRESULT put_MediaFormat(in AM_MEDIA_TYPE pmt) mut => VT.put_MediaFormat(ref this, pmt);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAMMediaFormat self, AM_MEDIA_TYPE** ppmt) get_MediaFormat;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAMMediaFormat self, out AM_MEDIA_TYPE* ppmt) get_MediaFormat;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITAMMediaFormat self, in AM_MEDIA_TYPE pmt) put_MediaFormat;
 		}
 	}
@@ -5618,7 +5630,7 @@ static
 		
 		public HRESULT Initialize(ref int32 hEvent) mut => VT.Initialize(ref this, ref hEvent);
 		public HRESULT Shutdown() mut => VT.Shutdown(ref this);
-		public HRESULT CreateMSPCall(ref int32 hCall, uint32 dwReserved, uint32 dwMediaType, IUnknown* pOuterUnknown, IUnknown** ppStreamControl) mut => VT.CreateMSPCall(ref this, ref hCall, dwReserved, dwMediaType, pOuterUnknown, ppStreamControl);
+		public HRESULT CreateMSPCall(ref int32 hCall, uint32 dwReserved, uint32 dwMediaType, IUnknown* pOuterUnknown, out IUnknown* ppStreamControl) mut => VT.CreateMSPCall(ref this, ref hCall, dwReserved, dwMediaType, pOuterUnknown, out ppStreamControl);
 		public HRESULT ShutdownMSPCall(IUnknown* pStreamControl) mut => VT.ShutdownMSPCall(ref this, pStreamControl);
 		public HRESULT ReceiveTSPData(IUnknown* pMSPCall, uint8* pBuffer, uint32 dwSize) mut => VT.ReceiveTSPData(ref this, pMSPCall, pBuffer, dwSize);
 		public HRESULT GetEvent(out uint32 pdwSize, uint8* pEventBuffer) mut => VT.GetEvent(ref this, out pdwSize, pEventBuffer);
@@ -5628,7 +5640,7 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITMSPAddress self, ref int32 hEvent) Initialize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITMSPAddress self) Shutdown;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITMSPAddress self, ref int32 hCall, uint32 dwReserved, uint32 dwMediaType, IUnknown* pOuterUnknown, IUnknown** ppStreamControl) CreateMSPCall;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITMSPAddress self, ref int32 hCall, uint32 dwReserved, uint32 dwMediaType, IUnknown* pOuterUnknown, out IUnknown* ppStreamControl) CreateMSPCall;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITMSPAddress self, IUnknown* pStreamControl) ShutdownMSPCall;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITMSPAddress self, IUnknown* pMSPCall, uint8* pBuffer, uint32 dwSize) ReceiveTSPData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITMSPAddress self, out uint32 pdwSize, uint8* pEventBuffer) GetEvent;
@@ -5883,7 +5895,7 @@ static
 		public HRESULT get_ScopeID(out int32 pID) mut => VT.get_ScopeID(ref this, out pID);
 		public HRESULT get_ServerID(out int32 pID) mut => VT.get_ServerID(ref this, out pID);
 		public HRESULT get_InterfaceID(out int32 pID) mut => VT.get_InterfaceID(ref this, out pID);
-		public HRESULT get_ScopeDescription(BSTR* ppDescription) mut => VT.get_ScopeDescription(ref this, ppDescription);
+		public HRESULT get_ScopeDescription(out BSTR ppDescription) mut => VT.get_ScopeDescription(ref this, out ppDescription);
 		public HRESULT get_TTL(out int32 pTTL) mut => VT.get_TTL(ref this, out pTTL);
 
 		[CRepr]
@@ -5892,7 +5904,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastScope self, out int32 pID) get_ScopeID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastScope self, out int32 pID) get_ServerID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastScope self, out int32 pID) get_InterfaceID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastScope self, BSTR* ppDescription) get_ScopeDescription;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastScope self, out BSTR ppDescription) get_ScopeDescription;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastScope self, out int32 pTTL) get_TTL;
 		}
 	}
@@ -5903,30 +5915,30 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_RequestID(BSTR* ppRequestID) mut => VT.get_RequestID(ref this, ppRequestID);
+		public HRESULT get_RequestID(out BSTR ppRequestID) mut => VT.get_RequestID(ref this, out ppRequestID);
 		public HRESULT get_LeaseStartTime(out double pTime) mut => VT.get_LeaseStartTime(ref this, out pTime);
 		public HRESULT put_LeaseStartTime(double time) mut => VT.put_LeaseStartTime(ref this, time);
 		public HRESULT get_LeaseStopTime(out double pTime) mut => VT.get_LeaseStopTime(ref this, out pTime);
 		public HRESULT put_LeaseStopTime(double time) mut => VT.put_LeaseStopTime(ref this, time);
 		public HRESULT get_AddressCount(out int32 pCount) mut => VT.get_AddressCount(ref this, out pCount);
-		public HRESULT get_ServerAddress(BSTR* ppAddress) mut => VT.get_ServerAddress(ref this, ppAddress);
+		public HRESULT get_ServerAddress(out BSTR ppAddress) mut => VT.get_ServerAddress(ref this, out ppAddress);
 		public HRESULT get_TTL(out int32 pTTL) mut => VT.get_TTL(ref this, out pTTL);
 		public HRESULT get_Addresses(out VARIANT pVariant) mut => VT.get_Addresses(ref this, out pVariant);
-		public HRESULT EnumerateAddresses(IEnumBstr** ppEnumAddresses) mut => VT.EnumerateAddresses(ref this, ppEnumAddresses);
+		public HRESULT EnumerateAddresses(out IEnumBstr* ppEnumAddresses) mut => VT.EnumerateAddresses(ref this, out ppEnumAddresses);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastLeaseInfo self, BSTR* ppRequestID) get_RequestID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastLeaseInfo self, out BSTR ppRequestID) get_RequestID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastLeaseInfo self, out double pTime) get_LeaseStartTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastLeaseInfo self, double time) put_LeaseStartTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastLeaseInfo self, out double pTime) get_LeaseStopTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastLeaseInfo self, double time) put_LeaseStopTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastLeaseInfo self, out int32 pCount) get_AddressCount;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastLeaseInfo self, BSTR* ppAddress) get_ServerAddress;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastLeaseInfo self, out BSTR ppAddress) get_ServerAddress;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastLeaseInfo self, out int32 pTTL) get_TTL;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastLeaseInfo self, out VARIANT pVariant) get_Addresses;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastLeaseInfo self, IEnumBstr** ppEnumAddresses) EnumerateAddresses;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastLeaseInfo self, out IEnumBstr* ppEnumAddresses) EnumerateAddresses;
 		}
 	}
 	[CRepr]
@@ -5936,18 +5948,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Next(uint32 celt, IMcastScope** ppScopes, uint32* pceltFetched) mut => VT.Next(ref this, celt, ppScopes, pceltFetched);
+		public HRESULT Next(uint32 celt, out IMcastScope* ppScopes, uint32* pceltFetched) mut => VT.Next(ref this, celt, out ppScopes, pceltFetched);
 		public HRESULT Reset() mut => VT.Reset(ref this);
 		public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
-		public HRESULT Clone(IEnumMcastScope** ppEnum) mut => VT.Clone(ref this, ppEnum);
+		public HRESULT Clone(out IEnumMcastScope* ppEnum) mut => VT.Clone(ref this, out ppEnum);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMcastScope self, uint32 celt, IMcastScope** ppScopes, uint32* pceltFetched) Next;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMcastScope self, uint32 celt, out IMcastScope* ppScopes, uint32* pceltFetched) Next;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMcastScope self) Reset;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMcastScope self, uint32 celt) Skip;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMcastScope self, IEnumMcastScope** ppEnum) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMcastScope self, out IEnumMcastScope* ppEnum) Clone;
 		}
 	}
 	[CRepr]
@@ -5958,23 +5970,23 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Scopes(out VARIANT pVariant) mut => VT.get_Scopes(ref this, out pVariant);
-		public HRESULT EnumerateScopes(IEnumMcastScope** ppEnumMcastScope) mut => VT.EnumerateScopes(ref this, ppEnumMcastScope);
-		public HRESULT RequestAddress(IMcastScope* pScope, double LeaseStartTime, double LeaseStopTime, int32 NumAddresses, IMcastLeaseInfo** ppLeaseResponse) mut => VT.RequestAddress(ref this, pScope, LeaseStartTime, LeaseStopTime, NumAddresses, ppLeaseResponse);
-		public HRESULT RenewAddress(int32 lReserved, IMcastLeaseInfo* pRenewRequest, IMcastLeaseInfo** ppRenewResponse) mut => VT.RenewAddress(ref this, lReserved, pRenewRequest, ppRenewResponse);
+		public HRESULT EnumerateScopes(out IEnumMcastScope* ppEnumMcastScope) mut => VT.EnumerateScopes(ref this, out ppEnumMcastScope);
+		public HRESULT RequestAddress(IMcastScope* pScope, double LeaseStartTime, double LeaseStopTime, int32 NumAddresses, out IMcastLeaseInfo* ppLeaseResponse) mut => VT.RequestAddress(ref this, pScope, LeaseStartTime, LeaseStopTime, NumAddresses, out ppLeaseResponse);
+		public HRESULT RenewAddress(int32 lReserved, IMcastLeaseInfo* pRenewRequest, out IMcastLeaseInfo* ppRenewResponse) mut => VT.RenewAddress(ref this, lReserved, pRenewRequest, out ppRenewResponse);
 		public HRESULT ReleaseAddress(IMcastLeaseInfo* pReleaseRequest) mut => VT.ReleaseAddress(ref this, pReleaseRequest);
-		public HRESULT CreateLeaseInfo(double LeaseStartTime, double LeaseStopTime, uint32 dwNumAddresses, PWSTR* ppAddresses, PWSTR pRequestID, PWSTR pServerAddress, IMcastLeaseInfo** ppReleaseRequest) mut => VT.CreateLeaseInfo(ref this, LeaseStartTime, LeaseStopTime, dwNumAddresses, ppAddresses, pRequestID, pServerAddress, ppReleaseRequest);
-		public HRESULT CreateLeaseInfoFromVariant(double LeaseStartTime, double LeaseStopTime, VARIANT vAddresses, BSTR pRequestID, BSTR pServerAddress, IMcastLeaseInfo** ppReleaseRequest) mut => VT.CreateLeaseInfoFromVariant(ref this, LeaseStartTime, LeaseStopTime, vAddresses, pRequestID, pServerAddress, ppReleaseRequest);
+		public HRESULT CreateLeaseInfo(double LeaseStartTime, double LeaseStopTime, uint32 dwNumAddresses, ref PWSTR ppAddresses, PWSTR pRequestID, PWSTR pServerAddress, out IMcastLeaseInfo* ppReleaseRequest) mut => VT.CreateLeaseInfo(ref this, LeaseStartTime, LeaseStopTime, dwNumAddresses, ref ppAddresses, pRequestID, pServerAddress, out ppReleaseRequest);
+		public HRESULT CreateLeaseInfoFromVariant(double LeaseStartTime, double LeaseStopTime, VARIANT vAddresses, BSTR pRequestID, BSTR pServerAddress, out IMcastLeaseInfo* ppReleaseRequest) mut => VT.CreateLeaseInfoFromVariant(ref this, LeaseStartTime, LeaseStopTime, vAddresses, pRequestID, pServerAddress, out ppReleaseRequest);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastAddressAllocation self, out VARIANT pVariant) get_Scopes;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastAddressAllocation self, IEnumMcastScope** ppEnumMcastScope) EnumerateScopes;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastAddressAllocation self, IMcastScope* pScope, double LeaseStartTime, double LeaseStopTime, int32 NumAddresses, IMcastLeaseInfo** ppLeaseResponse) RequestAddress;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastAddressAllocation self, int32 lReserved, IMcastLeaseInfo* pRenewRequest, IMcastLeaseInfo** ppRenewResponse) RenewAddress;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastAddressAllocation self, out IEnumMcastScope* ppEnumMcastScope) EnumerateScopes;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastAddressAllocation self, IMcastScope* pScope, double LeaseStartTime, double LeaseStopTime, int32 NumAddresses, out IMcastLeaseInfo* ppLeaseResponse) RequestAddress;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastAddressAllocation self, int32 lReserved, IMcastLeaseInfo* pRenewRequest, out IMcastLeaseInfo* ppRenewResponse) RenewAddress;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastAddressAllocation self, IMcastLeaseInfo* pReleaseRequest) ReleaseAddress;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastAddressAllocation self, double LeaseStartTime, double LeaseStopTime, uint32 dwNumAddresses, PWSTR* ppAddresses, PWSTR pRequestID, PWSTR pServerAddress, IMcastLeaseInfo** ppReleaseRequest) CreateLeaseInfo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastAddressAllocation self, double LeaseStartTime, double LeaseStopTime, VARIANT vAddresses, BSTR pRequestID, BSTR pServerAddress, IMcastLeaseInfo** ppReleaseRequest) CreateLeaseInfoFromVariant;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastAddressAllocation self, double LeaseStartTime, double LeaseStopTime, uint32 dwNumAddresses, ref PWSTR ppAddresses, PWSTR pRequestID, PWSTR pServerAddress, out IMcastLeaseInfo* ppReleaseRequest) CreateLeaseInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMcastAddressAllocation self, double LeaseStartTime, double LeaseStopTime, VARIANT vAddresses, BSTR pRequestID, BSTR pServerAddress, out IMcastLeaseInfo* ppReleaseRequest) CreateLeaseInfoFromVariant;
 		}
 	}
 	[CRepr]

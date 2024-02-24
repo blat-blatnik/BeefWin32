@@ -45,6 +45,12 @@ static
 	public const float FXECHO_MIN_DELAY = 1f;
 	public const float FXECHO_MAX_DELAY = 2000f;
 	public const float FXECHO_DEFAULT_DELAY = 500f;
+	public const String XAUDIO2_DLL_A = "xaudio2_9.dll";
+	public const String XAUDIO2_DLL_W = "xaudio2_9.dll";
+	public const String XAUDIO2D_DLL_A = "xaudio2_9d.dll";
+	public const String XAUDIO2D_DLL_W = "xaudio2_9d.dll";
+	public const String XAUDIO2_DLL = "xaudio2_9.dll";
+	public const String XAUDIO2D_DLL = "xaudio2_9d.dll";
 	public const uint32 XAUDIO2_MAX_BUFFER_BYTES = 2147483648;
 	public const uint32 XAUDIO2_MAX_QUEUED_BUFFERS = 64;
 	public const uint32 XAUDIO2_MAX_BUFFERS_SYSTEM = 2;

@@ -100,6 +100,41 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"MSSIP_ADDINFO_NONE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MSSIP_ADDINFO_FLAT"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MSSIP_ADDINFO_CATMEMBER"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MSSIP_ADDINFO_BLOB"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":3
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MSSIP_ADDINFO_NONMSSIP"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":500
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SIP_CAP_SET_VERSION_2"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -174,7 +209,7 @@
 				,"PackingSize":0
 				,"Fields":[
 					{"Name":"psFlat","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MS_ADDINFO_FLAT","TargetKind":"Default","Api":"Security.Cryptography.Sip","Parents":[]}},"Attrs":[]}
-					,{"Name":"psCatMember","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MS_ADDINFO_CATALOGMEMBER","TargetKind":"Default","Api":"Security.Cryptography.Sip","Parents":[]}},"Attrs":[]}
+					,{"Name":"psCatMember","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MS_ADDINFO_CATALOGMEMBER","TargetKind":"Default","Api":"Security.Cryptography.Catalog","Parents":[]}},"Attrs":[]}
 					,{"Name":"psBlob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MS_ADDINFO_BLOB","TargetKind":"Default","Api":"Security.Cryptography.Sip","Parents":[]}},"Attrs":[]}
 				]
 				,"NestedTypes":[
@@ -192,21 +227,6 @@
 		,"Fields":[
 			{"Name":"cbStruct","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"pIndirectData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SIP_INDIRECT_DATA","TargetKind":"Default","Api":"Security.Cryptography.Sip","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"MS_ADDINFO_CATALOGMEMBER"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"cbStruct","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"pStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CRYPTCATSTORE","TargetKind":"Default","Api":"Security.Cryptography.Catalog","Parents":[]}},"Attrs":[]}
-			,{"Name":"pMember","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CRYPTCATMEMBER","TargetKind":"Default","Api":"Security.Cryptography.Catalog","Parents":[]}},"Attrs":[]}
 		]
 		,"NestedTypes":[
 		]

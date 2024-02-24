@@ -344,6 +344,7 @@
 		,"Platform":"windows10.0.17134"
 		,"Kind":"Com"
 		,"Guid":"e2eeb6a9-f31f-4055-a521-e30b5b33664a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -406,6 +407,7 @@
 		,"Platform":"windows10.0.17134"
 		,"Kind":"Com"
 		,"Guid":"95848f9e-583d-4054-af12-916387cd8426"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -452,6 +454,7 @@
 		,"Platform":"windows10.0.17134"
 		,"Kind":"Com"
 		,"Guid":"a0425329-40ae-48d9-bce3-829ef7b8a41a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -512,6 +515,7 @@
 		,"Platform":"windows10.0.17134"
 		,"Kind":"Com"
 		,"Guid":"a807b84d-4ae5-4bc0-a76a-941aa246bd41"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -621,6 +625,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4b1b1759-ec40-466c-aab4-beb5347fd24c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -690,6 +695,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f20e8cbe-3b28-4248-be95-f96fbc6e4643"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -765,6 +771,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5459b53d-a0fc-4665-addd-70171ef7e631"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMLOperatorAttributes","TargetKind":"Com","Api":"AI.MachineLearning.WinML","Parents":[]}
 		,"Methods":[
 			{
@@ -882,6 +889,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7fe41f41-f430-440e-aece-54416dc8b9db"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -972,6 +980,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"82536a28-f022-4769-9d3f-8b278f84c0c3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1048,6 +1057,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"11c4b4a0-b467-4eaa-a1a6-b961d8d0ed79"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1142,6 +1152,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"105b6b29-5408-4a68-9959-09b5955a3492"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMLOperatorAttributes","TargetKind":"Com","Api":"AI.MachineLearning.WinML","Parents":[]}
 		,"Methods":[
 			{
@@ -1252,6 +1263,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ec893bb1-f938-427b-8488-c8dcf775f138"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMLOperatorAttributes","TargetKind":"Com","Api":"AI.MachineLearning.WinML","Parents":[]}
 		,"Methods":[
 			{
@@ -1334,6 +1346,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"781aeb48-9bcb-4797-bf77-8bf455217beb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1356,6 +1369,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"540be5be-a6c9-40ee-83f6-d2b8b40a7798"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1512,6 +1526,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ef15ad6f-0dc9-4908-ab35-a575a30dfbf8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1535,6 +1550,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2af9dd2d-b516-4672-9ab5-530c208493ad"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

@@ -1,6 +1,20 @@
 {
 
 "Constants":[
+	{
+		"Name":"ID_GDF_XML_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"__GDF_XML"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ID_GDF_THUMBNAIL_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"__GDF_THUMBNAIL"
+		,"Attrs":[]
+	}
 ]
 
 ,"Types":[
@@ -38,6 +52,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e7b2fb72-d728-49b3-a5f2-18ebf5f1349e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -126,6 +141,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3887c9ca-04a0-42ae-bc4c-5fa6c7721145"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -211,7 +227,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"categoryIndex","Type":{"Kind":"Native","Name":"UInt16"},"Attrs":["In"]}
-					,{"Name":"pTitle","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pTitle","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -288,6 +304,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"aff3ea11-e70e-407d-95dd-35e612c41ce2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -302,7 +319,7 @@
 					{"Name":"GDFBinaryPath","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 					,{"Name":"openType","Type":{"Kind":"ApiRef","Name":"GAMESTATS_OPEN_TYPE","TargetKind":"Default","Api":"Gaming","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pOpenResult","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"GAMESTATS_OPEN_RESULT","TargetKind":"Default","Api":"Gaming","Parents":[]}},"Attrs":["Out"]}
-					,{"Name":"ppiStats","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IGameStatistics","TargetKind":"Com","Api":"Gaming","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppiStats","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IGameStatistics","TargetKind":"Com","Api":"Gaming","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -325,6 +342,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"86874aa7-a1ed-450d-a7eb-b89e20b2fff3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -514,6 +532,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"eb5ddb08-8bbf-449b-ac21-b02ddeb3b136"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -609,6 +628,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"46ce0225-f267-4d68-b299-b2762552dec1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -859,6 +879,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"75d760b0-60b9-412d-994f-26b2cd5f7812"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

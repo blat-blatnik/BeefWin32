@@ -23,6 +23,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"CINULLCATALOG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"::_noindex_::"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CIADMIN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"::_nodocstore_::"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"LIFF_LOAD_DEFINED_FILTER"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1111,6 +1125,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"89bcb740-6119-101a-bcb7-00dd010655af"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1187,6 +1202,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"cc906ff0-c058-101a-b554-08002b33b0e6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

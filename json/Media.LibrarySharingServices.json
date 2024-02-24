@@ -31,6 +31,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"81e26927-7a7d-40a7-81d4-bddc02960e3e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -69,6 +70,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"c4623214-6b06-40c5-a623-b2ff4c076bfd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -78,9 +80,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"property","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWindowsMediaLibrarySharingDeviceProperty","TargetKind":"Com","Api":"Media.LibrarySharingServices","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -121,6 +121,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"3dccc293-4fd9-4191-a25b-8e57c5d27bd4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -187,6 +188,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"1803f9d6-fe6d-4546-bf5b-992fe8ec12d1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -196,9 +198,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"device","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWindowsMediaLibrarySharingDevice","TargetKind":"Com","Api":"Media.LibrarySharingServices","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -239,6 +239,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"01f5f85e-0a81-40da-a7c8-21ef3af8440c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

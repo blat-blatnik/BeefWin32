@@ -2287,6 +2287,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DnsReleaseContextHandle"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"IP4_ARRAY"
@@ -4092,7 +4093,7 @@
 		,"Params":[
 			{"Name":"Status","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"pQueryContext","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
-			,{"Name":"pDnsRecord","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DNS_RECORDA","TargetKind":"Default","Api":"NetworkManagement.Dns","Parents":[]}},"Attrs":["In"]}
+			,{"Name":"pDnsRecord","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DNS_RECORDW","TargetKind":"Default","Api":"NetworkManagement.Dns","Parents":[]}},"Attrs":["In"]}
 		]
 	}
 	,{

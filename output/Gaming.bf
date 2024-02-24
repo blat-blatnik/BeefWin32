@@ -7,6 +7,11 @@ using Win32.System.WinRT;
 
 static
 {
+	#region Constants
+	public const String ID_GDF_XML_STR = "__GDF_XML";
+	public const String ID_GDF_THUMBNAIL_STR = "__GDF_THUMBNAIL";
+	#endregion
+	
 	#region Enums
 	public enum GAME_INSTALL_SCOPE : int32
 	{
@@ -132,7 +137,7 @@ static
 		public HRESULT GetMaxCategories(out uint16 pMax) mut => VT.GetMaxCategories(ref this, out pMax);
 		public HRESULT GetMaxStatsPerCategory(out uint16 pMax) mut => VT.GetMaxStatsPerCategory(ref this, out pMax);
 		public HRESULT SetCategoryTitle(uint16 categoryIndex, PWSTR title) mut => VT.SetCategoryTitle(ref this, categoryIndex, title);
-		public HRESULT GetCategoryTitle(uint16 categoryIndex, PWSTR* pTitle) mut => VT.GetCategoryTitle(ref this, categoryIndex, pTitle);
+		public HRESULT GetCategoryTitle(uint16 categoryIndex, out PWSTR pTitle) mut => VT.GetCategoryTitle(ref this, categoryIndex, out pTitle);
 		public HRESULT GetStatistic(uint16 categoryIndex, uint16 statIndex, PWSTR* pName, PWSTR* pValue) mut => VT.GetStatistic(ref this, categoryIndex, statIndex, pName, pValue);
 		public HRESULT SetStatistic(uint16 categoryIndex, uint16 statIndex, PWSTR name, PWSTR value) mut => VT.SetStatistic(ref this, categoryIndex, statIndex, name, value);
 		public HRESULT Save(BOOL trackChanges) mut => VT.Save(ref this, trackChanges);
@@ -148,7 +153,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, out uint16 pMax) GetMaxCategories;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, out uint16 pMax) GetMaxStatsPerCategory;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, uint16 categoryIndex, PWSTR title) SetCategoryTitle;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, uint16 categoryIndex, PWSTR* pTitle) GetCategoryTitle;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, uint16 categoryIndex, out PWSTR pTitle) GetCategoryTitle;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, uint16 categoryIndex, uint16 statIndex, PWSTR* pName, PWSTR* pValue) GetStatistic;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, uint16 categoryIndex, uint16 statIndex, PWSTR name, PWSTR value) SetStatistic;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, BOOL trackChanges) Save;
@@ -163,13 +168,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetGameStatistics(PWSTR GDFBinaryPath, GAMESTATS_OPEN_TYPE openType, out GAMESTATS_OPEN_RESULT pOpenResult, IGameStatistics** ppiStats) mut => VT.GetGameStatistics(ref this, GDFBinaryPath, openType, out pOpenResult, ppiStats);
+		public HRESULT GetGameStatistics(PWSTR GDFBinaryPath, GAMESTATS_OPEN_TYPE openType, out GAMESTATS_OPEN_RESULT pOpenResult, out IGameStatistics* ppiStats) mut => VT.GetGameStatistics(ref this, GDFBinaryPath, openType, out pOpenResult, out ppiStats);
 		public HRESULT RemoveGameStatistics(PWSTR GDFBinaryPath) mut => VT.RemoveGameStatistics(ref this, GDFBinaryPath);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatisticsMgr self, PWSTR GDFBinaryPath, GAMESTATS_OPEN_TYPE openType, out GAMESTATS_OPEN_RESULT pOpenResult, IGameStatistics** ppiStats) GetGameStatistics;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatisticsMgr self, PWSTR GDFBinaryPath, GAMESTATS_OPEN_TYPE openType, out GAMESTATS_OPEN_RESULT pOpenResult, out IGameStatistics* ppiStats) GetGameStatistics;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatisticsMgr self, PWSTR GDFBinaryPath) RemoveGameStatistics;
 		}
 	}

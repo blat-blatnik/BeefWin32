@@ -10,6 +10,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0e3da342-b11c-484b-9c1c-be0d61c2f6c5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IInspectable","TargetKind":"Com","Api":"System.WinRT","Parents":[]}
 		,"Methods":[
 			{

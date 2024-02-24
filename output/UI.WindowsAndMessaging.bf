@@ -13,6 +13,10 @@ static
 	public const uint32 BSM_VXDS = 1;
 	public const uint32 BSM_NETDRIVER = 2;
 	public const uint32 BSM_INSTALLABLEDRIVERS = 4;
+	public const uint32 WM_CONTEXTMENU = 123;
+	public const uint32 WM_UNICHAR = 265;
+	public const uint32 WM_PRINTCLIENT = 792;
+	public const uint32 WM_NOTIFY = 78;
 	public const PWSTR RT_CURSOR = (PWSTR)(void*)1;
 	public const PWSTR RT_BITMAP = (PWSTR)(void*)2;
 	public const PWSTR RT_ICON = (PWSTR)(void*)3;
@@ -617,7 +621,6 @@ static
 	public const uint32 SM_RESERVED4 = 27;
 	public const uint32 SM_CMETRICS = 76;
 	public const uint32 SM_CARETBLINKINGENABLED = 8194;
-	public const uint32 SM_SYSTEMDOCKED = 8196;
 	public const uint32 PMB_ACTIVE = 1;
 	public const uint32 MNC_IGNORE = 0;
 	public const uint32 MNC_CLOSE = 1;
@@ -2277,7 +2280,7 @@ static
 		SLOWMACHINE = 73,
 		STARTER = 88,
 		SWAPBUTTON = 23,
-		SYSTEMDOCKED_ = 8196,
+		SYSTEMDOCKED = 8196,
 		TABLETPC = 86,
 		XVIRTUALSCREEN = 76,
 		YVIRTUALSCREEN = 77,
@@ -3228,9 +3231,9 @@ static
 	
 	#region Functions
 	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 LoadStringA(HINSTANCE hInstance, uint32 uID, uint8* lpBuffer, int32 cchBufferMax);
+	public static extern int32 LoadStringA(HINSTANCE hInstance, uint32 uID, PSTR lpBuffer, int32 cchBufferMax);
 	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 LoadStringW(HINSTANCE hInstance, uint32 uID, char16* lpBuffer, int32 cchBufferMax);
+	public static extern int32 LoadStringW(HINSTANCE hInstance, uint32 uID, PWSTR lpBuffer, int32 cchBufferMax);
 	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 wvsprintfA(PSTR param0, PSTR param1, ref int8 arglist);
 	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]

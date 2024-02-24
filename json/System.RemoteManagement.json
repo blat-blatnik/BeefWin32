@@ -37,6 +37,62 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WSMAN_STREAM_ID_STDIN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"stdin"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WSMAN_STREAM_ID_STDOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"stdout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WSMAN_STREAM_ID_STDERR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"stderr"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WSMAN_SHELL_NS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"http://schemas.microsoft.com/wbem/wsman/1/windows/shell"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WSMAN_CMDSHELL_OPTION_CODEPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WINRS_CODEPAGE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WSMAN_SHELL_OPTION_NOPROFILE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WINRS_NOPROFILE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WSMAN_CMDSHELL_OPTION_CONSOLEMODE_STDIN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WINRS_CONSOLEMODE_STDIN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WSMAN_CMDSHELL_OPTION_SKIP_CMD_SHELL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WINRS_SKIP_CMD_SHELL"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WSMAN_FLAG_RECEIVE_RESULT_NO_MORE_DATA"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -4796,6 +4852,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"190d8637-5cd3-496d-ad24-69636bb5a3b5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4861,6 +4918,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"2d53bdaa-798e-49e6-a1aa-74d01256f411"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWSMan","TargetKind":"Com","Api":"System.RemoteManagement","Parents":[]}
 		,"Methods":[
 			{
@@ -5113,6 +5171,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"1d1b5ae0-42d9-4021-8261-3987619512e9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWSManEx","TargetKind":"Com","Api":"System.RemoteManagement","Parents":[]}
 		,"Methods":[
 			{
@@ -5135,6 +5194,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"6400e966-011d-4eac-8474-049e0848afad"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWSManEx2","TargetKind":"Com","Api":"System.RemoteManagement","Parents":[]}
 		,"Methods":[
 			{
@@ -5229,6 +5289,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f704e861-9e52-464f-b786-da5eb2320fdd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5281,6 +5342,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"ef43edf7-2a48-4d93-9526-8bd6ab6d4a6b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWSManConnectionOptions","TargetKind":"Com","Api":"System.RemoteManagement","Parents":[]}
 		,"Methods":[
 			{
@@ -5319,6 +5381,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"f500c9ec-24ee-48ab-b38d-fc9a164c658e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWSManConnectionOptionsEx","TargetKind":"Com","Api":"System.RemoteManagement","Parents":[]}
 		,"Methods":[
 			{
@@ -5428,6 +5491,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"fc84fc58-1286-40c4-9da0-c8ef6ec241e0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5610,6 +5674,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f3457ca9-abb9-4fa5-b850-90e8ca300e7f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5660,6 +5725,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a7a1ba28-de41-466a-ad0a-c4059ead7428"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5845,6 +5911,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"effaead7-7ec8-4716-b9be-f2e7e9fb4adb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -5855,6 +5922,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"04ae2b1d-9954-4d99-94a9-a961e72c3a13"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

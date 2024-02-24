@@ -7,9 +7,13 @@ using Win32.Storage.StructuredStorage;
 static
 {
 	#region Constants
+	public const uint32 JET_VERSION = 1280;
+	public const String JET_wszConfigStoreReadControl = "CsReadControl";
 	public const uint32 JET_bitConfigStoreReadControlInhibitRead = 1;
 	public const uint32 JET_bitConfigStoreReadControlDisableAll = 2;
 	public const uint32 JET_bitConfigStoreReadControlDefault = 0;
+	public const String JET_wszConfigStoreRelPathSysParamDefault = "SysParamDefault";
+	public const String JET_wszConfigStoreRelPathSysParamOverride = "SysParamOverride";
 	public const uint32 JET_bitDefragmentBatchStart = 1;
 	public const uint32 JET_bitDefragmentBatchStop = 2;
 	public const uint32 JET_bitDefragmentAvailSpaceTreesOnly = 64;
@@ -35,6 +39,9 @@ static
 	public const uint32 JET_bitObjectTableTemplate = 536870912;
 	public const uint32 JET_bitObjectTableDerived = 268435456;
 	public const uint32 JET_bitObjectTableNoFixedVarColumnsInDerivedTables = 67108864;
+	public const uint32 cObjectInfoCols = 9;
+	public const uint32 cColumnInfoCols = 14;
+	public const uint32 cIndexInfoCols = 15;
 	public const uint32 JET_MAX_COMPUTERNAME_LENGTH = 15;
 	public const uint32 JET_bitDurableCommitCallbackLogUnavailable = 1;
 	public const uint32 JET_cbBookmarkMost = 256;
@@ -546,6 +553,8 @@ static
 	public const int32 JET_errKeyTruncated = -346;
 	public const int32 JET_errDatabaseLeakInSpace = -348;
 	public const int32 JET_errBadEmptyPage = -351;
+	public const uint32 wrnBTNotVisibleRejected = 352;
+	public const uint32 wrnBTNotVisibleAccumulated = 353;
 	public const int32 JET_errBadLineCount = -354;
 	public const int32 JET_errPageTagCorrupted = -357;
 	public const int32 JET_errNodeCorrupted = -358;

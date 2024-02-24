@@ -324,6 +324,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"OFFLINEFILES_SETTING_PinLinkTargets"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LinkTargetCaching"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"OFFLINEFILES_PINLINKTARGETS_NEVER"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1015,6 +1022,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"e25585c1-0caa-4eb1-873b-1cae5b77c314"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1345,6 +1353,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"1ead8f56-ff76-4faa-a795-6f6ef792498b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IOfflineFilesEvents","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}
 		,"Methods":[
 			{
@@ -1456,6 +1465,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"9ba04a45-ee69-42f0-9ab1-7db5c8805808"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IOfflineFilesEvents2","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}
 		,"Methods":[
 			{
@@ -1508,6 +1518,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"dbd69b1e-c7d2-473e-b35f-9d8c24c0c484"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IOfflineFilesEvents3","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}
 		,"Methods":[
 			{
@@ -1543,6 +1554,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"33fc4e1b-0716-40fa-ba65-6e62a84a846f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1554,7 +1566,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppszFilter","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszFilter","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"pMatch","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"OFFLINEFILES_PATHFILTER_MATCH","TargetKind":"Default","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
@@ -1594,6 +1606,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"7112fa5f-7571-435a-8eb7-195c7c1429bc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1605,7 +1618,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppBlob","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BYTE_BLOB","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out","Optional"]}
+					{"Name":"ppBlob","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BYTE_BLOB","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1617,7 +1630,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppszDescription","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszDescription","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -1628,6 +1641,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"ecdbaf0d-6a18-4d55-8017-108f7660ba44"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1675,6 +1689,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"59f95e46-eb54-49d1-be76-de95458d01b0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IOfflineFilesErrorInfo","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}
 		,"Methods":[
 			{
@@ -1738,7 +1753,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesSyncErrorItemInfo","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesSyncErrorItemInfo","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1750,7 +1765,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesSyncErrorItemInfo","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesSyncErrorItemInfo","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1762,7 +1777,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesSyncErrorItemInfo","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesSyncErrorItemInfo","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -1773,6 +1788,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"fad63237-c55b-4911-9850-bcf96d4c979e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1819,6 +1835,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"c34f7f9b-c43d-4f9d-a776-c0eb6de5d401"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IOfflineFilesProgress","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}
 		,"Methods":[
 			{
@@ -1856,6 +1873,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"6931f49a-6fc7-4c1b-b265-56793fc451b7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IOfflineFilesProgress","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}
 		,"Methods":[
 			{
@@ -1894,6 +1912,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b6dd5092-c65c-46b6-97b8-fadd08e7e1be"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1910,7 +1929,7 @@
 					,{"Name":"state","Type":{"Kind":"ApiRef","Name":"OFFLINEFILES_SYNC_STATE","TargetKind":"Default","Api":"Storage.OfflineFiles","Parents":[]},"Attrs":["In"]}
 					,{"Name":"fChangeDetails","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"pConflictResolution","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"OFFLINEFILES_SYNC_CONFLICT_RESOLVE","TargetKind":"Default","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out"]}
-					,{"Name":"ppszNewName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppszNewName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -1921,6 +1940,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f4b5a26c-dc05-4f20-ada4-551f1077be5c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1972,6 +1992,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"4a753da6-e044-4f12-a718-5d14d079a906"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1995,7 +2016,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppszPath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszPath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2007,7 +2028,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesItem","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesItem","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2042,6 +2063,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9b1c9576-a92b-4151-8e9e-7c7b3ec2e016"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IOfflineFilesItem","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}
 		,"Methods":[
 		]
@@ -2052,6 +2074,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"bab7e48d-4804-41b5-a44d-0f199b06b145"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IOfflineFilesItem","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}
 		,"Methods":[
 		]
@@ -2062,6 +2085,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"2273597a-a08c-4a00-a37a-c1ae4e9a1cfd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IOfflineFilesItem","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}
 		,"Methods":[
 		]
@@ -2072,6 +2096,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8dfadead-26c2-4eff-8a72-6b50723d9a00"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IOfflineFilesItem","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}
 		,"Methods":[
 			{
@@ -2106,6 +2131,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"da70e815-c361-4407-bc0b-0d7046e5f2cd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2154,7 +2180,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppenum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumOfflineFilesItems","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppenum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumOfflineFilesItems","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2165,6 +2191,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"3836f049-9413-45dd-bf46-b5aaa82dc310"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2177,7 +2204,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"dwQueryFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"ppenum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumOfflineFilesItems","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppenum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumOfflineFilesItems","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2195,7 +2222,7 @@
 					,{"Name":"pExcludeDirFilter","Type":{"Kind":"ApiRef","Name":"IOfflineFilesItemFilter","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]},"Attrs":["In","Optional"]}
 					,{"Name":"dwEnumFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"dwQueryFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"ppenum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumOfflineFilesItems","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppenum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumOfflineFilesItems","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2206,6 +2233,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a96e6fa4-e0d1-4c29-960b-ee508fe68c72"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2215,7 +2243,9 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[]
+				,"Attrs":[
+					"PreserveSig"
+				]
 				,"Params":[
 					{"Name":"pbDirty","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
@@ -2288,6 +2318,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"0f50ce33-bac9-4eaa-a11d-da0e527d047d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2322,6 +2353,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"bc1a163f-7bfd-4d88-9c66-96ea9a6a3d6b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2374,6 +2406,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"5b2b0655-b3fd-497d-adeb-bd156bc8355b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2448,6 +2481,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"623c58a2-42ed-4ad7-b69a-0f1b30a72d0d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IOfflineFilesPinInfo","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}
 		,"Methods":[
 			{
@@ -2470,6 +2504,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"bcaf4a01-5b68-4b56-a6a1-8d2786ede8e3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2492,6 +2527,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"2b09d48c-8ab5-464f-a755-a59d92f99429"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2514,6 +2550,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"efb23a09-a867-4be8-83a6-86969a7d0856"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2579,6 +2616,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"7bcc43e7-31ce-4ca4-8ccd-1cff2dc494da"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2590,7 +2628,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppShareItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesShareItem","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppShareItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesShareItem","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2625,6 +2663,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"62c4560f-bc0b-48ca-ad9d-34cb528d99a9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2647,6 +2686,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a457c25b-4e9c-4b04-85af-8932ccd97889"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2670,6 +2710,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d871d3f7-f613-48a1-827e-7a34e560fff6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2681,7 +2722,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppszName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2792,6 +2833,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"729680c4-1a38-47bc-9e5c-02c51562ac30"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2840,7 +2882,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppenum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumOfflineFilesSettings","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppenum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumOfflineFilesSettings","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2851,6 +2893,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"855d6203-7914-48b9-8d40-4c56f5acffc5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2981,7 +3024,7 @@
 				,"Params":[
 					{"Name":"pszPath","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 					,{"Name":"dwQueryFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"ppItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesItem","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesItem","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2999,7 +3042,7 @@
 					,{"Name":"pExcludeFileFilter","Type":{"Kind":"ApiRef","Name":"IOfflineFilesItemFilter","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]},"Attrs":["In","Optional"]}
 					,{"Name":"pExcludeDirFilter","Type":{"Kind":"ApiRef","Name":"IOfflineFilesItemFilter","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]},"Attrs":["In","Optional"]}
 					,{"Name":"dwQueryFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"ppItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesItem","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesItem","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -3025,7 +3068,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppszPath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszPath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -3080,7 +3123,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pszSettingName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"ppSetting","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesSetting","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppSetting","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IOfflineFilesSetting","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -3092,7 +3135,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumOfflineFilesSettings","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumOfflineFilesSettings","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -3117,6 +3160,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"8c075039-1551-4ed9-8781-56705c04d3c0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IOfflineFilesCache","TargetKind":"Com","Api":"Storage.OfflineFiles","Parents":[]}
 		,"Methods":[
 			{

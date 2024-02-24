@@ -37,6 +37,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WCN_QUERY_CONSTRAINT_USE_SOFTAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WCN.Discovery.SoftAP"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WCN_VALUE_DT_CATEGORY_COMPUTER"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1053,6 +1060,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"c100be9c-d33a-4a4b-bf23-bbef4663d017"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1215,6 +1223,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"c100be9f-d33a-4a4b-bf23-bbef4663d017"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

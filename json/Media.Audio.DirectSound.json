@@ -2564,6 +2564,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"279afa83-4981-11ce-a521-0020af0be560"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2673,6 +2674,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c50a7e93-f395-4834-9ef6-7fa99de50966"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirectSound","TargetKind":"Com","Api":"Media.Audio.DirectSound","Parents":[]}
 		,"Methods":[
 			{
@@ -2695,6 +2697,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"279afa85-4981-11ce-a521-0020af0be560"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2934,6 +2937,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6825a449-7524-4d82-920f-50e36ab3ab1e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirectSoundBuffer","TargetKind":"Com","Api":"Media.Audio.DirectSound","Parents":[]}
 		,"Methods":[
 			{
@@ -2987,6 +2991,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"279afa84-4981-11ce-a521-0020af0be560"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3193,6 +3198,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"279afa86-4981-11ce-a521-0020af0be560"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3436,6 +3442,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b0210781-89cd-11d0-af08-00a0c925cd16"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3484,6 +3491,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b0210782-89cd-11d0-af08-00a0c925cd16"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3614,6 +3622,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"00990df4-0dbb-4872-833e-6d303e80aeb6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirectSoundCaptureBuffer","TargetKind":"Com","Api":"Media.Audio.DirectSound","Parents":[]}
 		,"Methods":[
 			{
@@ -3652,6 +3661,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b0210783-89cd-11d0-af08-00a0c925cd16"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3689,6 +3699,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d616f352-d622-11ce-aac5-0020af0b99a3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3742,6 +3753,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"880842e3-145f-43e6-a934-a71806e50547"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3795,6 +3807,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"903e9878-2c92-4072-9b2c-ea68f5396783"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3846,6 +3859,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8bd28edf-50db-4e92-a2bd-445488d1ed42"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3897,6 +3911,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8ecf4326-455f-4d8b-bda9-8d5d3e9e3e0b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3949,6 +3964,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4bbd1154-62f6-4e2c-a15c-d3b6c417f7a0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3998,6 +4014,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c03ca9fe-fe90-4204-8078-82334cd177da"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4056,6 +4073,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4b166a6a-0d66-43f3-80e3-ee6280dee1a4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4154,6 +4172,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"46858c3a-0dc6-45e3-b760-d4eef16cb325"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4203,6 +4222,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ad74143d-903d-4ab7-8066-28d363036d65"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4273,6 +4293,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ed311e41-fbae-4175-9625-cd0854f693ca"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4318,6 +4339,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"edcb4c7a-daab-4216-a42e-6c50596ddc1d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

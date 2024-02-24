@@ -51,10 +51,38 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WEBAUTHN_HASH_ALGORITHM_SHA_256"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SHA-256"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WEBAUTHN_HASH_ALGORITHM_SHA_384"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SHA-384"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WEBAUTHN_HASH_ALGORITHM_SHA_512"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SHA-512"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WEBAUTHN_CLIENT_DATA_CURRENT_VERSION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WEBAUTHN_CREDENTIAL_TYPE_PUBLIC_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"public-key"
 		,"Attrs":[]
 	}
 	,{
@@ -184,6 +212,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WEBAUTHN_EXTENSIONS_IDENTIFIER_HMAC_SECRET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"hmac-secret"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WEBAUTHN_USER_VERIFICATION_ANY"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -209,6 +244,27 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WEBAUTHN_EXTENSIONS_IDENTIFIER_CRED_PROTECT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"credProtect"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WEBAUTHN_EXTENSIONS_IDENTIFIER_CRED_BLOB"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"credBlob"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WEBAUTHN_EXTENSIONS_IDENTIFIER_MIN_PIN_LENGTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"minPinLength"
 		,"Attrs":[]
 	}
 	,{
@@ -457,10 +513,45 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WEBAUTHN_ATTESTATION_VER_TPM_2_0"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"2.0"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WEBAUTHN_COMMON_ATTESTATION_CURRENT_VERSION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WEBAUTHN_ATTESTATION_TYPE_PACKED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"packed"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WEBAUTHN_ATTESTATION_TYPE_U2F"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"fido-u2f"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WEBAUTHN_ATTESTATION_TYPE_TPM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"tpm"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WEBAUTHN_ATTESTATION_TYPE_NONE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"none"
 		,"Attrs":[]
 	}
 	,{
@@ -5586,7 +5677,7 @@
 		,"PackingSize":0
 		,"Fields":[
 			{"Name":"keyHandle","Type":{"Kind":"ApiRef","Name":"WS_SECURITY_KEY_HANDLE","TargetKind":"Default","Api":"Networking.WindowsWebServices","Parents":[]},"Attrs":[]}
-			,{"Name":"asymmetricKey","Type":{"Kind":"Native","Name":"UIntPtr"},"Attrs":[]}
+			,{"Name":"asymmetricKey","Type":{"Kind":"ApiRef","Name":"NCRYPT_KEY_HANDLE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]},"Attrs":[]}
 		]
 		,"NestedTypes":[
 		]
@@ -7891,6 +7982,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"1b35a14a-6094-4799-a60e-e474e15d4dc9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IInspectable","TargetKind":"Com","Api":"System.WinRT","Parents":[]}
 		,"Methods":[
 			{

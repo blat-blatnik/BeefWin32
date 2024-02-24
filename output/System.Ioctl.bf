@@ -1,11 +1,11 @@
 namespace Win32.System.Ioctl;
 
 using System;
+using Win32.Devices.Properties;
 using Win32.Foundation;
 using Win32.Security;
 using Win32.Storage.FileSystem;
 using Win32.Storage.Vhd;
-using Win32.UI.Shell.PropertiesSystem;
 
 static
 {
@@ -34,14 +34,14 @@ static
 	public const Guid GUID_DEVINTERFACE_UNIFIED_ACCESS_RPMB = .(0x27447c21, 0xbcc3, 0x4d07, 0xa0, 0x5b, 0xa3, 0x39, 0x5b, 0xb4, 0xee, 0xe7);
 	public const Guid GUID_DEVICEDUMP_STORAGE_DEVICE = .(0xd8e2592f, 0x1aab, 0x4d56, 0xa7, 0x46, 0x1f, 0x75, 0x85, 0xdf, 0x40, 0xf4);
 	public const Guid GUID_DEVICEDUMP_DRIVER_STORAGE_PORT = .(0xda82441d, 0x7142, 0x4bc1, 0xb8, 0x44, 0x08, 0x07, 0xc5, 0xa4, 0xb6, 0x7f);
-	public const PROPERTYKEY DEVPKEY_Storage_Portable = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 2);
-	public const PROPERTYKEY DEVPKEY_Storage_Removable_Media = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 3);
-	public const PROPERTYKEY DEVPKEY_Storage_System_Critical = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 4);
-	public const PROPERTYKEY DEVPKEY_Storage_Disk_Number = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 5);
-	public const PROPERTYKEY DEVPKEY_Storage_Partition_Number = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 6);
-	public const PROPERTYKEY DEVPKEY_Storage_Mbr_Type = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 7);
-	public const PROPERTYKEY DEVPKEY_Storage_Gpt_Type = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 8);
-	public const PROPERTYKEY DEVPKEY_Storage_Gpt_Name = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 9);
+	public const DEVPROPKEY DEVPKEY_Storage_Portable = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 2);
+	public const DEVPROPKEY DEVPKEY_Storage_Removable_Media = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 3);
+	public const DEVPROPKEY DEVPKEY_Storage_System_Critical = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 4);
+	public const DEVPROPKEY DEVPKEY_Storage_Disk_Number = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 5);
+	public const DEVPROPKEY DEVPKEY_Storage_Partition_Number = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 6);
+	public const DEVPROPKEY DEVPKEY_Storage_Mbr_Type = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 7);
+	public const DEVPROPKEY DEVPKEY_Storage_Gpt_Type = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 8);
+	public const DEVPROPKEY DEVPKEY_Storage_Gpt_Name = .(.(0x4d1ebee8, 0x0803, 0x4774, 0x98, 0x42, 0xb7, 0x7d, 0xb5, 0x02, 0x65, 0xe9), 9);
 	public const uint32 IOCTL_STORAGE_CHECK_VERIFY = 2967552;
 	public const uint32 IOCTL_STORAGE_CHECK_VERIFY2 = 2951168;
 	public const uint32 IOCTL_STORAGE_MEDIA_REMOVAL = 2967556;
@@ -182,6 +182,8 @@ static
 	public const uint32 DEVICEDUMP_STRUCTURE_VERSION_V1 = 1;
 	public const uint32 DEVICEDUMP_MAX_IDSTRING = 32;
 	public const uint32 MAX_FW_BUCKET_ID_LENGTH = 132;
+	public const String STORAGE_CRASH_TELEMETRY_REGKEY = "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\CrashControl\\StorageTelemetry";
+	public const String STORAGE_DEVICE_TELEMETRY_REGKEY = "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Storage\\StorageTelemetry";
 	public const uint32 DDUMP_FLAG_DATA_READ_FROM_DEVICE = 1;
 	public const uint32 FW_ISSUEID_NO_ISSUE = 0;
 	public const uint32 FW_ISSUEID_UNKNOWN = 4294967295;
@@ -189,6 +191,8 @@ static
 	public const uint32 TC_PUBLIC_DEVICEDUMP_CONTENT_GPLOG = 2;
 	public const uint32 TC_PUBLIC_DEVICEDUMP_CONTENT_GPLOG_MAX = 16;
 	public const uint32 TC_DEVICEDUMP_SUBSECTION_DESC_LENGTH = 16;
+	public const String TC_PUBLIC_DATA_TYPE_ATAGP = "ATAGPLogPages";
+	public const String TC_PUBLIC_DATA_TYPE_ATASMART = "ATASMARTPages";
 	public const uint32 CDB_SIZE = 16;
 	public const uint32 TELEMETRY_COMMAND_SIZE = 16;
 	public const uint32 DEVICEDUMP_CAP_PRIVATE_SECTION = 1;
@@ -5210,6 +5214,14 @@ static
 			public uint32 Flush;
 		}
 		[CRepr]
+		public struct _MftWritesUserLevel_e__Struct
+		{
+			public uint32 Write;
+			public uint32 Create;
+			public uint32 SetInfo;
+			public uint32 Flush;
+		}
+		[CRepr]
 		public struct _Allocate_e__Struct
 		{
 			public uint32 Calls;
@@ -5222,14 +5234,6 @@ static
 			public uint64 HintsClusters;
 			public uint64 CacheClusters;
 			public uint64 CacheMissClusters;
-		}
-		[CRepr]
-		public struct _MftWritesUserLevel_e__Struct
-		{
-			public uint32 Write;
-			public uint32 Create;
-			public uint32 SetInfo;
-			public uint32 Flush;
 		}
 	}
 	[CRepr]
@@ -6186,20 +6190,20 @@ static
 				public uint32 Flags;
 			}
 			[CRepr]
-			public struct _DataStream
-			{
-				public uint16 Length;
-				public uint16 Flags;
-				public uint32 Reserved;
-				public uint64 Vdl;
-			}
-			[CRepr]
 			public struct _Ea
 			{
 				public uint16 Length;
 				public uint16 Flags;
 				public uint32 EaSize;
 				public uint32 EaInformationOffset;
+			}
+			[CRepr]
+			public struct _DataStream
+			{
+				public uint16 Length;
+				public uint16 Flags;
+				public uint32 Reserved;
+				public uint64 Vdl;
 			}
 		}
 	}

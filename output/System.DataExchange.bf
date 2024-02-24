@@ -44,6 +44,14 @@ static
 	public const uint32 XTYP_SHIFT = 4;
 	public const uint32 TIMEOUT_ASYNC = 4294967295;
 	public const uint32 QID_SYNC = 4294967295;
+	public const String SZDDESYS_TOPIC = "System";
+	public const String SZDDESYS_ITEM_TOPICS = "Topics";
+	public const String SZDDESYS_ITEM_SYSITEMS = "SysItems";
+	public const String SZDDESYS_ITEM_RTNMSG = "ReturnMessage";
+	public const String SZDDESYS_ITEM_STATUS = "Status";
+	public const String SZDDESYS_ITEM_FORMATS = "Formats";
+	public const String SZDDESYS_ITEM_HELP = "Help";
+	public const String SZDDE_ITEM_ITEMLIST = "TopicItemList";
 	public const int32 APPCMD_MASK = 4080;
 	public const int32 APPCLASS_MASK = 15;
 	public const uint32 HDATA_APPOWNED = 1;

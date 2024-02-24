@@ -11,6 +11,8 @@ static
 	public const uint32 CI_VERSION_WDS30 = 258;
 	public const uint32 CI_VERSION_WDS40 = 265;
 	public const uint32 CI_VERSION_WIN70 = 1792;
+	public const String CINULLCATALOG = "::_noindex_::";
+	public const String CIADMIN = "::_nodocstore_::";
 	public const uint32 LIFF_LOAD_DEFINED_FILTER = 1;
 	public const uint32 LIFF_IMPLEMENT_TEXT_FILTER_FALLBACK_POLICY = 2;
 	public const uint32 LIFF_FORCE_TEXT_FILTER_FALLBACK = 3;

@@ -2,6 +2,83 @@
 
 "Constants":[
 	{
+		"Name":"NTLMSP_NAME_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NTLM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NTLMSP_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NTLM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MICROSOFT_KERBEROS_NAME_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Kerberos"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MICROSOFT_KERBEROS_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Kerberos"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MICROSOFT_KERBEROS_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Kerberos"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NEGOSSP_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Negotiate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NEGOSSP_NAME_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Negotiate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NEGOSSP_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Negotiate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLOUDAP_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CloudAP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ClOUDAP_NAME_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CloudAP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLOUDAP_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CloudAP"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"ISSP_LEVEL"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1465,6 +1542,41 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SECURITY_ENTRYPOINT_ANSIW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InitSecurityInterfaceW"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SECURITY_ENTRYPOINT_ANSIA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InitSecurityInterfaceA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SECURITY_ENTRYPOINT16"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"INITSECURITYINTERFACEA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SECURITY_ENTRYPOINT_ANSI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InitSecurityInterfaceW"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SECURITY_ENTRYPOINT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"INITSECURITYINTERFACEA"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SECURITY_SUPPORT_PROVIDER_INTERFACE_VERSION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -2039,6 +2151,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"LSA_ADT_SECURITY_SOURCE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft-Windows-Security-Auditing"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LSA_ADT_LEGACY_SECURITY_SOURCE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Security"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SE_ADT_POLICY_AUDIT_EVENT_TYPE_EX_BEGIN"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -2071,6 +2197,55 @@
 		,"Type":{"Kind":"Native","Name":"Int32"}
 		,"ValueType":"Int32"
 		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LSA_AP_NAME_INITIALIZE_PACKAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LsaApInitializePackage\u0000"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LSA_AP_NAME_LOGON_USER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LsaApLogonUser\u0000"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LSA_AP_NAME_LOGON_USER_EX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LsaApLogonUserEx\u0000"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LSA_AP_NAME_CALL_PACKAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LsaApCallPackage\u0000"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LSA_AP_NAME_LOGON_TERMINATED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LsaApLogonTerminated\u0000"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LSA_AP_NAME_CALL_PACKAGE_UNTRUSTED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LsaApCallPackageUntrusted\u0000"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LSA_AP_NAME_CALL_PACKAGE_PASSTHROUGH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LsaApCallPackagePassthrough\u0000"
 		,"Attrs":[]
 	}
 	,{
@@ -2522,6 +2697,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"LSA_GLOBAL_SECRET_PREFIX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"G$"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"LSA_GLOBAL_SECRET_PREFIX_LENGTH"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -2529,10 +2711,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"LSA_LOCAL_SECRET_PREFIX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"L$"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"LSA_LOCAL_SECRET_PREFIX_LENGTH"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LSA_MACHINE_SECRET_PREFIX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"M$"
 		,"Attrs":[]
 	}
 	,{
@@ -2589,6 +2785,76 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SE_INTERACTIVE_LOGON_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SeInteractiveLogonRight"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SE_NETWORK_LOGON_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SeNetworkLogonRight"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SE_BATCH_LOGON_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SeBatchLogonRight"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SE_SERVICE_LOGON_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SeServiceLogonRight"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SE_DENY_INTERACTIVE_LOGON_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SeDenyInteractiveLogonRight"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SE_DENY_NETWORK_LOGON_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SeDenyNetworkLogonRight"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SE_DENY_BATCH_LOGON_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SeDenyBatchLogonRight"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SE_DENY_SERVICE_LOGON_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SeDenyServiceLogonRight"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SE_REMOTE_INTERACTIVE_LOGON_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SeRemoteInteractiveLogonRight"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SE_DENY_REMOTE_INTERACTIVE_LOGON_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SeDenyRemoteInteractiveLogonRight"
 		,"Attrs":[]
 	}
 	,{
@@ -3100,6 +3366,55 @@
 		,"Type":{"Kind":"Native","Name":"Int32"}
 		,"ValueType":"Int32"
 		,"Value":64
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SAM_PASSWORD_CHANGE_NOTIFY_ROUTINE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PasswordChangeNotify"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SAM_INIT_NOTIFICATION_ROUTINE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InitializeChangeNotify"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SAM_PASSWORD_FILTER_ROUTINE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PasswordFilter"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MSV1_0_PACKAGE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MICROSOFT_AUTHENTICATION_PACKAGE_V1_0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MSV1_0_PACKAGE_NAMEW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MICROSOFT_AUTHENTICATION_PACKAGE_V1_0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MSV1_0_SUBAUTHENTICATION_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SYSTEM\\CurrentControlSet\\Control\\Lsa\\MSV1_0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MSV1_0_SUBAUTHENTICATION_VALUE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Auth"
 		,"Attrs":[]
 	}
 	,{
@@ -4083,6 +4398,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"KRB_WELLKNOWN_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WELLKNOWN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KRB_ANONYMOUS_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ANONYMOUS"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"KERB_WRAP_NO_ENCRYPT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -4381,6 +4710,55 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":64
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PKU2U_PACKAGE_NAME_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"pku2u"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PKU2U_PACKAGE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"pku2u"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PKU2U_PACKAGE_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"pku2u"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SAM_CREDENTIAL_UPDATE_NOTIFY_ROUTINE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CredentialUpdateNotify"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SAM_CREDENTIAL_UPDATE_REGISTER_ROUTINE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CredentialUpdateRegister"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SAM_CREDENTIAL_UPDATE_FREE_ROUTINE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CredentialUpdateFree"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SAM_CREDENTIAL_UPDATE_REGISTER_MAPPED_ENTRYPOINTS_ROUTINE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RegisterMappedEntrypoints"
 		,"Attrs":[]
 	}
 	,{
@@ -5028,6 +5406,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"LSA_AP_NAME_LOGON_USER_EX2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LsaApLogonUserEx2\u0000"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SP_ACCEPT_CREDENTIALS_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SpAcceptCredentials\u0000"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SECPKG_UNICODE_ATTRIBUTE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5046,6 +5438,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SECPKG_LSAMODEINIT_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SpLsaModeInitialize"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SECPKG_USERMODEINIT_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SpUserModeInitialize"
 		,"Attrs":[]
 	}
 	,{
@@ -5116,6 +5522,153 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":33554432
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UNISP_NAME_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft Unified Security Protocol Provider"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UNISP_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft Unified Security Protocol Provider"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SSL2SP_NAME_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft SSL 2.0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SSL2SP_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft SSL 2.0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SSL3SP_NAME_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft SSL 3.0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SSL3SP_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft SSL 3.0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"TLS1SP_NAME_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft TLS 1.0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"TLS1SP_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft TLS 1.0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PCT1SP_NAME_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft PCT 1.0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PCT1SP_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft PCT 1.0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SCHANNEL_NAME_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Schannel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SCHANNEL_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Schannel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DEFAULT_TLS_SSP_NAME_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Default TLS SSP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DEFAULT_TLS_SSP_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Default TLS SSP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UNISP_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft Unified Security Protocol Provider"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PCT1SP_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft PCT 1.0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SSL2SP_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft SSL 2.0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SSL3SP_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft SSL 3.0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"TLS1SP_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft TLS 1.0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SCHANNEL_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Schannel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DEFAULT_TLS_SSP_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Default TLS SSP"
 		,"Attrs":[]
 	}
 	,{
@@ -5847,6 +6400,307 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SSL_CRACK_CERTIFICATE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SslCrackCertificate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SSL_FREE_CERTIFICATE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SslFreeCertificate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_CHANNEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Channel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_AUTHOR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Author"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_DESCRIPTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_LICENSOR_URL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LicensorUrl"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_DIGITAL_PID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DigitalPID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_DIGITAL_PID2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DigitalPID2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_PARTIAL_PRODUCT_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PartialProductKey"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_PRODUCT_SKU_ID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ProductSkuId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_LICENSE_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LicenseType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Version"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_SYSTEM_STATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SystemState"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_ACTIVE_PLUGINS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ActivePlugins"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_SECURE_STORE_ID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SecureStoreId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_BIOS_PKEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BiosProductKey"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_BIOS_SLIC_STATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BiosSlicState"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_BIOS_OA2_MINOR_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BiosOA2MinorVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_BIOS_PKEY_DESCRIPTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BiosProductKeyDescription"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_BIOS_PKEY_PKPN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BiosProductKeyPkPn"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_SECURE_PROCESSOR_ACTIVATION_URL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SPCURL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_RIGHT_ACCOUNT_ACTIVATION_URL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RACURL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_PRODUCT_KEY_ACTIVATION_URL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PKCURL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_USE_LICENSE_ACTIVATION_URL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EULURL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_IS_KMS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IsKeyManagementService"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_KMS_CURRENT_COUNT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"KeyManagementServiceCurrentCount"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_KMS_REQUIRED_CLIENT_COUNT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"KeyManagementServiceRequiredClientCount"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_KMS_UNLICENSED_REQUESTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"KeyManagementServiceUnlicensedRequests"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_KMS_LICENSED_REQUESTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"KeyManagementServiceLicensedRequests"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_KMS_OOB_GRACE_REQUESTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"KeyManagementServiceOOBGraceRequests"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_KMS_OOT_GRACE_REQUESTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"KeyManagementServiceOOTGraceRequests"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_KMS_NON_GENUINE_GRACE_REQUESTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"KeyManagementServiceNonGenuineGraceRequests"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_KMS_NOTIFICATION_REQUESTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"KeyManagementServiceNotificationRequests"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_KMS_TOTAL_REQUESTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"KeyManagementServiceTotalRequests"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_KMS_FAILED_REQUESTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"KeyManagementServiceFailedRequests"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_INFO_KEY_IS_PRS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IsPRS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_PKEY_MS2005"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"msft:rm/algorithm/pkey/2005"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_PKEY_MS2009"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"msft:rm/algorithm/pkey/2009"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_PKEY_DETECT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"msft:rm/algorithm/pkey/detect"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_EVENT_LICENSING_STATE_CHANGED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"msft:rm/event/licensingstatechanged"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_EVENT_POLICY_CHANGED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"msft:rm/event/policychanged"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_EVENT_USER_NOTIFICATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"msft:rm/event/usernotification"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SL_SYSTEM_STATE_REBOOT_POLICY_FOUND"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5886,6 +6740,97 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4294967295
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_PROP_BRT_DATA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SL_BRT_DATA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_PROP_BRT_COMMIT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SL_BRT_COMMIT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_PROP_GENUINE_RESULT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SL_GENUINE_RESULT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_PROP_NONGENUINE_GRACE_FLAG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SL_NONGENUINE_GRACE_FLAG"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_PROP_GET_GENUINE_AUTHZ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SL_GET_GENUINE_AUTHZ"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_PROP_GET_GENUINE_SERVER_AUTHZ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SL_GET_GENUINE_SERVER_AUTHZ"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_PROP_LAST_ACT_ATTEMPT_HRESULT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SL_LAST_ACT_ATTEMPT_HRESULT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_PROP_LAST_ACT_ATTEMPT_TIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SL_LAST_ACT_ATTEMPT_TIME"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_PROP_LAST_ACT_ATTEMPT_SERVER_FLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SL_LAST_ACT_ATTEMPT_SERVER_FLAGS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_PROP_ACTIVATION_VALIDATION_IN_PROGRESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SL_ACTIVATION_VALIDATION_IN_PROGRESS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_POLICY_EVALUATION_MODE_ENABLED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Security-SPP-EvaluationModeEnabled"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SL_DEFAULT_MIGRATION_ENCRYPTOR_URI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"msft:spp/migrationencryptor/tokenact/1.0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ID_CAP_SLAPI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"slapiQueryLicenseValue"
 		,"Attrs":[]
 	}
 	,{
@@ -9087,6 +10032,27 @@
 		,"Value":"55c92734-d682-4d71-983e-d6ec3f16059f"
 		,"Attrs":[]
 	}
+	,{
+		"Name":"WDIGEST_SP_NAME_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WDigest"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WDIGEST_SP_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WDigest"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WDIGEST_SP_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WDigest"
+		,"Attrs":[]
+	}
 ]
 
 ,"Types":[
@@ -9494,6 +10460,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"LsaDeregisterLogonProcess"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"LSA_TRUST_INFORMATION"
@@ -9713,7 +10680,7 @@
 			,{"Name":"AccessReasons","Type":{"Kind":"Array","Shape":{"Size":32},"Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":[]}
 			,{"Name":"ObjectTypeIndex","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"AccessGranted","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"SecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":[]}
+			,{"Name":"SecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":[]}
 		]
 		,"NestedTypes":[
 		]
@@ -10499,9 +11466,9 @@
 			,{"Name":"LengthAppliesTo","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"AppliesTo","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}},"Attrs":[]}
 			,{"Name":"LengthSD","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"SD","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":[]}
+			,{"Name":"SD","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":[]}
 			,{"Name":"LengthStagedSD","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"StagedSD","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":[]}
+			,{"Name":"StagedSD","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":[]}
 			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 		]
 		,"NestedTypes":[
@@ -13454,7 +14421,7 @@
 			,{"Name":"Principal","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out"]}
 			,{"Name":"KeyVer","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"Key","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["In","Out"]}
-			,{"Name":"Status","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["In","Out"]}
+			,{"Name":"Status","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["In","Out"]}
 		]
 	}
 	,{
@@ -13463,7 +14430,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13484,7 +14451,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13505,7 +14472,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13518,7 +14485,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13538,7 +14505,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13558,7 +14525,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13578,7 +14545,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13598,7 +14565,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13622,7 +14589,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13646,7 +14613,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13667,7 +14634,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13681,7 +14648,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13694,7 +14661,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13707,7 +14674,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13721,7 +14688,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13734,7 +14701,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13748,7 +14715,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13763,7 +14730,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13779,7 +14746,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13794,7 +14761,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13810,7 +14777,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13826,7 +14793,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13842,7 +14809,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13857,7 +14824,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13873,7 +14840,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13888,7 +14855,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13904,7 +14871,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13920,7 +14887,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13936,7 +14903,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13949,7 +14916,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13965,7 +14932,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13981,7 +14948,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -13997,7 +14964,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -14013,7 +14980,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -14027,7 +14994,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -14041,7 +15008,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -14055,7 +15022,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -14085,7 +15052,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -14101,7 +15068,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -14117,7 +15084,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -18290,7 +19257,7 @@
 			{"Name":"dwVersion","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"cCreds","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"paCred","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CERT_CONTEXT","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}}},"Attrs":[]}
-			,{"Name":"hRootStore","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":[]}
+			,{"Name":"hRootStore","Type":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]},"Attrs":[]}
 			,{"Name":"cMappers","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"aphMappers","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"_HMAPPER","TargetKind":"Default","Api":"Security.Authentication.Identity","Parents":[]}}},"Attrs":[]}
 			,{"Name":"cSupportedAlgs","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
@@ -18608,7 +19575,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -18653,7 +19620,7 @@
 		,"Platform":null
 		,"Kind":"FunctionPointer"
 		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
@@ -19184,6 +20151,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6ecda518-2010-4437-8bc3-46e752b7b172"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -20153,7 +21121,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"SecurityInformation","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["In"]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{
@@ -20167,7 +21135,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"SecurityInformation","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"ppSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}}},"Attrs":["Out"]}
+			,{"Name":"ppSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["Out"]}
 		]
 	}
 	,{
@@ -20243,7 +21211,7 @@
 		"Name":"AcquireCredentialsHandleW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -20264,7 +21232,7 @@
 		"Name":"AcquireCredentialsHandleA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -20285,7 +21253,7 @@
 		"Name":"FreeCredentialsHandle"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20298,7 +21266,7 @@
 		"Name":"AddCredentialsW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -20318,7 +21286,7 @@
 		"Name":"AddCredentialsA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -20338,7 +21306,7 @@
 		"Name":"ChangeAccountPasswordW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -20358,7 +21326,7 @@
 		"Name":"ChangeAccountPasswordA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -20378,7 +21346,7 @@
 		"Name":"InitializeSecurityContextW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20402,7 +21370,7 @@
 		"Name":"InitializeSecurityContextA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20426,7 +21394,7 @@
 		"Name":"AcceptSecurityContext"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -20447,7 +21415,7 @@
 		"Name":"CompleteAuthToken"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20461,7 +21429,7 @@
 		"Name":"ImpersonateSecurityContext"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20474,7 +21442,7 @@
 		"Name":"RevertSecurityContext"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20487,7 +21455,7 @@
 		"Name":"QuerySecurityContextToken"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20501,7 +21469,7 @@
 		"Name":"DeleteSecurityContext"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20514,7 +21482,7 @@
 		"Name":"ApplyControlToken"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20528,7 +21496,7 @@
 		"Name":"QueryContextAttributesW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -20543,7 +21511,7 @@
 		"Name":"QueryContextAttributesExW"
 		,"SetLastError":false
 		,"DllImport":"SspiCli"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20559,7 +21527,7 @@
 		"Name":"QueryContextAttributesA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -20574,7 +21542,7 @@
 		"Name":"QueryContextAttributesExA"
 		,"SetLastError":false
 		,"DllImport":"SspiCli"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20590,7 +21558,7 @@
 		"Name":"SetContextAttributesW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20606,7 +21574,7 @@
 		"Name":"SetContextAttributesA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20622,7 +21590,7 @@
 		"Name":"QueryCredentialsAttributesW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20637,7 +21605,7 @@
 		"Name":"QueryCredentialsAttributesExW"
 		,"SetLastError":false
 		,"DllImport":"SspiCli"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -20653,7 +21621,7 @@
 		"Name":"QueryCredentialsAttributesA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20668,7 +21636,7 @@
 		"Name":"QueryCredentialsAttributesExA"
 		,"SetLastError":false
 		,"DllImport":"SspiCli"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -20684,7 +21652,7 @@
 		"Name":"SetCredentialsAttributesW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20700,7 +21668,7 @@
 		"Name":"SetCredentialsAttributesA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20716,7 +21684,7 @@
 		"Name":"FreeContextBuffer"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20729,7 +21697,7 @@
 		"Name":"MakeSignature"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20745,7 +21713,7 @@
 		"Name":"VerifySignature"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20761,7 +21729,7 @@
 		"Name":"EncryptMessage"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20777,7 +21745,7 @@
 		"Name":"DecryptMessage"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20793,7 +21761,7 @@
 		"Name":"EnumerateSecurityPackagesW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20807,7 +21775,7 @@
 		"Name":"EnumerateSecurityPackagesA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20821,7 +21789,7 @@
 		"Name":"QuerySecurityPackageInfoW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20835,7 +21803,7 @@
 		"Name":"QuerySecurityPackageInfoA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20849,7 +21817,7 @@
 		"Name":"ExportSecurityContext"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20865,7 +21833,7 @@
 		"Name":"ImportSecurityContextW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20881,7 +21849,7 @@
 		"Name":"ImportSecurityContextA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -20921,7 +21889,7 @@
 		"Name":"SaslEnumerateProfilesA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windowsServer2003"
@@ -20935,7 +21903,7 @@
 		"Name":"SaslEnumerateProfilesW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windowsServer2003"
@@ -20949,7 +21917,7 @@
 		"Name":"SaslGetProfilePackageA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windowsServer2003"
@@ -20963,7 +21931,7 @@
 		"Name":"SaslGetProfilePackageW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windowsServer2003"
@@ -20977,7 +21945,7 @@
 		"Name":"SaslIdentifyPackageA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windowsServer2003"
@@ -20991,7 +21959,7 @@
 		"Name":"SaslIdentifyPackageW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windowsServer2003"
@@ -21005,7 +21973,7 @@
 		"Name":"SaslInitializeSecurityContextW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windowsServer2003"
@@ -21029,7 +21997,7 @@
 		"Name":"SaslInitializeSecurityContextA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windowsServer2003"
@@ -21053,7 +22021,7 @@
 		"Name":"SaslAcceptSecurityContext"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windowsServer2003"
@@ -21074,7 +22042,7 @@
 		"Name":"SaslSetContextOption"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windowsServer2003"
@@ -21090,7 +22058,7 @@
 		"Name":"SaslGetContextOption"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windowsServer2003"
@@ -21147,7 +22115,7 @@
 		"Name":"SspiPrepareForCredRead"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21163,7 +22131,7 @@
 		"Name":"SspiPrepareForCredWrite"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21182,7 +22150,7 @@
 		"Name":"SspiEncryptAuthIdentity"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21195,7 +22163,7 @@
 		"Name":"SspiEncryptAuthIdentityEx"
 		,"SetLastError":false
 		,"DllImport":"SspiCli"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -21209,7 +22177,7 @@
 		"Name":"SspiDecryptAuthIdentity"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21222,7 +22190,7 @@
 		"Name":"SspiDecryptAuthIdentityEx"
 		,"SetLastError":false
 		,"DllImport":"SspiCli"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -21249,7 +22217,7 @@
 		"Name":"SspiEncodeAuthIdentityAsStrings"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21265,7 +22233,7 @@
 		"Name":"SspiValidateAuthIdentity"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21278,7 +22246,7 @@
 		"Name":"SspiCopyAuthIdentity"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21331,7 +22299,7 @@
 		"Name":"SspiEncodeStringsAsAuthIdentity"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21347,7 +22315,7 @@
 		"Name":"SspiCompareAuthIdentities"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21363,7 +22331,7 @@
 		"Name":"SspiMarshalAuthIdentity"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21378,7 +22346,7 @@
 		"Name":"SspiUnmarshalAuthIdentity"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21406,7 +22374,7 @@
 		"Name":"SspiGetTargetHostName"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21420,7 +22388,7 @@
 		"Name":"SspiExcludePackage"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21435,7 +22403,7 @@
 		"Name":"AddSecurityPackageA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21449,7 +22417,7 @@
 		"Name":"AddSecurityPackageW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21463,7 +22431,7 @@
 		"Name":"DeleteSecurityPackageA"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21476,7 +22444,7 @@
 		"Name":"DeleteSecurityPackageW"
 		,"SetLastError":false
 		,"DllImport":"SECUR32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.1"
@@ -21604,7 +22572,7 @@
 		"Name":"SslGetServerIdentity"
 		,"SetLastError":false
 		,"DllImport":"SCHANNEL"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -21621,7 +22589,7 @@
 		"Name":"SslGetExtensions"
 		,"SetLastError":false
 		,"DllImport":"SCHANNEL"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -21639,7 +22607,7 @@
 		"Name":"TokenBindingGenerateBinding"
 		,"SetLastError":false
 		,"DllImport":"TOKENBINDING"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows10.0.10240"
@@ -21661,7 +22629,7 @@
 		"Name":"TokenBindingGenerateMessage"
 		,"SetLastError":false
 		,"DllImport":"TOKENBINDING"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows10.0.10240"
@@ -21678,7 +22646,7 @@
 		"Name":"TokenBindingVerifyMessage"
 		,"SetLastError":false
 		,"DllImport":"TOKENBINDING"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows10.0.10240"
@@ -21696,7 +22664,7 @@
 		"Name":"TokenBindingGetKeyTypesClient"
 		,"SetLastError":false
 		,"DllImport":"TOKENBINDING"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows10.0.10240"
@@ -21709,7 +22677,7 @@
 		"Name":"TokenBindingGetKeyTypesServer"
 		,"SetLastError":false
 		,"DllImport":"TOKENBINDING"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows10.0.10240"
@@ -21722,7 +22690,7 @@
 		"Name":"TokenBindingDeleteBinding"
 		,"SetLastError":false
 		,"DllImport":"TOKENBINDING"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows10.0.10240"
@@ -21735,7 +22703,7 @@
 		"Name":"TokenBindingDeleteAllBindings"
 		,"SetLastError":false
 		,"DllImport":"TOKENBINDING"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows10.0.10240"
@@ -21747,7 +22715,7 @@
 		"Name":"TokenBindingGenerateID"
 		,"SetLastError":false
 		,"DllImport":"TOKENBINDING"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows10.0.10240"
@@ -21763,7 +22731,7 @@
 		"Name":"TokenBindingGenerateIDForUri"
 		,"SetLastError":false
 		,"DllImport":"TOKENBINDING"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -21778,7 +22746,7 @@
 		"Name":"TokenBindingGetHighestSupportedVersion"
 		,"SetLastError":false
 		,"DllImport":"TOKENBINDING"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null

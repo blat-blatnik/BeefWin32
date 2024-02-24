@@ -3,7 +3,7 @@
 "Constants":[
 	{
 		"Name":"PROCESSOR_NUMBER_PKEY"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"5724c81d-d5af-4c1f-a103-a06e28f204c6","Pid":1}
 		,"Attrs":[]
@@ -1010,6 +1010,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"UnregisterPowerSettingNotification"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"EFFECTIVE_POWER_MODE"
@@ -1199,7 +1200,7 @@
 			,{"Name":"DescriptionSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"Description","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"SByte"}},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":3}]}
 			,{"Name":"Policy","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"POWER_POLICY","TargetKind":"Default","Api":"System.Power","Parents":[]}},"Attrs":["In"]}
-			,{"Name":"Context","Type":{"Kind":"ApiRef","Name":"LPARAM","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Out","Optional"]}
+			,{"Name":"Context","Type":{"Kind":"ApiRef","Name":"LPARAM","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional"]}
 		]
 	}
 	,{
@@ -1218,7 +1219,7 @@
 			,{"Name":"DescriptionSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"Description","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":3}]}
 			,{"Name":"Policy","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"POWER_POLICY","TargetKind":"Default","Api":"System.Power","Parents":[]}},"Attrs":["In"]}
-			,{"Name":"Context","Type":{"Kind":"ApiRef","Name":"LPARAM","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Out","Optional"]}
+			,{"Name":"Context","Type":{"Kind":"ApiRef","Name":"LPARAM","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional"]}
 		]
 	}
 	,{
@@ -2357,7 +2358,7 @@
 		,"Platform":"windows8.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"RegistrationHandle","Type":{"Kind":"ApiRef","Name":"HPOWERNOTIFY","TargetKind":"Default","Api":"System.Power","Parents":[]},"Attrs":["In","Out"]}
+			{"Name":"RegistrationHandle","Type":{"Kind":"ApiRef","Name":"HPOWERNOTIFY","TargetKind":"Default","Api":"System.Power","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{
@@ -2486,7 +2487,7 @@
 		,"Platform":"windows6.1"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"RegistrationHandle","Type":{"Kind":"ApiRef","Name":"HPOWERNOTIFY","TargetKind":"Default","Api":"System.Power","Parents":[]},"Attrs":["In","Out"]}
+			{"Name":"RegistrationHandle","Type":{"Kind":"ApiRef","Name":"HPOWERNOTIFY","TargetKind":"Default","Api":"System.Power","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{

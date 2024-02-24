@@ -2,6 +2,20 @@
 
 "Constants":[
 	{
+		"Name":"ICW_REGPATHSETTINGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Internet Connection Wizard"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ICW_REGKEYCOMPLETED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Completed"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"ICW_MAX_ACCTNAME"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"

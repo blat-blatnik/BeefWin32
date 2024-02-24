@@ -4048,6 +4048,125 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"XPS_FP_PRINTER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrinterName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_PROGRESS_REPORT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ProgressReport"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_PRINTER_HANDLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrinterHandle"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_USER_PRINT_TICKET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PerUserPrintTicket"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_USER_TOKEN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UserSecurityToken"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_JOB_ID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrintJobId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_PRINT_CLASS_FACTORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrintClassFactory"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_OUTPUT_FILE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrintOutputFileName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_MS_CONTENT_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverMultiContentType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_MS_CONTENT_TYPE_XPS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"XPS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_MS_CONTENT_TYPE_OPENXPS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OpenXPS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_DRIVER_PROPERTY_BAG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverPropertyBag"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_QUEUE_PROPERTY_BAG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"QueuePropertyBag"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_MERGED_DATAFILE_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MergedDataFilePath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_RESOURCE_DLL_PATHS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResourceDLLPaths"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_JOB_LEVEL_PRINTTICKET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"JobPrintTicket"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XPS_FP_PRINTDEVICECAPABILITIES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrintDeviceCapabilities"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"MXDC_ESCAPE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5854,6 +5973,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SPLPRINTER_USER_MODE_PRINTER_DRIVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SPLUserModePrinterDriver"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"EMF_PP_COLOR_OPTIMIZATION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -7590,6 +7716,41 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"BIDI_ACTION_ENUM_SCHEMA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnumSchema"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"BIDI_ACTION_GET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Get"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"BIDI_ACTION_SET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Set"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"BIDI_ACTION_GET_ALL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GetAll"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"BIDI_ACTION_GET_WITH_ARGUMENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GetWithArgument"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"BIDI_ACCESS_ADMINISTRATOR"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -7982,31 +8143,213 @@
 		,"Attrs":[]
 	}
 	,{
-		"Name":"SERVER_ACCESS_ADMINISTER"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":1
+		"Name":"SPLREG_DEFAULT_SPOOL_DIRECTORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DefaultSpoolDirectory"
 		,"Attrs":[]
 	}
 	,{
-		"Name":"SERVER_ACCESS_ENUMERATE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":2
+		"Name":"SPLREG_PORT_THREAD_PRIORITY_DEFAULT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PortThreadPriorityDefault"
 		,"Attrs":[]
 	}
 	,{
-		"Name":"PRINTER_ACCESS_ADMINISTER"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":4
+		"Name":"SPLREG_PORT_THREAD_PRIORITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PortThreadPriority"
 		,"Attrs":[]
 	}
 	,{
-		"Name":"PRINTER_ACCESS_USE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":8
+		"Name":"SPLREG_SCHEDULER_THREAD_PRIORITY_DEFAULT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SchedulerThreadPriorityDefault"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_SCHEDULER_THREAD_PRIORITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SchedulerThreadPriority"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_BEEP_ENABLED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BeepEnabled"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_NET_POPUP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NetPopup"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_RETRY_POPUP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RetryPopup"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_NET_POPUP_TO_COMPUTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NetPopupToComputer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_EVENT_LOG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EventLog"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_MAJOR_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MajorVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_MINOR_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MinorVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_ARCHITECTURE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Architecture"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_OS_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OSVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_OS_VERSIONEX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OSVersionEx"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_DS_PRESENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DsPresent"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_DS_PRESENT_FOR_USER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DsPresentForUser"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_REMOTE_FAX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RemoteFax"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_RESTART_JOB_ON_POOL_ERROR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RestartJobOnPoolError"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_RESTART_JOB_ON_POOL_ENABLED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RestartJobOnPoolEnabled"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_DNS_MACHINE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DNSMachineName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_ALLOW_USER_MANAGEFORMS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AllowUserManageForms"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_WEBSHAREMGMT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WebShareMgmt"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_PRINT_DRIVER_ISOLATION_GROUPS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrintDriverIsolationGroups"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_PRINT_DRIVER_ISOLATION_TIME_BEFORE_RECYCLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrintDriverIsolationTimeBeforeRecycle"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_PRINT_DRIVER_ISOLATION_MAX_OBJECTS_BEFORE_RECYCLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrintDriverIsolationMaxobjsBeforeRecycle"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_PRINT_DRIVER_ISOLATION_IDLE_TIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrintDriverIsolationIdleTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_PRINT_DRIVER_ISOLATION_EXECUTION_POLICY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrintDriverIsolationExecutionPolicy"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_PRINT_DRIVER_ISOLATION_OVERRIDE_POLICY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrintDriverIsolationOverrideCompat"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLREG_PRINT_QUEUE_V4_DRIVER_DIRECTORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrintQueueV4DriverDirectory"
 		,"Attrs":[]
 	}
 	,{
@@ -8024,10 +8367,374 @@
 		,"Attrs":[]
 	}
 	,{
-		"Name":"PRINTER_ACCESS_MANAGE_LIMITED"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":64
+		"Name":"SPLDS_SPOOLER_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DsSpooler"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_DRIVER_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DsDriver"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_USER_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DsUser"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_ASSET_NUMBER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"assetNumber"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_BYTES_PER_MINUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"bytesPerMinute"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_DESCRIPTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_DRIVER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"driverName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_DRIVER_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"driverVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_LOCATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"location"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PORT_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"portName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_ATTRIBUTES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printAttributes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_BIN_NAMES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printBinNames"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_COLLATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printCollate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_COLOR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printColor"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_DUPLEX_SUPPORTED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printDuplexSupported"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_END_TIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printEndTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINTER_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printQueue"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINTER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printerName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_KEEP_PRINTED_JOBS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printKeepPrintedJobs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_LANGUAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printLanguage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_MAC_ADDRESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printMACAddress"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_MAX_X_EXTENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printMaxXExtent"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_MAX_Y_EXTENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printMaxYExtent"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_MAX_RESOLUTION_SUPPORTED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printMaxResolutionSupported"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_MEDIA_READY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printMediaReady"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_MEDIA_SUPPORTED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printMediaSupported"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_MEMORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printMemory"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_MIN_X_EXTENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printMinXExtent"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_MIN_Y_EXTENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printMinYExtent"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_NETWORK_ADDRESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printNetworkAddress"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_NOTIFY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printNotify"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_NUMBER_UP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printNumberUp"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_ORIENTATIONS_SUPPORTED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printOrientationsSupported"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_OWNER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printOwner"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_PAGES_PER_MINUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printPagesPerMinute"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_RATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printRate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_RATE_UNIT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printRateUnit"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_SEPARATOR_FILE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printSeparatorFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_SHARE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printShareName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_SPOOLING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printSpooling"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_STAPLING_SUPPORTED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printStaplingSupported"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_START_TIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printStartTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINT_STATUS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printStatus"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRIORITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"priority"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_SERVER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"serverName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_SHORT_SERVER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"shortServerName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_UNC_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"uNCName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_URL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"url"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_FLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"flags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_VERSION_NUMBER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"versionNumber"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINTER_NAME_ALIASES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printerNameAliases"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINTER_LOCATIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printerLocations"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPLDS_PRINTER_MODEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"printerModel"
 		,"Attrs":[]
 	}
 	,{
@@ -8070,6 +8777,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MS_PRINT_JOB_OUTPUT_FILE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MsPrintJobOutputFile"
 		,"Attrs":[]
 	}
 	,{
@@ -9049,6 +9763,39 @@
 
 ,"Types":[
 	{
+		"Name":"PRINTER_ACCESS_RIGHTS"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Enum"
+		,"Flags":true
+		,"Scoped":false
+		,"Values":[
+			{"Name":"PRINTER_ALL_ACCESS","Value":983052}
+			,{"Name":"PRINTER_READ","Value":131080}
+			,{"Name":"PRINTER_WRITE","Value":131080}
+			,{"Name":"PRINTER_EXECUTE","Value":131080}
+			,{"Name":"SERVER_ALL_ACCESS","Value":983043}
+			,{"Name":"SERVER_READ","Value":131074}
+			,{"Name":"SERVER_WRITE","Value":131075}
+			,{"Name":"SERVER_EXECUTE","Value":131074}
+			,{"Name":"PRINTER_DELETE","Value":65536}
+			,{"Name":"PRINTER_READ_CONTROL","Value":131072}
+			,{"Name":"PRINTER_WRITE_DAC","Value":262144}
+			,{"Name":"PRINTER_WRITE_OWNER","Value":524288}
+			,{"Name":"PRINTER_SYNCHRONIZE","Value":1048576}
+			,{"Name":"PRINTER_STANDARD_RIGHTS_REQUIRED","Value":983040}
+			,{"Name":"PRINTER_STANDARD_RIGHTS_READ","Value":131072}
+			,{"Name":"PRINTER_STANDARD_RIGHTS_WRITE","Value":131072}
+			,{"Name":"PRINTER_STANDARD_RIGHTS_EXECUTE","Value":131072}
+			,{"Name":"SERVER_ACCESS_ADMINISTER","Value":1}
+			,{"Name":"SERVER_ACCESS_ENUMERATE","Value":2}
+			,{"Name":"PRINTER_ACCESS_ADMINISTER","Value":4}
+			,{"Name":"PRINTER_ACCESS_USE","Value":8}
+			,{"Name":"PRINTER_ACCESS_MANAGE_LIMITED","Value":64}
+		]
+		,"IntegerBase":"UInt32"
+	}
+	,{
 		"Name":"BidiRequest"
 		,"Architectures":[]
 		,"Platform":null
@@ -9070,131 +9817,249 @@
 		,"Guid":"2a614240-a4c5-4c33-bd87-1bc709331639"
 	}
 	,{
-		"Name":"IBidiRequestVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetSchema","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetInputData","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetResult","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetOutputData","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetEnumCount","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
 		"Name":"IBidiRequest"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IBidiRequestVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IBidiRequestContainerVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRequest","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetEnumObject","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetRequestCount","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"8f348bd7-4b47-4755-8a9d-0f422df3dc89"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"SetSchema"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pszSchema","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
+				]
+			}
+			,{
+				"Name":"SetInputData"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwType","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In","Const"]}
+					,{"Name":"pData","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}},"Attrs":["In","Const"]}
+					,{"Name":"uSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In","Const"]}
+				]
+			}
+			,{
+				"Name":"GetResult"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"phr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetOutputData"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwIndex","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In","Const"]}
+					,{"Name":"ppszSchema","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					,{"Name":"pdwType","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
+					,{"Name":"ppData","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}}},"Attrs":["Out"]}
+					,{"Name":"uSize","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetEnumCount"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pdwTotal","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IBidiRequestContainer"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IBidiRequestContainerVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IBidiSplVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"BindDevice","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"UnbindDevice","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SendRecv","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"MultiSendRecv","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"d752f6c0-94a8-4275-a77d-8f1d1a1121ae"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"AddRequest"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pRequest","Type":{"Kind":"ApiRef","Name":"IBidiRequest","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In","Optional"]}
+				]
+			}
+			,{
+				"Name":"GetEnumObject"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"ppenum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetRequestCount"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"puCount","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IBidiSpl"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IBidiSplVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IBidiSpl2Vtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"BindDevice","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"UnbindDevice","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SendRecvXMLString","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SendRecvXMLStream","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"d580dc0e-de39-4649-baa8-bf0b85a03a97"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"BindDevice"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pszDeviceName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
+					,{"Name":"dwAccess","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In","Const"]}
+				]
+			}
+			,{
+				"Name":"UnbindDevice"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+				]
+			}
+			,{
+				"Name":"SendRecv"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pszAction","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
+					,{"Name":"pRequest","Type":{"Kind":"ApiRef","Name":"IBidiRequest","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In","Optional"]}
+				]
+			}
+			,{
+				"Name":"MultiSendRecv"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pszAction","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
+					,{"Name":"pRequestContainer","Type":{"Kind":"ApiRef","Name":"IBidiRequestContainer","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In","Optional"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IBidiSpl2"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IBidiSpl2Vtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"0e8f51b8-8273-4906-8e7b-be453ffd2e2b"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"BindDevice"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pszDeviceName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
+					,{"Name":"dwAccess","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In","Const"]}
+				]
+			}
+			,{
+				"Name":"UnbindDevice"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+				]
+			}
+			,{
+				"Name":"SendRecvXMLString"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"bstrRequest","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
+					,{"Name":"pbstrResponse","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"SendRecvXMLStream"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pSRequest","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Optional"]}
+					,{"Name":"ppSResponse","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
 		]
 	}
 	,{
@@ -9221,77 +10086,122 @@
 		]
 	}
 	,{
-		"Name":"IImgErrorInfoVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetGUID","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetSource","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetDescription","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetHelpFile","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetHelpContext","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetDeveloperDescription","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetUserErrorId","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetUserParameterCount","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetUserParameter","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetUserFallback","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetExceptionId","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"DetachErrorInfo","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
 		"Name":"IImgErrorInfo"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IImgErrorInfoVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IImgCreateErrorInfoVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetGUID","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetSource","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetDescription","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetHelpFile","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetHelpContext","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AttachToErrorInfo","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"2bce4ece-d30e-445a-9423-6829be945ad8"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IErrorInfo","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"GetDeveloperDescription"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pbstrDevDescription","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetUserErrorId"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pErrorId","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetUserParameterCount"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pcUserParams","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetUserParameter"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"cParam","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"pbstrParam","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetUserFallback"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pbstrFallback","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetExceptionId"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pExceptionId","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"DetachErrorInfo"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pErrorInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"__MIDL___MIDL_itf_imgerror_0000_0000_0001","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IImgCreateErrorInfo"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IImgCreateErrorInfoVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"1c55a64c-07cd-4fb5-90f7-b753d91f0c9e"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"ICreateErrorInfo","TargetKind":"Com","Api":"System.Ole","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"AttachToErrorInfo"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pErrorInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"__MIDL___MIDL_itf_imgerror_0000_0000_0001","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":["In","Out"]}
+				]
+			}
 		]
 	}
 	,{
@@ -9352,824 +10262,997 @@
 		,"IntegerBase":"Int32"
 	}
 	,{
-		"Name":"IPrintReadStreamVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Seek","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"ReadBytes","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
 		"Name":"IPrintReadStream"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPrintReadStreamVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPrintWriteStreamVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"WriteBytes","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Close","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"4d47a67c-66cc-4430-850e-daf466fe5bc4"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"Seek"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dlibMove","Type":{"Kind":"Native","Name":"Int64"},"Attrs":["In"]}
+					,{"Name":"dwOrigin","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"plibNewPosition","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt64"}},"Attrs":["Out","Optional"]}
+				]
+			}
+			,{
+				"Name":"ReadBytes"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pvBuffer","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["Out",{"Kind":"MemorySize","BytesParamIndex":1}]}
+					,{"Name":"cbRequested","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"pcbRead","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
+					,{"Name":"pbEndOfFile","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IPrintWriteStream"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPrintWriteStreamVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPrintWriteStreamFlushVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"FlushData","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"65bb7f1b-371e-4571-8ac7-912f510c1a38"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"WriteBytes"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pvBuffer","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":1},"Const"]}
+					,{"Name":"cbBuffer","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"pcbWritten","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"Close"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"Native","Name":"Void"}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IPrintWriteStreamFlush"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPrintWriteStreamFlushVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IInterFilterCommunicatorVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"RequestReader","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"RequestWriter","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"07d11ff8-1753-4873-b749-6cdaf068e4c3"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"FlushData"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IInterFilterCommunicator"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IInterFilterCommunicatorVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPrintPipelineManagerControlVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"RequestShutdown","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"FilterFinished","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"4daf1e69-81fd-462d-940f-8cd3ddf56fca"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"RequestReader"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"ppIReader","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"RequestWriter"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"ppIWriter","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IPrintPipelineManagerControl"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPrintPipelineManagerControlVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPrintPipelinePropertyBagVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddProperty","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetProperty","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"DeleteProperty","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"aa3e4910-5889-4681-91ef-823ad4ed4e44"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"RequestShutdown"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"hrReason","Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
+					,{"Name":"pReason","Type":{"Kind":"ApiRef","Name":"IImgErrorInfo","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"FilterFinished"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IPrintPipelinePropertyBag"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPrintPipelinePropertyBagVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPrintPipelineProgressReportVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"ReportProgress","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"8b8c99dc-7892-4a95-8a04-57422e9fbb47"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"AddProperty"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pszName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
+					,{"Name":"pVar","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]}},"Attrs":["In","Const"]}
+				]
+			}
+			,{
+				"Name":"GetProperty"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pszName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
+					,{"Name":"pVar","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"DeleteProperty"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pszName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IPrintPipelineProgressReport"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPrintPipelineProgressReportVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPrintClassObjectFactoryVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetPrintClassObject","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"edc12c7c-ed40-4ea5-96a6-5e4397497a61"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"ReportProgress"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"update","Type":{"Kind":"ApiRef","Name":"EXpsJobConsumption","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IPrintClassObjectFactory"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPrintClassObjectFactoryVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPrintPipelineFilterVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"InitializeFilter","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"ShutdownOperation","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"StartOperation","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"9af593dd-9b02-48a8-9bad-69ace423f88b"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"GetPrintClassObject"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pszPrinterName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
+					,{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
+					,{"Name":"ppNewObject","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IPrintPipelineFilter"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPrintPipelineFilterVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IXpsDocumentProviderVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetXpsPart","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"cdb62fc0-8bed-434e-86fb-a2cae55f19ea"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"InitializeFilter"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pINegotiation","Type":{"Kind":"ApiRef","Name":"IInterFilterCommunicator","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
+					,{"Name":"pIPropertyBag","Type":{"Kind":"ApiRef","Name":"IPrintPipelinePropertyBag","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
+					,{"Name":"pIPipelineControl","Type":{"Kind":"ApiRef","Name":"IPrintPipelineManagerControl","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"ShutdownOperation"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+				]
+			}
+			,{
+				"Name":"StartOperation"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IXpsDocumentProvider"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsDocumentProviderVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IXpsDocumentConsumerVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SendXpsUnknown","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SendXpsDocument","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SendFixedDocumentSequence","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SendFixedDocument","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SendFixedPage","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"CloseSender","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetNewEmptyPart","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"b8cf8530-5562-47c4-ab67-b1f69ecf961e"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"GetXpsPart"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"ppIXpsPart","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IXpsDocumentConsumer"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsDocumentConsumerVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IXpsDocumentVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetThumbnail","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetThumbnail","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"4368d8a2-4181-4a9f-b295-3d9a38bb9ba0"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"SendXpsUnknown"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pUnknown","Type":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"SendXpsDocument"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pIXpsDocument","Type":{"Kind":"ApiRef","Name":"IXpsDocument","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"SendFixedDocumentSequence"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pIFixedDocumentSequence","Type":{"Kind":"ApiRef","Name":"IFixedDocumentSequence","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"SendFixedDocument"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pIFixedDocument","Type":{"Kind":"ApiRef","Name":"IFixedDocument","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"SendFixedPage"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pIFixedPage","Type":{"Kind":"ApiRef","Name":"IFixedPage","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"CloseSender"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+				]
+			}
+			,{
+				"Name":"GetNewEmptyPart"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"uri","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
+					,{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
+					,{"Name":"ppNewObject","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
+					,{"Name":"ppWriteStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPrintWriteStream","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IXpsDocument"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsDocumentVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IFixedDocumentSequenceVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetUri","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetPrintTicket","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetPrintTicket","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"e8d907db-62a9-4a95-abe7-e01763dd30f8"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"GetThumbnail"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"ppThumbnail","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPartThumbnail","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"SetThumbnail"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pThumbnail","Type":{"Kind":"ApiRef","Name":"IPartThumbnail","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IFixedDocumentSequence"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFixedDocumentSequenceVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IFixedDocumentVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetUri","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetPrintTicket","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetPrintTicket","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"8028d181-2c32-4249-8493-1bfb22045574"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"GetUri"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"uri","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetPrintTicket"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"ppPrintTicket","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPartPrintTicket","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"SetPrintTicket"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pPrintTicket","Type":{"Kind":"ApiRef","Name":"IPartPrintTicket","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IFixedDocument"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFixedDocumentVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPartBaseVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetUri","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetStream","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"f222ca9f-9968-4db9-81bd-abaebf15f93f"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"GetUri"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"uri","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetPrintTicket"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"ppPrintTicket","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPartPrintTicket","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"SetPrintTicket"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pPrintTicket","Type":{"Kind":"ApiRef","Name":"IPartPrintTicket","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IPartBase"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPartBaseVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IFixedPageVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetUri","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetStream","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetPrintTicket","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetPagePart","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetWriteStream","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetPrintTicket","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetPagePart","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"DeleteResource","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetXpsPartIterator","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"36d51e28-369e-43ba-a666-9540c62c3f58"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"GetUri"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"uri","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetStream"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"ppStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPrintReadStream","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetPartCompression"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pCompression","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"EXpsCompressionOptions","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"SetPartCompression"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"compression","Type":{"Kind":"ApiRef","Name":"EXpsCompressionOptions","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IFixedPage"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFixedPageVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPartImageVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetUri","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetStream","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetImageProperties","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetImageContent","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"3d9f6448-7e95-4cb5-94fb-0180c2883a57"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IPartBase","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"GetPrintTicket"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"ppPrintTicket","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPartPrintTicket","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetPagePart"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"uri","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
+					,{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetWriteStream"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"ppWriteStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPrintWriteStream","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"SetPrintTicket"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"ppPrintTicket","Type":{"Kind":"ApiRef","Name":"IPartPrintTicket","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"SetPagePart"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pUnk","Type":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"DeleteResource"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"uri","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
+				]
+			}
+			,{
+				"Name":"GetXpsPartIterator"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pXpsPartIt","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsPartIterator","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IPartImage"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPartImageVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPartFontVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetUri","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetStream","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetFontProperties","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetFontContent","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetFontOptions","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"725f2e3c-401a-4705-9de0-fe6f1353b87f"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IPartBase","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"GetImageProperties"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pContentType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"SetImageContent"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pContentType","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IPartFont"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPartFontVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPartFont2Vtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetUri","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetStream","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetFontProperties","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetFontContent","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetFontOptions","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetFontRestriction","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"e07fe0ab-1124-43d0-a865-e8ffb6a3ea82"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IPartBase","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"GetFontProperties"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pContentType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					,{"Name":"pFontOptions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"EXpsFontOptions","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"SetFontContent"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pContentType","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
+				]
+			}
+			,{
+				"Name":"SetFontOptions"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"options","Type":{"Kind":"ApiRef","Name":"EXpsFontOptions","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IPartFont2"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPartFont2Vtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPartThumbnailVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetUri","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetStream","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetThumbnailProperties","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetThumbnailContent","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"511e025f-d6cb-43be-bf65-63fe88515a39"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IPartFont","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"GetFontRestriction"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pRestriction","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"EXpsFontRestriction","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IPartThumbnail"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPartThumbnailVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPartPrintTicketVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetUri","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetStream","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"027ed1c9-ba39-4cc5-aa55-7ec3a0de171a"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IPartBase","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"GetThumbnailProperties"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pContentType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"SetThumbnailContent"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pContentType","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IPartPrintTicket"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPartPrintTicketVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPartColorProfileVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetUri","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetStream","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"4a0f50f6-f9a2-41f0-99e7-5ae955be8e9e"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IPartBase","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
+		,"Methods":[
 		]
 	}
 	,{
 		"Name":"IPartColorProfile"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPartColorProfileVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPartResourceDictionaryVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetUri","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetStream","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"SetPartCompression","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"63cca95b-7d18-4762-b15e-98658693d24a"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IPartBase","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
+		,"Methods":[
 		]
 	}
 	,{
 		"Name":"IPartResourceDictionary"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPartResourceDictionaryVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IXpsPartIteratorVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Reset","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Current","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"IsDone","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Next","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"16cfce6d-e744-4fb3-b474-f1d54f024a01"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IPartBase","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
+		,"Methods":[
 		]
 	}
 	,{
 		"Name":"IXpsPartIterator"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsPartIteratorVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPrintReadStreamFactoryVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetStream","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"0021d3cd-af6f-42ab-9999-14bc82a62d2e"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"Reset"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"Native","Name":"Void"}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+				]
+			}
+			,{
+				"Name":"Current"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pUri","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					,{"Name":"ppXpsPart","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"IsDone"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+				]
+			}
+			,{
+				"Name":"Next"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"Native","Name":"Void"}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IPrintReadStreamFactory"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPrintReadStreamFactoryVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
-		]
-	}
-	,{
-		"Name":"IPartDiscardControlVtbl"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"QueryInterface","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AddRef","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"Release","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"GetDiscardProperties","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"acb971e3-df8d-4fc2-bee6-0609d15f3cf9"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"GetStream"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"ppStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPrintReadStream","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
 		]
 	}
 	,{
 		"Name":"IPartDiscardControl"
 		,"Architectures":[]
 		,"Platform":null
-		,"Kind":"Struct"
-		,"Size":0
-		,"PackingSize":0
-		,"Fields":[
-			{"Name":"lpVtbl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPartDiscardControlVtbl","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]}},"Attrs":[]}
-		]
-		,"NestedTypes":[
+		,"Kind":"Com"
+		,"Guid":"cc350c00-095b-42a5-bf0f-c8780edadb3c"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"GetDiscardProperties"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"uriSentinelPage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					,{"Name":"uriPartToDiscard","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
 		]
 	}
 	,{
@@ -10695,7 +11778,7 @@
 			,{"Name":"pPrintProcessor","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"pDatatype","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"pParameters","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":[]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":[]}
 			,{"Name":"Attributes","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"Priority","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"DefaultPriority","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
@@ -10728,7 +11811,7 @@
 			,{"Name":"pPrintProcessor","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"pDatatype","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"pParameters","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":[]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":[]}
 			,{"Name":"Attributes","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"Priority","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"DefaultPriority","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
@@ -10749,7 +11832,7 @@
 		,"Size":0
 		,"PackingSize":0
 		,"Fields":[
-			{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":[]}
+			{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":[]}
 		]
 		,"NestedTypes":[
 		]
@@ -10981,7 +12064,7 @@
 			,{"Name":"pDriverName","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"pDevMode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DEVMODEA","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]}},"Attrs":[]}
 			,{"Name":"pStatus","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":[]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":[]}
 			,{"Name":"Status","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"Priority","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"Position","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
@@ -11016,7 +12099,7 @@
 			,{"Name":"pDriverName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"pDevMode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DEVMODEW","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]}},"Attrs":[]}
 			,{"Name":"pStatus","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":[]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":[]}
 			,{"Name":"Status","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"Priority","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"Position","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
@@ -11066,7 +12149,7 @@
 			,{"Name":"pDriverName","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"pDevMode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DEVMODEA","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]}},"Attrs":[]}
 			,{"Name":"pStatus","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":[]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":[]}
 			,{"Name":"Status","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"Priority","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"Position","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
@@ -11102,7 +12185,7 @@
 			,{"Name":"pDriverName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"pDevMode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DEVMODEW","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]}},"Attrs":[]}
 			,{"Name":"pStatus","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":[]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":[]}
 			,{"Name":"Status","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"Priority","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"Position","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
@@ -11889,7 +12972,7 @@
 		,"Fields":[
 			{"Name":"pDatatype","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"pDevMode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DEVMODEA","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]}},"Attrs":[]}
-			,{"Name":"DesiredAccess","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"DesiredAccess","Type":{"Kind":"ApiRef","Name":"PRINTER_ACCESS_RIGHTS","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]},"Attrs":[]}
 		]
 		,"NestedTypes":[
 		]
@@ -11904,7 +12987,7 @@
 		,"Fields":[
 			{"Name":"pDatatype","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"pDevMode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DEVMODEW","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]}},"Attrs":[]}
-			,{"Name":"DesiredAccess","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"DesiredAccess","Type":{"Kind":"ApiRef","Name":"PRINTER_ACCESS_RIGHTS","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]},"Attrs":[]}
 		]
 		,"NestedTypes":[
 		]
@@ -12245,7 +13328,7 @@
 		,"PackingSize":0
 		,"Fields":[
 			{"Name":"cbSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"dwFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"dwFlags","Type":{"Kind":"ApiRef","Name":"PRINTER_OPTION_FLAGS","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]},"Attrs":[]}
 		]
 		,"NestedTypes":[
 		]
@@ -12259,7 +13342,7 @@
 		,"PackingSize":0
 		,"Fields":[
 			{"Name":"cbSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"dwFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"dwFlags","Type":{"Kind":"ApiRef","Name":"PRINTER_OPTION_FLAGS","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]},"Attrs":[]}
 		]
 		,"NestedTypes":[
 		]
@@ -13203,6 +14286,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a89ec53e-3905-49c6-9c1a-c0a88117fdb6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13348,6 +14432,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7e8e51d6-e5ee-4426-817b-958b9444eb79"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintCoreHelper","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -13386,6 +14471,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6c8afdfc-ead0-4d2d-8071-9bf0175a6c3a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintCoreHelperUni","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -13412,6 +14498,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c2c14f6f-95d3-4d63-96cf-6bd9e6c907c2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintCoreHelper","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -13470,6 +14557,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7f42285e-91d5-11d1-8820-00c04fb961ec"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13508,6 +14596,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c6a7a9d0-774c-11d1-947f-00a0c90640b8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintOemCommon","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -13695,6 +14784,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"292515f9-b54b-489b-9275-bab56821395e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintOemUI","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -13751,6 +14841,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7349d725-e2c1-4dca-afb5-c13e91bc9306"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13812,6 +14903,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"92b05d50-78bc-11d1-9480-00a0c90640b8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13868,6 +14960,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"085ccfca-3adf-4c9e-b491-d851a6edc997"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintOemDriverUI","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -14066,6 +15159,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bb5116db-0a23-4c3a-a6b6-89e5558dfb5d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14174,6 +15268,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b8a70ab2-3dfc-4fec-a074-511b13c651cb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintTicketProvider","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -14239,6 +15334,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"724c1646-e64b-4bbf-8eb4-d45e4fd580da"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14291,6 +15387,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"af45af49-d6aa-407d-bf87-3912236e9d94"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintSchemaElement","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -14330,6 +15427,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"66bb2f51-5844-4997-8d70-4b7cc221cf92"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintSchemaDisplayableElement","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -14382,6 +15480,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"68746729-f493-4830-a10f-69028774605d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintSchemaOption","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -14420,6 +15519,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1f6342f2-d848-42e3-8995-c10a9ef9a3ba"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintSchemaOption","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -14457,6 +15557,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"baecb0bd-a946-4771-bc30-e8b24f8d45c1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14508,6 +15609,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ef189461-5d62-4626-8e57-ff83583c4826"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintSchemaDisplayableElement","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -14588,6 +15690,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7c85bf5e-dc7c-4f61-839b-4107e1c9b68e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintSchemaElement","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -14696,6 +15799,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b5ade81e-0e61-4fe1-81c6-c333e4ffe0f1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintSchemaDisplayableElement","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -14776,6 +15880,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"52027082-0b74-4648-9564-828cc6cb656c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintSchemaElement","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -14814,6 +15919,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5a577640-501d-4927-bcd0-5ef57a7ed175"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintSchemaElement","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -14919,6 +16025,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b58845f4-9970-4d87-a636-169fb82ed642"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintSchemaCapabilities","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -14943,6 +16050,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"143c8dcb-d37f-47f7-88e8-6b1d21f2c5f7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14975,6 +16083,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e480b861-4708-4e6d-a5b4-a2b4eeb9baa4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintSchemaElement","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -15088,6 +16197,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2ec1f844-766a-47a1-91f4-2eeb6190f80c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintSchemaTicket","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -15112,6 +16222,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"23adbb16-0133-4906-b29a-1dce1d026379"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15135,6 +16246,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2072838a-316f-467a-a949-27f68c44a854"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15171,6 +16283,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7edf9a92-4750-41a5-a17f-879a6f4f7dcb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrinterScriptableSequentialStream","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -15218,6 +16331,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fea77364-df95-4a23-a905-019b79a8e481"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15360,6 +16474,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"91c7765f-ed57-49ad-8b01-dc24816a5294"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15500,6 +16615,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2a1c53c4-8638-4b3e-b518-2773c94556a3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrinterScriptablePropertyBag","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -15523,6 +16639,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3580a828-07fe-4b94-ac1a-757d9d2d3056"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15610,6 +16727,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b771dab8-1282-41b7-858c-f206e4d20577"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15715,6 +16833,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"72b82a24-a598-4e87-895f-cdb23a49e9dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15766,6 +16885,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c5b6042b-fd21-404a-a0ef-e2fbb52b9080"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15791,6 +16911,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"476e2969-3b2b-4b3f-8277-cff6056042aa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15814,6 +16935,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"214685f6-7b78-4681-87e0-495f739273d1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15837,6 +16959,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c52d32dd-f2b4-4052-8502-ec4305ecb71f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15860,6 +16983,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"108d6a23-6a4b-4552-9448-68b427186acd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15881,6 +17005,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8cd444e8-c9bb-49b3-8e38-e03209416131"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrinterQueue","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -15919,6 +17044,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"39843bf2-c4d2-41fd-b4b2-aedbee5e1900"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15985,6 +17111,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"39843bf3-c4d2-41fd-b4b2-aedbee5e1900"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16019,6 +17146,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"39843bf4-c4d2-41fd-b4b2-aedbee5e1900"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrinterExtensionContext","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -16127,6 +17255,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fb476970-9bab-4861-811e-3e98b0c5addf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16178,6 +17307,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c093cb63-5ef5-4585-af8e-4d5637487b57"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16212,6 +17342,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"93c6eb8c-b001-4355-9629-8e8a1b3f8e77"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16245,6 +17376,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"066acbca-8881-49c9-bb98-fae16b4889e1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16323,6 +17455,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"77cf513e-5d49-4789-9f30-d0822b335c0d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16358,6 +17491,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"4a5031b1-1f3f-4db0-a462-4530ed8b0451"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16392,6 +17526,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"7def34c1-9d92-4c99-b3b3-db94a9d4191b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16463,6 +17598,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0f6f27b6-6f86-4591-9203-64c3bfadedfe"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16495,6 +17631,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"532818f7-921b-4fb2-bff8-2f4fd52ebebf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16538,6 +17675,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16572,6 +17710,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintAsyncCookie","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -16595,6 +17734,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintAsyncCookie","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -16618,6 +17758,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16664,6 +17805,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintAsyncNotifyRegistration","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -16686,6 +17828,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintAsyncNotifyRegistration","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -16708,6 +17851,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16754,6 +17898,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"532818f7-921b-4fb2-bff8-2f4fd52ebebf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPrintAsyncNotifyChannel","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}
 		,"Methods":[
 			{
@@ -17956,6 +19101,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9ab8fd0d-cb94-49c2-9cb0-97ec1d5469d2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -17990,6 +19136,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7567cfc8-c156-47a8-9dac-11a2ae5bdd6b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18006,7 +19153,7 @@
 					,{"Name":"width","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"height","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"notificationCallback","Type":{"Kind":"ApiRef","Name":"IXpsRasterizerNotificationCallback","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]},"Attrs":["In","Optional"]}
-					,{"Name":"bitmap","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWICBitmap","TargetKind":"Com","Api":"Graphics.Imaging","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"bitmap","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWICBitmap","TargetKind":"Com","Api":"Graphics.Imaging","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -18029,6 +19176,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e094808a-24c6-482b-a3a7-c21ac9b55f17"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18044,7 +19192,7 @@
 					,{"Name":"DPI","Type":{"Kind":"Native","Name":"Single"},"Attrs":["In"]}
 					,{"Name":"nonTextRenderingMode","Type":{"Kind":"ApiRef","Name":"XPSRAS_RENDERING_MODE","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
 					,{"Name":"textRenderingMode","Type":{"Kind":"ApiRef","Name":"XPSRAS_RENDERING_MODE","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppIXPSRasterizer","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsRasterizer","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIXPSRasterizer","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsRasterizer","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -18069,6 +19217,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2d6e5f77-6414-4a1e-a8e0-d4194ce6a26f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18085,7 +19234,7 @@
 					,{"Name":"nonTextRenderingMode","Type":{"Kind":"ApiRef","Name":"XPSRAS_RENDERING_MODE","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
 					,{"Name":"textRenderingMode","Type":{"Kind":"ApiRef","Name":"XPSRAS_RENDERING_MODE","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pixelFormat","Type":{"Kind":"ApiRef","Name":"XPSRAS_PIXEL_FORMAT","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppIXPSRasterizer","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsRasterizer","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIXPSRasterizer","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsRasterizer","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -18109,6 +19258,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9c16ce3e-10f5-41fd-9ddc-6826669c2ff6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18127,7 +19277,7 @@
 					,{"Name":"textRenderingMode","Type":{"Kind":"ApiRef","Name":"XPSRAS_RENDERING_MODE","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pixelFormat","Type":{"Kind":"ApiRef","Name":"XPSRAS_PIXEL_FORMAT","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
 					,{"Name":"backgroundColor","Type":{"Kind":"ApiRef","Name":"XPSRAS_BACKGROUND_COLOR","TargetKind":"Default","Api":"Graphics.Printing","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppIXpsRasterizer","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsRasterizer","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIXpsRasterizer","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsRasterizer","TargetKind":"Com","Api":"Graphics.Printing","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -18151,6 +19301,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1a6dd0ad-1e2a-4e99-a5ba-91f17818290e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18272,7 +19423,7 @@
 	,{
 		"Name":"EnumPrintersA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18291,7 +19442,7 @@
 	,{
 		"Name":"EnumPrintersW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18310,7 +19461,7 @@
 	,{
 		"Name":"GetSpoolFileHandle"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18323,7 +19474,7 @@
 	,{
 		"Name":"CommitSpoolData"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18338,7 +19489,7 @@
 	,{
 		"Name":"CloseSpoolFileHandle"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18352,7 +19503,7 @@
 	,{
 		"Name":"OpenPrinterA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18367,7 +19518,7 @@
 	,{
 		"Name":"OpenPrinterW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18382,7 +19533,7 @@
 	,{
 		"Name":"ResetPrinterA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18396,7 +19547,7 @@
 	,{
 		"Name":"ResetPrinterW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18410,7 +19561,7 @@
 	,{
 		"Name":"SetJobA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18427,7 +19578,7 @@
 	,{
 		"Name":"SetJobW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18444,7 +19595,7 @@
 	,{
 		"Name":"GetJobA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18462,7 +19613,7 @@
 	,{
 		"Name":"GetJobW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18480,7 +19631,7 @@
 	,{
 		"Name":"EnumJobsA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18500,7 +19651,7 @@
 	,{
 		"Name":"EnumJobsW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18520,7 +19671,7 @@
 	,{
 		"Name":"AddPrinterA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18535,7 +19686,7 @@
 	,{
 		"Name":"AddPrinterW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18550,20 +19701,20 @@
 	,{
 		"Name":"DeletePrinter"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"hPrinter","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Out"]}
+			{"Name":"hPrinter","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{
 		"Name":"SetPrinterA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18579,7 +19730,7 @@
 	,{
 		"Name":"SetPrinterW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18595,7 +19746,7 @@
 	,{
 		"Name":"GetPrinterA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18612,7 +19763,7 @@
 	,{
 		"Name":"GetPrinterW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18629,7 +19780,7 @@
 	,{
 		"Name":"AddPrinterDriverA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18644,7 +19795,7 @@
 	,{
 		"Name":"AddPrinterDriverW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18659,7 +19810,7 @@
 	,{
 		"Name":"AddPrinterDriverExA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18675,7 +19826,7 @@
 	,{
 		"Name":"AddPrinterDriverExW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18691,7 +19842,7 @@
 	,{
 		"Name":"EnumPrinterDriversA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18710,7 +19861,7 @@
 	,{
 		"Name":"EnumPrinterDriversW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18729,7 +19880,7 @@
 	,{
 		"Name":"GetPrinterDriverA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18747,7 +19898,7 @@
 	,{
 		"Name":"GetPrinterDriverW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18765,7 +19916,7 @@
 	,{
 		"Name":"GetPrinterDriverDirectoryA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18783,7 +19934,7 @@
 	,{
 		"Name":"GetPrinterDriverDirectoryW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18801,7 +19952,7 @@
 	,{
 		"Name":"DeletePrinterDriverA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18816,7 +19967,7 @@
 	,{
 		"Name":"DeletePrinterDriverW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18831,7 +19982,7 @@
 	,{
 		"Name":"DeletePrinterDriverExA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18848,7 +19999,7 @@
 	,{
 		"Name":"DeletePrinterDriverExW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18865,7 +20016,7 @@
 	,{
 		"Name":"AddPrintProcessorA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18881,7 +20032,7 @@
 	,{
 		"Name":"AddPrintProcessorW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18897,7 +20048,7 @@
 	,{
 		"Name":"EnumPrintProcessorsA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18916,7 +20067,7 @@
 	,{
 		"Name":"EnumPrintProcessorsW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18935,7 +20086,7 @@
 	,{
 		"Name":"GetPrintProcessorDirectoryA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18953,7 +20104,7 @@
 	,{
 		"Name":"GetPrintProcessorDirectoryW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18971,7 +20122,7 @@
 	,{
 		"Name":"EnumPrintProcessorDatatypesA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -18990,7 +20141,7 @@
 	,{
 		"Name":"EnumPrintProcessorDatatypesW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19009,7 +20160,7 @@
 	,{
 		"Name":"DeletePrintProcessorA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19024,7 +20175,7 @@
 	,{
 		"Name":"DeletePrintProcessorW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19039,7 +20190,7 @@
 	,{
 		"Name":"StartDocPrinterA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19054,7 +20205,7 @@
 	,{
 		"Name":"StartDocPrinterW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19069,7 +20220,7 @@
 	,{
 		"Name":"StartPagePrinter"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19082,7 +20233,7 @@
 	,{
 		"Name":"WritePrinter"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19098,7 +20249,7 @@
 	,{
 		"Name":"FlushPrinter"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19115,7 +20266,7 @@
 	,{
 		"Name":"EndPagePrinter"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19128,7 +20279,7 @@
 	,{
 		"Name":"AbortPrinter"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19141,7 +20292,7 @@
 	,{
 		"Name":"ReadPrinter"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19157,7 +20308,7 @@
 	,{
 		"Name":"EndDocPrinter"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19170,7 +20321,7 @@
 	,{
 		"Name":"AddJobA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19187,7 +20338,7 @@
 	,{
 		"Name":"AddJobW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19204,7 +20355,7 @@
 	,{
 		"Name":"ScheduleJob"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19218,7 +20369,7 @@
 	,{
 		"Name":"PrinterProperties"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19232,7 +20383,7 @@
 	,{
 		"Name":"DocumentPropertiesA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"Int32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19250,7 +20401,7 @@
 	,{
 		"Name":"DocumentPropertiesW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"Int32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19268,7 +20419,7 @@
 	,{
 		"Name":"AdvancedDocumentPropertiesA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"Int32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19285,7 +20436,7 @@
 	,{
 		"Name":"AdvancedDocumentPropertiesW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"Int32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19302,7 +20453,7 @@
 	,{
 		"Name":"ExtDeviceMode"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"Int32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19322,7 +20473,7 @@
 	,{
 		"Name":"GetPrinterDataA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19340,7 +20491,7 @@
 	,{
 		"Name":"GetPrinterDataW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19358,7 +20509,7 @@
 	,{
 		"Name":"GetPrinterDataExA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19377,7 +20528,7 @@
 	,{
 		"Name":"GetPrinterDataExW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19396,7 +20547,7 @@
 	,{
 		"Name":"EnumPrinterDataA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19417,7 +20568,7 @@
 	,{
 		"Name":"EnumPrinterDataW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19438,7 +20589,7 @@
 	,{
 		"Name":"EnumPrinterDataExA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19456,7 +20607,7 @@
 	,{
 		"Name":"EnumPrinterDataExW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19474,7 +20625,7 @@
 	,{
 		"Name":"EnumPrinterKeyA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19491,7 +20642,7 @@
 	,{
 		"Name":"EnumPrinterKeyW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19508,7 +20659,7 @@
 	,{
 		"Name":"SetPrinterDataA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19525,7 +20676,7 @@
 	,{
 		"Name":"SetPrinterDataW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19542,7 +20693,7 @@
 	,{
 		"Name":"SetPrinterDataExA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19560,7 +20711,7 @@
 	,{
 		"Name":"SetPrinterDataExW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19578,7 +20729,7 @@
 	,{
 		"Name":"DeletePrinterDataA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19592,7 +20743,7 @@
 	,{
 		"Name":"DeletePrinterDataW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19606,7 +20757,7 @@
 	,{
 		"Name":"DeletePrinterDataExA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19621,7 +20772,7 @@
 	,{
 		"Name":"DeletePrinterDataExW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19636,7 +20787,7 @@
 	,{
 		"Name":"DeletePrinterKeyA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19650,7 +20801,7 @@
 	,{
 		"Name":"DeletePrinterKeyW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19664,7 +20815,7 @@
 	,{
 		"Name":"WaitForPrinterChange"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19678,7 +20829,7 @@
 	,{
 		"Name":"FindFirstPrinterChangeNotification"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19694,7 +20845,7 @@
 	,{
 		"Name":"FindNextPrinterChangeNotification"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19710,7 +20861,7 @@
 	,{
 		"Name":"FreePrinterNotifyInfo"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19723,7 +20874,7 @@
 	,{
 		"Name":"FindClosePrinterChangeNotification"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19736,7 +20887,7 @@
 	,{
 		"Name":"PrinterMessageBoxA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19754,7 +20905,7 @@
 	,{
 		"Name":"PrinterMessageBoxW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19772,7 +20923,7 @@
 	,{
 		"Name":"ClosePrinter"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19785,7 +20936,7 @@
 	,{
 		"Name":"AddFormA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19800,7 +20951,7 @@
 	,{
 		"Name":"AddFormW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19815,7 +20966,7 @@
 	,{
 		"Name":"DeleteFormA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19829,7 +20980,7 @@
 	,{
 		"Name":"DeleteFormW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19843,7 +20994,7 @@
 	,{
 		"Name":"GetFormA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19861,7 +21012,7 @@
 	,{
 		"Name":"GetFormW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19879,7 +21030,7 @@
 	,{
 		"Name":"SetFormA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19895,7 +21046,7 @@
 	,{
 		"Name":"SetFormW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19911,7 +21062,7 @@
 	,{
 		"Name":"EnumFormsA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19929,7 +21080,7 @@
 	,{
 		"Name":"EnumFormsW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19947,7 +21098,7 @@
 	,{
 		"Name":"EnumMonitorsA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19965,7 +21116,7 @@
 	,{
 		"Name":"EnumMonitorsW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19983,7 +21134,7 @@
 	,{
 		"Name":"AddMonitorA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -19998,7 +21149,7 @@
 	,{
 		"Name":"AddMonitorW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20013,7 +21164,7 @@
 	,{
 		"Name":"DeleteMonitorA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20028,7 +21179,7 @@
 	,{
 		"Name":"DeleteMonitorW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20043,7 +21194,7 @@
 	,{
 		"Name":"EnumPortsA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20061,7 +21212,7 @@
 	,{
 		"Name":"EnumPortsW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20079,7 +21230,7 @@
 	,{
 		"Name":"AddPortA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20094,7 +21245,7 @@
 	,{
 		"Name":"AddPortW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20109,7 +21260,7 @@
 	,{
 		"Name":"ConfigurePortA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20124,7 +21275,7 @@
 	,{
 		"Name":"ConfigurePortW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20139,7 +21290,7 @@
 	,{
 		"Name":"DeletePortA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20154,7 +21305,7 @@
 	,{
 		"Name":"DeletePortW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20169,7 +21320,7 @@
 	,{
 		"Name":"XcvDataW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20189,7 +21340,7 @@
 	,{
 		"Name":"GetDefaultPrinterA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20203,7 +21354,7 @@
 	,{
 		"Name":"GetDefaultPrinterW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20217,7 +21368,7 @@
 	,{
 		"Name":"SetDefaultPrinterA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20230,7 +21381,7 @@
 	,{
 		"Name":"SetDefaultPrinterW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20243,7 +21394,7 @@
 	,{
 		"Name":"SetPortA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20259,7 +21410,7 @@
 	,{
 		"Name":"SetPortW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20275,7 +21426,7 @@
 	,{
 		"Name":"AddPrinterConnectionA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20288,7 +21439,7 @@
 	,{
 		"Name":"AddPrinterConnectionW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20301,7 +21452,7 @@
 	,{
 		"Name":"DeletePrinterConnectionA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20314,7 +21465,7 @@
 	,{
 		"Name":"DeletePrinterConnectionW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20327,7 +21478,7 @@
 	,{
 		"Name":"ConnectToPrinterDlg"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20341,7 +21492,7 @@
 	,{
 		"Name":"AddPrintProvidorA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20356,7 +21507,7 @@
 	,{
 		"Name":"AddPrintProvidorW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20371,7 +21522,7 @@
 	,{
 		"Name":"DeletePrintProvidorA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20386,7 +21537,7 @@
 	,{
 		"Name":"DeletePrintProvidorW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20401,7 +21552,7 @@
 	,{
 		"Name":"IsValidDevmodeA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20415,7 +21566,7 @@
 	,{
 		"Name":"IsValidDevmodeW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20429,7 +21580,7 @@
 	,{
 		"Name":"OpenPrinter2A"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20445,7 +21596,7 @@
 	,{
 		"Name":"OpenPrinter2W"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20461,7 +21612,7 @@
 	,{
 		"Name":"AddPrinterConnection2A"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20477,7 +21628,7 @@
 	,{
 		"Name":"AddPrinterConnection2W"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20493,7 +21644,7 @@
 	,{
 		"Name":"InstallPrinterDriverFromPackageA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20510,7 +21661,7 @@
 	,{
 		"Name":"InstallPrinterDriverFromPackageW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20527,7 +21678,7 @@
 	,{
 		"Name":"UploadPrinterDriverPackageA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20546,7 +21697,7 @@
 	,{
 		"Name":"UploadPrinterDriverPackageW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20565,7 +21716,7 @@
 	,{
 		"Name":"GetCorePrinterDriversA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20582,7 +21733,7 @@
 	,{
 		"Name":"GetCorePrinterDriversW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20599,7 +21750,7 @@
 	,{
 		"Name":"CorePrinterDriverInstalledA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20617,7 +21768,7 @@
 	,{
 		"Name":"CorePrinterDriverInstalledW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20635,7 +21786,7 @@
 	,{
 		"Name":"GetPrinterDriverPackagePathA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20654,7 +21805,7 @@
 	,{
 		"Name":"GetPrinterDriverPackagePathW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20673,7 +21824,7 @@
 	,{
 		"Name":"DeletePrinterDriverPackageA"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20688,7 +21839,7 @@
 	,{
 		"Name":"DeletePrinterDriverPackageW"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20703,7 +21854,7 @@
 	,{
 		"Name":"ReportJobProcessingProgress"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20719,7 +21870,7 @@
 	,{
 		"Name":"GetPrinterDriver2A"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20738,7 +21889,7 @@
 	,{
 		"Name":"GetPrinterDriver2W"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20757,7 +21908,7 @@
 	,{
 		"Name":"GetPrintExecutionData"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20770,7 +21921,7 @@
 	,{
 		"Name":"GetJobNamedPropertyValue"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20786,7 +21937,7 @@
 	,{
 		"Name":"FreePrintPropertyValue"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"Void"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20799,7 +21950,7 @@
 	,{
 		"Name":"FreePrintNamedPropertyArray"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"Void"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20813,7 +21964,7 @@
 	,{
 		"Name":"SetJobNamedProperty"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20828,7 +21979,7 @@
 	,{
 		"Name":"DeleteJobNamedProperty"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20843,7 +21994,7 @@
 	,{
 		"Name":"EnumJobNamedProperties"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20859,7 +22010,7 @@
 	,{
 		"Name":"GetPrintOutputInfo"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20875,7 +22026,7 @@
 	,{
 		"Name":"DevQueryPrintEx"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20888,7 +22039,7 @@
 	,{
 		"Name":"RegisterForPrintAsyncNotifications"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20906,7 +22057,7 @@
 	,{
 		"Name":"UnRegisterForPrintAsyncNotifications"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -20919,7 +22070,7 @@
 	,{
 		"Name":"CreatePrintAsyncNotifyChannel"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -21140,7 +22291,7 @@
 	,{
 		"Name":"CreatePrinterIC"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -21154,7 +22305,7 @@
 	,{
 		"Name":"PlayGdiScriptOnPrinterIC"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -21172,7 +22323,7 @@
 	,{
 		"Name":"DeletePrinterIC"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -21185,7 +22336,7 @@
 	,{
 		"Name":"DevQueryPrint"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -21324,7 +22475,7 @@
 	,{
 		"Name":"RouterFreeBidiResponseContainer"
 		,"SetLastError":false
-		,"DllImport":"WINSPOOL"
+		,"DllImport":"winspool.drv"
 		,"ReturnType":{"Kind":"Native","Name":"UInt32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]

@@ -11,254 +11,505 @@ static
 {
 	#region Constants
 	public const uint32 WIA_DIP_DEV_ID = 2;
+	public const String WIA_DIP_DEV_ID_STR = "Unique Device ID";
 	public const uint32 WIA_DIP_VEND_DESC = 3;
+	public const String WIA_DIP_VEND_DESC_STR = "Manufacturer";
 	public const uint32 WIA_DIP_DEV_DESC = 4;
+	public const String WIA_DIP_DEV_DESC_STR = "Description";
 	public const uint32 WIA_DIP_DEV_TYPE = 5;
+	public const String WIA_DIP_DEV_TYPE_STR = "Type";
 	public const uint32 WIA_DIP_PORT_NAME = 6;
+	public const String WIA_DIP_PORT_NAME_STR = "Port";
 	public const uint32 WIA_DIP_DEV_NAME = 7;
+	public const String WIA_DIP_DEV_NAME_STR = "Name";
 	public const uint32 WIA_DIP_SERVER_NAME = 8;
+	public const String WIA_DIP_SERVER_NAME_STR = "Server";
 	public const uint32 WIA_DIP_REMOTE_DEV_ID = 9;
+	public const String WIA_DIP_REMOTE_DEV_ID_STR = "Remote Device ID";
 	public const uint32 WIA_DIP_UI_CLSID = 10;
+	public const String WIA_DIP_UI_CLSID_STR = "UI Class ID";
 	public const uint32 WIA_DIP_HW_CONFIG = 11;
+	public const String WIA_DIP_HW_CONFIG_STR = "Hardware Configuration";
 	public const uint32 WIA_DIP_BAUDRATE = 12;
+	public const String WIA_DIP_BAUDRATE_STR = "BaudRate";
 	public const uint32 WIA_DIP_STI_GEN_CAPABILITIES = 13;
+	public const String WIA_DIP_STI_GEN_CAPABILITIES_STR = "STI Generic Capabilities";
 	public const uint32 WIA_DIP_WIA_VERSION = 14;
+	public const String WIA_DIP_WIA_VERSION_STR = "WIA Version";
 	public const uint32 WIA_DIP_DRIVER_VERSION = 15;
+	public const String WIA_DIP_DRIVER_VERSION_STR = "Driver Version";
 	public const uint32 WIA_DIP_PNP_ID = 16;
+	public const String WIA_DIP_PNP_ID_STR = "PnP ID String";
 	public const uint32 WIA_DIP_STI_DRIVER_VERSION = 17;
+	public const String WIA_DIP_STI_DRIVER_VERSION_STR = "STI Driver Version";
 	public const uint32 WIA_DPA_FIRMWARE_VERSION = 1026;
+	public const String WIA_DPA_FIRMWARE_VERSION_STR = "Firmware Version";
 	public const uint32 WIA_DPA_CONNECT_STATUS = 1027;
+	public const String WIA_DPA_CONNECT_STATUS_STR = "Connect Status";
 	public const uint32 WIA_DPA_DEVICE_TIME = 1028;
+	public const String WIA_DPA_DEVICE_TIME_STR = "Device Time";
 	public const uint32 WIA_DPC_PICTURES_TAKEN = 2050;
+	public const String WIA_DPC_PICTURES_TAKEN_STR = "Pictures Taken";
 	public const uint32 WIA_DPC_PICTURES_REMAINING = 2051;
+	public const String WIA_DPC_PICTURES_REMAINING_STR = "Pictures Remaining";
 	public const uint32 WIA_DPC_EXPOSURE_MODE = 2052;
+	public const String WIA_DPC_EXPOSURE_MODE_STR = "Exposure Mode";
 	public const uint32 WIA_DPC_EXPOSURE_COMP = 2053;
+	public const String WIA_DPC_EXPOSURE_COMP_STR = "Exposure Compensation";
 	public const uint32 WIA_DPC_EXPOSURE_TIME = 2054;
+	public const String WIA_DPC_EXPOSURE_TIME_STR = "Exposure Time";
 	public const uint32 WIA_DPC_FNUMBER = 2055;
+	public const String WIA_DPC_FNUMBER_STR = "F Number";
 	public const uint32 WIA_DPC_FLASH_MODE = 2056;
+	public const String WIA_DPC_FLASH_MODE_STR = "Flash Mode";
 	public const uint32 WIA_DPC_FOCUS_MODE = 2057;
+	public const String WIA_DPC_FOCUS_MODE_STR = "Focus Mode";
 	public const uint32 WIA_DPC_FOCUS_MANUAL_DIST = 2058;
+	public const String WIA_DPC_FOCUS_MANUAL_DIST_STR = "Focus Manual Dist";
 	public const uint32 WIA_DPC_ZOOM_POSITION = 2059;
+	public const String WIA_DPC_ZOOM_POSITION_STR = "Zoom Position";
 	public const uint32 WIA_DPC_PAN_POSITION = 2060;
+	public const String WIA_DPC_PAN_POSITION_STR = "Pan Position";
 	public const uint32 WIA_DPC_TILT_POSITION = 2061;
+	public const String WIA_DPC_TILT_POSITION_STR = "Tilt Position";
 	public const uint32 WIA_DPC_TIMER_MODE = 2062;
+	public const String WIA_DPC_TIMER_MODE_STR = "Timer Mode";
 	public const uint32 WIA_DPC_TIMER_VALUE = 2063;
+	public const String WIA_DPC_TIMER_VALUE_STR = "Timer Value";
 	public const uint32 WIA_DPC_POWER_MODE = 2064;
+	public const String WIA_DPC_POWER_MODE_STR = "Power Mode";
 	public const uint32 WIA_DPC_BATTERY_STATUS = 2065;
+	public const String WIA_DPC_BATTERY_STATUS_STR = "Battery Status";
 	public const uint32 WIA_DPC_THUMB_WIDTH = 2066;
+	public const String WIA_DPC_THUMB_WIDTH_STR = "Thumbnail Width";
 	public const uint32 WIA_DPC_THUMB_HEIGHT = 2067;
+	public const String WIA_DPC_THUMB_HEIGHT_STR = "Thumbnail Height";
 	public const uint32 WIA_DPC_PICT_WIDTH = 2068;
+	public const String WIA_DPC_PICT_WIDTH_STR = "Picture Width";
 	public const uint32 WIA_DPC_PICT_HEIGHT = 2069;
+	public const String WIA_DPC_PICT_HEIGHT_STR = "Picture Height";
 	public const uint32 WIA_DPC_DIMENSION = 2070;
+	public const String WIA_DPC_DIMENSION_STR = "Dimension";
 	public const uint32 WIA_DPC_COMPRESSION_SETTING = 2071;
+	public const String WIA_DPC_COMPRESSION_SETTING_STR = "Compression Setting";
 	public const uint32 WIA_DPC_FOCUS_METERING = 2072;
+	public const String WIA_DPC_FOCUS_METERING_STR = "Focus Metering Mode";
 	public const uint32 WIA_DPC_TIMELAPSE_INTERVAL = 2073;
+	public const String WIA_DPC_TIMELAPSE_INTERVAL_STR = "Timelapse Interval";
 	public const uint32 WIA_DPC_TIMELAPSE_NUMBER = 2074;
+	public const String WIA_DPC_TIMELAPSE_NUMBER_STR = "Timelapse Number";
 	public const uint32 WIA_DPC_BURST_INTERVAL = 2075;
+	public const String WIA_DPC_BURST_INTERVAL_STR = "Burst Interval";
 	public const uint32 WIA_DPC_BURST_NUMBER = 2076;
+	public const String WIA_DPC_BURST_NUMBER_STR = "Burst Number";
 	public const uint32 WIA_DPC_EFFECT_MODE = 2077;
+	public const String WIA_DPC_EFFECT_MODE_STR = "Effect Mode";
 	public const uint32 WIA_DPC_DIGITAL_ZOOM = 2078;
+	public const String WIA_DPC_DIGITAL_ZOOM_STR = "Digital Zoom";
 	public const uint32 WIA_DPC_SHARPNESS = 2079;
+	public const String WIA_DPC_SHARPNESS_STR = "Sharpness";
 	public const uint32 WIA_DPC_CONTRAST = 2080;
+	public const String WIA_DPC_CONTRAST_STR = "Contrast";
 	public const uint32 WIA_DPC_CAPTURE_MODE = 2081;
+	public const String WIA_DPC_CAPTURE_MODE_STR = "Capture Mode";
 	public const uint32 WIA_DPC_CAPTURE_DELAY = 2082;
+	public const String WIA_DPC_CAPTURE_DELAY_STR = "Capture Delay";
 	public const uint32 WIA_DPC_EXPOSURE_INDEX = 2083;
+	public const String WIA_DPC_EXPOSURE_INDEX_STR = "Exposure Index";
 	public const uint32 WIA_DPC_EXPOSURE_METERING_MODE = 2084;
+	public const String WIA_DPC_EXPOSURE_METERING_MODE_STR = "Exposure Metering Mode";
 	public const uint32 WIA_DPC_FOCUS_METERING_MODE = 2085;
+	public const String WIA_DPC_FOCUS_METERING_MODE_STR = "Focus Metering Mode";
 	public const uint32 WIA_DPC_FOCUS_DISTANCE = 2086;
+	public const String WIA_DPC_FOCUS_DISTANCE_STR = "Focus Distance";
 	public const uint32 WIA_DPC_FOCAL_LENGTH = 2087;
+	public const String WIA_DPC_FOCAL_LENGTH_STR = "Focus Length";
 	public const uint32 WIA_DPC_RGB_GAIN = 2088;
+	public const String WIA_DPC_RGB_GAIN_STR = "RGB Gain";
 	public const uint32 WIA_DPC_WHITE_BALANCE = 2089;
+	public const String WIA_DPC_WHITE_BALANCE_STR = "White Balance";
 	public const uint32 WIA_DPC_UPLOAD_URL = 2090;
+	public const String WIA_DPC_UPLOAD_URL_STR = "Upload URL";
 	public const uint32 WIA_DPC_ARTIST = 2091;
+	public const String WIA_DPC_ARTIST_STR = "Artist";
 	public const uint32 WIA_DPC_COPYRIGHT_INFO = 2092;
+	public const String WIA_DPC_COPYRIGHT_INFO_STR = "Copyright Info";
 	public const uint32 WIA_DPS_HORIZONTAL_BED_SIZE = 3074;
+	public const String WIA_DPS_HORIZONTAL_BED_SIZE_STR = "Horizontal Bed Size";
 	public const uint32 WIA_DPS_VERTICAL_BED_SIZE = 3075;
+	public const String WIA_DPS_VERTICAL_BED_SIZE_STR = "Vertical Bed Size";
 	public const uint32 WIA_DPS_HORIZONTAL_SHEET_FEED_SIZE = 3076;
+	public const String WIA_DPS_HORIZONTAL_SHEET_FEED_SIZE_STR = "Horizontal Sheet Feed Size";
 	public const uint32 WIA_DPS_VERTICAL_SHEET_FEED_SIZE = 3077;
+	public const String WIA_DPS_VERTICAL_SHEET_FEED_SIZE_STR = "Vertical Sheet Feed Size";
 	public const uint32 WIA_DPS_SHEET_FEEDER_REGISTRATION = 3078;
+	public const String WIA_DPS_SHEET_FEEDER_REGISTRATION_STR = "Sheet Feeder Registration";
 	public const uint32 WIA_DPS_HORIZONTAL_BED_REGISTRATION = 3079;
+	public const String WIA_DPS_HORIZONTAL_BED_REGISTRATION_STR = "Horizontal Bed Registration";
 	public const uint32 WIA_DPS_VERTICAL_BED_REGISTRATION = 3080;
+	public const String WIA_DPS_VERTICAL_BED_REGISTRATION_STR = "Vertical Bed Registration";
 	public const uint32 WIA_DPS_PLATEN_COLOR = 3081;
+	public const String WIA_DPS_PLATEN_COLOR_STR = "Platen Color";
 	public const uint32 WIA_DPS_PAD_COLOR = 3082;
+	public const String WIA_DPS_PAD_COLOR_STR = "Pad Color";
 	public const uint32 WIA_DPS_FILTER_SELECT = 3083;
+	public const String WIA_DPS_FILTER_SELECT_STR = "Filter Select";
 	public const uint32 WIA_DPS_DITHER_SELECT = 3084;
+	public const String WIA_DPS_DITHER_SELECT_STR = "Dither Select";
 	public const uint32 WIA_DPS_DITHER_PATTERN_DATA = 3085;
+	public const String WIA_DPS_DITHER_PATTERN_DATA_STR = "Dither Pattern Data";
 	public const uint32 WIA_DPS_DOCUMENT_HANDLING_CAPABILITIES = 3086;
+	public const String WIA_DPS_DOCUMENT_HANDLING_CAPABILITIES_STR = "Document Handling Capabilities";
 	public const uint32 WIA_DPS_DOCUMENT_HANDLING_STATUS = 3087;
+	public const String WIA_DPS_DOCUMENT_HANDLING_STATUS_STR = "Document Handling Status";
 	public const uint32 WIA_DPS_DOCUMENT_HANDLING_SELECT = 3088;
+	public const String WIA_DPS_DOCUMENT_HANDLING_SELECT_STR = "Document Handling Select";
 	public const uint32 WIA_DPS_DOCUMENT_HANDLING_CAPACITY = 3089;
+	public const String WIA_DPS_DOCUMENT_HANDLING_CAPACITY_STR = "Document Handling Capacity";
 	public const uint32 WIA_DPS_OPTICAL_XRES = 3090;
+	public const String WIA_DPS_OPTICAL_XRES_STR = "Horizontal Optical Resolution";
 	public const uint32 WIA_DPS_OPTICAL_YRES = 3091;
+	public const String WIA_DPS_OPTICAL_YRES_STR = "Vertical Optical Resolution";
 	public const uint32 WIA_DPS_ENDORSER_CHARACTERS = 3092;
+	public const String WIA_DPS_ENDORSER_CHARACTERS_STR = "Endorser Characters";
 	public const uint32 WIA_DPS_ENDORSER_STRING = 3093;
+	public const String WIA_DPS_ENDORSER_STRING_STR = "Endorser String";
 	public const uint32 WIA_DPS_SCAN_AHEAD_PAGES = 3094;
+	public const String WIA_DPS_SCAN_AHEAD_PAGES_STR = "Scan Ahead Pages";
 	public const uint32 WIA_DPS_MAX_SCAN_TIME = 3095;
+	public const String WIA_DPS_MAX_SCAN_TIME_STR = "Max Scan Time";
 	public const uint32 WIA_DPS_PAGES = 3096;
+	public const String WIA_DPS_PAGES_STR = "Pages";
 	public const uint32 WIA_DPS_PAGE_SIZE = 3097;
+	public const String WIA_DPS_PAGE_SIZE_STR = "Page Size";
 	public const uint32 WIA_DPS_PAGE_WIDTH = 3098;
+	public const String WIA_DPS_PAGE_WIDTH_STR = "Page Width";
 	public const uint32 WIA_DPS_PAGE_HEIGHT = 3099;
+	public const String WIA_DPS_PAGE_HEIGHT_STR = "Page Height";
 	public const uint32 WIA_DPS_PREVIEW = 3100;
+	public const String WIA_DPS_PREVIEW_STR = "Preview";
 	public const uint32 WIA_DPS_TRANSPARENCY = 3101;
+	public const String WIA_DPS_TRANSPARENCY_STR = "Transparency Adapter";
 	public const uint32 WIA_DPS_TRANSPARENCY_SELECT = 3102;
+	public const String WIA_DPS_TRANSPARENCY_SELECT_STR = "Transparency Adapter Select";
 	public const uint32 WIA_DPS_SHOW_PREVIEW_CONTROL = 3103;
+	public const String WIA_DPS_SHOW_PREVIEW_CONTROL_STR = "Show preview control";
 	public const uint32 WIA_DPS_MIN_HORIZONTAL_SHEET_FEED_SIZE = 3104;
+	public const String WIA_DPS_MIN_HORIZONTAL_SHEET_FEED_SIZE_STR = "Minimum Horizontal Sheet Feed Size";
 	public const uint32 WIA_DPS_MIN_VERTICAL_SHEET_FEED_SIZE = 3105;
+	public const String WIA_DPS_MIN_VERTICAL_SHEET_FEED_SIZE_STR = "Minimum Vertical Sheet Feed Size";
 	public const uint32 WIA_DPS_TRANSPARENCY_CAPABILITIES = 3106;
+	public const String WIA_DPS_TRANSPARENCY_CAPABILITIES_STR = "Transparency Adapter Capabilities";
 	public const uint32 WIA_DPS_TRANSPARENCY_STATUS = 3107;
+	public const String WIA_DPS_TRANSPARENCY_STATUS_STR = "Transparency Adapter Status";
 	public const uint32 WIA_DPF_MOUNT_POINT = 3330;
+	public const String WIA_DPF_MOUNT_POINT_STR = "Directory mount point";
 	public const uint32 WIA_DPV_LAST_PICTURE_TAKEN = 3586;
+	public const String WIA_DPV_LAST_PICTURE_TAKEN_STR = "Last Picture Taken";
 	public const uint32 WIA_DPV_IMAGES_DIRECTORY = 3587;
+	public const String WIA_DPV_IMAGES_DIRECTORY_STR = "Images Directory";
 	public const uint32 WIA_DPV_DSHOW_DEVICE_PATH = 3588;
+	public const String WIA_DPV_DSHOW_DEVICE_PATH_STR = "Directshow Device Path";
 	public const uint32 WIA_IPA_ITEM_NAME = 4098;
+	public const String WIA_IPA_ITEM_NAME_STR = "Item Name";
 	public const uint32 WIA_IPA_FULL_ITEM_NAME = 4099;
+	public const String WIA_IPA_FULL_ITEM_NAME_STR = "Full Item Name";
 	public const uint32 WIA_IPA_ITEM_TIME = 4100;
+	public const String WIA_IPA_ITEM_TIME_STR = "Item Time Stamp";
 	public const uint32 WIA_IPA_ITEM_FLAGS = 4101;
+	public const String WIA_IPA_ITEM_FLAGS_STR = "Item Flags";
 	public const uint32 WIA_IPA_ACCESS_RIGHTS = 4102;
+	public const String WIA_IPA_ACCESS_RIGHTS_STR = "Access Rights";
 	public const uint32 WIA_IPA_DATATYPE = 4103;
+	public const String WIA_IPA_DATATYPE_STR = "Data Type";
 	public const uint32 WIA_IPA_DEPTH = 4104;
+	public const String WIA_IPA_DEPTH_STR = "Bits Per Pixel";
 	public const uint32 WIA_IPA_PREFERRED_FORMAT = 4105;
+	public const String WIA_IPA_PREFERRED_FORMAT_STR = "Preferred Format";
 	public const uint32 WIA_IPA_FORMAT = 4106;
+	public const String WIA_IPA_FORMAT_STR = "Format";
 	public const uint32 WIA_IPA_COMPRESSION = 4107;
+	public const String WIA_IPA_COMPRESSION_STR = "Compression";
 	public const uint32 WIA_IPA_TYMED = 4108;
+	public const String WIA_IPA_TYMED_STR = "Media Type";
 	public const uint32 WIA_IPA_CHANNELS_PER_PIXEL = 4109;
+	public const String WIA_IPA_CHANNELS_PER_PIXEL_STR = "Channels Per Pixel";
 	public const uint32 WIA_IPA_BITS_PER_CHANNEL = 4110;
+	public const String WIA_IPA_BITS_PER_CHANNEL_STR = "Bits Per Channel";
 	public const uint32 WIA_IPA_PLANAR = 4111;
+	public const String WIA_IPA_PLANAR_STR = "Planar";
 	public const uint32 WIA_IPA_PIXELS_PER_LINE = 4112;
+	public const String WIA_IPA_PIXELS_PER_LINE_STR = "Pixels Per Line";
 	public const uint32 WIA_IPA_BYTES_PER_LINE = 4113;
+	public const String WIA_IPA_BYTES_PER_LINE_STR = "Bytes Per Line";
 	public const uint32 WIA_IPA_NUMBER_OF_LINES = 4114;
+	public const String WIA_IPA_NUMBER_OF_LINES_STR = "Number of Lines";
 	public const uint32 WIA_IPA_GAMMA_CURVES = 4115;
+	public const String WIA_IPA_GAMMA_CURVES_STR = "Gamma Curves";
 	public const uint32 WIA_IPA_ITEM_SIZE = 4116;
+	public const String WIA_IPA_ITEM_SIZE_STR = "Item Size";
 	public const uint32 WIA_IPA_COLOR_PROFILE = 4117;
+	public const String WIA_IPA_COLOR_PROFILE_STR = "Color Profiles";
 	public const uint32 WIA_IPA_MIN_BUFFER_SIZE = 4118;
+	public const String WIA_IPA_MIN_BUFFER_SIZE_STR = "Buffer Size";
 	public const uint32 WIA_IPA_BUFFER_SIZE = 4118;
+	public const String WIA_IPA_BUFFER_SIZE_STR = "Buffer Size";
 	public const uint32 WIA_IPA_REGION_TYPE = 4119;
+	public const String WIA_IPA_REGION_TYPE_STR = "Region Type";
 	public const uint32 WIA_IPA_ICM_PROFILE_NAME = 4120;
+	public const String WIA_IPA_ICM_PROFILE_NAME_STR = "Color Profile Name";
 	public const uint32 WIA_IPA_APP_COLOR_MAPPING = 4121;
+	public const String WIA_IPA_APP_COLOR_MAPPING_STR = "Application Applies Color Mapping";
 	public const uint32 WIA_IPA_PROP_STREAM_COMPAT_ID = 4122;
+	public const String WIA_IPA_PROP_STREAM_COMPAT_ID_STR = "Stream Compatibility ID";
 	public const uint32 WIA_IPA_FILENAME_EXTENSION = 4123;
+	public const String WIA_IPA_FILENAME_EXTENSION_STR = "Filename extension";
 	public const uint32 WIA_IPA_SUPPRESS_PROPERTY_PAGE = 4124;
+	public const String WIA_IPA_SUPPRESS_PROPERTY_PAGE_STR = "Suppress a property page";
 	public const uint32 WIA_IPC_THUMBNAIL = 5122;
+	public const String WIA_IPC_THUMBNAIL_STR = "Thumbnail Data";
 	public const uint32 WIA_IPC_THUMB_WIDTH = 5123;
+	public const String WIA_IPC_THUMB_WIDTH_STR = "Thumbnail Width";
 	public const uint32 WIA_IPC_THUMB_HEIGHT = 5124;
+	public const String WIA_IPC_THUMB_HEIGHT_STR = "Thumbnail Height";
 	public const uint32 WIA_IPC_AUDIO_AVAILABLE = 5125;
+	public const String WIA_IPC_AUDIO_AVAILABLE_STR = "Audio Available";
 	public const uint32 WIA_IPC_AUDIO_DATA_FORMAT = 5126;
+	public const String WIA_IPC_AUDIO_DATA_FORMAT_STR = "Audio Format";
 	public const uint32 WIA_IPC_AUDIO_DATA = 5127;
+	public const String WIA_IPC_AUDIO_DATA_STR = "Audio Data";
 	public const uint32 WIA_IPC_NUM_PICT_PER_ROW = 5128;
+	public const String WIA_IPC_NUM_PICT_PER_ROW_STR = "Pictures per Row";
 	public const uint32 WIA_IPC_SEQUENCE = 5129;
+	public const String WIA_IPC_SEQUENCE_STR = "Sequence Number";
 	public const uint32 WIA_IPC_TIMEDELAY = 5130;
+	public const String WIA_IPC_TIMEDELAY_STR = "Time Delay";
 	public const uint32 WIA_IPS_CUR_INTENT = 6146;
+	public const String WIA_IPS_CUR_INTENT_STR = "Current Intent";
 	public const uint32 WIA_IPS_XRES = 6147;
+	public const String WIA_IPS_XRES_STR = "Horizontal Resolution";
 	public const uint32 WIA_IPS_YRES = 6148;
+	public const String WIA_IPS_YRES_STR = "Vertical Resolution";
 	public const uint32 WIA_IPS_XPOS = 6149;
+	public const String WIA_IPS_XPOS_STR = "Horizontal Start Position";
 	public const uint32 WIA_IPS_YPOS = 6150;
+	public const String WIA_IPS_YPOS_STR = "Vertical Start Position";
 	public const uint32 WIA_IPS_XEXTENT = 6151;
+	public const String WIA_IPS_XEXTENT_STR = "Horizontal Extent";
 	public const uint32 WIA_IPS_YEXTENT = 6152;
+	public const String WIA_IPS_YEXTENT_STR = "Vertical Extent";
 	public const uint32 WIA_IPS_PHOTOMETRIC_INTERP = 6153;
+	public const String WIA_IPS_PHOTOMETRIC_INTERP_STR = "Photometric Interpretation";
 	public const uint32 WIA_IPS_BRIGHTNESS = 6154;
+	public const String WIA_IPS_BRIGHTNESS_STR = "Brightness";
 	public const uint32 WIA_IPS_CONTRAST = 6155;
+	public const String WIA_IPS_CONTRAST_STR = "Contrast";
 	public const uint32 WIA_IPS_ORIENTATION = 6156;
+	public const String WIA_IPS_ORIENTATION_STR = "Orientation";
 	public const uint32 WIA_IPS_ROTATION = 6157;
+	public const String WIA_IPS_ROTATION_STR = "Rotation";
 	public const uint32 WIA_IPS_MIRROR = 6158;
+	public const String WIA_IPS_MIRROR_STR = "Mirror";
 	public const uint32 WIA_IPS_THRESHOLD = 6159;
+	public const String WIA_IPS_THRESHOLD_STR = "Threshold";
 	public const uint32 WIA_IPS_INVERT = 6160;
+	public const String WIA_IPS_INVERT_STR = "Invert";
 	public const uint32 WIA_IPS_WARM_UP_TIME = 6161;
+	public const String WIA_IPS_WARM_UP_TIME_STR = "Lamp Warm up Time";
 	public const uint32 WIA_DPS_USER_NAME = 3112;
+	public const String WIA_DPS_USER_NAME_STR = "User Name";
 	public const uint32 WIA_DPS_SERVICE_ID = 3113;
+	public const String WIA_DPS_SERVICE_ID_STR = "Service ID";
 	public const uint32 WIA_DPS_DEVICE_ID = 3114;
+	public const String WIA_DPS_DEVICE_ID_STR = "Device ID";
 	public const uint32 WIA_DPS_GLOBAL_IDENTITY = 3115;
+	public const String WIA_DPS_GLOBAL_IDENTITY_STR = "Global Identity";
 	public const uint32 WIA_DPS_SCAN_AVAILABLE_ITEM = 3116;
+	public const String WIA_DPS_SCAN_AVAILABLE_ITEM_STR = "Scan Available Item";
 	public const uint32 WIA_IPS_DESKEW_X = 6162;
+	public const String WIA_IPS_DESKEW_X_STR = "DeskewX";
 	public const uint32 WIA_IPS_DESKEW_Y = 6163;
+	public const String WIA_IPS_DESKEW_Y_STR = "DeskewY";
 	public const uint32 WIA_IPS_SEGMENTATION = 6164;
+	public const String WIA_IPS_SEGMENTATION_STR = "Segmentation";
+	public const String WIA_SEGMENTATION_FILTER_STR = "SegmentationFilter";
+	public const String WIA_IMAGEPROC_FILTER_STR = "ImageProcessingFilter";
 	public const uint32 WIA_IPS_MAX_HORIZONTAL_SIZE = 6165;
+	public const String WIA_IPS_MAX_HORIZONTAL_SIZE_STR = "Maximum Horizontal Scan Size";
 	public const uint32 WIA_IPS_MAX_VERTICAL_SIZE = 6166;
+	public const String WIA_IPS_MAX_VERTICAL_SIZE_STR = "Maximum Vertical Scan Size";
 	public const uint32 WIA_IPS_MIN_HORIZONTAL_SIZE = 6167;
+	public const String WIA_IPS_MIN_HORIZONTAL_SIZE_STR = "Minimum Horizontal Scan Size";
 	public const uint32 WIA_IPS_MIN_VERTICAL_SIZE = 6168;
+	public const String WIA_IPS_MIN_VERTICAL_SIZE_STR = "Minimum Vertical Scan Size";
 	public const uint32 WIA_IPS_TRANSFER_CAPABILITIES = 6169;
+	public const String WIA_IPS_TRANSFER_CAPABILITIES_STR = "Transfer Capabilities";
 	public const uint32 WIA_IPS_SHEET_FEEDER_REGISTRATION = 3078;
+	public const String WIA_IPS_SHEET_FEEDER_REGISTRATION_STR = "Sheet Feeder Registration";
 	public const uint32 WIA_IPS_DOCUMENT_HANDLING_SELECT = 3088;
+	public const String WIA_IPS_DOCUMENT_HANDLING_SELECT_STR = "Document Handling Select";
 	public const uint32 WIA_IPS_OPTICAL_XRES = 3090;
+	public const String WIA_IPS_OPTICAL_XRES_STR = "Horizontal Optical Resolution";
 	public const uint32 WIA_IPS_OPTICAL_YRES = 3091;
+	public const String WIA_IPS_OPTICAL_YRES_STR = "Vertical Optical Resolution";
 	public const uint32 WIA_IPS_PAGES = 3096;
+	public const String WIA_IPS_PAGES_STR = "Pages";
 	public const uint32 WIA_IPS_PAGE_SIZE = 3097;
+	public const String WIA_IPS_PAGE_SIZE_STR = "Page Size";
 	public const uint32 WIA_IPS_PAGE_WIDTH = 3098;
+	public const String WIA_IPS_PAGE_WIDTH_STR = "Page Width";
 	public const uint32 WIA_IPS_PAGE_HEIGHT = 3099;
+	public const String WIA_IPS_PAGE_HEIGHT_STR = "Page Height";
 	public const uint32 WIA_IPS_PREVIEW = 3100;
+	public const String WIA_IPS_PREVIEW_STR = "Preview";
 	public const uint32 WIA_IPS_SHOW_PREVIEW_CONTROL = 3103;
+	public const String WIA_IPS_SHOW_PREVIEW_CONTROL_STR = "Show preview control";
 	public const uint32 WIA_IPS_FILM_SCAN_MODE = 3104;
+	public const String WIA_IPS_FILM_SCAN_MODE_STR = "Film Scan Mode";
 	public const uint32 WIA_IPS_LAMP = 3105;
+	public const String WIA_IPS_LAMP_STR = "Lamp";
 	public const uint32 WIA_IPS_LAMP_AUTO_OFF = 3106;
+	public const String WIA_IPS_LAMP_AUTO_OFF_STR = "Lamp Auto Off";
 	public const uint32 WIA_IPS_AUTO_DESKEW = 3107;
+	public const String WIA_IPS_AUTO_DESKEW_STR = "Automatic Deskew";
 	public const uint32 WIA_IPS_SUPPORTS_CHILD_ITEM_CREATION = 3108;
+	public const String WIA_IPS_SUPPORTS_CHILD_ITEM_CREATION_STR = "Supports Child Item Creation";
 	public const uint32 WIA_IPS_XSCALING = 3109;
+	public const String WIA_IPS_XSCALING_STR = "Horizontal Scaling";
 	public const uint32 WIA_IPS_YSCALING = 3110;
+	public const String WIA_IPS_YSCALING_STR = "Vertical Scaling";
 	public const uint32 WIA_IPS_PREVIEW_TYPE = 3111;
+	public const String WIA_IPS_PREVIEW_TYPE_STR = "Preview Type";
 	public const uint32 WIA_IPA_ITEM_CATEGORY = 4125;
+	public const String WIA_IPA_ITEM_CATEGORY_STR = "Item Category";
 	public const uint32 WIA_IPA_UPLOAD_ITEM_SIZE = 4126;
+	public const String WIA_IPA_UPLOAD_ITEM_SIZE_STR = "Upload Item Size";
 	public const uint32 WIA_IPA_ITEMS_STORED = 4127;
+	public const String WIA_IPA_ITEMS_STORED_STR = "Items Stored";
 	public const uint32 WIA_IPA_RAW_BITS_PER_CHANNEL = 4128;
+	public const String WIA_IPA_RAW_BITS_PER_CHANNEL_STR = "Raw Bits Per Channel";
 	public const uint32 WIA_IPS_FILM_NODE_NAME = 4129;
+	public const String WIA_IPS_FILM_NODE_NAME_STR = "Film Node Name";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER = 4130;
+	public const String WIA_IPS_PRINTER_ENDORSER_STR = "Printer/Endorser";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_ORDER = 4131;
+	public const String WIA_IPS_PRINTER_ENDORSER_ORDER_STR = "Printer/Endorser Order";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_COUNTER = 4132;
+	public const String WIA_IPS_PRINTER_ENDORSER_COUNTER_STR = "Printer/Endorser Counter";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_STEP = 4133;
+	public const String WIA_IPS_PRINTER_ENDORSER_STEP_STR = "Printer/Endorser Step";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_XOFFSET = 4134;
+	public const String WIA_IPS_PRINTER_ENDORSER_XOFFSET_STR = "Printer/Endorser Horizontal Offset";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_YOFFSET = 4135;
+	public const String WIA_IPS_PRINTER_ENDORSER_YOFFSET_STR = "Printer/Endorser Vertical Offset";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_NUM_LINES = 4136;
+	public const String WIA_IPS_PRINTER_ENDORSER_NUM_LINES_STR = "Printer/Endorser Lines";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_STRING = 4137;
+	public const String WIA_IPS_PRINTER_ENDORSER_STRING_STR = "Printer/Endorser String";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_VALID_CHARACTERS = 4138;
+	public const String WIA_IPS_PRINTER_ENDORSER_VALID_CHARACTERS_STR = "Printer/Endorser Valid Characters";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_VALID_FORMAT_SPECIFIERS = 4139;
+	public const String WIA_IPS_PRINTER_ENDORSER_VALID_FORMAT_SPECIFIERS_STR = "Printer/Endorser Valid Format Specifiers";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_TEXT_UPLOAD = 4140;
+	public const String WIA_IPS_PRINTER_ENDORSER_TEXT_UPLOAD_STR = "Printer/Endorser Text Upload";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_TEXT_DOWNLOAD = 4141;
+	public const String WIA_IPS_PRINTER_ENDORSER_TEXT_DOWNLOAD_STR = "Printer/Endorser Text Download";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_GRAPHICS = 4142;
+	public const String WIA_IPS_PRINTER_ENDORSER_GRAPHICS_STR = "Printer/Endorser Graphics";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_GRAPHICS_POSITION = 4143;
+	public const String WIA_IPS_PRINTER_ENDORSER_GRAPHICS_POSITION_STR = "Printer/Endorser Graphics Position";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MIN_WIDTH = 4144;
+	public const String WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MIN_WIDTH_STR = "Printer/Endorser Graphics Minimum Width";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MAX_WIDTH = 4145;
+	public const String WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MAX_WIDTH_STR = "Printer/Endorser Graphics Maximum Width";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MIN_HEIGHT = 4146;
+	public const String WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MIN_HEIGHT_STR = "Printer/Endorser Graphics Minimum Height";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MAX_HEIGHT = 4147;
+	public const String WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MAX_HEIGHT_STR = "Printer/Endorser Graphics Maximum Height";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_GRAPHICS_UPLOAD = 4148;
+	public const String WIA_IPS_PRINTER_ENDORSER_GRAPHICS_UPLOAD_STR = "Printer/Endorser Graphics Upload";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_GRAPHICS_DOWNLOAD = 4149;
+	public const String WIA_IPS_PRINTER_ENDORSER_GRAPHICS_DOWNLOAD_STR = "Printer/Endorser Graphics Download";
 	public const uint32 WIA_IPS_BARCODE_READER = 4150;
+	public const String WIA_IPS_BARCODE_READER_STR = "Barcode Reader";
 	public const uint32 WIA_IPS_MAXIMUM_BARCODES_PER_PAGE = 4151;
+	public const String WIA_IPS_MAXIMUM_BARCODES_PER_PAGE_STR = "Maximum Barcodes Per Page";
 	public const uint32 WIA_IPS_BARCODE_SEARCH_DIRECTION = 4152;
+	public const String WIA_IPS_BARCODE_SEARCH_DIRECTION_STR = "Barcode Search Direction";
 	public const uint32 WIA_IPS_MAXIMUM_BARCODE_SEARCH_RETRIES = 4153;
+	public const String WIA_IPS_MAXIMUM_BARCODE_SEARCH_RETRIES_STR = "Barcode Search Retries";
 	public const uint32 WIA_IPS_BARCODE_SEARCH_TIMEOUT = 4154;
+	public const String WIA_IPS_BARCODE_SEARCH_TIMEOUT_STR = "Barcode Search Timeout";
 	public const uint32 WIA_IPS_SUPPORTED_BARCODE_TYPES = 4155;
+	public const String WIA_IPS_SUPPORTED_BARCODE_TYPES_STR = "Supported Barcode Types";
 	public const uint32 WIA_IPS_ENABLED_BARCODE_TYPES = 4156;
+	public const String WIA_IPS_ENABLED_BARCODE_TYPES_STR = "Enabled Barcode Types";
 	public const uint32 WIA_IPS_PATCH_CODE_READER = 4157;
+	public const String WIA_IPS_PATCH_CODE_READER_STR = "Patch Code Reader";
 	public const uint32 WIA_IPS_SUPPORTED_PATCH_CODE_TYPES = 4162;
+	public const String WIA_IPS_SUPPORTED_PATCH_CODE_TYPES_STR = "Supported Patch Code Types";
 	public const uint32 WIA_IPS_ENABLED_PATCH_CODE_TYPES = 4163;
+	public const String WIA_IPS_ENABLED_PATCH_CODE_TYPES_STR = "Enabled Path Code Types";
 	public const uint32 WIA_IPS_MICR_READER = 4164;
+	public const String WIA_IPS_MICR_READER_STR = "MICR Reader";
 	public const uint32 WIA_IPS_JOB_SEPARATORS = 4165;
+	public const String WIA_IPS_JOB_SEPARATORS_STR = "Job Separators";
 	public const uint32 WIA_IPS_LONG_DOCUMENT = 4166;
+	public const String WIA_IPS_LONG_DOCUMENT_STR = "Long Document";
 	public const uint32 WIA_IPS_BLANK_PAGES = 4167;
+	public const String WIA_IPS_BLANK_PAGES_STR = "Blank Pages";
 	public const uint32 WIA_IPS_MULTI_FEED = 4168;
+	public const String WIA_IPS_MULTI_FEED_STR = "Multi-Feed";
 	public const uint32 WIA_IPS_MULTI_FEED_SENSITIVITY = 4169;
+	public const String WIA_IPS_MULTI_FEED_SENSITIVITY_STR = "Multi-Feed Sensitivity";
 	public const uint32 WIA_IPS_AUTO_CROP = 4170;
+	public const String WIA_IPS_AUTO_CROP_STR = "Auto-Crop";
 	public const uint32 WIA_IPS_OVER_SCAN = 4171;
+	public const String WIA_IPS_OVER_SCAN_STR = "Overscan";
 	public const uint32 WIA_IPS_OVER_SCAN_LEFT = 4172;
+	public const String WIA_IPS_OVER_SCAN_LEFT_STR = "Overscan Left";
 	public const uint32 WIA_IPS_OVER_SCAN_RIGHT = 4173;
+	public const String WIA_IPS_OVER_SCAN_RIGHT_STR = "Overscan Right";
 	public const uint32 WIA_IPS_OVER_SCAN_TOP = 4174;
+	public const String WIA_IPS_OVER_SCAN_TOP_STR = "Overscan Top";
 	public const uint32 WIA_IPS_OVER_SCAN_BOTTOM = 4175;
+	public const String WIA_IPS_OVER_SCAN_BOTTOM_STR = "Overscan Bottom";
 	public const uint32 WIA_IPS_COLOR_DROP = 4176;
+	public const String WIA_IPS_COLOR_DROP_STR = "Color Drop";
 	public const uint32 WIA_IPS_COLOR_DROP_RED = 4177;
+	public const String WIA_IPS_COLOR_DROP_RED_STR = "Color Drop Red";
 	public const uint32 WIA_IPS_COLOR_DROP_GREEN = 4178;
+	public const String WIA_IPS_COLOR_DROP_GREEN_STR = "Color Drop Green";
 	public const uint32 WIA_IPS_COLOR_DROP_BLUE = 4179;
+	public const String WIA_IPS_COLOR_DROP_BLUE_STR = "Color Drop Blue";
 	public const uint32 WIA_IPS_SCAN_AHEAD = 4180;
+	public const String WIA_IPS_SCAN_AHEAD_STR = "Scan Ahead";
 	public const uint32 WIA_IPS_SCAN_AHEAD_CAPACITY = 4181;
+	public const String WIA_IPS_SCAN_AHEAD_CAPACITY_STR = "Scan Ahead Capacity";
 	public const uint32 WIA_IPS_FEEDER_CONTROL = 4182;
+	public const String WIA_IPS_FEEDER_CONTROL_STR = "Feeder Control";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_PADDING = 4183;
+	public const String WIA_IPS_PRINTER_ENDORSER_PADDING_STR = "Printer/Endorser Padding";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_FONT_TYPE = 4184;
+	public const String WIA_IPS_PRINTER_ENDORSER_FONT_TYPE_STR = "Printer/Endorser Font Type";
 	public const uint32 WIA_IPS_ALARM = 4185;
+	public const String WIA_IPS_ALARM_STR = "Alarm";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_INK = 4186;
+	public const String WIA_IPS_PRINTER_ENDORSER_INK_STR = "Printer/Endorser Ink";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_CHARACTER_ROTATION = 4187;
+	public const String WIA_IPS_PRINTER_ENDORSER_CHARACTER_ROTATION_STR = "Printer/Endorser Character Rotation";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_MAX_CHARACTERS = 4188;
+	public const String WIA_IPS_PRINTER_ENDORSER_MAX_CHARACTERS_STR = "Printer/Endorser Maximum Characters";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_MAX_GRAPHICS = 4189;
+	public const String WIA_IPS_PRINTER_ENDORSER_MAX_GRAPHICS_STR = "Printer/Endorser Maximum Graphics";
 	public const uint32 WIA_IPS_PRINTER_ENDORSER_COUNTER_DIGITS = 4190;
+	public const String WIA_IPS_PRINTER_ENDORSER_COUNTER_DIGITS_STR = "Printer/Endorser Counter Digits";
 	public const uint32 WIA_IPS_COLOR_DROP_MULTI = 4191;
+	public const String WIA_IPS_COLOR_DROP_MULTI_STR = "Color Drop Multiple";
 	public const uint32 WIA_IPS_BLANK_PAGES_SENSITIVITY = 4192;
+	public const String WIA_IPS_BLANK_PAGES_SENSITIVITY_STR = "Blank Pages Sensitivity";
 	public const uint32 WIA_IPS_MULTI_FEED_DETECT_METHOD = 4193;
+	public const String WIA_IPS_MULTI_FEED_DETECT_METHOD_STR = "Multi-Feed Detection Method";
 	public const Guid WIA_CATEGORY_FINISHED_FILE = .(0xff2b77ca, 0xcf84, 0x432b, 0xa7, 0x35, 0x3a, 0x13, 0x0d, 0xde, 0x2a, 0x88);
 	public const Guid WIA_CATEGORY_FLATBED = .(0xfb607b1f, 0x43f3, 0x488b, 0x85, 0x5b, 0xfb, 0x70, 0x3e, 0xc3, 0x42, 0xa6);
 	public const Guid WIA_CATEGORY_FEEDER = .(0xfe131934, 0xf84c, 0x42ad, 0x8d, 0xa4, 0x61, 0x29, 0xcd, 0xdd, 0x72, 0x88);
@@ -607,6 +858,8 @@ static
 	public const uint32 WIA_LINE_ORDER_TOP_TO_BOTTOM = 1;
 	public const uint32 WIA_LINE_ORDER_BOTTOM_TO_TOP = 2;
 	public const uint32 WIA_IS_DEFAULT_HANDLER = 1;
+	public const String WIA_EVENT_DEVICE_DISCONNECTED_STR = "Device Disconnected";
+	public const String WIA_EVENT_DEVICE_CONNECTED_STR = "Device Connected";
 	public const uint32 TYMED_CALLBACK = 128;
 	public const uint32 TYMED_MULTIPAGE_FILE = 256;
 	public const uint32 TYMED_MULTIPAGE_CALLBACK = 512;
@@ -803,6 +1056,12 @@ static
 	public const uint32 WIA_PREVIEW_SCAN = 1;
 	public const uint32 WIA_SHOW_PREVIEW_CONTROL = 0;
 	public const uint32 WIA_DONT_SHOW_PREVIEW_CONTROL = 1;
+	public const String WIA_ENDORSER_TOK_DATE = "$DATE$";
+	public const String WIA_ENDORSER_TOK_TIME = "$TIME$";
+	public const String WIA_ENDORSER_TOK_PAGE_COUNT = "$PAGE_COUNT$";
+	public const String WIA_ENDORSER_TOK_DAY = "$DAY$";
+	public const String WIA_ENDORSER_TOK_MONTH = "$MONTH$";
+	public const String WIA_ENDORSER_TOK_YEAR = "$YEAR$";
 	public const uint32 WIA_PAGE_A4 = 0;
 	public const uint32 WIA_PAGE_LETTER = 1;
 	public const uint32 WIA_PAGE_CUSTOM = 2;
@@ -902,6 +1161,9 @@ static
 	public const uint32 WIA_INTENT_BEST_PREVIEW = 262144;
 	public const uint32 WIA_INTENT_SIZE_MASK = 983040;
 	public const uint32 WIA_NUM_DIP = 16;
+	public const String SHELLEX_WIAUIEXTENSION_NAME = "WiaDialogExtensionHandlers";
+	public const String CFSTR_WIAITEMNAMES = "WIAItemNames";
+	public const String CFSTR_WIAITEMPTR = "WIAItemPointer";
 	public const Guid GUID_DEVINTERFACE_IMAGE = .(0x6bdd1fc6, 0x810f, 0x11d0, 0xbe, 0xc7, 0x08, 0x00, 0x2b, 0xe2, 0x09, 0x2f);
 	public const uint32 MAX_IO_HANDLES = 16;
 	public const uint32 MAX_RESERVED = 4;
@@ -970,15 +1232,26 @@ static
 	public const uint32 WiaItemTypeTwainCapabilityPassThrough = 131072;
 	public const uint32 ESC_TWAIN_CAPABILITY = 2001;
 	public const uint32 ESC_TWAIN_PRIVATE_SUPPORTED_CAPS = 2002;
+	public const String WIAU_DEBUG_TSTR = "S";
+	public const uint32 g_dwDebugFlags = 0;
 	public const uint32 WIA_WSD_MANUFACTURER = 38914;
+	public const String WIA_WSD_MANUFACTURER_STR = "Device manufacturer";
 	public const uint32 WIA_WSD_MANUFACTURER_URL = 38915;
+	public const String WIA_WSD_MANUFACTURER_URL_STR = "Manufacurer URL";
 	public const uint32 WIA_WSD_MODEL_NAME = 38916;
+	public const String WIA_WSD_MODEL_NAME_STR = "Model name";
 	public const uint32 WIA_WSD_MODEL_NUMBER = 38917;
+	public const String WIA_WSD_MODEL_NUMBER_STR = "Model number";
 	public const uint32 WIA_WSD_MODEL_URL = 38918;
+	public const String WIA_WSD_MODEL_URL_STR = "Model URL";
 	public const uint32 WIA_WSD_PRESENTATION_URL = 38919;
+	public const String WIA_WSD_PRESENTATION_URL_STR = "Presentation URL";
 	public const uint32 WIA_WSD_FRIENDLY_NAME = 38920;
+	public const String WIA_WSD_FRIENDLY_NAME_STR = "Friendly name";
 	public const uint32 WIA_WSD_SERIAL_NUMBER = 38921;
+	public const String WIA_WSD_SERIAL_NUMBER_STR = "Serial number";
 	public const uint32 WIA_WSD_SCAN_AVAILABLE_ITEM = 38922;
+	public const String WIA_WSD_SCAN_AVAILABLE_ITEM_STR = "Scan Available Item";
 	#endregion
 	
 	#region Enums
@@ -1454,7 +1727,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT EnumDeviceInfo(int32 lFlag, IEnumWIA_DEV_INFO** ppIEnum) mut => VT.EnumDeviceInfo(ref this, lFlag, ppIEnum);
+		public HRESULT EnumDeviceInfo(int32 lFlag, out IEnumWIA_DEV_INFO* ppIEnum) mut => VT.EnumDeviceInfo(ref this, lFlag, out ppIEnum);
 		public HRESULT CreateDevice(BSTR bstrDeviceID, out IWiaItem* ppWiaItemRoot) mut => VT.CreateDevice(ref this, bstrDeviceID, out ppWiaItemRoot);
 		public HRESULT SelectDeviceDlg(HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID, out IWiaItem* ppItemRoot) mut => VT.SelectDeviceDlg(ref this, hwndParent, lDeviceType, lFlags, out pbstrDeviceID, out ppItemRoot);
 		public HRESULT SelectDeviceDlgID(HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID) mut => VT.SelectDeviceDlgID(ref this, hwndParent, lDeviceType, lFlags, out pbstrDeviceID);
@@ -1467,7 +1740,7 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr self, int32 lFlag, IEnumWIA_DEV_INFO** ppIEnum) EnumDeviceInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr self, int32 lFlag, out IEnumWIA_DEV_INFO* ppIEnum) EnumDeviceInfo;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr self, BSTR bstrDeviceID, out IWiaItem* ppWiaItemRoot) CreateDevice;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID, out IWiaItem* ppItemRoot) SelectDeviceDlg;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID) SelectDeviceDlgID;
@@ -1488,7 +1761,7 @@ static
 		public HRESULT Next(uint32 celt, out IWiaPropertyStorage* rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, out rgelt, out pceltFetched);
 		public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
 		public HRESULT Reset() mut => VT.Reset(ref this);
-		public HRESULT Clone(IEnumWIA_DEV_INFO** ppIEnum) mut => VT.Clone(ref this, ppIEnum);
+		public HRESULT Clone(out IEnumWIA_DEV_INFO* ppIEnum) mut => VT.Clone(ref this, out ppIEnum);
 		public HRESULT GetCount(out uint32 celt) mut => VT.GetCount(ref this, out celt);
 
 		[CRepr]
@@ -1497,7 +1770,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_INFO self, uint32 celt, out IWiaPropertyStorage* rgelt, out uint32 pceltFetched) Next;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_INFO self, uint32 celt) Skip;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_INFO self) Reset;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_INFO self, IEnumWIA_DEV_INFO** ppIEnum) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_INFO self, out IEnumWIA_DEV_INFO* ppIEnum) Clone;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_INFO self, out uint32 celt) GetCount;
 		}
 	}
@@ -1541,7 +1814,7 @@ static
 		public HRESULT idtGetData(out STGMEDIUM pMedium, ref IWiaDataCallback pIWiaDataCallback) mut => VT.idtGetData(ref this, out pMedium, ref pIWiaDataCallback);
 		public HRESULT idtGetBandedData(out WIA_DATA_TRANSFER_INFO pWiaDataTransInfo, ref IWiaDataCallback pIWiaDataCallback) mut => VT.idtGetBandedData(ref this, out pWiaDataTransInfo, ref pIWiaDataCallback);
 		public HRESULT idtQueryGetData(WIA_FORMAT_INFO* pfe) mut => VT.idtQueryGetData(ref this, pfe);
-		public HRESULT idtEnumWIA_FORMAT_INFO(IEnumWIA_FORMAT_INFO** ppEnum) mut => VT.idtEnumWIA_FORMAT_INFO(ref this, ppEnum);
+		public HRESULT idtEnumWIA_FORMAT_INFO(out IEnumWIA_FORMAT_INFO* ppEnum) mut => VT.idtEnumWIA_FORMAT_INFO(ref this, out ppEnum);
 		public HRESULT idtGetExtendedTransferInfo(out WIA_EXTENDED_TRANSFER_INFO pExtendedTransferInfo) mut => VT.idtGetExtendedTransferInfo(ref this, out pExtendedTransferInfo);
 
 		[CRepr]
@@ -1550,7 +1823,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDataTransfer self, out STGMEDIUM pMedium, ref IWiaDataCallback pIWiaDataCallback) idtGetData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDataTransfer self, out WIA_DATA_TRANSFER_INFO pWiaDataTransInfo, ref IWiaDataCallback pIWiaDataCallback) idtGetBandedData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDataTransfer self, WIA_FORMAT_INFO* pfe) idtQueryGetData;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDataTransfer self, IEnumWIA_FORMAT_INFO** ppEnum) idtEnumWIA_FORMAT_INFO;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDataTransfer self, out IEnumWIA_FORMAT_INFO* ppEnum) idtEnumWIA_FORMAT_INFO;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDataTransfer self, out WIA_EXTENDED_TRANSFER_INFO pExtendedTransferInfo) idtGetExtendedTransferInfo;
 		}
 	}
@@ -1563,18 +1836,18 @@ static
 		
 		public HRESULT GetItemType(out int32 pItemType) mut => VT.GetItemType(ref this, out pItemType);
 		public HRESULT AnalyzeItem(int32 lFlags) mut => VT.AnalyzeItem(ref this, lFlags);
-		public HRESULT EnumChildItems(IEnumWiaItem** ppIEnumWiaItem) mut => VT.EnumChildItems(ref this, ppIEnumWiaItem);
+		public HRESULT EnumChildItems(out IEnumWiaItem* ppIEnumWiaItem) mut => VT.EnumChildItems(ref this, out ppIEnumWiaItem);
 		public HRESULT DeleteItem(int32 lFlags) mut => VT.DeleteItem(ref this, lFlags);
-		public HRESULT CreateChildItem(int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IWiaItem** ppIWiaItem) mut => VT.CreateChildItem(ref this, lFlags, bstrItemName, bstrFullItemName, ppIWiaItem);
-		public HRESULT EnumRegisterEventInfo(int32 lFlags, in Guid pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) mut => VT.EnumRegisterEventInfo(ref this, lFlags, pEventGUID, ppIEnum);
-		public HRESULT FindItemByName(int32 lFlags, BSTR bstrFullItemName, IWiaItem** ppIWiaItem) mut => VT.FindItemByName(ref this, lFlags, bstrFullItemName, ppIWiaItem);
+		public HRESULT CreateChildItem(int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, out IWiaItem* ppIWiaItem) mut => VT.CreateChildItem(ref this, lFlags, bstrItemName, bstrFullItemName, out ppIWiaItem);
+		public HRESULT EnumRegisterEventInfo(int32 lFlags, in Guid pEventGUID, out IEnumWIA_DEV_CAPS* ppIEnum) mut => VT.EnumRegisterEventInfo(ref this, lFlags, pEventGUID, out ppIEnum);
+		public HRESULT FindItemByName(int32 lFlags, BSTR bstrFullItemName, out IWiaItem* ppIWiaItem) mut => VT.FindItemByName(ref this, lFlags, bstrFullItemName, out ppIWiaItem);
 		public HRESULT DeviceDlg(HWND hwndParent, int32 lFlags, int32 lIntent, out int32 plItemCount, out IWiaItem** ppIWiaItem) mut => VT.DeviceDlg(ref this, hwndParent, lFlags, lIntent, out plItemCount, out ppIWiaItem);
-		public HRESULT DeviceCommand(int32 lFlags, in Guid pCmdGUID, IWiaItem** pIWiaItem) mut => VT.DeviceCommand(ref this, lFlags, pCmdGUID, pIWiaItem);
-		public HRESULT GetRootItem(IWiaItem** ppIWiaItem) mut => VT.GetRootItem(ref this, ppIWiaItem);
-		public HRESULT EnumDeviceCapabilities(int32 lFlags, IEnumWIA_DEV_CAPS** ppIEnumWIA_DEV_CAPS) mut => VT.EnumDeviceCapabilities(ref this, lFlags, ppIEnumWIA_DEV_CAPS);
-		public HRESULT DumpItemData(BSTR* bstrData) mut => VT.DumpItemData(ref this, bstrData);
-		public HRESULT DumpDrvItemData(BSTR* bstrData) mut => VT.DumpDrvItemData(ref this, bstrData);
-		public HRESULT DumpTreeItemData(BSTR* bstrData) mut => VT.DumpTreeItemData(ref this, bstrData);
+		public HRESULT DeviceCommand(int32 lFlags, in Guid pCmdGUID, out IWiaItem* pIWiaItem) mut => VT.DeviceCommand(ref this, lFlags, pCmdGUID, out pIWiaItem);
+		public HRESULT GetRootItem(out IWiaItem* ppIWiaItem) mut => VT.GetRootItem(ref this, out ppIWiaItem);
+		public HRESULT EnumDeviceCapabilities(int32 lFlags, out IEnumWIA_DEV_CAPS* ppIEnumWIA_DEV_CAPS) mut => VT.EnumDeviceCapabilities(ref this, lFlags, out ppIEnumWIA_DEV_CAPS);
+		public HRESULT DumpItemData(out BSTR bstrData) mut => VT.DumpItemData(ref this, out bstrData);
+		public HRESULT DumpDrvItemData(out BSTR bstrData) mut => VT.DumpDrvItemData(ref this, out bstrData);
+		public HRESULT DumpTreeItemData(out BSTR bstrData) mut => VT.DumpTreeItemData(ref this, out bstrData);
 		public HRESULT Diagnostic(uint32 ulSize, uint8* pBuffer) mut => VT.Diagnostic(ref this, ulSize, pBuffer);
 
 		[CRepr]
@@ -1582,18 +1855,18 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, out int32 pItemType) GetItemType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags) AnalyzeItem;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, IEnumWiaItem** ppIEnumWiaItem) EnumChildItems;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, out IEnumWiaItem* ppIEnumWiaItem) EnumChildItems;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags) DeleteItem;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IWiaItem** ppIWiaItem) CreateChildItem;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags, in Guid pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) EnumRegisterEventInfo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags, BSTR bstrFullItemName, IWiaItem** ppIWiaItem) FindItemByName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, out IWiaItem* ppIWiaItem) CreateChildItem;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags, in Guid pEventGUID, out IEnumWIA_DEV_CAPS* ppIEnum) EnumRegisterEventInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags, BSTR bstrFullItemName, out IWiaItem* ppIWiaItem) FindItemByName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, HWND hwndParent, int32 lFlags, int32 lIntent, out int32 plItemCount, out IWiaItem** ppIWiaItem) DeviceDlg;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags, in Guid pCmdGUID, IWiaItem** pIWiaItem) DeviceCommand;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, IWiaItem** ppIWiaItem) GetRootItem;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags, IEnumWIA_DEV_CAPS** ppIEnumWIA_DEV_CAPS) EnumDeviceCapabilities;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, BSTR* bstrData) DumpItemData;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, BSTR* bstrData) DumpDrvItemData;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, BSTR* bstrData) DumpTreeItemData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags, in Guid pCmdGUID, out IWiaItem* pIWiaItem) DeviceCommand;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, out IWiaItem* ppIWiaItem) GetRootItem;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags, out IEnumWIA_DEV_CAPS* ppIEnumWIA_DEV_CAPS) EnumDeviceCapabilities;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, out BSTR bstrData) DumpItemData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, out BSTR bstrData) DumpDrvItemData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, out BSTR bstrData) DumpTreeItemData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, uint32 ulSize, uint8* pBuffer) Diagnostic;
 		}
 	}
@@ -1612,13 +1885,13 @@ static
 		public HRESULT DeletePropertyNames(uint32 cpropid, uint32* rgpropid) mut => VT.DeletePropertyNames(ref this, cpropid, rgpropid);
 		public HRESULT Commit(uint32 grfCommitFlags) mut => VT.Commit(ref this, grfCommitFlags);
 		public HRESULT Revert() mut => VT.Revert(ref this);
-		public HRESULT Enum(IEnumSTATPROPSTG** ppenum) mut => VT.Enum(ref this, ppenum);
+		public HRESULT Enum(out IEnumSTATPROPSTG* ppenum) mut => VT.Enum(ref this, out ppenum);
 		public HRESULT SetTimes(in FILETIME pctime, in FILETIME patime, in FILETIME pmtime) mut => VT.SetTimes(ref this, pctime, patime, pmtime);
 		public HRESULT SetClass(in Guid clsid) mut => VT.SetClass(ref this, clsid);
 		public HRESULT Stat(out STATPROPSETSTG pstatpsstg) mut => VT.Stat(ref this, out pstatpsstg);
 		public HRESULT GetPropertyAttributes(uint32 cpspec, PROPSPEC* rgpspec, uint32* rgflags, PROPVARIANT* rgpropvar) mut => VT.GetPropertyAttributes(ref this, cpspec, rgpspec, rgflags, rgpropvar);
 		public HRESULT GetCount(out uint32 pulNumProps) mut => VT.GetCount(ref this, out pulNumProps);
-		public HRESULT GetPropertyStream(out Guid pCompatibilityId, IStream** ppIStream) mut => VT.GetPropertyStream(ref this, out pCompatibilityId, ppIStream);
+		public HRESULT GetPropertyStream(out Guid pCompatibilityId, out IStream* ppIStream) mut => VT.GetPropertyStream(ref this, out pCompatibilityId, out ppIStream);
 		public HRESULT SetPropertyStream(out Guid pCompatibilityId, ref IStream pIStream) mut => VT.SetPropertyStream(ref this, out pCompatibilityId, ref pIStream);
 
 		[CRepr]
@@ -1632,13 +1905,13 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, uint32 cpropid, uint32* rgpropid) DeletePropertyNames;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, uint32 grfCommitFlags) Commit;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self) Revert;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, IEnumSTATPROPSTG** ppenum) Enum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, out IEnumSTATPROPSTG* ppenum) Enum;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, in FILETIME pctime, in FILETIME patime, in FILETIME pmtime) SetTimes;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, in Guid clsid) SetClass;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, out STATPROPSETSTG pstatpsstg) Stat;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, uint32 cpspec, PROPSPEC* rgpspec, uint32* rgflags, PROPVARIANT* rgpropvar) GetPropertyAttributes;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, out uint32 pulNumProps) GetCount;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, out Guid pCompatibilityId, IStream** ppIStream) GetPropertyStream;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, out Guid pCompatibilityId, out IStream* ppIStream) GetPropertyStream;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, out Guid pCompatibilityId, ref IStream pIStream) SetPropertyStream;
 		}
 	}
@@ -1652,7 +1925,7 @@ static
 		public HRESULT Next(uint32 celt, out IWiaItem* ppIWiaItem, out uint32 pceltFetched) mut => VT.Next(ref this, celt, out ppIWiaItem, out pceltFetched);
 		public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
 		public HRESULT Reset() mut => VT.Reset(ref this);
-		public HRESULT Clone(IEnumWiaItem** ppIEnum) mut => VT.Clone(ref this, ppIEnum);
+		public HRESULT Clone(out IEnumWiaItem* ppIEnum) mut => VT.Clone(ref this, out ppIEnum);
 		public HRESULT GetCount(out uint32 celt) mut => VT.GetCount(ref this, out celt);
 
 		[CRepr]
@@ -1661,7 +1934,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem self, uint32 celt, out IWiaItem* ppIWiaItem, out uint32 pceltFetched) Next;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem self, uint32 celt) Skip;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem self) Reset;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem self, IEnumWiaItem** ppIEnum) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem self, out IEnumWiaItem* ppIEnum) Clone;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem self, out uint32 celt) GetCount;
 		}
 	}
@@ -1675,7 +1948,7 @@ static
 		public HRESULT Next(uint32 celt, out WIA_DEV_CAP rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, out rgelt, out pceltFetched);
 		public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
 		public HRESULT Reset() mut => VT.Reset(ref this);
-		public HRESULT Clone(IEnumWIA_DEV_CAPS** ppIEnum) mut => VT.Clone(ref this, ppIEnum);
+		public HRESULT Clone(out IEnumWIA_DEV_CAPS* ppIEnum) mut => VT.Clone(ref this, out ppIEnum);
 		public HRESULT GetCount(out uint32 pcelt) mut => VT.GetCount(ref this, out pcelt);
 
 		[CRepr]
@@ -1684,7 +1957,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_CAPS self, uint32 celt, out WIA_DEV_CAP rgelt, out uint32 pceltFetched) Next;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_CAPS self, uint32 celt) Skip;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_CAPS self) Reset;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_CAPS self, IEnumWIA_DEV_CAPS** ppIEnum) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_CAPS self, out IEnumWIA_DEV_CAPS* ppIEnum) Clone;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_CAPS self, out uint32 pcelt) GetCount;
 		}
 	}
@@ -1698,7 +1971,7 @@ static
 		public HRESULT Next(uint32 celt, out WIA_FORMAT_INFO rgelt, out uint32 pceltFetched) mut => VT.Next(ref this, celt, out rgelt, out pceltFetched);
 		public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
 		public HRESULT Reset() mut => VT.Reset(ref this);
-		public HRESULT Clone(IEnumWIA_FORMAT_INFO** ppIEnum) mut => VT.Clone(ref this, ppIEnum);
+		public HRESULT Clone(out IEnumWIA_FORMAT_INFO* ppIEnum) mut => VT.Clone(ref this, out ppIEnum);
 		public HRESULT GetCount(out uint32 pcelt) mut => VT.GetCount(ref this, out pcelt);
 
 		[CRepr]
@@ -1707,7 +1980,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_FORMAT_INFO self, uint32 celt, out WIA_FORMAT_INFO rgelt, out uint32 pceltFetched) Next;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_FORMAT_INFO self, uint32 celt) Skip;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_FORMAT_INFO self) Reset;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_FORMAT_INFO self, IEnumWIA_FORMAT_INFO** ppIEnum) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_FORMAT_INFO self, out IEnumWIA_FORMAT_INFO* ppIEnum) Clone;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_FORMAT_INFO self, out uint32 pcelt) GetCount;
 		}
 	}
@@ -1775,14 +2048,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetExtendedErrorInfo(BSTR* bstrErrorText) mut => VT.GetExtendedErrorInfo(ref this, bstrErrorText);
+		public HRESULT GetExtendedErrorInfo(out BSTR bstrErrorText) mut => VT.GetExtendedErrorInfo(ref this, out bstrErrorText);
 		public HRESULT Escape(uint32 dwEscapeCode, uint8* lpInData, uint32 cbInDataSize, out uint8 pOutData, uint32 dwOutDataSize, out uint32 pdwActualDataSize) mut => VT.Escape(ref this, dwEscapeCode, lpInData, cbInDataSize, out pOutData, dwOutDataSize, out pdwActualDataSize);
 		public HRESULT CancelPendingIO() mut => VT.CancelPendingIO(ref this);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItemExtras self, BSTR* bstrErrorText) GetExtendedErrorInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItemExtras self, out BSTR bstrErrorText) GetExtendedErrorInfo;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItemExtras self, uint32 dwEscapeCode, uint8* lpInData, uint32 cbInDataSize, out uint8 pOutData, uint32 dwOutDataSize, out uint32 pdwActualDataSize) Escape;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItemExtras self) CancelPendingIO;
 		}
@@ -1794,13 +2067,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetWindow(HWND* phwnd) mut => VT.GetWindow(ref this, phwnd);
+		public HRESULT GetWindow(out HWND phwnd) mut => VT.GetWindow(ref this, out phwnd);
 		public HRESULT ReportStatus(int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, int32 lPercentComplete) mut => VT.ReportStatus(ref this, lFlags, pWiaItem2, hrStatus, lPercentComplete);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaAppErrorHandler self, HWND* phwnd) GetWindow;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaAppErrorHandler self, out HWND phwnd) GetWindow;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaAppErrorHandler self, int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, int32 lPercentComplete) ReportStatus;
 		}
 	}
@@ -1812,13 +2085,13 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT ReportStatus(int32 lFlags, HWND hwndParent, IWiaItem2* pWiaItem2, HRESULT hrStatus, int32 lPercentComplete) mut => VT.ReportStatus(ref this, lFlags, hwndParent, pWiaItem2, hrStatus, lPercentComplete);
-		public HRESULT GetStatusDescription(int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, BSTR* pbstrDescription) mut => VT.GetStatusDescription(ref this, lFlags, pWiaItem2, hrStatus, pbstrDescription);
+		public HRESULT GetStatusDescription(int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, out BSTR pbstrDescription) mut => VT.GetStatusDescription(ref this, lFlags, pWiaItem2, hrStatus, out pbstrDescription);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaErrorHandler self, int32 lFlags, HWND hwndParent, IWiaItem2* pWiaItem2, HRESULT hrStatus, int32 lPercentComplete) ReportStatus;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaErrorHandler self, int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, BSTR* pbstrDescription) GetStatusDescription;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaErrorHandler self, int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, out BSTR pbstrDescription) GetStatusDescription;
 		}
 	}
 	[CRepr]
@@ -1831,7 +2104,7 @@ static
 		public HRESULT Download(int32 lFlags, ref IWiaTransferCallback pIWiaTransferCallback) mut => VT.Download(ref this, lFlags, ref pIWiaTransferCallback);
 		public HRESULT Upload(int32 lFlags, ref IStream pSource, ref IWiaTransferCallback pIWiaTransferCallback) mut => VT.Upload(ref this, lFlags, ref pSource, ref pIWiaTransferCallback);
 		public HRESULT Cancel() mut => VT.Cancel(ref this);
-		public HRESULT EnumWIA_FORMAT_INFO(IEnumWIA_FORMAT_INFO** ppEnum) mut => VT.EnumWIA_FORMAT_INFO(ref this, ppEnum);
+		public HRESULT EnumWIA_FORMAT_INFO(out IEnumWIA_FORMAT_INFO* ppEnum) mut => VT.EnumWIA_FORMAT_INFO(ref this, out ppEnum);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -1839,7 +2112,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaTransfer self, int32 lFlags, ref IWiaTransferCallback pIWiaTransferCallback) Download;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaTransfer self, int32 lFlags, ref IStream pSource, ref IWiaTransferCallback pIWiaTransferCallback) Upload;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaTransfer self) Cancel;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaTransfer self, IEnumWIA_FORMAT_INFO** ppEnum) EnumWIA_FORMAT_INFO;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaTransfer self, out IEnumWIA_FORMAT_INFO* ppEnum) EnumWIA_FORMAT_INFO;
 		}
 	}
 	[CRepr]
@@ -1926,7 +2199,7 @@ static
 		public HRESULT Next(uint32 cElt, out IWiaItem2* ppIWiaItem2, out uint32 pcEltFetched) mut => VT.Next(ref this, cElt, out ppIWiaItem2, out pcEltFetched);
 		public HRESULT Skip(uint32 cElt) mut => VT.Skip(ref this, cElt);
 		public HRESULT Reset() mut => VT.Reset(ref this);
-		public HRESULT Clone(IEnumWiaItem2** ppIEnum) mut => VT.Clone(ref this, ppIEnum);
+		public HRESULT Clone(out IEnumWiaItem2* ppIEnum) mut => VT.Clone(ref this, out ppIEnum);
 		public HRESULT GetCount(out uint32 cElt) mut => VT.GetCount(ref this, out cElt);
 
 		[CRepr]
@@ -1935,7 +2208,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem2 self, uint32 cElt, out IWiaItem2* ppIWiaItem2, out uint32 pcEltFetched) Next;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem2 self, uint32 cElt) Skip;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem2 self) Reset;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem2 self, IEnumWiaItem2** ppIEnum) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem2 self, out IEnumWiaItem2* ppIEnum) Clone;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem2 self, out uint32 cElt) GetCount;
 		}
 	}
@@ -1946,41 +2219,41 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT CreateChildItem(int32 lItemFlags, int32 lCreationFlags, BSTR bstrItemName, IWiaItem2** ppIWiaItem2) mut => VT.CreateChildItem(ref this, lItemFlags, lCreationFlags, bstrItemName, ppIWiaItem2);
+		public HRESULT CreateChildItem(int32 lItemFlags, int32 lCreationFlags, BSTR bstrItemName, out IWiaItem2* ppIWiaItem2) mut => VT.CreateChildItem(ref this, lItemFlags, lCreationFlags, bstrItemName, out ppIWiaItem2);
 		public HRESULT DeleteItem(int32 lFlags) mut => VT.DeleteItem(ref this, lFlags);
-		public HRESULT EnumChildItems(Guid* pCategoryGUID, IEnumWiaItem2** ppIEnumWiaItem2) mut => VT.EnumChildItems(ref this, pCategoryGUID, ppIEnumWiaItem2);
-		public HRESULT FindItemByName(int32 lFlags, BSTR bstrFullItemName, IWiaItem2** ppIWiaItem2) mut => VT.FindItemByName(ref this, lFlags, bstrFullItemName, ppIWiaItem2);
+		public HRESULT EnumChildItems(Guid* pCategoryGUID, out IEnumWiaItem2* ppIEnumWiaItem2) mut => VT.EnumChildItems(ref this, pCategoryGUID, out ppIEnumWiaItem2);
+		public HRESULT FindItemByName(int32 lFlags, BSTR bstrFullItemName, out IWiaItem2* ppIWiaItem2) mut => VT.FindItemByName(ref this, lFlags, bstrFullItemName, out ppIWiaItem2);
 		public HRESULT GetItemCategory(out Guid pItemCategoryGUID) mut => VT.GetItemCategory(ref this, out pItemCategoryGUID);
 		public HRESULT GetItemType(out int32 pItemType) mut => VT.GetItemType(ref this, out pItemType);
 		public HRESULT DeviceDlg(int32 lFlags, HWND hwndParent, BSTR bstrFolderName, BSTR bstrFilename, out int32 plNumFiles, out BSTR* ppbstrFilePaths, IWiaItem2** ppItem) mut => VT.DeviceDlg(ref this, lFlags, hwndParent, bstrFolderName, bstrFilename, out plNumFiles, out ppbstrFilePaths, ppItem);
-		public HRESULT DeviceCommand(int32 lFlags, in Guid pCmdGUID, IWiaItem2** ppIWiaItem2) mut => VT.DeviceCommand(ref this, lFlags, pCmdGUID, ppIWiaItem2);
-		public HRESULT EnumDeviceCapabilities(int32 lFlags, IEnumWIA_DEV_CAPS** ppIEnumWIA_DEV_CAPS) mut => VT.EnumDeviceCapabilities(ref this, lFlags, ppIEnumWIA_DEV_CAPS);
+		public HRESULT DeviceCommand(int32 lFlags, in Guid pCmdGUID, out IWiaItem2* ppIWiaItem2) mut => VT.DeviceCommand(ref this, lFlags, pCmdGUID, out ppIWiaItem2);
+		public HRESULT EnumDeviceCapabilities(int32 lFlags, out IEnumWIA_DEV_CAPS* ppIEnumWIA_DEV_CAPS) mut => VT.EnumDeviceCapabilities(ref this, lFlags, out ppIEnumWIA_DEV_CAPS);
 		public HRESULT CheckExtension(int32 lFlags, BSTR bstrName, in Guid riidExtensionInterface, out BOOL pbExtensionExists) mut => VT.CheckExtension(ref this, lFlags, bstrName, riidExtensionInterface, out pbExtensionExists);
 		public HRESULT GetExtension(int32 lFlags, BSTR bstrName, in Guid riidExtensionInterface, void** ppOut) mut => VT.GetExtension(ref this, lFlags, bstrName, riidExtensionInterface, ppOut);
-		public HRESULT GetParentItem(IWiaItem2** ppIWiaItem2) mut => VT.GetParentItem(ref this, ppIWiaItem2);
-		public HRESULT GetRootItem(IWiaItem2** ppIWiaItem2) mut => VT.GetRootItem(ref this, ppIWiaItem2);
+		public HRESULT GetParentItem(out IWiaItem2* ppIWiaItem2) mut => VT.GetParentItem(ref this, out ppIWiaItem2);
+		public HRESULT GetRootItem(out IWiaItem2* ppIWiaItem2) mut => VT.GetRootItem(ref this, out ppIWiaItem2);
 		public HRESULT GetPreviewComponent(int32 lFlags, out IWiaPreview* ppWiaPreview) mut => VT.GetPreviewComponent(ref this, lFlags, out ppWiaPreview);
-		public HRESULT EnumRegisterEventInfo(int32 lFlags, in Guid pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) mut => VT.EnumRegisterEventInfo(ref this, lFlags, pEventGUID, ppIEnum);
+		public HRESULT EnumRegisterEventInfo(int32 lFlags, in Guid pEventGUID, out IEnumWIA_DEV_CAPS* ppIEnum) mut => VT.EnumRegisterEventInfo(ref this, lFlags, pEventGUID, out ppIEnum);
 		public HRESULT Diagnostic(uint32 ulSize, uint8* pBuffer) mut => VT.Diagnostic(ref this, ulSize, pBuffer);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lItemFlags, int32 lCreationFlags, BSTR bstrItemName, IWiaItem2** ppIWiaItem2) CreateChildItem;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lItemFlags, int32 lCreationFlags, BSTR bstrItemName, out IWiaItem2* ppIWiaItem2) CreateChildItem;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags) DeleteItem;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, Guid* pCategoryGUID, IEnumWiaItem2** ppIEnumWiaItem2) EnumChildItems;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, BSTR bstrFullItemName, IWiaItem2** ppIWiaItem2) FindItemByName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, Guid* pCategoryGUID, out IEnumWiaItem2* ppIEnumWiaItem2) EnumChildItems;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, BSTR bstrFullItemName, out IWiaItem2* ppIWiaItem2) FindItemByName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, out Guid pItemCategoryGUID) GetItemCategory;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, out int32 pItemType) GetItemType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, HWND hwndParent, BSTR bstrFolderName, BSTR bstrFilename, out int32 plNumFiles, out BSTR* ppbstrFilePaths, IWiaItem2** ppItem) DeviceDlg;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, in Guid pCmdGUID, IWiaItem2** ppIWiaItem2) DeviceCommand;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, IEnumWIA_DEV_CAPS** ppIEnumWIA_DEV_CAPS) EnumDeviceCapabilities;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, in Guid pCmdGUID, out IWiaItem2* ppIWiaItem2) DeviceCommand;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, out IEnumWIA_DEV_CAPS* ppIEnumWIA_DEV_CAPS) EnumDeviceCapabilities;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, BSTR bstrName, in Guid riidExtensionInterface, out BOOL pbExtensionExists) CheckExtension;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, BSTR bstrName, in Guid riidExtensionInterface, void** ppOut) GetExtension;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, IWiaItem2** ppIWiaItem2) GetParentItem;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, IWiaItem2** ppIWiaItem2) GetRootItem;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, out IWiaItem2* ppIWiaItem2) GetParentItem;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, out IWiaItem2* ppIWiaItem2) GetRootItem;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, out IWiaPreview* ppWiaPreview) GetPreviewComponent;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, in Guid pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) EnumRegisterEventInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, in Guid pEventGUID, out IEnumWIA_DEV_CAPS* ppIEnum) EnumRegisterEventInfo;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, uint32 ulSize, uint8* pBuffer) Diagnostic;
 		}
 	}
@@ -1991,7 +2264,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT EnumDeviceInfo(int32 lFlags, IEnumWIA_DEV_INFO** ppIEnum) mut => VT.EnumDeviceInfo(ref this, lFlags, ppIEnum);
+		public HRESULT EnumDeviceInfo(int32 lFlags, out IEnumWIA_DEV_INFO* ppIEnum) mut => VT.EnumDeviceInfo(ref this, lFlags, out ppIEnum);
 		public HRESULT CreateDevice(int32 lFlags, BSTR bstrDeviceID, out IWiaItem2* ppWiaItem2Root) mut => VT.CreateDevice(ref this, lFlags, bstrDeviceID, out ppWiaItem2Root);
 		public HRESULT SelectDeviceDlg(HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID, out IWiaItem2* ppItemRoot) mut => VT.SelectDeviceDlg(ref this, hwndParent, lDeviceType, lFlags, out pbstrDeviceID, out ppItemRoot);
 		public HRESULT SelectDeviceDlgID(HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID) mut => VT.SelectDeviceDlgID(ref this, hwndParent, lDeviceType, lFlags, out pbstrDeviceID);
@@ -2003,7 +2276,7 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr2 self, int32 lFlags, IEnumWIA_DEV_INFO** ppIEnum) EnumDeviceInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr2 self, int32 lFlags, out IEnumWIA_DEV_INFO* ppIEnum) EnumDeviceInfo;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, out IWiaItem2* ppWiaItem2Root) CreateDevice;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr2 self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID, out IWiaItem2* ppItemRoot) SelectDeviceDlg;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr2 self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID) SelectDeviceDlgID;
@@ -2020,7 +2293,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT drvInitializeWia(ref uint8 __MIDL__IWiaMiniDrv0000, int32 __MIDL__IWiaMiniDrv0001, BSTR __MIDL__IWiaMiniDrv0002, BSTR __MIDL__IWiaMiniDrv0003, IUnknown* __MIDL__IWiaMiniDrv0004, IUnknown* __MIDL__IWiaMiniDrv0005, IWiaDrvItem** __MIDL__IWiaMiniDrv0006, IUnknown** __MIDL__IWiaMiniDrv0007, out int32 __MIDL__IWiaMiniDrv0008) mut => VT.drvInitializeWia(ref this, ref __MIDL__IWiaMiniDrv0000, __MIDL__IWiaMiniDrv0001, __MIDL__IWiaMiniDrv0002, __MIDL__IWiaMiniDrv0003, __MIDL__IWiaMiniDrv0004, __MIDL__IWiaMiniDrv0005, __MIDL__IWiaMiniDrv0006, __MIDL__IWiaMiniDrv0007, out __MIDL__IWiaMiniDrv0008);
+		public HRESULT drvInitializeWia(ref uint8 __MIDL__IWiaMiniDrv0000, int32 __MIDL__IWiaMiniDrv0001, BSTR __MIDL__IWiaMiniDrv0002, BSTR __MIDL__IWiaMiniDrv0003, IUnknown* __MIDL__IWiaMiniDrv0004, IUnknown* __MIDL__IWiaMiniDrv0005, out IWiaDrvItem* __MIDL__IWiaMiniDrv0006, out IUnknown* __MIDL__IWiaMiniDrv0007, out int32 __MIDL__IWiaMiniDrv0008) mut => VT.drvInitializeWia(ref this, ref __MIDL__IWiaMiniDrv0000, __MIDL__IWiaMiniDrv0001, __MIDL__IWiaMiniDrv0002, __MIDL__IWiaMiniDrv0003, __MIDL__IWiaMiniDrv0004, __MIDL__IWiaMiniDrv0005, out __MIDL__IWiaMiniDrv0006, out __MIDL__IWiaMiniDrv0007, out __MIDL__IWiaMiniDrv0008);
 		public HRESULT drvAcquireItemData(ref uint8 __MIDL__IWiaMiniDrv0009, int32 __MIDL__IWiaMiniDrv0010, out MINIDRV_TRANSFER_CONTEXT __MIDL__IWiaMiniDrv0011, out int32 __MIDL__IWiaMiniDrv0012) mut => VT.drvAcquireItemData(ref this, ref __MIDL__IWiaMiniDrv0009, __MIDL__IWiaMiniDrv0010, out __MIDL__IWiaMiniDrv0011, out __MIDL__IWiaMiniDrv0012);
 		public HRESULT drvInitItemProperties(ref uint8 __MIDL__IWiaMiniDrv0013, int32 __MIDL__IWiaMiniDrv0014, out int32 __MIDL__IWiaMiniDrv0015) mut => VT.drvInitItemProperties(ref this, ref __MIDL__IWiaMiniDrv0013, __MIDL__IWiaMiniDrv0014, out __MIDL__IWiaMiniDrv0015);
 		public HRESULT drvValidateItemProperties(ref uint8 __MIDL__IWiaMiniDrv0016, int32 __MIDL__IWiaMiniDrv0017, uint32 __MIDL__IWiaMiniDrv0018, in PROPSPEC __MIDL__IWiaMiniDrv0019, out int32 __MIDL__IWiaMiniDrv0020) mut => VT.drvValidateItemProperties(ref this, ref __MIDL__IWiaMiniDrv0016, __MIDL__IWiaMiniDrv0017, __MIDL__IWiaMiniDrv0018, __MIDL__IWiaMiniDrv0019, out __MIDL__IWiaMiniDrv0020);
@@ -2029,19 +2302,19 @@ static
 		public HRESULT drvLockWiaDevice(ref uint8 __MIDL__IWiaMiniDrv0030, int32 __MIDL__IWiaMiniDrv0031, out int32 __MIDL__IWiaMiniDrv0032) mut => VT.drvLockWiaDevice(ref this, ref __MIDL__IWiaMiniDrv0030, __MIDL__IWiaMiniDrv0031, out __MIDL__IWiaMiniDrv0032);
 		public HRESULT drvUnLockWiaDevice(ref uint8 __MIDL__IWiaMiniDrv0033, int32 __MIDL__IWiaMiniDrv0034, out int32 __MIDL__IWiaMiniDrv0035) mut => VT.drvUnLockWiaDevice(ref this, ref __MIDL__IWiaMiniDrv0033, __MIDL__IWiaMiniDrv0034, out __MIDL__IWiaMiniDrv0035);
 		public HRESULT drvAnalyzeItem(ref uint8 __MIDL__IWiaMiniDrv0036, int32 __MIDL__IWiaMiniDrv0037, ref int32 __MIDL__IWiaMiniDrv0038) mut => VT.drvAnalyzeItem(ref this, ref __MIDL__IWiaMiniDrv0036, __MIDL__IWiaMiniDrv0037, ref __MIDL__IWiaMiniDrv0038);
-		public HRESULT drvGetDeviceErrorStr(int32 __MIDL__IWiaMiniDrv0039, int32 __MIDL__IWiaMiniDrv0040, PWSTR* __MIDL__IWiaMiniDrv0041, out int32 __MIDL__IWiaMiniDrv0042) mut => VT.drvGetDeviceErrorStr(ref this, __MIDL__IWiaMiniDrv0039, __MIDL__IWiaMiniDrv0040, __MIDL__IWiaMiniDrv0041, out __MIDL__IWiaMiniDrv0042);
-		public HRESULT drvDeviceCommand(ref uint8 __MIDL__IWiaMiniDrv0043, int32 __MIDL__IWiaMiniDrv0044, in Guid __MIDL__IWiaMiniDrv0045, IWiaDrvItem** __MIDL__IWiaMiniDrv0046, out int32 __MIDL__IWiaMiniDrv0047) mut => VT.drvDeviceCommand(ref this, ref __MIDL__IWiaMiniDrv0043, __MIDL__IWiaMiniDrv0044, __MIDL__IWiaMiniDrv0045, __MIDL__IWiaMiniDrv0046, out __MIDL__IWiaMiniDrv0047);
-		public HRESULT drvGetCapabilities(ref uint8 __MIDL__IWiaMiniDrv0048, int32 __MIDL__IWiaMiniDrv0049, out int32 __MIDL__IWiaMiniDrv0050, WIA_DEV_CAP_DRV** __MIDL__IWiaMiniDrv0051, out int32 __MIDL__IWiaMiniDrv0052) mut => VT.drvGetCapabilities(ref this, ref __MIDL__IWiaMiniDrv0048, __MIDL__IWiaMiniDrv0049, out __MIDL__IWiaMiniDrv0050, __MIDL__IWiaMiniDrv0051, out __MIDL__IWiaMiniDrv0052);
+		public HRESULT drvGetDeviceErrorStr(int32 __MIDL__IWiaMiniDrv0039, int32 __MIDL__IWiaMiniDrv0040, out PWSTR __MIDL__IWiaMiniDrv0041, out int32 __MIDL__IWiaMiniDrv0042) mut => VT.drvGetDeviceErrorStr(ref this, __MIDL__IWiaMiniDrv0039, __MIDL__IWiaMiniDrv0040, out __MIDL__IWiaMiniDrv0041, out __MIDL__IWiaMiniDrv0042);
+		public HRESULT drvDeviceCommand(ref uint8 __MIDL__IWiaMiniDrv0043, int32 __MIDL__IWiaMiniDrv0044, in Guid __MIDL__IWiaMiniDrv0045, out IWiaDrvItem* __MIDL__IWiaMiniDrv0046, out int32 __MIDL__IWiaMiniDrv0047) mut => VT.drvDeviceCommand(ref this, ref __MIDL__IWiaMiniDrv0043, __MIDL__IWiaMiniDrv0044, __MIDL__IWiaMiniDrv0045, out __MIDL__IWiaMiniDrv0046, out __MIDL__IWiaMiniDrv0047);
+		public HRESULT drvGetCapabilities(ref uint8 __MIDL__IWiaMiniDrv0048, int32 __MIDL__IWiaMiniDrv0049, out int32 __MIDL__IWiaMiniDrv0050, out WIA_DEV_CAP_DRV* __MIDL__IWiaMiniDrv0051, out int32 __MIDL__IWiaMiniDrv0052) mut => VT.drvGetCapabilities(ref this, ref __MIDL__IWiaMiniDrv0048, __MIDL__IWiaMiniDrv0049, out __MIDL__IWiaMiniDrv0050, out __MIDL__IWiaMiniDrv0051, out __MIDL__IWiaMiniDrv0052);
 		public HRESULT drvDeleteItem(ref uint8 __MIDL__IWiaMiniDrv0053, int32 __MIDL__IWiaMiniDrv0054, out int32 __MIDL__IWiaMiniDrv0055) mut => VT.drvDeleteItem(ref this, ref __MIDL__IWiaMiniDrv0053, __MIDL__IWiaMiniDrv0054, out __MIDL__IWiaMiniDrv0055);
 		public HRESULT drvFreeDrvItemContext(int32 __MIDL__IWiaMiniDrv0056, ref uint8 __MIDL__IWiaMiniDrv0057, out int32 __MIDL__IWiaMiniDrv0058) mut => VT.drvFreeDrvItemContext(ref this, __MIDL__IWiaMiniDrv0056, ref __MIDL__IWiaMiniDrv0057, out __MIDL__IWiaMiniDrv0058);
-		public HRESULT drvGetWiaFormatInfo(ref uint8 __MIDL__IWiaMiniDrv0059, int32 __MIDL__IWiaMiniDrv0060, out int32 __MIDL__IWiaMiniDrv0061, WIA_FORMAT_INFO** __MIDL__IWiaMiniDrv0062, out int32 __MIDL__IWiaMiniDrv0063) mut => VT.drvGetWiaFormatInfo(ref this, ref __MIDL__IWiaMiniDrv0059, __MIDL__IWiaMiniDrv0060, out __MIDL__IWiaMiniDrv0061, __MIDL__IWiaMiniDrv0062, out __MIDL__IWiaMiniDrv0063);
+		public HRESULT drvGetWiaFormatInfo(ref uint8 __MIDL__IWiaMiniDrv0059, int32 __MIDL__IWiaMiniDrv0060, out int32 __MIDL__IWiaMiniDrv0061, out WIA_FORMAT_INFO* __MIDL__IWiaMiniDrv0062, out int32 __MIDL__IWiaMiniDrv0063) mut => VT.drvGetWiaFormatInfo(ref this, ref __MIDL__IWiaMiniDrv0059, __MIDL__IWiaMiniDrv0060, out __MIDL__IWiaMiniDrv0061, out __MIDL__IWiaMiniDrv0062, out __MIDL__IWiaMiniDrv0063);
 		public HRESULT drvNotifyPnpEvent(in Guid pEventGUID, BSTR bstrDeviceID, uint32 ulReserved) mut => VT.drvNotifyPnpEvent(ref this, pEventGUID, bstrDeviceID, ulReserved);
 		public HRESULT drvUnInitializeWia(ref uint8 __MIDL__IWiaMiniDrv0064) mut => VT.drvUnInitializeWia(ref this, ref __MIDL__IWiaMiniDrv0064);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0000, int32 __MIDL__IWiaMiniDrv0001, BSTR __MIDL__IWiaMiniDrv0002, BSTR __MIDL__IWiaMiniDrv0003, IUnknown* __MIDL__IWiaMiniDrv0004, IUnknown* __MIDL__IWiaMiniDrv0005, IWiaDrvItem** __MIDL__IWiaMiniDrv0006, IUnknown** __MIDL__IWiaMiniDrv0007, out int32 __MIDL__IWiaMiniDrv0008) drvInitializeWia;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0000, int32 __MIDL__IWiaMiniDrv0001, BSTR __MIDL__IWiaMiniDrv0002, BSTR __MIDL__IWiaMiniDrv0003, IUnknown* __MIDL__IWiaMiniDrv0004, IUnknown* __MIDL__IWiaMiniDrv0005, out IWiaDrvItem* __MIDL__IWiaMiniDrv0006, out IUnknown* __MIDL__IWiaMiniDrv0007, out int32 __MIDL__IWiaMiniDrv0008) drvInitializeWia;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0009, int32 __MIDL__IWiaMiniDrv0010, out MINIDRV_TRANSFER_CONTEXT __MIDL__IWiaMiniDrv0011, out int32 __MIDL__IWiaMiniDrv0012) drvAcquireItemData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0013, int32 __MIDL__IWiaMiniDrv0014, out int32 __MIDL__IWiaMiniDrv0015) drvInitItemProperties;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0016, int32 __MIDL__IWiaMiniDrv0017, uint32 __MIDL__IWiaMiniDrv0018, in PROPSPEC __MIDL__IWiaMiniDrv0019, out int32 __MIDL__IWiaMiniDrv0020) drvValidateItemProperties;
@@ -2050,12 +2323,12 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0030, int32 __MIDL__IWiaMiniDrv0031, out int32 __MIDL__IWiaMiniDrv0032) drvLockWiaDevice;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0033, int32 __MIDL__IWiaMiniDrv0034, out int32 __MIDL__IWiaMiniDrv0035) drvUnLockWiaDevice;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0036, int32 __MIDL__IWiaMiniDrv0037, ref int32 __MIDL__IWiaMiniDrv0038) drvAnalyzeItem;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, int32 __MIDL__IWiaMiniDrv0039, int32 __MIDL__IWiaMiniDrv0040, PWSTR* __MIDL__IWiaMiniDrv0041, out int32 __MIDL__IWiaMiniDrv0042) drvGetDeviceErrorStr;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0043, int32 __MIDL__IWiaMiniDrv0044, in Guid __MIDL__IWiaMiniDrv0045, IWiaDrvItem** __MIDL__IWiaMiniDrv0046, out int32 __MIDL__IWiaMiniDrv0047) drvDeviceCommand;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0048, int32 __MIDL__IWiaMiniDrv0049, out int32 __MIDL__IWiaMiniDrv0050, WIA_DEV_CAP_DRV** __MIDL__IWiaMiniDrv0051, out int32 __MIDL__IWiaMiniDrv0052) drvGetCapabilities;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, int32 __MIDL__IWiaMiniDrv0039, int32 __MIDL__IWiaMiniDrv0040, out PWSTR __MIDL__IWiaMiniDrv0041, out int32 __MIDL__IWiaMiniDrv0042) drvGetDeviceErrorStr;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0043, int32 __MIDL__IWiaMiniDrv0044, in Guid __MIDL__IWiaMiniDrv0045, out IWiaDrvItem* __MIDL__IWiaMiniDrv0046, out int32 __MIDL__IWiaMiniDrv0047) drvDeviceCommand;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0048, int32 __MIDL__IWiaMiniDrv0049, out int32 __MIDL__IWiaMiniDrv0050, out WIA_DEV_CAP_DRV* __MIDL__IWiaMiniDrv0051, out int32 __MIDL__IWiaMiniDrv0052) drvGetCapabilities;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0053, int32 __MIDL__IWiaMiniDrv0054, out int32 __MIDL__IWiaMiniDrv0055) drvDeleteItem;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, int32 __MIDL__IWiaMiniDrv0056, ref uint8 __MIDL__IWiaMiniDrv0057, out int32 __MIDL__IWiaMiniDrv0058) drvFreeDrvItemContext;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0059, int32 __MIDL__IWiaMiniDrv0060, out int32 __MIDL__IWiaMiniDrv0061, WIA_FORMAT_INFO** __MIDL__IWiaMiniDrv0062, out int32 __MIDL__IWiaMiniDrv0063) drvGetWiaFormatInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0059, int32 __MIDL__IWiaMiniDrv0060, out int32 __MIDL__IWiaMiniDrv0061, out WIA_FORMAT_INFO* __MIDL__IWiaMiniDrv0062, out int32 __MIDL__IWiaMiniDrv0063) drvGetWiaFormatInfo;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, in Guid pEventGUID, BSTR bstrDeviceID, uint32 ulReserved) drvNotifyPnpEvent;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0064) drvUnInitializeWia;
 		}
@@ -2100,35 +2373,35 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT GetItemFlags(out int32 __MIDL__IWiaDrvItem0000) mut => VT.GetItemFlags(ref this, out __MIDL__IWiaDrvItem0000);
-		public HRESULT GetDeviceSpecContext(uint8** __MIDL__IWiaDrvItem0001) mut => VT.GetDeviceSpecContext(ref this, __MIDL__IWiaDrvItem0001);
-		public HRESULT GetFullItemName(BSTR* __MIDL__IWiaDrvItem0002) mut => VT.GetFullItemName(ref this, __MIDL__IWiaDrvItem0002);
-		public HRESULT GetItemName(BSTR* __MIDL__IWiaDrvItem0003) mut => VT.GetItemName(ref this, __MIDL__IWiaDrvItem0003);
+		public HRESULT GetDeviceSpecContext(out uint8* __MIDL__IWiaDrvItem0001) mut => VT.GetDeviceSpecContext(ref this, out __MIDL__IWiaDrvItem0001);
+		public HRESULT GetFullItemName(out BSTR __MIDL__IWiaDrvItem0002) mut => VT.GetFullItemName(ref this, out __MIDL__IWiaDrvItem0002);
+		public HRESULT GetItemName(out BSTR __MIDL__IWiaDrvItem0003) mut => VT.GetItemName(ref this, out __MIDL__IWiaDrvItem0003);
 		public HRESULT AddItemToFolder(IWiaDrvItem* __MIDL__IWiaDrvItem0004) mut => VT.AddItemToFolder(ref this, __MIDL__IWiaDrvItem0004);
 		public HRESULT UnlinkItemTree(int32 __MIDL__IWiaDrvItem0005) mut => VT.UnlinkItemTree(ref this, __MIDL__IWiaDrvItem0005);
 		public HRESULT RemoveItemFromFolder(int32 __MIDL__IWiaDrvItem0006) mut => VT.RemoveItemFromFolder(ref this, __MIDL__IWiaDrvItem0006);
-		public HRESULT FindItemByName(int32 __MIDL__IWiaDrvItem0007, BSTR __MIDL__IWiaDrvItem0008, IWiaDrvItem** __MIDL__IWiaDrvItem0009) mut => VT.FindItemByName(ref this, __MIDL__IWiaDrvItem0007, __MIDL__IWiaDrvItem0008, __MIDL__IWiaDrvItem0009);
-		public HRESULT FindChildItemByName(BSTR __MIDL__IWiaDrvItem0010, IWiaDrvItem** __MIDL__IWiaDrvItem0011) mut => VT.FindChildItemByName(ref this, __MIDL__IWiaDrvItem0010, __MIDL__IWiaDrvItem0011);
-		public HRESULT GetParentItem(IWiaDrvItem** __MIDL__IWiaDrvItem0012) mut => VT.GetParentItem(ref this, __MIDL__IWiaDrvItem0012);
-		public HRESULT GetFirstChildItem(IWiaDrvItem** __MIDL__IWiaDrvItem0013) mut => VT.GetFirstChildItem(ref this, __MIDL__IWiaDrvItem0013);
-		public HRESULT GetNextSiblingItem(IWiaDrvItem** __MIDL__IWiaDrvItem0014) mut => VT.GetNextSiblingItem(ref this, __MIDL__IWiaDrvItem0014);
-		public HRESULT DumpItemData(BSTR* __MIDL__IWiaDrvItem0015) mut => VT.DumpItemData(ref this, __MIDL__IWiaDrvItem0015);
+		public HRESULT FindItemByName(int32 __MIDL__IWiaDrvItem0007, BSTR __MIDL__IWiaDrvItem0008, out IWiaDrvItem* __MIDL__IWiaDrvItem0009) mut => VT.FindItemByName(ref this, __MIDL__IWiaDrvItem0007, __MIDL__IWiaDrvItem0008, out __MIDL__IWiaDrvItem0009);
+		public HRESULT FindChildItemByName(BSTR __MIDL__IWiaDrvItem0010, out IWiaDrvItem* __MIDL__IWiaDrvItem0011) mut => VT.FindChildItemByName(ref this, __MIDL__IWiaDrvItem0010, out __MIDL__IWiaDrvItem0011);
+		public HRESULT GetParentItem(out IWiaDrvItem* __MIDL__IWiaDrvItem0012) mut => VT.GetParentItem(ref this, out __MIDL__IWiaDrvItem0012);
+		public HRESULT GetFirstChildItem(out IWiaDrvItem* __MIDL__IWiaDrvItem0013) mut => VT.GetFirstChildItem(ref this, out __MIDL__IWiaDrvItem0013);
+		public HRESULT GetNextSiblingItem(out IWiaDrvItem* __MIDL__IWiaDrvItem0014) mut => VT.GetNextSiblingItem(ref this, out __MIDL__IWiaDrvItem0014);
+		public HRESULT DumpItemData(out BSTR __MIDL__IWiaDrvItem0015) mut => VT.DumpItemData(ref this, out __MIDL__IWiaDrvItem0015);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, out int32 __MIDL__IWiaDrvItem0000) GetItemFlags;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, uint8** __MIDL__IWiaDrvItem0001) GetDeviceSpecContext;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, BSTR* __MIDL__IWiaDrvItem0002) GetFullItemName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, BSTR* __MIDL__IWiaDrvItem0003) GetItemName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, out uint8* __MIDL__IWiaDrvItem0001) GetDeviceSpecContext;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, out BSTR __MIDL__IWiaDrvItem0002) GetFullItemName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, out BSTR __MIDL__IWiaDrvItem0003) GetItemName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, IWiaDrvItem* __MIDL__IWiaDrvItem0004) AddItemToFolder;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, int32 __MIDL__IWiaDrvItem0005) UnlinkItemTree;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, int32 __MIDL__IWiaDrvItem0006) RemoveItemFromFolder;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, int32 __MIDL__IWiaDrvItem0007, BSTR __MIDL__IWiaDrvItem0008, IWiaDrvItem** __MIDL__IWiaDrvItem0009) FindItemByName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, BSTR __MIDL__IWiaDrvItem0010, IWiaDrvItem** __MIDL__IWiaDrvItem0011) FindChildItemByName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, IWiaDrvItem** __MIDL__IWiaDrvItem0012) GetParentItem;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, IWiaDrvItem** __MIDL__IWiaDrvItem0013) GetFirstChildItem;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, IWiaDrvItem** __MIDL__IWiaDrvItem0014) GetNextSiblingItem;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, BSTR* __MIDL__IWiaDrvItem0015) DumpItemData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, int32 __MIDL__IWiaDrvItem0007, BSTR __MIDL__IWiaDrvItem0008, out IWiaDrvItem* __MIDL__IWiaDrvItem0009) FindItemByName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, BSTR __MIDL__IWiaDrvItem0010, out IWiaDrvItem* __MIDL__IWiaDrvItem0011) FindChildItemByName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, out IWiaDrvItem* __MIDL__IWiaDrvItem0012) GetParentItem;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, out IWiaDrvItem* __MIDL__IWiaDrvItem0013) GetFirstChildItem;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, out IWiaDrvItem* __MIDL__IWiaDrvItem0014) GetNextSiblingItem;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, out BSTR __MIDL__IWiaDrvItem0015) DumpItemData;
 		}
 	}
 	[CRepr]
@@ -2140,7 +2413,7 @@ static
 		
 		public HRESULT get_PreviewVisible(out BOOL pbPreviewVisible) mut => VT.get_PreviewVisible(ref this, out pbPreviewVisible);
 		public HRESULT put_PreviewVisible(BOOL bPreviewVisible) mut => VT.put_PreviewVisible(ref this, bPreviewVisible);
-		public HRESULT get_ImagesDirectory(BSTR* pbstrImageDirectory) mut => VT.get_ImagesDirectory(ref this, pbstrImageDirectory);
+		public HRESULT get_ImagesDirectory(out BSTR pbstrImageDirectory) mut => VT.get_ImagesDirectory(ref this, out pbstrImageDirectory);
 		public HRESULT put_ImagesDirectory(BSTR bstrImageDirectory) mut => VT.put_ImagesDirectory(ref this, bstrImageDirectory);
 		public HRESULT CreateVideoByWiaDevID(BSTR bstrWiaDeviceID, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) mut => VT.CreateVideoByWiaDevID(ref this, bstrWiaDeviceID, hwndParent, bStretchToFitParent, bAutoBeginPlayback);
 		public HRESULT CreateVideoByDevNum(uint32 uiDeviceNumber, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) mut => VT.CreateVideoByDevNum(ref this, uiDeviceNumber, hwndParent, bStretchToFitParent, bAutoBeginPlayback);
@@ -2148,7 +2421,7 @@ static
 		public HRESULT DestroyVideo() mut => VT.DestroyVideo(ref this);
 		public HRESULT Play() mut => VT.Play(ref this);
 		public HRESULT Pause() mut => VT.Pause(ref this);
-		public HRESULT TakePicture(BSTR* pbstrNewImageFilename) mut => VT.TakePicture(ref this, pbstrNewImageFilename);
+		public HRESULT TakePicture(out BSTR pbstrNewImageFilename) mut => VT.TakePicture(ref this, out pbstrNewImageFilename);
 		public HRESULT ResizeVideo(BOOL bStretchToFitParent) mut => VT.ResizeVideo(ref this, bStretchToFitParent);
 		public HRESULT GetCurrentState(out WIAVIDEO_STATE pState) mut => VT.GetCurrentState(ref this, out pState);
 
@@ -2157,7 +2430,7 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, out BOOL pbPreviewVisible) get_PreviewVisible;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, BOOL bPreviewVisible) put_PreviewVisible;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, BSTR* pbstrImageDirectory) get_ImagesDirectory;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, out BSTR pbstrImageDirectory) get_ImagesDirectory;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, BSTR bstrImageDirectory) put_ImagesDirectory;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, BSTR bstrWiaDeviceID, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) CreateVideoByWiaDevID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, uint32 uiDeviceNumber, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) CreateVideoByDevNum;
@@ -2165,7 +2438,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self) DestroyVideo;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self) Play;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self) Pause;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, BSTR* pbstrNewImageFilename) TakePicture;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, out BSTR pbstrNewImageFilename) TakePicture;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, BOOL bStretchToFitParent) ResizeVideo;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, out WIAVIDEO_STATE pState) GetCurrentState;
 		}

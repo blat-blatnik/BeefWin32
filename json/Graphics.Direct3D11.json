@@ -3194,6 +3194,125 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"D3D11_REGKEY_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Direct3D"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_MUTE_DEBUG_OUTPUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MuteDebugOutput"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_ENABLE_BREAK_ON_MESSAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnableBreakOnMessage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_INFOQUEUE_STORAGE_FILTER_OVERRIDE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InfoQueueStorageFilterOverride"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_MUTE_CATEGORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Mute_CATEGORY_%s"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_MUTE_SEVERITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Mute_SEVERITY_%s"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_MUTE_ID_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Mute_ID_%s"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_MUTE_ID_DECIMAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Mute_ID_%d"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_UNMUTE_SEVERITY_INFO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Unmute_SEVERITY_INFO"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_BREAKON_CATEGORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BreakOn_CATEGORY_%s"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_BREAKON_SEVERITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BreakOn_SEVERITY_%s"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_BREAKON_ID_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BreakOn_ID_%s"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_BREAKON_ID_DECIMAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BreakOn_ID_%d"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_APPSIZE_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Size"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_APPNAME_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_FORCE_DEBUGGABLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ForceDebuggable"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3D11_FORCE_SHADER_SKIP_OPTIMIZATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ForceShaderSkipOptimization"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"D3D11_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -3366,6 +3485,27 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":64
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3DCSX_DLL_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"d3dcsx_47.dll"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3DCSX_DLL_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"d3dcsx_47.dll"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"D3DCSX_DLL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"d3dcsx_47.dll"
 		,"Attrs":[]
 	}
 	,{
@@ -3748,6 +3888,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"1841e5c8-16b0-489b-bcc8-44cfb0d5deae"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3898,6 +4041,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"03823efb-8d8f-4e1c-9aa2-f64bb2cbfdf1"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -4015,6 +4161,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"75b68faa-347d-4159-8f45-a0640f01cd9a"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -4059,6 +4208,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"9bb4ab81-ab1a-4d8f-b506-fc04200b6ee7"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -4111,6 +4263,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dc8e63f3-d12b-4952-b47b-5e45026a862d"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -4174,6 +4329,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"48570b85-d1ee-4fcd-a250-eb350722b037"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11Resource","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -4216,6 +4374,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"f8fb5c27-c6b3-4f75-a4c8-439af2ef564c"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11Resource","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -4260,6 +4421,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"6f15aaf2-d208-4e89-9ab4-489535d34f9c"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11Resource","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -4303,6 +4467,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"037e866e-f56d-4357-a8af-9dabbe6e250e"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11Resource","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -4342,6 +4509,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"839d1216-bb2e-412b-b7f4-a9dbebe08ed1"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -4602,6 +4772,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"b0e06fe0-8192-4e1a-b1ca-36d7414710b2"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11View","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -4799,6 +4972,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dfdba067-0b8d-4865-875b-d7b4516cc164"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11View","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -4951,6 +5127,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"9fdac92a-1876-48c3-afad-25b94f84a9b6"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11View","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -5106,6 +5285,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"28acf509-7f5c-48f6-8611-f316010a6380"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11View","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -5128,6 +5310,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"3b301d64-d678-4289-8897-22f8928b72f3"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 		]
@@ -5138,6 +5323,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"8e5c6061-628a-4c8e-8264-bbe45cb3d5dd"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 		]
@@ -5148,6 +5336,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"f582c508-0f36-490c-9977-31eece268cfa"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 		]
@@ -5158,6 +5349,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"38325b96-effb-4022-ba02-2e795b70275c"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 		]
@@ -5168,6 +5362,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"ea82e40d-51dc-4f33-93d4-db7c9125ae8c"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 		]
@@ -5178,6 +5375,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"4f5b196e-c2bd-495e-bd01-1fded38e4969"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 		]
@@ -5188,6 +5388,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"e4819ddc-4cf0-4025-bd26-5de82a3e07b7"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 		]
@@ -5311,6 +5514,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"da6fea51-564c-4487-9810-f0d0f9b4e3a5"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -5398,6 +5604,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"4b35d0cd-1e15-4258-9c98-1b1333f6dd3b"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -5484,6 +5693,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"d6c00747-87b7-425e-b84d-44d108560afd"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11Asynchronous","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -5506,6 +5718,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"9eb576dd-9f77-4d86-81aa-8bab5fe490e2"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11Query","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 		]
@@ -5623,6 +5838,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"6e8c49fb-a371-4770-b440-29086022b741"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11Asynchronous","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -5691,6 +5909,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"a6cd7faa-b0b7-4a2f-9436-8662a65797cb"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -5751,6 +5972,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"ddf57cba-9543-46e4-a12b-f207a0fe7fed"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -5792,6 +6016,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"a24bc4d1-769e-43f7-8013-98ff566c18e2"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -6209,6 +6436,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"c0bfa96c-e089-44fb-8eaf-26f8796190da"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -7855,6 +8085,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"3c9c5b51-995d-48d1-9b8d-fa5caeded65c"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -8229,6 +8462,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"31627037-53ab-4200-9061-05faa9ab45f9"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -8502,6 +8738,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"1d7b0652-185f-41c6-85ce-0c5be3d4ae6c"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -8563,6 +8802,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"3015a308-dcbd-47aa-a747-192486d14d4a"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -9080,6 +9322,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"9b32f9ad-bdcc-40a6-a39d-d5c865845720"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -9205,6 +9450,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"c2931aea-2a85-4f20-860f-fba1fd256e18"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11View","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -9282,6 +9530,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"11ec5a5f-51dc-4945-ab34-6e8c21300ea5"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11View","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -9374,6 +9625,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"a048285e-25a9-4527-bd93-d68b68c44254"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11View","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -9396,6 +9650,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"61f21c45-3c0e-4a74-9cea-67100d9ad5e4"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -10264,6 +10521,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"10ec4d5b-975a-4689-b9e4-d0aac30fe333"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10508,6 +10768,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"db6f6ddb-ac77-4e88-8253-819df9bbf140"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11102,6 +11365,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"79cf2233-7536-4948-9d36-1e4692dc5760"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11218,6 +11484,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"1ef337e3-58e7-4f83-a692-db221f5ed47e"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11296,6 +11565,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"1911c771-1587-413e-a7e0-fb26c3de0268"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11332,6 +11604,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"193dacdf-0db2-4c05-a55c-ef06cac56fd9"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11354,6 +11629,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"03916615-c644-418c-9bf4-75db5be63ca0"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12811,6 +13089,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"6543dbb6-1b48-42f5-ab82-e97ec74326f6"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13357,6 +13638,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"cc86fabe-da55-401d-85e7-e3c9de2877e9"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11BlendState","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -13402,6 +13686,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"1217d7a6-5039-418c-b042-9cbe256afd6e"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11RasterizerState","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -13436,6 +13723,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"5c1e0d8a-7c23-48f9-8c59-a92958ceff11"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 		]
@@ -13446,6 +13736,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"bb2c6faa-b5fb-4082-8e6b-388b8cfa90e1"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceContext","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -13929,6 +14222,9 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"a7f026da-a5f8-4487-a564-15e34357651e"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11VideoContext","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -14139,6 +14435,9 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"29da1d51-1321-4454-804b-f5fc9f861f0f"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11VideoDevice","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -14217,6 +14516,9 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"465217f2-5568-43cf-b5b9-f61d54531ca1"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11VideoProcessorEnumerator","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -14243,6 +14545,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"a04bfb29-08ef-43d6-a49c-a9bdbdcbe686"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11Device","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -14351,6 +14656,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"b2daad8b-03d4-4dbf-95eb-32ab4b63d0ab"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14539,6 +14847,9 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"420d5b32-b90c-4da4-bef0-359f6a24a83a"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceContext1","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -14694,6 +15005,9 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"9d06dffa-d1e5-4d07-83a8-1bb123f2f841"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11Device1","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -14815,6 +15129,9 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"51218251-1e33-4617-9ccb-4d3a4367e7bb"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11Texture2D","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -14859,6 +15176,9 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"0c711683-2853-4846-9bb0-f3e60639e46a"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11Texture3D","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -14918,6 +15238,9 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"6fbd02fb-209f-46c4-b059-2ed15586a6ac"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11RasterizerState1","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -15010,6 +15333,9 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"91308b87-9040-411d-8c67-c39253ce3802"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11ShaderResourceView","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -15097,6 +15423,9 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"ffbe2e23-f011-418a-ac56-5ceed7c5b94b"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11RenderTargetView","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -15182,6 +15511,9 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"7b3b6153-a886-4544-ab37-6537c8500403"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11UnorderedAccessView","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -15219,6 +15551,9 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"631b4766-36dc-461d-8db6-c47e13e60916"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11Query","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -15256,6 +15591,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b4e3c01d-e79e-4637-91b2-510e9f4c9b8f"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceContext2","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -15303,6 +15641,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"affde9d1-1df7-4bb7-8a34-0f46251dab80"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceChild","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -15352,6 +15693,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"917600da-f58c-4c33-98d8-3e15b390fa24"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11DeviceContext3","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -15388,6 +15732,9 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"a05c8c37-d2c6-4732-b3a0-9ce0b0dc9ae6"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11Device2","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -15553,6 +15900,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8992ab71-02e6-4b8d-ba48-b056dcda42c4"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11Device3","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -15588,6 +15938,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8ffde202-a0e7-45df-9e01-e837801b5ea0"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11Device4","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -15627,6 +15980,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9b7e4e00-342c-4106-a19f-4f2704f689f0"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15682,6 +16038,9 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"c4e7374c-6243-4d1b-ae87-52b4f740e261"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11VideoContext1","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -15831,6 +16190,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"59c0cb01-35f0-4a70-8f67-87905c906a53"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11VideoDevice1","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -15891,6 +16253,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a9e2faa0-cb39-418f-a0b7-d8aad4de672e"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11VideoContext2","TargetKind":"Com","Api":"Graphics.Direct3D11","Parents":[]}
 		,"Methods":[
 			{
@@ -16197,6 +16562,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6e6ffa6a-9bae-4613-a51e-91652d508c21"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":null
 		,"Methods":[
 			{
@@ -16336,6 +16704,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"51f23923-f3e5-4bd1-91cb-606177d8db4c"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":null
 		,"Methods":[
 			{
@@ -16392,6 +16763,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"eb62d63d-93dd-4318-8ae8-c6f83ad371b8"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":null
 		,"Methods":[
 			{
@@ -16438,6 +16812,9 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"8d536ca1-0cca-4956-a837-786963755584"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16675,6 +17052,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"54384f1b-5b3e-4bb7-ae01-60ba3097cbb6"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16709,6 +17089,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"207bcecb-d683-4a06-a8a3-9b149b9f73a4"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":null
 		,"Methods":[
 			{
@@ -16805,6 +17188,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"42757488-334f-47fe-982e-1a65d08cc462"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":null
 		,"Methods":[
 			{
@@ -16827,6 +17213,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"469e07f7-045a-48d5-aa12-68a478cdf75d"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16977,6 +17366,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"cac701ee-80fc-4122-8242-10b39c8cec34"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -17000,6 +17392,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"59a6cd0e-e10d-4c1f-88c0-63aba1daf30e"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -17052,6 +17447,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d80dd70c-8d2f-4751-94a1-03c79b3556db"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -17062,6 +17460,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"54133220-1ce8-43d3-8236-9855c5ceecff"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -17480,6 +17881,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"36b013e6-2811-4845-baa7-d623fe0df104"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -17593,6 +17997,9 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"1fbad429-66ab-41cc-9617-667ac10e4459"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -17662,6 +18069,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5089b68f-e71d-4d38-be8e-f363b95a9405"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -17718,6 +18128,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a915128c-d954-4c79-bfe1-64db923194d6"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -17757,6 +18170,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b3f7a938-4c93-4310-a675-b30d6de50553"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

@@ -23,6 +23,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"fMapiUnicode"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"hrSuccess"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
 		"Name":"MAPI_P1"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -76,6 +90,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":128
+		,"Attrs":[]
+	}
+	,{
+		"Name":"cchProfileNameMax"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":64
+		,"Attrs":[]
+	}
+	,{
+		"Name":"cchProfilePassMax"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":64
 		,"Attrs":[]
 	}
 	,{
@@ -167,6 +195,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":9
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szMAPINotificationMsg"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MAPI Notify window message"
 		,"Attrs":[]
 	}
 	,{
@@ -321,6 +356,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WAB_DLL_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WAB32.DLL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WAB_DLL_PATH_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\WAB\\DLLPath"
 		,"Attrs":[]
 	}
 	,{
@@ -1457,6 +1506,27 @@
 		,"Value":0
 		,"Attrs":[]
 	}
+	,{
+		"Name":"OPENSTREAMONFILE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OpenStreamOnFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szHrDispatchNotifications"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HrDispatchNotifications"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szScCreateConversationIndex"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ScCreateConversationIndex"
+		,"Attrs":[]
+	}
 ]
 
 ,"Types":[
@@ -2088,6 +2158,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2126,6 +2197,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2229,6 +2301,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2633,6 +2706,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2954,6 +3028,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMAPIProp","TargetKind":"Com","Api":"System.AddressBook","Parents":[]}
 		,"Methods":[
 		]
@@ -2964,6 +3039,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMAPIProp","TargetKind":"Com","Api":"System.AddressBook","Parents":[]}
 		,"Methods":[
 			{
@@ -3029,6 +3105,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMAPIProp","TargetKind":"Com","Api":"System.AddressBook","Parents":[]}
 		,"Methods":[
 			{
@@ -3125,6 +3202,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMAPIContainer","TargetKind":"Com","Api":"System.AddressBook","Parents":[]}
 		,"Methods":[
 			{
@@ -3193,6 +3271,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMAPIProp","TargetKind":"Com","Api":"System.AddressBook","Parents":[]}
 		,"Methods":[
 		]
@@ -3203,6 +3282,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMAPIContainer","TargetKind":"Com","Api":"System.AddressBook","Parents":[]}
 		,"Methods":[
 			{
@@ -3271,6 +3351,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMAPIContainer","TargetKind":"Com","Api":"System.AddressBook","Parents":[]}
 		,"Methods":[
 			{
@@ -3452,6 +3533,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMAPIProp","TargetKind":"Com","Api":"System.AddressBook","Parents":[]}
 		,"Methods":[
 			{
@@ -3646,6 +3728,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMAPIProp","TargetKind":"Com","Api":"System.AddressBook","Parents":[]}
 		,"Methods":[
 			{
@@ -3764,6 +3847,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMAPIProp","TargetKind":"Com","Api":"System.AddressBook","Parents":[]}
 		,"Methods":[
 		]
@@ -3849,6 +3933,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4082,6 +4167,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4192,6 +4278,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4322,6 +4409,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMAPIProp","TargetKind":"Com","Api":"System.AddressBook","Parents":[]}
 		,"Methods":[
 			{
@@ -4378,19 +4466,6 @@
 		]
 	}
 	,{
-		"Name":"FNIDLE"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"FunctionPointer"
-		,"SetLastError":false
-		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
-		,"ReturnAttrs":[]
-		,"Attrs":[]
-		,"Params":[
-			{"Name":"param0","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out"]}
-		]
-	}
-	,{
 		"Name":"PFNIDLE"
 		,"Architectures":[]
 		,"Platform":null
@@ -4400,6 +4475,7 @@
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
+			{"Name":"param0","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out"]}
 		]
 	}
 	,{
@@ -4529,6 +4605,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMAPIProp","TargetKind":"Com","Api":"System.AddressBook","Parents":[]}
 		,"Methods":[
 			{
@@ -4668,7 +4745,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"lpulUIParam","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UIntPtr"}},"Attrs":["In","Out"]}
-					,{"Name":"lpfnDismiss","Type":{"Kind":"ApiRef","Name":"LPFNDISMISS","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
+					,{"Name":"lpfnDismiss","Type":{"Kind":"ApiRef","Name":"LPFNDISMISS","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
 					,{"Name":"lpvDismissContext","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out"]}
 					,{"Name":"cbEntryID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"lpEntryID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ENTRYID","TargetKind":"Default","Api":"System.AddressBook","Parents":[]}},"Attrs":["In","Out"]}
@@ -4819,6 +4896,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5242,6 +5320,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":null
 		,"Methods":[
 			{
@@ -5509,9 +5588,9 @@
 			,{"Name":"lppWABObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWABObject","TargetKind":"Com","Api":"System.AddressBook","Parents":[]}},"Attrs":["Out"]}
 			,{"Name":"lpWP","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"WAB_PARAM","TargetKind":"Default","Api":"System.AddressBook","Parents":[]}},"Attrs":["In","Out"]}
 			,{"Name":"Reserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"fnAllocateBuffer","Type":{"Kind":"ApiRef","Name":"LPALLOCATEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
-			,{"Name":"fnAllocateMore","Type":{"Kind":"ApiRef","Name":"LPALLOCATEMORE","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
-			,{"Name":"fnFreeBuffer","Type":{"Kind":"ApiRef","Name":"LPFREEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"fnAllocateBuffer","Type":{"Kind":"ApiRef","Name":"LPALLOCATEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
+			,{"Name":"fnAllocateMore","Type":{"Kind":"ApiRef","Name":"LPALLOCATEMORE","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
+			,{"Name":"fnFreeBuffer","Type":{"Kind":"ApiRef","Name":"LPFREEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{
@@ -5558,6 +5637,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"ea22ebf0-87a4-11d1-9acf-00a0c91f9c8b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5647,9 +5727,9 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"lpInterface","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Out"]}
-			,{"Name":"lpAllocateBuffer","Type":{"Kind":"ApiRef","Name":"LPALLOCATEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
-			,{"Name":"lpAllocateMore","Type":{"Kind":"ApiRef","Name":"LPALLOCATEMORE","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
-			,{"Name":"lpFreeBuffer","Type":{"Kind":"ApiRef","Name":"LPFREEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"lpAllocateBuffer","Type":{"Kind":"ApiRef","Name":"LPALLOCATEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
+			,{"Name":"lpAllocateMore","Type":{"Kind":"ApiRef","Name":"LPALLOCATEMORE","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
+			,{"Name":"lpFreeBuffer","Type":{"Kind":"ApiRef","Name":"LPFREEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
 			,{"Name":"lpvReserved","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out"]}
 			,{"Name":"ulTableType","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"ulPropTagIndexColumn","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -5668,9 +5748,9 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"lpInterface","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Out"]}
-			,{"Name":"lpAllocateBuffer","Type":{"Kind":"ApiRef","Name":"LPALLOCATEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
-			,{"Name":"lpAllocateMore","Type":{"Kind":"ApiRef","Name":"LPALLOCATEMORE","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
-			,{"Name":"lpFreeBuffer","Type":{"Kind":"ApiRef","Name":"LPFREEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"lpAllocateBuffer","Type":{"Kind":"ApiRef","Name":"LPALLOCATEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
+			,{"Name":"lpAllocateMore","Type":{"Kind":"ApiRef","Name":"LPALLOCATEMORE","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
+			,{"Name":"lpFreeBuffer","Type":{"Kind":"ApiRef","Name":"LPFREEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
 			,{"Name":"lpvReserved","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out"]}
 			,{"Name":"lppPropData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropData","TargetKind":"Com","Api":"System.AddressBook","Parents":[]}},"Attrs":["Out"]}
 		]
@@ -5805,7 +5885,7 @@
 		,"Params":[
 			{"Name":"lpSPropValueDest","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SPropValue","TargetKind":"Default","Api":"System.AddressBook","Parents":[]}},"Attrs":["In","Out"]}
 			,{"Name":"lpSPropValueSrc","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SPropValue","TargetKind":"Default","Api":"System.AddressBook","Parents":[]}},"Attrs":["In","Out"]}
-			,{"Name":"lpfAllocMore","Type":{"Kind":"ApiRef","Name":"LPALLOCATEMORE","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"lpfAllocMore","Type":{"Kind":"ApiRef","Name":"LPALLOCATEMORE","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
 			,{"Name":"lpvObject","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out"]}
 		]
 	}
@@ -5892,8 +5972,8 @@
 		,"Params":[
 			{"Name":"lptbl","Type":{"Kind":"ApiRef","Name":"IMAPITable","TargetKind":"Com","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
 			,{"Name":"lpproptagColumnsNew","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SPropTagArray","TargetKind":"Default","Api":"System.AddressBook","Parents":[]}},"Attrs":["In","Out"]}
-			,{"Name":"lpAllocateBuffer","Type":{"Kind":"ApiRef","Name":"LPALLOCATEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
-			,{"Name":"lpFreeBuffer","Type":{"Kind":"ApiRef","Name":"LPFREEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"lpAllocateBuffer","Type":{"Kind":"ApiRef","Name":"LPALLOCATEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
+			,{"Name":"lpFreeBuffer","Type":{"Kind":"ApiRef","Name":"LPFREEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{
@@ -5908,8 +5988,8 @@
 		,"Params":[
 			{"Name":"lptbl","Type":{"Kind":"ApiRef","Name":"IMAPITable","TargetKind":"Com","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
 			,{"Name":"lpproptagColumnsNew","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SPropTagArray","TargetKind":"Default","Api":"System.AddressBook","Parents":[]}},"Attrs":["In","Out"]}
-			,{"Name":"lpAllocateBuffer","Type":{"Kind":"ApiRef","Name":"LPALLOCATEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
-			,{"Name":"lpFreeBuffer","Type":{"Kind":"ApiRef","Name":"LPFREEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"lpAllocateBuffer","Type":{"Kind":"ApiRef","Name":"LPALLOCATEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
+			,{"Name":"lpFreeBuffer","Type":{"Kind":"ApiRef","Name":"LPFREEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
 			,{"Name":"lpfnFilterColumns","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":["In"]}
 		]
 	}
@@ -5923,7 +6003,7 @@
 		,"Platform":null
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"lpfnCallback","Type":{"Kind":"ApiRef","Name":"LPNOTIFCALLBACK","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
+			{"Name":"lpfnCallback","Type":{"Kind":"ApiRef","Name":"LPNOTIFCALLBACK","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
 			,{"Name":"lpvContext","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out"]}
 			,{"Name":"lppAdviseSink","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMAPIAdviseSink","TargetKind":"Com","Api":"System.AddressBook","Parents":[]}},"Attrs":["Out"]}
 		]
@@ -5965,9 +6045,9 @@
 		,"Platform":null
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"lpAllocateBuffer","Type":{"Kind":"ApiRef","Name":"LPALLOCATEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
-			,{"Name":"lpAllocateMore","Type":{"Kind":"ApiRef","Name":"LPALLOCATEMORE","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
-			,{"Name":"lpFreeBuffer","Type":{"Kind":"ApiRef","Name":"LPFREEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
+			{"Name":"lpAllocateBuffer","Type":{"Kind":"ApiRef","Name":"LPALLOCATEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
+			,{"Name":"lpAllocateMore","Type":{"Kind":"ApiRef","Name":"LPALLOCATEMORE","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
+			,{"Name":"lpFreeBuffer","Type":{"Kind":"ApiRef","Name":"LPFREEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
 			,{"Name":"lpMalloc","Type":{"Kind":"ApiRef","Name":"IMalloc","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 			,{"Name":"hInstance","Type":{"Kind":"ApiRef","Name":"HINSTANCE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"cPages","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -6100,7 +6180,7 @@
 		,"Params":[
 			{"Name":"cValues","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 			,{"Name":"lpPropArray","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SPropValue","TargetKind":"Default","Api":"System.AddressBook","Parents":[]}},"Attrs":["In","Out"]}
-			,{"Name":"lpAllocateBuffer","Type":{"Kind":"ApiRef","Name":"LPALLOCATEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"lpAllocateBuffer","Type":{"Kind":"ApiRef","Name":"LPALLOCATEBUFFER","TargetKind":"FunctionPointer","Api":"System.AddressBook","Parents":[]},"Attrs":["In"]}
 			,{"Name":"lppPropArray","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SPropValue","TargetKind":"Default","Api":"System.AddressBook","Parents":[]}}},"Attrs":["In","Out"]}
 		]
 	}

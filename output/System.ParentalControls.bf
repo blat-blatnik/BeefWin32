@@ -539,14 +539,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetUserSummary(BSTR bstrSID, BSTR* pbstrUserSummary) mut => VT.GetUserSummary(ref this, bstrSID, pbstrUserSummary);
+		public HRESULT GetUserSummary(BSTR bstrSID, out BSTR pbstrUserSummary) mut => VT.GetUserSummary(ref this, bstrSID, out pbstrUserSummary);
 		public HRESULT Configure(HWND hWnd, BSTR bstrSID) mut => VT.Configure(ref this, hWnd, bstrSID);
 		public HRESULT RequestOverride(HWND hWnd, BSTR bstrPath, WPCFLAG_RESTRICTION dwFlags) mut => VT.RequestOverride(ref this, hWnd, bstrPath, dwFlags);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCProviderConfig self, BSTR bstrSID, BSTR* pbstrUserSummary) GetUserSummary;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCProviderConfig self, BSTR bstrSID, out BSTR pbstrUserSummary) GetUserSummary;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCProviderConfig self, HWND hWnd, BSTR bstrSID) Configure;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCProviderConfig self, HWND hWnd, BSTR bstrPath, WPCFLAG_RESTRICTION dwFlags) RequestOverride;
 		}
@@ -610,16 +610,16 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT GetVisibility(out WPCFLAG_VISIBILITY peVisibility) mut => VT.GetVisibility(ref this, out peVisibility);
-		public HRESULT GetUserSettings(PWSTR pcszSID, IWPCSettings** ppSettings) mut => VT.GetUserSettings(ref this, pcszSID, ppSettings);
-		public HRESULT GetWebSettings(PWSTR pcszSID, IWPCWebSettings** ppSettings) mut => VT.GetWebSettings(ref this, pcszSID, ppSettings);
+		public HRESULT GetUserSettings(PWSTR pcszSID, out IWPCSettings* ppSettings) mut => VT.GetUserSettings(ref this, pcszSID, out ppSettings);
+		public HRESULT GetWebSettings(PWSTR pcszSID, out IWPCWebSettings* ppSettings) mut => VT.GetWebSettings(ref this, pcszSID, out ppSettings);
 		public HRESULT GetWebFilterInfo(out Guid pguidID, PWSTR* ppszName) mut => VT.GetWebFilterInfo(ref this, out pguidID, ppszName);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsParentalControlsCore self, out WPCFLAG_VISIBILITY peVisibility) GetVisibility;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsParentalControlsCore self, PWSTR pcszSID, IWPCSettings** ppSettings) GetUserSettings;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsParentalControlsCore self, PWSTR pcszSID, IWPCWebSettings** ppSettings) GetWebSettings;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsParentalControlsCore self, PWSTR pcszSID, out IWPCSettings* ppSettings) GetUserSettings;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsParentalControlsCore self, PWSTR pcszSID, out IWPCWebSettings* ppSettings) GetWebSettings;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsParentalControlsCore self, out Guid pguidID, PWSTR* ppszName) GetWebFilterInfo;
 		}
 	}
@@ -630,12 +630,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetGamesSettings(PWSTR pcszSID, IWPCGamesSettings** ppSettings) mut => VT.GetGamesSettings(ref this, pcszSID, ppSettings);
+		public HRESULT GetGamesSettings(PWSTR pcszSID, out IWPCGamesSettings* ppSettings) mut => VT.GetGamesSettings(ref this, pcszSID, out ppSettings);
 
 		[CRepr]
 		public struct VTable : IWindowsParentalControlsCore.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsParentalControls self, PWSTR pcszSID, IWPCGamesSettings** ppSettings) GetGamesSettings;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsParentalControls self, PWSTR pcszSID, out IWPCGamesSettings* ppSettings) GetGamesSettings;
 		}
 	}
 	[CRepr]

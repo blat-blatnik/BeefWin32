@@ -1500,6 +1500,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_PATH_SOFTWARESYNTHS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\DirectMusic\\SoftwareSynths"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"REFRESH_F_LASTBUFFER"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -2356,6 +2363,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6536115a-7b2d-11d2-ba18-0000f875ac12"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2483,6 +2491,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2d3629f7-813d-4939-8508-f05c6b75fd97"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirectMusic","TargetKind":"Com","Api":"Media.Audio.DirectMusic","Parents":[]}
 		,"Methods":[
 			{
@@ -2505,6 +2514,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d2ac2878-b39b-11d1-8704-00600893b1bd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2677,6 +2687,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d2ac287d-b39b-11d1-8704-00600893b1bd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2711,6 +2722,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d2ac287e-b39b-11d1-8704-00600893b1bd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -2721,6 +2733,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d2ac287c-b39b-11d1-8704-00600893b1bd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2759,6 +2772,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d2ac287b-b39b-11d1-8704-00600893b1bd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2782,6 +2796,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d2ac287a-b39b-11d1-8704-00600893b1bd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2867,6 +2882,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"08f2d8c9-37c2-11d2-b9f9-0000f875ac12"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3096,6 +3112,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ced153e7-3606-11d2-b9f9-0000f875ac12"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3136,6 +3153,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"09823661-5c85-11d2-afa6-00aa0024d8b6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3362,6 +3380,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"53cab625-2711-4c9f-9de7-1b7f925f6fc8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirectMusicSynth","TargetKind":"Com","Api":"Media.Audio.DirectMusic","Parents":[]}
 		,"Methods":[
 			{
@@ -3448,6 +3467,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"09823663-5c85-11d2-afa6-00aa0024d8b6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

@@ -289,6 +289,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"szCERT_CERTIFICATE_ACTION_VERIFY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{7801ebd0-cf4b-11d0-851f-0060979387ea}"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"CERT_VALIDITY_BEFORE_START"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -821,7 +828,7 @@
 			,{"Name":"dwFlags","Type":{"Kind":"ApiRef","Name":"CERT_SELECT_STRUCT_FLAGS","TargetKind":"Default","Api":"Security.Cryptography.UI","Parents":[]},"Attrs":[]}
 			,{"Name":"szTitle","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Const"]}
 			,{"Name":"cCertStore","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"arrayCertStore","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"arrayCertStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"szPurposeOid","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Const"]}
 			,{"Name":"cCertContext","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"arrayCertContext","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CERT_CONTEXT","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}}},"Attrs":[]}
@@ -850,7 +857,7 @@
 			,{"Name":"dwFlags","Type":{"Kind":"ApiRef","Name":"CERT_SELECT_STRUCT_FLAGS","TargetKind":"Default","Api":"Security.Cryptography.UI","Parents":[]},"Attrs":[]}
 			,{"Name":"szTitle","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Const"]}
 			,{"Name":"cCertStore","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"arrayCertStore","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"arrayCertStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"szPurposeOid","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Const"]}
 			,{"Name":"cCertContext","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"arrayCertContext","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CERT_CONTEXT","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}}},"Attrs":[]}
@@ -881,11 +888,11 @@
 			,{"Name":"arrayPurposes","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":[]}
 			,{"Name":"cArrayPurposes","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"cRootStores","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"rghstoreRoots","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"rghstoreRoots","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"cStores","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"rghstoreCAs","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"rghstoreCAs","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"cTrustStores","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"rghstoreTrust","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"rghstoreTrust","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"hprov","Type":{"Kind":"Native","Name":"UIntPtr"},"Attrs":[]}
 			,{"Name":"lCustData","Type":{"Kind":"ApiRef","Name":"LPARAM","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"dwPad","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
@@ -915,11 +922,11 @@
 			,{"Name":"arrayPurposes","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":[]}
 			,{"Name":"cArrayPurposes","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"cRootStores","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"rghstoreRoots","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"rghstoreRoots","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"cStores","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"rghstoreCAs","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"rghstoreCAs","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"cTrustStores","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"rghstoreTrust","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"rghstoreTrust","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"hprov","Type":{"Kind":"Native","Name":"UIntPtr"},"Attrs":[]}
 			,{"Name":"lCustData","Type":{"Kind":"ApiRef","Name":"LPARAM","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"dwPad","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
@@ -996,11 +1003,11 @@
 			,{"Name":"pszUsageOid","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"hprov","Type":{"Kind":"Native","Name":"UIntPtr"},"Attrs":[]}
 			,{"Name":"cRootStores","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"rghstoreRoots","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"rghstoreRoots","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"cStores","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"rghstoreCAs","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"rghstoreCAs","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"cTrustStores","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"rghstoreTrust","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"rghstoreTrust","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"lCustData","Type":{"Kind":"ApiRef","Name":"LPARAM","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"pfnTrustHelper","Type":{"Kind":"ApiRef","Name":"PFNTRUSTHELPER","TargetKind":"FunctionPointer","Api":"Security.Cryptography.UI","Parents":[]},"Attrs":[]}
 			,{"Name":"pcChain","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":[]}
@@ -1049,7 +1056,7 @@
 		,"Size":0
 		,"PackingSize":0
 		,"Fields":[
-			{"Name":"hStore","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":[]}
+			{"Name":"hStore","Type":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]},"Attrs":[]}
 			,{"Name":"prgpChain","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CERT_CHAIN_CONTEXT","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}}},"Attrs":[]}
 			,{"Name":"cChain","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 		]
@@ -1100,7 +1107,7 @@
 		,"Fields":[
 			{"Name":"dwSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"cCertStore","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"rghCertStore","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"rghCertStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"pFilterCallback","Type":{"Kind":"ApiRef","Name":"PFNCFILTERPROC","TargetKind":"FunctionPointer","Api":"Security.Cryptography.UI","Parents":[]},"Attrs":[]}
 			,{"Name":"pvCallbackData","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":[]}
 		]
@@ -1167,7 +1174,7 @@
 			,{"Name":"pwszMoreInfoLocation","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Const"]}
 			,{"Name":"pszHashAlg","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Const"]}
 			,{"Name":"pwszSigningCertDisplayString","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Const"]}
-			,{"Name":"hAdditionalCertStore","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":[]}
+			,{"Name":"hAdditionalCertStore","Type":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]},"Attrs":[]}
 			,{"Name":"psAuthenticated","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CRYPT_ATTRIBUTES","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"psUnauthenticated","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CRYPT_ATTRIBUTES","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 		]
@@ -1274,7 +1281,7 @@
 			,{"Name":"fCounterSigner","Type":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"idxCounterSigner","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"cStores","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"rghStores","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"rghStores","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"cPropSheetPages","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"rgPropSheetPages","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PROPSHEETPAGEW","TargetKind":"Default","Api":"UI.Controls","Parents":[]}},"Attrs":[]}
 			,{"Name":"nStartPage","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
@@ -1318,7 +1325,7 @@
 			,{"Name":"fCounterSigner","Type":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"idxCounterSigner","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"cStores","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"rghStores","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"rghStores","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"cPropSheetPages","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"rgPropSheetPages","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PROPSHEETPAGEA","TargetKind":"Default","Api":"UI.Controls","Parents":[]}},"Attrs":[]}
 			,{"Name":"nStartPage","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
@@ -1353,7 +1360,7 @@
 			,{"Name":"dwSubjectChoice","Type":{"Kind":"ApiRef","Name":"CRYPTUI_WIZ_EXPORT_SUBJECT","TargetKind":"Default","Api":"Security.Cryptography.UI","Parents":[]},"Attrs":[]}
 			,{"Name":"Anonymous","Type":{"Kind":"ApiRef","Name":"_Anonymous_e__Union","TargetKind":"Default","Api":"Security.Cryptography.UI","Parents":[]},"Attrs":[]}
 			,{"Name":"cStores","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"rghStores","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"rghStores","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 		]
 		,"NestedTypes":[
 			{
@@ -1367,7 +1374,7 @@
 					{"Name":"pCertContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CERT_CONTEXT","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":["Const"]}
 					,{"Name":"pCTLContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CTL_CONTEXT","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 					,{"Name":"pCRLContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CRL_CONTEXT","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
-					,{"Name":"hCertStore","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":[]}
+					,{"Name":"hCertStore","Type":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]},"Attrs":[]}
 				]
 				,"NestedTypes":[
 				]
@@ -1419,7 +1426,7 @@
 					,{"Name":"pCertContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CERT_CONTEXT","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":["Const"]}
 					,{"Name":"pCTLContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CTL_CONTEXT","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 					,{"Name":"pCRLContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CRL_CONTEXT","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
-					,{"Name":"hCertStore","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":[]}
+					,{"Name":"hCertStore","Type":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]},"Attrs":[]}
 				]
 				,"NestedTypes":[
 				]
@@ -1457,7 +1464,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"hCertStore","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"hCertStore","Type":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]},"Attrs":["In"]}
 			,{"Name":"hwnd","Type":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"pwszTitle","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
 			,{"Name":"pwszDisplayString","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
@@ -1583,7 +1590,7 @@
 			,{"Name":"hwndParent","Type":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"pwszWizardTitle","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
 			,{"Name":"pImportSrc","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CRYPTUI_WIZ_IMPORT_SRC_INFO","TargetKind":"Default","Api":"Security.Cryptography.UI","Parents":[]}},"Attrs":["In","Optional"]}
-			,{"Name":"hDestCertStore","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Optional"]}
+			,{"Name":"hDestCertStore","Type":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]},"Attrs":["In","Optional"]}
 		]
 	}
 ]

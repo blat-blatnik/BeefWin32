@@ -77,6 +77,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HTOUCHINPUT"
@@ -86,6 +87,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"InertiaProcessor"
@@ -124,6 +126,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"4f62c8da-9c53-4b22-93df-927a862bbb03"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -188,6 +191,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"18b00c6d-c5ee-41b1-90a9-9d4a929095ad"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -873,6 +877,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"a22ac519-8300-48a0-bef4-f1be8737dba4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

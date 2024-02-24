@@ -5819,6 +5819,265 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"mMD_MemoryType"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_MemoryType"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_ROM"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_RAM"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"mMD_32_24"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_32_24"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_24"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_32"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"mMD_Prefetchable"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_Prefetchable"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_Pref"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_PrefetchDisallowed"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_PrefetchAllowed"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"mMD_Readable"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":8
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_Readable"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":8
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_ReadAllowed"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_ReadDisallowed"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":8
+		,"Attrs":[]
+	}
+	,{
+		"Name":"mMD_CombinedWrite"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":16
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_CombinedWrite"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":16
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_CombinedWriteDisallowed"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_CombinedWriteAllowed"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":16
+		,"Attrs":[]
+	}
+	,{
+		"Name":"mMD_Cacheable"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":32
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_NonCacheable"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_Cacheable"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":32
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_WINDOW_DECODE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":64
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fMD_MEMORY_BAR"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":128
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIOD_PortType"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIOD_Memory"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIOD_IO"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIOD_DECODE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":252
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIOD_10_BIT_DECODE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIOD_12_BIT_DECODE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":8
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIOD_16_BIT_DECODE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":16
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIOD_POSITIVE_DECODE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":32
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIOD_PASSIVE_DECODE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":64
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIOD_WINDOW_DECODE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":128
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIOD_PORT_BAR"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":256
+		,"Attrs":[]
+	}
+	,{
 		"Name":"IO_ALIAS_10_BIT_DECODE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5854,6 +6113,153 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"mDD_Width"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":3
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fDD_BYTE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fDD_WORD"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fDD_DWORD"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fDD_BYTE_AND_WORD"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":3
+		,"Attrs":[]
+	}
+	,{
+		"Name":"mDD_BusMaster"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fDD_NoBusMaster"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fDD_BusMaster"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"mDD_Type"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":24
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fDD_TypeStandard"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fDD_TypeA"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":8
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fDD_TypeB"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":16
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fDD_TypeF"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":24
+		,"Attrs":[]
+	}
+	,{
+		"Name":"mIRQD_Share"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIRQD_Exclusive"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIRQD_Share"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIRQD_Share_Bit"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIRQD_Level_Bit"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"mIRQD_Edge_Level"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIRQD_Level"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fIRQD_Edge"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2
+		,"Attrs":[]
+	}
+	,{
 		"Name":"CM_RESDES_WIDTH_DEFAULT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5882,6 +6288,258 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"mPCD_IO_8_16"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_IO_8"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_IO_16"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"mPCD_MEM_8_16"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM_8"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM_16"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"mPCD_MEM_A_C"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":12
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM1_A"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM2_A"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":8
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_IO_ZW_8"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":16
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_IO_SRC_16"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":32
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_IO_WS_16"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":64
+		,"Attrs":[]
+	}
+	,{
+		"Name":"mPCD_MEM_WS"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":768
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM_WS_ONE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":256
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM_WS_TWO"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":512
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM_WS_THREE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":768
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM_A"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_ATTRIBUTES_PER_WINDOW"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":32768
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_IO1_16"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":65536
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_IO1_ZW_8"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":131072
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_IO1_SRC_16"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":262144
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_IO1_WS_16"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":524288
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_IO2_16"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1048576
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_IO2_ZW_8"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2097152
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_IO2_SRC_16"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4194304
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_IO2_WS_16"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":8388608
+		,"Attrs":[]
+	}
+	,{
+		"Name":"mPCD_MEM1_WS"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":50331648
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM1_WS_ONE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":16777216
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM1_WS_TWO"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":33554432
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM1_WS_THREE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":50331648
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM1_16"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":67108864
+		,"Attrs":[]
+	}
+	,{
+		"Name":"mPCD_MEM2_WS"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":805306368
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM2_WS_ONE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":268435456
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM2_WS_TWO"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":536870912
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM2_WS_THREE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":805306368
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPCD_MEM2_16"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1073741824
+		,"Attrs":[]
+	}
+	,{
 		"Name":"PCD_MAX_MEMORY"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5893,6 +6551,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"mPMF_AUDIO_ENABLE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":8
+		,"Attrs":[]
+	}
+	,{
+		"Name":"fPMF_AUDIO_ENABLE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":8
 		,"Attrs":[]
 	}
 	,{
@@ -7632,10 +8304,584 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SZ_KEY_OPTIONDESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OptionDesc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_LDIDOEM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LdidOEM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_SRCDISKFILES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SourceDisksFiles"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_SRCDISKNAMES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SourceDisksNames"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_STRINGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Strings"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_DESTDIRS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DestinationDirs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_LAYOUT_FILE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LayoutFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_DEFDESTDIR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DefaultDestDir"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_LFN_SECTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VarLDID.LFN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_SFN_SECTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VarLDID.SFN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_UPDATEINIS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UpdateInis"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_UPDATEINIFIELDS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UpdateIniFields"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_INI2REG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Ini2Reg"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_COPYFILES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CopyFiles"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_RENFILES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RenFiles"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_DELFILES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DelFiles"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_ADDREG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddReg"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_ADDREGNOCLOBBER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddRegNoClobber"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_DELREG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DelReg"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_BITREG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BitReg"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_COPYINF"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CopyINF"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_LOGCONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LogConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_ADDSERVICE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddService"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_DELSERVICE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DelService"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_ADDTRIGGER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddTrigger"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_ADDINTERFACE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddInterface"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_ADDIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddIme"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_DELIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DelIme"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_REGSVR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RegisterDlls"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_UNREGSVR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UnregisterDlls"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_PROFILEITEMS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ProfileItems"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_MODULES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Modules"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_DEFAULTOPTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DefaultOption"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_LISTOPTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ListOptions"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_CLEANONLY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CleanOnly"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_UPGRADEONLY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UpgradeOnly"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_EXCLUDEID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ExcludeId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_ADDPOWERSETTING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddPowerSetting"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_ADDPROP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddProperty"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_DELPROP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DelProperty"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_FEATURESCORE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FeatureScore"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_ADDEVENTPROVIDER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddEventProvider"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_ADDCHANNEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddChannel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_IMPORTCHANNEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ImportChannel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_ADDAUTOLOGGER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddAutoLogger"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_UPDATEAUTOLOGGER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UpdateAutoLogger"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_ADDAUTOLOGGERPROVIDER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddAutoLoggerProvider"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_ADDFILTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddFilter"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_FILTERLEVEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FilterLevel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_FILTERPOSITION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FilterPosition"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_PHASE1"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Phase1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZ_KEY_HARDWARE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Hardware"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_CONFIGPRIORITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ConfigPriority"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"MAX_PRIORITYSTR_LEN"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":16
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_CFGPRI_HARDWIRED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HARDWIRED"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_CFGPRI_DESIRED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DESIRED"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_CFGPRI_NORMAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NORMAL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_CFGPRI_SUBOPTIMAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SUBOPTIMAL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_CFGPRI_DISABLED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DISABLED"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_CFGPRI_RESTART"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RESTART"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_CFGPRI_REBOOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"REBOOT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_CFGPRI_POWEROFF"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"POWEROFF"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_CFGPRI_HARDRECONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HARDRECONFIG"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_CFGPRI_FORCECONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FORCECONFIG"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_CFGTYPE_BASIC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BASIC"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_CFGTYPE_FORCED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FORCED"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_CFGTYPE_OVERRIDE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OVERRIDE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_MEMCONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MemConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_MEMLARGECONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MemLargeConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_IOCONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IOConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_IRQCONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IRQConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_DMACONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DMAConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_PCCARDCONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PcCardConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_MFCARDCONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MfCardConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_CLASS_INSTALL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ClassInstall"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_CLASS_INSTALL_32"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ClassInstall32"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_DEFAULT_INSTALL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DefaultInstall"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_DEFAULT_UNINSTALL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DefaultUninstall"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_INTERFACE_INSTALL_32"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InterfaceInstall32"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Version"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_PROVIDER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Provider"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_SIGNATURE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Signature"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_DRIVERSET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverSet"
 		,"Attrs":[]
 	}
 	,{
@@ -7646,10 +8892,1074 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"INFSTR_KEY_HARDWARE_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Class"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_HARDWARE_CLASSGUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ClassGUID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_NOSETUPINF"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoSetupInf"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_FROMINET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FromINet"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_CATALOGFILE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CatalogFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_PNPLOCKDOWN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PnpLockDown"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_EXTENSIONID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ExtensionId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_MFG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Manufacturer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_TARGETCOMPUTERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TargetComputers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_EXTENSIONCONTRACTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ExtensionContracts"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Class"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_CLASSGUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ClassGUID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_RESTART"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Restart"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_REBOOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Reboot"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_DISPLAYNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DisplayName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_SERVICETYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServiceType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_STARTTYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StartType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_ERRORCONTROL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ErrorControl"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_SERVICEBINARY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServiceBinary"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_LOADORDERGROUP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LoadOrderGroup"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_DEPENDENCIES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Dependencies"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_REQUIREDPRIVILEGES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RequiredPrivileges"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_STARTNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StartName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_SECURITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Security"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_DESCRIPTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_SERVICESIDTYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServiceSidType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_DELAYEDAUTOSTART"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DelayedAutoStart"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_TRIGGER_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TriggerType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_ACTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Action"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_SUB_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SubType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_DATA_ITEM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DataItem"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_PROVIDER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ProviderName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_RESOURCE_FILE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResourceFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_MESSAGE_FILE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MessageFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_PARAMETER_FILE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ParameterFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_CHANNEL_ACCESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Access"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_CHANNEL_ISOLATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Isolation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_CHANNEL_ENABLED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Enabled"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_CHANNEL_VALUE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Value"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_LOGGING_MAXSIZE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LoggingMaxSize"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_LOGGING_RETENTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LoggingRetention"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_LOGGING_AUTOBACKUP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LoggingAutoBackup"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_START"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Start"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_BUFFER_SIZE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BufferSize"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_CLOCK_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ClockType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_DISABLE_REALTIME_PERSISTENCE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DisableRealtimePersistence"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_FILE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FileName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_FILE_MAX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FileMax"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_FLUSH_TIMER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FlushTimer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_LOG_FILE_MODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LogFileMode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_MAX_FILE_SIZE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MaxFileSize"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_MAXIMUM_BUFFERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MaximumBuffers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_MINIMUM_BUFFERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MinimumBuffers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_ENABLED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Enabled"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_ENABLE_FLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnableFlags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_ENABLE_LEVEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnableLevel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_ENABLE_PROPERTY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnableProperty"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_MATCH_ANY_KEYWORD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MatchAnyKeyword"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_MATCH_ALL_KEYWORD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MatchAllKeyword"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_DETMODULES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Det.Modules"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_DETCLASSINFO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Det.ClassInfo"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_MANUALDEV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Det.ManualDev"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_AVOIDCFGSYSDEV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Det.AvoidCfgSysDev"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_REGCFGSYSDEV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Det.RegCfgSysDev"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_DEVINFS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Det.DevINFs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_AVOIDINIDEV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Det.AvoidIniDev"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_AVOIDENVDEV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Det.AvoidEnvDev"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_REGINIDEV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Det.RegIniDev"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_REGENVDEV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Det.RegEnvDev"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_HPOMNIBOOK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Det.HPOmnibook"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_FORCEHWVERIFY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Det.ForceHWVerify"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_DETOPTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Det.Options"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_BADPNPBIOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BadPnpBios"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_GOODACPIBIOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GoodACPIBios"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_BADACPIBIOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BadACPIBios"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_BADROUTINGTABLEBIOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BadPCIIRQRoutingTableBios"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_BADPMCALLBIOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BadProtectedModeCallBios"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_BADRMCALLBIOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BadRealModeCallBios"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_MACHINEIDBIOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MachineIDBios"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_BADDISKBIOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BadDiskBios"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_BADDSBIOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BadDSBios"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_DETPARAMS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Params"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_SKIPLIST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SkipList"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_DETECTLIST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DetectList"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_EXCLUDERES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ExcludeRes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SUBKEY_LOGCONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LogConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SUBKEY_DET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Det"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SUBKEY_FACTDEF"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FactDef"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SUBKEY_POSSIBLEDUPS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PosDup"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SUBKEY_NORESOURCEDUPS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoResDup"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SUBKEY_HW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Hw"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SUBKEY_CTL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CTL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SUBKEY_SERVICES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Services"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SUBKEY_SOFTWARE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SUBKEY_INTERFACES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Interfaces"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SUBKEY_COINSTALLERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CoInstallers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SUBKEY_LOGCONFIGOVERRIDE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LogConfigOverride"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SUBKEY_WMI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WMI"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SUBKEY_EVENTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Events"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SUBKEY_FILTERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Filters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_CONTROLFLAGS_SECTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ControlFlags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_COPYFILESONLY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CopyFilesOnly"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_EXCLUDEFROMSELECT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ExcludeFromSelect"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_ALWAYSEXCLUDEFROMSELECT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AlwaysExcludeFromSelect"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_INTERACTIVEINSTALL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InteractiveInstall"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_REQUESTADDITIONALSOFTWARE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RequestAdditionalSoftware"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_PLATFORM_WIN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Win"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_PLATFORM_NT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_PLATFORM_NTX86"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NTx86"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_PLATFORM_NTMIPS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NTMIPS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_PLATFORM_NTALPHA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NTAlpha"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_PLATFORM_NTPPC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NTPPC"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_PLATFORM_NTIA64"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NTIA64"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_PLATFORM_NTAXP64"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NTAXP64"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_PLATFORM_NTAMD64"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NTAMD64"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_PLATFORM_NTARM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NTARM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_PLATFORM_NTARM64"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NTARM64"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"MAX_INFSTR_STRKEY_LEN"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":32
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_STRKEY_DRVDESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverDesc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_DRIVERSELECT_SECTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverSelect"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_DRIVERSELECT_FUNCTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverSelectFunctions"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_DRIVERVERSION_SECTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverVer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SOFTWAREVERSION_SECTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SoftwareVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_CFGSYS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ConfigSysDrivers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_AUTOEXECBAT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AutoexecBatDrivers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_SYSINI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SystemIniDrivers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_SYSINIDRV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SystemIniDriversLine"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_WININIRUN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WinIniRunLine"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Path"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_IO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IO"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_MEM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Mem"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_IRQ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IRQ"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_KEY_DMA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DMA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_BUS_ISA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BUS_ISA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_BUS_EISA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BUS_EISA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_BUS_MCA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BUS_MCA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_BUS_ALL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BUS_ALL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_RISK_NONE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RISK_NONE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_RISK_VERYLOW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RISK_VERYLOW"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_RISK_BIOSROMRD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RISK_BIOSROMRD"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_RISK_QUERYDRV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RISK_QUERYDRV"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_RISK_SWINT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RISK_SWINT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_RISK_LOW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RISK_LOW"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_RISK_DELICATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RISK_DELICATE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_RISK_MEMRD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RISK_MEMRD"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_RISK_IORD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RISK_IORD"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_RISK_MEMWR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RISK_MEMWR"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_RISK_IOWR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RISK_IOWR"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_RISK_UNRELIABLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RISK_UNRELIABLE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_RISK_VERYHIGH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RISK_VERYHIGH"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_CLASS_SAFEEXCL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SAFE_EXCL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INFSTR_SECT_DISPLAY_CLEANUP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DisplayCleanup"
 		,"Attrs":[]
 	}
 	,{
@@ -8434,6 +10744,17 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
+	}
+	,{
+		"Name":"HDEVINFO"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"NativeTypedef"
+		,"AlsoUsableFor":null
+		,"Def":{"Kind":"Native","Name":"IntPtr"}
+		,"FreeFunc":"SetupDiDestroyDeviceInfoList"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"INFCONTEXT"
@@ -9390,7 +11711,7 @@
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"NewDeviceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"ExistingDeviceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"CompareContext","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Optional"]}
@@ -9436,7 +11757,7 @@
 		,"Fields":[
 			{"Name":"cbSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"PageRequested","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":[]}
+			,{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":[]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":[]}
 		]
 		,"NestedTypes":[
@@ -11263,7 +13584,7 @@
 		,"Fields":[
 			{"Name":"cbSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"PageRequested","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":[]}
+			,{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":[]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":[]}
 		]
 		,"NestedTypes":[
@@ -13840,7 +16161,7 @@
 			,{"Name":"CopyFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"MsgHandler","Type":{"Kind":"ApiRef","Name":"PSP_FILE_CALLBACK_A","TargetKind":"FunctionPointer","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"Context","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Optional"]}
-			,{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Optional"]}
+			,{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 		]
 	}
@@ -13863,7 +16184,7 @@
 			,{"Name":"CopyFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"MsgHandler","Type":{"Kind":"ApiRef","Name":"PSP_FILE_CALLBACK_W","TargetKind":"FunctionPointer","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"Context","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Optional"]}
-			,{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Optional"]}
+			,{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 		]
 	}
@@ -13946,7 +16267,7 @@
 			{"Name":"InfHandle","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
 			,{"Name":"SectionName","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Optional"]}
+			,{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"Reserved1","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out","Reserved"]}
 			,{"Name":"Reserved2","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out","Reserved"]}
@@ -13965,7 +16286,7 @@
 			{"Name":"InfHandle","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
 			,{"Name":"SectionName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Optional"]}
+			,{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"Reserved1","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out","Reserved"]}
 			,{"Name":"Reserved2","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out","Reserved"]}
@@ -14368,7 +16689,7 @@
 		"Name":"SetupDiCreateDeviceInfoList"
 		,"SetLastError":true
 		,"DllImport":"SETUPAPI"
-		,"ReturnType":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -14382,7 +16703,7 @@
 		"Name":"SetupDiCreateDeviceInfoListExA"
 		,"SetLastError":true
 		,"DllImport":"SETUPAPI"
-		,"ReturnType":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -14398,7 +16719,7 @@
 		"Name":"SetupDiCreateDeviceInfoListExW"
 		,"SetLastError":true
 		,"DllImport":"SETUPAPI"
-		,"ReturnType":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -14420,7 +16741,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"ClassGuid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["Out"]}
 		]
 	}
@@ -14434,7 +16755,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoSetDetailData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_LIST_DETAIL_DATA_A","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 		]
 	}
@@ -14448,7 +16769,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoSetDetailData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_LIST_DETAIL_DATA_W","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 		]
 	}
@@ -14462,7 +16783,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceName","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 			,{"Name":"ClassGuid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
 			,{"Name":"DeviceDescription","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
@@ -14481,7 +16802,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 			,{"Name":"ClassGuid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
 			,{"Name":"DeviceDescription","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
@@ -14500,7 +16821,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInstanceId","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 			,{"Name":"hwndParent","Type":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"OpenFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -14517,7 +16838,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInstanceId","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 			,{"Name":"hwndParent","Type":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"OpenFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -14534,7 +16855,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"DeviceInstanceId","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":3,"Child":{"Kind":"Native","Name":"Byte"}},"Attrs":["Out","Optional"]}
 			,{"Name":"DeviceInstanceIdSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -14551,7 +16872,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"DeviceInstanceId","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":3,"Child":{"Kind":"Native","Name":"Char"}},"Attrs":["Out","Optional"]}
 			,{"Name":"DeviceInstanceIdSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -14568,7 +16889,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 		]
 	}
@@ -14582,7 +16903,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"MemberIndex","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 		]
@@ -14597,7 +16918,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{
@@ -14610,7 +16931,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"InterfaceClassGuid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
 			,{"Name":"MemberIndex","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -14627,7 +16948,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"InterfaceClassGuid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
 			,{"Name":"ReferenceString","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
@@ -14645,7 +16966,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"InterfaceClassGuid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
 			,{"Name":"ReferenceString","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
@@ -14663,7 +16984,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DevicePath","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 			,{"Name":"OpenFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out","Optional"]}
@@ -14679,7 +17000,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DevicePath","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 			,{"Name":"OpenFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out","Optional"]}
@@ -14695,7 +17016,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"AliasInterfaceClassGuid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
 			,{"Name":"AliasDeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
@@ -14711,7 +17032,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 		]
 	}
@@ -14725,7 +17046,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 		]
 	}
@@ -14739,7 +17060,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceDetailData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DETAIL_DATA_A","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["Out",{"Kind":"MemorySize","BytesParamIndex":3},"Optional"]}
 			,{"Name":"DeviceInterfaceDetailDataSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -14757,7 +17078,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceDetailData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DETAIL_DATA_W","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["Out",{"Kind":"MemorySize","BytesParamIndex":3},"Optional"]}
 			,{"Name":"DeviceInterfaceDetailDataSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -14775,7 +17096,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 		]
 	}
@@ -14789,7 +17110,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"Reserved","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out","Reserved"]}
@@ -14805,7 +17126,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"CompareProc","Type":{"Kind":"ApiRef","Name":"PSP_DETSIG_CMPPROC","TargetKind":"FunctionPointer","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In","Optional"]}
@@ -14823,7 +17144,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out","Optional"]}
 			,{"Name":"DriverType","Type":{"Kind":"ApiRef","Name":"SETUP_DI_BUILD_DRIVER_DRIVER_TYPE","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 		]
@@ -14838,7 +17159,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{
@@ -14851,7 +17172,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"DriverType","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"MemberIndex","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -14868,7 +17189,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"DriverType","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"MemberIndex","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -14885,7 +17206,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"DriverInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINFO_DATA_V2_A","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 		]
@@ -14900,7 +17221,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"DriverInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINFO_DATA_V2_W","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 		]
@@ -14915,7 +17236,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out","Optional"]}
 			,{"Name":"DriverInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINFO_DATA_V2_A","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out","Optional"]}
 		]
@@ -14930,7 +17251,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out","Optional"]}
 			,{"Name":"DriverInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINFO_DATA_V2_W","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out","Optional"]}
 		]
@@ -14945,7 +17266,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"DriverInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINFO_DATA_V2_A","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"DriverInfoDetailData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINFO_DETAIL_DATA_A","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out",{"Kind":"MemorySize","BytesParamIndex":4},"Optional"]}
@@ -14963,7 +17284,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"DriverInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINFO_DATA_V2_W","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"DriverInfoDetailData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINFO_DETAIL_DATA_W","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out",{"Kind":"MemorySize","BytesParamIndex":4},"Optional"]}
@@ -14981,7 +17302,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"DriverType","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 		]
@@ -14990,7 +17311,7 @@
 		"Name":"SetupDiGetClassDevsA"
 		,"SetLastError":true
 		,"DllImport":"SETUPAPI"
-		,"ReturnType":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -15006,7 +17327,7 @@
 		"Name":"SetupDiGetClassDevsW"
 		,"SetLastError":true
 		,"DllImport":"SETUPAPI"
-		,"ReturnType":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -15022,7 +17343,7 @@
 		"Name":"SetupDiGetClassDevsExA"
 		,"SetLastError":true
 		,"DllImport":"SETUPAPI"
-		,"ReturnType":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -15032,7 +17353,7 @@
 			,{"Name":"Enumerator","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
 			,{"Name":"hwndParent","Type":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Optional"]}
+			,{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"MachineName","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
 			,{"Name":"Reserved","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out","Reserved"]}
 		]
@@ -15041,7 +17362,7 @@
 		"Name":"SetupDiGetClassDevsExW"
 		,"SetLastError":true
 		,"DllImport":"SETUPAPI"
-		,"ReturnType":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}
+		,"ReturnType":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -15051,7 +17372,7 @@
 			,{"Name":"Enumerator","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
 			,{"Name":"hwndParent","Type":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Optional"]}
+			,{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"MachineName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
 			,{"Name":"Reserved","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Out","Reserved"]}
 		]
@@ -15221,7 +17542,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"InstallFunction","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			,{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 		]
 	}
@@ -15235,7 +17556,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out","Optional"]}
 		]
 	}
@@ -15249,7 +17570,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out","Optional"]}
 		]
 	}
@@ -15263,7 +17584,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 		]
 	}
@@ -15277,7 +17598,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 		]
 	}
@@ -15291,7 +17612,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 		]
 	}
@@ -15305,7 +17626,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 		]
 	}
@@ -15319,7 +17640,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 		]
 	}
@@ -15333,7 +17654,7 @@
 		,"Platform":null
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 		]
 	}
@@ -15347,7 +17668,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 		]
 	}
@@ -15479,7 +17800,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"Reserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In","Reserved"]}
 			,{"Name":"samDesired","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -15497,7 +17818,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"Reserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In","Reserved"]}
 			,{"Name":"samDesired","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -15515,7 +17836,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"Reserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In","Reserved"]}
 			,{"Name":"samDesired","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -15531,7 +17852,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"Reserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In","Reserved"]}
 		]
@@ -15546,7 +17867,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"Scope","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"HwProfile","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -15565,7 +17886,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"Scope","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"HwProfile","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -15584,7 +17905,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"Scope","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"HwProfile","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -15602,7 +17923,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"Scope","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"HwProfile","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -15671,7 +17992,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"PropertyKeyArray","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":3,"Child":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}},"Attrs":["Out","Optional"]}
 			,{"Name":"PropertyKeyCount","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -15689,7 +18010,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"PropertyKey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}},"Attrs":["In","Const"]}
 			,{"Name":"PropertyType","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
@@ -15709,7 +18030,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"PropertyKey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}},"Attrs":["In","Const"]}
 			,{"Name":"PropertyType","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -15728,7 +18049,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"PropertyKeyArray","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":3,"Child":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}},"Attrs":["Out","Optional"]}
 			,{"Name":"PropertyKeyCount","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -15746,7 +18067,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"PropertyKey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}},"Attrs":["In","Const"]}
 			,{"Name":"PropertyType","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
@@ -15766,7 +18087,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInterfaceData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVICE_INTERFACE_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"PropertyKey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}},"Attrs":["In","Const"]}
 			,{"Name":"PropertyType","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -15899,7 +18220,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"Property","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"PropertyRegDataType","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out","Optional"]}
@@ -15918,7 +18239,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"Property","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"PropertyRegDataType","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out","Optional"]}
@@ -15977,7 +18298,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 			,{"Name":"Property","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"PropertyBuffer","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":4},"Optional","Const"]}
@@ -15994,7 +18315,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 			,{"Name":"Property","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"PropertyBuffer","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":4},"Optional","Const"]}
@@ -16047,7 +18368,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"DeviceInstallParams","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINSTALL_PARAMS_A","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 		]
@@ -16062,7 +18383,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"DeviceInstallParams","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINSTALL_PARAMS_W","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 		]
@@ -16077,7 +18398,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"ClassInstallParams","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_CLASSINSTALL_HEADER","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["Out",{"Kind":"MemorySize","BytesParamIndex":3},"Optional"]}
 			,{"Name":"ClassInstallParamsSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -16094,7 +18415,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"ClassInstallParams","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_CLASSINSTALL_HEADER","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["Out",{"Kind":"MemorySize","BytesParamIndex":3},"Optional"]}
 			,{"Name":"ClassInstallParamsSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -16111,7 +18432,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"DeviceInstallParams","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINSTALL_PARAMS_A","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 		]
@@ -16126,7 +18447,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"DeviceInstallParams","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINSTALL_PARAMS_W","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 		]
@@ -16141,7 +18462,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"ClassInstallParams","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_CLASSINSTALL_HEADER","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":3},"Optional"]}
 			,{"Name":"ClassInstallParamsSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -16157,7 +18478,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"ClassInstallParams","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_CLASSINSTALL_HEADER","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":3},"Optional"]}
 			,{"Name":"ClassInstallParamsSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -16173,7 +18494,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"DriverInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINFO_DATA_V2_A","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"DriverInstallParams","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINSTALL_PARAMS","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["Out"]}
@@ -16189,7 +18510,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"DriverInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINFO_DATA_V2_W","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"DriverInstallParams","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINSTALL_PARAMS","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["Out"]}
@@ -16205,7 +18526,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"DriverInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINFO_DATA_V2_A","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"DriverInstallParams","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINSTALL_PARAMS","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
@@ -16221,7 +18542,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"DriverInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINFO_DATA_V2_W","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"DriverInstallParams","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINSTALL_PARAMS","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
@@ -16252,7 +18573,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"cxIcon","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"cyIcon","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -16371,7 +18692,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"PropertySheetHeader","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PROPSHEETHEADERA_V2","TargetKind":"Default","Api":"UI.Controls","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"PropertySheetHeaderPageListSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -16389,7 +18710,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"PropertySheetHeader","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PROPSHEETHEADERW_V2","TargetKind":"Default","Api":"UI.Controls","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"PropertySheetHeaderPageListSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -16407,7 +18728,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 		]
 	}
@@ -16422,7 +18743,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"hwndParent","Type":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional"]}
-			,{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			,{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out","Optional"]}
 		]
 	}
@@ -16640,7 +18961,7 @@
 		,"Platform":null
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"InstallWizardData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_INSTALLWIZARD_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"PageType","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -16657,7 +18978,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Out"]}
 		]
 	}
@@ -16671,7 +18992,7 @@
 		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 		]
 	}
@@ -16861,7 +19182,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"CustomPropertyName","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -16881,7 +19202,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"CustomPropertyName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -19999,7 +22320,7 @@
 		,"ReturnType":{"Kind":"ApiRef","Name":"CONFIGRET","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
-		,"Platform":"Windows 2000"
+		,"Platform":"windows5.0"
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"dnDevInst","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -20645,7 +22966,7 @@
 	}
 	,{
 		"Name":"UpdateDriverForPlugAndPlayDevicesA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"newdev"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -20662,7 +22983,7 @@
 	}
 	,{
 		"Name":"UpdateDriverForPlugAndPlayDevicesW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"newdev"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -20679,7 +23000,7 @@
 	}
 	,{
 		"Name":"DiInstallDevice"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"newdev"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -20688,7 +23009,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"hwndParent","Type":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional"]}
-			,{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			,{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"DriverInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DRVINFO_DATA_V2_A","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In","Optional"]}
 			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
@@ -20697,7 +23018,7 @@
 	}
 	,{
 		"Name":"DiInstallDriverW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"newdev"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -20713,7 +23034,7 @@
 	}
 	,{
 		"Name":"DiInstallDriverA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"newdev"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -20738,7 +23059,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"hwndParent","Type":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-			,{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			,{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"NeedReboot","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
@@ -20746,7 +23067,7 @@
 	}
 	,{
 		"Name":"DiUninstallDriverW"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"newdev"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -20762,7 +23083,7 @@
 	}
 	,{
 		"Name":"DiUninstallDriverA"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"newdev"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -20787,7 +23108,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"hwndParent","Type":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional"]}
-			,{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			,{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"NeedReboot","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
@@ -20795,7 +23116,7 @@
 	}
 	,{
 		"Name":"DiRollbackDriver"
-		,"SetLastError":false
+		,"SetLastError":true
 		,"DllImport":"newdev"
 		,"ReturnType":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
@@ -20803,7 +23124,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"DeviceInfoSet","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			{"Name":"DeviceInfoSet","Type":{"Kind":"ApiRef","Name":"HDEVINFO","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"DeviceInfoData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SP_DEVINFO_DATA","TargetKind":"Default","Api":"Devices.DeviceAndDriverInstallation","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"hwndParent","Type":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}

@@ -144,8 +144,8 @@ static
 	
 	#region Functions
 	[Import("xpsprint.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT StartXpsPrintJob(PWSTR printerName, PWSTR jobName, PWSTR outputFileName, HANDLE progressEvent, HANDLE completionEvent, uint8* printablePagesOn, uint32 printablePagesOnCount, IXpsPrintJob** xpsPrintJob, IXpsPrintJobStream** documentStream, IXpsPrintJobStream** printTicketStream);
+	public static extern HRESULT StartXpsPrintJob(PWSTR printerName, PWSTR jobName, PWSTR outputFileName, HANDLE progressEvent, HANDLE completionEvent, uint8* printablePagesOn, uint32 printablePagesOnCount, out IXpsPrintJob* xpsPrintJob, out IXpsPrintJobStream* documentStream, out IXpsPrintJobStream* printTicketStream);
 	[Import("xpsprint.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT StartXpsPrintJob1(PWSTR printerName, PWSTR jobName, PWSTR outputFileName, HANDLE progressEvent, HANDLE completionEvent, IXpsPrintJob** xpsPrintJob, IXpsOMPackageTarget** printContentReceiver);
+	public static extern HRESULT StartXpsPrintJob1(PWSTR printerName, PWSTR jobName, PWSTR outputFileName, HANDLE progressEvent, HANDLE completionEvent, out IXpsPrintJob* xpsPrintJob, out IXpsOMPackageTarget* printContentReceiver);
 	#endregion
 }

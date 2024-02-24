@@ -24,6 +24,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"53e31837-6600-4a81-9395-75cffe746f94"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

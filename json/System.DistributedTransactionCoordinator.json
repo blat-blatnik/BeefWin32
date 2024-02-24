@@ -795,6 +795,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0fb15084-af41-11ce-bd2b-204c4f4f5020"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -845,6 +846,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"02656950-2152-11d0-944c-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITransaction","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}
 		,"Methods":[
 			{
@@ -867,6 +869,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"34021548-0065-11d3-bac1-00c04f797be2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITransactionCloner","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}
 		,"Methods":[
 			{
@@ -889,6 +892,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3a6ad9e1-23b9-11cf-ad60-00aa00a74ccd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -927,6 +931,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3a6ad9e0-23b9-11cf-ad60-00aa00a74ccd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -961,6 +966,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3a6ad9e2-23b9-11cf-ad60-00aa00a74ccd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1025,6 +1031,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"30274f88-6ee4-474e-9b95-7807bc9ef8cf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1060,6 +1067,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"79427a2b-f895-40e0-be79-b57dc82ed231"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1082,6 +1090,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"69e971f0-23ce-11cf-ad60-00aa00a74ccd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1145,6 +1154,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c82bd532-5b30-11d3-8a91-00c04f79eb6d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1179,6 +1189,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ee5ff7b3-4572-11d0-9452-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1242,6 +1253,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0fb15081-af41-11ce-bd2b-204c4f4f5020"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1290,6 +1302,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c82bd533-5b30-11d3-8a91-00c04f79eb6d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1313,6 +1326,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e1cf9b53-8745-11ce-a9ba-00aa006c3706"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1349,6 +1363,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0141fda4-8fc0-11ce-bd18-204c4f4f5020"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1385,6 +1400,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0141fda5-8fc0-11ce-bd18-204c4f4f5020"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1423,6 +1439,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e1cf9b5a-8745-11ce-a9ba-00aa006c3706"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1448,6 +1465,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"17cf72d0-bac5-11d1-b1bf-00c04fc2f3ef"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1483,6 +1501,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"17cf72d1-bac5-11d1-b1bf-00c04fc2f3ef"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1532,6 +1551,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"17cf72d2-bac5-11d1-b1bf-00c04fc2f3ef"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1554,6 +1574,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9797c15d-a428-4291-87b6-0995031a678d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1733,6 +1754,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a7aa013b-eb7d-4f42-b41c-b2dec09ae034"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDtcNetworkAccessConfig","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}
 		,"Methods":[
 			{
@@ -1815,6 +1837,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"76e4b4f3-2ca5-466b-89d5-fd218ee75b49"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDtcNetworkAccessConfig2","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}
 		,"Methods":[
 			{
@@ -2042,6 +2065,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"64ffabe0-7ce9-11d0-8ce6-00c04fdc877e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2105,6 +2129,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a9861610-304a-11d1-9813-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2119,7 +2144,7 @@
 					{"Name":"pszDSN","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pszClientDllName","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pguidRm","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["Out"]}
-					,{"Name":"ppXaHelper","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDtcToXaHelper","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppXaHelper","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDtcToXaHelper","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2130,6 +2155,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a9861611-304a-11d1-9813-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2166,6 +2192,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"47ed4971-53b3-11d1-bbb9-00c04fd658f6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2309,6 +2336,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f3b1f131-eeda-11ce-aed4-00aa0051e2c4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2320,7 +2348,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppTransaction","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransaction","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppTransaction","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransaction","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2331,6 +2359,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bf193c85-0d1a-4290-b88f-d2cb8873d1e7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2343,7 +2372,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pXID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"xid_t","TargetKind":"Default","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["In"]}
-					,{"Name":"ppTransaction","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransaction","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppTransaction","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransaction","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2354,6 +2383,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0d563181-defb-11ce-aed1-00aa0051e2c4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2375,6 +2405,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"13741d21-87eb-11ce-8081-0080c758527e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2390,7 +2421,7 @@
 					,{"Name":"pRes","Type":{"Kind":"ApiRef","Name":"ITransactionResourceAsync","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]},"Attrs":["In","Optional"]}
 					,{"Name":"pUOW","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BOID","TargetKind":"Default","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"pisoLevel","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
-					,{"Name":"ppEnlist","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransactionEnlistmentAsync","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppEnlist","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransactionEnlistmentAsync","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2429,7 +2460,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"iid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppvObject","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppvObject","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2440,6 +2471,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4d964ad4-5b33-11d3-8a91-00c04f79eb6d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2474,6 +2506,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d136c69a-f749-11d1-8f47-00c04f8ee57d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IResourceManager","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}
 		,"Methods":[
 			{
@@ -2490,7 +2523,7 @@
 					,{"Name":"pUOW","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BOID","TargetKind":"Default","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"pisoLevel","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
 					,{"Name":"pXid","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"xid_t","TargetKind":"Default","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
-					,{"Name":"ppEnlist","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransactionEnlistmentAsync","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppEnlist","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransactionEnlistmentAsync","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2515,6 +2548,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6f6de620-b5df-4f3e-9cfa-c8aebd05172b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IResourceManager2","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}
 		,"Methods":[
 			{
@@ -2540,6 +2574,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c8a6e3a1-9a8c-11cf-a308-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2573,6 +2608,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e793f6d1-f53d-11cf-a60d-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2611,6 +2647,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e793f6d2-f53d-11cf-a60d-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2633,6 +2670,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"13741d20-87eb-11ce-8081-0080c758527e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2647,7 +2685,7 @@
 					{"Name":"pguidRM","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In"]}
 					,{"Name":"pszRMName","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pIResMgrSink","Type":{"Kind":"ApiRef","Name":"IResourceManagerSink","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]},"Attrs":["In","Optional"]}
-					,{"Name":"ppResMgr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IResourceManager","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppResMgr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IResourceManager","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2658,6 +2696,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6b369c21-fbd2-11d1-8f47-00c04f8ee57d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IResourceManagerFactory","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}
 		,"Methods":[
 			{
@@ -2673,7 +2712,7 @@
 					,{"Name":"pszRMName","Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pIResMgrSink","Type":{"Kind":"ApiRef","Name":"IResourceManagerSink","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]},"Attrs":["In","Optional"]}
 					,{"Name":"riidRequested","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppvResMgr","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppvResMgr","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2684,6 +2723,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"80c7bfd0-87ee-11ce-8081-0080c758527e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2718,6 +2758,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5fab2547-9779-11d1-b886-00c04fb9618a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2753,6 +2794,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c23cc370-87ef-11ce-8081-0080c758527e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2765,7 +2807,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"iid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppvObject","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppvObject","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2776,6 +2818,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5433376c-414d-11d3-b206-00c04fc2f3ef"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2799,6 +2842,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5433376b-414d-11d3-b206-00c04fc2f3ef"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITransactionOutcomeEvents","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}
 		,"Methods":[
 			{
@@ -2820,6 +2864,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5433376a-414d-11d3-b206-00c04fc2f3ef"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2833,7 +2878,7 @@
 				,"Params":[
 					{"Name":"pTransaction","Type":{"Kind":"ApiRef","Name":"ITransaction","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]},"Attrs":["In","Optional"]}
 					,{"Name":"pVoterNotify","Type":{"Kind":"ApiRef","Name":"ITransactionVoterNotifyAsync2","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]},"Attrs":["In","Optional"]}
-					,{"Name":"ppVoterBallot","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransactionVoterBallotAsync2","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppVoterBallot","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransactionVoterBallotAsync2","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2844,6 +2889,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"82dc88e1-a954-11d1-8f88-00600895e7d5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2899,7 +2945,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppITransaction","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransaction","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppITransaction","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransaction","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2910,6 +2956,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ef081809-0c76-11d2-87a6-00c04f990f34"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2944,6 +2991,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"82dc88e0-a954-11d1-8f88-00600895e7d5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2956,7 +3004,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pPhase0Notify","Type":{"Kind":"ApiRef","Name":"ITransactionPhase0NotifyAsync","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]},"Attrs":["In","Optional"]}
-					,{"Name":"ppPhase0Enlistment","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransactionPhase0EnlistmentAsync","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppPhase0Enlistment","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransactionPhase0EnlistmentAsync","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2967,6 +3015,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"59313e01-b36c-11cf-a539-00aa006887c3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3039,6 +3088,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"59313e00-b36c-11cf-a539-00aa006887c3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3050,7 +3100,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppTransmitter","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransactionTransmitter","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppTransmitter","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransactionTransmitter","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -3061,6 +3111,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"59313e03-b36c-11cf-a539-00aa006887c3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3074,7 +3125,7 @@
 				,"Params":[
 					{"Name":"cbToken","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"rgbToken","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":0,"Child":{"Kind":"Native","Name":"Byte"}},"Attrs":["In"]}
-					,{"Name":"ppTransaction","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransaction","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppTransaction","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransaction","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -3122,6 +3173,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"59313e02-b36c-11cf-a539-00aa006887c3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3133,7 +3185,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppReceiver","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransactionReceiver","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppReceiver","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITransactionReceiver","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -3157,6 +3209,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4131e760-1aea-11d0-944b-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3193,6 +3246,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ac2b8ad2-d6f0-11d0-b386-00a0c9083365"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -3203,6 +3257,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4131e762-1aea-11d0-944b-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3216,7 +3271,7 @@
 				,"Params":[
 					{"Name":"pucLuPair","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":1,"Child":{"Kind":"Native","Name":"Byte"}},"Attrs":["In"]}
 					,{"Name":"cbLuPair","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"ppRecovery","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDtcLuRecovery","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppRecovery","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDtcLuRecovery","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -3353,6 +3408,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4131e765-1aea-11d0-944b-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3528,6 +3584,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4131e766-1aea-11d0-944b-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3550,6 +3607,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4131e764-1aea-11d0-944b-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3573,6 +3631,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ac2b8ad1-d6f0-11d0-b386-00a0c9083365"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3691,6 +3750,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4131e768-1aea-11d0-944b-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3702,7 +3762,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppWork","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDtcLuRecoveryInitiatedByLuWork","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppWork","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDtcLuRecoveryInitiatedByLuWork","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -3713,6 +3773,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4131e769-1aea-11d0-944b-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3790,6 +3851,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4131e770-1aea-11d0-944b-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3899,6 +3961,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4131e771-1aea-11d0-944b-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3927,6 +3990,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4131e773-1aea-11d0-944b-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4015,6 +4079,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4131e774-1aea-11d0-944b-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4113,6 +4178,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4131e775-1aea-11d0-944b-00a0c905416e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

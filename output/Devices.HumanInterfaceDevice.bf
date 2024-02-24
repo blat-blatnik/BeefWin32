@@ -1,10 +1,10 @@
 namespace Win32.Devices.HumanInterfaceDevice;
 
 using System;
+using Win32.Devices.Properties;
 using Win32.Foundation;
 using Win32.System.Com;
 using Win32.System.Registry;
-using Win32.UI.Shell.PropertiesSystem;
 
 static
 {
@@ -105,11 +105,38 @@ static
 	public const Guid GUID_MediaClass = .(0x4d36e96c, 0xe325, 0x11ce, 0xbf, 0xc1, 0x08, 0x00, 0x2b, 0xe1, 0x03, 0x18);
 	public const Guid GUID_MouseClass = .(0x4d36e96f, 0xe325, 0x11ce, 0xbf, 0xc1, 0x08, 0x00, 0x2b, 0xe1, 0x03, 0x18);
 	public const Guid GUID_HIDClass = .(0x745a17a0, 0x74d3, 0x11d0, 0xb6, 0xfe, 0x00, 0xa0, 0xc9, 0x0f, 0x57, 0xda);
+	public const String DIRECTINPUT_NOTIFICATION_MSGSTRINGA = "DIRECTINPUT_NOTIFICATION_MSGSTRING";
+	public const String DIRECTINPUT_NOTIFICATION_MSGSTRINGW = "DIRECTINPUT_NOTIFICATION_MSGSTRING";
+	public const String DIRECTINPUT_NOTIFICATION_MSGSTRING = "DIRECTINPUT_NOTIFICATION_MSGSTRING";
 	public const uint32 DIMSGWP_NEWAPPSTART = 1;
 	public const uint32 DIMSGWP_DX8APPSTART = 2;
 	public const uint32 DIMSGWP_DX8MAPPERAPPSTART = 3;
 	public const uint32 DIAPPIDFLAG_NOTIME = 1;
 	public const uint32 DIAPPIDFLAG_NOSIZE = 2;
+	public const String DIRECTINPUT_REGSTR_VAL_APPIDFLAGA = "AppIdFlag";
+	public const String DIRECTINPUT_REGSTR_KEY_LASTAPPA = "MostRecentApplication";
+	public const String DIRECTINPUT_REGSTR_KEY_LASTMAPAPPA = "MostRecentMapperApplication";
+	public const String DIRECTINPUT_REGSTR_VAL_VERSIONA = "Version";
+	public const String DIRECTINPUT_REGSTR_VAL_NAMEA = "Name";
+	public const String DIRECTINPUT_REGSTR_VAL_IDA = "Id";
+	public const String DIRECTINPUT_REGSTR_VAL_MAPPERA = "UsesMapper";
+	public const String DIRECTINPUT_REGSTR_VAL_LASTSTARTA = "MostRecentStart";
+	public const String DIRECTINPUT_REGSTR_VAL_APPIDFLAGW = "AppIdFlag";
+	public const String DIRECTINPUT_REGSTR_KEY_LASTAPPW = "MostRecentApplication";
+	public const String DIRECTINPUT_REGSTR_KEY_LASTMAPAPPW = "MostRecentMapperApplication";
+	public const String DIRECTINPUT_REGSTR_VAL_VERSIONW = "Version";
+	public const String DIRECTINPUT_REGSTR_VAL_NAMEW = "Name";
+	public const String DIRECTINPUT_REGSTR_VAL_IDW = "Id";
+	public const String DIRECTINPUT_REGSTR_VAL_MAPPERW = "UsesMapper";
+	public const String DIRECTINPUT_REGSTR_VAL_LASTSTARTW = "MostRecentStart";
+	public const String DIRECTINPUT_REGSTR_VAL_APPIDFLAG = "AppIdFlag";
+	public const String DIRECTINPUT_REGSTR_KEY_LASTAPP = "MostRecentApplication";
+	public const String DIRECTINPUT_REGSTR_KEY_LASTMAPAPP = "MostRecentMapperApplication";
+	public const String DIRECTINPUT_REGSTR_VAL_VERSION = "Version";
+	public const String DIRECTINPUT_REGSTR_VAL_NAME = "Name";
+	public const String DIRECTINPUT_REGSTR_VAL_ID = "Id";
+	public const String DIRECTINPUT_REGSTR_VAL_MAPPER = "UsesMapper";
+	public const String DIRECTINPUT_REGSTR_VAL_LASTSTART = "MostRecentStart";
 	public const HRESULT DIERR_NOMOREITEMS = -2147024637;
 	public const int32 DIERR_DRIVERFIRST = -2147220736;
 	public const int32 DIERR_DRIVERLAST = -2147220481;
@@ -120,14 +147,14 @@ static
 	public const Guid GUID_DEVINTERFACE_HID = .(0x4d1e55b2, 0xf16f, 0x11cf, 0x88, 0xcb, 0x00, 0x11, 0x11, 0x00, 0x00, 0x30);
 	public const Guid GUID_HID_INTERFACE_NOTIFY = .(0x2c4e2e88, 0x25e6, 0x4c33, 0x88, 0x2f, 0x3d, 0x82, 0xe6, 0x07, 0x36, 0x81);
 	public const Guid GUID_HID_INTERFACE_HIDPARSE = .(0xf5c315a5, 0x69ac, 0x4bc2, 0x92, 0x79, 0xd0, 0xb6, 0x45, 0x76, 0xf4, 0x4b);
-	public const PROPERTYKEY DEVPKEY_DeviceInterface_HID_UsagePage = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 2);
-	public const PROPERTYKEY DEVPKEY_DeviceInterface_HID_UsageId = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 3);
-	public const PROPERTYKEY DEVPKEY_DeviceInterface_HID_IsReadOnly = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 4);
-	public const PROPERTYKEY DEVPKEY_DeviceInterface_HID_VendorId = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 5);
-	public const PROPERTYKEY DEVPKEY_DeviceInterface_HID_ProductId = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 6);
-	public const PROPERTYKEY DEVPKEY_DeviceInterface_HID_VersionNumber = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 7);
-	public const PROPERTYKEY DEVPKEY_DeviceInterface_HID_BackgroundAccess = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 8);
-	public const PROPERTYKEY DEVPKEY_DeviceInterface_HID_WakeScreenOnInputCapable = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 9);
+	public const DEVPROPKEY DEVPKEY_DeviceInterface_HID_UsagePage = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 2);
+	public const DEVPROPKEY DEVPKEY_DeviceInterface_HID_UsageId = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 3);
+	public const DEVPROPKEY DEVPKEY_DeviceInterface_HID_IsReadOnly = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 4);
+	public const DEVPROPKEY DEVPKEY_DeviceInterface_HID_VendorId = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 5);
+	public const DEVPROPKEY DEVPKEY_DeviceInterface_HID_ProductId = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 6);
+	public const DEVPROPKEY DEVPKEY_DeviceInterface_HID_VersionNumber = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 7);
+	public const DEVPROPKEY DEVPKEY_DeviceInterface_HID_BackgroundAccess = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 8);
+	public const DEVPROPKEY DEVPKEY_DeviceInterface_HID_WakeScreenOnInputCapable = .(.(0xcbf38310, 0x4a17, 0x4310, 0xa1, 0xeb, 0x24, 0x7f, 0x0b, 0x67, 0x59, 0x3b), 9);
 	public const uint32 HID_REVISION = 1;
 	public const uint16 HID_USAGE_PAGE_UNDEFINED = 0;
 	public const uint16 HID_USAGE_PAGE_GENERIC = 1;
@@ -741,6 +768,8 @@ static
 	public const uint16 HID_USAGE_CAMERA_SHUTTER = 33;
 	public const uint16 HID_USAGE_MS_BTH_HF_DIALNUMBER = 33;
 	public const uint16 HID_USAGE_MS_BTH_HF_DIALMEMORY = 34;
+	public const String DD_KEYBOARD_DEVICE_NAME = "\\Device\\KeyboardClass";
+	public const String DD_KEYBOARD_DEVICE_NAME_U = "\\Device\\KeyboardClass";
 	public const uint32 IOCTL_KEYBOARD_QUERY_ATTRIBUTES = 720896;
 	public const uint32 IOCTL_KEYBOARD_SET_TYPEMATIC = 720900;
 	public const uint32 IOCTL_KEYBOARD_SET_INDICATORS = 720904;
@@ -772,6 +801,8 @@ static
 	public const uint32 KEYBOARD_NUM_LOCK_ON = 2;
 	public const uint32 KEYBOARD_SCROLL_LOCK_ON = 1;
 	public const uint32 KEYBOARD_ERROR_VALUE_BASE = 10000;
+	public const String DD_MOUSE_DEVICE_NAME = "\\Device\\PointerClass";
+	public const String DD_MOUSE_DEVICE_NAME_U = "\\Device\\PointerClass";
 	public const uint32 IOCTL_MOUSE_QUERY_ATTRIBUTES = 983040;
 	public const uint32 IOCTL_MOUSE_INSERT_DATA = 983044;
 	public const Guid GUID_DEVINTERFACE_MOUSE = .(0x378de44c, 0x56ef, 0x11d1, 0xbc, 0x8c, 0x00, 0xa0, 0xc9, 0x14, 0x05, 0xdd);

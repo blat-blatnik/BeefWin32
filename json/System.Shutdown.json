@@ -360,7 +360,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"uFlags","Type":{"Kind":"ApiRef","Name":"EXIT_WINDOWS_FLAGS","TargetKind":"Default","Api":"System.Shutdown","Parents":[]},"Attrs":["In"]}
-			,{"Name":"dwReason","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+			,{"Name":"dwReason","Type":{"Kind":"ApiRef","Name":"SHUTDOWN_REASON","TargetKind":"Default","Api":"System.Shutdown","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{

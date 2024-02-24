@@ -280,6 +280,9 @@ static
 	public const uint32 MODE = 16;
 	public const uint32 PREVSTATE = 32;
 	public const uint32 SHAREDSECRET = 64;
+	public const String DHCP_CALLOUT_LIST_KEY = "System\\CurrentControlSet\\Services\\DHCPServer\\Parameters";
+	public const String DHCP_CALLOUT_LIST_VALUE = "CalloutDlls";
+	public const String DHCP_CALLOUT_ENTRY_POINT = "DhcpServerCalloutEntry";
 	public const uint32 DHCP_CONTROL_START = 1;
 	public const uint32 DHCP_CONTROL_STOP = 2;
 	public const uint32 DHCP_CONTROL_PAUSE = 3;

@@ -6,6 +6,9 @@ using Win32.Foundation;
 static
 {
 	#region Constants
+	public const String XINPUT_DLL_A = "xinput1_4.dll";
+	public const String XINPUT_DLL_W = "xinput1_4.dll";
+	public const String XINPUT_DLL = "xinput1_4.dll";
 	public const uint32 XINPUT_DEVTYPE_GAMEPAD = 1;
 	public const uint32 XINPUT_DEVSUBTYPE_GAMEPAD = 1;
 	public const uint32 XINPUT_DEVSUBTYPE_UNKNOWN = 0;

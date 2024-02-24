@@ -752,6 +752,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"50b6a267-c4bd-450b-adb5-759073837c9e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -796,6 +797,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"bef54196-2d02-4a26-b6e5-d65af295d0f1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -808,7 +810,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrSID","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pbstrUserSummary","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pbstrUserSummary","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -865,6 +867,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8fdf6ca1-0189-47e4-b670-1a8a4636e340"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -911,6 +914,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"95e87780-e158-489e-b452-bbb850790715"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWPCSettings","TargetKind":"Com","Api":"System.ParentalControls","Parents":[]}
 		,"Methods":[
 			{
@@ -947,6 +951,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"ffccbdb8-0992-4c30-b0f1-1cbb09c240aa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWPCSettings","TargetKind":"Com","Api":"System.ParentalControls","Parents":[]}
 		,"Methods":[
 			{
@@ -998,6 +1003,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"4ff40a0f-3f3b-4d7c-a41b-4f39d7b44d05"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1022,7 +1028,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pcszSID","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
-					,{"Name":"ppSettings","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWPCSettings","TargetKind":"Com","Api":"System.ParentalControls","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppSettings","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWPCSettings","TargetKind":"Com","Api":"System.ParentalControls","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1035,7 +1041,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pcszSID","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
-					,{"Name":"ppSettings","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWPCWebSettings","TargetKind":"Com","Api":"System.ParentalControls","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppSettings","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWPCWebSettings","TargetKind":"Com","Api":"System.ParentalControls","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1059,6 +1065,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"28b4d88b-e072-49e6-804d-26edbe21a7b9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWindowsParentalControlsCore","TargetKind":"Com","Api":"System.ParentalControls","Parents":[]}
 		,"Methods":[
 			{
@@ -1071,7 +1078,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pcszSID","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
-					,{"Name":"ppSettings","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWPCGamesSettings","TargetKind":"Com","Api":"System.ParentalControls","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppSettings","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWPCGamesSettings","TargetKind":"Com","Api":"System.ParentalControls","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -1082,6 +1089,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"41eba572-23ed-4779-bec1-8df96206c44c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

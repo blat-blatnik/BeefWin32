@@ -197,7 +197,7 @@ static
 		public uint32 PropertyFlags;
 		public uint32 MetadataSize;
 		public uint32 SdLengthReserved;
-		public SECURITY_DESCRIPTOR* pSecurityDescriptor;
+		public PSECURITY_DESCRIPTOR pSecurityDescriptor;
 		public uint32 NumberOfStorages;
 	}
 	[CRepr]
@@ -211,7 +211,7 @@ static
 		public uint32 PropertyFlags;
 		public uint32 MetadataSize;
 		public uint32 SdLengthReserved;
-		public SECURITY_DESCRIPTOR* pSecurityDescriptor;
+		public PSECURITY_DESCRIPTOR pSecurityDescriptor;
 		public uint32 NumberOfStorages;
 		public DFS_STORAGE_INFO_1* Storage;
 	}
@@ -272,13 +272,13 @@ static
 		public uint32 PropertyFlagMask;
 		public uint32 PropertyFlags;
 		public uint32 SdLengthReserved;
-		public SECURITY_DESCRIPTOR* pSecurityDescriptor;
+		public PSECURITY_DESCRIPTOR pSecurityDescriptor;
 	}
 	[CRepr]
 	public struct DFS_INFO_150
 	{
 		public uint32 SdLengthReserved;
-		public SECURITY_DESCRIPTOR* pSecurityDescriptor;
+		public PSECURITY_DESCRIPTOR pSecurityDescriptor;
 	}
 	[CRepr]
 	public struct DFS_INFO_200
@@ -360,17 +360,17 @@ static
 	[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 NetDfsRemoveRootTarget(PWSTR pDfsPath, PWSTR pTargetPath, uint32 Flags);
 	[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern uint32 NetDfsGetSecurity(PWSTR DfsEntryPath, uint32 SecurityInformation, out SECURITY_DESCRIPTOR* ppSecurityDescriptor, out uint32 lpcbSecurityDescriptor);
+	public static extern uint32 NetDfsGetSecurity(PWSTR DfsEntryPath, uint32 SecurityInformation, out PSECURITY_DESCRIPTOR ppSecurityDescriptor, out uint32 lpcbSecurityDescriptor);
 	[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern uint32 NetDfsSetSecurity(PWSTR DfsEntryPath, uint32 SecurityInformation, ref SECURITY_DESCRIPTOR pSecurityDescriptor);
+	public static extern uint32 NetDfsSetSecurity(PWSTR DfsEntryPath, uint32 SecurityInformation, PSECURITY_DESCRIPTOR pSecurityDescriptor);
 	[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern uint32 NetDfsGetStdContainerSecurity(PWSTR MachineName, uint32 SecurityInformation, out SECURITY_DESCRIPTOR* ppSecurityDescriptor, out uint32 lpcbSecurityDescriptor);
+	public static extern uint32 NetDfsGetStdContainerSecurity(PWSTR MachineName, uint32 SecurityInformation, out PSECURITY_DESCRIPTOR ppSecurityDescriptor, out uint32 lpcbSecurityDescriptor);
 	[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern uint32 NetDfsSetStdContainerSecurity(PWSTR MachineName, uint32 SecurityInformation, ref SECURITY_DESCRIPTOR pSecurityDescriptor);
+	public static extern uint32 NetDfsSetStdContainerSecurity(PWSTR MachineName, uint32 SecurityInformation, PSECURITY_DESCRIPTOR pSecurityDescriptor);
 	[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern uint32 NetDfsGetFtContainerSecurity(PWSTR DomainName, uint32 SecurityInformation, out SECURITY_DESCRIPTOR* ppSecurityDescriptor, out uint32 lpcbSecurityDescriptor);
+	public static extern uint32 NetDfsGetFtContainerSecurity(PWSTR DomainName, uint32 SecurityInformation, out PSECURITY_DESCRIPTOR ppSecurityDescriptor, out uint32 lpcbSecurityDescriptor);
 	[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern uint32 NetDfsSetFtContainerSecurity(PWSTR DomainName, uint32 SecurityInformation, ref SECURITY_DESCRIPTOR pSecurityDescriptor);
+	public static extern uint32 NetDfsSetFtContainerSecurity(PWSTR DomainName, uint32 SecurityInformation, PSECURITY_DESCRIPTOR pSecurityDescriptor);
 	[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 NetDfsGetSupportedNamespaceVersion(DFS_NAMESPACE_VERSION_ORIGIN Origin, PWSTR pName, out DFS_SUPPORTED_NAMESPACE_VERSION_INFO* ppVersionInfo);
 	#endregion

@@ -3558,6 +3558,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"LOCALE_NAME_INVARIANT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":null
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LOCALE_NAME_SYSTEM_DEFAULT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"!x-sys-default-locale"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"MIN_SPELLING_NTDDI"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -3859,6 +3873,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"U_DEBUG"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
 		"Name":"UCLN_NO_AUTO_CLEANUP"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -3898,6 +3919,125 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_HAVE_LIB_SUFFIX"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_LIB_SUFFIX_C_NAME_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":null
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCONFIG_ONLY_COLLATION"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCONFIG_NO_BREAK_ITERATION"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCONFIG_NO_IDNA"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCONFIG_NO_FORMATTING"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCONFIG_NO_TRANSLITERATION"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCONFIG_NO_REGULAR_EXPRESSIONS"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCONFIG_NO_FILE_IO"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCONFIG_NO_CONVERSION"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCONFIG_NO_LEGACY_CONVERSION"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCONFIG_ONLY_HTML_CONVERSION"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCONFIG_NO_NORMALIZATION"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCONFIG_NO_COLLATION"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCONFIG_NO_SERVICE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCONFIG_HAVE_PARSEALLINPUT"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCONFIG_NO_FILTERED_BREAK_ITERATION"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
 		,"Attrs":[]
 	}
 	,{
@@ -4034,6 +4174,97 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"U_PLATFORM"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1800
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_PLATFORM_USES_ONLY_WIN32_API"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_PLATFORM_HAS_WIN32_API"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_PLATFORM_IMPLEMENTS_POSIX"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_PLATFORM_IS_LINUX_BASED"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_PLATFORM_IS_DARWIN_BASED"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_HAVE_STDINT_H"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_HAVE_INTTYPES_H"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_GCC_MAJOR_MINOR"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_IS_BIG_ENDIAN"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_HAVE_PLACEMENT_NEW"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_HAVE_DEBUG_LOCATION_NEW"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_CPLUSPLUS_VERSION"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
 		"Name":"U_ASCII_FAMILY"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -4042,6 +4273,48 @@
 	}
 	,{
 		"Name":"U_EBCDIC_FAMILY"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_CHARSET_FAMILY"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_CHARSET_IS_UTF8"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_HAVE_WCHAR_H"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_SIZEOF_WCHAR_T"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_HAVE_WCSCPY"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_HAVE_CHAR16_T"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1
@@ -4062,10 +4335,31 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"U_CHAR16_IS_TYPEDEF"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
 		"Name":"U_SENTINEL"
 		,"Type":{"Kind":"Native","Name":"Int32"}
 		,"ValueType":"Int32"
 		,"Value":-1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U8_LEAD3_T1_BITS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":" 000000000000\u001000"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U8_LEAD4_T1_BITS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u001e\u000f\u000f\u000f\u0000\u0000\u0000\u0000"
 		,"Attrs":[]
 	}
 	,{
@@ -4080,6 +4374,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_HIDE_OBSOLETE_UTF_OLD_H"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
 		,"Attrs":[]
 	}
 	,{
@@ -4545,6 +4846,153 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"ULOC_CHINESE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"zh"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_ENGLISH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"en"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_FRENCH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"fr"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_GERMAN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"de"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_ITALIAN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"it"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_JAPANESE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ja"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_KOREAN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ko"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_SIMPLIFIED_CHINESE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"zh_CN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_TRADITIONAL_CHINESE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"zh_TW"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_CANADA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"en_CA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_CANADA_FRENCH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"fr_CA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_CHINA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"zh_CN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_PRC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"zh_CN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_FRANCE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"fr_FR"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_GERMANY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"de_DE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_ITALY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"it_IT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_JAPAN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ja_JP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_KOREA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ko_KR"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_TAIWAN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"zh_TW"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_UK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"en_GB"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ULOC_US"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"en_US"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"ULOC_LANG_CAPACITY"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -4608,6 +5056,62 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"UCNV_SUB_STOP_ON_ILLEGAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"i"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCNV_SKIP_STOP_ON_ILLEGAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"i"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCNV_ESCAPE_JAVA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"J"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCNV_ESCAPE_C"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"C"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCNV_ESCAPE_XML_DEC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"D"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCNV_ESCAPE_XML_HEX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"X"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCNV_ESCAPE_UNICODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"U"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCNV_ESCAPE_CSS2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"S"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"UCNV_MAX_CONVERTER_NAME_LENGTH"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -4626,6 +5130,41 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":14
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCNV_OPTION_SEP_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":","
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCNV_VALUE_SEP_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"="
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCNV_LOCALE_OPTION_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":",locale="
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCNV_VERSION_OPTION_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":",version="
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCNV_SWAP_LFNL_OPTION_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":",swaplfnl"
 		,"Attrs":[]
 	}
 	,{
@@ -4811,6 +5350,314 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"U_ICU_VERSION_BUNDLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"icuver"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_ICU_DATA_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DataVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UCAL_UNKNOWN_ZONE_ID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Etc/Unknown"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_YEAR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"y"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_QUARTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"QQQQ"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_ABBR_QUARTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"QQQ"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_YEAR_QUARTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"yQQQQ"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_YEAR_ABBR_QUARTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"yQQQ"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_MONTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MMMM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_ABBR_MONTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MMM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_NUM_MONTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"M"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_YEAR_MONTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"yMMMM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_YEAR_ABBR_MONTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"yMMM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_YEAR_NUM_MONTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"yM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_DAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"d"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_YEAR_MONTH_DAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"yMMMMd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_YEAR_ABBR_MONTH_DAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"yMMMd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_YEAR_NUM_MONTH_DAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"yMd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_WEEKDAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EEEE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_ABBR_WEEKDAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"E"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_YEAR_MONTH_WEEKDAY_DAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"yMMMMEEEEd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_YEAR_ABBR_MONTH_WEEKDAY_DAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"yMMMEd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_YEAR_NUM_MONTH_WEEKDAY_DAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"yMEd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_MONTH_DAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MMMMd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_ABBR_MONTH_DAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MMMd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_NUM_MONTH_DAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Md"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_MONTH_WEEKDAY_DAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MMMMEEEEd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_ABBR_MONTH_WEEKDAY_DAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MMMEd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_NUM_MONTH_WEEKDAY_DAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MEd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_HOUR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"j"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_HOUR24"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"H"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_MINUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"m"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_HOUR_MINUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"jm"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_HOUR24_MINUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Hm"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_SECOND"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"s"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_HOUR_MINUTE_SECOND"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"jms"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_HOUR24_MINUTE_SECOND"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Hms"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_MINUTE_SECOND"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ms"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_LOCATION_TZ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VVVV"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_GENERIC_TZ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"vvvv"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_ABBR_GENERIC_TZ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"v"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_SPECIFIC_TZ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"zzzz"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_ABBR_SPECIFIC_TZ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"z"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"UDAT_ABBR_UTC_TZ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ZZZZ"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"USEARCH_DONE"
 		,"Type":{"Kind":"Native","Name":"Int32"}
 		,"ValueType":"Int32"
@@ -4825,10 +5672,52 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"UCONFIG_FORMAT_FASTPATHS_49"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_PLATFORM_HAS_WINUWP_API"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
 		"Name":"U_IOSTREAM_SOURCE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":199711
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_HAVE_RVALUE_REFERENCES"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_USING_ICU_NAMESPACE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_ICUDATA_TYPE_LETTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"e"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"U_UNICODE_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"8.0"
 		,"Attrs":[]
 	}
 	,{
@@ -5540,6 +6429,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HIMCC"
@@ -5549,6 +6439,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HSAVEDUILANGUAGES"
@@ -5558,6 +6449,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"FONTSIGNATURE"
@@ -6471,6 +7363,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"b7c82d61-fbe8-4b47-9b27-6c0d2e0de0a3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6537,6 +7430,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"803e3bd4-2828-4410-8290-418d1d73c762"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6559,6 +7453,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"432e5f85-35cf-4606-a801-6f70277e1d7a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6625,6 +7520,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"0b83a5b0-792f-4eab-9799-acf52c5ed08a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6647,6 +7543,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"b6fd0b71-e2bc-4653-8d05-f197e412770b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6788,9 +7685,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"handler","Type":{"Kind":"ApiRef","Name":"ISpellCheckerChangedEventHandler","TargetKind":"Com","Api":"Globalization","Parents":[]},"Attrs":["In"]}
 					,{"Name":"eventCookie","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out","RetVal"]}
@@ -6803,9 +7698,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"eventCookie","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 				]
@@ -6844,6 +7737,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"e7ed1c71-87f7-4378-a840-c9200dacee47"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISpellChecker","TargetKind":"Com","Api":"Globalization","Parents":[]}
 		,"Methods":[
 			{
@@ -6866,6 +7760,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"8e018a9d-2415-4677-bf08-794ea61f94bb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6916,6 +7811,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"aa176b85-0e12-4844-8e1a-eef1da77f586"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6952,6 +7848,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"73e976e0-8ed4-4eb1-80d7-1be0a16b0c38"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7096,6 +7993,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c58f8de-8e94-479e-9717-70c42c4ad2c3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7119,6 +8017,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"9f671e11-77d6-4c92-aefb-615215e3a4be"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12216,6 +13115,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d24acd21-ba72-11d0-b188-00aa0038c969"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12295,6 +13195,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d24acd23-ba72-11d0-b188-00aa0038c969"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12374,6 +13275,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c04d65ce-b70d-11d0-b188-00aa0038c969"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12443,6 +13345,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c04d65d0-b70d-11d0-b188-00aa0038c969"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMLangString","TargetKind":"Com","Api":"Globalization","Parents":[]}
 		,"Methods":[
 			{
@@ -12581,6 +13484,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c04d65d2-b70d-11d0-b188-00aa0038c969"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMLangString","TargetKind":"Com","Api":"Globalization","Parents":[]}
 		,"Methods":[
 			{
@@ -12726,6 +13630,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f5be2ee1-bfd7-11d0-b188-00aa0038c969"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12850,6 +13755,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"275c23e3-3747-11d0-9fea-00aa003f8646"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12924,6 +13830,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3dc39d1d-c030-11d0-b81b-00c04fc9b31f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13055,6 +13962,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ae5f1430-388b-11d2-8380-00c04f8f5da1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13151,6 +14059,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d66d6f98-cdaa-11d0-b822-00c04fc9b31f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13256,6 +14165,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"275c23e1-3747-11d0-9fea-00aa003f8646"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13535,6 +14445,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"dccfc164-2b38-11d2-b7ec-00c04f8f5d9a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13936,6 +14847,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"359f3443-bd4a-11d0-b188-00aa0038c969"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14002,6 +14914,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"359f3441-bd4a-11d0-b188-00aa0038c969"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMLangCodePages","TargetKind":"Com","Api":"Globalization","Parents":[]}
 		,"Methods":[
 			{
@@ -14078,6 +14991,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"dccfc162-2b38-11d2-b7ec-00c04f8f5d9a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMLangCodePages","TargetKind":"Com","Api":"Globalization","Parents":[]}
 		,"Methods":[
 			{
@@ -14182,6 +15096,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4e5868ab-b157-4623-9acc-6a1d9caebe04"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMultiLanguage2","TargetKind":"Com","Api":"Globalization","Parents":[]}
 		,"Methods":[
 			{
@@ -17213,9 +18128,9 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"context","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Const"]}
-			,{"Name":"e","Type":{"Kind":"ApiRef","Name":"UTraceEntry","TargetKind":"FunctionPointer","Api":"Globalization","Parents":[]},"Attrs":["In","Out"]}
-			,{"Name":"x","Type":{"Kind":"ApiRef","Name":"UTraceExit","TargetKind":"FunctionPointer","Api":"Globalization","Parents":[]},"Attrs":["In","Out"]}
-			,{"Name":"d","Type":{"Kind":"ApiRef","Name":"UTraceData","TargetKind":"FunctionPointer","Api":"Globalization","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"e","Type":{"Kind":"ApiRef","Name":"UTraceEntry","TargetKind":"FunctionPointer","Api":"Globalization","Parents":[]},"Attrs":["In"]}
+			,{"Name":"x","Type":{"Kind":"ApiRef","Name":"UTraceExit","TargetKind":"FunctionPointer","Api":"Globalization","Parents":[]},"Attrs":["In"]}
+			,{"Name":"d","Type":{"Kind":"ApiRef","Name":"UTraceData","TargetKind":"FunctionPointer","Api":"Globalization","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{
@@ -22029,7 +22944,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"pBiDi","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"UBiDi","TargetKind":"Default","Api":"Globalization","Parents":[]}},"Attrs":["In","Out"]}
-			,{"Name":"newFn","Type":{"Kind":"ApiRef","Name":"UBiDiClassCallback","TargetKind":"FunctionPointer","Api":"Globalization","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"newFn","Type":{"Kind":"ApiRef","Name":"UBiDiClassCallback","TargetKind":"FunctionPointer","Api":"Globalization","Parents":[]},"Attrs":["In"]}
 			,{"Name":"newContext","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Const"]}
 			,{"Name":"oldFn","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"UBiDiClassCallback","TargetKind":"FunctionPointer","Api":"Globalization","Parents":[]}},"Attrs":["In","Out"]}
 			,{"Name":"oldContext","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["In","Const"]}
@@ -31029,7 +31944,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"regexp","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"URegularExpression","TargetKind":"Default","Api":"Globalization","Parents":[]}},"Attrs":["In","Out"]}
-			,{"Name":"callback","Type":{"Kind":"ApiRef","Name":"URegexMatchCallback","TargetKind":"FunctionPointer","Api":"Globalization","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"callback","Type":{"Kind":"ApiRef","Name":"URegexMatchCallback","TargetKind":"FunctionPointer","Api":"Globalization","Parents":[]},"Attrs":["In"]}
 			,{"Name":"context","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Const"]}
 			,{"Name":"status","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"UErrorCode","TargetKind":"Default","Api":"Globalization","Parents":[]}},"Attrs":["In","Out"]}
 		]
@@ -31061,7 +31976,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"regexp","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"URegularExpression","TargetKind":"Default","Api":"Globalization","Parents":[]}},"Attrs":["In","Out"]}
-			,{"Name":"callback","Type":{"Kind":"ApiRef","Name":"URegexFindProgressCallback","TargetKind":"FunctionPointer","Api":"Globalization","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"callback","Type":{"Kind":"ApiRef","Name":"URegexFindProgressCallback","TargetKind":"FunctionPointer","Api":"Globalization","Parents":[]},"Attrs":["In"]}
 			,{"Name":"context","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In","Const"]}
 			,{"Name":"status","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"UErrorCode","TargetKind":"Default","Api":"Globalization","Parents":[]}},"Attrs":["In","Out"]}
 		]

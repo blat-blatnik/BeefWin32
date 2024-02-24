@@ -9,6 +9,9 @@ using Win32.System.Com;
 static
 {
 	#region Constants
+	public const String WSD_DEFAULT_HOSTING_ADDRESS = "http://*:5357/";
+	public const String WSD_DEFAULT_SECURE_HOSTING_ADDRESS = "https://*:5358/";
+	public const String WSD_DEFAULT_EVENTING_ADDRESS = "http://*:5357/";
 	public const uint32 WSDAPI_OPTION_MAX_INBOUND_MESSAGE_SIZE = 1;
 	public const uint32 WSDAPI_OPTION_TRACE_XML_TO_DEBUGGER = 2;
 	public const uint32 WSDAPI_OPTION_TRACE_XML_TO_FILE = 3;
@@ -139,8 +142,8 @@ static
 	{
 		public CERT_CONTEXT** certMatchArray;
 		public uint32 dwCertMatchArrayCount;
-		public void* hCertMatchStore;
-		public void* hCertIssuerStore;
+		public HCERTSTORE hCertMatchStore;
+		public HCERTSTORE hCertIssuerStore;
 		public uint32 dwCertCheckOptions;
 	}
 	[CRepr]
@@ -148,8 +151,8 @@ static
 	{
 		public CERT_CONTEXT** certMatchArray;
 		public uint32 dwCertMatchArrayCount;
-		public void* hCertMatchStore;
-		public void* hCertIssuerStore;
+		public HCERTSTORE hCertMatchStore;
+		public HCERTSTORE hCertIssuerStore;
 		public uint32 dwCertCheckOptions;
 		public PWSTR pszCNGHashAlgId;
 		public uint8* pbCertHash;
@@ -160,7 +163,7 @@ static
 	{
 		public CERT_CONTEXT** signingCertArray;
 		public uint32 dwSigningCertArrayCount;
-		public void* hSigningCertStore;
+		public HCERTSTORE hSigningCertStore;
 		public uint32 dwFlags;
 	}
 	[CRepr]

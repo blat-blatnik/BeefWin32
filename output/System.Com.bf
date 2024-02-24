@@ -18,6 +18,7 @@ static
 	public const int32 STG_TOEND = -1;
 	public const int32 STG_LAYOUT_SEQUENTIAL = 0;
 	public const int32 STG_LAYOUT_INTERLEAVED = 1;
+	public const String _CRT_INTERNAL_COMBASE_SYMBOL_PREFIX = "_";
 	public const uint32 COM_RIGHTS_EXECUTE = 1;
 	public const uint32 COM_RIGHTS_EXECUTE_LOCAL = 2;
 	public const uint32 COM_RIGHTS_EXECUTE_REMOTE = 4;
@@ -103,6 +104,14 @@ static
 		THUMBNAIL = 2,
 		ICON = 4,
 		DOCPRINT = 8,
+	}
+	public enum STGC : uint32
+	{
+		DEFAULT = 0,
+		OVERWRITE = 1,
+		ONLYIFCURRENT = 2,
+		DANGEROUSLYCOMMITMERELYTODISKCACHE = 4,
+		CONSOLIDATE = 8,
 	}
 	public enum TYSPEC : int32
 	{
@@ -607,15 +616,15 @@ static
 			public _ByObjectId_e__Struct ByObjectId;
 			
 			[CRepr]
-			public struct _ByName_e__Struct
-			{
-				public PWSTR pPackageName;
-				public Guid PolicyId;
-			}
-			[CRepr]
 			public struct _ByObjectId_e__Struct
 			{
 				public Guid ObjectId;
+				public Guid PolicyId;
+			}
+			[CRepr]
+			public struct _ByName_e__Struct
+			{
+				public PWSTR pPackageName;
 				public Guid PolicyId;
 			}
 		}
@@ -1498,7 +1507,7 @@ static
 		public HRESULT Seek(LARGE_INTEGER dlibMove, STREAM_SEEK dwOrigin, ULARGE_INTEGER* plibNewPosition) mut => VT.Seek(ref this, dlibMove, dwOrigin, plibNewPosition);
 		public HRESULT SetSize(ULARGE_INTEGER libNewSize) mut => VT.SetSize(ref this, libNewSize);
 		public HRESULT CopyTo(ref IStream pstm, ULARGE_INTEGER cb, ULARGE_INTEGER* pcbRead, ULARGE_INTEGER* pcbWritten) mut => VT.CopyTo(ref this, ref pstm, cb, pcbRead, pcbWritten);
-		public HRESULT Commit(uint32 grfCommitFlags) mut => VT.Commit(ref this, grfCommitFlags);
+		public HRESULT Commit(STGC grfCommitFlags) mut => VT.Commit(ref this, grfCommitFlags);
 		public HRESULT Revert() mut => VT.Revert(ref this);
 		public HRESULT LockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) mut => VT.LockRegion(ref this, libOffset, cb, dwLockType);
 		public HRESULT UnlockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) mut => VT.UnlockRegion(ref this, libOffset, cb, dwLockType);
@@ -1511,7 +1520,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStream self, LARGE_INTEGER dlibMove, STREAM_SEEK dwOrigin, ULARGE_INTEGER* plibNewPosition) Seek;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStream self, ULARGE_INTEGER libNewSize) SetSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStream self, ref IStream pstm, ULARGE_INTEGER cb, ULARGE_INTEGER* pcbRead, ULARGE_INTEGER* pcbWritten) CopyTo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStream self, uint32 grfCommitFlags) Commit;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStream self, STGC grfCommitFlags) Commit;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStream self) Revert;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStream self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) LockRegion;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStream self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) UnlockRegion;
@@ -1711,14 +1720,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT QueryBlanket(ref IUnknown pProxy, out uint32 pAuthnSvc, uint32* pAuthzSvc, uint16** pServerPrincName, RPC_C_AUTHN_LEVEL* pAuthnLevel, RPC_C_IMP_LEVEL* pImpLevel, void** pAuthInfo, EOLE_AUTHENTICATION_CAPABILITIES* pCapabilites) mut => VT.QueryBlanket(ref this, ref pProxy, out pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pAuthInfo, pCapabilites);
+		public HRESULT QueryBlanket(ref IUnknown pProxy, out uint32 pAuthnSvc, uint32* pAuthzSvc, out uint16* pServerPrincName, RPC_C_AUTHN_LEVEL* pAuthnLevel, RPC_C_IMP_LEVEL* pImpLevel, void** pAuthInfo, EOLE_AUTHENTICATION_CAPABILITIES* pCapabilites) mut => VT.QueryBlanket(ref this, ref pProxy, out pAuthnSvc, pAuthzSvc, out pServerPrincName, pAuthnLevel, pImpLevel, pAuthInfo, pCapabilites);
 		public HRESULT SetBlanket(ref IUnknown pProxy, uint32 dwAuthnSvc, uint32 dwAuthzSvc, PWSTR pServerPrincName, RPC_C_AUTHN_LEVEL dwAuthnLevel, RPC_C_IMP_LEVEL dwImpLevel, void* pAuthInfo, EOLE_AUTHENTICATION_CAPABILITIES dwCapabilities) mut => VT.SetBlanket(ref this, ref pProxy, dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, pAuthInfo, dwCapabilities);
 		public HRESULT CopyProxy(ref IUnknown pProxy, out IUnknown* ppCopy) mut => VT.CopyProxy(ref this, ref pProxy, out ppCopy);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IClientSecurity self, ref IUnknown pProxy, out uint32 pAuthnSvc, uint32* pAuthzSvc, uint16** pServerPrincName, RPC_C_AUTHN_LEVEL* pAuthnLevel, RPC_C_IMP_LEVEL* pImpLevel, void** pAuthInfo, EOLE_AUTHENTICATION_CAPABILITIES* pCapabilites) QueryBlanket;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IClientSecurity self, ref IUnknown pProxy, out uint32 pAuthnSvc, uint32* pAuthzSvc, out uint16* pServerPrincName, RPC_C_AUTHN_LEVEL* pAuthnLevel, RPC_C_IMP_LEVEL* pImpLevel, void** pAuthInfo, EOLE_AUTHENTICATION_CAPABILITIES* pCapabilites) QueryBlanket;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IClientSecurity self, ref IUnknown pProxy, uint32 dwAuthnSvc, uint32 dwAuthzSvc, PWSTR pServerPrincName, RPC_C_AUTHN_LEVEL dwAuthnLevel, RPC_C_IMP_LEVEL dwImpLevel, void* pAuthInfo, EOLE_AUTHENTICATION_CAPABILITIES dwCapabilities) SetBlanket;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IClientSecurity self, ref IUnknown pProxy, out IUnknown* ppCopy) CopyProxy;
 		}
@@ -1730,7 +1739,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT QueryBlanket(uint32* pAuthnSvc, uint32* pAuthzSvc, uint16** pServerPrincName, uint32* pAuthnLevel, uint32* pImpLevel, void** pPrivs, uint32* pCapabilities) mut => VT.QueryBlanket(ref this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+		public HRESULT QueryBlanket(uint32* pAuthnSvc, uint32* pAuthzSvc, out uint16* pServerPrincName, uint32* pAuthnLevel, uint32* pImpLevel, void** pPrivs, uint32* pCapabilities) mut => VT.QueryBlanket(ref this, pAuthnSvc, pAuthzSvc, out pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
 		public HRESULT ImpersonateClient() mut => VT.ImpersonateClient(ref this);
 		public HRESULT RevertToSelf() mut => VT.RevertToSelf(ref this);
 		public BOOL IsImpersonating() mut => VT.IsImpersonating(ref this);
@@ -1738,7 +1747,7 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IServerSecurity self, uint32* pAuthnSvc, uint32* pAuthzSvc, uint16** pServerPrincName, uint32* pAuthnLevel, uint32* pImpLevel, void** pPrivs, uint32* pCapabilities) QueryBlanket;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IServerSecurity self, uint32* pAuthnSvc, uint32* pAuthzSvc, out uint16* pServerPrincName, uint32* pAuthnLevel, uint32* pImpLevel, void** pPrivs, uint32* pCapabilities) QueryBlanket;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IServerSecurity self) ImpersonateClient;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IServerSecurity self) RevertToSelf;
 			public new function [CallingConvention(.Stdcall)] BOOL(ref IServerSecurity self) IsImpersonating;
@@ -3607,7 +3616,7 @@ static
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRevokeInitializeSpy(ULARGE_INTEGER uliCookie);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT CoGetSystemSecurityPermissions(COMSD comSDType, out SECURITY_DESCRIPTOR* ppSD);
+	public static extern HRESULT CoGetSystemSecurityPermissions(COMSD comSDType, out PSECURITY_DESCRIPTOR ppSD);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern HINSTANCE CoLoadLibrary(PWSTR lpszLibName, BOOL bAutoFree);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3697,7 +3706,7 @@ static
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetClassObject(in Guid rclsid, CLSCTX dwClsContext, void* pvReserved, in Guid riid, void** ppv);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT CoRegisterClassObject(in Guid rclsid, ref IUnknown pUnk, CLSCTX dwClsContext, uint32 flags, out uint32 lpdwRegister);
+	public static extern HRESULT CoRegisterClassObject(in Guid rclsid, ref IUnknown pUnk, CLSCTX dwClsContext, REGCLS flags, out uint32 lpdwRegister);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRevokeClassObject(uint32 dwRegister);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3729,7 +3738,7 @@ static
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoDisconnectContext(uint32 dwTimeout);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT CoInitializeSecurity(SECURITY_DESCRIPTOR* pSecDesc, int32 cAuthSvc, SOLE_AUTHENTICATION_SERVICE* asAuthSvc, void* pReserved1, RPC_C_AUTHN_LEVEL dwAuthnLevel, RPC_C_IMP_LEVEL dwImpLevel, void* pAuthList, EOLE_AUTHENTICATION_CAPABILITIES dwCapabilities, void* pReserved3);
+	public static extern HRESULT CoInitializeSecurity(PSECURITY_DESCRIPTOR pSecDesc, int32 cAuthSvc, SOLE_AUTHENTICATION_SERVICE* asAuthSvc, void* pReserved1, RPC_C_AUTHN_LEVEL dwAuthnLevel, RPC_C_IMP_LEVEL dwImpLevel, void* pAuthList, EOLE_AUTHENTICATION_CAPABILITIES dwCapabilities, void* pReserved3);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetCallContext(in Guid riid, void** ppInterface);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]

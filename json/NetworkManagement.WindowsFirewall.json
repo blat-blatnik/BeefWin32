@@ -45,6 +45,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"b171c812-cc76-485a-94d8-b6b3a2794e99"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -97,6 +98,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"624bd588-9060-4109-b0b0-1adbbcac32df"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -135,6 +137,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"9c416740-a34e-446f-ba06-abd04c3149ae"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -157,6 +160,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c83a0a74-91ee-41b6-b67a-67e0f00bbd78"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -179,6 +183,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b60de00f-156e-4e8d-9ec1-3a2342c10899"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -202,9 +207,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrRemoteHost","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"lExternalPort","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
@@ -268,6 +271,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4fc80282-23b6-4378-9a27-cd8f17c9400c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -465,6 +469,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"cd1f3e77-66d6-4664-82c7-36dbb641d0f1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -488,9 +493,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"lExternalPort","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"bstrProtocol","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
@@ -550,6 +553,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"6f10711f-729b-41e5-93b8-f21d0f818df1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -713,6 +717,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c08956a0-1cd3-11d1-b1c5-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -890,6 +895,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c08956a1-1cd3-11d1-b1c5-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -995,6 +1001,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c08956a2-1cd3-11d1-b1c5-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1032,6 +1039,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c08956a3-1cd3-11d1-b1c5-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1080,6 +1088,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c08956b0-1cd3-11d1-b1c5-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1139,6 +1148,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"24b7e9b5-e38f-4685-851b-00892cf5f940"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1261,6 +1271,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c08956b1-1cd3-11d1-b1c5-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1318,6 +1329,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c08956b8-1cd3-11d1-b1c5-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1377,6 +1389,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c08956b4-1cd3-11d1-b1c5-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1436,6 +1449,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c08956b5-1cd3-11d1-b1c5-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1495,6 +1509,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"02e4a2de-da20-4e34-89c8-ac22275a010b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1533,6 +1548,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"f4277c95-ce5b-463d-8167-5662d9bcaa72"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1666,6 +1682,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c08956b6-1cd3-11d1-b1c5-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1762,9 +1779,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"Flags","Type":{"Kind":"ApiRef","Name":"SHARINGCONNECTION_ENUM_FLAGS","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppColl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"INetSharingPortMappingCollection","TargetKind":"Com","Api":"NetworkManagement.WindowsFirewall","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -1809,6 +1824,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"33c4643c-7811-46fa-a89a-768597bd7223"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1847,6 +1863,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"7d7a6355-f372-4971-a149-bfc927be762a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1885,6 +1902,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"38ae69e0-4409-402a-a2cb-e965c727f840"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1923,6 +1941,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c08956b7-1cd3-11d1-b1c5-00805fc1270e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1946,9 +1965,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"Flags","Type":{"Kind":"ApiRef","Name":"SHARINGCONNECTION_ENUM_FLAGS","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppColl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"INetSharingPublicConnectionCollection","TargetKind":"Com","Api":"NetworkManagement.WindowsFirewall","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -1961,9 +1978,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"Flags","Type":{"Kind":"ApiRef","Name":"SHARINGCONNECTION_ENUM_FLAGS","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppColl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"INetSharingPrivateConnectionCollection","TargetKind":"Com","Api":"NetworkManagement.WindowsFirewall","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -1976,9 +1991,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"pNetConnection","Type":{"Kind":"ApiRef","Name":"INetConnection","TargetKind":"Com","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppNetSharingConfiguration","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"INetSharingConfiguration","TargetKind":"Com","Api":"NetworkManagement.WindowsFirewall","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -2005,9 +2018,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"pNetConnection","Type":{"Kind":"ApiRef","Name":"INetConnection","TargetKind":"Com","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppProps","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"INetConnectionProps","TargetKind":"Com","Api":"NetworkManagement.WindowsFirewall","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -2587,6 +2598,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d4becddf-6f73-4a83-b832-9c66874cd20e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2709,6 +2721,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a6207b2e-7cdd-426a-951e-5e1cbc5afead"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2999,6 +3012,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"e0483ba0-47ff-4d9c-a6d6-7741d0b195f7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3219,6 +3233,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"c0e9d7fa-e07e-430a-b19a-090ce82d92e2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3296,6 +3311,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"79fd57c8-908e-4a36-9888-d5b3f0a444cf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3474,6 +3490,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"79649bb4-903e-421b-94c9-79848e79f6ee"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3525,6 +3542,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b5e64ffa-c2c5-444e-a301-fb5e00018050"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3703,6 +3721,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"644efd52-ccf9-486c-97a2-39f352570b30"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3778,6 +3797,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"af230d27-baba-4e42-aced-f524f22cfce2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4292,6 +4312,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"9c27c8da-189b-4dde-89f7-8b39a316782c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"INetFwRule","TargetKind":"Com","Api":"NetworkManagement.WindowsFirewall","Parents":[]}
 		,"Methods":[
 			{
@@ -4330,6 +4351,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"b21563ff-d696-4222-ab46-4e89b73ab34a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"INetFwRule2","TargetKind":"Com","Api":"NetworkManagement.WindowsFirewall","Parents":[]}
 		,"Methods":[
 			{
@@ -4508,6 +4530,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9c4c6277-5027-441e-afae-ca1f542da009"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4583,6 +4606,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8267bbe3-f890-491c-b7b6-2db1ef0e5d2b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4636,6 +4660,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"174a0dda-e9f9-449d-993b-21ab667ca456"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4842,6 +4867,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d46d2478-9ac9-4008-9dc7-5563ce5536cc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4879,6 +4905,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"98325047-c671-4174-8d81-defcd3f03186"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4902,9 +4929,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"profileType","Type":{"Kind":"ApiRef","Name":"NET_FW_PROFILE_TYPE2","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"enabled","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["Out","RetVal"]}
@@ -4917,9 +4942,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"profileType","Type":{"Kind":"ApiRef","Name":"NET_FW_PROFILE_TYPE2","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"enabled","Type":{"Kind":"Native","Name":"Int16"},"Attrs":["In"]}
@@ -4932,9 +4955,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"profileType","Type":{"Kind":"ApiRef","Name":"NET_FW_PROFILE_TYPE2","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"interfaces","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -4947,9 +4968,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"profileType","Type":{"Kind":"ApiRef","Name":"NET_FW_PROFILE_TYPE2","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"interfaces","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
@@ -4962,9 +4981,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"profileType","Type":{"Kind":"ApiRef","Name":"NET_FW_PROFILE_TYPE2","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"Block","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["Out","RetVal"]}
@@ -4977,9 +4994,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"profileType","Type":{"Kind":"ApiRef","Name":"NET_FW_PROFILE_TYPE2","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"Block","Type":{"Kind":"Native","Name":"Int16"},"Attrs":["In"]}
@@ -4992,9 +5007,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"profileType","Type":{"Kind":"ApiRef","Name":"NET_FW_PROFILE_TYPE2","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"disabled","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["Out","RetVal"]}
@@ -5007,9 +5020,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"profileType","Type":{"Kind":"ApiRef","Name":"NET_FW_PROFILE_TYPE2","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"disabled","Type":{"Kind":"Native","Name":"Int16"},"Attrs":["In"]}
@@ -5022,9 +5033,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"profileType","Type":{"Kind":"ApiRef","Name":"NET_FW_PROFILE_TYPE2","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"disabled","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["Out","RetVal"]}
@@ -5037,9 +5046,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"profileType","Type":{"Kind":"ApiRef","Name":"NET_FW_PROFILE_TYPE2","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"disabled","Type":{"Kind":"Native","Name":"Int16"},"Attrs":["In"]}
@@ -5119,9 +5126,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"profileType","Type":{"Kind":"ApiRef","Name":"NET_FW_PROFILE_TYPE2","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"action","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"NET_FW_ACTION","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -5134,9 +5139,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"profileType","Type":{"Kind":"ApiRef","Name":"NET_FW_PROFILE_TYPE2","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"action","Type":{"Kind":"ApiRef","Name":"NET_FW_ACTION","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
@@ -5149,9 +5152,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"profileType","Type":{"Kind":"ApiRef","Name":"NET_FW_PROFILE_TYPE2","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"action","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"NET_FW_ACTION","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -5164,9 +5165,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"profileType","Type":{"Kind":"ApiRef","Name":"NET_FW_PROFILE_TYPE2","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
 					,{"Name":"action","Type":{"Kind":"ApiRef","Name":"NET_FW_ACTION","TargetKind":"Default","Api":"NetworkManagement.WindowsFirewall","Parents":[]},"Attrs":["In"]}
@@ -5179,9 +5178,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"group","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"enabled","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["Out","RetVal"]}
@@ -5209,6 +5206,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f7898af5-cac4-4632-a2ec-da06e5111af2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5292,6 +5290,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"71881699-18f4-458b-b892-3ffce5e07f75"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5372,6 +5371,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"39eb36e0-2097-40bd-8af2-63a13b525362"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

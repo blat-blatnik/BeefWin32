@@ -16,6 +16,8 @@ static
 	public const uint32 WER_MAX_TOTAL_PARAM_LENGTH = 1720;
 	public const uint32 WER_MAX_PREFERRED_MODULES = 128;
 	public const uint32 WER_MAX_PREFERRED_MODULES_BUFFER = 256;
+	public const String APPCRASH_EVENT = "APPCRASH";
+	public const String PACKAGED_APPCRASH_EVENT = "MoAppCrash";
 	public const uint32 WER_P0 = 0;
 	public const uint32 WER_P1 = 1;
 	public const uint32 WER_P2 = 2;
@@ -47,6 +49,9 @@ static
 	public const uint32 WER_MAX_BUCKET_ID_STRING_LENGTH = 260;
 	public const uint32 WER_MAX_LOCAL_DUMP_SUBPATH_LENGTH = 64;
 	public const uint32 WER_MAX_REGISTERED_RUNTIME_EXCEPTION_MODULES = 16;
+	public const String WER_RUNTIME_EXCEPTION_EVENT_FUNCTION = "OutOfProcessExceptionEventCallback";
+	public const String WER_RUNTIME_EXCEPTION_EVENT_SIGNATURE_FUNCTION = "OutOfProcessExceptionEventSignatureCallback";
+	public const String WER_RUNTIME_EXCEPTION_DEBUGGER_LAUNCH = "OutOfProcessExceptionEventDebuggerLaunchCallback";
 	#endregion
 	
 	#region Typedefs

@@ -1,10 +1,10 @@
 namespace Win32.Media.KernelStreaming;
 
 using System;
+using Win32.Devices.Properties;
 using Win32.Foundation;
 using Win32.Media;
 using Win32.System.Com;
-using Win32.UI.Shell.PropertiesSystem;
 
 static
 {
@@ -76,6 +76,12 @@ static
 	public const uint32 KSDATARANGE_BIT_ATTRIBUTES = 1;
 	public const uint32 KSDATARANGE_BIT_REQUIRED_ATTRIBUTES = 2;
 	public const uint32 KSATTRIBUTE_REQUIRED = 1;
+	public const String KSSTRING_Filter = "{9B365890-165F-11D0-A195-0020AFD156E4}";
+	public const String KSSTRING_Pin = "{146F1A80-4791-11D0-A5D6-28DB04C10000}";
+	public const String KSSTRING_Clock = "{53172480-4791-11D0-A5D6-28DB04C10000}";
+	public const String KSSTRING_Allocator = "{642F5D00-4791-11D0-A5D6-28DB04C10000}";
+	public const String KSSTRING_AllocatorEx = "{091BB63B-603F-11D1-B067-00A0C9062802}";
+	public const String KSSTRING_TopologyNode = "{0621061A-EE75-11D0-B915-00A0C9223196}";
 	public const uint32 KSALLOCATOR_REQUIREMENTF_INPLACE_MODIFIER = 1;
 	public const uint32 KSALLOCATOR_REQUIREMENTF_SYSTEM_MEMORY = 2;
 	public const uint32 KSALLOCATOR_REQUIREMENTF_FRAME_INTEGRITY = 4;
@@ -189,9 +195,9 @@ static
 	public const uint32 KSDSOUND_BUFFER_CTRL_PAN = 4;
 	public const uint32 KSDSOUND_BUFFER_CTRL_VOLUME = 8;
 	public const uint32 KSDSOUND_BUFFER_CTRL_POSITIONNOTIFY = 16;
-	public const PROPERTYKEY DEVPKEY_KsAudio_PacketSize_Constraints = .(.(0x13e004d6, 0xb066, 0x43bd, 0x91, 0x3b, 0xa4, 0x15, 0xcd, 0x13, 0xda, 0x87), 2);
-	public const PROPERTYKEY DEVPKEY_KsAudio_Controller_DeviceInterface_Path = .(.(0x13e004d6, 0xb066, 0x43bd, 0x91, 0x3b, 0xa4, 0x15, 0xcd, 0x13, 0xda, 0x87), 3);
-	public const PROPERTYKEY DEVPKEY_KsAudio_PacketSize_Constraints2 = .(.(0x9404f781, 0x7191, 0x409b, 0x8b, 0x0b, 0x80, 0xbf, 0x6e, 0xc2, 0x29, 0xae), 2);
+	public const DEVPROPKEY DEVPKEY_KsAudio_PacketSize_Constraints = .(.(0x13e004d6, 0xb066, 0x43bd, 0x91, 0x3b, 0xa4, 0x15, 0xcd, 0x13, 0xda, 0x87), 2);
+	public const DEVPROPKEY DEVPKEY_KsAudio_Controller_DeviceInterface_Path = .(.(0x13e004d6, 0xb066, 0x43bd, 0x91, 0x3b, 0xa4, 0x15, 0xcd, 0x13, 0xda, 0x87), 3);
+	public const DEVPROPKEY DEVPKEY_KsAudio_PacketSize_Constraints2 = .(.(0x9404f781, 0x7191, 0x409b, 0x8b, 0x0b, 0x80, 0xbf, 0x6e, 0xc2, 0x29, 0xae), 2);
 	public const int32 KSAUDIO_STEREO_SPEAKER_GEOMETRY_HEADPHONE = -1;
 	public const uint32 KSAUDIO_STEREO_SPEAKER_GEOMETRY_MIN = 5;
 	public const uint32 KSAUDIO_STEREO_SPEAKER_GEOMETRY_NARROW = 10;
@@ -1583,9 +1589,9 @@ static
 	}
 	public enum KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_TYPE : int32
 	{
-		KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_TYPE_DISABLE = 0,
-		KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_TYPE_HOSTNTP = 1,
-		KSPROPERYT_NETWORKCAMERACONTROL_NTPINFO_TYPE_CUSTOM = 2,
+		DISABLE = 0,
+		HOSTNTP = 1,
+		CUSTOM = 2,
 	}
 	public enum KSPROPERTY_NETWORKCAMERACONTROL_PROPERTY : int32
 	{
@@ -2111,16 +2117,16 @@ static
 				public int32 Adjustment;
 			}
 			[CRepr]
-			public struct _Alignment_e__Struct
-			{
-				public void* Unused;
-				public int[2] Alignment;
-			}
-			[CRepr]
 			public struct _EventHandle_e__Struct
 			{
 				public HANDLE Event;
 				public uint[2] Reserved;
+			}
+			[CRepr]
+			public struct _Alignment_e__Struct
+			{
+				public void* Unused;
+				public int[2] Alignment;
 			}
 		}
 	}

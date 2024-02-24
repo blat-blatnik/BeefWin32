@@ -444,8 +444,13 @@ static
 	public const uint32 OS_STRING_DESCRIPTOR_INDEX = 238;
 	public const uint32 MS_GENRE_DESCRIPTOR_INDEX = 1;
 	public const uint32 MS_POWER_DESCRIPTOR_INDEX = 2;
+	public const String MS_OS_STRING_SIGNATURE = "MSFT100";
 	public const uint32 MS_OS_FLAGS_CONTAINERID = 2;
 	public const uint32 URB_OPEN_STATIC_STREAMS_VERSION_100 = 256;
+	public const String KREGUSBFNENUMPATH = "\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\USBFN\\";
+	public const String UREGUSBFNENUMPATH = "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\USBFN\\";
+	public const String KREGMANUSBFNENUMPATH = "\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\ManufacturingMode\\Current\\USBFN\\";
+	public const String UREGMANUSBFNENUMPATH = "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\ManufacturingMode\\Current\\USBFN\\";
 	public const uint32 MAX_NUM_USBFN_ENDPOINTS = 15;
 	public const uint32 MAX_CONFIGURATION_NAME_LENGTH = 40;
 	public const uint32 MAX_USB_STRING_LENGTH = 255;

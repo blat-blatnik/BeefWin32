@@ -7731,7 +7731,7 @@
 	}
 	,{
 		"Name":"DEVPKEY_DeviceInterface_IsVirtualCamera"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"6edc630d-c2e3-43b7-b2d1-20525a1af120","Pid":3}
 		,"Attrs":[]
@@ -11953,6 +11953,27 @@
 		,"IntegerBase":"UInt32"
 	}
 	,{
+		"Name":"MPEG2VIDEOINFO_FLAGS"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Enum"
+		,"Flags":true
+		,"Scoped":false
+		,"Values":[
+			{"Name":"AMMPEG2_DoPanScan","Value":1}
+			,{"Name":"AMMPEG2_DVDLine21Field1","Value":2}
+			,{"Name":"AMMPEG2_DVDLine21Field2","Value":4}
+			,{"Name":"AMMPEG2_SourceIsLetterboxed","Value":8}
+			,{"Name":"AMMPEG2_FilmCameraMode","Value":16}
+			,{"Name":"AMMPEG2_LetterboxAnalogOut","Value":32}
+			,{"Name":"AMMPEG2_DSS_UserData","Value":64}
+			,{"Name":"AMMPEG2_DVB_UserData","Value":128}
+			,{"Name":"AMMPEG2_27MhzTimebase","Value":256}
+			,{"Name":"AMMPEG2_WidescreenAnalogOut","Value":512}
+		]
+		,"IntegerBase":"UInt32"
+	}
+	,{
 		"Name":"MF_Plugin_Type"
 		,"Architectures":[]
 		,"Platform":null
@@ -11966,6 +11987,27 @@
 			,{"Name":"MF_Plugin_Type_Other","Value":-1}
 		]
 		,"IntegerBase":"Int32"
+	}
+	,{
+		"Name":"AM_MEDIA_TYPE"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Struct"
+		,"Size":0
+		,"PackingSize":0
+		,"Fields":[
+			{"Name":"majortype","Type":{"Kind":"Native","Name":"Guid"},"Attrs":[]}
+			,{"Name":"subtype","Type":{"Kind":"Native","Name":"Guid"},"Attrs":[]}
+			,{"Name":"bFixedSizeSamples","Type":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
+			,{"Name":"bTemporalCompression","Type":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
+			,{"Name":"lSampleSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"formattype","Type":{"Kind":"Native","Name":"Guid"},"Attrs":[]}
+			,{"Name":"pUnk","Type":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":[]}
+			,{"Name":"cbFormat","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"pbFormat","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}},"Attrs":[]}
+		]
+		,"NestedTypes":[
+		]
 	}
 	,{
 		"Name":"CodecAPIEventData"
@@ -11988,6 +12030,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"901db4c7-31ce-41a2-85dc-8fa0bf41b8da"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12187,6 +12230,97 @@
 		]
 	}
 	,{
+		"Name":"VIDEOINFOHEADER"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Struct"
+		,"Size":0
+		,"PackingSize":0
+		,"Fields":[
+			{"Name":"rcSource","Type":{"Kind":"ApiRef","Name":"RECT","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
+			,{"Name":"rcTarget","Type":{"Kind":"ApiRef","Name":"RECT","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
+			,{"Name":"dwBitRate","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"dwBitErrorRate","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"AvgTimePerFrame","Type":{"Kind":"Native","Name":"Int64"},"Attrs":[]}
+			,{"Name":"bmiHeader","Type":{"Kind":"ApiRef","Name":"BITMAPINFOHEADER","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]},"Attrs":[]}
+		]
+		,"NestedTypes":[
+		]
+	}
+	,{
+		"Name":"MPEG1VIDEOINFO"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Struct"
+		,"Size":0
+		,"PackingSize":0
+		,"Fields":[
+			{"Name":"hdr","Type":{"Kind":"ApiRef","Name":"VIDEOINFOHEADER","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":[]}
+			,{"Name":"dwStartTimeCode","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"cbSequenceHeader","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"bSequenceHeader","Type":{"Kind":"Array","Shape":null,"Child":{"Kind":"Native","Name":"Byte"}},"Attrs":[]}
+		]
+		,"NestedTypes":[
+		]
+	}
+	,{
+		"Name":"VIDEOINFOHEADER2"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Struct"
+		,"Size":0
+		,"PackingSize":0
+		,"Fields":[
+			{"Name":"rcSource","Type":{"Kind":"ApiRef","Name":"RECT","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
+			,{"Name":"rcTarget","Type":{"Kind":"ApiRef","Name":"RECT","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
+			,{"Name":"dwBitRate","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"dwBitErrorRate","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"AvgTimePerFrame","Type":{"Kind":"Native","Name":"Int64"},"Attrs":[]}
+			,{"Name":"dwInterlaceFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"dwCopyProtectFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"dwPictAspectRatioX","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"dwPictAspectRatioY","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"Anonymous","Type":{"Kind":"ApiRef","Name":"_Anonymous_e__Union","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":[]}
+			,{"Name":"dwReserved2","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"bmiHeader","Type":{"Kind":"ApiRef","Name":"BITMAPINFOHEADER","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]},"Attrs":[]}
+		]
+		,"NestedTypes":[
+			{
+				"Name":"_Anonymous_e__Union"
+				,"Architectures":[]
+				,"Platform":null
+				,"Kind":"Union"
+				,"Size":0
+				,"PackingSize":0
+				,"Fields":[
+					{"Name":"dwControlFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+					,{"Name":"dwReserved1","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+				]
+				,"NestedTypes":[
+				]
+			}
+		]
+	}
+	,{
+		"Name":"MPEG2VIDEOINFO"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Struct"
+		,"Size":0
+		,"PackingSize":0
+		,"Fields":[
+			{"Name":"hdr","Type":{"Kind":"ApiRef","Name":"VIDEOINFOHEADER2","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":[]}
+			,{"Name":"dwStartTimeCode","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"cbSequenceHeader","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"dwProfile","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"dwLevel","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"dwFlags","Type":{"Kind":"ApiRef","Name":"MPEG2VIDEOINFO_FLAGS","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":[]}
+			,{"Name":"dwSequenceHeader","Type":{"Kind":"Array","Shape":null,"Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":[]}
+		]
+		,"NestedTypes":[
+		]
+	}
+	,{
 		"Name":"D3DOVERLAYCAPS"
 		,"Architectures":[]
 		,"Platform":null
@@ -12224,6 +12358,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"187aeb13-aaf5-4c59-876d-e059088c0df8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12253,6 +12388,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"26dc4561-a1ee-4ae7-96da-118a36c0ec95"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12306,6 +12442,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"ff24beee-da21-4beb-98b5-d2f899f98af9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12383,6 +12520,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"fa0ab799-7a9c-48ca-8c5b-237e71a54434"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12845,6 +12983,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0946b7c9-ebf6-4047-bb73-8683e27dbb1f"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12Pageable","TargetKind":"Com","Api":"Graphics.Direct3D12","Parents":[]}
 		,"Methods":[
 			{
@@ -12866,6 +13007,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1f052807-0b46-4acc-8a89-364f793718a4"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12935,6 +13079,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c59b6bdc-7720-4074-a136-17a156037470"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12Pageable","TargetKind":"Com","Api":"Graphics.Direct3D12","Parents":[]}
 		,"Methods":[
 			{
@@ -13388,6 +13535,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"304fdb32-bede-410a-8545-943ac6a46138"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12Pageable","TargetKind":"Com","Api":"Graphics.Direct3D12","Parents":[]}
 		,"Methods":[
 			{
@@ -13716,6 +13866,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3b60536e-ad29-4e64-a269-f853837e5e53"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12CommandList","TargetKind":"Com","Api":"Graphics.Direct3D12","Parents":[]}
 		,"Methods":[
 			{
@@ -13912,6 +14065,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"aeb2543a-167f-4682-acc8-d159ed4a6209"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12CommandList","TargetKind":"Com","Api":"Graphics.Direct3D12","Parents":[]}
 		,"Methods":[
 			{
@@ -14158,6 +14314,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d52f011b-b56e-453c-a05a-a7f311c8f472"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12VideoDecodeCommandList","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -14201,6 +14360,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"542c5c4d-7596-434f-8c93-4efa6766f267"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12VideoProcessCommandList","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -14350,6 +14512,9 @@
 		,"Platform":"windows10.0.19041"
 		,"Kind":"Com"
 		,"Guid":"33fdae0e-098b-428f-87bb-34b695de08f8"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12Pageable","TargetKind":"Com","Api":"Graphics.Direct3D12","Parents":[]}
 		,"Methods":[
 			{
@@ -14401,6 +14566,9 @@
 		,"Platform":"windows10.0.19041"
 		,"Kind":"Com"
 		,"Guid":"5be17987-743a-4061-834b-23d22daea505"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12Pageable","TargetKind":"Com","Api":"Graphics.Direct3D12","Parents":[]}
 		,"Methods":[
 			{
@@ -14435,6 +14603,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"981611ad-a144-4c83-9890-f30e26d658ab"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12VideoDevice","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -14550,6 +14721,9 @@
 		,"Platform":"windows10.0.19041"
 		,"Kind":"Com"
 		,"Guid":"8455293a-0cbd-4831-9b39-fbdbab724723"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12CommandList","TargetKind":"Com","Api":"Graphics.Direct3D12","Parents":[]}
 		,"Methods":[
 			{
@@ -15057,6 +15231,9 @@
 		,"Platform":"windows10.0.19041"
 		,"Kind":"Com"
 		,"Guid":"79a2e5fb-ccd2-469a-9fde-195d10951f7e"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12VideoDecoder","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -15080,6 +15257,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"da1d98c5-539f-41b2-bf6b-1198a03b6d26"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12VideoDecoderHeap","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -15103,6 +15283,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f3cfe615-553f-425c-86d8-ee8c1b1fb01c"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12VideoProcessor","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -15126,6 +15309,9 @@
 		,"Platform":"windows10.0.19041"
 		,"Kind":"Com"
 		,"Guid":"554e41e8-ae8e-4a8c-b7d2-5b4f274a30e4"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12Pageable","TargetKind":"Com","Api":"Graphics.Direct3D12","Parents":[]}
 		,"Methods":[
 			{
@@ -15160,6 +15346,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f019ac49-f838-4a95-9b17-579437c8f513"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12VideoDevice1","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -15251,6 +15440,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6e120880-c114-4153-8036-d247051e1729"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12VideoDecodeCommandList1","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -15301,6 +15493,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"db525ae4-6ad6-473c-baa7-59b2e37082e4"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12VideoProcessCommandList1","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -15351,6 +15546,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"94971eca-2bdb-4769-88cf-3675ea757ebc"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12VideoEncodeCommandList","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -16568,6 +16766,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2e0d212d-8df9-44a6-a770-bb289b182737"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12Pageable","TargetKind":"Com","Api":"Graphics.Direct3D12","Parents":[]}
 		,"Methods":[
 			{
@@ -16612,7 +16813,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"dstProfile","Type":{"Kind":"ApiRef","Name":"D3D12_VIDEO_ENCODER_PROFILE_DESC","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["Out"]}
+					{"Name":"dstProfile","Type":{"Kind":"ApiRef","Name":"D3D12_VIDEO_ENCODER_PROFILE_DESC","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
 				]
 			}
 			,{
@@ -16624,7 +16825,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"dstCodecConfig","Type":{"Kind":"ApiRef","Name":"D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["Out"]}
+					{"Name":"dstCodecConfig","Type":{"Kind":"ApiRef","Name":"D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
 				]
 			}
 			,{
@@ -16657,6 +16858,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"22b35d96-876a-44c0-b25e-fb8c9c7f1c4a"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12Pageable","TargetKind":"Com","Api":"Graphics.Direct3D12","Parents":[]}
 		,"Methods":[
 			{
@@ -16701,7 +16905,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"dstProfile","Type":{"Kind":"ApiRef","Name":"D3D12_VIDEO_ENCODER_PROFILE_DESC","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["Out"]}
+					{"Name":"dstProfile","Type":{"Kind":"ApiRef","Name":"D3D12_VIDEO_ENCODER_PROFILE_DESC","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
 				]
 			}
 			,{
@@ -16713,7 +16917,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"dstLevel","Type":{"Kind":"ApiRef","Name":"D3D12_VIDEO_ENCODER_LEVEL_SETTING","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["Out"]}
+					{"Name":"dstLevel","Type":{"Kind":"ApiRef","Name":"D3D12_VIDEO_ENCODER_LEVEL_SETTING","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
 				]
 			}
 			,{
@@ -16748,6 +16952,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4243adb4-3a32-4666-973c-0ccc5625dc44"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12VideoDevice2","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -17307,6 +17514,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"895491e2-e701-46a9-9a1f-8d3480ed867a"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D12VideoEncodeCommandList1","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -18035,6 +18245,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"cee3def2-3808-414d-be66-fafd472210bc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18057,6 +18268,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"04a578b2-e778-422a-a805-b3ee54d90bd9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18071,7 +18283,7 @@
 					{"Name":"guidLicensorID","Type":{"Kind":"Native","Name":"Guid"},"Attrs":["In"]}
 					,{"Name":"pbEphemeron","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":2,"Child":{"Kind":"Native","Name":"Byte"}},"Attrs":["In"]}
 					,{"Name":"cbEphemeron","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"ppbBlobValidationID","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":4,"Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppbBlobValidationID","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":4,"Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}}},"Attrs":["Out"]}
 					,{"Name":"pcbBlobSize","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
 				]
 			}
@@ -18083,6 +18295,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"352bb3bd-2d4d-4323-9e71-dcdcfbd53ca6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18117,6 +18330,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"9f8496be-5b9a-41b9-a9e8-f21cd80596c2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18138,6 +18352,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"a7b2504b-e58a-47fb-958b-cac7165a057d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18178,6 +18393,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"2573e11a-f01a-4fdd-a98d-63b8e0ba9589"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18220,6 +18436,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"a81ba647-6227-43b7-b231-c7b15135dd7d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18278,6 +18495,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"b72adf95-7adc-4a72-bc05-577d8ea6bf68"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18300,6 +18518,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"45bda2ac-88e2-4923-98ba-3949080711a3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18346,6 +18565,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"73f0be8e-57f7-4f01-aa66-9f57340cfe0e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18381,6 +18601,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"9bca9884-0604-4c2a-87da-793ff4d586c3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18403,6 +18624,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"e7e9984f-f09f-4da4-903f-6e2e0efe56b5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18437,6 +18659,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"57665d4c-0414-4faa-905b-10e546f81c33"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18524,6 +18747,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"776c93b3-b72d-4508-b6d0-208785f553e7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18546,6 +18770,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7b12e5d1-bd22-48ea-bc06-98e893221c89"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18591,6 +18816,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4c06bb9b-626c-4614-8329-cc6a21b93fa0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18651,6 +18877,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"e6a49e22-c099-421d-aad3-c061fb4ae85b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18871,6 +19098,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f22f5e06-585c-4def-8523-6555cfbc0cb3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18984,6 +19212,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"3a8cccbd-0efd-43a3-b838-f38a552ba237"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19057,6 +19286,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d6f05441-a919-423b-91a0-89d5b4a8ab77"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19205,6 +19435,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"23fee831-ae96-42df-b170-25a04847a3ca"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19278,6 +19509,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"ecfb9a55-9298-4f49-887f-0b36206599d2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19436,6 +19668,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"11993196-1244-4840-ab44-480975c4ffe4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19574,6 +19807,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bfccd196-1244-4840-ab44-480975c4ffe4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19620,6 +19854,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3f07f7b7-c680-41d9-9423-915107ec9ff9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -24417,6 +24652,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"95f12dfd-d77e-49be-815f-57d579634d6d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -24538,6 +24774,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"95f4edf4-6e03-4cd7-be1b-3075d665aa52"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -25728,6 +25965,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a0cade0f-06d5-4cf4-a1c7-f3cdd725aa75"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -25828,6 +26066,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"fc51a550-d5e7-11d9-af55-00054e43ff02"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -25858,6 +26097,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"fc51a551-d5e7-11d9-af55-00054e43ff02"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirectXVideoAccelerationService","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -25928,6 +26168,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"fc51a552-d5e7-11d9-af55-00054e43ff02"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirectXVideoAccelerationService","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -26058,6 +26299,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f2b0810a-fd00-43c9-918c-df94e2d8ef7d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26159,6 +26401,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8c3a39f0-916e-4690-804f-4c8001355d25"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26264,6 +26507,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b7f916dd-db3b-49c1-84d7-e45ef99ec726"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26358,7 +26602,7 @@
 		,"IntegerBase":"Int32"
 	}
 	,{
-		"Name":"PM_CONNECTOR_TYPE"
+		"Name":"OPM_CONNECTOR_TYPE"
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
@@ -26879,6 +27123,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"0a15159d-41c7-4456-93e1-284cd61d4e8d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27010,6 +27255,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"2cd2d921-c447-44a7-a13c-4adabfc247e3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27424,6 +27670,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"045fa593-8799-42b8-bc8d-8968c6453507"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27495,6 +27742,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"c40a00f2-b93a-4d80-ae8c-5a1c634f58e4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -27673,6 +27921,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"7dc9d5f9-9ed9-44ec-9bbf-0600bb589fbb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27786,6 +28035,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"33ae5ea6-4316-436f-8ddd-d73d22f829ec"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMF2DBuffer","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -27824,6 +28074,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"e7174cfa-1c9e-48b1-8866-626226bfc258"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27886,6 +28137,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"44ae0fa8-ea31-4109-8d2e-4cae4997c555"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -27959,6 +28211,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"26a0adc3-ce26-4672-9304-69552edd3faf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -28365,6 +28618,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b99f381f-a8f9-47a2-a5af-ca3a225a3890"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -28400,6 +28654,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"ac6b7889-0740-4d51-8619-905994a55cc6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28468,6 +28723,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a27003cf-2354-4f2a-8d6a-ab7cff15437e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28503,6 +28759,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"c7a4dca1-f5f0-47b6-b92b-bf0106d25791"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAsyncCallback","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -28666,6 +28923,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"df598932-f10c-4e39-bba2-c308f101daa3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -28724,6 +28982,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"2cd0bd52-bcd5-4b89-b62c-eadc0c031e7d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28788,6 +29047,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a27003d0-2354-4f2a-8d6a-ab7cff15437e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28824,6 +29084,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"ad4c1b00-4bf7-422f-9175-756693d9130d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29027,6 +29288,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"a6b43f84-5c0a-42e8-a44d-b1857a76992f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29096,6 +29358,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"8feed468-6f7e-440d-869a-49bdd283ad0d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29143,6 +29406,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"5bc8a76b-869a-46a3-9b03-fa218a66aebe"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29227,6 +29491,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"36f846fc-2256-48b6-b58e-e2b638316581"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29329,6 +29594,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"7fee9e9a-4a89-47a6-899c-b6a53a70fb67"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -29374,6 +29640,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"5c6c44bf-1db6-435b-9249-e8cd10fdec96"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29483,6 +29750,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"c6982083-3ddc-45cb-af5e-0f7a8ce4de77"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFPluginControl","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -29505,6 +29773,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"eb533d5d-2db6-40f8-97a9-494692014f07"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29620,6 +29889,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"ce8bd576-e440-43b3-be34-1e53f565f7e8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29655,6 +29925,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"505a2c72-42f7-4690-aeab-8f513d0ffdb8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29739,6 +30010,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"74abbc19-b1cc-4e41-bb8b-9d9b86a8f6ca"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29785,6 +30057,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c1209904-e584-4752-a2d6-7f21693f8b21"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30021,6 +30294,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"bf94c121-5b05-4e6f-8000-ba598961414d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30362,6 +30636,312 @@
 		]
 	}
 	,{
+		"Name":"IMFDeviceTransform"
+		,"Architectures":[]
+		,"Platform":"windows10.0.15063"
+		,"Kind":"Com"
+		,"Guid":"d818fbd8-fc46-42f2-87ac-1ea2d1f9bf32"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"InitializeTransform"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pAttributes","Type":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"GetInputAvailableType"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwInputStreamID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"dwTypeIndex","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"pMediaType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["Out","ComOutPtr"]}
+				]
+			}
+			,{
+				"Name":"GetInputCurrentType"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwInputStreamID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"pMediaType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["Out","ComOutPtr"]}
+				]
+			}
+			,{
+				"Name":"GetInputStreamAttributes"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwInputStreamID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"ppAttributes","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["Out","ComOutPtr"]}
+				]
+			}
+			,{
+				"Name":"GetOutputAvailableType"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwOutputStreamID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"dwTypeIndex","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"pMediaType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["Out","ComOutPtr"]}
+				]
+			}
+			,{
+				"Name":"GetOutputCurrentType"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwOutputStreamID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"pMediaType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["Out","ComOutPtr"]}
+				]
+			}
+			,{
+				"Name":"GetOutputStreamAttributes"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwOutputStreamID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"ppAttributes","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["Out","ComOutPtr"]}
+				]
+			}
+			,{
+				"Name":"GetStreamCount"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pcInputStreams","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
+					,{"Name":"pcOutputStreams","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetStreamIDs"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwInputIDArraySize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"pdwInputStreamIds","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
+					,{"Name":"dwOutputIDArraySize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"pdwOutputStreamIds","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"ProcessEvent"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwInputStreamID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"pEvent","Type":{"Kind":"ApiRef","Name":"IMFMediaEvent","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"ProcessInput"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwInputStreamID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"pSample","Type":{"Kind":"ApiRef","Name":"IMFSample","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
+					,{"Name":"dwFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"ProcessMessage"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"eMessage","Type":{"Kind":"ApiRef","Name":"MFT_MESSAGE_TYPE","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
+					,{"Name":"ulParam","Type":{"Kind":"Native","Name":"UIntPtr"},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"ProcessOutput"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"cOutputBufferCount","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"pOutputSample","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MFT_OUTPUT_DATA_BUFFER","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["In","Out"]}
+					,{"Name":"pdwStatus","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"SetInputStreamState"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwStreamID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"pMediaType","Type":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
+					,{"Name":"value","Type":{"Kind":"ApiRef","Name":"DeviceStreamState","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
+					,{"Name":"dwFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"GetInputStreamState"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwStreamID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"value","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DeviceStreamState","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"SetOutputStreamState"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwStreamID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"pMediaType","Type":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
+					,{"Name":"value","Type":{"Kind":"ApiRef","Name":"DeviceStreamState","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
+					,{"Name":"dwFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"GetOutputStreamState"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwStreamID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"value","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DeviceStreamState","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["Out"]}
+				]
+			}
+			,{
+				"Name":"GetInputStreamPreferredState"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwStreamID","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"value","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DeviceStreamState","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["Out"]}
+					,{"Name":"ppMediaType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["Out","ComOutPtr"]}
+				]
+			}
+			,{
+				"Name":"FlushInputStream"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwStreamIndex","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"dwFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+				]
+			}
+			,{
+				"Name":"FlushOutputStream"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"dwStreamIndex","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+					,{"Name":"dwFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+				]
+			}
+		]
+	}
+	,{
+		"Name":"IMFDeviceTransformCallback"
+		,"Architectures":[]
+		,"Platform":"windows10.0.17134"
+		,"Kind":"Com"
+		,"Guid":"6d5cb646-29ec-41fb-8179-8c4c6d750811"
+		,"Attrs":[]
+		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
+		,"Methods":[
+			{
+				"Name":"OnBufferSent"
+				,"SetLastError":false
+				,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
+				,"ReturnAttrs":[]
+				,"Architectures":[]
+				,"Platform":null
+				,"Attrs":[]
+				,"Params":[
+					{"Name":"pCallbackAttributes","Type":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
+					,{"Name":"pinId","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+				]
+			}
+		]
+	}
+	,{
 		"Name":"MF3DVideoOutputType"
 		,"Architectures":[]
 		,"Platform":null
@@ -30475,6 +31055,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"90377834-21d0-4dee-8214-ba2e3e6c1127"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaEventGenerator","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -30671,6 +31252,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"fbe5a32d-a497-4b61-bb85-97b1a848a6e3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30808,6 +31390,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"279a808d-aec7-40c8-9c6b-a6b492c78a66"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaEventGenerator","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -30889,6 +31472,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"3c9b2eb9-86d5-4514-a394-f56664f9f0d8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaSource","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -30936,6 +31520,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"6ef2a662-47c0-4666-b13d-cbb717f2fa2c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30970,6 +31555,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d182108f-4ec6-443f-aa42-a71106ec825f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaEventGenerator","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -31016,6 +31602,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"6ef2a660-47c0-4666-b13d-cbb717f2fa2c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -31152,6 +31739,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"0a97b3cf-8e7c-4a3d-8f8c-0c843dc247fb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaEventGenerator","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -31235,6 +31823,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"86cbc910-e533-4751-8e3b-f19b5b806a03"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -31293,6 +31882,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"a792cdbe-c374-4e89-8335-278e7b9956a4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -31314,6 +31904,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"3978aa1a-6d5b-4b7f-a340-90899189ae34"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFVideoSampleAllocatorNotify","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -31336,6 +31927,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"992388b4-3372-4f67-8b6f-c84c071f4751"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -31370,6 +31962,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"545b3a48-3283-4f62-866f-a62d8f598f9f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFVideoSampleAllocator","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -31395,6 +31988,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"20bc074b-7a8d-4609-8c3b-64a0a3b5d7ce"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -31444,6 +32038,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"a3f675d5-6119-4f7f-a100-1d8b280f0efb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -31526,6 +32121,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"bde633d3-e1dc-4a7f-a693-bbae399c4a20"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFVideoProcessorControl","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -31600,6 +32196,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2424b3f2-eb23-40f1-91aa-74bddeea0883"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFVideoProcessorControl2","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -31664,6 +32261,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"604d33d7-cf23-41d5-8224-5bbbb1a87475"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -31686,6 +32284,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"83cf873a-f6da-4bc8-823f-bacfd55dc433"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -31861,6 +32460,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"83cf873a-f6da-4bc8-823f-bacfd55dc430"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -32101,6 +32701,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"fa993888-4383-415a-a930-dd472a8cf6f7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32184,6 +32785,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"2eb1e945-18b8-4139-9b1a-d5d584818530"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32257,6 +32859,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"868ce85c-8ea9-4f55-ab82-b009a910a805"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFClock","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -32361,6 +32964,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"7ff12cce-f76f-41c2-863b-1666c8e5e139"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFClock","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -32383,6 +32987,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f6696e82-74f7-4f3d-a178-8a5e09c3659f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32455,6 +33060,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"03cb2711-24d7-4db6-a17f-f3a7a479a536"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -32527,6 +33133,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"56c03d9c-9dbb-45f5-ab4b-d80f47c05938"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -32561,6 +33168,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"e93dcf6c-4b07-4e1e-8123-aa16ed6eadf5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32657,6 +33265,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"e56e4cbd-8f70-49d8-a0f8-edb3d6ab9bf2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32732,6 +33341,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"97ec2ea4-0e42-4937-97ac-9d6d328824e1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32765,6 +33375,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"de9a6157-f660-4643-b56a-df9f7998c7cd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32789,6 +33400,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"acf92459-6a61-42bd-b57c-b43e51203cb0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32840,6 +33452,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d3c4ef59-49ce-4381-9071-d5bcd044c770"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32994,6 +33607,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f88cfb8c-ef16-4991-b450-cb8c69e51704"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33090,6 +33704,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"56181d2d-e221-4adb-b1c8-3cee6a53f76f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33128,6 +33743,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"0a9ccdbc-d797-4563-9667-94ec5d79292d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33180,6 +33796,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"88ddcd21-03c3-4275-91ed-55ee3929328f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33216,6 +33833,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"ab9d8661-f7e8-4ef4-9861-89f334f94e74"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33280,6 +33898,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"26afea53-d9ed-42b5-ab80-e64f9ee34779"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33305,6 +33924,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"089edf13-cf71-4338-8d13-9e569dbdc319"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33363,6 +33983,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"76b1bbdb-4ec8-4f36-b106-70a9316df593"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33437,6 +34058,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a0638c2b-6465-4395-9ae7-a321a9fd2856"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33519,6 +34141,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8c7b80bf-ee42-4b59-b1df-55668e1bdca8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFClockStateSink","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -33569,6 +34192,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"ca86aa50-c46e-429e-ab27-16d6ac6844cb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFSampleGrabberSinkCallback","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -33597,6 +34221,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"35fe1bb8-a3a9-40fe-bbec-eb569c9ccca3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33766,6 +34391,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"96bf961b-40fe-42f1-ba9d-320238b49700"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFWorkQueueServices","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -33867,6 +34493,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8d009d86-5b9f-4115-b1fc-9f80d52ab8ab"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33953,6 +34580,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"ec15e2e9-e36b-4f7c-8758-77d452ef4ce7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34023,6 +34651,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"f3706f0d-8ea2-4886-8000-7155e9ec2eae"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFQualityAdvise","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -34046,6 +34675,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"dfcd8e4d-30b5-4567-acaa-8eb5b7853dc9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34080,6 +34710,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"2347d60b-3fb5-480c-8803-8df3adcd3ef0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34126,6 +34757,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"03910848-ab16-4611-b100-17b88ae2f248"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34186,6 +34818,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"197cd219-19cb-4de1-a64c-acf2edcbe59e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34262,6 +34895,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"0e1d6009-c9f3-442d-8c51-a42d2d49452f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34285,6 +34919,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"0e1d600a-c9f3-442d-8c51-a42d2d49452f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34338,6 +34973,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"676aa6dd-238a-410d-bb99-65668d01605a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34396,6 +35032,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"6d66d782-1d4f-4db7-8c63-cb8c77f1ef5e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34441,6 +35078,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"f5042ea4-7a96-4a75-aa7b-2be1ef7f88d5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34462,6 +35100,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"64976bfa-fb61-4041-9069-8c9a5f659beb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34524,6 +35163,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"71ce469c-f34b-49ea-a56b-2d2a10e51149"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFByteStreamCacheControl","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -34571,6 +35211,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"5b87ef6a-7ed8-434f-ba0e-184fac1628d1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34669,6 +35310,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"5b87ef6b-7ed8-434f-ba0e-184fac1628d1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34760,6 +35402,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"5b87ef6c-7ed8-434f-ba0e-184fac1628d1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34812,6 +35455,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"61f7d887-1230-4a8b-aeba-8ad434d1a64d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34893,6 +35537,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"091878a3-bf11-4a5c-bc9f-33995b06ef2d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34928,6 +35573,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"059054b3-027c-494c-a27d-9113291cf87f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34950,6 +35596,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"e9cd0383-a268-4bb4-82de-658d53574d41"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35022,6 +35669,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"e9cd0384-a268-4bb4-82de-658d53574d41"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35045,6 +35693,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"e9931663-80bf-4c6e-98af-5dcf58747d1f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35120,6 +35769,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"7be19e73-c9bf-468a-ac5a-a5e8653bec87"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35249,6 +35899,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"6d4c7b74-52a0-4bb7-b0db-55f29f47a668"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35302,6 +35953,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"bb420aa4-765b-4a1f-91fe-d6a8a143924c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35368,6 +36020,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"542612c4-a1b8-4632-b521-de11ea64a0b0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35447,6 +36100,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d19f8e98-b126-4446-890c-5dcb7ad71453"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35531,6 +36185,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d19f8e95-b126-4446-890c-5dcb7ad71453"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35578,6 +36233,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d19f8e94-b126-4446-890c-5dcb7ad71453"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35615,6 +36271,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"7f00f10a-daed-41af-ab26-5fdfa4dfba3c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -35665,6 +36322,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"7be0fc5b-abd9-44fb-a5c8-f50136e71599"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -35760,6 +36418,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d0ae555d-3b12-4d97-b060-0990bc5aeb67"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35812,6 +36471,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8e36395f-c7b9-43c4-a54d-512b4af63c95"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35892,6 +36552,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"5dfd4b2a-7674-4110-a4e6-8a68fd5f3688"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35914,6 +36575,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"eaecb74a-9a50-42ce-9541-6a7f57aa4ad7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaSink","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -35949,6 +36611,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"9db7aa41-3cc5-40d4-8509-555804ad34cc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35972,6 +36635,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"994e23ad-1cc2-493c-b9fa-46f1cb040fa4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36008,6 +36672,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"09ef5be3-c8a7-469e-8b70-73bf25bb193f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36044,6 +36709,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f70ca1a9-fdc7-4782-b994-adffb1c98606"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36091,6 +36757,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"6c4e655d-ead8-4421-b6b9-54dcdbbdf820"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36113,6 +36780,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"994e23af-1cc2-493c-b9fa-46f1cb040fa4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36159,6 +36827,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"1cde6309-cae0-4940-907e-c1ec9c3d1d4a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36170,7 +36839,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pTopology","Type":{"Kind":"ApiRef","Name":"IMFTopology","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In","Out"]}
+					{"Name":"pTopology","Type":{"Kind":"ApiRef","Name":"IMFTopology","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
 				]
 			}
 		]
@@ -36181,6 +36850,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a7e025dd-5303-4a62-89d6-e747e1efac73"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36239,6 +36909,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"4adfdba3-7ab0-4953-a62b-461e7ff3da1e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36376,6 +37047,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"8cffcd2e-5a03-4a3a-aff7-edcd107c620e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36434,6 +37106,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"508e71d3-ec66-4fc3-8775-b4b9ed6ba847"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36476,6 +37149,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"149c4d73-b4be-4f8d-8b87-079e926b6add"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36499,6 +37173,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"19f68549-ca8a-4706-a4ef-481dbc95e12c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36545,6 +37220,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"84d2054a-3aa1-4728-a3b0-440a418cf49c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36592,6 +37268,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"c004f646-be2c-48f3-93a2-a0983eba1108"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36614,6 +37291,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"380b9af9-a85b-4e78-a2af-ea5ce645c6b4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36636,6 +37314,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"245bf8e9-0755-40f7-88a5-ae0f18d55e17"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36659,6 +37338,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"ef5dc845-f0d9-4ec9-b00c-cb5183d38434"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36697,6 +37377,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"4a724bca-ff6a-4c07-8e0d-7a358421cf06"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36720,6 +37401,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"fff4af3a-1fc1-4ef9-a29b-d26c49e2f31a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36810,6 +37492,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"e6257174-a060-4c9a-a088-3b1b471cad28"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36849,6 +37532,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"7ec4b1bd-43fb-4763-85d2-64fcb5c5f4cb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36951,6 +37635,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"bc2b7d44-a72d-49d5-8376-1480dee58b22"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36998,6 +37683,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"f779fddf-26e7-4270-8a8b-b983d1859de0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -37212,6 +37898,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"71fa9a2c-53ce-4662-a132-1a7e8cbf62db"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -37263,6 +37950,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"1b4cf4b9-3a16-4115-839d-03cc5c99df01"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -37301,6 +37989,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fbb03414-d13b-4786-8319-5ac51fc0a136"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaSourceEx","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -37324,6 +38013,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c5bc37d6-75c7-46a1-a132-81b5f723c20f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaStream","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -37401,6 +38091,7 @@
 		,"Platform":"windows10.0.14393"
 		,"Kind":"Com"
 		,"Guid":"fb9f48f2-2a18-4e28-9730-786f30f04dc4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -37524,6 +38215,7 @@
 		,"Platform":"windows10.0.14393"
 		,"Kind":"Com"
 		,"Guid":"4110243a-9757-461f-89f1-f22345bcab4e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -37633,6 +38325,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"e9a42171-c56e-498a-8b39-eda5a070b7fc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -37680,6 +38373,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"eed9c2ee-66b4-4f18-a697-ac7d3960215c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -37746,7 +38440,7 @@
 				,"Params":[
 					{"Name":"guidSensorTransformID","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
 					,{"Name":"pAttributes","Type":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In","Optional"]}
-					,{"Name":"ppDeviceMFT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMFDeviceTransform","TargetKind":"Com","Api":"Media.Streaming","Parents":[]}},"Attrs":["Out","ComOutPtr"]}
+					,{"Name":"ppDeviceMFT","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMFDeviceTransform","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["Out","ComOutPtr"]}
 				]
 			}
 		]
@@ -37772,6 +38466,7 @@
 		,"Platform":"windows10.0.17134"
 		,"Kind":"Com"
 		,"Guid":"22f765d1-8dab-4107-846d-56baf72215e7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -37833,6 +38528,7 @@
 		,"Platform":"windows10.0.17134"
 		,"Kind":"Com"
 		,"Guid":"c95ea55b-0187-48be-9353-8d2507662351"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -37916,6 +38612,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"39dc7f4a-b141-4719-813c-a7f46162a2b8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -37974,6 +38671,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"3e8c4be1-a8c2-4528-90de-2851bde5fead"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38037,6 +38735,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"683f7a5e-4a19-43cd-b1a9-dbf4ab3f7777"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38085,6 +38784,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"de5072ee-dbe3-46dc-8a87-b6f631194751"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38107,6 +38807,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"d0cef145-b3f4-4340-a2e5-7a5080ca05cb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38221,6 +38922,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5c595e64-4630-4231-855a-12842f733245"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38267,6 +38969,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"74c2653b-5f55-4eb1-9f0f-18b8f68b7d3d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38301,6 +39004,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"812d5f95-b572-45dc-bafc-ae24199ddda8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38335,6 +39039,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"687f6dac-6987-4750-a16a-734d1e7a10fe"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38420,6 +39125,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"38e33520-fca1-4845-a27a-68b7c6ab3789"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38499,6 +39205,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b91ebfee-ca03-4af4-8a82-a31752f4a0fc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38523,6 +39230,7 @@
 		,"Platform":"windows10.0.19041"
 		,"Kind":"Com"
 		,"Guid":"f25362ea-2c0e-447f-81e2-755914cdc0c3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38545,6 +39253,7 @@
 		,"Platform":"windows10.0.19041"
 		,"Kind":"Com"
 		,"Guid":"421af7f6-573e-4ad0-8fda-2e57cedb18c6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFShutdown","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -38607,6 +39316,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1640b2cf-74da-4462-a43b-b76d3bdc1434"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38629,6 +39339,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6e5841c7-3889-4019-9035-783fb19b5948"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38651,6 +39362,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"cc692f46-c697-47e2-a72d-7b064617749b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38694,6 +39406,7 @@
 		,"Platform":"windows10.0.19041"
 		,"Kind":"Com"
 		,"Guid":"725b77c7-ca9f-4fe5-9d72-9946bf9b3c70"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFVideoSampleAllocator","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -38735,6 +39448,7 @@
 		,"Platform":"windows10.0.19041"
 		,"Kind":"Com"
 		,"Guid":"da62b958-3a38-4a97-bd27-149c640c0771"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38772,6 +39486,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b1dca5cd-d5da-4451-8e9e-db5c59914ead"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -38809,7 +39524,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pIHeader","Type":{"Kind":"ApiRef","Name":"IMFMediaBuffer","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In","Out"]}
+					{"Name":"pIHeader","Type":{"Kind":"ApiRef","Name":"IMFMediaBuffer","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pcbHeader","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
 				]
 			}
@@ -38870,6 +39585,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d267bf6a-028b-4e0d-903d-43f0ef82d0d4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -39076,6 +39792,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9e8ae8d2-dbbd-4200-9aca-06e6df484913"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -39211,6 +39928,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"12558291-e399-11d5-bc2a-00b0d0f3f4ab"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -39333,6 +40051,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"699bdc27-bbaf-49ff-8e38-9c39c9b5e088"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -39450,6 +40169,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"53590f48-dc3b-4297-813f-787761ad7b3e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -39628,6 +40348,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"12558295-e399-11d5-bc2a-00b0d0f3f4ab"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -39803,6 +40524,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"57bdd80a-9b38-4838-b737-c58f670d7d4f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -39888,7 +40610,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pIContentInfo","Type":{"Kind":"ApiRef","Name":"IMFASFContentInfo","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In","Out"]}
+					{"Name":"pIContentInfo","Type":{"Kind":"ApiRef","Name":"IMFASFContentInfo","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
 				]
 			}
 			,{
@@ -39951,6 +40673,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d01bad4a-4fa0-4a60-9349-c27e62da9d41"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -40159,6 +40882,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"3d1ff0ea-679a-4190-8d46-7fa69e8c7e15"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -40308,6 +41032,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"aeda51c0-9025-4983-9012-de597b88b089"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -40330,6 +41055,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"52150b82-ab39-4467-980f-e48bf0822ecd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -40352,6 +41078,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"72d6135b-35e9-412c-b926-fd5265f2a885"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -40427,6 +41154,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"3323b55a-f92a-4fe2-8edc-e9bfc0634d77"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFCaptureSink","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -40513,6 +41241,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"77346cfd-5b49-4d73-ace0-5b52a859f2e0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFCaptureSink","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -40636,6 +41365,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"d2d43cc8-48bb-4aa7-95db-10c06977e777"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFCaptureSink","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -40682,6 +41412,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"439a42a8-0d2c-4505-be83-f79b2a05d5c4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -40874,6 +41605,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"a6bba433-176b-48b2-b375-53aa03473207"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -40981,6 +41713,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"8f02d140-56fc-4302-a705-3a97c78be779"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -40994,7 +41727,7 @@
 				,"Params":[
 					{"Name":"clsid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
 					,{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppvObject","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
+					,{"Name":"ppvObject","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out","ComOutPtr"]}
 				]
 			}
 		]
@@ -41005,6 +41738,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"e37ceed7-340f-4514-9f4d-9c2ae026100b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFCaptureEngineOnSampleCallback","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -41027,6 +41761,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"f9e4219e-6197-4b5e-b888-bee310ab2c59"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFCaptureSink","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -41051,6 +41786,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"09d0f835-92ff-4e53-8efa-40faa551f233"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -41109,6 +41845,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"802302b0-82de-45e1-b421-f19ee5bdaf23"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -41182,6 +41919,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAsyncResult","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 		]
@@ -41307,11 +42045,11 @@
 		]
 	}
 	,{
-		"Name":"_MFT_ENUM_FLAG"
+		"Name":"MFT_ENUM_FLAG"
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"MFT_ENUM_FLAG_SYNCMFT","Value":1}
@@ -41327,7 +42065,7 @@
 			,{"Name":"MFT_ENUM_FLAG_UNTRUSTED_STOREMFT","Value":1024}
 			,{"Name":"MFT_ENUM_FLAG_ALL","Value":63}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"MFFrameSourceTypes"
@@ -41697,6 +42435,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"fc0e10d2-ab2a-4501-a951-06bb1075184c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -41753,6 +42492,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"db71a2fc-078a-414e-9df9-8c2531b0aa6c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -41886,6 +42626,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"fee7c112-e776-42b5-9bbf-0048524e2bd5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -41910,6 +42651,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"7a5e5354-b114-4c72-b991-3131d75032ea"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -42056,6 +42798,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"98a1b0bb-03eb-4935-ae7c-93c1fa0e1c93"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -42601,6 +43344,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"83015ead-b1e6-40d0-a98a-37145ffe1ad1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaEngine","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -43062,6 +43806,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7a3bac98-0e76-49fb-8c20-8a86fd98eaf2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -43109,6 +43854,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"2f69d622-20b5-41e9-afdf-89ced1dda04e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -43189,6 +43935,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"9f8021e8-9c8c-487e-bb5c-79aa4779938c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -43276,6 +44023,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ebbaf249-afc2-4582-91c6-b60df2e84954"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -43300,6 +44048,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ba2743a1-07e0-48ef-84b6-9a2ed023ca6c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -43372,6 +44121,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"a7901327-05dd-4469-a7b7-0e01979e361d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -43415,6 +44165,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"24cd47f7-81d8-4785-adb2-af697a963cd2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -43447,6 +44198,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"87e47623-2ceb-45d6-9b88-d8520c4dcbbc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -43513,6 +44265,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"e2cd3a4b-af25-4d3d-9110-da0e6f8ee877"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -43678,6 +44431,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"19666fb4-babe-4c55-bc03-0a074da37e2a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -43711,6 +44465,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"249981f8-8325-41f3-b80c-3b9e3aad0cbe"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -43773,6 +44528,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"e467b94e-a713-4562-a802-816a42e9008a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -43901,6 +44657,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5d1abfd6-450a-4d92-9efc-d6b6cbc1f4da"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -43935,6 +44692,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"50dc93e4-ba4f-4275-ae66-83e836e57469"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -43971,6 +44729,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"654a6bb3-e1a3-424a-9908-53a43a0dfda0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaEngineSrcElements","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -44009,6 +44768,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"46a30204-a696-4b18-8804-246b8f031bb1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -44032,6 +44792,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"5cb31c05-61ff-418f-afda-caaf41421a38"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -44114,6 +44875,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"24fa67d5-d1d0-4dc5-995c-c0efdc191fb5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -44189,6 +44951,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"6a0083f9-8947-4c1d-9ce0-cdee22b23135"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -44237,6 +45000,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"7a5645d2-43bd-47fd-87b7-dcd24cc7d692"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -44283,6 +45047,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"de400f54-5bf1-40cf-8964-0bea136b1e3d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -44335,6 +45100,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"765763e6-6c01-4b01-bb0f-b829f60ed28c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -44389,6 +45155,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"4d645ace-26aa-4688-9be1-df3516990b93"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -44437,6 +45204,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"c56156c6-ea5b-48a5-9df8-fbe035d0929e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaEngineClassFactory","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -44489,6 +45257,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"09083cef-867f-4bf6-8776-dee3a7b42fca"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -44514,6 +45283,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"332ec562-3758-468d-a784-e38f23552128"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -44538,6 +45308,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"a724b056-1b2e-4642-a6f3-db9420c52908"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -44588,6 +45359,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"24230452-fe54-40cc-94f3-fcc394c340d6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -44851,6 +45623,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"1f2a94c9-a3df-430d-9d0f-acd85ddc29af"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -45042,6 +45815,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"df6b87b6-ce12-45db-aba7-432fe054e57d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -45140,6 +45914,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"8822c32d-654e-4233-bf21-d7f2e67d30d4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -45299,6 +46074,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"23ff334c-442c-445f-bccc-edc438aa11e2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -45346,6 +46122,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"1e560447-9a2b-43e1-a94c-b0aaabfbfbc9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -45483,6 +46260,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"e13af3c1-4d47-4354-b1f5-e83ae0ecae60"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -45531,6 +46309,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"09b2455d-b834-4f01-a347-9052e21c450e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -45700,6 +46479,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"c8d22afc-bc47-4bdf-9b04-787e49ce3f58"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -45863,6 +46643,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"4ae3a412-0545-43c4-bf6f-6b97a5c6c432"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -45886,6 +46667,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ad128745-211b-40a0-9981-fe65f166d0fd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -45989,6 +46771,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"76c6a6f5-4955-4de5-b27b-14b734cc14b4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -46047,6 +46830,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3c5f3e8a-90c0-464e-8136-898d2975f847"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -46093,6 +46877,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"db639199-c809-4c89-bfca-d0bbb9729d6e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -46165,6 +46950,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9e184d15-cdb7-4f86-b49e-566689f4a601"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -46214,6 +47000,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c3a9e92a-da88-46b0-a110-6cf953026cb9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaKeySessionNotify","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -46250,6 +47037,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"aec63fda-7a97-4944-b35c-6c6df8085cc3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -46301,6 +47089,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3787614f-65f7-4003-b673-ead8293a0e60"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -46326,6 +47115,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"45892507-ad66-4de2-83a2-acbb13cd8d43"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaKeys","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -46376,6 +47166,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e9707e05-6d55-4636-b185-3de21210bd75"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaKeySession","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -46385,9 +47176,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"pKeyStatusesArray","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MFMediaKeyStatus","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}}},"Attrs":["Out"]}
 					,{"Name":"puSize","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
@@ -46464,6 +47253,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fbe256c1-43cf-4a9b-8cb8-ce8632a34186"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -46488,6 +47278,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"0c012799-1b61-4c10-bda9-04445be5f561"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -46537,6 +47328,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"e7fe2e12-661c-40da-92f9-4f002ab67627"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -46552,7 +47344,7 @@
 					,{"Name":"pwszURL","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 					,{"Name":"pAttributes","Type":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In","Optional"]}
 					,{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppvObject","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
+					,{"Name":"ppvObject","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out","ComOutPtr"]}
 				]
 			}
 			,{
@@ -46568,7 +47360,7 @@
 					,{"Name":"punkObject","Type":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pAttributes","Type":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In","Optional"]}
 					,{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppvObject","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
+					,{"Name":"ppvObject","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out","ComOutPtr"]}
 				]
 			}
 		]
@@ -46638,6 +47430,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"70ae66f2-c809-4e4f-8915-bdcb406b7993"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -46786,6 +47579,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"7b981cf0-560e-4116-9875-b099895f23d7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFSourceReader","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -46850,6 +47644,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"deec8d99-fa1d-4d82-84c2-2c8969944867"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -46901,6 +47696,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"cf839fe6-8c2a-4dd2-b6ea-c22d6961af05"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFSourceReaderCallback","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -46977,6 +47773,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"3137f1cd-fe5e-4805-a5d8-fb477448cb3d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -47127,6 +47924,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"588d72ab-5bc1-496a-8714-b70617141b25"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFSinkWriter","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -47152,6 +47950,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"17c3779e-3cde-4ede-8c60-3899f5f53ad6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -47189,6 +47988,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"666f76de-33d2-41b9-a458-29ed0a972c58"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -47224,6 +48024,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2456bd58-c067-4513-84fe-8d0c88ffdc61"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFSinkWriterCallback","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -47258,6 +48059,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"1f6a9f17-e70b-4e24-8ae4-0b2c3ba7a4ae"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -47285,6 +48087,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a38d9567-5a9c-4f3c-b293-8eb415b279ba"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -47344,6 +48147,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a490b1e4-ab84-4d31-a1b2-181e03b1077a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -47571,6 +48375,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"29aff080-182a-4a5d-af3b-448f3a6346cb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFClockStateSink","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -47606,6 +48411,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"56c294d0-753e-4260-8d61-a3d8820b1d54"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -47653,6 +48459,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a5c6c53f-c202-4aa5-9695-175ba8c508a5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -47732,6 +48539,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"8459616d-966e-4930-b658-54fa7e5a16d3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFVideoMixerControl","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -47766,6 +48574,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"dfdfd197-a9ca-43d8-b341-6af3503792cd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -47789,6 +48598,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"83e91e85-82c1-4ea7-801d-85dc50b75086"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -47836,6 +48646,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"aea36028-796d-454f-beee-b48071e24304"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IEVRFilterConfig","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -47887,6 +48698,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"fa993889-4383-415a-a930-dd472a8cf6f7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -47914,6 +48726,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"fa99388a-4383-415a-a930-dd472a8cf6f7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -47947,6 +48760,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"83a4ce40-7710-494b-a893-a472049af630"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -48068,6 +48882,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"a714590a-58af-430a-85bf-44f5ec838d85"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -48516,6 +49331,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"90eb3e6b-ecbf-45cc-b1da-c6fe3ea70d57"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49004,6 +49820,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"766c8ffb-5fdb-4fea-a28d-b912996f51bd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49071,6 +49888,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"2ba61f92-8305-413b-9733-faf15f259384"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49095,6 +49913,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"8d3ce1bf-2367-40e0-9eee-40d377cc1b46"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaEngine","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -49117,6 +49936,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"524d2bc4-b2b1-4fe5-8fac-fa4e4512b4e0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49141,6 +49961,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"cfa0ae8e-7e1c-44d2-ae68-fc4c148a6354"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49186,6 +50007,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"1fc55727-a7fb-4fc8-83ae-8af024990af1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49198,7 +50020,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pUniqueDeviceName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppEngine","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMFImageSharingEngine","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["Out"]}
+					,{"Name":"ppEngine","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMFImageSharingEngine","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["Out","ComOutPtr"]}
 				]
 			}
 		]
@@ -49225,6 +50047,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"607574eb-f4b6-45c1-b08c-cb715122901d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49258,6 +50081,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"aa9dd80f-c50a-4220-91c1-332287f82a34"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPlayToControl","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -49280,6 +50104,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"842b32a3-9b9b-4d1c-b3f3-49193248a554"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49304,6 +50129,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d0cfe38b-93e7-4772-8957-0400c49a4485"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49338,6 +50164,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"6ab0000c-fece-4d1f-a2ac-a9573530656e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49350,7 +50177,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"lpdwNumProcessingModes","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["In","Out"]}
-					,{"Name":"ppVideoProcessingModes","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":0,"Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppVideoProcessingModes","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":0,"Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -49565,6 +50392,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"814c7b20-0fdb-4eec-af8f-f957c8f69edc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49622,6 +50450,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"3de21209-8ba6-4f2a-a577-2819b56ff14d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49644,6 +50473,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"24e0485f-a33e-4aa1-b564-6019b1d14f65"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49666,6 +50496,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"d0751585-d216-4344-b5bf-463b68f977bb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49688,6 +50519,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"d396ec8c-605e-4249-978d-72ad1c312872"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFMediaBuffer","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -49758,6 +50590,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"abf28a9b-3393-4290-ba79-5ffc46d986b2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFSample","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -49805,6 +50638,7 @@
 		,"Platform":"windows10.0.19041"
 		,"Kind":"Com"
 		,"Guid":"4e233efd-1dd2-49e8-b577-d63eee4c0d33"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49914,6 +50748,7 @@
 		,"Platform":"windows10.0.19041"
 		,"Kind":"Com"
 		,"Guid":"3f96ee40-ad81-4096-8470-59a4b770f89a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -49950,6 +50785,7 @@
 		,"Platform":"windows10.0.19041"
 		,"Kind":"Com"
 		,"Guid":"87be986c-10be-4943-bf48-4b54ce1983a2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -50051,6 +50887,7 @@
 		,"Platform":"windows10.0.19041"
 		,"Kind":"Com"
 		,"Guid":"a853d1f4-e2a0-4303-9edc-f1a68ee43136"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -50098,6 +50935,7 @@
 		,"Platform":"windows10.0.19041"
 		,"Kind":"Com"
 		,"Guid":"7d5abf16-4cbb-4e08-b977-9ba59049943e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -50174,6 +51012,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6338b23a-3042-49d2-a3ea-ec0fed815407"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -50207,6 +51046,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1c08a864-ef6c-4c75-af59-5f2d68da9563"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}
 		,"Methods":[
 			{
@@ -52843,7 +53683,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"guidCategory","Type":{"Kind":"Native","Name":"Guid"},"Attrs":["In"]}
-			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+			,{"Name":"Flags","Type":{"Kind":"ApiRef","Name":"MFT_ENUM_FLAG","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"pInputType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MFT_REGISTER_TYPE_INFO","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["In","Optional","Const"]}
 			,{"Name":"pOutputType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MFT_REGISTER_TYPE_INFO","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["In","Optional","Const"]}
 			,{"Name":"pppMFTActivate","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMFActivate","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]}}},"Attrs":["Out"]}
@@ -52861,7 +53701,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"guidCategory","Type":{"Kind":"Native","Name":"Guid"},"Attrs":["In"]}
-			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+			,{"Name":"Flags","Type":{"Kind":"ApiRef","Name":"MFT_ENUM_FLAG","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"pInputType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MFT_REGISTER_TYPE_INFO","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["In","Optional","Const"]}
 			,{"Name":"pOutputType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MFT_REGISTER_TYPE_INFO","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["In","Optional","Const"]}
 			,{"Name":"pAttributes","Type":{"Kind":"ApiRef","Name":"IMFAttributes","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In","Optional"]}
@@ -52911,7 +53751,7 @@
 		,"Platform":"windows6.1"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"pMFT","Type":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Out"]}
+			{"Name":"pMFT","Type":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 			,{"Name":"cbVerifier","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"verifier","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":1},"Const"]}
 			,{"Name":"merit","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
@@ -53088,7 +53928,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"pMFType","Type":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
-			,{"Name":"pVIH","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VIDEOINFOHEADER","TargetKind":"Default","Api":"Media.DirectShow","Parents":[]}},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":2},"Const"]}
+			,{"Name":"pVIH","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VIDEOINFOHEADER","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":2},"Const"]}
 			,{"Name":"cbBufSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"pSubtype","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Optional","Const"]}
 		]
@@ -53104,7 +53944,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"pMFType","Type":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
-			,{"Name":"pVIH2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VIDEOINFOHEADER2","TargetKind":"Default","Api":"Media.DirectShow","Parents":[]}},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":2},"Const"]}
+			,{"Name":"pVIH2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VIDEOINFOHEADER2","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":2},"Const"]}
 			,{"Name":"cbBufSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"pSubtype","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Optional","Const"]}
 		]
@@ -53120,7 +53960,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"pMFType","Type":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
-			,{"Name":"pMP1VI","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MPEG1VIDEOINFO","TargetKind":"Default","Api":"Media.DirectShow","Parents":[]}},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":2},"Const"]}
+			,{"Name":"pMP1VI","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MPEG1VIDEOINFO","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":2},"Const"]}
 			,{"Name":"cbBufSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"pSubtype","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Optional","Const"]}
 		]
@@ -53136,7 +53976,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"pMFType","Type":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
-			,{"Name":"pMP2VI","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MPEG2VIDEOINFO","TargetKind":"Default","Api":"Media.DirectShow","Parents":[]}},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":2},"Const"]}
+			,{"Name":"pMP2VI","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MPEG2VIDEOINFO","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["In",{"Kind":"MemorySize","BytesParamIndex":2},"Const"]}
 			,{"Name":"cbBufSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"pSubtype","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Optional","Const"]}
 		]
@@ -53244,7 +54084,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"pMFType","Type":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
-			,{"Name":"pAMType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"AM_MEDIA_TYPE","TargetKind":"Default","Api":"Media.DirectShow","Parents":[]}},"Attrs":["In","Const"]}
+			,{"Name":"pAMType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"AM_MEDIA_TYPE","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["In","Const"]}
 		]
 	}
 	,{
@@ -53259,7 +54099,7 @@
 		,"Params":[
 			{"Name":"pMFType","Type":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"guidFormatBlockType","Type":{"Kind":"Native","Name":"Guid"},"Attrs":["In"]}
-			,{"Name":"pAMType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"AM_MEDIA_TYPE","TargetKind":"Default","Api":"Media.DirectShow","Parents":[]}},"Attrs":["In","Out"]}
+			,{"Name":"pAMType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"AM_MEDIA_TYPE","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}},"Attrs":["In","Out"]}
 		]
 	}
 	,{
@@ -53274,7 +54114,7 @@
 		,"Params":[
 			{"Name":"pMFType","Type":{"Kind":"ApiRef","Name":"IMFMediaType","TargetKind":"Com","Api":"Media.MediaFoundation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"guidFormatBlockType","Type":{"Kind":"Native","Name":"Guid"},"Attrs":["In"]}
-			,{"Name":"ppAMType","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"AM_MEDIA_TYPE","TargetKind":"Default","Api":"Media.DirectShow","Parents":[]}}},"Attrs":["In","Out"]}
+			,{"Name":"ppAMType","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"AM_MEDIA_TYPE","TargetKind":"Default","Api":"Media.MediaFoundation","Parents":[]}}},"Attrs":["In","Out"]}
 		]
 	}
 	,{

@@ -10,6 +10,12 @@ static
 	#region Constants
 	public const uint32 SERVICE_ALL_ACCESS = 983551;
 	public const uint32 SC_MANAGER_ALL_ACCESS = 983103;
+	public const String SERVICES_ACTIVE_DATABASEW = "ServicesActive";
+	public const String SERVICES_FAILED_DATABASEW = "ServicesFailed";
+	public const String SERVICES_ACTIVE_DATABASEA = "ServicesActive";
+	public const String SERVICES_FAILED_DATABASEA = "ServicesFailed";
+	public const String SERVICES_ACTIVE_DATABASE = "ServicesActive";
+	public const String SERVICES_FAILED_DATABASE = "ServicesFailed";
 	public const uint32 SERVICE_NO_CHANGE = 4294967295;
 	public const uint32 SERVICE_CONTROL_STOP = 1;
 	public const uint32 SERVICE_CONTROL_PAUSE = 2;
@@ -131,6 +137,8 @@ static
 	public const Guid RPC_INTERFACE_EVENT_GUID = .(0xbc90d167, 0x9470, 0x4139, 0xa9, 0xba, 0xbe, 0x0b, 0xbb, 0xf5, 0xb7, 0x4d);
 	public const Guid NAMED_PIPE_EVENT_GUID = .(0x1f81d131, 0x3fac, 0x4537, 0x9e, 0x0c, 0x7e, 0x7b, 0x0c, 0x2f, 0x4b, 0x55);
 	public const Guid CUSTOM_SYSTEM_STATE_CHANGE_EVENT_GUID = .(0x2d7a2816, 0x0c5e, 0x45fc, 0x9c, 0xe7, 0x57, 0x0e, 0x5e, 0xcd, 0xe9, 0xc9);
+	public const String SERVICE_TRIGGER_STARTED_ARGUMENT = "TriggerStarted";
+	public const String SC_AGGREGATE_STORAGE_KEY = "System\\CurrentControlSet\\Control\\ServiceAggregatedEvents";
 	#endregion
 	
 	#region Typedefs
@@ -164,14 +172,11 @@ static
 		TRIGGER_INFO = 8,
 		LAUNCH_PROTECTED = 12,
 	}
-	[AllowDuplicates]
 	public enum ENUM_SERVICE_TYPE : uint32
 	{
 		DRIVER = 11,
-		FILE_SYSTEM_DRIVER_ = 2,
 		KERNEL_DRIVER = 1,
 		WIN32 = 48,
-		WIN32_OWN_PROCESS_ = 16,
 		WIN32_SHARE_PROCESS = 32,
 		ADAPTER = 4,
 		FILE_SYSTEM_DRIVER = 2,
@@ -650,7 +655,7 @@ static
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL QueryServiceLockStatusW(SC_HANDLE hSCManager, QUERY_SERVICE_LOCK_STATUSW* lpLockStatus, uint32 cbBufSize, out uint32 pcbBytesNeeded);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL QueryServiceObjectSecurity(SC_HANDLE hService, uint32 dwSecurityInformation, SECURITY_DESCRIPTOR* lpSecurityDescriptor, uint32 cbBufSize, out uint32 pcbBytesNeeded);
+	public static extern BOOL QueryServiceObjectSecurity(SC_HANDLE hService, uint32 dwSecurityInformation, PSECURITY_DESCRIPTOR lpSecurityDescriptor, uint32 cbBufSize, out uint32 pcbBytesNeeded);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL QueryServiceStatus(SC_HANDLE hService, out SERVICE_STATUS lpServiceStatus);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -664,7 +669,7 @@ static
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern SERVICE_STATUS_HANDLE RegisterServiceCtrlHandlerExW(PWSTR lpServiceName, LPHANDLER_FUNCTION_EX lpHandlerProc, void* lpContext);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL SetServiceObjectSecurity(SC_HANDLE hService, OBJECT_SECURITY_INFORMATION dwSecurityInformation, ref SECURITY_DESCRIPTOR lpSecurityDescriptor);
+	public static extern BOOL SetServiceObjectSecurity(SC_HANDLE hService, OBJECT_SECURITY_INFORMATION dwSecurityInformation, PSECURITY_DESCRIPTOR lpSecurityDescriptor);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetServiceStatus(SERVICE_STATUS_HANDLE hServiceStatus, ref SERVICE_STATUS lpServiceStatus);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]

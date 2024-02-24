@@ -113,12 +113,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Create(HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle) mut => VT.Create(ref this, accessOptions, sharingOptions, options, oplockBreakingHandler, interopHandle);
+		public HRESULT Create(HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, out HANDLE interopHandle) mut => VT.Create(ref this, accessOptions, sharingOptions, options, oplockBreakingHandler, out interopHandle);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorageItemHandleAccess self, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle) Create;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorageItemHandleAccess self, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, out HANDLE interopHandle) Create;
 		}
 	}
 	[CRepr]
@@ -128,12 +128,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Create(PWSTR fileName, HANDLE_CREATION_OPTIONS creationOptions, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle) mut => VT.Create(ref this, fileName, creationOptions, accessOptions, sharingOptions, options, oplockBreakingHandler, interopHandle);
+		public HRESULT Create(PWSTR fileName, HANDLE_CREATION_OPTIONS creationOptions, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, out HANDLE interopHandle) mut => VT.Create(ref this, fileName, creationOptions, accessOptions, sharingOptions, options, oplockBreakingHandler, out interopHandle);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorageFolderHandleAccess self, PWSTR fileName, HANDLE_CREATION_OPTIONS creationOptions, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle) Create;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorageFolderHandleAccess self, PWSTR fileName, HANDLE_CREATION_OPTIONS creationOptions, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, out HANDLE interopHandle) Create;
 		}
 	}
 	#endregion

@@ -163,10 +163,73 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SCE_ROOT_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows NT\\CurrentVersion\\SeCEdit"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SCESVC_ENUMERATION_MAX"
 		,"Type":{"Kind":"Native","Name":"Int32"}
 		,"ValueType":"Int32"
 		,"Value":100
+		,"Attrs":[]
+	}
+	,{
+		"Name":"struuidNodetypeSceTemplateServices"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{24a7f717-1f0c-11d1-affb-00c04fb984f9}"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"lstruuidNodetypeSceTemplateServices"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{24a7f717-1f0c-11d1-affb-00c04fb984f9}"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"struuidNodetypeSceAnalysisServices"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{678050c7-1ff8-11d1-affb-00c04fb984f9}"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"lstruuidNodetypeSceAnalysisServices"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{678050c7-1ff8-11d1-affb-00c04fb984f9}"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"struuidNodetypeSceEventLog"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{2ce06698-4bf3-11d1-8c30-00c04fb984f9}"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"lstruuidNodetypeSceEventLog"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{2ce06698-4bf3-11d1-8c30-00c04fb984f9}"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CCF_SCESVC_ATTACHMENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CCF_SCESVC_ATTACHMENT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CCF_SCESVC_ATTACHMENT_DATA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CCF_SCESVC_ATTACHMENT_DATA"
 		,"Attrs":[]
 	}
 ]
@@ -373,6 +436,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"6d90e0d0-200d-11d1-affb-00c04fb984f9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -397,7 +461,9 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[]
+				,"Attrs":[
+					"PreserveSig"
+				]
 				,"Params":[
 					{"Name":"lpTemplateName","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"SByte"}},"Attrs":["In","Out"]}
 				]
@@ -422,6 +488,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"17c35fde-200d-11d1-affb-00c04fb984f9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

@@ -429,22 +429,22 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_ConnectionID(BSTR* ConnectionID) mut => VT.get_ConnectionID(ref this, ConnectionID);
-		public HRESULT get_InterfaceID(BSTR* InterfaceID) mut => VT.get_InterfaceID(ref this, InterfaceID);
+		public HRESULT get_ConnectionID(out BSTR ConnectionID) mut => VT.get_ConnectionID(ref this, out ConnectionID);
+		public HRESULT get_InterfaceID(out BSTR InterfaceID) mut => VT.get_InterfaceID(ref this, out InterfaceID);
 		public HRESULT Connect(MBN_CONNECTION_MODE connectionMode, PWSTR strProfile, out uint32 requestID) mut => VT.Connect(ref this, connectionMode, strProfile, out requestID);
 		public HRESULT Disconnect(out uint32 requestID) mut => VT.Disconnect(ref this, out requestID);
-		public HRESULT GetConnectionState(out MBN_ACTIVATION_STATE ConnectionState, BSTR* ProfileName) mut => VT.GetConnectionState(ref this, out ConnectionState, ProfileName);
+		public HRESULT GetConnectionState(out MBN_ACTIVATION_STATE ConnectionState, out BSTR ProfileName) mut => VT.GetConnectionState(ref this, out ConnectionState, out ProfileName);
 		public HRESULT GetVoiceCallState(out MBN_VOICE_CALL_STATE voiceCallState) mut => VT.GetVoiceCallState(ref this, out voiceCallState);
 		public HRESULT GetActivationNetworkError(out uint32 networkError) mut => VT.GetActivationNetworkError(ref this, out networkError);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, BSTR* ConnectionID) get_ConnectionID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, BSTR* InterfaceID) get_InterfaceID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, out BSTR ConnectionID) get_ConnectionID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, out BSTR InterfaceID) get_InterfaceID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, MBN_CONNECTION_MODE connectionMode, PWSTR strProfile, out uint32 requestID) Connect;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, out uint32 requestID) Disconnect;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, out MBN_ACTIVATION_STATE ConnectionState, BSTR* ProfileName) GetConnectionState;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, out MBN_ACTIVATION_STATE ConnectionState, out BSTR ProfileName) GetConnectionState;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, out MBN_VOICE_CALL_STATE voiceCallState) GetVoiceCallState;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, out uint32 networkError) GetActivationNetworkError;
 		}
@@ -477,13 +477,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_InterfaceID(BSTR* InterfaceID) mut => VT.get_InterfaceID(ref this, InterfaceID);
+		public HRESULT get_InterfaceID(out BSTR InterfaceID) mut => VT.get_InterfaceID(ref this, out InterfaceID);
 		public HRESULT GetInterfaceCapability(out MBN_INTERFACE_CAPS interfaceCaps) mut => VT.GetInterfaceCapability(ref this, out interfaceCaps);
 		public HRESULT GetSubscriberInformation(out IMbnSubscriberInformation* subscriberInformation) mut => VT.GetSubscriberInformation(ref this, out subscriberInformation);
 		public HRESULT GetReadyState(out MBN_READY_STATE readyState) mut => VT.GetReadyState(ref this, out readyState);
 		public HRESULT InEmergencyMode(out int16 emergencyMode) mut => VT.InEmergencyMode(ref this, out emergencyMode);
 		public HRESULT GetHomeProvider(out MBN_PROVIDER homeProvider) mut => VT.GetHomeProvider(ref this, out homeProvider);
-		public HRESULT GetPreferredProviders(SAFEARRAY** preferredProviders) mut => VT.GetPreferredProviders(ref this, preferredProviders);
+		public HRESULT GetPreferredProviders(out SAFEARRAY* preferredProviders) mut => VT.GetPreferredProviders(ref this, out preferredProviders);
 		public HRESULT SetPreferredProviders(ref SAFEARRAY preferredProviders, out uint32 requestID) mut => VT.SetPreferredProviders(ref this, ref preferredProviders, out requestID);
 		public HRESULT GetVisibleProviders(out uint32 age, out SAFEARRAY* visibleProviders) mut => VT.GetVisibleProviders(ref this, out age, out visibleProviders);
 		public HRESULT ScanNetwork(out uint32 requestID) mut => VT.ScanNetwork(ref this, out requestID);
@@ -492,13 +492,13 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, BSTR* InterfaceID) get_InterfaceID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out BSTR InterfaceID) get_InterfaceID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out MBN_INTERFACE_CAPS interfaceCaps) GetInterfaceCapability;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out IMbnSubscriberInformation* subscriberInformation) GetSubscriberInformation;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out MBN_READY_STATE readyState) GetReadyState;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out int16 emergencyMode) InEmergencyMode;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out MBN_PROVIDER homeProvider) GetHomeProvider;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, SAFEARRAY** preferredProviders) GetPreferredProviders;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out SAFEARRAY* preferredProviders) GetPreferredProviders;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, ref SAFEARRAY preferredProviders, out uint32 requestID) SetPreferredProviders;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out uint32 age, out SAFEARRAY* visibleProviders) GetVisibleProviders;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out uint32 requestID) ScanNetwork;
@@ -541,14 +541,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetInterface(PWSTR interfaceID, IMbnInterface** mbnInterface) mut => VT.GetInterface(ref this, interfaceID, mbnInterface);
-		public HRESULT GetInterfaces(SAFEARRAY** mbnInterfaces) mut => VT.GetInterfaces(ref this, mbnInterfaces);
+		public HRESULT GetInterface(PWSTR interfaceID, out IMbnInterface* mbnInterface) mut => VT.GetInterface(ref this, interfaceID, out mbnInterface);
+		public HRESULT GetInterfaces(out SAFEARRAY* mbnInterfaces) mut => VT.GetInterfaces(ref this, out mbnInterfaces);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceManager self, PWSTR interfaceID, IMbnInterface** mbnInterface) GetInterface;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceManager self, SAFEARRAY** mbnInterfaces) GetInterfaces;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceManager self, PWSTR interfaceID, out IMbnInterface* mbnInterface) GetInterface;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceManager self, out SAFEARRAY* mbnInterfaces) GetInterfaces;
 		}
 	}
 	[CRepr]
@@ -577,9 +577,9 @@ static
 		
 		public HRESULT GetRegisterState(out MBN_REGISTER_STATE registerState) mut => VT.GetRegisterState(ref this, out registerState);
 		public HRESULT GetRegisterMode(out MBN_REGISTER_MODE registerMode) mut => VT.GetRegisterMode(ref this, out registerMode);
-		public HRESULT GetProviderID(BSTR* providerID) mut => VT.GetProviderID(ref this, providerID);
-		public HRESULT GetProviderName(BSTR* providerName) mut => VT.GetProviderName(ref this, providerName);
-		public HRESULT GetRoamingText(BSTR* roamingText) mut => VT.GetRoamingText(ref this, roamingText);
+		public HRESULT GetProviderID(out BSTR providerID) mut => VT.GetProviderID(ref this, out providerID);
+		public HRESULT GetProviderName(out BSTR providerName) mut => VT.GetProviderName(ref this, out providerName);
+		public HRESULT GetRoamingText(out BSTR roamingText) mut => VT.GetRoamingText(ref this, out roamingText);
 		public HRESULT GetAvailableDataClasses(out uint32 availableDataClasses) mut => VT.GetAvailableDataClasses(ref this, out availableDataClasses);
 		public HRESULT GetCurrentDataClass(out uint32 currentDataClass) mut => VT.GetCurrentDataClass(ref this, out currentDataClass);
 		public HRESULT GetRegistrationNetworkError(out uint32 registrationNetworkError) mut => VT.GetRegistrationNetworkError(ref this, out registrationNetworkError);
@@ -591,9 +591,9 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, out MBN_REGISTER_STATE registerState) GetRegisterState;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, out MBN_REGISTER_MODE registerMode) GetRegisterMode;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, BSTR* providerID) GetProviderID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, BSTR* providerName) GetProviderName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, BSTR* roamingText) GetRoamingText;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, out BSTR providerID) GetProviderID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, out BSTR providerName) GetProviderName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, out BSTR roamingText) GetRoamingText;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, out uint32 availableDataClasses) GetAvailableDataClasses;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, out uint32 currentDataClass) GetCurrentDataClass;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, out uint32 registrationNetworkError) GetRegistrationNetworkError;
@@ -629,14 +629,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetConnection(PWSTR connectionID, IMbnConnection** mbnConnection) mut => VT.GetConnection(ref this, connectionID, mbnConnection);
-		public HRESULT GetConnections(SAFEARRAY** mbnConnections) mut => VT.GetConnections(ref this, mbnConnections);
+		public HRESULT GetConnection(PWSTR connectionID, out IMbnConnection* mbnConnection) mut => VT.GetConnection(ref this, connectionID, out mbnConnection);
+		public HRESULT GetConnections(out SAFEARRAY* mbnConnections) mut => VT.GetConnections(ref this, out mbnConnections);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionManager self, PWSTR connectionID, IMbnConnection** mbnConnection) GetConnection;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionManager self, SAFEARRAY** mbnConnections) GetConnections;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionManager self, PWSTR connectionID, out IMbnConnection* mbnConnection) GetConnection;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionManager self, out SAFEARRAY* mbnConnections) GetConnections;
 		}
 	}
 	[CRepr]
@@ -663,15 +663,15 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetPinList(SAFEARRAY** pinList) mut => VT.GetPinList(ref this, pinList);
-		public HRESULT GetPin(MBN_PIN_TYPE pinType, IMbnPin** pin) mut => VT.GetPin(ref this, pinType, pin);
+		public HRESULT GetPinList(out SAFEARRAY* pinList) mut => VT.GetPinList(ref this, out pinList);
+		public HRESULT GetPin(MBN_PIN_TYPE pinType, out IMbnPin* pin) mut => VT.GetPin(ref this, pinType, out pin);
 		public HRESULT GetPinState(out uint32 requestID) mut => VT.GetPinState(ref this, out requestID);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPinManager self, SAFEARRAY** pinList) GetPinList;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPinManager self, MBN_PIN_TYPE pinType, IMbnPin** pin) GetPin;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPinManager self, out SAFEARRAY* pinList) GetPinList;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPinManager self, MBN_PIN_TYPE pinType, out IMbnPin* pin) GetPin;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPinManager self, out uint32 requestID) GetPinState;
 		}
 	}
@@ -722,16 +722,16 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_SubscriberID(BSTR* SubscriberID) mut => VT.get_SubscriberID(ref this, SubscriberID);
-		public HRESULT get_SimIccID(BSTR* SimIccID) mut => VT.get_SimIccID(ref this, SimIccID);
-		public HRESULT get_TelephoneNumbers(SAFEARRAY** TelephoneNumbers) mut => VT.get_TelephoneNumbers(ref this, TelephoneNumbers);
+		public HRESULT get_SubscriberID(out BSTR SubscriberID) mut => VT.get_SubscriberID(ref this, out SubscriberID);
+		public HRESULT get_SimIccID(out BSTR SimIccID) mut => VT.get_SimIccID(ref this, out SimIccID);
+		public HRESULT get_TelephoneNumbers(out SAFEARRAY* TelephoneNumbers) mut => VT.get_TelephoneNumbers(ref this, out TelephoneNumbers);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSubscriberInformation self, BSTR* SubscriberID) get_SubscriberID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSubscriberInformation self, BSTR* SimIccID) get_SimIccID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSubscriberInformation self, SAFEARRAY** TelephoneNumbers) get_TelephoneNumbers;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSubscriberInformation self, out BSTR SubscriberID) get_SubscriberID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSubscriberInformation self, out BSTR SimIccID) get_SimIccID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSubscriberInformation self, out SAFEARRAY* TelephoneNumbers) get_TelephoneNumbers;
 		}
 	}
 	[CRepr]
@@ -773,13 +773,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetProvisionedContexts(SAFEARRAY** provisionedContexts) mut => VT.GetProvisionedContexts(ref this, provisionedContexts);
+		public HRESULT GetProvisionedContexts(out SAFEARRAY* provisionedContexts) mut => VT.GetProvisionedContexts(ref this, out provisionedContexts);
 		public HRESULT SetProvisionedContext(MBN_CONTEXT provisionedContexts, PWSTR providerID, out uint32 requestID) mut => VT.SetProvisionedContext(ref this, provisionedContexts, providerID, out requestID);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionContext self, SAFEARRAY** provisionedContexts) GetProvisionedContexts;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionContext self, out SAFEARRAY* provisionedContexts) GetProvisionedContexts;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionContext self, MBN_CONTEXT provisionedContexts, PWSTR providerID, out uint32 requestID) SetProvisionedContext;
 		}
 	}
@@ -807,15 +807,15 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetConnectionProfiles(ref IMbnInterface mbnInterface, SAFEARRAY** connectionProfiles) mut => VT.GetConnectionProfiles(ref this, ref mbnInterface, connectionProfiles);
-		public HRESULT GetConnectionProfile(ref IMbnInterface mbnInterface, PWSTR profileName, IMbnConnectionProfile** connectionProfile) mut => VT.GetConnectionProfile(ref this, ref mbnInterface, profileName, connectionProfile);
+		public HRESULT GetConnectionProfiles(ref IMbnInterface mbnInterface, out SAFEARRAY* connectionProfiles) mut => VT.GetConnectionProfiles(ref this, ref mbnInterface, out connectionProfiles);
+		public HRESULT GetConnectionProfile(ref IMbnInterface mbnInterface, PWSTR profileName, out IMbnConnectionProfile* connectionProfile) mut => VT.GetConnectionProfile(ref this, ref mbnInterface, profileName, out connectionProfile);
 		public HRESULT CreateConnectionProfile(PWSTR xmlProfile) mut => VT.CreateConnectionProfile(ref this, xmlProfile);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfileManager self, ref IMbnInterface mbnInterface, SAFEARRAY** connectionProfiles) GetConnectionProfiles;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfileManager self, ref IMbnInterface mbnInterface, PWSTR profileName, IMbnConnectionProfile** connectionProfile) GetConnectionProfile;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfileManager self, ref IMbnInterface mbnInterface, out SAFEARRAY* connectionProfiles) GetConnectionProfiles;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfileManager self, ref IMbnInterface mbnInterface, PWSTR profileName, out IMbnConnectionProfile* connectionProfile) GetConnectionProfile;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfileManager self, PWSTR xmlProfile) CreateConnectionProfile;
 		}
 	}
@@ -826,14 +826,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetProfileXmlData(BSTR* profileData) mut => VT.GetProfileXmlData(ref this, profileData);
+		public HRESULT GetProfileXmlData(out BSTR profileData) mut => VT.GetProfileXmlData(ref this, out profileData);
 		public HRESULT UpdateProfile(PWSTR strProfile) mut => VT.UpdateProfile(ref this, strProfile);
 		public HRESULT Delete() mut => VT.Delete(ref this);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfile self, BSTR* profileData) GetProfileXmlData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfile self, out BSTR profileData) GetProfileXmlData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfile self, PWSTR strProfile) UpdateProfile;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfile self) Delete;
 		}
@@ -860,7 +860,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_ServiceCenterAddress(BSTR* scAddress) mut => VT.get_ServiceCenterAddress(ref this, scAddress);
+		public HRESULT get_ServiceCenterAddress(out BSTR scAddress) mut => VT.get_ServiceCenterAddress(ref this, out scAddress);
 		public HRESULT put_ServiceCenterAddress(PWSTR scAddress) mut => VT.put_ServiceCenterAddress(ref this, scAddress);
 		public HRESULT get_MaxMessageIndex(out uint32 index) mut => VT.get_MaxMessageIndex(ref this, out index);
 		public HRESULT get_CdmaShortMsgSize(out uint32 shortMsgSize) mut => VT.get_CdmaShortMsgSize(ref this, out shortMsgSize);
@@ -870,7 +870,7 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsConfiguration self, BSTR* scAddress) get_ServiceCenterAddress;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsConfiguration self, out BSTR scAddress) get_ServiceCenterAddress;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsConfiguration self, PWSTR scAddress) put_ServiceCenterAddress;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsConfiguration self, out uint32 index) get_MaxMessageIndex;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsConfiguration self, out uint32 shortMsgSize) get_CdmaShortMsgSize;
@@ -887,16 +887,16 @@ static
 		
 		public HRESULT get_Index(out uint32 Index) mut => VT.get_Index(ref this, out Index);
 		public HRESULT get_Status(out MBN_MSG_STATUS Status) mut => VT.get_Status(ref this, out Status);
-		public HRESULT get_PduData(BSTR* PduData) mut => VT.get_PduData(ref this, PduData);
-		public HRESULT get_Message(SAFEARRAY** Message) mut => VT.get_Message(ref this, Message);
+		public HRESULT get_PduData(out BSTR PduData) mut => VT.get_PduData(ref this, out PduData);
+		public HRESULT get_Message(out SAFEARRAY* Message) mut => VT.get_Message(ref this, out Message);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgPdu self, out uint32 Index) get_Index;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgPdu self, out MBN_MSG_STATUS Status) get_Status;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgPdu self, BSTR* PduData) get_PduData;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgPdu self, SAFEARRAY** Message) get_Message;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgPdu self, out BSTR PduData) get_PduData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgPdu self, out SAFEARRAY* Message) get_Message;
 		}
 	}
 	[CRepr]
@@ -908,24 +908,24 @@ static
 		
 		public HRESULT get_Index(out uint32 Index) mut => VT.get_Index(ref this, out Index);
 		public HRESULT get_Status(out MBN_MSG_STATUS Status) mut => VT.get_Status(ref this, out Status);
-		public HRESULT get_Address(BSTR* Address) mut => VT.get_Address(ref this, Address);
-		public HRESULT get_Timestamp(BSTR* Timestamp) mut => VT.get_Timestamp(ref this, Timestamp);
+		public HRESULT get_Address(out BSTR Address) mut => VT.get_Address(ref this, out Address);
+		public HRESULT get_Timestamp(out BSTR Timestamp) mut => VT.get_Timestamp(ref this, out Timestamp);
 		public HRESULT get_EncodingID(out MBN_SMS_CDMA_ENCODING EncodingID) mut => VT.get_EncodingID(ref this, out EncodingID);
 		public HRESULT get_LanguageID(out MBN_SMS_CDMA_LANG LanguageID) mut => VT.get_LanguageID(ref this, out LanguageID);
 		public HRESULT get_SizeInCharacters(out uint32 SizeInCharacters) mut => VT.get_SizeInCharacters(ref this, out SizeInCharacters);
-		public HRESULT get_Message(SAFEARRAY** Message) mut => VT.get_Message(ref this, Message);
+		public HRESULT get_Message(out SAFEARRAY* Message) mut => VT.get_Message(ref this, out Message);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, out uint32 Index) get_Index;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, out MBN_MSG_STATUS Status) get_Status;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, BSTR* Address) get_Address;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, BSTR* Timestamp) get_Timestamp;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, out BSTR Address) get_Address;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, out BSTR Timestamp) get_Timestamp;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, out MBN_SMS_CDMA_ENCODING EncodingID) get_EncodingID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, out MBN_SMS_CDMA_LANG LanguageID) get_LanguageID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, out uint32 SizeInCharacters) get_SizeInCharacters;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, SAFEARRAY** Message) get_Message;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, out SAFEARRAY* Message) get_Message;
 		}
 	}
 	[CRepr]
@@ -935,7 +935,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetSmsConfiguration(IMbnSmsConfiguration** smsConfiguration) mut => VT.GetSmsConfiguration(ref this, smsConfiguration);
+		public HRESULT GetSmsConfiguration(out IMbnSmsConfiguration* smsConfiguration) mut => VT.GetSmsConfiguration(ref this, out smsConfiguration);
 		public HRESULT SetSmsConfiguration(ref IMbnSmsConfiguration smsConfiguration, out uint32 requestID) mut => VT.SetSmsConfiguration(ref this, ref smsConfiguration, out requestID);
 		public HRESULT SmsSendPdu(PWSTR pduData, uint8 size, out uint32 requestID) mut => VT.SmsSendPdu(ref this, pduData, size, out requestID);
 		public HRESULT SmsSendCdma(PWSTR address, MBN_SMS_CDMA_ENCODING encoding, MBN_SMS_CDMA_LANG language, uint32 sizeInCharacters, ref SAFEARRAY message, out uint32 requestID) mut => VT.SmsSendCdma(ref this, address, encoding, language, sizeInCharacters, ref message, out requestID);
@@ -947,7 +947,7 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSms self, IMbnSmsConfiguration** smsConfiguration) GetSmsConfiguration;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSms self, out IMbnSmsConfiguration* smsConfiguration) GetSmsConfiguration;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSms self, ref IMbnSmsConfiguration smsConfiguration, out uint32 requestID) SetSmsConfiguration;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSms self, PWSTR pduData, uint8 size, out uint32 requestID) SmsSendPdu;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSms self, PWSTR address, MBN_SMS_CDMA_ENCODING encoding, MBN_SMS_CDMA_LANG language, uint32 sizeInCharacters, ref SAFEARRAY message, out uint32 requestID) SmsSendCdma;
@@ -1107,9 +1107,9 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT SetHomeProvider(ref MBN_PROVIDER2 homeProvider, out uint32 requestID) mut => VT.SetHomeProvider(ref this, ref homeProvider, out requestID);
-		public HRESULT GetPreferredProviders(SAFEARRAY** preferredMulticarrierProviders) mut => VT.GetPreferredProviders(ref this, preferredMulticarrierProviders);
+		public HRESULT GetPreferredProviders(out SAFEARRAY* preferredMulticarrierProviders) mut => VT.GetPreferredProviders(ref this, out preferredMulticarrierProviders);
 		public HRESULT GetVisibleProviders(out uint32 age, out SAFEARRAY* visibleProviders) mut => VT.GetVisibleProviders(ref this, out age, out visibleProviders);
-		public HRESULT GetSupportedCellularClasses(SAFEARRAY** cellularClasses) mut => VT.GetSupportedCellularClasses(ref this, cellularClasses);
+		public HRESULT GetSupportedCellularClasses(out SAFEARRAY* cellularClasses) mut => VT.GetSupportedCellularClasses(ref this, out cellularClasses);
 		public HRESULT GetCurrentCellularClass(out MBN_CELLULAR_CLASS currentCellularClass) mut => VT.GetCurrentCellularClass(ref this, out currentCellularClass);
 		public HRESULT ScanNetwork(out uint32 requestID) mut => VT.ScanNetwork(ref this, out requestID);
 
@@ -1117,9 +1117,9 @@ static
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrier self, ref MBN_PROVIDER2 homeProvider, out uint32 requestID) SetHomeProvider;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrier self, SAFEARRAY** preferredMulticarrierProviders) GetPreferredProviders;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrier self, out SAFEARRAY* preferredMulticarrierProviders) GetPreferredProviders;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrier self, out uint32 age, out SAFEARRAY* visibleProviders) GetVisibleProviders;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrier self, SAFEARRAY** cellularClasses) GetSupportedCellularClasses;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrier self, out SAFEARRAY* cellularClasses) GetSupportedCellularClasses;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrier self, out MBN_CELLULAR_CLASS currentCellularClass) GetCurrentCellularClass;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrier self, out uint32 requestID) ScanNetwork;
 		}
@@ -1169,12 +1169,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetDeviceServicesContext(BSTR networkInterfaceID, IMbnDeviceServicesContext** mbnDevicesContext) mut => VT.GetDeviceServicesContext(ref this, networkInterfaceID, mbnDevicesContext);
+		public HRESULT GetDeviceServicesContext(BSTR networkInterfaceID, out IMbnDeviceServicesContext* mbnDevicesContext) mut => VT.GetDeviceServicesContext(ref this, networkInterfaceID, out mbnDevicesContext);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesManager self, BSTR networkInterfaceID, IMbnDeviceServicesContext** mbnDevicesContext) GetDeviceServicesContext;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesManager self, BSTR networkInterfaceID, out IMbnDeviceServicesContext* mbnDevicesContext) GetDeviceServicesContext;
 		}
 	}
 	[CRepr]
@@ -1185,7 +1185,7 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT EnumerateDeviceServices(out SAFEARRAY* deviceServices) mut => VT.EnumerateDeviceServices(ref this, out deviceServices);
-		public HRESULT GetDeviceService(BSTR deviceServiceID, IMbnDeviceService** mbnDeviceService) mut => VT.GetDeviceService(ref this, deviceServiceID, mbnDeviceService);
+		public HRESULT GetDeviceService(BSTR deviceServiceID, out IMbnDeviceService* mbnDeviceService) mut => VT.GetDeviceService(ref this, deviceServiceID, out mbnDeviceService);
 		public HRESULT get_MaxCommandSize(out uint32 maxCommandSize) mut => VT.get_MaxCommandSize(ref this, out maxCommandSize);
 		public HRESULT get_MaxDataSize(out uint32 maxDataSize) mut => VT.get_MaxDataSize(ref this, out maxDataSize);
 
@@ -1193,7 +1193,7 @@ static
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesContext self, out SAFEARRAY* deviceServices) EnumerateDeviceServices;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesContext self, BSTR deviceServiceID, IMbnDeviceService** mbnDeviceService) GetDeviceService;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesContext self, BSTR deviceServiceID, out IMbnDeviceService* mbnDeviceService) GetDeviceService;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesContext self, out uint32 maxCommandSize) get_MaxCommandSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesContext self, out uint32 maxDataSize) get_MaxDataSize;
 		}
@@ -1248,8 +1248,8 @@ static
 		public HRESULT OpenDataSession(out uint32 requestID) mut => VT.OpenDataSession(ref this, out requestID);
 		public HRESULT CloseDataSession(out uint32 requestID) mut => VT.CloseDataSession(ref this, out requestID);
 		public HRESULT WriteData(ref SAFEARRAY deviceServiceData, out uint32 requestID) mut => VT.WriteData(ref this, ref deviceServiceData, out requestID);
-		public HRESULT get_InterfaceID(BSTR* InterfaceID) mut => VT.get_InterfaceID(ref this, InterfaceID);
-		public HRESULT get_DeviceServiceID(BSTR* DeviceServiceID) mut => VT.get_DeviceServiceID(ref this, DeviceServiceID);
+		public HRESULT get_InterfaceID(out BSTR InterfaceID) mut => VT.get_InterfaceID(ref this, out InterfaceID);
+		public HRESULT get_DeviceServiceID(out BSTR DeviceServiceID) mut => VT.get_DeviceServiceID(ref this, out DeviceServiceID);
 		public HRESULT get_IsCommandSessionOpen(out BOOL value) mut => VT.get_IsCommandSessionOpen(ref this, out value);
 		public HRESULT get_IsDataSessionOpen(out BOOL value) mut => VT.get_IsDataSessionOpen(ref this, out value);
 
@@ -1264,8 +1264,8 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, out uint32 requestID) OpenDataSession;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, out uint32 requestID) CloseDataSession;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, ref SAFEARRAY deviceServiceData, out uint32 requestID) WriteData;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, BSTR* InterfaceID) get_InterfaceID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, BSTR* DeviceServiceID) get_DeviceServiceID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, out BSTR InterfaceID) get_InterfaceID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, out BSTR DeviceServiceID) get_DeviceServiceID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, out BOOL value) get_IsCommandSessionOpen;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, out BOOL value) get_IsDataSessionOpen;
 		}
@@ -1287,7 +1287,7 @@ static
 		public HRESULT Enter(PWSTR pin, out uint32 requestID) mut => VT.Enter(ref this, pin, out requestID);
 		public HRESULT Change(PWSTR pin, PWSTR newPin, out uint32 requestID) mut => VT.Change(ref this, pin, newPin, out requestID);
 		public HRESULT Unblock(PWSTR puk, PWSTR newPin, out uint32 requestID) mut => VT.Unblock(ref this, puk, newPin, out requestID);
-		public HRESULT GetPinManager(IMbnPinManager** pinManager) mut => VT.GetPinManager(ref this, pinManager);
+		public HRESULT GetPinManager(out IMbnPinManager* pinManager) mut => VT.GetPinManager(ref this, out pinManager);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -1302,7 +1302,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, PWSTR pin, out uint32 requestID) Enter;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, PWSTR pin, PWSTR newPin, out uint32 requestID) Change;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, PWSTR puk, PWSTR newPin, out uint32 requestID) Unblock;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, IMbnPinManager** pinManager) GetPinManager;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, out IMbnPinManager* pinManager) GetPinManager;
 		}
 	}
 	#endregion

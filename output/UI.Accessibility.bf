@@ -3046,7 +3046,7 @@ static
 		public HRESULT get_CurrentIsControlElement(out BOOL retVal) mut => VT.get_CurrentIsControlElement(ref this, out retVal);
 		public HRESULT get_CurrentIsContentElement(out BOOL retVal) mut => VT.get_CurrentIsContentElement(ref this, out retVal);
 		public HRESULT get_CurrentIsPassword(out BOOL retVal) mut => VT.get_CurrentIsPassword(ref this, out retVal);
-		public HRESULT get_CurrentNativeWindowHandle(HWND retVal) mut => VT.get_CurrentNativeWindowHandle(ref this, retVal);
+		public HRESULT get_CurrentNativeWindowHandle(out HWND retVal) mut => VT.get_CurrentNativeWindowHandle(ref this, out retVal);
 		public HRESULT get_CurrentItemType(out BSTR retVal) mut => VT.get_CurrentItemType(ref this, out retVal);
 		public HRESULT get_CurrentIsOffscreen(out BOOL retVal) mut => VT.get_CurrentIsOffscreen(ref this, out retVal);
 		public HRESULT get_CurrentOrientation(out OrientationType retVal) mut => VT.get_CurrentOrientation(ref this, out retVal);
@@ -3078,7 +3078,7 @@ static
 		public HRESULT get_CachedIsControlElement(out BOOL retVal) mut => VT.get_CachedIsControlElement(ref this, out retVal);
 		public HRESULT get_CachedIsContentElement(out BOOL retVal) mut => VT.get_CachedIsContentElement(ref this, out retVal);
 		public HRESULT get_CachedIsPassword(out BOOL retVal) mut => VT.get_CachedIsPassword(ref this, out retVal);
-		public HRESULT get_CachedNativeWindowHandle(HWND retVal) mut => VT.get_CachedNativeWindowHandle(ref this, retVal);
+		public HRESULT get_CachedNativeWindowHandle(out HWND retVal) mut => VT.get_CachedNativeWindowHandle(ref this, out retVal);
 		public HRESULT get_CachedItemType(out BSTR retVal) mut => VT.get_CachedItemType(ref this, out retVal);
 		public HRESULT get_CachedIsOffscreen(out BOOL retVal) mut => VT.get_CachedIsOffscreen(ref this, out retVal);
 		public HRESULT get_CachedOrientation(out OrientationType retVal) mut => VT.get_CachedOrientation(ref this, out retVal);
@@ -3132,7 +3132,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, out BOOL retVal) get_CurrentIsControlElement;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, out BOOL retVal) get_CurrentIsContentElement;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, out BOOL retVal) get_CurrentIsPassword;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, HWND retVal) get_CurrentNativeWindowHandle;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, out HWND retVal) get_CurrentNativeWindowHandle;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, out BSTR retVal) get_CurrentItemType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, out BOOL retVal) get_CurrentIsOffscreen;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, out OrientationType retVal) get_CurrentOrientation;
@@ -3164,7 +3164,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, out BOOL retVal) get_CachedIsControlElement;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, out BOOL retVal) get_CachedIsContentElement;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, out BOOL retVal) get_CachedIsPassword;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, HWND retVal) get_CachedNativeWindowHandle;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, out HWND retVal) get_CachedNativeWindowHandle;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, out BSTR retVal) get_CachedItemType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, out BOOL retVal) get_CachedIsOffscreen;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomationElement self, out OrientationType retVal) get_CachedOrientation;

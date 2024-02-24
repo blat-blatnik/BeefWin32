@@ -464,6 +464,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"RASDIALEVENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RasDialEvent"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WM_RASDIALEVENT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1087,6 +1094,104 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"RASDT_Modem"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"modem"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RASDT_Isdn"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"isdn"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RASDT_X25"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"x25"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RASDT_Vpn"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"vpn"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RASDT_Pad"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"pad"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RASDT_Generic"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GENERIC"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RASDT_Serial"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SERIAL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RASDT_FrameRelay"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FRAMERELAY"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RASDT_Atm"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ATM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RASDT_Sonet"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SONET"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RASDT_SW56"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SW56"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RASDT_Irda"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IRDA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RASDT_Parallel"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PARALLEL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RASDT_PPPoE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PPPoE"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"RASET_Phone"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1521,6 +1626,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"RRAS_SERVICE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RemoteAccess"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"PID_IPX"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1868,6 +1980,97 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":8
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MPRDT_Modem"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"modem"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MPRDT_Isdn"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"isdn"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MPRDT_X25"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"x25"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MPRDT_Vpn"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"vpn"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MPRDT_Pad"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"pad"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MPRDT_Generic"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GENERIC"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MPRDT_Serial"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SERIAL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MPRDT_FrameRelay"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FRAMERELAY"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MPRDT_Atm"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ATM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MPRDT_Sonet"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SONET"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MPRDT_SW56"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SW56"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MPRDT_Irda"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IRDA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MPRDT_Parallel"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PARALLEL"
 		,"Attrs":[]
 	}
 	,{
@@ -5010,6 +5213,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"RASAPIVERSION"

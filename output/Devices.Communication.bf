@@ -194,6 +194,20 @@ static
 		OFF = 1,
 		ON = 4,
 	}
+	public enum DCB_STOP_BITS : uint8
+	{
+		ONESTOPBIT = 0,
+		ONE5STOPBITS = 1,
+		TWOSTOPBITS = 2,
+	}
+	public enum DCB_PARITY : uint8
+	{
+		EVENPARITY = 2,
+		MARKPARITY = 3,
+		NOPARITY = 0,
+		ODDPARITY = 1,
+		SPACEPARITY = 4,
+	}
 	#endregion
 	
 	#region Structs
@@ -282,8 +296,8 @@ static
 		public uint16 XonLim;
 		public uint16 XoffLim;
 		public uint8 ByteSize;
-		public uint8 Parity;
-		public uint8 StopBits;
+		public DCB_PARITY Parity;
+		public DCB_STOP_BITS StopBits;
 		public CHAR XonChar;
 		public CHAR XoffChar;
 		public CHAR ErrorChar;

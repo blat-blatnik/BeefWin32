@@ -10,6 +10,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"00000003-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -109,6 +110,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"000001cf-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMarshal","TargetKind":"Com","Api":"System.Com.Marshal","Parents":[]}
 		,"Methods":[
 		]
@@ -119,6 +121,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"d8f2f5e6-6102-4863-9f26-389a4676efde"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

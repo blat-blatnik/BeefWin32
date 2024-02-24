@@ -38,6 +38,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"784cfd40-9f89-456e-a1a6-873b006a664e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -92,6 +93,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"64f1dd49-71ca-4281-8672-3a9eddd1d0b6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -142,6 +144,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"dfe21355-5ec2-40e0-8d6b-710ac3c00249"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -176,6 +179,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e1546dce-9dd1-418b-9ab2-348ced161c86"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -211,6 +215,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"f8520dd3-8f9d-4437-9861-62f584c33dd6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -244,6 +249,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"076a6922-d802-4f83-baf6-409d9ca11bfe"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -278,6 +284,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"eddce3e4-f3c1-453a-b461-223563cbd886"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -362,6 +369,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"657804fa-d6ad-4496-8a60-352752af4f89"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -384,6 +392,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"5cdf2c82-841e-4546-9722-0cf74078229a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -622,6 +631,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"66e11784-f695-4f28-a505-a7080081a78f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IAudioEndpointVolume","TargetKind":"Com","Api":"Media.Audio.Endpoints","Parents":[]}
 		,"Methods":[
 			{
@@ -647,6 +657,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"c02216f6-8c67-4b5b-9d00-d008e73e0064"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

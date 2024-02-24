@@ -792,6 +792,8 @@ static
 	public const uint32 MAXNUMERICLEN = 16;
 	public const uint32 SQL_PERF_START = 1;
 	public const uint32 SQL_PERF_STOP = 2;
+	public const String SQL_SS_DL_DEFAULT = "STATS.LOG";
+	public const String SQL_SS_QL_DEFAULT = "QUERY.LOG";
 	public const uint32 SQL_SS_QI_DEFAULT = 30000;
 	public const uint32 SUCCEED = 1;
 	public const uint32 FAIL = 0;
@@ -1026,6 +1028,7 @@ static
 	public const uint32 DBPROP_MAINTAINPROPS = 5;
 	public const uint32 DBPROP_Unicode = 6;
 	public const uint32 DBPROP_INTERLEAVEDROWS = 8;
+	public const String MS_PERSIST_PROGID = "MSPersist";
 	public const uint32 DISPID_QUERY_RANKVECTOR = 2;
 	public const uint32 DISPID_QUERY_RANK = 3;
 	public const uint32 DISPID_QUERY_HITCOUNT = 4;
@@ -1407,6 +1410,7 @@ static
 	public const uint32 SQL_NC_LOW = 1;
 	public const uint32 SQL_SPEC_MAJOR = 3;
 	public const uint32 SQL_SPEC_MINOR = 80;
+	public const String SQL_SPEC_STRING = "03.80";
 	public const uint32 SQL_SQLSTATE_SIZE = 5;
 	public const uint32 SQL_MAX_DSN_LENGTH = 32;
 	public const uint32 SQL_MAX_OPTION_STRING_LENGTH = 256;
@@ -1473,6 +1477,7 @@ static
 	public const uint32 SQL_OPT_TRACE_OFF = 0;
 	public const uint32 SQL_OPT_TRACE_ON = 1;
 	public const uint32 SQL_OPT_TRACE_DEFAULT = 0;
+	public const String SQL_OPT_TRACE_FILE_DEFAULT = "\\SQL.LOG";
 	public const uint32 SQL_CUR_USE_IF_NEEDED = 0;
 	public const uint32 SQL_CUR_USE_ODBC = 1;
 	public const uint32 SQL_CUR_USE_DRIVER = 2;
@@ -2407,6 +2412,9 @@ static
 	public const uint32 SQL_QUICK = 0;
 	public const uint32 SQL_ENSURE = 1;
 	public const uint32 SQL_TABLE_STAT = 0;
+	public const String SQL_ALL_CATALOGS = "%";
+	public const String SQL_ALL_SCHEMAS = "%";
+	public const String SQL_ALL_TABLE_TYPES = "%";
 	public const uint32 SQL_DRIVER_NOPROMPT = 0;
 	public const uint32 SQL_DRIVER_COMPLETE = 1;
 	public const uint32 SQL_DRIVER_PROMPT = 2;
@@ -2447,6 +2455,7 @@ static
 	public const uint32 SQL_PT_UNKNOWN = 0;
 	public const uint32 SQL_PT_PROCEDURE = 1;
 	public const uint32 SQL_PT_FUNCTION = 2;
+	public const String SQL_ODBC_KEYWORDS = "ABSOLUTE,ACTION,ADA,ADD,ALL,ALLOCATE,ALTER,AND,ANY,ARE,AS,ASC,ASSERTION,AT,AUTHORIZATION,AVG,BEGIN,BETWEEN,BIT,BIT_LENGTH,BOTH,BY,CASCADE,CASCADED,CASE,CAST,CATALOG,CHAR,CHAR_LENGTH,CHARACTER,CHARACTER_LENGTH,CHECK,CLOSE,COALESCE,COLLATE,COLLATION,COLUMN,COMMIT,CONNECT,CONNECTION,CONSTRAINT,CONSTRAINTS,CONTINUE,CONVERT,CORRESPONDING,COUNT,CREATE,CROSS,CURRENT,CURRENT_DATE,CURRENT_TIME,CURRENT_TIMESTAMP,CURRENT_USER,CURSOR,DATE,DAY,DEALLOCATE,DEC,DECIMAL,DECLARE,DEFAULT,DEFERRABLE,DEFERRED,DELETE,DESC,DESCRIBE,DESCRIPTOR,DIAGNOSTICS,DISCONNECT,DISTINCT,DOMAIN,DOUBLE,DROP,ELSE,END,END-EXEC,ESCAPE,EXCEPT,EXCEPTION,EXEC,EXECUTE,EXISTS,EXTERNAL,EXTRACT,FALSE,FETCH,FIRST,FLOAT,FOR,FOREIGN,FORTRAN,FOUND,FROM,FULL,GET,GLOBAL,GO,GOTO,GRANT,GROUP,HAVING,HOUR,IDENTITY,IMMEDIATE,IN,INCLUDE,INDEX,INDICATOR,INITIALLY,INNER,INPUT,INSENSITIVE,INSERT,INT,INTEGER,INTERSECT,INTERVAL,INTO,IS,ISOLATION,JOIN,KEY,LANGUAGE,LAST,LEADING,LEFT,LEVEL,LIKE,LOCAL,LOWER,MATCH,MAX,MIN,MINUTE,MODULE,MONTH,NAMES,NATIONAL,NATURAL,NCHAR,NEXT,NO,NONE,NOT,NULL,NULLIF,NUMERIC,OCTET_LENGTH,OF,ON,ONLY,OPEN,OPTION,OR,ORDER,OUTER,OUTPUT,OVERLAPS,PAD,PARTIAL,PASCAL,PLI,POSITION,PRECISION,PREPARE,PRESERVE,PRIMARY,PRIOR,PRIVILEGES,PROCEDURE,PUBLIC,READ,REAL,REFERENCES,RELATIVE,RESTRICT,REVOKE,RIGHT,ROLLBACK,ROWSSCHEMA,SCROLL,SECOND,SECTION,SELECT,SESSION,SESSION_USER,SET,SIZE,SMALLINT,SOME,SPACE,SQL,SQLCA,SQLCODE,SQLERROR,SQLSTATE,SQLWARNING,SUBSTRING,SUM,SYSTEM_USER,TABLE,TEMPORARY,THEN,TIME,TIMESTAMP,TIMEZONE_HOUR,TIMEZONE_MINUTE,TO,TRAILING,TRANSACTION,TRANSLATE,TRANSLATION,TRIM,TRUE,UNION,UNIQUE,UNKNOWN,UPDATE,UPPER,USAGE,USER,USING,VALUE,VALUES,VARCHAR,VARYING,VIEW,WHEN,WHENEVER,WHERE,WITH,WORK,WRITE,YEAR,ZONE";
 	public const uint32 SQL_YEAR = 1;
 	public const uint32 SQL_MONTH = 2;
 	public const uint32 SQL_DAY = 3;
@@ -5486,14 +5495,6 @@ static
 				public PWSTR pwchReserved;
 			}
 			[CRepr]
-			public struct _BinaryVal
-			{
-				public int16 sActualLength;
-				public int16 sMaxLength;
-				public uint8* prgbBinaryVal;
-				public uint32 dwReserved;
-			}
-			[CRepr]
 			public struct _BLOBType
 			{
 				public DBOBJECT dbobj;
@@ -5508,6 +5509,14 @@ static
 				public uint8[5] rgbReserved;
 				public uint32 dwReserved;
 				public PWSTR pwchReserved;
+			}
+			[CRepr]
+			public struct _BinaryVal
+			{
+				public int16 sActualLength;
+				public int16 sMaxLength;
+				public uint8* prgbBinaryVal;
+				public uint32 dwReserved;
 			}
 		}
 	}
@@ -7117,12 +7126,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetSession(in Guid riid, IUnknown** ppSession) mut => VT.GetSession(ref this, riid, ppSession);
+		public HRESULT GetSession(in Guid riid, out IUnknown* ppSession) mut => VT.GetSession(ref this, riid, out ppSession);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetSession self, in Guid riid, IUnknown** ppSession) GetSession;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetSession self, in Guid riid, out IUnknown* ppSession) GetSession;
 		}
 	}
 	[CRepr]
@@ -7132,12 +7141,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetSourceRow(in Guid riid, IUnknown** ppRow) mut => VT.GetSourceRow(ref this, riid, ppRow);
+		public HRESULT GetSourceRow(in Guid riid, out IUnknown* ppRow) mut => VT.GetSourceRow(ref this, riid, out ppRow);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetSourceRow self, in Guid riid, IUnknown** ppRow) GetSourceRow;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetSourceRow self, in Guid riid, out IUnknown* ppRow) GetSourceRow;
 		}
 	}
 	[CRepr]
@@ -7297,7 +7306,7 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT Initialize(ref ISchemaProvider pSchemaProvider) mut => VT.Initialize(ref this, ref pSchemaProvider);
-		public HRESULT RecognizeNamedEntities(PWSTR pszInputString, uint32 lcidUserLocale, ref ITokenCollection pTokenCollection, out INamedEntityCollector pNamedEntities) mut => VT.RecognizeNamedEntities(ref this, pszInputString, lcidUserLocale, ref pTokenCollection, out pNamedEntities);
+		public HRESULT RecognizeNamedEntities(PWSTR pszInputString, uint32 lcidUserLocale, ref ITokenCollection pTokenCollection, ref INamedEntityCollector pNamedEntities) mut => VT.RecognizeNamedEntities(ref this, pszInputString, lcidUserLocale, ref pTokenCollection, ref pNamedEntities);
 		public HRESULT GenerateForLeaf(ref IConditionFactory pConditionFactory, PWSTR pszPropertyName, CONDITION_OPERATION cop, PWSTR pszValueType, PWSTR pszValue, PWSTR pszValue2, ref IRichChunk pPropertyNameTerm, ref IRichChunk pOperationTerm, ref IRichChunk pValueTerm, BOOL automaticWildcard, out BOOL pNoStringQuery, out ICondition* ppQueryExpression) mut => VT.GenerateForLeaf(ref this, ref pConditionFactory, pszPropertyName, cop, pszValueType, pszValue, pszValue2, ref pPropertyNameTerm, ref pOperationTerm, ref pValueTerm, automaticWildcard, out pNoStringQuery, out ppQueryExpression);
 		public HRESULT DefaultPhrase(PWSTR pszValueType, in PROPVARIANT ppropvar, BOOL fUseEnglish, PWSTR* ppszPhrase) mut => VT.DefaultPhrase(ref this, pszValueType, ppropvar, fUseEnglish, ppszPhrase);
 
@@ -7305,7 +7314,7 @@ static
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConditionGenerator self, ref ISchemaProvider pSchemaProvider) Initialize;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConditionGenerator self, PWSTR pszInputString, uint32 lcidUserLocale, ref ITokenCollection pTokenCollection, out INamedEntityCollector pNamedEntities) RecognizeNamedEntities;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConditionGenerator self, PWSTR pszInputString, uint32 lcidUserLocale, ref ITokenCollection pTokenCollection, ref INamedEntityCollector pNamedEntities) RecognizeNamedEntities;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConditionGenerator self, ref IConditionFactory pConditionFactory, PWSTR pszPropertyName, CONDITION_OPERATION cop, PWSTR pszValueType, PWSTR pszValue, PWSTR pszValue2, ref IRichChunk pPropertyNameTerm, ref IRichChunk pOperationTerm, ref IRichChunk pValueTerm, BOOL automaticWildcard, out BOOL pNoStringQuery, out ICondition* ppQueryExpression) GenerateForLeaf;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IConditionGenerator self, PWSTR pszValueType, in PROPVARIANT ppropvar, BOOL fUseEnglish, PWSTR* ppszPhrase) DefaultPhrase;
 		}
@@ -7520,8 +7529,8 @@ static
 		public HRESULT GetSecurityDescriptor(uint8* pSD, uint32 dwSize, out uint32 pdwLength) mut => VT.GetSecurityDescriptor(ref this, pSD, dwSize, out pdwLength);
 		public HRESULT GetRedirectedURL(char16* wszRedirectedURL, uint32 dwSize, out uint32 pdwLength) mut => VT.GetRedirectedURL(ref this, wszRedirectedURL, dwSize, out pdwLength);
 		public HRESULT GetSecurityProvider(out Guid pSPClsid) mut => VT.GetSecurityProvider(ref this, out pSPClsid);
-		public HRESULT BindToStream(IStream** ppStream) mut => VT.BindToStream(ref this, ppStream);
-		public HRESULT BindToFilter(IFilter** ppFilter) mut => VT.BindToFilter(ref this, ppFilter);
+		public HRESULT BindToStream(out IStream* ppStream) mut => VT.BindToStream(ref this, out ppStream);
+		public HRESULT BindToFilter(out IFilter* ppFilter) mut => VT.BindToFilter(ref this, out ppFilter);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -7537,8 +7546,8 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUrlAccessor self, uint8* pSD, uint32 dwSize, out uint32 pdwLength) GetSecurityDescriptor;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUrlAccessor self, char16* wszRedirectedURL, uint32 dwSize, out uint32 pdwLength) GetRedirectedURL;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUrlAccessor self, out Guid pSPClsid) GetSecurityProvider;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUrlAccessor self, IStream** ppStream) BindToStream;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUrlAccessor self, IFilter** ppFilter) BindToFilter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUrlAccessor self, out IStream* ppStream) BindToStream;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUrlAccessor self, out IFilter* ppFilter) BindToFilter;
 		}
 	}
 	[CRepr]
@@ -7567,12 +7576,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetImpersonationSidBlobs(PWSTR pcwszURL, out uint32 pcSidCount, BLOB** ppSidBlobs) mut => VT.GetImpersonationSidBlobs(ref this, pcwszURL, out pcSidCount, ppSidBlobs);
+		public HRESULT GetImpersonationSidBlobs(PWSTR pcwszURL, out uint32 pcSidCount, out BLOB* ppSidBlobs) mut => VT.GetImpersonationSidBlobs(ref this, pcwszURL, out pcSidCount, out ppSidBlobs);
 
 		[CRepr]
 		public struct VTable : IUrlAccessor2.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUrlAccessor3 self, PWSTR pcwszURL, out uint32 pcSidCount, BLOB** ppSidBlobs) GetImpersonationSidBlobs;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUrlAccessor3 self, PWSTR pcwszURL, out uint32 pcSidCount, out BLOB* ppSidBlobs) GetImpersonationSidBlobs;
 		}
 	}
 	[CRepr]
@@ -7689,9 +7698,9 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT put_Schedule(PWSTR pszTaskArg) mut => VT.put_Schedule(ref this, pszTaskArg);
-		public HRESULT get_Schedule(PWSTR* ppszTaskArg) mut => VT.get_Schedule(ref this, ppszTaskArg);
+		public HRESULT get_Schedule(out PWSTR ppszTaskArg) mut => VT.get_Schedule(ref this, out ppszTaskArg);
 		public HRESULT put_RootURL(PWSTR pszURL) mut => VT.put_RootURL(ref this, pszURL);
-		public HRESULT get_RootURL(PWSTR* ppszURL) mut => VT.get_RootURL(ref this, ppszURL);
+		public HRESULT get_RootURL(out PWSTR ppszURL) mut => VT.get_RootURL(ref this, out ppszURL);
 		public HRESULT put_IsHierarchical(BOOL fIsHierarchical) mut => VT.put_IsHierarchical(ref this, fIsHierarchical);
 		public HRESULT get_IsHierarchical(out BOOL pfIsHierarchical) mut => VT.get_IsHierarchical(ref this, out pfIsHierarchical);
 		public HRESULT put_ProvidesNotifications(BOOL fProvidesNotifications) mut => VT.put_ProvidesNotifications(ref this, fProvidesNotifications);
@@ -7707,17 +7716,17 @@ static
 		public HRESULT put_AuthenticationType(AUTH_TYPE authType) mut => VT.put_AuthenticationType(ref this, authType);
 		public HRESULT get_AuthenticationType(out AUTH_TYPE pAuthType) mut => VT.get_AuthenticationType(ref this, out pAuthType);
 		public HRESULT put_User(PWSTR pszUser) mut => VT.put_User(ref this, pszUser);
-		public HRESULT get_User(PWSTR* ppszUser) mut => VT.get_User(ref this, ppszUser);
+		public HRESULT get_User(out PWSTR ppszUser) mut => VT.get_User(ref this, out ppszUser);
 		public HRESULT put_Password(PWSTR pszPassword) mut => VT.put_Password(ref this, pszPassword);
-		public HRESULT get_Password(PWSTR* ppszPassword) mut => VT.get_Password(ref this, ppszPassword);
+		public HRESULT get_Password(out PWSTR ppszPassword) mut => VT.get_Password(ref this, out ppszPassword);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, PWSTR pszTaskArg) put_Schedule;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, PWSTR* ppszTaskArg) get_Schedule;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, out PWSTR ppszTaskArg) get_Schedule;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, PWSTR pszURL) put_RootURL;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, PWSTR* ppszURL) get_RootURL;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, out PWSTR ppszURL) get_RootURL;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, BOOL fIsHierarchical) put_IsHierarchical;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, out BOOL pfIsHierarchical) get_IsHierarchical;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, BOOL fProvidesNotifications) put_ProvidesNotifications;
@@ -7733,9 +7742,9 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, AUTH_TYPE authType) put_AuthenticationType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, out AUTH_TYPE pAuthType) get_AuthenticationType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, PWSTR pszUser) put_User;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, PWSTR* ppszUser) get_User;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, out PWSTR ppszUser) get_User;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, PWSTR pszPassword) put_Password;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, PWSTR* ppszPassword) get_Password;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchRoot self, out PWSTR ppszPassword) get_Password;
 		}
 	}
 	[CRepr]
@@ -7748,7 +7757,7 @@ static
 		public HRESULT Next(uint32 celt, ISearchRoot** rgelt, uint32* pceltFetched) mut => VT.Next(ref this, celt, rgelt, pceltFetched);
 		public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
 		public HRESULT Reset() mut => VT.Reset(ref this);
-		public HRESULT Clone(IEnumSearchRoots** ppenum) mut => VT.Clone(ref this, ppenum);
+		public HRESULT Clone(out IEnumSearchRoots* ppenum) mut => VT.Clone(ref this, out ppenum);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -7756,7 +7765,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSearchRoots self, uint32 celt, ISearchRoot** rgelt, uint32* pceltFetched) Next;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSearchRoots self, uint32 celt) Skip;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSearchRoots self) Reset;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSearchRoots self, IEnumSearchRoots** ppenum) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSearchRoots self, out IEnumSearchRoots* ppenum) Clone;
 		}
 	}
 	[CRepr]
@@ -7766,7 +7775,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_PatternOrURL(PWSTR* ppszPatternOrURL) mut => VT.get_PatternOrURL(ref this, ppszPatternOrURL);
+		public HRESULT get_PatternOrURL(out PWSTR ppszPatternOrURL) mut => VT.get_PatternOrURL(ref this, out ppszPatternOrURL);
 		public HRESULT get_IsIncluded(out BOOL pfIsIncluded) mut => VT.get_IsIncluded(ref this, out pfIsIncluded);
 		public HRESULT get_IsDefault(out BOOL pfIsDefault) mut => VT.get_IsDefault(ref this, out pfIsDefault);
 		public HRESULT get_FollowFlags(out uint32 pFollowFlags) mut => VT.get_FollowFlags(ref this, out pFollowFlags);
@@ -7774,7 +7783,7 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchScopeRule self, PWSTR* ppszPatternOrURL) get_PatternOrURL;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchScopeRule self, out PWSTR ppszPatternOrURL) get_PatternOrURL;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchScopeRule self, out BOOL pfIsIncluded) get_IsIncluded;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchScopeRule self, out BOOL pfIsDefault) get_IsDefault;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchScopeRule self, out uint32 pFollowFlags) get_FollowFlags;
@@ -7790,7 +7799,7 @@ static
 		public HRESULT Next(uint32 celt, ISearchScopeRule** pprgelt, uint32* pceltFetched) mut => VT.Next(ref this, celt, pprgelt, pceltFetched);
 		public HRESULT Skip(uint32 celt) mut => VT.Skip(ref this, celt);
 		public HRESULT Reset() mut => VT.Reset(ref this);
-		public HRESULT Clone(IEnumSearchScopeRules** ppenum) mut => VT.Clone(ref this, ppenum);
+		public HRESULT Clone(out IEnumSearchScopeRules* ppenum) mut => VT.Clone(ref this, out ppenum);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -7798,7 +7807,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSearchScopeRules self, uint32 celt, ISearchScopeRule** pprgelt, uint32* pceltFetched) Next;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSearchScopeRules self, uint32 celt) Skip;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSearchScopeRules self) Reset;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSearchScopeRules self, IEnumSearchScopeRules** ppenum) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSearchScopeRules self, out IEnumSearchScopeRules* ppenum) Clone;
 		}
 	}
 	[CRepr]
@@ -7811,11 +7820,11 @@ static
 		public HRESULT AddDefaultScopeRule(PWSTR pszURL, BOOL fInclude, uint32 fFollowFlags) mut => VT.AddDefaultScopeRule(ref this, pszURL, fInclude, fFollowFlags);
 		public HRESULT AddRoot(ISearchRoot* pSearchRoot) mut => VT.AddRoot(ref this, pSearchRoot);
 		public HRESULT RemoveRoot(PWSTR pszURL) mut => VT.RemoveRoot(ref this, pszURL);
-		public HRESULT EnumerateRoots(IEnumSearchRoots** ppSearchRoots) mut => VT.EnumerateRoots(ref this, ppSearchRoots);
+		public HRESULT EnumerateRoots(out IEnumSearchRoots* ppSearchRoots) mut => VT.EnumerateRoots(ref this, out ppSearchRoots);
 		public HRESULT AddHierarchicalScope(PWSTR pszURL, BOOL fInclude, BOOL fDefault, BOOL fOverrideChildren) mut => VT.AddHierarchicalScope(ref this, pszURL, fInclude, fDefault, fOverrideChildren);
 		public HRESULT AddUserScopeRule(PWSTR pszURL, BOOL fInclude, BOOL fOverrideChildren, uint32 fFollowFlags) mut => VT.AddUserScopeRule(ref this, pszURL, fInclude, fOverrideChildren, fFollowFlags);
 		public HRESULT RemoveScopeRule(PWSTR pszRule) mut => VT.RemoveScopeRule(ref this, pszRule);
-		public HRESULT EnumerateScopeRules(IEnumSearchScopeRules** ppSearchScopeRules) mut => VT.EnumerateScopeRules(ref this, ppSearchScopeRules);
+		public HRESULT EnumerateScopeRules(out IEnumSearchScopeRules* ppSearchScopeRules) mut => VT.EnumerateScopeRules(ref this, out ppSearchScopeRules);
 		public HRESULT HasParentScopeRule(PWSTR pszURL, out BOOL pfHasParentRule) mut => VT.HasParentScopeRule(ref this, pszURL, out pfHasParentRule);
 		public HRESULT HasChildScopeRule(PWSTR pszURL, out BOOL pfHasChildRule) mut => VT.HasChildScopeRule(ref this, pszURL, out pfHasChildRule);
 		public HRESULT IncludedInCrawlScope(PWSTR pszURL, out BOOL pfIsIncluded) mut => VT.IncludedInCrawlScope(ref this, pszURL, out pfIsIncluded);
@@ -7831,11 +7840,11 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCrawlScopeManager self, PWSTR pszURL, BOOL fInclude, uint32 fFollowFlags) AddDefaultScopeRule;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCrawlScopeManager self, ISearchRoot* pSearchRoot) AddRoot;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCrawlScopeManager self, PWSTR pszURL) RemoveRoot;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCrawlScopeManager self, IEnumSearchRoots** ppSearchRoots) EnumerateRoots;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCrawlScopeManager self, out IEnumSearchRoots* ppSearchRoots) EnumerateRoots;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCrawlScopeManager self, PWSTR pszURL, BOOL fInclude, BOOL fDefault, BOOL fOverrideChildren) AddHierarchicalScope;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCrawlScopeManager self, PWSTR pszURL, BOOL fInclude, BOOL fOverrideChildren, uint32 fFollowFlags) AddUserScopeRule;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCrawlScopeManager self, PWSTR pszRule) RemoveScopeRule;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCrawlScopeManager self, IEnumSearchScopeRules** ppSearchScopeRules) EnumerateScopeRules;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCrawlScopeManager self, out IEnumSearchScopeRules* ppSearchScopeRules) EnumerateScopeRules;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCrawlScopeManager self, PWSTR pszURL, out BOOL pfHasParentRule) HasParentScopeRule;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCrawlScopeManager self, PWSTR pszURL, out BOOL pfHasChildRule) HasChildScopeRule;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCrawlScopeManager self, PWSTR pszURL, out BOOL pfIsIncluded) IncludedInCrawlScope;
@@ -7938,8 +7947,8 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(PWSTR* pszName) mut => VT.get_Name(ref this, pszName);
-		public HRESULT GetParameter(PWSTR pszName, PROPVARIANT** ppValue) mut => VT.GetParameter(ref this, pszName, ppValue);
+		public HRESULT get_Name(out PWSTR pszName) mut => VT.get_Name(ref this, out pszName);
+		public HRESULT GetParameter(PWSTR pszName, out PROPVARIANT* ppValue) mut => VT.GetParameter(ref this, pszName, out ppValue);
 		public HRESULT SetParameter(PWSTR pszName, ref PROPVARIANT pValue) mut => VT.SetParameter(ref this, pszName, ref pValue);
 		public HRESULT GetCatalogStatus(out CatalogStatus pStatus, out CatalogPausedReason pPausedReason) mut => VT.GetCatalogStatus(ref this, out pStatus, out pPausedReason);
 		public HRESULT Reset() mut => VT.Reset(ref this);
@@ -7952,24 +7961,24 @@ static
 		public HRESULT get_DataTimeout(out uint32 pdwDataTimeout) mut => VT.get_DataTimeout(ref this, out pdwDataTimeout);
 		public HRESULT NumberOfItems(out int32 plCount) mut => VT.NumberOfItems(ref this, out plCount);
 		public HRESULT NumberOfItemsToIndex(out int32 plIncrementalCount, out int32 plNotificationQueue, out int32 plHighPriorityQueue) mut => VT.NumberOfItemsToIndex(ref this, out plIncrementalCount, out plNotificationQueue, out plHighPriorityQueue);
-		public HRESULT URLBeingIndexed(PWSTR* pszUrl) mut => VT.URLBeingIndexed(ref this, pszUrl);
+		public HRESULT URLBeingIndexed(out PWSTR pszUrl) mut => VT.URLBeingIndexed(ref this, out pszUrl);
 		public HRESULT GetURLIndexingState(PWSTR pszURL, out uint32 pdwState) mut => VT.GetURLIndexingState(ref this, pszURL, out pdwState);
-		public HRESULT GetPersistentItemsChangedSink(ISearchPersistentItemsChangedSink** ppISearchPersistentItemsChangedSink) mut => VT.GetPersistentItemsChangedSink(ref this, ppISearchPersistentItemsChangedSink);
+		public HRESULT GetPersistentItemsChangedSink(out ISearchPersistentItemsChangedSink* ppISearchPersistentItemsChangedSink) mut => VT.GetPersistentItemsChangedSink(ref this, out ppISearchPersistentItemsChangedSink);
 		public HRESULT RegisterViewForNotification(PWSTR pszView, ISearchViewChangedSink* pViewChangedSink, out uint32 pdwCookie) mut => VT.RegisterViewForNotification(ref this, pszView, pViewChangedSink, out pdwCookie);
 		public HRESULT GetItemsChangedSink(ISearchNotifyInlineSite* pISearchNotifyInlineSite, in Guid riid, void** ppv, out Guid pGUIDCatalogResetSignature, out Guid pGUIDCheckPointSignature, out uint32 pdwLastCheckPointNumber) mut => VT.GetItemsChangedSink(ref this, pISearchNotifyInlineSite, riid, ppv, out pGUIDCatalogResetSignature, out pGUIDCheckPointSignature, out pdwLastCheckPointNumber);
 		public HRESULT UnregisterViewForNotification(uint32 dwCookie) mut => VT.UnregisterViewForNotification(ref this, dwCookie);
 		public HRESULT SetExtensionClusion(PWSTR pszExtension, BOOL fExclude) mut => VT.SetExtensionClusion(ref this, pszExtension, fExclude);
-		public HRESULT EnumerateExcludedExtensions(IEnumString** ppExtensions) mut => VT.EnumerateExcludedExtensions(ref this, ppExtensions);
-		public HRESULT GetQueryHelper(ISearchQueryHelper** ppSearchQueryHelper) mut => VT.GetQueryHelper(ref this, ppSearchQueryHelper);
+		public HRESULT EnumerateExcludedExtensions(out IEnumString* ppExtensions) mut => VT.EnumerateExcludedExtensions(ref this, out ppExtensions);
+		public HRESULT GetQueryHelper(out ISearchQueryHelper* ppSearchQueryHelper) mut => VT.GetQueryHelper(ref this, out ppSearchQueryHelper);
 		public HRESULT put_DiacriticSensitivity(BOOL fDiacriticSensitive) mut => VT.put_DiacriticSensitivity(ref this, fDiacriticSensitive);
 		public HRESULT get_DiacriticSensitivity(out BOOL pfDiacriticSensitive) mut => VT.get_DiacriticSensitivity(ref this, out pfDiacriticSensitive);
-		public HRESULT GetCrawlScopeManager(ISearchCrawlScopeManager** ppCrawlScopeManager) mut => VT.GetCrawlScopeManager(ref this, ppCrawlScopeManager);
+		public HRESULT GetCrawlScopeManager(out ISearchCrawlScopeManager* ppCrawlScopeManager) mut => VT.GetCrawlScopeManager(ref this, out ppCrawlScopeManager);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, PWSTR* pszName) get_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, PWSTR pszName, PROPVARIANT** ppValue) GetParameter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, out PWSTR pszName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, PWSTR pszName, out PROPVARIANT* ppValue) GetParameter;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, PWSTR pszName, ref PROPVARIANT pValue) SetParameter;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, out CatalogStatus pStatus, out CatalogPausedReason pPausedReason) GetCatalogStatus;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self) Reset;
@@ -7982,18 +7991,18 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, out uint32 pdwDataTimeout) get_DataTimeout;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, out int32 plCount) NumberOfItems;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, out int32 plIncrementalCount, out int32 plNotificationQueue, out int32 plHighPriorityQueue) NumberOfItemsToIndex;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, PWSTR* pszUrl) URLBeingIndexed;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, out PWSTR pszUrl) URLBeingIndexed;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, PWSTR pszURL, out uint32 pdwState) GetURLIndexingState;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, ISearchPersistentItemsChangedSink** ppISearchPersistentItemsChangedSink) GetPersistentItemsChangedSink;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, out ISearchPersistentItemsChangedSink* ppISearchPersistentItemsChangedSink) GetPersistentItemsChangedSink;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, PWSTR pszView, ISearchViewChangedSink* pViewChangedSink, out uint32 pdwCookie) RegisterViewForNotification;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, ISearchNotifyInlineSite* pISearchNotifyInlineSite, in Guid riid, void** ppv, out Guid pGUIDCatalogResetSignature, out Guid pGUIDCheckPointSignature, out uint32 pdwLastCheckPointNumber) GetItemsChangedSink;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, uint32 dwCookie) UnregisterViewForNotification;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, PWSTR pszExtension, BOOL fExclude) SetExtensionClusion;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, IEnumString** ppExtensions) EnumerateExcludedExtensions;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, ISearchQueryHelper** ppSearchQueryHelper) GetQueryHelper;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, out IEnumString* ppExtensions) EnumerateExcludedExtensions;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, out ISearchQueryHelper* ppSearchQueryHelper) GetQueryHelper;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, BOOL fDiacriticSensitive) put_DiacriticSensitivity;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, out BOOL pfDiacriticSensitive) get_DiacriticSensitivity;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, ISearchCrawlScopeManager** ppCrawlScopeManager) GetCrawlScopeManager;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCatalogManager self, out ISearchCrawlScopeManager* ppCrawlScopeManager) GetCrawlScopeManager;
 		}
 	}
 	[CRepr]
@@ -8018,7 +8027,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_ConnectionString(PWSTR* pszConnectionString) mut => VT.get_ConnectionString(ref this, pszConnectionString);
+		public HRESULT get_ConnectionString(out PWSTR pszConnectionString) mut => VT.get_ConnectionString(ref this, out pszConnectionString);
 		public HRESULT put_QueryContentLocale(uint32 lcid) mut => VT.put_QueryContentLocale(ref this, lcid);
 		public HRESULT get_QueryContentLocale(out uint32 plcid) mut => VT.get_QueryContentLocale(ref this, out plcid);
 		public HRESULT put_QueryKeywordLocale(uint32 lcid) mut => VT.put_QueryKeywordLocale(ref this, lcid);
@@ -8028,14 +8037,14 @@ static
 		public HRESULT put_QuerySyntax(SEARCH_QUERY_SYNTAX querySyntax) mut => VT.put_QuerySyntax(ref this, querySyntax);
 		public HRESULT get_QuerySyntax(out SEARCH_QUERY_SYNTAX pQuerySyntax) mut => VT.get_QuerySyntax(ref this, out pQuerySyntax);
 		public HRESULT put_QueryContentProperties(PWSTR pszContentProperties) mut => VT.put_QueryContentProperties(ref this, pszContentProperties);
-		public HRESULT get_QueryContentProperties(PWSTR* ppszContentProperties) mut => VT.get_QueryContentProperties(ref this, ppszContentProperties);
+		public HRESULT get_QueryContentProperties(out PWSTR ppszContentProperties) mut => VT.get_QueryContentProperties(ref this, out ppszContentProperties);
 		public HRESULT put_QuerySelectColumns(PWSTR pszSelectColumns) mut => VT.put_QuerySelectColumns(ref this, pszSelectColumns);
-		public HRESULT get_QuerySelectColumns(PWSTR* ppszSelectColumns) mut => VT.get_QuerySelectColumns(ref this, ppszSelectColumns);
+		public HRESULT get_QuerySelectColumns(out PWSTR ppszSelectColumns) mut => VT.get_QuerySelectColumns(ref this, out ppszSelectColumns);
 		public HRESULT put_QueryWhereRestrictions(PWSTR pszRestrictions) mut => VT.put_QueryWhereRestrictions(ref this, pszRestrictions);
-		public HRESULT get_QueryWhereRestrictions(PWSTR* ppszRestrictions) mut => VT.get_QueryWhereRestrictions(ref this, ppszRestrictions);
+		public HRESULT get_QueryWhereRestrictions(out PWSTR ppszRestrictions) mut => VT.get_QueryWhereRestrictions(ref this, out ppszRestrictions);
 		public HRESULT put_QuerySorting(PWSTR pszSorting) mut => VT.put_QuerySorting(ref this, pszSorting);
-		public HRESULT get_QuerySorting(PWSTR* ppszSorting) mut => VT.get_QuerySorting(ref this, ppszSorting);
-		public HRESULT GenerateSQLFromUserQuery(PWSTR pszQuery, PWSTR* ppszSQL) mut => VT.GenerateSQLFromUserQuery(ref this, pszQuery, ppszSQL);
+		public HRESULT get_QuerySorting(out PWSTR ppszSorting) mut => VT.get_QuerySorting(ref this, out ppszSorting);
+		public HRESULT GenerateSQLFromUserQuery(PWSTR pszQuery, out PWSTR ppszSQL) mut => VT.GenerateSQLFromUserQuery(ref this, pszQuery, out ppszSQL);
 		public HRESULT WriteProperties(int32 itemID, uint32 dwNumberOfColumns, PROPERTYKEY* pColumns, SEARCH_COLUMN_PROPERTIES* pValues, FILETIME* pftGatherModifiedTime) mut => VT.WriteProperties(ref this, itemID, dwNumberOfColumns, pColumns, pValues, pftGatherModifiedTime);
 		public HRESULT put_QueryMaxResults(int32 cMaxResults) mut => VT.put_QueryMaxResults(ref this, cMaxResults);
 		public HRESULT get_QueryMaxResults(out int32 pcMaxResults) mut => VT.get_QueryMaxResults(ref this, out pcMaxResults);
@@ -8043,7 +8052,7 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, PWSTR* pszConnectionString) get_ConnectionString;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, out PWSTR pszConnectionString) get_ConnectionString;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, uint32 lcid) put_QueryContentLocale;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, out uint32 plcid) get_QueryContentLocale;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, uint32 lcid) put_QueryKeywordLocale;
@@ -8053,14 +8062,14 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, SEARCH_QUERY_SYNTAX querySyntax) put_QuerySyntax;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, out SEARCH_QUERY_SYNTAX pQuerySyntax) get_QuerySyntax;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, PWSTR pszContentProperties) put_QueryContentProperties;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, PWSTR* ppszContentProperties) get_QueryContentProperties;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, out PWSTR ppszContentProperties) get_QueryContentProperties;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, PWSTR pszSelectColumns) put_QuerySelectColumns;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, PWSTR* ppszSelectColumns) get_QuerySelectColumns;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, out PWSTR ppszSelectColumns) get_QuerySelectColumns;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, PWSTR pszRestrictions) put_QueryWhereRestrictions;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, PWSTR* ppszRestrictions) get_QueryWhereRestrictions;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, out PWSTR ppszRestrictions) get_QueryWhereRestrictions;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, PWSTR pszSorting) put_QuerySorting;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, PWSTR* ppszSorting) get_QuerySorting;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, PWSTR pszQuery, PWSTR* ppszSQL) GenerateSQLFromUserQuery;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, out PWSTR ppszSorting) get_QuerySorting;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, PWSTR pszQuery, out PWSTR ppszSQL) GenerateSQLFromUserQuery;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, int32 itemID, uint32 dwNumberOfColumns, PROPERTYKEY* pColumns, SEARCH_COLUMN_PROPERTIES* pValues, FILETIME* pftGatherModifiedTime) WriteProperties;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, int32 cMaxResults) put_QueryMaxResults;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchQueryHelper self, out int32 pcMaxResults) get_QueryMaxResults;
@@ -8113,15 +8122,15 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetIndexerVersionStr(PWSTR* ppszVersionString) mut => VT.GetIndexerVersionStr(ref this, ppszVersionString);
+		public HRESULT GetIndexerVersionStr(out PWSTR ppszVersionString) mut => VT.GetIndexerVersionStr(ref this, out ppszVersionString);
 		public HRESULT GetIndexerVersion(out uint32 pdwMajor, out uint32 pdwMinor) mut => VT.GetIndexerVersion(ref this, out pdwMajor, out pdwMinor);
-		public HRESULT GetParameter(PWSTR pszName, PROPVARIANT** ppValue) mut => VT.GetParameter(ref this, pszName, ppValue);
+		public HRESULT GetParameter(PWSTR pszName, out PROPVARIANT* ppValue) mut => VT.GetParameter(ref this, pszName, out ppValue);
 		public HRESULT SetParameter(PWSTR pszName, in PROPVARIANT pValue) mut => VT.SetParameter(ref this, pszName, pValue);
-		public HRESULT get_ProxyName(PWSTR* ppszProxyName) mut => VT.get_ProxyName(ref this, ppszProxyName);
-		public HRESULT get_BypassList(PWSTR* ppszBypassList) mut => VT.get_BypassList(ref this, ppszBypassList);
+		public HRESULT get_ProxyName(out PWSTR ppszProxyName) mut => VT.get_ProxyName(ref this, out ppszProxyName);
+		public HRESULT get_BypassList(out PWSTR ppszBypassList) mut => VT.get_BypassList(ref this, out ppszBypassList);
 		public HRESULT SetProxy(PROXY_ACCESS sUseProxy, BOOL fLocalByPassProxy, uint32 dwPortNumber, PWSTR pszProxyName, PWSTR pszByPassList) mut => VT.SetProxy(ref this, sUseProxy, fLocalByPassProxy, dwPortNumber, pszProxyName, pszByPassList);
-		public HRESULT GetCatalog(PWSTR pszCatalog, ISearchCatalogManager** ppCatalogManager) mut => VT.GetCatalog(ref this, pszCatalog, ppCatalogManager);
-		public HRESULT get_UserAgent(PWSTR* ppszUserAgent) mut => VT.get_UserAgent(ref this, ppszUserAgent);
+		public HRESULT GetCatalog(PWSTR pszCatalog, out ISearchCatalogManager* ppCatalogManager) mut => VT.GetCatalog(ref this, pszCatalog, out ppCatalogManager);
+		public HRESULT get_UserAgent(out PWSTR ppszUserAgent) mut => VT.get_UserAgent(ref this, out ppszUserAgent);
 		public HRESULT put_UserAgent(PWSTR pszUserAgent) mut => VT.put_UserAgent(ref this, pszUserAgent);
 		public HRESULT get_UseProxy(out PROXY_ACCESS pUseProxy) mut => VT.get_UseProxy(ref this, out pUseProxy);
 		public HRESULT get_LocalBypass(out BOOL pfLocalBypass) mut => VT.get_LocalBypass(ref this, out pfLocalBypass);
@@ -8130,15 +8139,15 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, PWSTR* ppszVersionString) GetIndexerVersionStr;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, out PWSTR ppszVersionString) GetIndexerVersionStr;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, out uint32 pdwMajor, out uint32 pdwMinor) GetIndexerVersion;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, PWSTR pszName, PROPVARIANT** ppValue) GetParameter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, PWSTR pszName, out PROPVARIANT* ppValue) GetParameter;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, PWSTR pszName, in PROPVARIANT pValue) SetParameter;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, PWSTR* ppszProxyName) get_ProxyName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, PWSTR* ppszBypassList) get_BypassList;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, out PWSTR ppszProxyName) get_ProxyName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, out PWSTR ppszBypassList) get_BypassList;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, PROXY_ACCESS sUseProxy, BOOL fLocalByPassProxy, uint32 dwPortNumber, PWSTR pszProxyName, PWSTR pszByPassList) SetProxy;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, PWSTR pszCatalog, ISearchCatalogManager** ppCatalogManager) GetCatalog;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, PWSTR* ppszUserAgent) get_UserAgent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, PWSTR pszCatalog, out ISearchCatalogManager* ppCatalogManager) GetCatalog;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, out PWSTR ppszUserAgent) get_UserAgent;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, PWSTR pszUserAgent) put_UserAgent;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, out PROXY_ACCESS pUseProxy) get_UseProxy;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager self, out BOOL pfLocalBypass) get_LocalBypass;
@@ -8152,13 +8161,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT CreateCatalog(PWSTR pszCatalog, ISearchCatalogManager** ppCatalogManager) mut => VT.CreateCatalog(ref this, pszCatalog, ppCatalogManager);
+		public HRESULT CreateCatalog(PWSTR pszCatalog, out ISearchCatalogManager* ppCatalogManager) mut => VT.CreateCatalog(ref this, pszCatalog, out ppCatalogManager);
 		public HRESULT DeleteCatalog(PWSTR pszCatalog) mut => VT.DeleteCatalog(ref this, pszCatalog);
 
 		[CRepr]
 		public struct VTable : ISearchManager.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager2 self, PWSTR pszCatalog, ISearchCatalogManager** ppCatalogManager) CreateCatalog;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager2 self, PWSTR pszCatalog, out ISearchCatalogManager* ppCatalogManager) CreateCatalog;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchManager2 self, PWSTR pszCatalog) DeleteCatalog;
 		}
 	}
@@ -8511,21 +8520,21 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetDataSource(IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszInitializationString, in Guid riid, IUnknown** ppDataSource) mut => VT.GetDataSource(ref this, pUnkOuter, dwClsCtx, pwszInitializationString, riid, ppDataSource);
-		public HRESULT GetInitializationString(IUnknown* pDataSource, uint8 fIncludePassword, PWSTR* ppwszInitString) mut => VT.GetInitializationString(ref this, pDataSource, fIncludePassword, ppwszInitString);
-		public HRESULT CreateDBInstance(in Guid clsidProvider, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszReserved, in Guid riid, IUnknown** ppDataSource) mut => VT.CreateDBInstance(ref this, clsidProvider, pUnkOuter, dwClsCtx, pwszReserved, riid, ppDataSource);
+		public HRESULT GetDataSource(IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszInitializationString, in Guid riid, out IUnknown* ppDataSource) mut => VT.GetDataSource(ref this, pUnkOuter, dwClsCtx, pwszInitializationString, riid, out ppDataSource);
+		public HRESULT GetInitializationString(IUnknown* pDataSource, uint8 fIncludePassword, out PWSTR ppwszInitString) mut => VT.GetInitializationString(ref this, pDataSource, fIncludePassword, out ppwszInitString);
+		public HRESULT CreateDBInstance(in Guid clsidProvider, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszReserved, in Guid riid, out IUnknown* ppDataSource) mut => VT.CreateDBInstance(ref this, clsidProvider, pUnkOuter, dwClsCtx, pwszReserved, riid, out ppDataSource);
 		public HRESULT CreateDBInstanceEx(in Guid clsidProvider, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszReserved, ref COSERVERINFO pServerInfo, uint32 cmq, MULTI_QI* rgmqResults) mut => VT.CreateDBInstanceEx(ref this, clsidProvider, pUnkOuter, dwClsCtx, pwszReserved, ref pServerInfo, cmq, rgmqResults);
-		public HRESULT LoadStringFromStorage(PWSTR pwszFileName, PWSTR* ppwszInitializationString) mut => VT.LoadStringFromStorage(ref this, pwszFileName, ppwszInitializationString);
+		public HRESULT LoadStringFromStorage(PWSTR pwszFileName, out PWSTR ppwszInitializationString) mut => VT.LoadStringFromStorage(ref this, pwszFileName, out ppwszInitializationString);
 		public HRESULT WriteStringToStorage(PWSTR pwszFileName, PWSTR pwszInitializationString, uint32 dwCreationDisposition) mut => VT.WriteStringToStorage(ref this, pwszFileName, pwszInitializationString, dwCreationDisposition);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataInitialize self, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszInitializationString, in Guid riid, IUnknown** ppDataSource) GetDataSource;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataInitialize self, IUnknown* pDataSource, uint8 fIncludePassword, PWSTR* ppwszInitString) GetInitializationString;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataInitialize self, in Guid clsidProvider, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszReserved, in Guid riid, IUnknown** ppDataSource) CreateDBInstance;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataInitialize self, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszInitializationString, in Guid riid, out IUnknown* ppDataSource) GetDataSource;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataInitialize self, IUnknown* pDataSource, uint8 fIncludePassword, out PWSTR ppwszInitString) GetInitializationString;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataInitialize self, in Guid clsidProvider, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszReserved, in Guid riid, out IUnknown* ppDataSource) CreateDBInstance;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataInitialize self, in Guid clsidProvider, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszReserved, ref COSERVERINFO pServerInfo, uint32 cmq, MULTI_QI* rgmqResults) CreateDBInstanceEx;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataInitialize self, PWSTR pwszFileName, PWSTR* ppwszInitializationString) LoadStringFromStorage;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataInitialize self, PWSTR pwszFileName, out PWSTR ppwszInitializationString) LoadStringFromStorage;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataInitialize self, PWSTR pwszFileName, PWSTR pwszInitializationString, uint32 dwCreationDisposition) WriteStringToStorage;
 		}
 	}
@@ -8538,16 +8547,16 @@ static
 		
 		public HRESULT get_hWnd(out int64 phwndParent) mut => VT.get_hWnd(ref this, out phwndParent);
 		public HRESULT put_hWnd(int64 hwndParent) mut => VT.put_hWnd(ref this, hwndParent);
-		public HRESULT PromptNew(IDispatch** ppADOConnection) mut => VT.PromptNew(ref this, ppADOConnection);
-		public HRESULT PromptEdit(IDispatch** ppADOConnection, out int16 pbSuccess) mut => VT.PromptEdit(ref this, ppADOConnection, out pbSuccess);
+		public HRESULT PromptNew(out IDispatch* ppADOConnection) mut => VT.PromptNew(ref this, out ppADOConnection);
+		public HRESULT PromptEdit(out IDispatch* ppADOConnection, out int16 pbSuccess) mut => VT.PromptEdit(ref this, out ppADOConnection, out pbSuccess);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataSourceLocator self, out int64 phwndParent) get_hWnd;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataSourceLocator self, int64 hwndParent) put_hWnd;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataSourceLocator self, IDispatch** ppADOConnection) PromptNew;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataSourceLocator self, IDispatch** ppADOConnection, out int16 pbSuccess) PromptEdit;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataSourceLocator self, out IDispatch* ppADOConnection) PromptNew;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataSourceLocator self, out IDispatch* ppADOConnection, out int16 pbSuccess) PromptEdit;
 		}
 	}
 	[CRepr]

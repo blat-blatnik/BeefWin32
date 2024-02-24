@@ -2081,8 +2081,8 @@ static
 		
 		public HRESULT GetDocumentTypeFromFile(PWSTR filename, out XPS_DOCUMENT_TYPE documentType) mut => VT.GetDocumentTypeFromFile(ref this, filename, out documentType);
 		public HRESULT GetDocumentTypeFromStream(ref IStream xpsDocumentStream, out XPS_DOCUMENT_TYPE documentType) mut => VT.GetDocumentTypeFromStream(ref this, ref xpsDocumentStream, out documentType);
-		public HRESULT ConvertHDPhotoToJpegXR(out IXpsOMImageResource imageResource) mut => VT.ConvertHDPhotoToJpegXR(ref this, out imageResource);
-		public HRESULT ConvertJpegXRToHDPhoto(out IXpsOMImageResource imageResource) mut => VT.ConvertJpegXRToHDPhoto(ref this, out imageResource);
+		public HRESULT ConvertHDPhotoToJpegXR(ref IXpsOMImageResource imageResource) mut => VT.ConvertHDPhotoToJpegXR(ref this, ref imageResource);
+		public HRESULT ConvertJpegXRToHDPhoto(ref IXpsOMImageResource imageResource) mut => VT.ConvertJpegXRToHDPhoto(ref this, ref imageResource);
 		public HRESULT CreatePackageWriterOnFile1(PWSTR fileName, ref SECURITY_ATTRIBUTES securityAttributes, uint32 flagsAndAttributes, BOOL optimizeMarkupSize, XPS_INTERLEAVING interleaving, ref IOpcPartUri documentSequencePartName, ref IXpsOMCoreProperties coreProperties, ref IXpsOMImageResource packageThumbnail, ref IXpsOMPrintTicketResource documentSequencePrintTicket, ref IOpcPartUri discardControlPartName, XPS_DOCUMENT_TYPE documentType, out IXpsOMPackageWriter* packageWriter) mut => VT.CreatePackageWriterOnFile1(ref this, fileName, ref securityAttributes, flagsAndAttributes, optimizeMarkupSize, interleaving, ref documentSequencePartName, ref coreProperties, ref packageThumbnail, ref documentSequencePrintTicket, ref discardControlPartName, documentType, out packageWriter);
 		public HRESULT CreatePackageWriterOnStream1(ref ISequentialStream outputStream, BOOL optimizeMarkupSize, XPS_INTERLEAVING interleaving, ref IOpcPartUri documentSequencePartName, ref IXpsOMCoreProperties coreProperties, ref IXpsOMImageResource packageThumbnail, ref IXpsOMPrintTicketResource documentSequencePrintTicket, ref IOpcPartUri discardControlPartName, XPS_DOCUMENT_TYPE documentType, out IXpsOMPackageWriter* packageWriter) mut => VT.CreatePackageWriterOnStream1(ref this, ref outputStream, optimizeMarkupSize, interleaving, ref documentSequencePartName, ref coreProperties, ref packageThumbnail, ref documentSequencePrintTicket, ref discardControlPartName, documentType, out packageWriter);
 		public HRESULT CreatePackage1(out IXpsOMPackage1* package) mut => VT.CreatePackage1(ref this, out package);
@@ -2097,8 +2097,8 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsOMObjectFactory1 self, PWSTR filename, out XPS_DOCUMENT_TYPE documentType) GetDocumentTypeFromFile;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsOMObjectFactory1 self, ref IStream xpsDocumentStream, out XPS_DOCUMENT_TYPE documentType) GetDocumentTypeFromStream;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsOMObjectFactory1 self, out IXpsOMImageResource imageResource) ConvertHDPhotoToJpegXR;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsOMObjectFactory1 self, out IXpsOMImageResource imageResource) ConvertJpegXRToHDPhoto;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsOMObjectFactory1 self, ref IXpsOMImageResource imageResource) ConvertHDPhotoToJpegXR;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsOMObjectFactory1 self, ref IXpsOMImageResource imageResource) ConvertJpegXRToHDPhoto;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsOMObjectFactory1 self, PWSTR fileName, ref SECURITY_ATTRIBUTES securityAttributes, uint32 flagsAndAttributes, BOOL optimizeMarkupSize, XPS_INTERLEAVING interleaving, ref IOpcPartUri documentSequencePartName, ref IXpsOMCoreProperties coreProperties, ref IXpsOMImageResource packageThumbnail, ref IXpsOMPrintTicketResource documentSequencePrintTicket, ref IOpcPartUri discardControlPartName, XPS_DOCUMENT_TYPE documentType, out IXpsOMPackageWriter* packageWriter) CreatePackageWriterOnFile1;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsOMObjectFactory1 self, ref ISequentialStream outputStream, BOOL optimizeMarkupSize, XPS_INTERLEAVING interleaving, ref IOpcPartUri documentSequencePartName, ref IXpsOMCoreProperties coreProperties, ref IXpsOMImageResource packageThumbnail, ref IXpsOMPrintTicketResource documentSequencePrintTicket, ref IOpcPartUri discardControlPartName, XPS_DOCUMENT_TYPE documentType, out IXpsOMPackageWriter* packageWriter) CreatePackageWriterOnStream1;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsOMObjectFactory1 self, out IXpsOMPackage1* package) CreatePackage1;
@@ -2454,9 +2454,9 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DeviceCapabilitiesA(PSTR pDevice, PSTR pPort, DEVICE_CAPABILITIES fwCapability, PSTR pOutput, DEVMODEA* pDevMode);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DeviceCapabilitiesW(PWSTR pDevice, PWSTR pPort, DEVICE_CAPABILITIES fwCapability, PWSTR pOutput, DEVMODEW* pDevMode);
 	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 Escape(HDC hdc, int32 iEscape, int32 cjIn, PSTR pvIn, void* pvOut);

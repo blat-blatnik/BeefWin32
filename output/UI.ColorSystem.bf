@@ -109,6 +109,13 @@ static
 		UNREGISTERICMATCHER = 6,
 		QUERYMATCH = 7,
 	}
+	public enum ICM_MODE : int32
+	{
+		OFF = 1,
+		ON = 2,
+		QUERY = 3,
+		DONE_OUTSIDEDC = 4,
+	}
 	public enum COLOR_MATCH_TO_TARGET_ACTION : int32
 	{
 		ENABLE = 1,
@@ -631,7 +638,7 @@ static
 	
 	#region Functions
 	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SetICMMode(HDC hdc, int32 mode);
+	public static extern int32 SetICMMode(HDC hdc, ICM_MODE mode);
 	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CheckColorsInGamut(HDC hdc, RGBTRIPLE* lpRGBTriple, void* dlpBuffer, uint32 nCount);
 	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]

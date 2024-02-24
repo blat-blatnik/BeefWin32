@@ -666,6 +666,13 @@
 		,"Value":2
 		,"Attrs":[]
 	}
+	,{
+		"Name":"HTTP_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HTTP/1.0"
+		,"Attrs":[]
+	}
 ]
 
 ,"Types":[
@@ -1154,7 +1161,7 @@
 			,{"Name":"MaxRecordSize","Type":{"Kind":"Native","Name":"UInt16"},"Attrs":[]}
 			,{"Name":"RolloverType","Type":{"Kind":"ApiRef","Name":"HTTP_LOGGING_ROLLOVER_TYPE","TargetKind":"Default","Api":"Networking.HttpServer","Parents":[]},"Attrs":[]}
 			,{"Name":"RolloverSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":[]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":[]}
 		]
 		,"NestedTypes":[
 		]
@@ -1900,7 +1907,7 @@
 		,"PackingSize":0
 		,"Fields":[
 			{"Name":"AuthStatus","Type":{"Kind":"ApiRef","Name":"HTTP_AUTH_STATUS","TargetKind":"Default","Api":"Networking.HttpServer","Parents":[]},"Attrs":[]}
-			,{"Name":"SecStatus","Type":{"Kind":"Native","Name":"Int32"},"Attrs":[]}
+			,{"Name":"SecStatus","Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"AuthType","Type":{"Kind":"ApiRef","Name":"HTTP_REQUEST_AUTH_TYPE","TargetKind":"Default","Api":"Networking.HttpServer","Parents":[]},"Attrs":[]}
 			,{"Name":"AccessToken","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}

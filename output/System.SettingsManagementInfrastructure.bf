@@ -7,6 +7,13 @@ using Win32.System.Com;
 static
 {
 	#region Constants
+	public const String WCM_SETTINGS_ID_NAME = "name";
+	public const String WCM_SETTINGS_ID_VERSION = "version";
+	public const String WCM_SETTINGS_ID_LANGUAGE = "language";
+	public const String WCM_SETTINGS_ID_ARCHITECTURE = "architecture";
+	public const String WCM_SETTINGS_ID_TOKEN = "token";
+	public const String WCM_SETTINGS_ID_URI = "uri";
+	public const String WCM_SETTINGS_ID_VERSION_SCOPE = "versionScope";
 	public const uint32 WCM_SETTINGS_ID_FLAG_REFERENCE = 0;
 	public const uint32 WCM_SETTINGS_ID_FLAG_DEFINITION = 1;
 	public const uint32 LINK_STORE_TO_ENGINE_INSTANCE = 1;

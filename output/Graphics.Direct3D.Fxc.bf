@@ -9,6 +9,8 @@ using Win32.Graphics.Direct3D11;
 static
 {
 	#region Constants
+	public const String D3DCOMPILER_DLL_W = "d3dcompiler_47.dll";
+	public const String D3DCOMPILER_DLL_A = "d3dcompiler_47.dll";
 	public const uint32 D3D_COMPILER_VERSION = 47;
 	public const uint32 D3DCOMPILE_DEBUG = 1;
 	public const uint32 D3DCOMPILE_SKIP_VALIDATION = 2;

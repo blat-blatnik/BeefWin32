@@ -1,17 +1,18 @@
 namespace Win32.Devices.Fax;
 
 using System;
+using Win32.Devices.Properties;
 using Win32.Foundation;
 using Win32.Graphics.Gdi;
 using Win32.System.Com;
 using Win32.System.IO;
 using Win32.System.Registry;
 using Win32.UI.Controls;
-using Win32.UI.Shell.PropertiesSystem;
 
 static
 {
 	#region Constants
+	public const uint32 prv_DEFAULT_PREFETCH_SIZE = 100;
 	public const uint32 FS_INITIALIZING = 536870912;
 	public const uint32 FS_DIALING = 536870913;
 	public const uint32 FS_TRANSMITTING = 536870914;
@@ -32,6 +33,9 @@ static
 	public const uint32 FS_ANSWERED = 545259520;
 	public const uint32 FAXDEVRECEIVE_SIZE = 4096;
 	public const uint32 FAXDEVREPORTSTATUS_SIZE = 4096;
+	public const String MS_FAXROUTE_PRINTING_GUID = "{aec1b37c-9af2-11d0-abf7-00c04fd91a4e}";
+	public const String MS_FAXROUTE_FOLDER_GUID = "{92041a90-9af2-11d0-abf7-00c04fd91a4e}";
+	public const String MS_FAXROUTE_EMAIL_GUID = "{6bbf7bfe-9af2-11d0-abf7-00c04fd91a4e}";
 	public const int32 FAX_ERR_START = 7001;
 	public const int32 FAX_ERR_SRV_OUTOFMEMORY = 7001;
 	public const int32 FAX_ERR_GROUP_NOT_FOUND = 7002;
@@ -133,6 +137,11 @@ static
 	public const uint32 FAX_PORT_QUERY = 16;
 	public const uint32 FAX_PORT_SET = 32;
 	public const uint32 FAX_JOB_MANAGE = 64;
+	public const String CF_MSFAXSRV_DEVICE_ID = "FAXSRV_DeviceID";
+	public const String CF_MSFAXSRV_FSP_GUID = "FAXSRV_FSPGuid";
+	public const String CF_MSFAXSRV_SERVER_NAME = "FAXSRV_ServerName";
+	public const String CF_MSFAXSRV_ROUTEEXT_NAME = "FAXSRV_RoutingExtName";
+	public const String CF_MSFAXSRV_ROUTING_METHOD_GUID = "FAXSRV_RoutingMethodGuid";
 	public const uint32 STI_UNICODE = 1;
 	public const Guid CLSID_Sti = .(0xb323f8e0, 0x2e68, 0x11d0, 0x90, 0xea, 0x00, 0xaa, 0x00, 0x60, 0xf8, 0x6c);
 	public const Guid GUID_DeviceArrivedLaunch = .(0x740d9ee6, 0x70f1, 0x11d1, 0xad, 0x10, 0x00, 0xa0, 0x24, 0x38, 0xad, 0x48);
@@ -186,6 +195,10 @@ static
 	public const uint32 STI_SUBSCRIBE_FLAG_WINDOW = 1;
 	public const uint32 STI_SUBSCRIBE_FLAG_EVENT = 2;
 	public const uint32 MAX_NOTIFICATION_DATA = 64;
+	public const String STI_ADD_DEVICE_BROADCAST_ACTION = "Arrival";
+	public const String STI_REMOVE_DEVICE_BROADCAST_ACTION = "Removal";
+	public const String STI_ADD_DEVICE_BROADCAST_STRING = "STI\\";
+	public const String STI_REMOVE_DEVICE_BROADCAST_STRING = "STI\\";
 	public const uint32 STI_DEVICE_CREATE_STATUS = 1;
 	public const uint32 STI_DEVICE_CREATE_DATA = 2;
 	public const uint32 STI_DEVICE_CREATE_BOTH = 3;
@@ -219,10 +232,46 @@ static
 	public const HRESULT STIERR_INVALID_HW_TYPE = -2147024883;
 	public const HRESULT STIERR_NOEVENTS = -2147024637;
 	public const HRESULT STIERR_DEVICE_NOTREADY = -2147024875;
+	public const String REGSTR_VAL_TYPE_W = "Type";
+	public const String REGSTR_VAL_VENDOR_NAME_W = "Vendor";
+	public const String REGSTR_VAL_DEVICETYPE_W = "DeviceType";
+	public const String REGSTR_VAL_DEVICESUBTYPE_W = "DeviceSubType";
+	public const String REGSTR_VAL_DEV_NAME_W = "DeviceName";
+	public const String REGSTR_VAL_DRIVER_DESC_W = "DriverDesc";
+	public const String REGSTR_VAL_FRIENDLY_NAME_W = "FriendlyName";
+	public const String REGSTR_VAL_GENERIC_CAPS_W = "Capabilities";
+	public const String REGSTR_VAL_HARDWARE_W = "HardwareConfig";
+	public const String REGSTR_VAL_HARDWARE = "HardwareConfig";
+	public const String REGSTR_VAL_DEVICE_NAME_W = "DriverDesc";
+	public const String REGSTR_VAL_DATA_W = "DeviceData";
+	public const String REGSTR_VAL_GUID_W = "GUID";
+	public const String REGSTR_VAL_GUID = "GUID";
+	public const String REGSTR_VAL_LAUNCH_APPS_W = "LaunchApplications";
+	public const String REGSTR_VAL_LAUNCH_APPS = "LaunchApplications";
+	public const String REGSTR_VAL_LAUNCHABLE_W = "Launchable";
+	public const String REGSTR_VAL_LAUNCHABLE = "Launchable";
+	public const String REGSTR_VAL_SHUTDOWNDELAY_W = "ShutdownIfUnusedDelay";
+	public const String REGSTR_VAL_SHUTDOWNDELAY = "ShutdownIfUnusedDelay";
+	public const String IS_DIGITAL_CAMERA_STR = "IsDigitalCamera";
 	public const uint32 IS_DIGITAL_CAMERA_VAL = 1;
+	public const String SUPPORTS_MSCPLUS_STR = "SupportsMSCPlus";
 	public const uint32 SUPPORTS_MSCPLUS_VAL = 1;
-	public const PROPERTYKEY DEVPKEY_WIA_DeviceType = .(.(0x6bdd1fc6, 0x810f, 0x11d0, 0xbe, 0xc7, 0x08, 0x00, 0x2b, 0xe2, 0x09, 0x2f), 2);
-	public const PROPERTYKEY DEVPKEY_WIA_USDClassId = .(.(0x6bdd1fc6, 0x810f, 0x11d0, 0xbe, 0xc7, 0x08, 0x00, 0x2b, 0xe2, 0x09, 0x2f), 3);
+	public const String STI_DEVICE_VALUE_TWAIN_NAME = "TwainDS";
+	public const String STI_DEVICE_VALUE_ISIS_NAME = "ISISDriverName";
+	public const String STI_DEVICE_VALUE_ICM_PROFILE = "ICMProfile";
+	public const String STI_DEVICE_VALUE_DEFAULT_LAUNCHAPP = "DefaultLaunchApp";
+	public const String STI_DEVICE_VALUE_TIMEOUT = "PollTimeout";
+	public const String STI_DEVICE_VALUE_DISABLE_NOTIFICATIONS = "DisableNotifications";
+	public const String REGSTR_VAL_BAUDRATE = "BaudRate";
+	public const String STI_DEVICE_VALUE_TWAIN_NAME_A = "TwainDS";
+	public const String STI_DEVICE_VALUE_ISIS_NAME_A = "ISISDriverName";
+	public const String STI_DEVICE_VALUE_ICM_PROFILE_A = "ICMProfile";
+	public const String STI_DEVICE_VALUE_DEFAULT_LAUNCHAPP_A = "DefaultLaunchApp";
+	public const String STI_DEVICE_VALUE_TIMEOUT_A = "PollTimeout";
+	public const String STI_DEVICE_VALUE_DISABLE_NOTIFICATIONS_A = "DisableNotifications";
+	public const String REGSTR_VAL_BAUDRATE_A = "BaudRate";
+	public const DEVPROPKEY DEVPKEY_WIA_DeviceType = .(.(0x6bdd1fc6, 0x810f, 0x11d0, 0xbe, 0xc7, 0x08, 0x00, 0x2b, 0xe2, 0x09, 0x2f), 2);
+	public const DEVPROPKEY DEVPKEY_WIA_USDClassId = .(.(0x6bdd1fc6, 0x810f, 0x11d0, 0xbe, 0xc7, 0x08, 0x00, 0x2b, 0xe2, 0x09, 0x2f), 3);
 	public const uint32 STI_USD_GENCAP_NATIVE_PUSHSUPPORT = 1;
 	public const uint32 STI_DEVICE_CREATE_FOR_MONITOR = 16777216;
 	public const int32 lDEFAULT_PREFETCH_SIZE = 100;
@@ -1179,18 +1228,18 @@ static
 		public HRESULT get_Size(out int32 plSize) mut => VT.get_Size(ref this, out plSize);
 		public HRESULT get_CurrentPage(out int32 plCurrentPage) mut => VT.get_CurrentPage(ref this, out plCurrentPage);
 		public HRESULT get_DeviceId(out int32 plDeviceId) mut => VT.get_DeviceId(ref this, out plDeviceId);
-		public HRESULT get_CSID(BSTR* pbstrCSID) mut => VT.get_CSID(ref this, pbstrCSID);
-		public HRESULT get_TSID(BSTR* pbstrTSID) mut => VT.get_TSID(ref this, pbstrTSID);
+		public HRESULT get_CSID(out BSTR pbstrCSID) mut => VT.get_CSID(ref this, out pbstrCSID);
+		public HRESULT get_TSID(out BSTR pbstrTSID) mut => VT.get_TSID(ref this, out pbstrTSID);
 		public HRESULT get_ExtendedStatusCode(out FAX_JOB_EXTENDED_STATUS_ENUM pExtendedStatusCode) mut => VT.get_ExtendedStatusCode(ref this, out pExtendedStatusCode);
-		public HRESULT get_ExtendedStatus(BSTR* pbstrExtendedStatus) mut => VT.get_ExtendedStatus(ref this, pbstrExtendedStatus);
+		public HRESULT get_ExtendedStatus(out BSTR pbstrExtendedStatus) mut => VT.get_ExtendedStatus(ref this, out pbstrExtendedStatus);
 		public HRESULT get_AvailableOperations(out FAX_JOB_OPERATIONS_ENUM pAvailableOperations) mut => VT.get_AvailableOperations(ref this, out pAvailableOperations);
 		public HRESULT get_Retries(out int32 plRetries) mut => VT.get_Retries(ref this, out plRetries);
 		public HRESULT get_JobType(out FAX_JOB_TYPE_ENUM pJobType) mut => VT.get_JobType(ref this, out pJobType);
 		public HRESULT get_ScheduledTime(out double pdateScheduledTime) mut => VT.get_ScheduledTime(ref this, out pdateScheduledTime);
 		public HRESULT get_TransmissionStart(out double pdateTransmissionStart) mut => VT.get_TransmissionStart(ref this, out pdateTransmissionStart);
 		public HRESULT get_TransmissionEnd(out double pdateTransmissionEnd) mut => VT.get_TransmissionEnd(ref this, out pdateTransmissionEnd);
-		public HRESULT get_CallerId(BSTR* pbstrCallerId) mut => VT.get_CallerId(ref this, pbstrCallerId);
-		public HRESULT get_RoutingInformation(BSTR* pbstrRoutingInformation) mut => VT.get_RoutingInformation(ref this, pbstrRoutingInformation);
+		public HRESULT get_CallerId(out BSTR pbstrCallerId) mut => VT.get_CallerId(ref this, out pbstrCallerId);
+		public HRESULT get_RoutingInformation(out BSTR pbstrRoutingInformation) mut => VT.get_RoutingInformation(ref this, out pbstrRoutingInformation);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
@@ -1200,18 +1249,18 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, out int32 plSize) get_Size;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, out int32 plCurrentPage) get_CurrentPage;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, out int32 plDeviceId) get_DeviceId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, BSTR* pbstrCSID) get_CSID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, BSTR* pbstrTSID) get_TSID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, out BSTR pbstrCSID) get_CSID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, out BSTR pbstrTSID) get_TSID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, out FAX_JOB_EXTENDED_STATUS_ENUM pExtendedStatusCode) get_ExtendedStatusCode;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, BSTR* pbstrExtendedStatus) get_ExtendedStatus;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, out BSTR pbstrExtendedStatus) get_ExtendedStatus;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, out FAX_JOB_OPERATIONS_ENUM pAvailableOperations) get_AvailableOperations;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, out int32 plRetries) get_Retries;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, out FAX_JOB_TYPE_ENUM pJobType) get_JobType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, out double pdateScheduledTime) get_ScheduledTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, out double pdateTransmissionStart) get_TransmissionStart;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, out double pdateTransmissionEnd) get_TransmissionEnd;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, BSTR* pbstrCallerId) get_CallerId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, BSTR* pbstrRoutingInformation) get_RoutingInformation;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, out BSTR pbstrCallerId) get_CallerId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxJobStatus self, out BSTR pbstrRoutingInformation) get_RoutingInformation;
 		}
 	}
 	[CRepr]
@@ -1222,21 +1271,21 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT Connect(BSTR bstrServerName) mut => VT.Connect(ref this, bstrServerName);
-		public HRESULT get_ServerName(BSTR* pbstrServerName) mut => VT.get_ServerName(ref this, pbstrServerName);
-		public HRESULT GetDeviceProviders(IFaxDeviceProviders** ppFaxDeviceProviders) mut => VT.GetDeviceProviders(ref this, ppFaxDeviceProviders);
-		public HRESULT GetDevices(IFaxDevices** ppFaxDevices) mut => VT.GetDevices(ref this, ppFaxDevices);
-		public HRESULT get_InboundRouting(IFaxInboundRouting** ppFaxInboundRouting) mut => VT.get_InboundRouting(ref this, ppFaxInboundRouting);
-		public HRESULT get_Folders(IFaxFolders** pFaxFolders) mut => VT.get_Folders(ref this, pFaxFolders);
-		public HRESULT get_LoggingOptions(IFaxLoggingOptions** ppFaxLoggingOptions) mut => VT.get_LoggingOptions(ref this, ppFaxLoggingOptions);
+		public HRESULT get_ServerName(out BSTR pbstrServerName) mut => VT.get_ServerName(ref this, out pbstrServerName);
+		public HRESULT GetDeviceProviders(out IFaxDeviceProviders* ppFaxDeviceProviders) mut => VT.GetDeviceProviders(ref this, out ppFaxDeviceProviders);
+		public HRESULT GetDevices(out IFaxDevices* ppFaxDevices) mut => VT.GetDevices(ref this, out ppFaxDevices);
+		public HRESULT get_InboundRouting(out IFaxInboundRouting* ppFaxInboundRouting) mut => VT.get_InboundRouting(ref this, out ppFaxInboundRouting);
+		public HRESULT get_Folders(out IFaxFolders* pFaxFolders) mut => VT.get_Folders(ref this, out pFaxFolders);
+		public HRESULT get_LoggingOptions(out IFaxLoggingOptions* ppFaxLoggingOptions) mut => VT.get_LoggingOptions(ref this, out ppFaxLoggingOptions);
 		public HRESULT get_MajorVersion(out int32 plMajorVersion) mut => VT.get_MajorVersion(ref this, out plMajorVersion);
 		public HRESULT get_MinorVersion(out int32 plMinorVersion) mut => VT.get_MinorVersion(ref this, out plMinorVersion);
 		public HRESULT get_MajorBuild(out int32 plMajorBuild) mut => VT.get_MajorBuild(ref this, out plMajorBuild);
 		public HRESULT get_MinorBuild(out int32 plMinorBuild) mut => VT.get_MinorBuild(ref this, out plMinorBuild);
 		public HRESULT get_Debug(out int16 pbDebug) mut => VT.get_Debug(ref this, out pbDebug);
-		public HRESULT get_Activity(IFaxActivity** ppFaxActivity) mut => VT.get_Activity(ref this, ppFaxActivity);
-		public HRESULT get_OutboundRouting(IFaxOutboundRouting** ppFaxOutboundRouting) mut => VT.get_OutboundRouting(ref this, ppFaxOutboundRouting);
-		public HRESULT get_ReceiptOptions(IFaxReceiptOptions** ppFaxReceiptOptions) mut => VT.get_ReceiptOptions(ref this, ppFaxReceiptOptions);
-		public HRESULT get_Security(IFaxSecurity** ppFaxSecurity) mut => VT.get_Security(ref this, ppFaxSecurity);
+		public HRESULT get_Activity(out IFaxActivity* ppFaxActivity) mut => VT.get_Activity(ref this, out ppFaxActivity);
+		public HRESULT get_OutboundRouting(out IFaxOutboundRouting* ppFaxOutboundRouting) mut => VT.get_OutboundRouting(ref this, out ppFaxOutboundRouting);
+		public HRESULT get_ReceiptOptions(out IFaxReceiptOptions* ppFaxReceiptOptions) mut => VT.get_ReceiptOptions(ref this, out ppFaxReceiptOptions);
+		public HRESULT get_Security(out IFaxSecurity* ppFaxSecurity) mut => VT.get_Security(ref this, out ppFaxSecurity);
 		public HRESULT Disconnect() mut => VT.Disconnect(ref this);
 		public HRESULT GetExtensionProperty(BSTR bstrGUID, out VARIANT pvProperty) mut => VT.GetExtensionProperty(ref this, bstrGUID, out pvProperty);
 		public HRESULT SetExtensionProperty(BSTR bstrGUID, VARIANT vProperty) mut => VT.SetExtensionProperty(ref this, bstrGUID, vProperty);
@@ -1252,21 +1301,21 @@ static
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, BSTR bstrServerName) Connect;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, BSTR* pbstrServerName) get_ServerName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, IFaxDeviceProviders** ppFaxDeviceProviders) GetDeviceProviders;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, IFaxDevices** ppFaxDevices) GetDevices;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, IFaxInboundRouting** ppFaxInboundRouting) get_InboundRouting;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, IFaxFolders** pFaxFolders) get_Folders;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, IFaxLoggingOptions** ppFaxLoggingOptions) get_LoggingOptions;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, out BSTR pbstrServerName) get_ServerName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, out IFaxDeviceProviders* ppFaxDeviceProviders) GetDeviceProviders;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, out IFaxDevices* ppFaxDevices) GetDevices;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, out IFaxInboundRouting* ppFaxInboundRouting) get_InboundRouting;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, out IFaxFolders* pFaxFolders) get_Folders;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, out IFaxLoggingOptions* ppFaxLoggingOptions) get_LoggingOptions;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, out int32 plMajorVersion) get_MajorVersion;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, out int32 plMinorVersion) get_MinorVersion;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, out int32 plMajorBuild) get_MajorBuild;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, out int32 plMinorBuild) get_MinorBuild;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, out int16 pbDebug) get_Debug;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, IFaxActivity** ppFaxActivity) get_Activity;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, IFaxOutboundRouting** ppFaxOutboundRouting) get_OutboundRouting;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, IFaxReceiptOptions** ppFaxReceiptOptions) get_ReceiptOptions;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, IFaxSecurity** ppFaxSecurity) get_Security;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, out IFaxActivity* ppFaxActivity) get_Activity;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, out IFaxOutboundRouting* ppFaxOutboundRouting) get_OutboundRouting;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, out IFaxReceiptOptions* ppFaxReceiptOptions) get_ReceiptOptions;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, out IFaxSecurity* ppFaxSecurity) get_Security;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self) Disconnect;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, BSTR bstrGUID, out VARIANT pvProperty) GetExtensionProperty;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer self, BSTR bstrGUID, VARIANT vProperty) SetExtensionProperty;
@@ -1286,15 +1335,15 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
-		public HRESULT get_Item(VARIANT vIndex, IFaxDeviceProvider** pFaxDeviceProvider) mut => VT.get_Item(ref this, vIndex, pFaxDeviceProvider);
+		public HRESULT get__NewEnum(out IUnknown* ppUnk) mut => VT.get__NewEnum(ref this, out ppUnk);
+		public HRESULT get_Item(VARIANT vIndex, out IFaxDeviceProvider* pFaxDeviceProvider) mut => VT.get_Item(ref this, vIndex, out pFaxDeviceProvider);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProviders self, IUnknown** ppUnk) get__NewEnum;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProviders self, VARIANT vIndex, IFaxDeviceProvider** pFaxDeviceProvider) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProviders self, out IUnknown* ppUnk) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProviders self, VARIANT vIndex, out IFaxDeviceProvider* pFaxDeviceProvider) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProviders self, out int32 plCount) get_Count;
 		}
 	}
@@ -1305,18 +1354,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
-		public HRESULT get_Item(VARIANT vIndex, IFaxDevice** pFaxDevice) mut => VT.get_Item(ref this, vIndex, pFaxDevice);
+		public HRESULT get__NewEnum(out IUnknown* ppUnk) mut => VT.get__NewEnum(ref this, out ppUnk);
+		public HRESULT get_Item(VARIANT vIndex, out IFaxDevice* pFaxDevice) mut => VT.get_Item(ref this, vIndex, out pFaxDevice);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
-		public HRESULT get_ItemById(int32 lId, IFaxDevice** ppFaxDevice) mut => VT.get_ItemById(ref this, lId, ppFaxDevice);
+		public HRESULT get_ItemById(int32 lId, out IFaxDevice* ppFaxDevice) mut => VT.get_ItemById(ref this, lId, out ppFaxDevice);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevices self, IUnknown** ppUnk) get__NewEnum;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevices self, VARIANT vIndex, IFaxDevice** pFaxDevice) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevices self, out IUnknown* ppUnk) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevices self, VARIANT vIndex, out IFaxDevice* pFaxDevice) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevices self, out int32 plCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevices self, int32 lId, IFaxDevice** ppFaxDevice) get_ItemById;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevices self, int32 lId, out IFaxDevice* ppFaxDevice) get_ItemById;
 		}
 	}
 	[CRepr]
@@ -1326,14 +1375,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetExtensions(IFaxInboundRoutingExtensions** pFaxInboundRoutingExtensions) mut => VT.GetExtensions(ref this, pFaxInboundRoutingExtensions);
-		public HRESULT GetMethods(IFaxInboundRoutingMethods** pFaxInboundRoutingMethods) mut => VT.GetMethods(ref this, pFaxInboundRoutingMethods);
+		public HRESULT GetExtensions(out IFaxInboundRoutingExtensions* pFaxInboundRoutingExtensions) mut => VT.GetExtensions(ref this, out pFaxInboundRoutingExtensions);
+		public HRESULT GetMethods(out IFaxInboundRoutingMethods* pFaxInboundRoutingMethods) mut => VT.GetMethods(ref this, out pFaxInboundRoutingMethods);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRouting self, IFaxInboundRoutingExtensions** pFaxInboundRoutingExtensions) GetExtensions;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRouting self, IFaxInboundRoutingMethods** pFaxInboundRoutingMethods) GetMethods;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRouting self, out IFaxInboundRoutingExtensions* pFaxInboundRoutingExtensions) GetExtensions;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRouting self, out IFaxInboundRoutingMethods* pFaxInboundRoutingMethods) GetMethods;
 		}
 	}
 	[CRepr]
@@ -1343,18 +1392,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_OutgoingQueue(IFaxOutgoingQueue** pFaxOutgoingQueue) mut => VT.get_OutgoingQueue(ref this, pFaxOutgoingQueue);
-		public HRESULT get_IncomingQueue(IFaxIncomingQueue** pFaxIncomingQueue) mut => VT.get_IncomingQueue(ref this, pFaxIncomingQueue);
-		public HRESULT get_IncomingArchive(IFaxIncomingArchive** pFaxIncomingArchive) mut => VT.get_IncomingArchive(ref this, pFaxIncomingArchive);
-		public HRESULT get_OutgoingArchive(IFaxOutgoingArchive** pFaxOutgoingArchive) mut => VT.get_OutgoingArchive(ref this, pFaxOutgoingArchive);
+		public HRESULT get_OutgoingQueue(out IFaxOutgoingQueue* pFaxOutgoingQueue) mut => VT.get_OutgoingQueue(ref this, out pFaxOutgoingQueue);
+		public HRESULT get_IncomingQueue(out IFaxIncomingQueue* pFaxIncomingQueue) mut => VT.get_IncomingQueue(ref this, out pFaxIncomingQueue);
+		public HRESULT get_IncomingArchive(out IFaxIncomingArchive* pFaxIncomingArchive) mut => VT.get_IncomingArchive(ref this, out pFaxIncomingArchive);
+		public HRESULT get_OutgoingArchive(out IFaxOutgoingArchive* pFaxOutgoingArchive) mut => VT.get_OutgoingArchive(ref this, out pFaxOutgoingArchive);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxFolders self, IFaxOutgoingQueue** pFaxOutgoingQueue) get_OutgoingQueue;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxFolders self, IFaxIncomingQueue** pFaxIncomingQueue) get_IncomingQueue;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxFolders self, IFaxIncomingArchive** pFaxIncomingArchive) get_IncomingArchive;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxFolders self, IFaxOutgoingArchive** pFaxOutgoingArchive) get_OutgoingArchive;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxFolders self, out IFaxOutgoingQueue* pFaxOutgoingQueue) get_OutgoingQueue;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxFolders self, out IFaxIncomingQueue* pFaxIncomingQueue) get_IncomingQueue;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxFolders self, out IFaxIncomingArchive* pFaxIncomingArchive) get_IncomingArchive;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxFolders self, out IFaxOutgoingArchive* pFaxOutgoingArchive) get_OutgoingArchive;
 		}
 	}
 	[CRepr]
@@ -1364,14 +1413,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_EventLogging(IFaxEventLogging** pFaxEventLogging) mut => VT.get_EventLogging(ref this, pFaxEventLogging);
-		public HRESULT get_ActivityLogging(IFaxActivityLogging** pFaxActivityLogging) mut => VT.get_ActivityLogging(ref this, pFaxActivityLogging);
+		public HRESULT get_EventLogging(out IFaxEventLogging* pFaxEventLogging) mut => VT.get_EventLogging(ref this, out pFaxEventLogging);
+		public HRESULT get_ActivityLogging(out IFaxActivityLogging* pFaxActivityLogging) mut => VT.get_ActivityLogging(ref this, out pFaxActivityLogging);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxLoggingOptions self, IFaxEventLogging** pFaxEventLogging) get_EventLogging;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxLoggingOptions self, IFaxActivityLogging** pFaxActivityLogging) get_ActivityLogging;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxLoggingOptions self, out IFaxEventLogging* pFaxEventLogging) get_EventLogging;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxLoggingOptions self, out IFaxActivityLogging* pFaxActivityLogging) get_ActivityLogging;
 		}
 	}
 	[CRepr]
@@ -1404,14 +1453,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetGroups(IFaxOutboundRoutingGroups** pFaxOutboundRoutingGroups) mut => VT.GetGroups(ref this, pFaxOutboundRoutingGroups);
-		public HRESULT GetRules(IFaxOutboundRoutingRules** pFaxOutboundRoutingRules) mut => VT.GetRules(ref this, pFaxOutboundRoutingRules);
+		public HRESULT GetGroups(out IFaxOutboundRoutingGroups* pFaxOutboundRoutingGroups) mut => VT.GetGroups(ref this, out pFaxOutboundRoutingGroups);
+		public HRESULT GetRules(out IFaxOutboundRoutingRules* pFaxOutboundRoutingRules) mut => VT.GetRules(ref this, out pFaxOutboundRoutingRules);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRouting self, IFaxOutboundRoutingGroups** pFaxOutboundRoutingGroups) GetGroups;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRouting self, IFaxOutboundRoutingRules** pFaxOutboundRoutingRules) GetRules;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRouting self, out IFaxOutboundRoutingGroups* pFaxOutboundRoutingGroups) GetGroups;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRouting self, out IFaxOutboundRoutingRules* pFaxOutboundRoutingRules) GetRules;
 		}
 	}
 	[CRepr]
@@ -1423,17 +1472,17 @@ static
 		
 		public HRESULT get_AuthenticationType(out FAX_SMTP_AUTHENTICATION_TYPE_ENUM pType) mut => VT.get_AuthenticationType(ref this, out pType);
 		public HRESULT put_AuthenticationType(FAX_SMTP_AUTHENTICATION_TYPE_ENUM Type) mut => VT.put_AuthenticationType(ref this, Type);
-		public HRESULT get_SMTPServer(BSTR* pbstrSMTPServer) mut => VT.get_SMTPServer(ref this, pbstrSMTPServer);
+		public HRESULT get_SMTPServer(out BSTR pbstrSMTPServer) mut => VT.get_SMTPServer(ref this, out pbstrSMTPServer);
 		public HRESULT put_SMTPServer(BSTR bstrSMTPServer) mut => VT.put_SMTPServer(ref this, bstrSMTPServer);
 		public HRESULT get_SMTPPort(out int32 plSMTPPort) mut => VT.get_SMTPPort(ref this, out plSMTPPort);
 		public HRESULT put_SMTPPort(int32 lSMTPPort) mut => VT.put_SMTPPort(ref this, lSMTPPort);
-		public HRESULT get_SMTPSender(BSTR* pbstrSMTPSender) mut => VT.get_SMTPSender(ref this, pbstrSMTPSender);
+		public HRESULT get_SMTPSender(out BSTR pbstrSMTPSender) mut => VT.get_SMTPSender(ref this, out pbstrSMTPSender);
 		public HRESULT put_SMTPSender(BSTR bstrSMTPSender) mut => VT.put_SMTPSender(ref this, bstrSMTPSender);
-		public HRESULT get_SMTPUser(BSTR* pbstrSMTPUser) mut => VT.get_SMTPUser(ref this, pbstrSMTPUser);
+		public HRESULT get_SMTPUser(out BSTR pbstrSMTPUser) mut => VT.get_SMTPUser(ref this, out pbstrSMTPUser);
 		public HRESULT put_SMTPUser(BSTR bstrSMTPUser) mut => VT.put_SMTPUser(ref this, bstrSMTPUser);
 		public HRESULT get_AllowedReceipts(out FAX_RECEIPT_TYPE_ENUM pAllowedReceipts) mut => VT.get_AllowedReceipts(ref this, out pAllowedReceipts);
 		public HRESULT put_AllowedReceipts(FAX_RECEIPT_TYPE_ENUM AllowedReceipts) mut => VT.put_AllowedReceipts(ref this, AllowedReceipts);
-		public HRESULT get_SMTPPassword(BSTR* pbstrSMTPPassword) mut => VT.get_SMTPPassword(ref this, pbstrSMTPPassword);
+		public HRESULT get_SMTPPassword(out BSTR pbstrSMTPPassword) mut => VT.get_SMTPPassword(ref this, out pbstrSMTPPassword);
 		public HRESULT put_SMTPPassword(BSTR bstrSMTPPassword) mut => VT.put_SMTPPassword(ref this, bstrSMTPPassword);
 		public HRESULT Refresh() mut => VT.Refresh(ref this);
 		public HRESULT Save() mut => VT.Save(ref this);
@@ -1445,17 +1494,17 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, out FAX_SMTP_AUTHENTICATION_TYPE_ENUM pType) get_AuthenticationType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, FAX_SMTP_AUTHENTICATION_TYPE_ENUM Type) put_AuthenticationType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, BSTR* pbstrSMTPServer) get_SMTPServer;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, out BSTR pbstrSMTPServer) get_SMTPServer;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, BSTR bstrSMTPServer) put_SMTPServer;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, out int32 plSMTPPort) get_SMTPPort;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, int32 lSMTPPort) put_SMTPPort;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, BSTR* pbstrSMTPSender) get_SMTPSender;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, out BSTR pbstrSMTPSender) get_SMTPSender;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, BSTR bstrSMTPSender) put_SMTPSender;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, BSTR* pbstrSMTPUser) get_SMTPUser;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, out BSTR pbstrSMTPUser) get_SMTPUser;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, BSTR bstrSMTPUser) put_SMTPUser;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, out FAX_RECEIPT_TYPE_ENUM pAllowedReceipts) get_AllowedReceipts;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, FAX_RECEIPT_TYPE_ENUM AllowedReceipts) put_AllowedReceipts;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, BSTR* pbstrSMTPPassword) get_SMTPPassword;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, out BSTR pbstrSMTPPassword) get_SMTPPassword;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self, BSTR bstrSMTPPassword) put_SMTPPassword;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self) Refresh;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxReceiptOptions self) Save;
@@ -1497,21 +1546,21 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Body(BSTR* pbstrBody) mut => VT.get_Body(ref this, pbstrBody);
+		public HRESULT get_Body(out BSTR pbstrBody) mut => VT.get_Body(ref this, out pbstrBody);
 		public HRESULT put_Body(BSTR bstrBody) mut => VT.put_Body(ref this, bstrBody);
-		public HRESULT get_Sender(IFaxSender** ppFaxSender) mut => VT.get_Sender(ref this, ppFaxSender);
-		public HRESULT get_Recipients(IFaxRecipients** ppFaxRecipients) mut => VT.get_Recipients(ref this, ppFaxRecipients);
-		public HRESULT get_CoverPage(BSTR* pbstrCoverPage) mut => VT.get_CoverPage(ref this, pbstrCoverPage);
+		public HRESULT get_Sender(out IFaxSender* ppFaxSender) mut => VT.get_Sender(ref this, out ppFaxSender);
+		public HRESULT get_Recipients(out IFaxRecipients* ppFaxRecipients) mut => VT.get_Recipients(ref this, out ppFaxRecipients);
+		public HRESULT get_CoverPage(out BSTR pbstrCoverPage) mut => VT.get_CoverPage(ref this, out pbstrCoverPage);
 		public HRESULT put_CoverPage(BSTR bstrCoverPage) mut => VT.put_CoverPage(ref this, bstrCoverPage);
-		public HRESULT get_Subject(BSTR* pbstrSubject) mut => VT.get_Subject(ref this, pbstrSubject);
+		public HRESULT get_Subject(out BSTR pbstrSubject) mut => VT.get_Subject(ref this, out pbstrSubject);
 		public HRESULT put_Subject(BSTR bstrSubject) mut => VT.put_Subject(ref this, bstrSubject);
-		public HRESULT get_Note(BSTR* pbstrNote) mut => VT.get_Note(ref this, pbstrNote);
+		public HRESULT get_Note(out BSTR pbstrNote) mut => VT.get_Note(ref this, out pbstrNote);
 		public HRESULT put_Note(BSTR bstrNote) mut => VT.put_Note(ref this, bstrNote);
 		public HRESULT get_ScheduleTime(out double pdateScheduleTime) mut => VT.get_ScheduleTime(ref this, out pdateScheduleTime);
 		public HRESULT put_ScheduleTime(double dateScheduleTime) mut => VT.put_ScheduleTime(ref this, dateScheduleTime);
-		public HRESULT get_ReceiptAddress(BSTR* pbstrReceiptAddress) mut => VT.get_ReceiptAddress(ref this, pbstrReceiptAddress);
+		public HRESULT get_ReceiptAddress(out BSTR pbstrReceiptAddress) mut => VT.get_ReceiptAddress(ref this, out pbstrReceiptAddress);
 		public HRESULT put_ReceiptAddress(BSTR bstrReceiptAddress) mut => VT.put_ReceiptAddress(ref this, bstrReceiptAddress);
-		public HRESULT get_DocumentName(BSTR* pbstrDocumentName) mut => VT.get_DocumentName(ref this, pbstrDocumentName);
+		public HRESULT get_DocumentName(out BSTR pbstrDocumentName) mut => VT.get_DocumentName(ref this, out pbstrDocumentName);
 		public HRESULT put_DocumentName(BSTR bstrDocumentName) mut => VT.put_DocumentName(ref this, bstrDocumentName);
 		public HRESULT get_CallHandle(out int32 plCallHandle) mut => VT.get_CallHandle(ref this, out plCallHandle);
 		public HRESULT put_CallHandle(int32 lCallHandle) mut => VT.put_CallHandle(ref this, lCallHandle);
@@ -1525,7 +1574,7 @@ static
 		public HRESULT put_GroupBroadcastReceipts(int16 bUseGrouping) mut => VT.put_GroupBroadcastReceipts(ref this, bUseGrouping);
 		public HRESULT get_Priority(out FAX_PRIORITY_TYPE_ENUM pPriority) mut => VT.get_Priority(ref this, out pPriority);
 		public HRESULT put_Priority(FAX_PRIORITY_TYPE_ENUM Priority) mut => VT.put_Priority(ref this, Priority);
-		public HRESULT get_TapiConnection(IDispatch** ppTapiConnection) mut => VT.get_TapiConnection(ref this, ppTapiConnection);
+		public HRESULT get_TapiConnection(out IDispatch* ppTapiConnection) mut => VT.get_TapiConnection(ref this, out ppTapiConnection);
 		public HRESULT putref_TapiConnection(IDispatch* pTapiConnection) mut => VT.putref_TapiConnection(ref this, pTapiConnection);
 		public HRESULT Submit(BSTR bstrFaxServerName, out VARIANT pvFaxOutgoingJobIDs) mut => VT.Submit(ref this, bstrFaxServerName, out pvFaxOutgoingJobIDs);
 		public HRESULT ConnectedSubmit(IFaxServer* pFaxServer, out VARIANT pvFaxOutgoingJobIDs) mut => VT.ConnectedSubmit(ref this, pFaxServer, out pvFaxOutgoingJobIDs);
@@ -1535,21 +1584,21 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, BSTR* pbstrBody) get_Body;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, out BSTR pbstrBody) get_Body;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, BSTR bstrBody) put_Body;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, IFaxSender** ppFaxSender) get_Sender;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, IFaxRecipients** ppFaxRecipients) get_Recipients;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, BSTR* pbstrCoverPage) get_CoverPage;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, out IFaxSender* ppFaxSender) get_Sender;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, out IFaxRecipients* ppFaxRecipients) get_Recipients;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, out BSTR pbstrCoverPage) get_CoverPage;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, BSTR bstrCoverPage) put_CoverPage;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, BSTR* pbstrSubject) get_Subject;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, out BSTR pbstrSubject) get_Subject;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, BSTR bstrSubject) put_Subject;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, BSTR* pbstrNote) get_Note;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, out BSTR pbstrNote) get_Note;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, BSTR bstrNote) put_Note;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, out double pdateScheduleTime) get_ScheduleTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, double dateScheduleTime) put_ScheduleTime;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, BSTR* pbstrReceiptAddress) get_ReceiptAddress;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, out BSTR pbstrReceiptAddress) get_ReceiptAddress;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, BSTR bstrReceiptAddress) put_ReceiptAddress;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, BSTR* pbstrDocumentName) get_DocumentName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, out BSTR pbstrDocumentName) get_DocumentName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, BSTR bstrDocumentName) put_DocumentName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, out int32 plCallHandle) get_CallHandle;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, int32 lCallHandle) put_CallHandle;
@@ -1563,7 +1612,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, int16 bUseGrouping) put_GroupBroadcastReceipts;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, out FAX_PRIORITY_TYPE_ENUM pPriority) get_Priority;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, FAX_PRIORITY_TYPE_ENUM Priority) put_Priority;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, IDispatch** ppTapiConnection) get_TapiConnection;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, out IDispatch* ppTapiConnection) get_TapiConnection;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, IDispatch* pTapiConnection) putref_TapiConnection;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, BSTR bstrFaxServerName, out VARIANT pvFaxOutgoingJobIDs) Submit;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument self, IFaxServer* pFaxServer, out VARIANT pvFaxOutgoingJobIDs) ConnectedSubmit;
@@ -1578,37 +1627,37 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_BillingCode(BSTR* pbstrBillingCode) mut => VT.get_BillingCode(ref this, pbstrBillingCode);
+		public HRESULT get_BillingCode(out BSTR pbstrBillingCode) mut => VT.get_BillingCode(ref this, out pbstrBillingCode);
 		public HRESULT put_BillingCode(BSTR bstrBillingCode) mut => VT.put_BillingCode(ref this, bstrBillingCode);
-		public HRESULT get_City(BSTR* pbstrCity) mut => VT.get_City(ref this, pbstrCity);
+		public HRESULT get_City(out BSTR pbstrCity) mut => VT.get_City(ref this, out pbstrCity);
 		public HRESULT put_City(BSTR bstrCity) mut => VT.put_City(ref this, bstrCity);
-		public HRESULT get_Company(BSTR* pbstrCompany) mut => VT.get_Company(ref this, pbstrCompany);
+		public HRESULT get_Company(out BSTR pbstrCompany) mut => VT.get_Company(ref this, out pbstrCompany);
 		public HRESULT put_Company(BSTR bstrCompany) mut => VT.put_Company(ref this, bstrCompany);
-		public HRESULT get_Country(BSTR* pbstrCountry) mut => VT.get_Country(ref this, pbstrCountry);
+		public HRESULT get_Country(out BSTR pbstrCountry) mut => VT.get_Country(ref this, out pbstrCountry);
 		public HRESULT put_Country(BSTR bstrCountry) mut => VT.put_Country(ref this, bstrCountry);
-		public HRESULT get_Department(BSTR* pbstrDepartment) mut => VT.get_Department(ref this, pbstrDepartment);
+		public HRESULT get_Department(out BSTR pbstrDepartment) mut => VT.get_Department(ref this, out pbstrDepartment);
 		public HRESULT put_Department(BSTR bstrDepartment) mut => VT.put_Department(ref this, bstrDepartment);
-		public HRESULT get_Email(BSTR* pbstrEmail) mut => VT.get_Email(ref this, pbstrEmail);
+		public HRESULT get_Email(out BSTR pbstrEmail) mut => VT.get_Email(ref this, out pbstrEmail);
 		public HRESULT put_Email(BSTR bstrEmail) mut => VT.put_Email(ref this, bstrEmail);
-		public HRESULT get_FaxNumber(BSTR* pbstrFaxNumber) mut => VT.get_FaxNumber(ref this, pbstrFaxNumber);
+		public HRESULT get_FaxNumber(out BSTR pbstrFaxNumber) mut => VT.get_FaxNumber(ref this, out pbstrFaxNumber);
 		public HRESULT put_FaxNumber(BSTR bstrFaxNumber) mut => VT.put_FaxNumber(ref this, bstrFaxNumber);
-		public HRESULT get_HomePhone(BSTR* pbstrHomePhone) mut => VT.get_HomePhone(ref this, pbstrHomePhone);
+		public HRESULT get_HomePhone(out BSTR pbstrHomePhone) mut => VT.get_HomePhone(ref this, out pbstrHomePhone);
 		public HRESULT put_HomePhone(BSTR bstrHomePhone) mut => VT.put_HomePhone(ref this, bstrHomePhone);
-		public HRESULT get_Name(BSTR* pbstrName) mut => VT.get_Name(ref this, pbstrName);
+		public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
 		public HRESULT put_Name(BSTR bstrName) mut => VT.put_Name(ref this, bstrName);
-		public HRESULT get_TSID(BSTR* pbstrTSID) mut => VT.get_TSID(ref this, pbstrTSID);
+		public HRESULT get_TSID(out BSTR pbstrTSID) mut => VT.get_TSID(ref this, out pbstrTSID);
 		public HRESULT put_TSID(BSTR bstrTSID) mut => VT.put_TSID(ref this, bstrTSID);
-		public HRESULT get_OfficePhone(BSTR* pbstrOfficePhone) mut => VT.get_OfficePhone(ref this, pbstrOfficePhone);
+		public HRESULT get_OfficePhone(out BSTR pbstrOfficePhone) mut => VT.get_OfficePhone(ref this, out pbstrOfficePhone);
 		public HRESULT put_OfficePhone(BSTR bstrOfficePhone) mut => VT.put_OfficePhone(ref this, bstrOfficePhone);
-		public HRESULT get_OfficeLocation(BSTR* pbstrOfficeLocation) mut => VT.get_OfficeLocation(ref this, pbstrOfficeLocation);
+		public HRESULT get_OfficeLocation(out BSTR pbstrOfficeLocation) mut => VT.get_OfficeLocation(ref this, out pbstrOfficeLocation);
 		public HRESULT put_OfficeLocation(BSTR bstrOfficeLocation) mut => VT.put_OfficeLocation(ref this, bstrOfficeLocation);
-		public HRESULT get_State(BSTR* pbstrState) mut => VT.get_State(ref this, pbstrState);
+		public HRESULT get_State(out BSTR pbstrState) mut => VT.get_State(ref this, out pbstrState);
 		public HRESULT put_State(BSTR bstrState) mut => VT.put_State(ref this, bstrState);
-		public HRESULT get_StreetAddress(BSTR* pbstrStreetAddress) mut => VT.get_StreetAddress(ref this, pbstrStreetAddress);
+		public HRESULT get_StreetAddress(out BSTR pbstrStreetAddress) mut => VT.get_StreetAddress(ref this, out pbstrStreetAddress);
 		public HRESULT put_StreetAddress(BSTR bstrStreetAddress) mut => VT.put_StreetAddress(ref this, bstrStreetAddress);
-		public HRESULT get_Title(BSTR* pbstrTitle) mut => VT.get_Title(ref this, pbstrTitle);
+		public HRESULT get_Title(out BSTR pbstrTitle) mut => VT.get_Title(ref this, out pbstrTitle);
 		public HRESULT put_Title(BSTR bstrTitle) mut => VT.put_Title(ref this, bstrTitle);
-		public HRESULT get_ZipCode(BSTR* pbstrZipCode) mut => VT.get_ZipCode(ref this, pbstrZipCode);
+		public HRESULT get_ZipCode(out BSTR pbstrZipCode) mut => VT.get_ZipCode(ref this, out pbstrZipCode);
 		public HRESULT put_ZipCode(BSTR bstrZipCode) mut => VT.put_ZipCode(ref this, bstrZipCode);
 		public HRESULT LoadDefaultSender() mut => VT.LoadDefaultSender(ref this);
 		public HRESULT SaveDefaultSender() mut => VT.SaveDefaultSender(ref this);
@@ -1616,37 +1665,37 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrBillingCode) get_BillingCode;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrBillingCode) get_BillingCode;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrBillingCode) put_BillingCode;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrCity) get_City;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrCity) get_City;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrCity) put_City;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrCompany) get_Company;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrCompany) get_Company;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrCompany) put_Company;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrCountry) get_Country;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrCountry) get_Country;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrCountry) put_Country;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrDepartment) get_Department;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrDepartment) get_Department;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrDepartment) put_Department;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrEmail) get_Email;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrEmail) get_Email;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrEmail) put_Email;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrFaxNumber) get_FaxNumber;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrFaxNumber) get_FaxNumber;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrFaxNumber) put_FaxNumber;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrHomePhone) get_HomePhone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrHomePhone) get_HomePhone;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrHomePhone) put_HomePhone;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrName) get_Name;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrName) put_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrTSID) get_TSID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrTSID) get_TSID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrTSID) put_TSID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrOfficePhone) get_OfficePhone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrOfficePhone) get_OfficePhone;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrOfficePhone) put_OfficePhone;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrOfficeLocation) get_OfficeLocation;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrOfficeLocation) get_OfficeLocation;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrOfficeLocation) put_OfficeLocation;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrState) get_State;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrState) get_State;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrState) put_State;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrStreetAddress) get_StreetAddress;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrStreetAddress) get_StreetAddress;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrStreetAddress) put_StreetAddress;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrTitle) get_Title;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrTitle) get_Title;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrTitle) put_Title;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR* pbstrZipCode) get_ZipCode;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, out BSTR pbstrZipCode) get_ZipCode;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self, BSTR bstrZipCode) put_ZipCode;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self) LoadDefaultSender;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxSender self) SaveDefaultSender;
@@ -1659,17 +1708,17 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_FaxNumber(BSTR* pbstrFaxNumber) mut => VT.get_FaxNumber(ref this, pbstrFaxNumber);
+		public HRESULT get_FaxNumber(out BSTR pbstrFaxNumber) mut => VT.get_FaxNumber(ref this, out pbstrFaxNumber);
 		public HRESULT put_FaxNumber(BSTR bstrFaxNumber) mut => VT.put_FaxNumber(ref this, bstrFaxNumber);
-		public HRESULT get_Name(BSTR* pbstrName) mut => VT.get_Name(ref this, pbstrName);
+		public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
 		public HRESULT put_Name(BSTR bstrName) mut => VT.put_Name(ref this, bstrName);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxRecipient self, BSTR* pbstrFaxNumber) get_FaxNumber;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxRecipient self, out BSTR pbstrFaxNumber) get_FaxNumber;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxRecipient self, BSTR bstrFaxNumber) put_FaxNumber;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxRecipient self, BSTR* pbstrName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxRecipient self, out BSTR pbstrName) get_Name;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxRecipient self, BSTR bstrName) put_Name;
 		}
 	}
@@ -1680,19 +1729,19 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
-		public HRESULT get_Item(int32 lIndex, IFaxRecipient** ppFaxRecipient) mut => VT.get_Item(ref this, lIndex, ppFaxRecipient);
+		public HRESULT get__NewEnum(out IUnknown* ppUnk) mut => VT.get__NewEnum(ref this, out ppUnk);
+		public HRESULT get_Item(int32 lIndex, out IFaxRecipient* ppFaxRecipient) mut => VT.get_Item(ref this, lIndex, out ppFaxRecipient);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
-		public HRESULT Add(BSTR bstrFaxNumber, BSTR bstrRecipientName, IFaxRecipient** ppFaxRecipient) mut => VT.Add(ref this, bstrFaxNumber, bstrRecipientName, ppFaxRecipient);
+		public HRESULT Add(BSTR bstrFaxNumber, BSTR bstrRecipientName, out IFaxRecipient* ppFaxRecipient) mut => VT.Add(ref this, bstrFaxNumber, bstrRecipientName, out ppFaxRecipient);
 		public HRESULT Remove(int32 lIndex) mut => VT.Remove(ref this, lIndex);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxRecipients self, IUnknown** ppUnk) get__NewEnum;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxRecipients self, int32 lIndex, IFaxRecipient** ppFaxRecipient) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxRecipients self, out IUnknown* ppUnk) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxRecipients self, int32 lIndex, out IFaxRecipient* ppFaxRecipient) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxRecipients self, out int32 plCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxRecipients self, BSTR bstrFaxNumber, BSTR bstrRecipientName, IFaxRecipient** ppFaxRecipient) Add;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxRecipients self, BSTR bstrFaxNumber, BSTR bstrRecipientName, out IFaxRecipient* ppFaxRecipient) Add;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxRecipients self, int32 lIndex) Remove;
 		}
 	}
@@ -1705,7 +1754,7 @@ static
 		
 		public HRESULT get_UseArchive(out int16 pbUseArchive) mut => VT.get_UseArchive(ref this, out pbUseArchive);
 		public HRESULT put_UseArchive(int16 bUseArchive) mut => VT.put_UseArchive(ref this, bUseArchive);
-		public HRESULT get_ArchiveFolder(BSTR* pbstrArchiveFolder) mut => VT.get_ArchiveFolder(ref this, pbstrArchiveFolder);
+		public HRESULT get_ArchiveFolder(out BSTR pbstrArchiveFolder) mut => VT.get_ArchiveFolder(ref this, out pbstrArchiveFolder);
 		public HRESULT put_ArchiveFolder(BSTR bstrArchiveFolder) mut => VT.put_ArchiveFolder(ref this, bstrArchiveFolder);
 		public HRESULT get_SizeQuotaWarning(out int16 pbSizeQuotaWarning) mut => VT.get_SizeQuotaWarning(ref this, out pbSizeQuotaWarning);
 		public HRESULT put_SizeQuotaWarning(int16 bSizeQuotaWarning) mut => VT.put_SizeQuotaWarning(ref this, bSizeQuotaWarning);
@@ -1719,15 +1768,15 @@ static
 		public HRESULT get_SizeHigh(out int32 plSizeHigh) mut => VT.get_SizeHigh(ref this, out plSizeHigh);
 		public HRESULT Refresh() mut => VT.Refresh(ref this);
 		public HRESULT Save() mut => VT.Save(ref this);
-		public HRESULT GetMessages(int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) mut => VT.GetMessages(ref this, lPrefetchSize, pFaxIncomingMessageIterator);
-		public HRESULT GetMessage(BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) mut => VT.GetMessage(ref this, bstrMessageId, pFaxIncomingMessage);
+		public HRESULT GetMessages(int32 lPrefetchSize, out IFaxIncomingMessageIterator* pFaxIncomingMessageIterator) mut => VT.GetMessages(ref this, lPrefetchSize, out pFaxIncomingMessageIterator);
+		public HRESULT GetMessage(BSTR bstrMessageId, out IFaxIncomingMessage* pFaxIncomingMessage) mut => VT.GetMessage(ref this, bstrMessageId, out pFaxIncomingMessage);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingArchive self, out int16 pbUseArchive) get_UseArchive;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingArchive self, int16 bUseArchive) put_UseArchive;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingArchive self, BSTR* pbstrArchiveFolder) get_ArchiveFolder;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingArchive self, out BSTR pbstrArchiveFolder) get_ArchiveFolder;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingArchive self, BSTR bstrArchiveFolder) put_ArchiveFolder;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingArchive self, out int16 pbSizeQuotaWarning) get_SizeQuotaWarning;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingArchive self, int16 bSizeQuotaWarning) put_SizeQuotaWarning;
@@ -1741,8 +1790,8 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingArchive self, out int32 plSizeHigh) get_SizeHigh;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingArchive self) Refresh;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingArchive self) Save;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingArchive self, int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) GetMessages;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingArchive self, BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) GetMessage;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingArchive self, int32 lPrefetchSize, out IFaxIncomingMessageIterator* pFaxIncomingMessageIterator) GetMessages;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingArchive self, BSTR bstrMessageId, out IFaxIncomingMessage* pFaxIncomingMessage) GetMessage;
 		}
 	}
 	[CRepr]
@@ -1756,8 +1805,8 @@ static
 		public HRESULT put_Blocked(int16 bBlocked) mut => VT.put_Blocked(ref this, bBlocked);
 		public HRESULT Refresh() mut => VT.Refresh(ref this);
 		public HRESULT Save() mut => VT.Save(ref this);
-		public HRESULT GetJobs(IFaxIncomingJobs** pFaxIncomingJobs) mut => VT.GetJobs(ref this, pFaxIncomingJobs);
-		public HRESULT GetJob(BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) mut => VT.GetJob(ref this, bstrJobId, pFaxIncomingJob);
+		public HRESULT GetJobs(out IFaxIncomingJobs* pFaxIncomingJobs) mut => VT.GetJobs(ref this, out pFaxIncomingJobs);
+		public HRESULT GetJob(BSTR bstrJobId, out IFaxIncomingJob* pFaxIncomingJob) mut => VT.GetJob(ref this, bstrJobId, out pFaxIncomingJob);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
@@ -1766,8 +1815,8 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingQueue self, int16 bBlocked) put_Blocked;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingQueue self) Refresh;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingQueue self) Save;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingQueue self, IFaxIncomingJobs** pFaxIncomingJobs) GetJobs;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingQueue self, BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) GetJob;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingQueue self, out IFaxIncomingJobs* pFaxIncomingJobs) GetJobs;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingQueue self, BSTR bstrJobId, out IFaxIncomingJob* pFaxIncomingJob) GetJob;
 		}
 	}
 	[CRepr]
@@ -1779,7 +1828,7 @@ static
 		
 		public HRESULT get_UseArchive(out int16 pbUseArchive) mut => VT.get_UseArchive(ref this, out pbUseArchive);
 		public HRESULT put_UseArchive(int16 bUseArchive) mut => VT.put_UseArchive(ref this, bUseArchive);
-		public HRESULT get_ArchiveFolder(BSTR* pbstrArchiveFolder) mut => VT.get_ArchiveFolder(ref this, pbstrArchiveFolder);
+		public HRESULT get_ArchiveFolder(out BSTR pbstrArchiveFolder) mut => VT.get_ArchiveFolder(ref this, out pbstrArchiveFolder);
 		public HRESULT put_ArchiveFolder(BSTR bstrArchiveFolder) mut => VT.put_ArchiveFolder(ref this, bstrArchiveFolder);
 		public HRESULT get_SizeQuotaWarning(out int16 pbSizeQuotaWarning) mut => VT.get_SizeQuotaWarning(ref this, out pbSizeQuotaWarning);
 		public HRESULT put_SizeQuotaWarning(int16 bSizeQuotaWarning) mut => VT.put_SizeQuotaWarning(ref this, bSizeQuotaWarning);
@@ -1793,15 +1842,15 @@ static
 		public HRESULT get_SizeHigh(out int32 plSizeHigh) mut => VT.get_SizeHigh(ref this, out plSizeHigh);
 		public HRESULT Refresh() mut => VT.Refresh(ref this);
 		public HRESULT Save() mut => VT.Save(ref this);
-		public HRESULT GetMessages(int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) mut => VT.GetMessages(ref this, lPrefetchSize, pFaxOutgoingMessageIterator);
-		public HRESULT GetMessage(BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) mut => VT.GetMessage(ref this, bstrMessageId, pFaxOutgoingMessage);
+		public HRESULT GetMessages(int32 lPrefetchSize, out IFaxOutgoingMessageIterator* pFaxOutgoingMessageIterator) mut => VT.GetMessages(ref this, lPrefetchSize, out pFaxOutgoingMessageIterator);
+		public HRESULT GetMessage(BSTR bstrMessageId, out IFaxOutgoingMessage* pFaxOutgoingMessage) mut => VT.GetMessage(ref this, bstrMessageId, out pFaxOutgoingMessage);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingArchive self, out int16 pbUseArchive) get_UseArchive;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingArchive self, int16 bUseArchive) put_UseArchive;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingArchive self, BSTR* pbstrArchiveFolder) get_ArchiveFolder;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingArchive self, out BSTR pbstrArchiveFolder) get_ArchiveFolder;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingArchive self, BSTR bstrArchiveFolder) put_ArchiveFolder;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingArchive self, out int16 pbSizeQuotaWarning) get_SizeQuotaWarning;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingArchive self, int16 bSizeQuotaWarning) put_SizeQuotaWarning;
@@ -1815,8 +1864,8 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingArchive self, out int32 plSizeHigh) get_SizeHigh;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingArchive self) Refresh;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingArchive self) Save;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingArchive self, int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) GetMessages;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingArchive self, BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) GetMessage;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingArchive self, int32 lPrefetchSize, out IFaxOutgoingMessageIterator* pFaxOutgoingMessageIterator) GetMessages;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingArchive self, BSTR bstrMessageId, out IFaxOutgoingMessage* pFaxOutgoingMessage) GetMessage;
 		}
 	}
 	[CRepr]
@@ -1848,8 +1897,8 @@ static
 		public HRESULT put_Branding(int16 bBranding) mut => VT.put_Branding(ref this, bBranding);
 		public HRESULT Refresh() mut => VT.Refresh(ref this);
 		public HRESULT Save() mut => VT.Save(ref this);
-		public HRESULT GetJobs(IFaxOutgoingJobs** pFaxOutgoingJobs) mut => VT.GetJobs(ref this, pFaxOutgoingJobs);
-		public HRESULT GetJob(BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) mut => VT.GetJob(ref this, bstrJobId, pFaxOutgoingJob);
+		public HRESULT GetJobs(out IFaxOutgoingJobs* pFaxOutgoingJobs) mut => VT.GetJobs(ref this, out pFaxOutgoingJobs);
+		public HRESULT GetJob(BSTR bstrJobId, out IFaxOutgoingJob* pFaxOutgoingJob) mut => VT.GetJob(ref this, bstrJobId, out pFaxOutgoingJob);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
@@ -1876,8 +1925,8 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingQueue self, int16 bBranding) put_Branding;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingQueue self) Refresh;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingQueue self) Save;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingQueue self, IFaxOutgoingJobs** pFaxOutgoingJobs) GetJobs;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingQueue self, BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) GetJob;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingQueue self, out IFaxOutgoingJobs* pFaxOutgoingJobs) GetJobs;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingQueue self, BSTR bstrJobId, out IFaxOutgoingJob* pFaxOutgoingJob) GetJob;
 		}
 	}
 	[CRepr]
@@ -1887,7 +1936,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Message(IFaxIncomingMessage** pFaxIncomingMessage) mut => VT.get_Message(ref this, pFaxIncomingMessage);
+		public HRESULT get_Message(out IFaxIncomingMessage* pFaxIncomingMessage) mut => VT.get_Message(ref this, out pFaxIncomingMessage);
 		public HRESULT get_PrefetchSize(out int32 plPrefetchSize) mut => VT.get_PrefetchSize(ref this, out plPrefetchSize);
 		public HRESULT put_PrefetchSize(int32 lPrefetchSize) mut => VT.put_PrefetchSize(ref this, lPrefetchSize);
 		public HRESULT get_AtEOF(out int16 pbEOF) mut => VT.get_AtEOF(ref this, out pbEOF);
@@ -1897,7 +1946,7 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessageIterator self, IFaxIncomingMessage** pFaxIncomingMessage) get_Message;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessageIterator self, out IFaxIncomingMessage* pFaxIncomingMessage) get_Message;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessageIterator self, out int32 plPrefetchSize) get_PrefetchSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessageIterator self, int32 lPrefetchSize) put_PrefetchSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessageIterator self, out int16 pbEOF) get_AtEOF;
@@ -1912,34 +1961,34 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Id(BSTR* pbstrId) mut => VT.get_Id(ref this, pbstrId);
+		public HRESULT get_Id(out BSTR pbstrId) mut => VT.get_Id(ref this, out pbstrId);
 		public HRESULT get_Pages(out int32 plPages) mut => VT.get_Pages(ref this, out plPages);
 		public HRESULT get_Size(out int32 plSize) mut => VT.get_Size(ref this, out plSize);
-		public HRESULT get_DeviceName(BSTR* pbstrDeviceName) mut => VT.get_DeviceName(ref this, pbstrDeviceName);
+		public HRESULT get_DeviceName(out BSTR pbstrDeviceName) mut => VT.get_DeviceName(ref this, out pbstrDeviceName);
 		public HRESULT get_Retries(out int32 plRetries) mut => VT.get_Retries(ref this, out plRetries);
 		public HRESULT get_TransmissionStart(out double pdateTransmissionStart) mut => VT.get_TransmissionStart(ref this, out pdateTransmissionStart);
 		public HRESULT get_TransmissionEnd(out double pdateTransmissionEnd) mut => VT.get_TransmissionEnd(ref this, out pdateTransmissionEnd);
-		public HRESULT get_CSID(BSTR* pbstrCSID) mut => VT.get_CSID(ref this, pbstrCSID);
-		public HRESULT get_TSID(BSTR* pbstrTSID) mut => VT.get_TSID(ref this, pbstrTSID);
-		public HRESULT get_CallerId(BSTR* pbstrCallerId) mut => VT.get_CallerId(ref this, pbstrCallerId);
-		public HRESULT get_RoutingInformation(BSTR* pbstrRoutingInformation) mut => VT.get_RoutingInformation(ref this, pbstrRoutingInformation);
+		public HRESULT get_CSID(out BSTR pbstrCSID) mut => VT.get_CSID(ref this, out pbstrCSID);
+		public HRESULT get_TSID(out BSTR pbstrTSID) mut => VT.get_TSID(ref this, out pbstrTSID);
+		public HRESULT get_CallerId(out BSTR pbstrCallerId) mut => VT.get_CallerId(ref this, out pbstrCallerId);
+		public HRESULT get_RoutingInformation(out BSTR pbstrRoutingInformation) mut => VT.get_RoutingInformation(ref this, out pbstrRoutingInformation);
 		public HRESULT CopyTiff(BSTR bstrTiffPath) mut => VT.CopyTiff(ref this, bstrTiffPath);
 		public HRESULT Delete() mut => VT.Delete(ref this);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, BSTR* pbstrId) get_Id;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, out BSTR pbstrId) get_Id;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, out int32 plPages) get_Pages;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, out int32 plSize) get_Size;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, BSTR* pbstrDeviceName) get_DeviceName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, out BSTR pbstrDeviceName) get_DeviceName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, out int32 plRetries) get_Retries;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, out double pdateTransmissionStart) get_TransmissionStart;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, out double pdateTransmissionEnd) get_TransmissionEnd;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, BSTR* pbstrCSID) get_CSID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, BSTR* pbstrTSID) get_TSID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, BSTR* pbstrCallerId) get_CallerId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, BSTR* pbstrRoutingInformation) get_RoutingInformation;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, out BSTR pbstrCSID) get_CSID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, out BSTR pbstrTSID) get_TSID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, out BSTR pbstrCallerId) get_CallerId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, out BSTR pbstrRoutingInformation) get_RoutingInformation;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self, BSTR bstrTiffPath) CopyTiff;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage self) Delete;
 		}
@@ -1951,15 +2000,15 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
-		public HRESULT get_Item(VARIANT vIndex, IFaxOutgoingJob** pFaxOutgoingJob) mut => VT.get_Item(ref this, vIndex, pFaxOutgoingJob);
+		public HRESULT get__NewEnum(out IUnknown* ppUnk) mut => VT.get__NewEnum(ref this, out ppUnk);
+		public HRESULT get_Item(VARIANT vIndex, out IFaxOutgoingJob* pFaxOutgoingJob) mut => VT.get_Item(ref this, vIndex, out pFaxOutgoingJob);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJobs self, IUnknown** ppUnk) get__NewEnum;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJobs self, VARIANT vIndex, IFaxOutgoingJob** pFaxOutgoingJob) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJobs self, out IUnknown* ppUnk) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJobs self, VARIANT vIndex, out IFaxOutgoingJob* pFaxOutgoingJob) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJobs self, out int32 plCount) get_Count;
 		}
 	}
@@ -1970,30 +2019,30 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Subject(BSTR* pbstrSubject) mut => VT.get_Subject(ref this, pbstrSubject);
-		public HRESULT get_DocumentName(BSTR* pbstrDocumentName) mut => VT.get_DocumentName(ref this, pbstrDocumentName);
+		public HRESULT get_Subject(out BSTR pbstrSubject) mut => VT.get_Subject(ref this, out pbstrSubject);
+		public HRESULT get_DocumentName(out BSTR pbstrDocumentName) mut => VT.get_DocumentName(ref this, out pbstrDocumentName);
 		public HRESULT get_Pages(out int32 plPages) mut => VT.get_Pages(ref this, out plPages);
 		public HRESULT get_Size(out int32 plSize) mut => VT.get_Size(ref this, out plSize);
-		public HRESULT get_SubmissionId(BSTR* pbstrSubmissionId) mut => VT.get_SubmissionId(ref this, pbstrSubmissionId);
-		public HRESULT get_Id(BSTR* pbstrId) mut => VT.get_Id(ref this, pbstrId);
+		public HRESULT get_SubmissionId(out BSTR pbstrSubmissionId) mut => VT.get_SubmissionId(ref this, out pbstrSubmissionId);
+		public HRESULT get_Id(out BSTR pbstrId) mut => VT.get_Id(ref this, out pbstrId);
 		public HRESULT get_OriginalScheduledTime(out double pdateOriginalScheduledTime) mut => VT.get_OriginalScheduledTime(ref this, out pdateOriginalScheduledTime);
 		public HRESULT get_SubmissionTime(out double pdateSubmissionTime) mut => VT.get_SubmissionTime(ref this, out pdateSubmissionTime);
 		public HRESULT get_ReceiptType(out FAX_RECEIPT_TYPE_ENUM pReceiptType) mut => VT.get_ReceiptType(ref this, out pReceiptType);
 		public HRESULT get_Priority(out FAX_PRIORITY_TYPE_ENUM pPriority) mut => VT.get_Priority(ref this, out pPriority);
-		public HRESULT get_Sender(IFaxSender** ppFaxSender) mut => VT.get_Sender(ref this, ppFaxSender);
-		public HRESULT get_Recipient(IFaxRecipient** ppFaxRecipient) mut => VT.get_Recipient(ref this, ppFaxRecipient);
+		public HRESULT get_Sender(out IFaxSender* ppFaxSender) mut => VT.get_Sender(ref this, out ppFaxSender);
+		public HRESULT get_Recipient(out IFaxRecipient* ppFaxRecipient) mut => VT.get_Recipient(ref this, out ppFaxRecipient);
 		public HRESULT get_CurrentPage(out int32 plCurrentPage) mut => VT.get_CurrentPage(ref this, out plCurrentPage);
 		public HRESULT get_DeviceId(out int32 plDeviceId) mut => VT.get_DeviceId(ref this, out plDeviceId);
 		public HRESULT get_Status(out FAX_JOB_STATUS_ENUM pStatus) mut => VT.get_Status(ref this, out pStatus);
 		public HRESULT get_ExtendedStatusCode(out FAX_JOB_EXTENDED_STATUS_ENUM pExtendedStatusCode) mut => VT.get_ExtendedStatusCode(ref this, out pExtendedStatusCode);
-		public HRESULT get_ExtendedStatus(BSTR* pbstrExtendedStatus) mut => VT.get_ExtendedStatus(ref this, pbstrExtendedStatus);
+		public HRESULT get_ExtendedStatus(out BSTR pbstrExtendedStatus) mut => VT.get_ExtendedStatus(ref this, out pbstrExtendedStatus);
 		public HRESULT get_AvailableOperations(out FAX_JOB_OPERATIONS_ENUM pAvailableOperations) mut => VT.get_AvailableOperations(ref this, out pAvailableOperations);
 		public HRESULT get_Retries(out int32 plRetries) mut => VT.get_Retries(ref this, out plRetries);
 		public HRESULT get_ScheduledTime(out double pdateScheduledTime) mut => VT.get_ScheduledTime(ref this, out pdateScheduledTime);
 		public HRESULT get_TransmissionStart(out double pdateTransmissionStart) mut => VT.get_TransmissionStart(ref this, out pdateTransmissionStart);
 		public HRESULT get_TransmissionEnd(out double pdateTransmissionEnd) mut => VT.get_TransmissionEnd(ref this, out pdateTransmissionEnd);
-		public HRESULT get_CSID(BSTR* pbstrCSID) mut => VT.get_CSID(ref this, pbstrCSID);
-		public HRESULT get_TSID(BSTR* pbstrTSID) mut => VT.get_TSID(ref this, pbstrTSID);
+		public HRESULT get_CSID(out BSTR pbstrCSID) mut => VT.get_CSID(ref this, out pbstrCSID);
+		public HRESULT get_TSID(out BSTR pbstrTSID) mut => VT.get_TSID(ref this, out pbstrTSID);
 		public HRESULT get_GroupBroadcastReceipts(out int16 pbGroupBroadcastReceipts) mut => VT.get_GroupBroadcastReceipts(ref this, out pbGroupBroadcastReceipts);
 		public HRESULT Pause() mut => VT.Pause(ref this);
 		public HRESULT Resume() mut => VT.Resume(ref this);
@@ -2005,30 +2054,30 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, BSTR* pbstrSubject) get_Subject;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, BSTR* pbstrDocumentName) get_DocumentName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out BSTR pbstrSubject) get_Subject;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out BSTR pbstrDocumentName) get_DocumentName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out int32 plPages) get_Pages;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out int32 plSize) get_Size;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, BSTR* pbstrSubmissionId) get_SubmissionId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, BSTR* pbstrId) get_Id;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out BSTR pbstrSubmissionId) get_SubmissionId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out BSTR pbstrId) get_Id;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out double pdateOriginalScheduledTime) get_OriginalScheduledTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out double pdateSubmissionTime) get_SubmissionTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out FAX_RECEIPT_TYPE_ENUM pReceiptType) get_ReceiptType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out FAX_PRIORITY_TYPE_ENUM pPriority) get_Priority;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, IFaxSender** ppFaxSender) get_Sender;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, IFaxRecipient** ppFaxRecipient) get_Recipient;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out IFaxSender* ppFaxSender) get_Sender;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out IFaxRecipient* ppFaxRecipient) get_Recipient;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out int32 plCurrentPage) get_CurrentPage;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out int32 plDeviceId) get_DeviceId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out FAX_JOB_STATUS_ENUM pStatus) get_Status;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out FAX_JOB_EXTENDED_STATUS_ENUM pExtendedStatusCode) get_ExtendedStatusCode;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, BSTR* pbstrExtendedStatus) get_ExtendedStatus;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out BSTR pbstrExtendedStatus) get_ExtendedStatus;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out FAX_JOB_OPERATIONS_ENUM pAvailableOperations) get_AvailableOperations;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out int32 plRetries) get_Retries;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out double pdateScheduledTime) get_ScheduledTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out double pdateTransmissionStart) get_TransmissionStart;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out double pdateTransmissionEnd) get_TransmissionEnd;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, BSTR* pbstrCSID) get_CSID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, BSTR* pbstrTSID) get_TSID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out BSTR pbstrCSID) get_CSID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out BSTR pbstrTSID) get_TSID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self, out int16 pbGroupBroadcastReceipts) get_GroupBroadcastReceipts;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self) Pause;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob self) Resume;
@@ -2045,7 +2094,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Message(IFaxOutgoingMessage** pFaxOutgoingMessage) mut => VT.get_Message(ref this, pFaxOutgoingMessage);
+		public HRESULT get_Message(out IFaxOutgoingMessage* pFaxOutgoingMessage) mut => VT.get_Message(ref this, out pFaxOutgoingMessage);
 		public HRESULT get_AtEOF(out int16 pbEOF) mut => VT.get_AtEOF(ref this, out pbEOF);
 		public HRESULT get_PrefetchSize(out int32 plPrefetchSize) mut => VT.get_PrefetchSize(ref this, out plPrefetchSize);
 		public HRESULT put_PrefetchSize(int32 lPrefetchSize) mut => VT.put_PrefetchSize(ref this, lPrefetchSize);
@@ -2055,7 +2104,7 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessageIterator self, IFaxOutgoingMessage** pFaxOutgoingMessage) get_Message;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessageIterator self, out IFaxOutgoingMessage* pFaxOutgoingMessage) get_Message;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessageIterator self, out int16 pbEOF) get_AtEOF;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessageIterator self, out int32 plPrefetchSize) get_PrefetchSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessageIterator self, int32 lPrefetchSize) put_PrefetchSize;
@@ -2070,46 +2119,46 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_SubmissionId(BSTR* pbstrSubmissionId) mut => VT.get_SubmissionId(ref this, pbstrSubmissionId);
-		public HRESULT get_Id(BSTR* pbstrId) mut => VT.get_Id(ref this, pbstrId);
-		public HRESULT get_Subject(BSTR* pbstrSubject) mut => VT.get_Subject(ref this, pbstrSubject);
-		public HRESULT get_DocumentName(BSTR* pbstrDocumentName) mut => VT.get_DocumentName(ref this, pbstrDocumentName);
+		public HRESULT get_SubmissionId(out BSTR pbstrSubmissionId) mut => VT.get_SubmissionId(ref this, out pbstrSubmissionId);
+		public HRESULT get_Id(out BSTR pbstrId) mut => VT.get_Id(ref this, out pbstrId);
+		public HRESULT get_Subject(out BSTR pbstrSubject) mut => VT.get_Subject(ref this, out pbstrSubject);
+		public HRESULT get_DocumentName(out BSTR pbstrDocumentName) mut => VT.get_DocumentName(ref this, out pbstrDocumentName);
 		public HRESULT get_Retries(out int32 plRetries) mut => VT.get_Retries(ref this, out plRetries);
 		public HRESULT get_Pages(out int32 plPages) mut => VT.get_Pages(ref this, out plPages);
 		public HRESULT get_Size(out int32 plSize) mut => VT.get_Size(ref this, out plSize);
 		public HRESULT get_OriginalScheduledTime(out double pdateOriginalScheduledTime) mut => VT.get_OriginalScheduledTime(ref this, out pdateOriginalScheduledTime);
 		public HRESULT get_SubmissionTime(out double pdateSubmissionTime) mut => VT.get_SubmissionTime(ref this, out pdateSubmissionTime);
 		public HRESULT get_Priority(out FAX_PRIORITY_TYPE_ENUM pPriority) mut => VT.get_Priority(ref this, out pPriority);
-		public HRESULT get_Sender(IFaxSender** ppFaxSender) mut => VT.get_Sender(ref this, ppFaxSender);
-		public HRESULT get_Recipient(IFaxRecipient** ppFaxRecipient) mut => VT.get_Recipient(ref this, ppFaxRecipient);
-		public HRESULT get_DeviceName(BSTR* pbstrDeviceName) mut => VT.get_DeviceName(ref this, pbstrDeviceName);
+		public HRESULT get_Sender(out IFaxSender* ppFaxSender) mut => VT.get_Sender(ref this, out ppFaxSender);
+		public HRESULT get_Recipient(out IFaxRecipient* ppFaxRecipient) mut => VT.get_Recipient(ref this, out ppFaxRecipient);
+		public HRESULT get_DeviceName(out BSTR pbstrDeviceName) mut => VT.get_DeviceName(ref this, out pbstrDeviceName);
 		public HRESULT get_TransmissionStart(out double pdateTransmissionStart) mut => VT.get_TransmissionStart(ref this, out pdateTransmissionStart);
 		public HRESULT get_TransmissionEnd(out double pdateTransmissionEnd) mut => VT.get_TransmissionEnd(ref this, out pdateTransmissionEnd);
-		public HRESULT get_CSID(BSTR* pbstrCSID) mut => VT.get_CSID(ref this, pbstrCSID);
-		public HRESULT get_TSID(BSTR* pbstrTSID) mut => VT.get_TSID(ref this, pbstrTSID);
+		public HRESULT get_CSID(out BSTR pbstrCSID) mut => VT.get_CSID(ref this, out pbstrCSID);
+		public HRESULT get_TSID(out BSTR pbstrTSID) mut => VT.get_TSID(ref this, out pbstrTSID);
 		public HRESULT CopyTiff(BSTR bstrTiffPath) mut => VT.CopyTiff(ref this, bstrTiffPath);
 		public HRESULT Delete() mut => VT.Delete(ref this);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, BSTR* pbstrSubmissionId) get_SubmissionId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, BSTR* pbstrId) get_Id;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, BSTR* pbstrSubject) get_Subject;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, BSTR* pbstrDocumentName) get_DocumentName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out BSTR pbstrSubmissionId) get_SubmissionId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out BSTR pbstrId) get_Id;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out BSTR pbstrSubject) get_Subject;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out BSTR pbstrDocumentName) get_DocumentName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out int32 plRetries) get_Retries;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out int32 plPages) get_Pages;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out int32 plSize) get_Size;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out double pdateOriginalScheduledTime) get_OriginalScheduledTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out double pdateSubmissionTime) get_SubmissionTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out FAX_PRIORITY_TYPE_ENUM pPriority) get_Priority;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, IFaxSender** ppFaxSender) get_Sender;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, IFaxRecipient** ppFaxRecipient) get_Recipient;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, BSTR* pbstrDeviceName) get_DeviceName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out IFaxSender* ppFaxSender) get_Sender;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out IFaxRecipient* ppFaxRecipient) get_Recipient;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out BSTR pbstrDeviceName) get_DeviceName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out double pdateTransmissionStart) get_TransmissionStart;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out double pdateTransmissionEnd) get_TransmissionEnd;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, BSTR* pbstrCSID) get_CSID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, BSTR* pbstrTSID) get_TSID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out BSTR pbstrCSID) get_CSID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, out BSTR pbstrTSID) get_TSID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self, BSTR bstrTiffPath) CopyTiff;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage self) Delete;
 		}
@@ -2121,15 +2170,15 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
-		public HRESULT get_Item(VARIANT vIndex, IFaxIncomingJob** pFaxIncomingJob) mut => VT.get_Item(ref this, vIndex, pFaxIncomingJob);
+		public HRESULT get__NewEnum(out IUnknown* ppUnk) mut => VT.get__NewEnum(ref this, out ppUnk);
+		public HRESULT get_Item(VARIANT vIndex, out IFaxIncomingJob* pFaxIncomingJob) mut => VT.get_Item(ref this, vIndex, out pFaxIncomingJob);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJobs self, IUnknown** ppUnk) get__NewEnum;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJobs self, VARIANT vIndex, IFaxIncomingJob** pFaxIncomingJob) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJobs self, out IUnknown* ppUnk) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJobs self, VARIANT vIndex, out IFaxIncomingJob* pFaxIncomingJob) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJobs self, out int32 plCount) get_Count;
 		}
 	}
@@ -2141,20 +2190,20 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Size(out int32 plSize) mut => VT.get_Size(ref this, out plSize);
-		public HRESULT get_Id(BSTR* pbstrId) mut => VT.get_Id(ref this, pbstrId);
+		public HRESULT get_Id(out BSTR pbstrId) mut => VT.get_Id(ref this, out pbstrId);
 		public HRESULT get_CurrentPage(out int32 plCurrentPage) mut => VT.get_CurrentPage(ref this, out plCurrentPage);
 		public HRESULT get_DeviceId(out int32 plDeviceId) mut => VT.get_DeviceId(ref this, out plDeviceId);
 		public HRESULT get_Status(out FAX_JOB_STATUS_ENUM pStatus) mut => VT.get_Status(ref this, out pStatus);
 		public HRESULT get_ExtendedStatusCode(out FAX_JOB_EXTENDED_STATUS_ENUM pExtendedStatusCode) mut => VT.get_ExtendedStatusCode(ref this, out pExtendedStatusCode);
-		public HRESULT get_ExtendedStatus(BSTR* pbstrExtendedStatus) mut => VT.get_ExtendedStatus(ref this, pbstrExtendedStatus);
+		public HRESULT get_ExtendedStatus(out BSTR pbstrExtendedStatus) mut => VT.get_ExtendedStatus(ref this, out pbstrExtendedStatus);
 		public HRESULT get_AvailableOperations(out FAX_JOB_OPERATIONS_ENUM pAvailableOperations) mut => VT.get_AvailableOperations(ref this, out pAvailableOperations);
 		public HRESULT get_Retries(out int32 plRetries) mut => VT.get_Retries(ref this, out plRetries);
 		public HRESULT get_TransmissionStart(out double pdateTransmissionStart) mut => VT.get_TransmissionStart(ref this, out pdateTransmissionStart);
 		public HRESULT get_TransmissionEnd(out double pdateTransmissionEnd) mut => VT.get_TransmissionEnd(ref this, out pdateTransmissionEnd);
-		public HRESULT get_CSID(BSTR* pbstrCSID) mut => VT.get_CSID(ref this, pbstrCSID);
-		public HRESULT get_TSID(BSTR* pbstrTSID) mut => VT.get_TSID(ref this, pbstrTSID);
-		public HRESULT get_CallerId(BSTR* pbstrCallerId) mut => VT.get_CallerId(ref this, pbstrCallerId);
-		public HRESULT get_RoutingInformation(BSTR* pbstrRoutingInformation) mut => VT.get_RoutingInformation(ref this, pbstrRoutingInformation);
+		public HRESULT get_CSID(out BSTR pbstrCSID) mut => VT.get_CSID(ref this, out pbstrCSID);
+		public HRESULT get_TSID(out BSTR pbstrTSID) mut => VT.get_TSID(ref this, out pbstrTSID);
+		public HRESULT get_CallerId(out BSTR pbstrCallerId) mut => VT.get_CallerId(ref this, out pbstrCallerId);
+		public HRESULT get_RoutingInformation(out BSTR pbstrRoutingInformation) mut => VT.get_RoutingInformation(ref this, out pbstrRoutingInformation);
 		public HRESULT get_JobType(out FAX_JOB_TYPE_ENUM pJobType) mut => VT.get_JobType(ref this, out pJobType);
 		public HRESULT Cancel() mut => VT.Cancel(ref this);
 		public HRESULT Refresh() mut => VT.Refresh(ref this);
@@ -2164,20 +2213,20 @@ static
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out int32 plSize) get_Size;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, BSTR* pbstrId) get_Id;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out BSTR pbstrId) get_Id;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out int32 plCurrentPage) get_CurrentPage;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out int32 plDeviceId) get_DeviceId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out FAX_JOB_STATUS_ENUM pStatus) get_Status;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out FAX_JOB_EXTENDED_STATUS_ENUM pExtendedStatusCode) get_ExtendedStatusCode;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, BSTR* pbstrExtendedStatus) get_ExtendedStatus;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out BSTR pbstrExtendedStatus) get_ExtendedStatus;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out FAX_JOB_OPERATIONS_ENUM pAvailableOperations) get_AvailableOperations;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out int32 plRetries) get_Retries;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out double pdateTransmissionStart) get_TransmissionStart;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out double pdateTransmissionEnd) get_TransmissionEnd;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, BSTR* pbstrCSID) get_CSID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, BSTR* pbstrTSID) get_TSID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, BSTR* pbstrCallerId) get_CallerId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, BSTR* pbstrRoutingInformation) get_RoutingInformation;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out BSTR pbstrCSID) get_CSID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out BSTR pbstrTSID) get_TSID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out BSTR pbstrCallerId) get_CallerId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out BSTR pbstrRoutingInformation) get_RoutingInformation;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self, out FAX_JOB_TYPE_ENUM pJobType) get_JobType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self) Cancel;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingJob self) Refresh;
@@ -2191,10 +2240,10 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_FriendlyName(BSTR* pbstrFriendlyName) mut => VT.get_FriendlyName(ref this, pbstrFriendlyName);
-		public HRESULT get_ImageName(BSTR* pbstrImageName) mut => VT.get_ImageName(ref this, pbstrImageName);
-		public HRESULT get_UniqueName(BSTR* pbstrUniqueName) mut => VT.get_UniqueName(ref this, pbstrUniqueName);
-		public HRESULT get_TapiProviderName(BSTR* pbstrTapiProviderName) mut => VT.get_TapiProviderName(ref this, pbstrTapiProviderName);
+		public HRESULT get_FriendlyName(out BSTR pbstrFriendlyName) mut => VT.get_FriendlyName(ref this, out pbstrFriendlyName);
+		public HRESULT get_ImageName(out BSTR pbstrImageName) mut => VT.get_ImageName(ref this, out pbstrImageName);
+		public HRESULT get_UniqueName(out BSTR pbstrUniqueName) mut => VT.get_UniqueName(ref this, out pbstrUniqueName);
+		public HRESULT get_TapiProviderName(out BSTR pbstrTapiProviderName) mut => VT.get_TapiProviderName(ref this, out pbstrTapiProviderName);
 		public HRESULT get_MajorVersion(out int32 plMajorVersion) mut => VT.get_MajorVersion(ref this, out plMajorVersion);
 		public HRESULT get_MinorVersion(out int32 plMinorVersion) mut => VT.get_MinorVersion(ref this, out plMinorVersion);
 		public HRESULT get_MajorBuild(out int32 plMajorBuild) mut => VT.get_MajorBuild(ref this, out plMajorBuild);
@@ -2207,10 +2256,10 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProvider self, BSTR* pbstrFriendlyName) get_FriendlyName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProvider self, BSTR* pbstrImageName) get_ImageName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProvider self, BSTR* pbstrUniqueName) get_UniqueName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProvider self, BSTR* pbstrTapiProviderName) get_TapiProviderName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProvider self, out BSTR pbstrFriendlyName) get_FriendlyName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProvider self, out BSTR pbstrImageName) get_ImageName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProvider self, out BSTR pbstrUniqueName) get_UniqueName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProvider self, out BSTR pbstrTapiProviderName) get_TapiProviderName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProvider self, out int32 plMajorVersion) get_MajorVersion;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProvider self, out int32 plMinorVersion) get_MinorVersion;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceProvider self, out int32 plMajorBuild) get_MajorBuild;
@@ -2229,13 +2278,13 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Id(out int32 plId) mut => VT.get_Id(ref this, out plId);
-		public HRESULT get_DeviceName(BSTR* pbstrDeviceName) mut => VT.get_DeviceName(ref this, pbstrDeviceName);
-		public HRESULT get_ProviderUniqueName(BSTR* pbstrProviderUniqueName) mut => VT.get_ProviderUniqueName(ref this, pbstrProviderUniqueName);
+		public HRESULT get_DeviceName(out BSTR pbstrDeviceName) mut => VT.get_DeviceName(ref this, out pbstrDeviceName);
+		public HRESULT get_ProviderUniqueName(out BSTR pbstrProviderUniqueName) mut => VT.get_ProviderUniqueName(ref this, out pbstrProviderUniqueName);
 		public HRESULT get_PoweredOff(out int16 pbPoweredOff) mut => VT.get_PoweredOff(ref this, out pbPoweredOff);
 		public HRESULT get_ReceivingNow(out int16 pbReceivingNow) mut => VT.get_ReceivingNow(ref this, out pbReceivingNow);
 		public HRESULT get_SendingNow(out int16 pbSendingNow) mut => VT.get_SendingNow(ref this, out pbSendingNow);
 		public HRESULT get_UsedRoutingMethods(out VARIANT pvUsedRoutingMethods) mut => VT.get_UsedRoutingMethods(ref this, out pvUsedRoutingMethods);
-		public HRESULT get_Description(BSTR* pbstrDescription) mut => VT.get_Description(ref this, pbstrDescription);
+		public HRESULT get_Description(out BSTR pbstrDescription) mut => VT.get_Description(ref this, out pbstrDescription);
 		public HRESULT put_Description(BSTR bstrDescription) mut => VT.put_Description(ref this, bstrDescription);
 		public HRESULT get_SendEnabled(out int16 pbSendEnabled) mut => VT.get_SendEnabled(ref this, out pbSendEnabled);
 		public HRESULT put_SendEnabled(int16 bSendEnabled) mut => VT.put_SendEnabled(ref this, bSendEnabled);
@@ -2243,9 +2292,9 @@ static
 		public HRESULT put_ReceiveMode(FAX_DEVICE_RECEIVE_MODE_ENUM ReceiveMode) mut => VT.put_ReceiveMode(ref this, ReceiveMode);
 		public HRESULT get_RingsBeforeAnswer(out int32 plRingsBeforeAnswer) mut => VT.get_RingsBeforeAnswer(ref this, out plRingsBeforeAnswer);
 		public HRESULT put_RingsBeforeAnswer(int32 lRingsBeforeAnswer) mut => VT.put_RingsBeforeAnswer(ref this, lRingsBeforeAnswer);
-		public HRESULT get_CSID(BSTR* pbstrCSID) mut => VT.get_CSID(ref this, pbstrCSID);
+		public HRESULT get_CSID(out BSTR pbstrCSID) mut => VT.get_CSID(ref this, out pbstrCSID);
 		public HRESULT put_CSID(BSTR bstrCSID) mut => VT.put_CSID(ref this, bstrCSID);
-		public HRESULT get_TSID(BSTR* pbstrTSID) mut => VT.get_TSID(ref this, pbstrTSID);
+		public HRESULT get_TSID(out BSTR pbstrTSID) mut => VT.get_TSID(ref this, out pbstrTSID);
 		public HRESULT put_TSID(BSTR bstrTSID) mut => VT.put_TSID(ref this, bstrTSID);
 		public HRESULT Refresh() mut => VT.Refresh(ref this);
 		public HRESULT Save() mut => VT.Save(ref this);
@@ -2259,13 +2308,13 @@ static
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, out int32 plId) get_Id;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, BSTR* pbstrDeviceName) get_DeviceName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, BSTR* pbstrProviderUniqueName) get_ProviderUniqueName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, out BSTR pbstrDeviceName) get_DeviceName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, out BSTR pbstrProviderUniqueName) get_ProviderUniqueName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, out int16 pbPoweredOff) get_PoweredOff;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, out int16 pbReceivingNow) get_ReceivingNow;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, out int16 pbSendingNow) get_SendingNow;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, out VARIANT pvUsedRoutingMethods) get_UsedRoutingMethods;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, BSTR* pbstrDescription) get_Description;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, out BSTR pbstrDescription) get_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, BSTR bstrDescription) put_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, out int16 pbSendEnabled) get_SendEnabled;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, int16 bSendEnabled) put_SendEnabled;
@@ -2273,9 +2322,9 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, FAX_DEVICE_RECEIVE_MODE_ENUM ReceiveMode) put_ReceiveMode;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, out int32 plRingsBeforeAnswer) get_RingsBeforeAnswer;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, int32 lRingsBeforeAnswer) put_RingsBeforeAnswer;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, BSTR* pbstrCSID) get_CSID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, out BSTR pbstrCSID) get_CSID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, BSTR bstrCSID) put_CSID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, BSTR* pbstrTSID) get_TSID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, out BSTR pbstrTSID) get_TSID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self, BSTR bstrTSID) put_TSID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self) Refresh;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDevice self) Save;
@@ -2297,7 +2346,7 @@ static
 		public HRESULT put_LogIncoming(int16 bLogIncoming) mut => VT.put_LogIncoming(ref this, bLogIncoming);
 		public HRESULT get_LogOutgoing(out int16 pbLogOutgoing) mut => VT.get_LogOutgoing(ref this, out pbLogOutgoing);
 		public HRESULT put_LogOutgoing(int16 bLogOutgoing) mut => VT.put_LogOutgoing(ref this, bLogOutgoing);
-		public HRESULT get_DatabasePath(BSTR* pbstrDatabasePath) mut => VT.get_DatabasePath(ref this, pbstrDatabasePath);
+		public HRESULT get_DatabasePath(out BSTR pbstrDatabasePath) mut => VT.get_DatabasePath(ref this, out pbstrDatabasePath);
 		public HRESULT put_DatabasePath(BSTR bstrDatabasePath) mut => VT.put_DatabasePath(ref this, bstrDatabasePath);
 		public HRESULT Refresh() mut => VT.Refresh(ref this);
 		public HRESULT Save() mut => VT.Save(ref this);
@@ -2309,7 +2358,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxActivityLogging self, int16 bLogIncoming) put_LogIncoming;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxActivityLogging self, out int16 pbLogOutgoing) get_LogOutgoing;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxActivityLogging self, int16 bLogOutgoing) put_LogOutgoing;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxActivityLogging self, BSTR* pbstrDatabasePath) get_DatabasePath;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxActivityLogging self, out BSTR pbstrDatabasePath) get_DatabasePath;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxActivityLogging self, BSTR bstrDatabasePath) put_DatabasePath;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxActivityLogging self) Refresh;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxActivityLogging self) Save;
@@ -2355,19 +2404,19 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
-		public HRESULT get_Item(VARIANT vIndex, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) mut => VT.get_Item(ref this, vIndex, pFaxOutboundRoutingGroup);
+		public HRESULT get__NewEnum(out IUnknown* ppUnk) mut => VT.get__NewEnum(ref this, out ppUnk);
+		public HRESULT get_Item(VARIANT vIndex, out IFaxOutboundRoutingGroup* pFaxOutboundRoutingGroup) mut => VT.get_Item(ref this, vIndex, out pFaxOutboundRoutingGroup);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
-		public HRESULT Add(BSTR bstrName, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) mut => VT.Add(ref this, bstrName, pFaxOutboundRoutingGroup);
+		public HRESULT Add(BSTR bstrName, out IFaxOutboundRoutingGroup* pFaxOutboundRoutingGroup) mut => VT.Add(ref this, bstrName, out pFaxOutboundRoutingGroup);
 		public HRESULT Remove(VARIANT vIndex) mut => VT.Remove(ref this, vIndex);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingGroups self, IUnknown** ppUnk) get__NewEnum;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingGroups self, VARIANT vIndex, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingGroups self, out IUnknown* ppUnk) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingGroups self, VARIANT vIndex, out IFaxOutboundRoutingGroup* pFaxOutboundRoutingGroup) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingGroups self, out int32 plCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingGroups self, BSTR bstrName, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) Add;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingGroups self, BSTR bstrName, out IFaxOutboundRoutingGroup* pFaxOutboundRoutingGroup) Add;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingGroups self, VARIANT vIndex) Remove;
 		}
 	}
@@ -2378,16 +2427,16 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(BSTR* pbstrName) mut => VT.get_Name(ref this, pbstrName);
+		public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
 		public HRESULT get_Status(out FAX_GROUP_STATUS_ENUM pStatus) mut => VT.get_Status(ref this, out pStatus);
-		public HRESULT get_DeviceIds(IFaxDeviceIds** pFaxDeviceIds) mut => VT.get_DeviceIds(ref this, pFaxDeviceIds);
+		public HRESULT get_DeviceIds(out IFaxDeviceIds* pFaxDeviceIds) mut => VT.get_DeviceIds(ref this, out pFaxDeviceIds);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingGroup self, BSTR* pbstrName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingGroup self, out BSTR pbstrName) get_Name;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingGroup self, out FAX_GROUP_STATUS_ENUM pStatus) get_Status;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingGroup self, IFaxDeviceIds** pFaxDeviceIds) get_DeviceIds;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingGroup self, out IFaxDeviceIds* pFaxDeviceIds) get_DeviceIds;
 		}
 	}
 	[CRepr]
@@ -2397,7 +2446,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
+		public HRESULT get__NewEnum(out IUnknown* ppUnk) mut => VT.get__NewEnum(ref this, out ppUnk);
 		public HRESULT get_Item(int32 lIndex, out int32 plDeviceId) mut => VT.get_Item(ref this, lIndex, out plDeviceId);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
 		public HRESULT Add(int32 lDeviceId) mut => VT.Add(ref this, lDeviceId);
@@ -2407,7 +2456,7 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceIds self, IUnknown** ppUnk) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceIds self, out IUnknown* ppUnk) get__NewEnum;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceIds self, int32 lIndex, out int32 plDeviceId) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceIds self, out int32 plCount) get_Count;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDeviceIds self, int32 lDeviceId) Add;
@@ -2422,24 +2471,24 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
-		public HRESULT get_Item(int32 lIndex, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) mut => VT.get_Item(ref this, lIndex, pFaxOutboundRoutingRule);
+		public HRESULT get__NewEnum(out IUnknown* ppUnk) mut => VT.get__NewEnum(ref this, out ppUnk);
+		public HRESULT get_Item(int32 lIndex, out IFaxOutboundRoutingRule* pFaxOutboundRoutingRule) mut => VT.get_Item(ref this, lIndex, out pFaxOutboundRoutingRule);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
-		public HRESULT ItemByCountryAndArea(int32 lCountryCode, int32 lAreaCode, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) mut => VT.ItemByCountryAndArea(ref this, lCountryCode, lAreaCode, pFaxOutboundRoutingRule);
+		public HRESULT ItemByCountryAndArea(int32 lCountryCode, int32 lAreaCode, out IFaxOutboundRoutingRule* pFaxOutboundRoutingRule) mut => VT.ItemByCountryAndArea(ref this, lCountryCode, lAreaCode, out pFaxOutboundRoutingRule);
 		public HRESULT RemoveByCountryAndArea(int32 lCountryCode, int32 lAreaCode) mut => VT.RemoveByCountryAndArea(ref this, lCountryCode, lAreaCode);
 		public HRESULT Remove(int32 lIndex) mut => VT.Remove(ref this, lIndex);
-		public HRESULT Add(int32 lCountryCode, int32 lAreaCode, int16 bUseDevice, BSTR bstrGroupName, int32 lDeviceId, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) mut => VT.Add(ref this, lCountryCode, lAreaCode, bUseDevice, bstrGroupName, lDeviceId, pFaxOutboundRoutingRule);
+		public HRESULT Add(int32 lCountryCode, int32 lAreaCode, int16 bUseDevice, BSTR bstrGroupName, int32 lDeviceId, out IFaxOutboundRoutingRule* pFaxOutboundRoutingRule) mut => VT.Add(ref this, lCountryCode, lAreaCode, bUseDevice, bstrGroupName, lDeviceId, out pFaxOutboundRoutingRule);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRules self, IUnknown** ppUnk) get__NewEnum;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRules self, int32 lIndex, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRules self, out IUnknown* ppUnk) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRules self, int32 lIndex, out IFaxOutboundRoutingRule* pFaxOutboundRoutingRule) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRules self, out int32 plCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRules self, int32 lCountryCode, int32 lAreaCode, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) ItemByCountryAndArea;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRules self, int32 lCountryCode, int32 lAreaCode, out IFaxOutboundRoutingRule* pFaxOutboundRoutingRule) ItemByCountryAndArea;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRules self, int32 lCountryCode, int32 lAreaCode) RemoveByCountryAndArea;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRules self, int32 lIndex) Remove;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRules self, int32 lCountryCode, int32 lAreaCode, int16 bUseDevice, BSTR bstrGroupName, int32 lDeviceId, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) Add;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRules self, int32 lCountryCode, int32 lAreaCode, int16 bUseDevice, BSTR bstrGroupName, int32 lDeviceId, out IFaxOutboundRoutingRule* pFaxOutboundRoutingRule) Add;
 		}
 	}
 	[CRepr]
@@ -2456,7 +2505,7 @@ static
 		public HRESULT put_UseDevice(int16 bUseDevice) mut => VT.put_UseDevice(ref this, bUseDevice);
 		public HRESULT get_DeviceId(out int32 plDeviceId) mut => VT.get_DeviceId(ref this, out plDeviceId);
 		public HRESULT put_DeviceId(int32 DeviceId) mut => VT.put_DeviceId(ref this, DeviceId);
-		public HRESULT get_GroupName(BSTR* pbstrGroupName) mut => VT.get_GroupName(ref this, pbstrGroupName);
+		public HRESULT get_GroupName(out BSTR pbstrGroupName) mut => VT.get_GroupName(ref this, out pbstrGroupName);
 		public HRESULT put_GroupName(BSTR bstrGroupName) mut => VT.put_GroupName(ref this, bstrGroupName);
 		public HRESULT Refresh() mut => VT.Refresh(ref this);
 		public HRESULT Save() mut => VT.Save(ref this);
@@ -2471,7 +2520,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRule self, int16 bUseDevice) put_UseDevice;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRule self, out int32 plDeviceId) get_DeviceId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRule self, int32 DeviceId) put_DeviceId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRule self, BSTR* pbstrGroupName) get_GroupName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRule self, out BSTR pbstrGroupName) get_GroupName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRule self, BSTR bstrGroupName) put_GroupName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRule self) Refresh;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutboundRoutingRule self) Save;
@@ -2484,15 +2533,15 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
-		public HRESULT get_Item(VARIANT vIndex, IFaxInboundRoutingExtension** pFaxInboundRoutingExtension) mut => VT.get_Item(ref this, vIndex, pFaxInboundRoutingExtension);
+		public HRESULT get__NewEnum(out IUnknown* ppUnk) mut => VT.get__NewEnum(ref this, out ppUnk);
+		public HRESULT get_Item(VARIANT vIndex, out IFaxInboundRoutingExtension* pFaxInboundRoutingExtension) mut => VT.get_Item(ref this, vIndex, out pFaxInboundRoutingExtension);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingExtensions self, IUnknown** ppUnk) get__NewEnum;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingExtensions self, VARIANT vIndex, IFaxInboundRoutingExtension** pFaxInboundRoutingExtension) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingExtensions self, out IUnknown* ppUnk) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingExtensions self, VARIANT vIndex, out IFaxInboundRoutingExtension* pFaxInboundRoutingExtension) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingExtensions self, out int32 plCount) get_Count;
 		}
 	}
@@ -2503,9 +2552,9 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_FriendlyName(BSTR* pbstrFriendlyName) mut => VT.get_FriendlyName(ref this, pbstrFriendlyName);
-		public HRESULT get_ImageName(BSTR* pbstrImageName) mut => VT.get_ImageName(ref this, pbstrImageName);
-		public HRESULT get_UniqueName(BSTR* pbstrUniqueName) mut => VT.get_UniqueName(ref this, pbstrUniqueName);
+		public HRESULT get_FriendlyName(out BSTR pbstrFriendlyName) mut => VT.get_FriendlyName(ref this, out pbstrFriendlyName);
+		public HRESULT get_ImageName(out BSTR pbstrImageName) mut => VT.get_ImageName(ref this, out pbstrImageName);
+		public HRESULT get_UniqueName(out BSTR pbstrUniqueName) mut => VT.get_UniqueName(ref this, out pbstrUniqueName);
 		public HRESULT get_MajorVersion(out int32 plMajorVersion) mut => VT.get_MajorVersion(ref this, out plMajorVersion);
 		public HRESULT get_MinorVersion(out int32 plMinorVersion) mut => VT.get_MinorVersion(ref this, out plMinorVersion);
 		public HRESULT get_MajorBuild(out int32 plMajorBuild) mut => VT.get_MajorBuild(ref this, out plMajorBuild);
@@ -2518,9 +2567,9 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingExtension self, BSTR* pbstrFriendlyName) get_FriendlyName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingExtension self, BSTR* pbstrImageName) get_ImageName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingExtension self, BSTR* pbstrUniqueName) get_UniqueName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingExtension self, out BSTR pbstrFriendlyName) get_FriendlyName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingExtension self, out BSTR pbstrImageName) get_ImageName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingExtension self, out BSTR pbstrUniqueName) get_UniqueName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingExtension self, out int32 plMajorVersion) get_MajorVersion;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingExtension self, out int32 plMinorVersion) get_MinorVersion;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingExtension self, out int32 plMajorBuild) get_MajorBuild;
@@ -2538,15 +2587,15 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
-		public HRESULT get_Item(VARIANT vIndex, IFaxInboundRoutingMethod** pFaxInboundRoutingMethod) mut => VT.get_Item(ref this, vIndex, pFaxInboundRoutingMethod);
+		public HRESULT get__NewEnum(out IUnknown* ppUnk) mut => VT.get__NewEnum(ref this, out ppUnk);
+		public HRESULT get_Item(VARIANT vIndex, out IFaxInboundRoutingMethod* pFaxInboundRoutingMethod) mut => VT.get_Item(ref this, vIndex, out pFaxInboundRoutingMethod);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethods self, IUnknown** ppUnk) get__NewEnum;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethods self, VARIANT vIndex, IFaxInboundRoutingMethod** pFaxInboundRoutingMethod) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethods self, out IUnknown* ppUnk) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethods self, VARIANT vIndex, out IFaxInboundRoutingMethod* pFaxInboundRoutingMethod) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethods self, out int32 plCount) get_Count;
 		}
 	}
@@ -2557,11 +2606,11 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(BSTR* pbstrName) mut => VT.get_Name(ref this, pbstrName);
-		public HRESULT get_GUID(BSTR* pbstrGUID) mut => VT.get_GUID(ref this, pbstrGUID);
-		public HRESULT get_FunctionName(BSTR* pbstrFunctionName) mut => VT.get_FunctionName(ref this, pbstrFunctionName);
-		public HRESULT get_ExtensionFriendlyName(BSTR* pbstrExtensionFriendlyName) mut => VT.get_ExtensionFriendlyName(ref this, pbstrExtensionFriendlyName);
-		public HRESULT get_ExtensionImageName(BSTR* pbstrExtensionImageName) mut => VT.get_ExtensionImageName(ref this, pbstrExtensionImageName);
+		public HRESULT get_Name(out BSTR pbstrName) mut => VT.get_Name(ref this, out pbstrName);
+		public HRESULT get_GUID(out BSTR pbstrGUID) mut => VT.get_GUID(ref this, out pbstrGUID);
+		public HRESULT get_FunctionName(out BSTR pbstrFunctionName) mut => VT.get_FunctionName(ref this, out pbstrFunctionName);
+		public HRESULT get_ExtensionFriendlyName(out BSTR pbstrExtensionFriendlyName) mut => VT.get_ExtensionFriendlyName(ref this, out pbstrExtensionFriendlyName);
+		public HRESULT get_ExtensionImageName(out BSTR pbstrExtensionImageName) mut => VT.get_ExtensionImageName(ref this, out pbstrExtensionImageName);
 		public HRESULT get_Priority(out int32 plPriority) mut => VT.get_Priority(ref this, out plPriority);
 		public HRESULT put_Priority(int32 lPriority) mut => VT.put_Priority(ref this, lPriority);
 		public HRESULT Refresh() mut => VT.Refresh(ref this);
@@ -2570,11 +2619,11 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethod self, BSTR* pbstrName) get_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethod self, BSTR* pbstrGUID) get_GUID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethod self, BSTR* pbstrFunctionName) get_FunctionName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethod self, BSTR* pbstrExtensionFriendlyName) get_ExtensionFriendlyName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethod self, BSTR* pbstrExtensionImageName) get_ExtensionImageName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethod self, out BSTR pbstrName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethod self, out BSTR pbstrGUID) get_GUID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethod self, out BSTR pbstrFunctionName) get_FunctionName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethod self, out BSTR pbstrExtensionFriendlyName) get_ExtensionFriendlyName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethod self, out BSTR pbstrExtensionImageName) get_ExtensionImageName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethod self, out int32 plPriority) get_Priority;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethod self, int32 lPriority) put_Priority;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxInboundRoutingMethod self) Refresh;
@@ -2588,7 +2637,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_SubmissionId(BSTR* pbstrSubmissionId) mut => VT.get_SubmissionId(ref this, pbstrSubmissionId);
+		public HRESULT get_SubmissionId(out BSTR pbstrSubmissionId) mut => VT.get_SubmissionId(ref this, out pbstrSubmissionId);
 		public HRESULT get_Bodies(out VARIANT pvBodies) mut => VT.get_Bodies(ref this, out pvBodies);
 		public HRESULT put_Bodies(VARIANT vBodies) mut => VT.put_Bodies(ref this, vBodies);
 		public HRESULT Submit2(BSTR bstrFaxServerName, out VARIANT pvFaxOutgoingJobIDs, out int32 plErrorBodyFile) mut => VT.Submit2(ref this, bstrFaxServerName, out pvFaxOutgoingJobIDs, out plErrorBodyFile);
@@ -2597,7 +2646,7 @@ static
 		[CRepr]
 		public struct VTable : IFaxDocument.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument2 self, BSTR* pbstrSubmissionId) get_SubmissionId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument2 self, out BSTR pbstrSubmissionId) get_SubmissionId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument2 self, out VARIANT pvBodies) get_Bodies;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument2 self, VARIANT vBodies) put_Bodies;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxDocument2 self, BSTR bstrFaxServerName, out VARIANT pvFaxOutgoingJobIDs, out int32 plErrorBodyFile) Submit2;
@@ -2613,7 +2662,7 @@ static
 		
 		public HRESULT get_UseArchive(out int16 pbUseArchive) mut => VT.get_UseArchive(ref this, out pbUseArchive);
 		public HRESULT put_UseArchive(int16 bUseArchive) mut => VT.put_UseArchive(ref this, bUseArchive);
-		public HRESULT get_ArchiveLocation(BSTR* pbstrArchiveLocation) mut => VT.get_ArchiveLocation(ref this, pbstrArchiveLocation);
+		public HRESULT get_ArchiveLocation(out BSTR pbstrArchiveLocation) mut => VT.get_ArchiveLocation(ref this, out pbstrArchiveLocation);
 		public HRESULT put_ArchiveLocation(BSTR bstrArchiveLocation) mut => VT.put_ArchiveLocation(ref this, bstrArchiveLocation);
 		public HRESULT get_SizeQuotaWarning(out int16 pbSizeQuotaWarning) mut => VT.get_SizeQuotaWarning(ref this, out pbSizeQuotaWarning);
 		public HRESULT put_SizeQuotaWarning(int16 bSizeQuotaWarning) mut => VT.put_SizeQuotaWarning(ref this, bSizeQuotaWarning);
@@ -2659,7 +2708,7 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxConfiguration self, out int16 pbUseArchive) get_UseArchive;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxConfiguration self, int16 bUseArchive) put_UseArchive;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxConfiguration self, BSTR* pbstrArchiveLocation) get_ArchiveLocation;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxConfiguration self, out BSTR pbstrArchiveLocation) get_ArchiveLocation;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxConfiguration self, BSTR bstrArchiveLocation) put_ArchiveLocation;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxConfiguration self, out int16 pbSizeQuotaWarning) get_SizeQuotaWarning;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxConfiguration self, int16 bSizeQuotaWarning) put_SizeQuotaWarning;
@@ -2708,18 +2757,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Configuration(IFaxConfiguration** ppFaxConfiguration) mut => VT.get_Configuration(ref this, ppFaxConfiguration);
-		public HRESULT get_CurrentAccount(IFaxAccount** ppCurrentAccount) mut => VT.get_CurrentAccount(ref this, ppCurrentAccount);
-		public HRESULT get_FaxAccountSet(IFaxAccountSet** ppFaxAccountSet) mut => VT.get_FaxAccountSet(ref this, ppFaxAccountSet);
-		public HRESULT get_Security2(IFaxSecurity2** ppFaxSecurity2) mut => VT.get_Security2(ref this, ppFaxSecurity2);
+		public HRESULT get_Configuration(out IFaxConfiguration* ppFaxConfiguration) mut => VT.get_Configuration(ref this, out ppFaxConfiguration);
+		public HRESULT get_CurrentAccount(out IFaxAccount* ppCurrentAccount) mut => VT.get_CurrentAccount(ref this, out ppCurrentAccount);
+		public HRESULT get_FaxAccountSet(out IFaxAccountSet* ppFaxAccountSet) mut => VT.get_FaxAccountSet(ref this, out ppFaxAccountSet);
+		public HRESULT get_Security2(out IFaxSecurity2* ppFaxSecurity2) mut => VT.get_Security2(ref this, out ppFaxSecurity2);
 
 		[CRepr]
 		public struct VTable : IFaxServer.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer2 self, IFaxConfiguration** ppFaxConfiguration) get_Configuration;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer2 self, IFaxAccount** ppCurrentAccount) get_CurrentAccount;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer2 self, IFaxAccountSet** ppFaxAccountSet) get_FaxAccountSet;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer2 self, IFaxSecurity2** ppFaxSecurity2) get_Security2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer2 self, out IFaxConfiguration* ppFaxConfiguration) get_Configuration;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer2 self, out IFaxAccount* ppCurrentAccount) get_CurrentAccount;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer2 self, out IFaxAccountSet* ppFaxAccountSet) get_FaxAccountSet;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxServer2 self, out IFaxSecurity2* ppFaxSecurity2) get_Security2;
 		}
 	}
 	[CRepr]
@@ -2729,17 +2778,17 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetAccounts(IFaxAccounts** ppFaxAccounts) mut => VT.GetAccounts(ref this, ppFaxAccounts);
-		public HRESULT GetAccount(BSTR bstrAccountName, IFaxAccount** pFaxAccount) mut => VT.GetAccount(ref this, bstrAccountName, pFaxAccount);
-		public HRESULT AddAccount(BSTR bstrAccountName, IFaxAccount** pFaxAccount) mut => VT.AddAccount(ref this, bstrAccountName, pFaxAccount);
+		public HRESULT GetAccounts(out IFaxAccounts* ppFaxAccounts) mut => VT.GetAccounts(ref this, out ppFaxAccounts);
+		public HRESULT GetAccount(BSTR bstrAccountName, out IFaxAccount* pFaxAccount) mut => VT.GetAccount(ref this, bstrAccountName, out pFaxAccount);
+		public HRESULT AddAccount(BSTR bstrAccountName, out IFaxAccount* pFaxAccount) mut => VT.AddAccount(ref this, bstrAccountName, out pFaxAccount);
 		public HRESULT RemoveAccount(BSTR bstrAccountName) mut => VT.RemoveAccount(ref this, bstrAccountName);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountSet self, IFaxAccounts** ppFaxAccounts) GetAccounts;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountSet self, BSTR bstrAccountName, IFaxAccount** pFaxAccount) GetAccount;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountSet self, BSTR bstrAccountName, IFaxAccount** pFaxAccount) AddAccount;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountSet self, out IFaxAccounts* ppFaxAccounts) GetAccounts;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountSet self, BSTR bstrAccountName, out IFaxAccount* pFaxAccount) GetAccount;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountSet self, BSTR bstrAccountName, out IFaxAccount* pFaxAccount) AddAccount;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountSet self, BSTR bstrAccountName) RemoveAccount;
 		}
 	}
@@ -2750,15 +2799,15 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get__NewEnum(IUnknown** ppUnk) mut => VT.get__NewEnum(ref this, ppUnk);
-		public HRESULT get_Item(VARIANT vIndex, IFaxAccount** pFaxAccount) mut => VT.get_Item(ref this, vIndex, pFaxAccount);
+		public HRESULT get__NewEnum(out IUnknown* ppUnk) mut => VT.get__NewEnum(ref this, out ppUnk);
+		public HRESULT get_Item(VARIANT vIndex, out IFaxAccount* pFaxAccount) mut => VT.get_Item(ref this, vIndex, out pFaxAccount);
 		public HRESULT get_Count(out int32 plCount) mut => VT.get_Count(ref this, out plCount);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccounts self, IUnknown** ppUnk) get__NewEnum;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccounts self, VARIANT vIndex, IFaxAccount** pFaxAccount) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccounts self, out IUnknown* ppUnk) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccounts self, VARIANT vIndex, out IFaxAccount* pFaxAccount) get_Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccounts self, out int32 plCount) get_Count;
 		}
 	}
@@ -2769,16 +2818,16 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_AccountName(BSTR* pbstrAccountName) mut => VT.get_AccountName(ref this, pbstrAccountName);
-		public HRESULT get_Folders(IFaxAccountFolders** ppFolders) mut => VT.get_Folders(ref this, ppFolders);
+		public HRESULT get_AccountName(out BSTR pbstrAccountName) mut => VT.get_AccountName(ref this, out pbstrAccountName);
+		public HRESULT get_Folders(out IFaxAccountFolders* ppFolders) mut => VT.get_Folders(ref this, out ppFolders);
 		public HRESULT ListenToAccountEvents(FAX_ACCOUNT_EVENTS_TYPE_ENUM EventTypes) mut => VT.ListenToAccountEvents(ref this, EventTypes);
 		public HRESULT get_RegisteredEvents(out FAX_ACCOUNT_EVENTS_TYPE_ENUM pRegisteredEvents) mut => VT.get_RegisteredEvents(ref this, out pRegisteredEvents);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccount self, BSTR* pbstrAccountName) get_AccountName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccount self, IFaxAccountFolders** ppFolders) get_Folders;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccount self, out BSTR pbstrAccountName) get_AccountName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccount self, out IFaxAccountFolders* ppFolders) get_Folders;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccount self, FAX_ACCOUNT_EVENTS_TYPE_ENUM EventTypes) ListenToAccountEvents;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccount self, out FAX_ACCOUNT_EVENTS_TYPE_ENUM pRegisteredEvents) get_RegisteredEvents;
 		}
@@ -2791,14 +2840,14 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_HasCoverPage(out int16 pbHasCoverPage) mut => VT.get_HasCoverPage(ref this, out pbHasCoverPage);
-		public HRESULT get_ReceiptAddress(BSTR* pbstrReceiptAddress) mut => VT.get_ReceiptAddress(ref this, pbstrReceiptAddress);
+		public HRESULT get_ReceiptAddress(out BSTR pbstrReceiptAddress) mut => VT.get_ReceiptAddress(ref this, out pbstrReceiptAddress);
 		public HRESULT get_ScheduleType(out FAX_SCHEDULE_TYPE_ENUM pScheduleType) mut => VT.get_ScheduleType(ref this, out pScheduleType);
 
 		[CRepr]
 		public struct VTable : IFaxOutgoingJob.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob2 self, out int16 pbHasCoverPage) get_HasCoverPage;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob2 self, BSTR* pbstrReceiptAddress) get_ReceiptAddress;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob2 self, out BSTR pbstrReceiptAddress) get_ReceiptAddress;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingJob2 self, out FAX_SCHEDULE_TYPE_ENUM pScheduleType) get_ScheduleType;
 		}
 	}
@@ -2809,18 +2858,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_OutgoingQueue(IFaxAccountOutgoingQueue** pFaxOutgoingQueue) mut => VT.get_OutgoingQueue(ref this, pFaxOutgoingQueue);
-		public HRESULT get_IncomingQueue(IFaxAccountIncomingQueue** pFaxIncomingQueue) mut => VT.get_IncomingQueue(ref this, pFaxIncomingQueue);
-		public HRESULT get_IncomingArchive(IFaxAccountIncomingArchive** pFaxIncomingArchive) mut => VT.get_IncomingArchive(ref this, pFaxIncomingArchive);
-		public HRESULT get_OutgoingArchive(IFaxAccountOutgoingArchive** pFaxOutgoingArchive) mut => VT.get_OutgoingArchive(ref this, pFaxOutgoingArchive);
+		public HRESULT get_OutgoingQueue(out IFaxAccountOutgoingQueue* pFaxOutgoingQueue) mut => VT.get_OutgoingQueue(ref this, out pFaxOutgoingQueue);
+		public HRESULT get_IncomingQueue(out IFaxAccountIncomingQueue* pFaxIncomingQueue) mut => VT.get_IncomingQueue(ref this, out pFaxIncomingQueue);
+		public HRESULT get_IncomingArchive(out IFaxAccountIncomingArchive* pFaxIncomingArchive) mut => VT.get_IncomingArchive(ref this, out pFaxIncomingArchive);
+		public HRESULT get_OutgoingArchive(out IFaxAccountOutgoingArchive* pFaxOutgoingArchive) mut => VT.get_OutgoingArchive(ref this, out pFaxOutgoingArchive);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountFolders self, IFaxAccountOutgoingQueue** pFaxOutgoingQueue) get_OutgoingQueue;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountFolders self, IFaxAccountIncomingQueue** pFaxIncomingQueue) get_IncomingQueue;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountFolders self, IFaxAccountIncomingArchive** pFaxIncomingArchive) get_IncomingArchive;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountFolders self, IFaxAccountOutgoingArchive** pFaxOutgoingArchive) get_OutgoingArchive;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountFolders self, out IFaxAccountOutgoingQueue* pFaxOutgoingQueue) get_OutgoingQueue;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountFolders self, out IFaxAccountIncomingQueue* pFaxIncomingQueue) get_IncomingQueue;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountFolders self, out IFaxAccountIncomingArchive* pFaxIncomingArchive) get_IncomingArchive;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountFolders self, out IFaxAccountOutgoingArchive* pFaxOutgoingArchive) get_OutgoingArchive;
 		}
 	}
 	[CRepr]
@@ -2830,14 +2879,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetJobs(IFaxIncomingJobs** pFaxIncomingJobs) mut => VT.GetJobs(ref this, pFaxIncomingJobs);
-		public HRESULT GetJob(BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) mut => VT.GetJob(ref this, bstrJobId, pFaxIncomingJob);
+		public HRESULT GetJobs(out IFaxIncomingJobs* pFaxIncomingJobs) mut => VT.GetJobs(ref this, out pFaxIncomingJobs);
+		public HRESULT GetJob(BSTR bstrJobId, out IFaxIncomingJob* pFaxIncomingJob) mut => VT.GetJob(ref this, bstrJobId, out pFaxIncomingJob);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountIncomingQueue self, IFaxIncomingJobs** pFaxIncomingJobs) GetJobs;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountIncomingQueue self, BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) GetJob;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountIncomingQueue self, out IFaxIncomingJobs* pFaxIncomingJobs) GetJobs;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountIncomingQueue self, BSTR bstrJobId, out IFaxIncomingJob* pFaxIncomingJob) GetJob;
 		}
 	}
 	[CRepr]
@@ -2847,14 +2896,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetJobs(IFaxOutgoingJobs** pFaxOutgoingJobs) mut => VT.GetJobs(ref this, pFaxOutgoingJobs);
-		public HRESULT GetJob(BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) mut => VT.GetJob(ref this, bstrJobId, pFaxOutgoingJob);
+		public HRESULT GetJobs(out IFaxOutgoingJobs* pFaxOutgoingJobs) mut => VT.GetJobs(ref this, out pFaxOutgoingJobs);
+		public HRESULT GetJob(BSTR bstrJobId, out IFaxOutgoingJob* pFaxOutgoingJob) mut => VT.GetJob(ref this, bstrJobId, out pFaxOutgoingJob);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountOutgoingQueue self, IFaxOutgoingJobs** pFaxOutgoingJobs) GetJobs;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountOutgoingQueue self, BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) GetJob;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountOutgoingQueue self, out IFaxOutgoingJobs* pFaxOutgoingJobs) GetJobs;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountOutgoingQueue self, BSTR bstrJobId, out IFaxOutgoingJob* pFaxOutgoingJob) GetJob;
 		}
 	}
 	[CRepr]
@@ -2866,7 +2915,7 @@ static
 		
 		public HRESULT get_HasCoverPage(out int16 pbHasCoverPage) mut => VT.get_HasCoverPage(ref this, out pbHasCoverPage);
 		public HRESULT get_ReceiptType(out FAX_RECEIPT_TYPE_ENUM pReceiptType) mut => VT.get_ReceiptType(ref this, out pReceiptType);
-		public HRESULT get_ReceiptAddress(BSTR* pbstrReceiptAddress) mut => VT.get_ReceiptAddress(ref this, pbstrReceiptAddress);
+		public HRESULT get_ReceiptAddress(out BSTR pbstrReceiptAddress) mut => VT.get_ReceiptAddress(ref this, out pbstrReceiptAddress);
 		public HRESULT get_Read(out int16 pbRead) mut => VT.get_Read(ref this, out pbRead);
 		public HRESULT put_Read(int16 bRead) mut => VT.put_Read(ref this, bRead);
 		public HRESULT Save() mut => VT.Save(ref this);
@@ -2877,7 +2926,7 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage2 self, out int16 pbHasCoverPage) get_HasCoverPage;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage2 self, out FAX_RECEIPT_TYPE_ENUM pReceiptType) get_ReceiptType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage2 self, BSTR* pbstrReceiptAddress) get_ReceiptAddress;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage2 self, out BSTR pbstrReceiptAddress) get_ReceiptAddress;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage2 self, out int16 pbRead) get_Read;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage2 self, int16 bRead) put_Read;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxOutgoingMessage2 self) Save;
@@ -2894,8 +2943,8 @@ static
 		public HRESULT get_SizeLow(out int32 plSizeLow) mut => VT.get_SizeLow(ref this, out plSizeLow);
 		public HRESULT get_SizeHigh(out int32 plSizeHigh) mut => VT.get_SizeHigh(ref this, out plSizeHigh);
 		public HRESULT Refresh() mut => VT.Refresh(ref this);
-		public HRESULT GetMessages(int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) mut => VT.GetMessages(ref this, lPrefetchSize, pFaxIncomingMessageIterator);
-		public HRESULT GetMessage(BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) mut => VT.GetMessage(ref this, bstrMessageId, pFaxIncomingMessage);
+		public HRESULT GetMessages(int32 lPrefetchSize, out IFaxIncomingMessageIterator* pFaxIncomingMessageIterator) mut => VT.GetMessages(ref this, lPrefetchSize, out pFaxIncomingMessageIterator);
+		public HRESULT GetMessage(BSTR bstrMessageId, out IFaxIncomingMessage* pFaxIncomingMessage) mut => VT.GetMessage(ref this, bstrMessageId, out pFaxIncomingMessage);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
@@ -2903,8 +2952,8 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountIncomingArchive self, out int32 plSizeLow) get_SizeLow;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountIncomingArchive self, out int32 plSizeHigh) get_SizeHigh;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountIncomingArchive self) Refresh;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountIncomingArchive self, int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) GetMessages;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountIncomingArchive self, BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) GetMessage;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountIncomingArchive self, int32 lPrefetchSize, out IFaxIncomingMessageIterator* pFaxIncomingMessageIterator) GetMessages;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountIncomingArchive self, BSTR bstrMessageId, out IFaxIncomingMessage* pFaxIncomingMessage) GetMessage;
 		}
 	}
 	[CRepr]
@@ -2917,8 +2966,8 @@ static
 		public HRESULT get_SizeLow(out int32 plSizeLow) mut => VT.get_SizeLow(ref this, out plSizeLow);
 		public HRESULT get_SizeHigh(out int32 plSizeHigh) mut => VT.get_SizeHigh(ref this, out plSizeHigh);
 		public HRESULT Refresh() mut => VT.Refresh(ref this);
-		public HRESULT GetMessages(int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) mut => VT.GetMessages(ref this, lPrefetchSize, pFaxOutgoingMessageIterator);
-		public HRESULT GetMessage(BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) mut => VT.GetMessage(ref this, bstrMessageId, pFaxOutgoingMessage);
+		public HRESULT GetMessages(int32 lPrefetchSize, out IFaxOutgoingMessageIterator* pFaxOutgoingMessageIterator) mut => VT.GetMessages(ref this, lPrefetchSize, out pFaxOutgoingMessageIterator);
+		public HRESULT GetMessage(BSTR bstrMessageId, out IFaxOutgoingMessage* pFaxOutgoingMessage) mut => VT.GetMessage(ref this, bstrMessageId, out pFaxOutgoingMessage);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
@@ -2926,8 +2975,8 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountOutgoingArchive self, out int32 plSizeLow) get_SizeLow;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountOutgoingArchive self, out int32 plSizeHigh) get_SizeHigh;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountOutgoingArchive self) Refresh;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountOutgoingArchive self, int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) GetMessages;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountOutgoingArchive self, BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) GetMessage;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountOutgoingArchive self, int32 lPrefetchSize, out IFaxOutgoingMessageIterator* pFaxOutgoingMessageIterator) GetMessages;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxAccountOutgoingArchive self, BSTR bstrMessageId, out IFaxOutgoingMessage* pFaxOutgoingMessage) GetMessage;
 		}
 	}
 	[CRepr]
@@ -2964,15 +3013,15 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Subject(BSTR* pbstrSubject) mut => VT.get_Subject(ref this, pbstrSubject);
+		public HRESULT get_Subject(out BSTR pbstrSubject) mut => VT.get_Subject(ref this, out pbstrSubject);
 		public HRESULT put_Subject(BSTR bstrSubject) mut => VT.put_Subject(ref this, bstrSubject);
-		public HRESULT get_SenderName(BSTR* pbstrSenderName) mut => VT.get_SenderName(ref this, pbstrSenderName);
+		public HRESULT get_SenderName(out BSTR pbstrSenderName) mut => VT.get_SenderName(ref this, out pbstrSenderName);
 		public HRESULT put_SenderName(BSTR bstrSenderName) mut => VT.put_SenderName(ref this, bstrSenderName);
-		public HRESULT get_SenderFaxNumber(BSTR* pbstrSenderFaxNumber) mut => VT.get_SenderFaxNumber(ref this, pbstrSenderFaxNumber);
+		public HRESULT get_SenderFaxNumber(out BSTR pbstrSenderFaxNumber) mut => VT.get_SenderFaxNumber(ref this, out pbstrSenderFaxNumber);
 		public HRESULT put_SenderFaxNumber(BSTR bstrSenderFaxNumber) mut => VT.put_SenderFaxNumber(ref this, bstrSenderFaxNumber);
 		public HRESULT get_HasCoverPage(out int16 pbHasCoverPage) mut => VT.get_HasCoverPage(ref this, out pbHasCoverPage);
 		public HRESULT put_HasCoverPage(int16 bHasCoverPage) mut => VT.put_HasCoverPage(ref this, bHasCoverPage);
-		public HRESULT get_Recipients(BSTR* pbstrRecipients) mut => VT.get_Recipients(ref this, pbstrRecipients);
+		public HRESULT get_Recipients(out BSTR pbstrRecipients) mut => VT.get_Recipients(ref this, out pbstrRecipients);
 		public HRESULT put_Recipients(BSTR bstrRecipients) mut => VT.put_Recipients(ref this, bstrRecipients);
 		public HRESULT get_WasReAssigned(out int16 pbWasReAssigned) mut => VT.get_WasReAssigned(ref this, out pbWasReAssigned);
 		public HRESULT get_Read(out int16 pbRead) mut => VT.get_Read(ref this, out pbRead);
@@ -2984,15 +3033,15 @@ static
 		[CRepr]
 		public struct VTable : IFaxIncomingMessage.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, BSTR* pbstrSubject) get_Subject;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, out BSTR pbstrSubject) get_Subject;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, BSTR bstrSubject) put_Subject;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, BSTR* pbstrSenderName) get_SenderName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, out BSTR pbstrSenderName) get_SenderName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, BSTR bstrSenderName) put_SenderName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, BSTR* pbstrSenderFaxNumber) get_SenderFaxNumber;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, out BSTR pbstrSenderFaxNumber) get_SenderFaxNumber;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, BSTR bstrSenderFaxNumber) put_SenderFaxNumber;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, out int16 pbHasCoverPage) get_HasCoverPage;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, int16 bHasCoverPage) put_HasCoverPage;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, BSTR* pbstrRecipients) get_Recipients;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, out BSTR pbstrRecipients) get_Recipients;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, BSTR bstrRecipients) put_Recipients;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, out int16 pbWasReAssigned) get_WasReAssigned;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFaxIncomingMessage2 self, out int16 pbRead) get_Read;

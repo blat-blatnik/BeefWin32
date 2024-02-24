@@ -822,12 +822,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Create(PSTR pszDSN, PSTR pszClientDllName, out Guid pguidRm, IDtcToXaHelper** ppXaHelper) mut => VT.Create(ref this, pszDSN, pszClientDllName, out pguidRm, ppXaHelper);
+		public HRESULT Create(PSTR pszDSN, PSTR pszClientDllName, out Guid pguidRm, out IDtcToXaHelper* ppXaHelper) mut => VT.Create(ref this, pszDSN, pszClientDllName, out pguidRm, out ppXaHelper);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDtcToXaHelperFactory self, PSTR pszDSN, PSTR pszClientDllName, out Guid pguidRm, IDtcToXaHelper** ppXaHelper) Create;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDtcToXaHelperFactory self, PSTR pszDSN, PSTR pszClientDllName, out Guid pguidRm, out IDtcToXaHelper* ppXaHelper) Create;
 		}
 	}
 	[CRepr]
@@ -875,12 +875,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Lookup(ITransaction** ppTransaction) mut => VT.Lookup(ref this, ppTransaction);
+		public HRESULT Lookup(out ITransaction* ppTransaction) mut => VT.Lookup(ref this, out ppTransaction);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXATransLookup self, ITransaction** ppTransaction) Lookup;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXATransLookup self, out ITransaction* ppTransaction) Lookup;
 		}
 	}
 	[CRepr]
@@ -890,12 +890,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Lookup(ref xid_t pXID, ITransaction** ppTransaction) mut => VT.Lookup(ref this, ref pXID, ppTransaction);
+		public HRESULT Lookup(ref xid_t pXID, out ITransaction* ppTransaction) mut => VT.Lookup(ref this, ref pXID, out ppTransaction);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXATransLookup2 self, ref xid_t pXID, ITransaction** ppTransaction) Lookup;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXATransLookup2 self, ref xid_t pXID, out ITransaction* ppTransaction) Lookup;
 		}
 	}
 	[CRepr]
@@ -920,7 +920,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Enlist(ITransaction* pTransaction, ITransactionResourceAsync* pRes, out BOID pUOW, out int32 pisoLevel, ITransactionEnlistmentAsync** ppEnlist) mut => VT.Enlist(ref this, pTransaction, pRes, out pUOW, out pisoLevel, ppEnlist);
+		public HRESULT Enlist(ITransaction* pTransaction, ITransactionResourceAsync* pRes, out BOID pUOW, out int32 pisoLevel, out ITransactionEnlistmentAsync* ppEnlist) mut => VT.Enlist(ref this, pTransaction, pRes, out pUOW, out pisoLevel, out ppEnlist);
 		public HRESULT Reenlist(uint8* pPrepInfo, uint32 cbPrepInfo, uint32 lTimeout, out XACTSTAT pXactStat) mut => VT.Reenlist(ref this, pPrepInfo, cbPrepInfo, lTimeout, out pXactStat);
 		public HRESULT ReenlistmentComplete() mut => VT.ReenlistmentComplete(ref this);
 		public HRESULT GetDistributedTransactionManager(in Guid iid, void** ppvObject) mut => VT.GetDistributedTransactionManager(ref this, iid, ppvObject);
@@ -928,7 +928,7 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManagerAlt self, ITransaction* pTransaction, ITransactionResourceAsync* pRes, out BOID pUOW, out int32 pisoLevel, ITransactionEnlistmentAsync** ppEnlist) Enlist;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManagerAlt self, ITransaction* pTransaction, ITransactionResourceAsync* pRes, out BOID pUOW, out int32 pisoLevel, out ITransactionEnlistmentAsync* ppEnlist) Enlist;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManagerAlt self, uint8* pPrepInfo, uint32 cbPrepInfo, uint32 lTimeout, out XACTSTAT pXactStat) Reenlist;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManagerAlt self) ReenlistmentComplete;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManagerAlt self, in Guid iid, void** ppvObject) GetDistributedTransactionManager;
@@ -958,13 +958,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Enlist2(ITransaction* pTransaction, ITransactionResourceAsync* pResAsync, out BOID pUOW, out int32 pisoLevel, out xid_t pXid, ITransactionEnlistmentAsync** ppEnlist) mut => VT.Enlist2(ref this, pTransaction, pResAsync, out pUOW, out pisoLevel, out pXid, ppEnlist);
+		public HRESULT Enlist2(ITransaction* pTransaction, ITransactionResourceAsync* pResAsync, out BOID pUOW, out int32 pisoLevel, out xid_t pXid, out ITransactionEnlistmentAsync* ppEnlist) mut => VT.Enlist2(ref this, pTransaction, pResAsync, out pUOW, out pisoLevel, out pXid, out ppEnlist);
 		public HRESULT Reenlist2(ref xid_t pXid, uint32 dwTimeout, out XACTSTAT pXactStat) mut => VT.Reenlist2(ref this, ref pXid, dwTimeout, out pXactStat);
 
 		[CRepr]
 		public struct VTable : IResourceManagerAlt.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManager2 self, ITransaction* pTransaction, ITransactionResourceAsync* pResAsync, out BOID pUOW, out int32 pisoLevel, out xid_t pXid, ITransactionEnlistmentAsync** ppEnlist) Enlist2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManager2 self, ITransaction* pTransaction, ITransactionResourceAsync* pResAsync, out BOID pUOW, out int32 pisoLevel, out xid_t pXid, out ITransactionEnlistmentAsync* ppEnlist) Enlist2;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManager2 self, ref xid_t pXid, uint32 dwTimeout, out XACTSTAT pXactStat) Reenlist2;
 		}
 	}
@@ -1039,12 +1039,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Create(ref Guid pguidRM, PSTR pszRMName, IResourceManagerSink* pIResMgrSink, IResourceManagerAlt** ppResMgr) mut => VT.Create(ref this, ref pguidRM, pszRMName, pIResMgrSink, ppResMgr);
+		public HRESULT Create(ref Guid pguidRM, PSTR pszRMName, IResourceManagerSink* pIResMgrSink, out IResourceManagerAlt* ppResMgr) mut => VT.Create(ref this, ref pguidRM, pszRMName, pIResMgrSink, out ppResMgr);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManagerFactory self, ref Guid pguidRM, PSTR pszRMName, IResourceManagerSink* pIResMgrSink, IResourceManagerAlt** ppResMgr) Create;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManagerFactory self, ref Guid pguidRM, PSTR pszRMName, IResourceManagerSink* pIResMgrSink, out IResourceManagerAlt* ppResMgr) Create;
 		}
 	}
 	[CRepr]
@@ -1148,12 +1148,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Create(ITransaction* pTransaction, ITransactionVoterNotifyAsync2* pVoterNotify, ITransactionVoterBallotAsync2** ppVoterBallot) mut => VT.Create(ref this, pTransaction, pVoterNotify, ppVoterBallot);
+		public HRESULT Create(ITransaction* pTransaction, ITransactionVoterNotifyAsync2* pVoterNotify, out ITransactionVoterBallotAsync2* ppVoterBallot) mut => VT.Create(ref this, pTransaction, pVoterNotify, out ppVoterBallot);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionVoterFactory2 self, ITransaction* pTransaction, ITransactionVoterNotifyAsync2* pVoterNotify, ITransactionVoterBallotAsync2** ppVoterBallot) Create;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionVoterFactory2 self, ITransaction* pTransaction, ITransactionVoterNotifyAsync2* pVoterNotify, out ITransactionVoterBallotAsync2* ppVoterBallot) Create;
 		}
 	}
 	[CRepr]
@@ -1167,7 +1167,7 @@ static
 		public HRESULT WaitForEnlistment() mut => VT.WaitForEnlistment(ref this);
 		public HRESULT Phase0Done() mut => VT.Phase0Done(ref this);
 		public HRESULT Unenlist() mut => VT.Unenlist(ref this);
-		public HRESULT GetTransaction(ITransaction** ppITransaction) mut => VT.GetTransaction(ref this, ppITransaction);
+		public HRESULT GetTransaction(out ITransaction* ppITransaction) mut => VT.GetTransaction(ref this, out ppITransaction);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -1176,7 +1176,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionPhase0EnlistmentAsync self) WaitForEnlistment;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionPhase0EnlistmentAsync self) Phase0Done;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionPhase0EnlistmentAsync self) Unenlist;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionPhase0EnlistmentAsync self, ITransaction** ppITransaction) GetTransaction;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionPhase0EnlistmentAsync self, out ITransaction* ppITransaction) GetTransaction;
 		}
 	}
 	[CRepr]
@@ -1203,12 +1203,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Create(ITransactionPhase0NotifyAsync* pPhase0Notify, ITransactionPhase0EnlistmentAsync** ppPhase0Enlistment) mut => VT.Create(ref this, pPhase0Notify, ppPhase0Enlistment);
+		public HRESULT Create(ITransactionPhase0NotifyAsync* pPhase0Notify, out ITransactionPhase0EnlistmentAsync* ppPhase0Enlistment) mut => VT.Create(ref this, pPhase0Notify, out ppPhase0Enlistment);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionPhase0Factory self, ITransactionPhase0NotifyAsync* pPhase0Notify, ITransactionPhase0EnlistmentAsync** ppPhase0Enlistment) Create;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionPhase0Factory self, ITransactionPhase0NotifyAsync* pPhase0Notify, out ITransactionPhase0EnlistmentAsync* ppPhase0Enlistment) Create;
 		}
 	}
 	[CRepr]
@@ -1241,12 +1241,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Create(ITransactionTransmitter** ppTransmitter) mut => VT.Create(ref this, ppTransmitter);
+		public HRESULT Create(out ITransactionTransmitter* ppTransmitter) mut => VT.Create(ref this, out ppTransmitter);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionTransmitterFactory self, ITransactionTransmitter** ppTransmitter) Create;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionTransmitterFactory self, out ITransactionTransmitter* ppTransmitter) Create;
 		}
 	}
 	[CRepr]
@@ -1256,7 +1256,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT UnmarshalPropagationToken(uint32 cbToken, uint8* rgbToken, ITransaction** ppTransaction) mut => VT.UnmarshalPropagationToken(ref this, cbToken, rgbToken, ppTransaction);
+		public HRESULT UnmarshalPropagationToken(uint32 cbToken, uint8* rgbToken, out ITransaction* ppTransaction) mut => VT.UnmarshalPropagationToken(ref this, cbToken, rgbToken, out ppTransaction);
 		public HRESULT GetReturnTokenSize(out uint32 pcbReturnToken) mut => VT.GetReturnTokenSize(ref this, out pcbReturnToken);
 		public HRESULT MarshalReturnToken(uint32 cbReturnToken, uint8* rgbReturnToken, out uint32 pcbUsed) mut => VT.MarshalReturnToken(ref this, cbReturnToken, rgbReturnToken, out pcbUsed);
 		public HRESULT Reset() mut => VT.Reset(ref this);
@@ -1264,7 +1264,7 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionReceiver self, uint32 cbToken, uint8* rgbToken, ITransaction** ppTransaction) UnmarshalPropagationToken;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionReceiver self, uint32 cbToken, uint8* rgbToken, out ITransaction* ppTransaction) UnmarshalPropagationToken;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionReceiver self, out uint32 pcbReturnToken) GetReturnTokenSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionReceiver self, uint32 cbReturnToken, uint8* rgbReturnToken, out uint32 pcbUsed) MarshalReturnToken;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionReceiver self) Reset;
@@ -1277,12 +1277,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Create(ITransactionReceiver** ppReceiver) mut => VT.Create(ref this, ppReceiver);
+		public HRESULT Create(out ITransactionReceiver* ppReceiver) mut => VT.Create(ref this, out ppReceiver);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionReceiverFactory self, ITransactionReceiver** ppReceiver) Create;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransactionReceiverFactory self, out ITransactionReceiver* ppReceiver) Create;
 		}
 	}
 	[CRepr]
@@ -1319,12 +1319,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Create(uint8* pucLuPair, uint32 cbLuPair, IDtcLuRecovery** ppRecovery) mut => VT.Create(ref this, pucLuPair, cbLuPair, ppRecovery);
+		public HRESULT Create(uint8* pucLuPair, uint32 cbLuPair, out IDtcLuRecovery* ppRecovery) mut => VT.Create(ref this, pucLuPair, cbLuPair, out ppRecovery);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDtcLuRecoveryFactory self, uint8* pucLuPair, uint32 cbLuPair, IDtcLuRecovery** ppRecovery) Create;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDtcLuRecoveryFactory self, uint8* pucLuPair, uint32 cbLuPair, out IDtcLuRecovery* ppRecovery) Create;
 		}
 	}
 	[CRepr]
@@ -1432,12 +1432,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetObjectToHandleWorkFromLu(IDtcLuRecoveryInitiatedByLuWork** ppWork) mut => VT.GetObjectToHandleWorkFromLu(ref this, ppWork);
+		public HRESULT GetObjectToHandleWorkFromLu(out IDtcLuRecoveryInitiatedByLuWork* ppWork) mut => VT.GetObjectToHandleWorkFromLu(ref this, out ppWork);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDtcLuRecoveryInitiatedByLu self, IDtcLuRecoveryInitiatedByLuWork** ppWork) GetObjectToHandleWorkFromLu;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDtcLuRecoveryInitiatedByLu self, out IDtcLuRecoveryInitiatedByLuWork* ppWork) GetObjectToHandleWorkFromLu;
 		}
 	}
 	[CRepr]

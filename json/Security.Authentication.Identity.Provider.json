@@ -2,10 +2,87 @@
 
 "Constants":[
 	{
+		"Name":"IDENTITY_KEYWORD_ASSOCIATED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"associated"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IDENTITY_KEYWORD_LOCAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"local"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IDENTITY_KEYWORD_HOMEGROUP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"homegroup"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IDENTITY_KEYWORD_CONNECTED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"connected"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"OID_OAssociatedIdentityProviderObject"
 		,"Type":{"Kind":"Native","Name":"Guid"}
 		,"ValueType":"String"
 		,"Value":"98c5a3dd-db68-4f1a-8d2b-9079cdfeaf61"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STR_OUT_OF_BOX_EXPERIENCE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OutOfBoxExperience"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STR_MODERN_SETTINGS_ADD_USER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ModernSettingsAddUser"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STR_OUT_OF_BOX_UPGRADE_EXPERIENCE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OutOfBoxUpgradeExperience"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STR_COMPLETE_ACCOUNT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CompleteAccount"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STR_NTH_USER_FIRST_AUTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NthUserFirstAuth"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STR_USER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Username"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STR_PROPERTY_STORE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PropertyStore"
 		,"Attrs":[]
 	}
 ]
@@ -49,6 +126,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"4e982fed-d14b-440c-b8d6-bb386453d386"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -72,6 +150,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3ab4c8da-d038-4830-8dd9-3253c55a127f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -106,6 +185,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"0d1b9e0c-e8ba-4f55-a81b-bce934b948f5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -120,7 +200,7 @@
 					{"Name":"eIdentityType","Type":{"Kind":"ApiRef","Name":"IDENTITY_TYPE","TargetKind":"Default","Api":"Security.Authentication.Identity.Provider","Parents":[]},"Attrs":["In","Const"]}
 					,{"Name":"pFilterkey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["In","Optional","Const"]}
 					,{"Name":"pFilterPropVarValue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PROPVARIANT","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]}},"Attrs":["In","Optional","Const"]}
-					,{"Name":"ppIdentityEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIdentityEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -133,7 +213,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"lpszUserName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"pKeywordsToAdd","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PROPVARIANT","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]}},"Attrs":["In","Const"]}
 				]
 			}
@@ -172,7 +252,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"lpszUniqueID","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -184,7 +264,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -221,6 +301,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c6fc9901-c433-4646-8f48-4e4687aae2a0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -246,7 +327,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppIdentityEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppIdentityEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -271,7 +352,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -342,7 +423,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -365,7 +446,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -424,6 +505,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"2af066b3-4cbb-4cba-a798-204b6af68cc0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -436,7 +518,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"hwndParent","Type":{"Kind":"ApiRef","Name":"HWND","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -473,6 +555,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2834d6ed-297e-4e72-8a51-961e86f05152"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -496,7 +579,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppPropertyStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -587,6 +670,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"b7417b54-e08c-429b-96c8-678d1369ecb1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -637,7 +721,7 @@
 					{"Name":"Identifier","Type":{"Kind":"ApiRef","Name":"IDENTITY_URL","TargetKind":"Default","Api":"Security.Authentication.Identity.Provider","Parents":[]},"Attrs":["In"]}
 					,{"Name":"Context","Type":{"Kind":"ApiRef","Name":"IBindCtx","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Optional"]}
 					,{"Name":"PostData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
-					,{"Name":"Url","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Url","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -660,6 +744,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9ce55141-bce9-4e15-824d-43d79f512f93"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -754,7 +839,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"PostData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
-					,{"Name":"Url","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"Url","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -788,6 +873,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5e7ef254-979f-43b5-b74e-06e4eb7df0f9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -825,6 +911,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f9a2f918-feca-4e9c-9633-61cbf13ed34d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -899,6 +986,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"df586fa5-6f35-44f1-b209-b38e169772eb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -924,7 +1012,7 @@
 				,"Params":[
 					{"Name":"dwProvider","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In","Const"]}
 					,{"Name":"pProvGuid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Out","Optional"]}
-					,{"Name":"ppIdentityProvider","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIdentityProvider","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -968,7 +1056,7 @@
 					{"Name":"eIdentityType","Type":{"Kind":"ApiRef","Name":"IDENTITY_TYPE","TargetKind":"Default","Api":"Security.Authentication.Identity.Provider","Parents":[]},"Attrs":["In","Const"]}
 					,{"Name":"pFilterkey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}},"Attrs":["In","Optional","Const"]}
 					,{"Name":"pFilterPropVarValue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PROPVARIANT","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]}},"Attrs":["In","Optional","Const"]}
-					,{"Name":"ppIdentityEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIdentityEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -990,6 +1078,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"eefa1616-48de-4872-aa64-6e6206535a51"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1038,7 +1127,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pProvGuid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Out","Optional"]}
-					,{"Name":"ppIdentityProvider","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppIdentityProvider","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1116,7 +1205,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppIdentityEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppIdentityEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1149,6 +1238,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f9f9eb98-8f7f-4e38-9577-6980114ce32b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1186,6 +1276,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fca3af9a-8a07-4eae-8632-ec3de658a36a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

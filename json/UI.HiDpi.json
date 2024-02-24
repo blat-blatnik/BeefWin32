@@ -47,6 +47,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"DPI_AWARENESS"
@@ -234,9 +235,9 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"lpRect","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"RECT","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["In","Out"]}
-			,{"Name":"dwStyle","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+			,{"Name":"dwStyle","Type":{"Kind":"ApiRef","Name":"WINDOW_STYLE","TargetKind":"Default","Api":"UI.WindowsAndMessaging","Parents":[]},"Attrs":["In"]}
 			,{"Name":"bMenu","Type":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-			,{"Name":"dwExStyle","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
+			,{"Name":"dwExStyle","Type":{"Kind":"ApiRef","Name":"WINDOW_EX_STYLE","TargetKind":"Default","Api":"UI.WindowsAndMessaging","Parents":[]},"Attrs":["In"]}
 			,{"Name":"dpi","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 		]
 	}

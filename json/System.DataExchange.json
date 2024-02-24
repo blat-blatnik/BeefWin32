@@ -254,6 +254,62 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SZDDESYS_TOPIC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZDDESYS_ITEM_TOPICS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Topics"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZDDESYS_ITEM_SYSITEMS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SysItems"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZDDESYS_ITEM_RTNMSG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ReturnMessage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZDDESYS_ITEM_STATUS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Status"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZDDESYS_ITEM_FORMATS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Formats"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZDDESYS_ITEM_HELP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Help"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SZDDE_ITEM_ITEMLIST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TopicItemList"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"APPCMD_MASK"
 		,"Type":{"Kind":"Native","Name":"Int32"}
 		,"ValueType":"Int32"
@@ -612,6 +668,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HCONV"
@@ -621,6 +678,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HCONVLIST"
@@ -630,6 +688,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HDDEDATA"
@@ -639,6 +698,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"DDEACK"

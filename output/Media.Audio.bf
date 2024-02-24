@@ -170,6 +170,7 @@ static
 	public const HRESULT SPTLAUD_MD_CLNT_E_FORMAT_MISMATCH = -2004286941;
 	public const HRESULT SPTLAUD_MD_CLNT_E_BUFFER_STILL_ATTACHED = -2004286940;
 	public const HRESULT SPTLAUD_MD_CLNT_E_ITEMS_LOCKED_FOR_WRITING = -2004286939;
+	public const String VIRTUAL_AUDIO_DEVICE_PROCESS_LOOPBACK = "VAD\\Process_Loopback";
 	public const uint32 WAVERR_BADFORMAT = 32;
 	public const uint32 WAVERR_STILLPLAYING = 33;
 	public const uint32 WAVERR_UNPREPARED = 34;
@@ -409,6 +410,15 @@ static
 	public const int32 ACM_FORMATSUGGESTF_NSAMPLESPERSEC = 262144;
 	public const int32 ACM_FORMATSUGGESTF_WBITSPERSAMPLE = 524288;
 	public const int32 ACM_FORMATSUGGESTF_TYPEMASK = 16711680;
+	public const String ACMHELPMSGSTRINGA = "acmchoose_help";
+	public const String ACMHELPMSGSTRINGW = "acmchoose_help";
+	public const String ACMHELPMSGCONTEXTMENUA = "acmchoose_contextmenu";
+	public const String ACMHELPMSGCONTEXTMENUW = "acmchoose_contextmenu";
+	public const String ACMHELPMSGCONTEXTHELPA = "acmchoose_contexthelp";
+	public const String ACMHELPMSGCONTEXTHELPW = "acmchoose_contexthelp";
+	public const String ACMHELPMSGSTRING = "acmchoose_help";
+	public const String ACMHELPMSGCONTEXTMENU = "acmchoose_contextmenu";
+	public const String ACMHELPMSGCONTEXTHELP = "acmchoose_contexthelp";
 	public const uint32 MM_ACM_FORMATCHOOSE = 32768;
 	public const uint32 FORMATCHOOSE_MESSAGE = 0;
 	public const uint32 FORMATCHOOSE_FORMATTAG_VERIFY = 0;
@@ -2481,16 +2491,16 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Activate(in Guid iid, uint32 dwClsCtx, PROPVARIANT* pActivationParams, void** ppInterface) mut => VT.Activate(ref this, iid, dwClsCtx, pActivationParams, ppInterface);
-		public HRESULT OpenPropertyStore(uint32 stgmAccess, out IPropertyStore* ppProperties) mut => VT.OpenPropertyStore(ref this, stgmAccess, out ppProperties);
+		public HRESULT Activate(in Guid iid, CLSCTX dwClsCtx, PROPVARIANT* pActivationParams, void** ppInterface) mut => VT.Activate(ref this, iid, dwClsCtx, pActivationParams, ppInterface);
+		public HRESULT OpenPropertyStore(STGM stgmAccess, out IPropertyStore* ppProperties) mut => VT.OpenPropertyStore(ref this, stgmAccess, out ppProperties);
 		public HRESULT GetId(out PWSTR ppstrId) mut => VT.GetId(ref this, out ppstrId);
 		public HRESULT GetState(out uint32 pdwState) mut => VT.GetState(ref this, out pdwState);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMMDevice self, in Guid iid, uint32 dwClsCtx, PROPVARIANT* pActivationParams, void** ppInterface) Activate;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMMDevice self, uint32 stgmAccess, out IPropertyStore* ppProperties) OpenPropertyStore;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMMDevice self, in Guid iid, CLSCTX dwClsCtx, PROPVARIANT* pActivationParams, void** ppInterface) Activate;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMMDevice self, STGM stgmAccess, out IPropertyStore* ppProperties) OpenPropertyStore;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMMDevice self, out PWSTR ppstrId) GetId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMMDevice self, out uint32 pdwState) GetState;
 		}

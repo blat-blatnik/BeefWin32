@@ -22,6 +22,11 @@ static
 	public const uint32 SPC_RELAXED_PE_MARKER_CHECK = 2048;
 	public const uint32 SPC_MARKER_CHECK_SKIP_SIP_INDIRECT_DATA_FLAG = 1;
 	public const uint32 SPC_MARKER_CHECK_CURRENTLY_SUPPORTED_FLAGS = 1;
+	public const uint32 MSSIP_ADDINFO_NONE = 0;
+	public const uint32 MSSIP_ADDINFO_FLAT = 1;
+	public const uint32 MSSIP_ADDINFO_CATMEMBER = 2;
+	public const uint32 MSSIP_ADDINFO_BLOB = 3;
+	public const uint32 MSSIP_ADDINFO_NONMSSIP = 500;
 	public const uint32 SIP_CAP_SET_VERSION_2 = 2;
 	public const uint32 SIP_CAP_SET_VERSION_3 = 3;
 	public const uint32 SIP_CAP_SET_CUR_VER = 3;
@@ -77,13 +82,6 @@ static
 	{
 		public uint32 cbStruct;
 		public SIP_INDIRECT_DATA* pIndirectData;
-	}
-	[CRepr]
-	public struct MS_ADDINFO_CATALOGMEMBER
-	{
-		public uint32 cbStruct;
-		public CRYPTCATSTORE* pStore;
-		public CRYPTCATMEMBER* pMember;
 	}
 	[CRepr]
 	public struct MS_ADDINFO_BLOB

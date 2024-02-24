@@ -674,6 +674,27 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"DIRECTINPUT_NOTIFICATION_MSGSTRINGA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DIRECTINPUT_NOTIFICATION_MSGSTRING"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_NOTIFICATION_MSGSTRINGW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DIRECTINPUT_NOTIFICATION_MSGSTRING"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_NOTIFICATION_MSGSTRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DIRECTINPUT_NOTIFICATION_MSGSTRING"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"DIMSGWP_NEWAPPSTART"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -706,6 +727,174 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_APPIDFLAGA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AppIdFlag"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_KEY_LASTAPPA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MostRecentApplication"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_KEY_LASTMAPAPPA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MostRecentMapperApplication"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_VERSIONA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Version"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_NAMEA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_IDA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Id"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_MAPPERA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UsesMapper"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_LASTSTARTA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MostRecentStart"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_APPIDFLAGW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AppIdFlag"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_KEY_LASTAPPW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MostRecentApplication"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_KEY_LASTMAPAPPW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MostRecentMapperApplication"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_VERSIONW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Version"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_NAMEW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_IDW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Id"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_MAPPERW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UsesMapper"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_LASTSTARTW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MostRecentStart"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_APPIDFLAG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AppIdFlag"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_KEY_LASTAPP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MostRecentApplication"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_KEY_LASTMAPAPP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MostRecentMapperApplication"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Version"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_ID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Id"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_MAPPER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UsesMapper"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIRECTINPUT_REGSTR_VAL_LASTSTART"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MostRecentStart"
 		,"Attrs":[]
 	}
 	,{
@@ -780,56 +969,56 @@
 	}
 	,{
 		"Name":"DEVPKEY_DeviceInterface_HID_UsagePage"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"cbf38310-4a17-4310-a1eb-247f0b67593b","Pid":2}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_DeviceInterface_HID_UsageId"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"cbf38310-4a17-4310-a1eb-247f0b67593b","Pid":3}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_DeviceInterface_HID_IsReadOnly"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"cbf38310-4a17-4310-a1eb-247f0b67593b","Pid":4}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_DeviceInterface_HID_VendorId"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"cbf38310-4a17-4310-a1eb-247f0b67593b","Pid":5}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_DeviceInterface_HID_ProductId"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"cbf38310-4a17-4310-a1eb-247f0b67593b","Pid":6}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_DeviceInterface_HID_VersionNumber"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"cbf38310-4a17-4310-a1eb-247f0b67593b","Pid":7}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_DeviceInterface_HID_BackgroundAccess"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"cbf38310-4a17-4310-a1eb-247f0b67593b","Pid":8}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_DeviceInterface_HID_WakeScreenOnInputCapable"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"cbf38310-4a17-4310-a1eb-247f0b67593b","Pid":9}
 		,"Attrs":[]
@@ -5126,6 +5315,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"DD_KEYBOARD_DEVICE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Device\\KeyboardClass"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DD_KEYBOARD_DEVICE_NAME_U"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Device\\KeyboardClass"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"IOCTL_KEYBOARD_QUERY_ATTRIBUTES"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5340,6 +5543,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":10000
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DD_MOUSE_DEVICE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Device\\PointerClass"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DD_MOUSE_DEVICE_NAME_U"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Device\\PointerClass"
 		,"Attrs":[]
 	}
 	,{
@@ -17059,6 +17276,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e7e1f7c0-88d2-11d0-9ad0-00a0c9a06e35"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -17906,6 +18124,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5944e681-c92e-11cf-bfc7-444553540000"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18108,6 +18327,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5944e680-c92e-11cf-bfc7-444553540000"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -18388,6 +18608,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5944e683-c92e-11cf-bfc7-444553540000"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirectInputDeviceW","TargetKind":"Com","Api":"Devices.HumanInterfaceDevice","Parents":[]}
 		,"Methods":[
 			{
@@ -18516,6 +18737,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5944e682-c92e-11cf-bfc7-444553540000"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirectInputDeviceA","TargetKind":"Com","Api":"Devices.HumanInterfaceDevice","Parents":[]}
 		,"Methods":[
 			{
@@ -18644,6 +18866,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"57d7c6bd-2356-11d3-8e9d-00c04f6844ae"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirectInputDevice2W","TargetKind":"Com","Api":"Devices.HumanInterfaceDevice","Parents":[]}
 		,"Methods":[
 			{
@@ -18684,6 +18907,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"57d7c6bc-2356-11d3-8e9d-00c04f6844ae"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirectInputDevice2A","TargetKind":"Com","Api":"Devices.HumanInterfaceDevice","Parents":[]}
 		,"Methods":[
 			{
@@ -18724,6 +18948,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"54d41081-dc15-4833-a41b-748f73a38179"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19114,6 +19339,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"54d41080-dc15-4833-a41b-748f73a38179"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19675,6 +19901,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"89521361-aa8a-11cf-bfc7-444553540000"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19752,6 +19979,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"89521360-aa8a-11cf-bfc7-444553540000"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -19829,6 +20057,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5944e663-aa8a-11cf-bfc7-444553540000"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirectInputW","TargetKind":"Com","Api":"Devices.HumanInterfaceDevice","Parents":[]}
 		,"Methods":[
 			{
@@ -19853,6 +20082,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5944e662-aa8a-11cf-bfc7-444553540000"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirectInputA","TargetKind":"Com","Api":"Devices.HumanInterfaceDevice","Parents":[]}
 		,"Methods":[
 			{
@@ -19877,6 +20107,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9a4cb685-236d-11d3-8e9d-00c04f6844ae"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirectInput2W","TargetKind":"Com","Api":"Devices.HumanInterfaceDevice","Parents":[]}
 		,"Methods":[
 			{
@@ -19902,6 +20133,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9a4cb684-236d-11d3-8e9d-00c04f6844ae"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirectInput2A","TargetKind":"Com","Api":"Devices.HumanInterfaceDevice","Parents":[]}
 		,"Methods":[
 			{
@@ -19927,6 +20159,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bf798031-483a-4da2-aa99-5d64ed369700"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -20049,6 +20282,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bf798030-483a-4da2-aa99-5d64ed369700"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -20320,6 +20554,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"02538130-898f-11d0-9ad0-00a0c9a06e35"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -20718,6 +20953,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1de12ab1-c9f5-11cf-bfc7-444553540000"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -20934,6 +21170,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"eb0d7dfa-1990-4f27-b4d6-edf2eec4a44c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

@@ -2349,7 +2349,7 @@ static
 		public void PushLayer(in D2D1_LAYER_PARAMETERS layerParameters, ID2D1Layer* layer) mut => VT.PushLayer(ref this, layerParameters, layer);
 		public void PopLayer() mut => VT.PopLayer(ref this);
 		public HRESULT Flush(uint64* tag1, uint64* tag2) mut => VT.Flush(ref this, tag1, tag2);
-		public void SaveDrawingState(out ID2D1DrawingStateBlock drawingStateBlock) mut => VT.SaveDrawingState(ref this, out drawingStateBlock);
+		public void SaveDrawingState(ref ID2D1DrawingStateBlock drawingStateBlock) mut => VT.SaveDrawingState(ref this, ref drawingStateBlock);
 		public void RestoreDrawingState(ref ID2D1DrawingStateBlock drawingStateBlock) mut => VT.RestoreDrawingState(ref this, ref drawingStateBlock);
 		public void PushAxisAlignedClip(in D2D_RECT_F clipRect, D2D1_ANTIALIAS_MODE antialiasMode) mut => VT.PushAxisAlignedClip(ref this, clipRect, antialiasMode);
 		public void PopAxisAlignedClip() mut => VT.PopAxisAlignedClip(ref this);
@@ -2406,7 +2406,7 @@ static
 			public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, in D2D1_LAYER_PARAMETERS layerParameters, ID2D1Layer* layer) PushLayer;
 			public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self) PopLayer;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderTarget self, uint64* tag1, uint64* tag2) Flush;
-			public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, out ID2D1DrawingStateBlock drawingStateBlock) SaveDrawingState;
+			public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, ref ID2D1DrawingStateBlock drawingStateBlock) SaveDrawingState;
 			public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, ref ID2D1DrawingStateBlock drawingStateBlock) RestoreDrawingState;
 			public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, in D2D_RECT_F clipRect, D2D1_ANTIALIAS_MODE antialiasMode) PushAxisAlignedClip;
 			public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self) PopAxisAlignedClip;

@@ -9,6 +9,153 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"DXC_ARG_DEBUG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-Zi"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_SKIP_VALIDATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-Vd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_SKIP_OPTIMIZATIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-Od"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_PACK_MATRIX_ROW_MAJOR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-Zpr"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_PACK_MATRIX_COLUMN_MAJOR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-Zpc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_AVOID_FLOW_CONTROL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-Gfa"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_PREFER_FLOW_CONTROL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-Gfp"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_ENABLE_STRICTNESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-Ges"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_ENABLE_BACKWARDS_COMPATIBILITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-Gec"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_IEEE_STRICTNESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-Gis"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_OPTIMIZATION_LEVEL0"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-O0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_OPTIMIZATION_LEVEL1"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-O1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_OPTIMIZATION_LEVEL2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-O2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_OPTIMIZATION_LEVEL3"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-O3"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_WARNINGS_ARE_ERRORS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-WX"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_RESOURCES_MAY_ALIAS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-res_may_alias"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_ALL_RESOURCES_BOUND"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-all_resources_bound"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_DEBUG_NAME_FOR_SOURCE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-Zss"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_ARG_DEBUG_NAME_FOR_BINARY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"-Zsb"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_EXTRA_OUTPUT_NAME_STDOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"*stdout*"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DXC_EXTRA_OUTPUT_NAME_STDERR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"*stderr*"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"DxcValidatorFlags_Default"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -209,6 +356,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8ba5fb08-5195-40e2-ac58-0d989c3a0102"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -241,6 +389,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7241d424-2646-4191-97c0-98e96e42fc68"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDxcBlob","TargetKind":"Com","Api":"Graphics.Direct3D.Dxc","Parents":[]}
 		,"Methods":[
 			{
@@ -264,6 +413,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a3f84eab-0faa-497e-a39c-ee6ed60b2d84"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDxcBlobEncoding","TargetKind":"Com","Api":"Graphics.Direct3D.Dxc","Parents":[]}
 		,"Methods":[
 			{
@@ -296,6 +446,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3da636c9-ba71-4024-a301-30cbf125305b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDxcBlobEncoding","TargetKind":"Com","Api":"Graphics.Direct3D.Dxc","Parents":[]}
 		,"Methods":[
 			{
@@ -328,6 +479,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7f61fc7d-950d-467f-b3e3-3c02fb49187c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -380,6 +532,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"73effe2a-70dc-45f8-9690-eff64c02429d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -451,6 +604,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e5204dc7-d18c-4c3c-bdfb-851673980fe7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -599,6 +753,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"cedb484a-d4e9-445a-b991-ca21ca157dc2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -645,6 +800,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8c210bf3-011f-4422-8d70-6f9acb8db617"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -708,6 +864,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a005a9d9-b8bb-4594-b5c9-0e633bec4d37"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDxcCompiler","TargetKind":"Com","Api":"Graphics.Direct3D.Dxc","Parents":[]}
 		,"Methods":[
 			{
@@ -741,6 +898,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f1b5be2a-62dd-4327-a1c2-42ac1e1e78e6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -782,6 +940,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4605c4cb-2019-492a-ada4-65f20bb7d67f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1003,6 +1162,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"58346cda-dde7-4497-9461-6f87af5e0659"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDxcOperationResult","TargetKind":"Com","Api":"Graphics.Direct3D.Dxc","Parents":[]}
 		,"Methods":[
 			{
@@ -1074,6 +1234,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"319b37a2-a5c2-494a-a5de-4801b2faf989"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1111,6 +1272,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"228b4687-5a6a-4730-900c-9702b2203f54"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1152,6 +1314,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a6e82bd2-1fd7-4826-9811-2857e797f49a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1176,6 +1339,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"458e1fd1-b1b2-4750-a6e1-9c10f03bed92"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDxcValidator","TargetKind":"Com","Api":"Graphics.Direct3D.Dxc","Parents":[]}
 		,"Methods":[
 			{
@@ -1201,6 +1365,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"334b1f50-2292-4b35-99a1-25588d8c17fe"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1260,6 +1425,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"091f7a26-1c1f-4948-904b-e6e3a8a771d5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1283,6 +1449,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d2c21b26-8350-4bdc-976a-331ce6f4c54c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1370,6 +1537,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ae2cd79f-cc22-453f-9b6b-b124e7a5204c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1442,6 +1610,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"25740e2e-9cba-401b-9119-4fb42f39f270"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1493,6 +1662,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b04f5b50-2059-4f12-a8ff-a1e0cde1cc7e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1528,6 +1698,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fb6904c4-42f0-4b62-9c46-983af7da7c83"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDxcVersionInfo","TargetKind":"Com","Api":"Graphics.Direct3D.Dxc","Parents":[]}
 		,"Methods":[
 			{
@@ -1551,6 +1722,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5e13e843-9d25-473c-9ad2-03b2d0b44b1e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1587,6 +1759,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e6c9647e-9d6a-4c3b-b94c-524b5a6c343d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1901,7 +2074,7 @@
 		,"Params":[
 			{"Name":"rclsid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
 			,{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-			,{"Name":"ppv","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
+			,{"Name":"ppv","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out","ComOutPtr"]}
 		]
 	}
 	,{
@@ -1917,7 +2090,7 @@
 			{"Name":"pMalloc","Type":{"Kind":"ApiRef","Name":"IMalloc","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 			,{"Name":"rclsid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
 			,{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-			,{"Name":"ppv","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
+			,{"Name":"ppv","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out","ComOutPtr"]}
 		]
 	}
 ]

@@ -36,6 +36,23 @@ static
 	public const uint32 OGONEK = 808;
 	public const uint32 TONOS = 900;
 	public const uint32 DIARESIS_TONOS = 901;
+	public const String wszGRAVE = "\xcc\x80";
+	public const String wszACUTE = "\xcc\x81";
+	public const String wszCIRCUMFLEX = "\xcc\x82";
+	public const String wszTILDE = "\xcc\x83";
+	public const String wszMACRON = "\xcc\x84";
+	public const String wszOVERSCORE = "\xcc\x85";
+	public const String wszBREVE = "\xcc\x86";
+	public const String wszDOT_ABOVE = "\xcc\x87";
+	public const String wszUMLAUT = "\xcc\x88";
+	public const String wszHOOK_ABOVE = "\xcc\x89";
+	public const String wszRING = "\xcc\x8a";
+	public const String wszDOUBLE_ACUTE = "\xcc\x8b";
+	public const String wszHACEK = "\xcc\x8c";
+	public const String wszCEDILLA = "\xcc\xa7";
+	public const String wszOGONEK = "\xcc\xa8";
+	public const String wszTONOS = "\xce\x84";
+	public const String wszDIARESIS_TONOS = "\xce\x85";
 	public const uint32 SHFT_INVALID = 15;
 	public const uint32 WCH_NONE = 61440;
 	public const uint32 WCH_DEAD = 61441;
@@ -685,7 +702,7 @@ static
 	{
 		public int32 dx;
 		public int32 dy;
-		public uint32 mouseData;
+		public int32 mouseData;
 		public MOUSE_EVENT_FLAGS dwFlags;
 		public uint32 time;
 		public uint dwExtraInfo;

@@ -65,6 +65,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"APPCRASH_EVENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"APPCRASH"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PACKAGED_APPCRASH_EVENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MoAppCrash"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WER_P0"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -281,6 +295,27 @@
 		,"Value":16
 		,"Attrs":[]
 	}
+	,{
+		"Name":"WER_RUNTIME_EXCEPTION_EVENT_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OutOfProcessExceptionEventCallback"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WER_RUNTIME_EXCEPTION_EVENT_SIGNATURE_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OutOfProcessExceptionEventSignatureCallback"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WER_RUNTIME_EXCEPTION_DEBUGGER_LAUNCH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OutOfProcessExceptionEventDebuggerLaunchCallback"
+		,"Attrs":[]
+	}
 ]
 
 ,"Types":[
@@ -346,6 +381,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"WerReportCloseHandle"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HREPORTSTORE"
@@ -355,6 +391,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"WerStoreClose"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"WER_REPORT_UI"

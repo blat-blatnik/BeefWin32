@@ -6,6 +6,12 @@ using Win32.Foundation;
 static
 {
 	#region Constants
+	public const String wszW32TimeRegKeyTimeProviders = "System\\CurrentControlSet\\Services\\W32Time\\TimeProviders";
+	public const String wszW32TimeRegKeyPolicyTimeProviders = "Software\\Policies\\Microsoft\\W32Time\\TimeProviders";
+	public const String wszW32TimeRegValueEnabled = "Enabled";
+	public const String wszW32TimeRegValueDllName = "DllName";
+	public const String wszW32TimeRegValueInputProvider = "InputProvider";
+	public const String wszW32TimeRegValueMetaDataProvider = "MetaDataProvider";
 	public const uint32 TSF_Hardware = 1;
 	public const uint32 TSF_Authenticated = 2;
 	public const uint32 TSF_IPv6 = 4;

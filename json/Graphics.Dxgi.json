@@ -703,6 +703,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"aec22fb8-76f3-4639-9be0-28eb43a67a2e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -767,6 +768,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3d3e0379-f9de-4d58-bb6c-18d62992f1a6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIObject","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -790,6 +792,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"035f3ab4-482e-4e50-b41f-8a7f8bd8960b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIDeviceSubObject","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -848,6 +851,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9d8e1289-d7b3-465f-8126-250e349af85d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIDeviceSubObject","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -883,6 +887,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"cafcb56c-6ac3-4889-bf47-9e23bbd260ec"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIDeviceSubObject","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -929,6 +934,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"4ae63092-6327-4c1b-80ae-bfe12ea32b86"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGISurface","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -964,6 +970,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2411e7e1-12ac-4ccf-bd14-9798e8534dc0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIObject","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -1012,6 +1019,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ae02eedb-c735-4690-8d52-5a8dc20213aa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIObject","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -1170,6 +1178,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"310d36a0-d2e7-4c0a-aa04-6a9d23b8886a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIDeviceSubObject","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -1309,6 +1318,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7b7166ec-21c7-44ae-b21a-c9ae321ae369"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIObject","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -1384,6 +1394,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"54ec77fa-1377-44e6-8c32-88fd5f44c84c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIObject","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -1510,6 +1521,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"770aae78-f26f-4dba-a829-253c83d1b387"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIFactory","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -1544,6 +1556,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"29038f61-3839-4626-91fd-086879011a05"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIAdapter","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -1566,6 +1579,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"77db970f-6276-48ba-ba28-070143b4392c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIDevice","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -1600,6 +1614,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"ea9dbf1a-c88e-4486-854a-98aa0138f30c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1727,6 +1742,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"191cfac3-a341-470d-b26e-a864f428319c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIObject","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -1840,6 +1856,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"aba496dd-b617-4cb8-a866-bc44d7eb1fa2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGISurface1","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -1864,6 +1881,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"30961379-4609-4a41-998e-54fe567ee0c1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIResource","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -1916,6 +1934,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"05008617-fbfd-4051-a790-144884b4f6a9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIDevice1","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -2054,6 +2073,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"790a45f7-0d42-4876-983a-0a55cfe6f4aa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGISwapChain","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -2198,6 +2218,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"50c83a1c-e072-4c48-87b0-3630fa36a6d0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIFactory1","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -2414,6 +2435,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"0aa1ae0a-fa0e-4b84-8644-e05ff8e5acb5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIAdapter1","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -2436,6 +2458,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"00cddea8-939b-4b83-a340-a685226666cc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIOutput","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -2500,6 +2523,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"6007896c-3244-4afd-bf18-a6d3beda5023"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIDevice2","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -2539,6 +2563,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"a8be2ac4-199f-4946-b331-79599fb98de7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGISwapChain1","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -2634,6 +2659,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"595e39d1-2724-4663-99b1-da969de28364"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIOutput1","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -2655,6 +2681,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"25483823-cd46-4c7d-86ca-47aa95b837bd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIFactory2","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -2703,6 +2730,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"2633066b-4514-4c7a-8fd8-12ea98059d18"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2824,6 +2852,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"41e7d1f2-a591-4f7b-a2e5-fa9c843e1c12"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2901,6 +2930,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"dd95b90b-f05f-4f6a-bd65-25bfb264bd84"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2962,6 +2992,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"8a6bb301-7e7e-41f4-a8e0-5b32f7f99b18"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIOutput2","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -2999,6 +3030,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"94d99bdb-f1f8-4ab0-b236-7da0170edab1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGISwapChain2","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -3075,6 +3107,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"dc7dca35-2196-414d-9f53-617884032a60"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIOutput3","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -3100,6 +3133,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1bc6ea02-ef36-464f-bf0c-21ca39e5168a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIFactory3","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -3166,6 +3200,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"645967a4-1392-4310-a798-8053ce3e93fd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIAdapter2","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -3266,6 +3301,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"80a07424-ab52-42eb-833c-0c42fd282d98"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIOutput4","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -3339,6 +3375,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3d585d5a-bd4a-489e-b1f4-3dbcb6452ffb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGISwapChain3","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -3389,6 +3426,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"95b4f95f-d8da-4ca4-9ee6-3b76d5968a10"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIDevice3","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -3440,6 +3478,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7632e1f5-ee65-4dca-87fd-84cd75f8838d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIFactory4","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -3507,6 +3546,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3c8d99d1-4fbf-4181-a82c-af66bf7bd24e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIAdapter3","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -3569,6 +3609,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"068346e8-aaec-4b84-add7-137f513f77a1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIOutput5","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -3617,6 +3658,7 @@
 		,"Platform":"windows10.0.17134"
 		,"Kind":"Com"
 		,"Guid":"c1b6694f-ff09-44a9-b03c-77900a0a1d17"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIFactory5","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -3642,6 +3684,7 @@
 		,"Platform":"windows10.0.17763"
 		,"Kind":"Com"
 		,"Guid":"a4966eed-76db-44da-84c1-ee9a7afb20a8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIFactory6","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -3780,6 +3823,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"d67441c7-672a-476f-9e82-cd55b44949ce"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4261,6 +4305,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"119e7452-de9e-40fe-8806-88f90c12b441"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4284,6 +4329,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"c5a05f0c-16f2-4adf-9f4d-a8c4d58ac550"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDXGIDebug","TargetKind":"Com","Api":"Graphics.Dxgi","Parents":[]}
 		,"Methods":[
 			{
@@ -4669,6 +4715,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9f251514-9d4d-4902-9d60-18988ab7d4b5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

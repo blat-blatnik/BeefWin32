@@ -1430,6 +1430,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"cbNDRContext"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":20
+		,"Attrs":[]
+	}
+	,{
 		"Name":"USER_CALL_IS_ASYNC"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"

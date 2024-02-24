@@ -19,7 +19,11 @@ static
 	public const Guid SVCID_PNRPNAME_V1 = .(0xc2239ce5, 0x00c0, 0x4fbf, 0xba, 0xd6, 0x18, 0x13, 0x93, 0x85, 0xa4, 0x9a);
 	public const Guid SVCID_PNRPNAME_V2 = .(0xc2239ce7, 0x00c0, 0x4fbf, 0xba, 0xd6, 0x18, 0x13, 0x93, 0x85, 0xa4, 0x9a);
 	public const uint32 PNRP_MAX_ENDPOINT_ADDRESSES = 10;
+	public const String WSZ_SCOPE_GLOBAL = "GLOBAL";
+	public const String WSZ_SCOPE_SITELOCAL = "SITELOCAL";
+	public const String WSZ_SCOPE_LINKLOCAL = "LINKLOCAL";
 	public const uint32 PNRP_MAX_EXTENDED_PAYLOAD_BYTES = 4096;
+	public const String PEER_PNRP_ALL_LINK_CLOUDS = "PEER_PNRP_ALL_LINKS";
 	public const uint32 WSA_PNRP_ERROR_BASE = 11500;
 	public const uint32 WSA_PNRP_CLOUD_NOT_FOUND = 11501;
 	public const uint32 WSA_PNRP_CLOUD_DISABLED = 11502;

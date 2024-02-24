@@ -15,6 +15,8 @@ This is a **mostly untested work in progress**. Use at your own peril.
 
 ## How to use
 
+Requires Beef version from February 2024 or newer. You can download the latest nightly [here](https://www.beeflang.org/#releases). 
+
 Copy the [`output/`](./output/) directory into your Beef project's `src/` directory (You can also rename it to `Win32` instead of `output` if you want). You can then access the Win32 APIs through their respective namespaces.
 
 The [`namespaces.txt`](./namespaces.txt) file lists the namespace of all functions, structs, and constants, in case you can't find them.

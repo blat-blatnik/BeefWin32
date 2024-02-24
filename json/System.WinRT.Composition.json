@@ -10,6 +10,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fd04e6e3-fe0c-4c3c-ab19-a07601a576ee"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -95,6 +96,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"41e64aae-98c0-4239-8e95-a330dd6aa18b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ICompositionDrawingSurfaceInterop","TargetKind":"Com","Api":"System.WinRT.Composition","Parents":[]}
 		,"Methods":[
 			{
@@ -120,6 +122,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a116ff71-f8bf-4c8a-9c98-70779a32a9c8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -154,6 +157,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"25297d5c-3ad4-4c9c-b5cf-e36a38512330"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -203,6 +207,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"26f496a0-7f38-45fb-88f7-faaabe67dd59"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -225,6 +230,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"11f62cd1-2f9d-42d3-b05f-d6790d9e9f8e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -247,6 +253,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2c9db356-e70d-4642-8298-bc4aa5b4865c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IInspectable","TargetKind":"Com","Api":"System.WinRT","Parents":[]}
 		,"Methods":[
 			{
@@ -270,6 +277,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"29e691fa-4567-4dca-b319-d0f207eb6807"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -306,6 +314,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"35dbf59e-e3f9-45b0-81e7-fe75f4145dc9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

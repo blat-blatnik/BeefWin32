@@ -142,10 +142,1137 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_KEY_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Class"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_CONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Config"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_ENUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Enum"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_ROOTENUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Root"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_BIOSENUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BIOS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_ACPIENUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ACPI"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_PCMCIAENUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PCMCIA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_PCIENUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PCI"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_VPOWERDENUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VPOWERD"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_ISAENUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ISAPnP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_EISAENUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EISA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_LOGCONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LogConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_SYSTEMBOARD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"*PNP0C01"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_APM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"*PNP0C05"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_INIUPDATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IniUpdate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REG_KEY_INSTDEV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Installed"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_DOSOPTCDROM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CD-ROM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_DOSOPTMOUSE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MOUSE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_KNOWNDOCKINGSTATES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Hardware Profiles"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_DEVICEPARAMETERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Device Parameters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_DRIVERPARAMETERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Driver Parameters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_DEFAULT_INSTANCE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0000"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_SETUP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_DRIVERSIGN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Driver Signing"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_NONDRIVERSIGN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Non-Driver Signing"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_DRIVERSIGN_POLICY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Policies\\Microsoft\\Windows NT\\Driver Signing"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_NONDRIVERSIGN_POLICY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Policies\\Microsoft\\Windows NT\\Non-Driver Signing"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_PIFCONVERT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\PIFConvert"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_MSDOSOPTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\MS-DOSOptions"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_NOSUGGMSDOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\NoMSDOSWarn"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_NEWDOSBOX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\MS-DOSSpecialConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_RUNONCE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_RUNONCEEX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\RunOnceEx"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_RUN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Run"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_RUNSERVICESONCE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\RunServicesOnce"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_RUNSERVICES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\RunServices"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_EXPLORER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_PROPERTYSYSTEM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\PropertySystem"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_DETECT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Detect"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_APPPATHS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\App Paths"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_UNINSTALL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_REALMODENET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Network\\Real Mode Net"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_NETEQUIV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Network\\Equivalent"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CVNETWORK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Network"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_WMI_SECURITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\Wmi\\Security"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_RELIABILITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Reliability"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_RELIABILITY_POLICY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Policies\\Microsoft\\Windows NT\\Reliability"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_RELIABILITY_POLICY_SHUTDOWNREASONUI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShutdownReasonUI"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_RELIABILITY_POLICY_SNAPSHOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Snapshot"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_RELIABILITY_POLICY_REPORTSNAPSHOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ReportSnapshot"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_REINSTALL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Reinstall"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_NT_CURRENTVERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows NT\\CurrentVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_VOLUMECACHE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VolumeCaches"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DISPLAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"display"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_IDCONFIGDB"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\IDConfigDB"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CRITICALDEVICEDATABASE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\CriticalDeviceDatabase"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\Class"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_DISPLAYSETTINGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Display\\Settings"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_FONTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Display\\Fonts"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_ENUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Enum"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_ROOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Enum\\Root"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CURRENTCONTROLSET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_SYSTEMENUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Enum"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_HWPROFILES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Hardware Profiles"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_HWPROFILESCURRENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Hardware Profiles\\Current"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CLASS_NT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\Class"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_PER_HW_ID_STORAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows NT\\CurrentVersion\\PerHwIdStorage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_DEVICE_CLASSES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\DeviceClasses"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CODEVICEINSTALLERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\CoDeviceInstallers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_BUSINFORMATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\PnP\\BusInformation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_SERVICES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_VXD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\VxD"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_IOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\VxD\\IOS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_VMM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\VxD\\VMM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_VPOWERD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\VxD\\VPOWERD"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_VNETSUP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\VxD\\VNETSUP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_NWREDIR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\VxD\\NWREDIR"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_NCPSERVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\NcpServer\\Parameters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_VCOMM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\VxD\\VCOMM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_IOARB"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\Arbitrators\\IOArb"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_ADDRARB"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\Arbitrators\\AddrArb"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_DMAARB"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\Arbitrators\\DMAArb"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_IRQARB"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\Arbitrators\\IRQArb"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CODEPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\Nls\\Codepage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_FILESYSTEM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\FileSystem"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_FILESYSTEM_NOVOLTRACK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\FileSystem\\NoVolTrack"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CDFS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\FileSystem\\CDFS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_WINBOOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\WinBoot"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_INSTALLEDFILES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\InstalledFiles"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_VMM32FILES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\VMM32Files"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"REGSTR_MAX_VALUE_LENGTH"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":256
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_DEVICE_PROPERTIES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Properties"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SERVICE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Service"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CLASSGUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ClassGUID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DISABLECOUNT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DisableCount"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DOCKSTATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DockState"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DEVICE_INSTANCE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeviceInstance"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SYMBOLIC_LINK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SymbolicLink"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DEFAULT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Default"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LOWERFILTERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LowerFilters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_UPPERFILTERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UpperFilters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LOCATION_INFORMATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LocationInformation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_UI_NUMBER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UINumber"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_UI_NUMBER_DESC_FORMAT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UINumberDescFormat"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CAPABILITIES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Capabilities"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ADDRESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Address"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DEVICE_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeviceType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DEVICE_CHARACTERISTICS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeviceCharacteristics"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DEVICE_SECURITY_DESCRIPTOR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Security"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DEVICE_EXCLUSIVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Exclusive"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_RESOURCE_PICKER_TAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResourcePickerTags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_RESOURCE_PICKER_EXCEPTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResourcePickerExceptions"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CUSTOM_PROPERTY_CACHE_DATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CustomPropertyCacheDate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CUSTOM_PROPERTY_HW_ID_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CustomPropertyHwIdKey"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LAST_UPDATE_TIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LastUpdateTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CONTAINERID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ContainerID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_EJECT_PRIORITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EjectPriority"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_CONTROL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Control"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ACTIVESERVICE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ActiveService"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LINKED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Linked"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PHYSICALDEVICEOBJECT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PhysicalDeviceObject"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REMOVAL_POLICY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RemovalPolicy"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_FILTERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Filters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LOWER_FILTER_DEFAULT_LEVEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LowerFilterDefaultLevel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_UPPER_FILTER_DEFAULT_LEVEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UpperFilterDefaultLevel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_LOWER_FILTER_LEVEL_DEFAULT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"*Lower"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_UPPER_FILTER_LEVEL_DEFAULT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"*Upper"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LOWER_FILTER_LEVELS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LowerFilterLevels"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_UPPER_FILTER_LEVELS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UpperFilterLevels"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CURRENT_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CurrentVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CURRENT_BUILD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CurrentBuildNumber"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CURRENT_CSDVERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CSDVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CURRENT_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CurrentType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BITSPERPIXEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BitsPerPixel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_RESOLUTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Resolution"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DPILOGICALX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DPILogicalX"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DPILOGICALY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DPILogicalY"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DPIPHYSICALX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DPIPhysicalX"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DPIPHYSICALY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DPIPhysicalY"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REFRESHRATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RefreshRate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DISPLAYFLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DisplayFlags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CONTROLPANEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Control Panel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CONTROLSFOLDER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Controls Folder"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DOSCP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_WINCP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ACP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DONTUSEMEM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DontAllocLastMem"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SYSTEMROOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SystemRoot"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BOOTCOUNT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BootCount"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REALNETSTART"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RealNetStart"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MEDIA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MediaPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ConfigPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DEVICEPATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DevicePath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SRCPATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SourcePath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DRIVERCACHEPATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverCachePath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_OLDWINDIR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OldWinDir"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SETUPFLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SetupFlags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REGOWNER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RegisteredOwner"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REGORGANIZATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RegisteredOrganization"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LICENSINGINFO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LicensingInfo"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_OLDMSDOSVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OldMSDOSVer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FIRSTINSTALLDATETIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FirstInstallDateTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_INSTALLTYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InstallType"
 		,"Attrs":[]
 	}
 	,{
@@ -177,6 +1304,265 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_VAL_WRAPPER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Wrapper"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_RUNHISTORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RunHistory"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LASTALIVEINTERVAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TimeStampInterval"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DIRTYSHUTDOWN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DirtyShutdown"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DIRTYSHUTDOWNTIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DirtyShutdownTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"6005BT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LASTCOMPUTERNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LastComputerName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LASTALIVEBT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LastAliveBT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LASTALIVESTAMP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LastAliveStamp"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LASTALIVESTAMPFORCED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LastAliveStampForced"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LASTALIVESTAMPINTERVAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LastAliveStampInterval"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LASTALIVESTAMPPOLICYINTERVAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LastAliveStampPolicyInterval"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LASTALIVEUPTIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LastAliveUptime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LASTALIVEPMPOLICY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LastAlivePMPolicy"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REASONCODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ReasonCode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_COMMENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Comment"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHUTDOWNREASON"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShutdownReason"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHUTDOWNREASON_CODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShutdownReasonCode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHUTDOWNREASON_COMMENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShutdownReasonComment"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHUTDOWNREASON_PROCESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShutdownReasonProcess"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHUTDOWNREASON_USERNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShutdownReasonUserName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHOWREASONUI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShutdownReasonUI"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHUTDOWN_IGNORE_PREDEFINED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShutdownIgnorePredefinedReasons"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHUTDOWN_STATE_SNAPSHOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShutdownStateSnapshot"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_SETUP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Setup"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BOOTDIR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BootDir"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_WINBOOTDIR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WinbootDir"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_WINDIR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WinDir"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_APPINSTPATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AppInstallPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_EBDFILESLOCAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EBDFilesLocale"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_EBDFILESKEYBOARD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EBDFilesKeyboard"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_EBDAUTOEXECBATLOCAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EBDAutoexecBatLocale"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_EBDAUTOEXECBATKEYBOARD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EBDAutoexecBatKeyboard"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_EBDCONFIGSYSLOCAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EBDConfigSysLocale"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_EBDCONFIGSYSKEYBOARD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EBDConfigSysKeyboard"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_POLICY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Policy"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BEHAVIOR_ON_FAILED_VERIFY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BehaviorOnFailedVerify"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"DRIVERSIGN_NONE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -198,10 +1584,73 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_VAL_MSDOSMODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSDOSMode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MSDOSMODEDISCARD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Discard"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DOSOPTGLOBALFLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GlobalFlags"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"DOSOPTGF_DEFCLEAN"
 		,"Type":{"Kind":"Native","Name":"Int32"}
 		,"ValueType":"Int32"
 		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DOSOPTFLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Flags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_OPTORDER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Order"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CONFIGSYS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Config.Sys"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_AUTOEXEC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Autoexec.Bat"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_STDDOSOPTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StdOption"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DOSOPTTIP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TipText"
 		,"Attrs":[]
 	}
 	,{
@@ -324,6 +1773,27 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_VAL_DOSPAGER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DOSPager"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_VXDGROUPS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VXDGroups"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_VPOWERDFLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Flags"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"VPDF_DISABLEPWRMGMT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -380,6 +1850,762 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_VAL_WORKGROUP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Workgroup"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DIRECTHOST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DirectHost"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FILESHARING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FileSharing"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PRINTSHARING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrintSharing"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FIRSTNETDRIVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FirstNetworkDrive"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MAXCONNECTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MaxConnections"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_APISUPPORT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"APISupport"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MAXRETRY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MaxRetry"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MINRETRY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MinRetry"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SUPPORTLFN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SupportLFN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SUPPORTBURST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SupportBurst"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SUPPORTTUNNELLING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SupportTunnelling"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FULLTRACE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FullTrace"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_READCACHING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ReadCaching"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHOWDOTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShowDots"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_GAPTIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GapTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SEARCHMODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SearchMode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHELLVERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShellVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MAXLIP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MaxLIP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PRESERVECASE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PreserveCase"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_OPTIMIZESFN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OptimizeSFN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NCP_BROWSEMASTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BrowseMaster"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NCP_USEPEERBROWSING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Use_PeerBrowsing"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NCP_USESAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Use_Sap"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PCCARD_POWER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnablePowerManagement"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_WIN31FILESYSTEM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Win31FileSystem"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PRESERVELONGNAMES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PreserveLongNames"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DRIVEWRITEBEHIND"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriveWriteBehind"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ASYNCFILECOMMIT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AsyncFileCommit"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PATHCACHECOUNT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PathCache"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NAMECACHECOUNT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NameCache"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CONTIGFILEALLOC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ContigFileAllocSize"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FREESPACERATIO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FreeSpaceRatio"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_VOLIDLETIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VolumeIdleTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BUFFIDLETIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BufferIdleTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BUFFAGETIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BufferAgeTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NAMENUMERICTAIL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NameNumericTail"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_READAHEADTHRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ReadAheadThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DOUBLEBUFFER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DoubleBuffer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SOFTCOMPATMODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SoftCompatMode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DRIVESPINDOWN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriveSpinDown"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FORCEPMIO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ForcePMIO"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FORCERMIO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ForceRMIO"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LASTBOOTPMDRVS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LastBootPMDrvs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ACSPINDOWNPREVIOUS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ACSpinDownPrevious"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BATSPINDOWNPREVIOUS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BatSpinDownPrevious"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_VIRTUALHDIRQ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VirtualHDIRQ"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SRVNAMECACHECOUNT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServerNameCacheMax"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SRVNAMECACHE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServerNameCache"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SRVNAMECACHENETPROV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServerNameCacheNumNets"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_AUTOMOUNT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AutoMountDrives"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_COMPRESSIONMETHOD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CompressionAlgorithm"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_COMPRESSIONTHRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CompressionThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ACDRIVESPINDOWN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ACDriveSpinDown"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BATDRIVESPINDOWN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BatDriveSpinDown"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CDCACHESIZE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CacheSize"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CDPREFETCH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Prefetch"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CDPREFETCHTAIL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrefetchTail"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CDRAWCACHE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RawCache"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CDEXTERRORS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ExtendedErrors"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CDSVDSENSE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SVDSense"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CDSHOWVERSIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShowVersions"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CDCOMPATNAMES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSCDEXCompatNames"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CDNOREADAHEAD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoReadAhead"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SCSI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SCSI\\"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ESDI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ESDI\\"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FLOP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FLOP\\"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DISK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GenDisk"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CDROM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GenCD"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TAPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TAPE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SCANNER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SCANNER"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FLOPPY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FLOPPY"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SCSITID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SCSITargetID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SCSILUN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SCSILUN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REVLEVEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RevisionLevel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PRODUCTID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ProductId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PRODUCTTYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ProductType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DEVTYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeviceType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REMOVABLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Removable"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CURDRVLET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CurrentDriveLetterAssignment"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_USRDRVLET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UserDriveLetterAssignment"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SYNCDATAXFER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SyncDataXfer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_AUTOINSNOTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AutoInsertNotification"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DISCONNECT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Disconnect"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_INT13"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Int13"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PMODE_INT13"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PModeInt13"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_USERSETTINGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AdapterSettings"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NOIDE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoIDE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DISKCLASSNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DiskDrive"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CDROMCLASSNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CDROM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FORCELOAD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ForceLoadPD"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FORCEFIFO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ForceFIFO"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FORCECL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ForceChangeLine"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NOUSECLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoUseClass"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NOINSTALLCLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoInstallClass"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NODISPLAYCLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoDisplayClass"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SILENTINSTALL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SilentInstall"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FSFILTERCLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FSFilterClass"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_PCMCIA_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PCMCIA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_SCSI_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SCSIAdapter"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_PORTS_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ports"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_MEDIA_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MEDIA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_DISPLAY_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Display"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_KEYBOARD_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Keyboard"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_MOUSE_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Mouse"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_MONITOR_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Monitor"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_MODEM_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Modem"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PCMCIA_OPT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Options"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"PCMCIA_OPT_HAVE_SOCKET"
 		,"Type":{"Kind":"Native","Name":"Int32"}
 		,"ValueType":"Int32"
@@ -415,6 +2641,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_VAL_PCMCIA_MEM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Memory"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"PCMCIA_DEF_MEMBEGIN"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -436,10 +2669,80 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_VAL_PCMCIA_ALLOC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AllocMemWin"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PCMCIA_ATAD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ATADelay"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PCMCIA_SIZ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MinRegionSize"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"PCMCIA_DEF_MIN_REGION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":65536
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_P1284MDL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Model"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_P1284MFG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Manufacturer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ISAPNP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ISAPNP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ISAPNP_RDP_OVERRIDE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RDPOverRide"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PCI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PCI"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PCI_OPTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Options"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PCI_DUAL_IDE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PCIDualIDE"
 		,"Attrs":[]
 	}
 	,{
@@ -520,10 +2823,220 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_KEY_CRASHES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Crashes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_DANGERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Dangers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_DETMODVARS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DetModVars"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_NDISINFO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NDISInfo"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PROTINIPATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ProtIniPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_RESOURCES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Resources"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CRASHFUNCS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CrashFuncs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Class"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CLASSDESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ClassDesc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DEVDESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeviceDesc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BOOTCONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BootConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DETFUNC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DetFunc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DETFLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DetFlags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_COMPATIBLEIDS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CompatibleIDs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DETCONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DetConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_VERIFYKEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VerifyKey"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_COMINFO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ComInfo"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_INFNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InfName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CARDSPECIFIC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CardSpecific"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NETOSTYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NetOSType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_DATA_NETOS_NDIS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NDIS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_DATA_NETOS_ODI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ODI"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_DATA_NETOS_IPX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IPX"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MFG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Mfg"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SCAN_ONLY_FIRST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ScanOnlyFirstDrive"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHARE_IRQ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ForceIRQSharing"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NONSTANDARD_ATAPI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NonStandardATAPI"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_IDE_FORCE_SERIALIZE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ForceSerialization"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"REGSTR_VAL_MAX_HCID_LEN"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1024
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_HWREV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HWRevision"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ENABLEINTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnableInts"
 		,"Attrs":[]
 	}
 	,{
@@ -618,6 +3131,223 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_VAL_APMBIOSVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"APMBiosVer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_APMFLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"APMFlags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SLSUPPORT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SLSupport"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MACHINETYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MachineType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SETUPMACHINETYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SetupMachineType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_UNKNOWN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Unknown"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PC"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPCJR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PCjr"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPCCONV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PC Convertible"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPCXT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PC/XT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPCXT_286"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PC/XT 286"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPCAT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PC/AT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPS2_25"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PS/2-25"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPS2_30_286"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PS/2-30 286"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPS2_30"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PS/2-30"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPS2_50"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PS/2-50"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPS2_50Z"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PS/2-50Z"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPS2_55SX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PS/2-55SX"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPS2_60"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PS/2-60"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPS2_65SX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PS/2-65SX"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPS2_70"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PS/2-70"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPS2_P70"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PS/2-P70"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPS2_70_80"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PS/2-70/80"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPS2_80"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PS/2-80"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPS2_90"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PS/2-90"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_IBMPS1"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IBM PS/1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_PHOENIX_PCAT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Phoenix PC/AT Compatible"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_HP_VECTRA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HP Vectra"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_ATT_PC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AT&T PC"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_MACHTYPE_ZENITH_PC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Zenith PC"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_APMMENUSUSPEND"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"APMMenuSuspend"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"APMMENUSUSPEND_DISABLED"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -646,10 +3376,213 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_VAL_APMACTIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"APMACTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_APMBATTIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"APMBatTimeout"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"APMTIMEOUT_DISABLED"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_APMSHUTDOWNPOWER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"APMShutDownPower"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BUSTYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BusType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CPU"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CPU"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NDP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NDP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PNPBIOSVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PnPBIOSVer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PNPSTRUCOFFSET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PnPStrucOffset"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PCIBIOSVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PCIBIOSVer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_HWMECHANISM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HWMechanism"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LASTPCIBUSNUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LastPCIBusNum"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CONVMEM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ConvMem"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_EXTMEM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ExtMem"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_COMPUTERNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ComputerName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BIOSNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BIOSName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BIOSVERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BIOSVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BIOSDATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BIOSDate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MODEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Model"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SUBMODEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Submodel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REVISION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Revision"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FIFODEPTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FIFODepth"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_RDINTTHRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RDIntThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_WRINTTHRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WRIntThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PRIORITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Priority"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DRIVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Driver"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FUNCDESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FunctionDesc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FORCEDCONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ForcedConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CONFIGFLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ConfigFlags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CSCONFIGFLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CSConfigFlags"
 		,"Attrs":[]
 	}
 	,{
@@ -828,10 +3761,52 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_VAL_ROOT_DEVNODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HTREE\\ROOT\\0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_RESERVED_DEVNODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HTREE\\RESERVED\\0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_MULTI_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MF"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_RESOURCE_MAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResourceMap"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CHILD_PREFIX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Child"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"NUM_RESOURCE_MAP"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":256
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MF_FLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MFFlags"
 		,"Attrs":[]
 	}
 	,{
@@ -863,6 +3838,41 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_VAL_EISA_RANGES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EISARanges"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_EISA_FUNCTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EISAFunctions"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_EISA_FUNCTIONS_MASK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EISAFunctionsMask"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_EISA_FLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EISAFlags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_EISA_SIMULATE_INT15"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EISASimulateInt15"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"EISAFLAG_NO_IO_MERGE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -891,6 +3901,594 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_VAL_DRVDESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverDesc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DEVLOADER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DevLoader"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_STATICVXD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StaticVxD"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PROPERTIES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Properties"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MANUFACTURER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Manufacturer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_EXISTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Exists"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CMENUMFLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CMEnumFlags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CMDRIVFLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CMDrivFlags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ENUMERATOR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Enumerator"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DEVICEDRIVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeviceDriver"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PORTNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PortName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_INFPATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InfPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_INFSECTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InfSection"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_INFSECTIONEXT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InfSectionExt"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_POLLING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Polling"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DONTLOADIFCONFLICT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DontLoadIfConflict"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PORTSUBCLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PortSubClass"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NETCLEAN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NetClean"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_IDE_NO_SERIALIZE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IDENoSerialize"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NOCMOSORFDPT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoCMOSorFDPT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_COMVERIFYBASE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"COMVerifyBase"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MATCHINGDEVID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MatchingDeviceId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DRIVERDATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverDate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DRIVERDATEDATA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverDateData"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DRIVERVERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LOCATION_INFORMATION_OVERRIDE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LocationInformationOverride"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_OVERRIDE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Override"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CONFIGMG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CONFIGMG"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SYSDM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SysDM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SYSDMFUNC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SysDMFunc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PRIVATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Private"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PRIVATEFUNC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrivateFunc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DETECT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Detect"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DETECTFUNC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DetectFunc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ASKFORCONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AskForConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ASKFORCONFIGFUNC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AskForConfigFunc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_WAITFORUNDOCK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WaitForUndock"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_WAITFORUNDOCKFUNC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WaitForUndockFunc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REMOVEROMOKAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RemoveRomOkay"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REMOVEROMOKAYFUNC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RemoveRomOkayFunc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CURCONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CurrentConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FRIENDLYNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FriendlyName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CURRENTCONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CurrentConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Map"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CurrentID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DOCKED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CurrentDockedState"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CHECKSUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CurrentChecksum"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_HWDETECT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HardwareDetect"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_INHIBITRESULTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InhibitResults"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PROFILEFLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ProfileFlags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_PCMCIA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PCMCIA\\"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_PCUNKNOWN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UNKNOWN_MANUFACTURER"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PCSSDRIVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Driver"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_PCMTD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MTD-"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PCMTDRIVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MTD"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_HARDWAREID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HardwareID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_INSTALLER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Installer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_INSTALLER_32"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Installer32"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_INSICON"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Icon"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ENUMPROPPAGES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnumPropPages"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ENUMPROPPAGES_32"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnumPropPages32"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BASICPROPERTIES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BasicProperties"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BASICPROPERTIES_32"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BasicProperties32"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_COINSTALLERS_32"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CoInstallers32"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PRIVATEPROBLEM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrivateProblem"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_CURRENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Current"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_DEFAULT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Default"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_MODES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Modes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Mode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BPP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BPP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_HRES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HRes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_VRES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VRes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FONTSIZE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FontSize"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DRV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"drv"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_GRB"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"grb"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_VDD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"vdd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_VER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Ver"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MAXRES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MaxResolution"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DPMS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DPMS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_RESUMERESET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResumeReset"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_SYSTEM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_USER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"User"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DPI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"dpi"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PCICOPTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PCICOptions"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"PCIC_DEFAULT_IRQMASK"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -902,6 +4500,1182 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PCICIRQMAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PCICIRQMap"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_APPEARANCE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Control Panel\\Appearance"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_LOOKSCHEMES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Control Panel\\Appearance\\Schemes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CUSTOMCOLORS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CustomColors"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_SCREENSAVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Control Panel\\Desktop"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VALUE_USESCRPASSWORD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ScreenSaveUsePassword"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VALUE_SCRPASSWORD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ScreenSave_Data"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VALUE_LOWPOWERTIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ScreenSaveLowPowerTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VALUE_POWEROFFTIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ScreenSavePowerOffTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VALUE_LOWPOWERACTIVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ScreenSaveLowPowerActive"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VALUE_POWEROFFACTIVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ScreenSavePowerOffActive"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_WINDOWSAPPLETS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Applets"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_SYSTRAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\SysTray"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SYSTRAYSVCS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Services"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SYSTRAYBATFLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PowerFlags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SYSTRAYPCCARDFLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PCMCIAFlags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_NETWORK_USERSETTINGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Network"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_NETWORK_PERSISTENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Persistent"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_NETWORK_RECENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Recent"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REMOTE_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RemotePath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_USER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UserName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PROVIDER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ProviderName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CONNECTION_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ConnectionType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_UPGRADE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Upgrade"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_LOGON"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Logon"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MUSTBEVALIDATED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MustBeValidated"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_RUNLOGINSCRIPT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ProcessLoginScript"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_NETWORKPROVIDER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\NetworkProvider"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_AUTHENT_AGENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AuthenticatingAgent"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PREFREDIR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PreferredRedir"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_AUTOSTART"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AutoStart"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_AUTOLOGON"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AutoLogon"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NETCARD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Netcard"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TRANSPORT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Transport"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DYNAMIC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Dynamic"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TRANSITION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Transition"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_STATICDRIVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StaticDrive"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LOADHI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LoadHi"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LOADRMDRIVERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LoadRMDrivers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SETUPN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SetupN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SETUPNPATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SetupNPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_WRKGRP_FORCEMAPPING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WrkgrpForceMapping"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_WRKGRP_REQUIRED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WrkgrpRequired"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CURRENT_CONTROL_SET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_CURRENT_USER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Current User"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_PWDPROVIDER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\PwdProvider"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PWDPROVIDER_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ProviderPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PWDPROVIDER_DESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PWDPROVIDER_CHANGEPWD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ChangePassword"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PWDPROVIDER_CHANGEPWDHWND"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ChangePasswordHwnd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PWDPROVIDER_GETPWDSTATUS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GetPasswordStatus"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PWDPROVIDER_ISNP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NetworkProvider"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PWDPROVIDER_CHANGEORDER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ChangeOrder"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_POLICIES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Policies"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_UPDATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\Update"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VALUE_ENABLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Enable"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VALUE_VERBOSE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Verbose"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VALUE_NETPATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NetworkPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VALUE_DEFAULTLOC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UseDefaultNetLocation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_NETWORK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Network"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_PRINTERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Printers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_WINOLDAPP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WinOldApp"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_EXPLORER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Explorer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NOFILESHARING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoFileSharing"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NOPRINTSHARING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoPrintSharing"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NOFILESHARINGCTRL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoFileSharingControl"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NOPRINTSHARINGCTRL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoPrintSharingControl"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_HIDESHAREPWDS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HideSharePwds"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DISABLEPWDCACHING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DisablePwdCaching"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_ALPHANUMPWDS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AlphanumPwds"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NETSETUP_DISABLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoNetSetup"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NETSETUP_NOCONFIGPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoNetSetupConfigPage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NETSETUP_NOIDPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoNetSetupIDPage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NETSETUP_NOSECURITYPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoNetSetupSecurityPage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SYSTEMCPL_NOVIRTMEMPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoVirtMemPage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SYSTEMCPL_NODEVMGRPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoDevMgrPage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SYSTEMCPL_NOCONFIGPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoConfigPage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SYSTEMCPL_NOFILESYSPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoFileSysPage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DISPCPL_NODISPCPL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoDispCPL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DISPCPL_NOBACKGROUNDPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoDispBackgroundPage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DISPCPL_NOSCRSAVPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoDispScrSavPage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DISPCPL_NOAPPEARANCEPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoDispAppearancePage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DISPCPL_NOSETTINGSPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoDispSettingsPage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SECCPL_NOSECCPL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoSecCPL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SECCPL_NOPWDPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoPwdPage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SECCPL_NOADMINPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoAdminPage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SECCPL_NOPROFILEPAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoProfilePage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PRINTERS_HIDETABS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoPrinterTabs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PRINTERS_NODELETE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoDeletePrinter"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PRINTERS_NOADD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoAddPrinter"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_WINOLDAPP_DISABLED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Disabled"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_WINOLDAPP_NOREALMODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoRealMode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NOENTIRENETWORK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoEntireNetwork"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_NOWORKGROUPCONTENTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoWorkgroupContents"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_UNDOCK_WITHOUT_LOGON"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UndockWithoutLogon"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MINPWDLEN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MinPwdLen"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PWDEXPIRATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PwdExpiration"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_WIN31PROVIDER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Win31Provider"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DISABLEREGTOOLS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DisableRegistryTools"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_WINLOGON"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Winlogon"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LEGALNOTICECAPTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LegalNoticeCaption"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LEGALNOTICETEXT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LegalNoticeText"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DRIVE_SPINDOWN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoDispSpinDown"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHUTDOWN_FLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShutdownFlags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_RESTRICTRUN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RestrictRun"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_POL_USERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Users"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_POL_COMPUTERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Computers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_POL_USERGROUPS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UserGroups"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_POL_DEFAULT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":".default"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_POL_USERGROUPDATA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GroupData\\UserGroups\\Priority"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_TIMEZONE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\TimeZoneInformation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TZBIAS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Bias"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TZDLTBIAS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DaylightBias"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TZSTDBIAS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StandardBias"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TZACTBIAS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ActiveTimeBias"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TZDLTFLAG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DaylightFlag"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TZSTDSTART"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StandardStart"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TZDLTSTART"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DaylightStart"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TZDLTNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DaylightName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TZSTDNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StandardName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TZNOCHANGESTART"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoChangeStart"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TZNOCHANGEEND"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoChangeEnd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TZNOAUTOTIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DisableAutoDaylightTimeSet"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_FLOATINGPOINTPROCESSOR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HARDWARE\\DESCRIPTION\\System\\FloatingPointProcessor"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_FLOATINGPOINTPROCESSOR0"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HARDWARE\\DESCRIPTION\\System\\FloatingPointProcessor\\0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_COMPUTRNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\ComputerName\\ComputerName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_COMPUTRNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ComputerName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_SHUTDOWN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\Shutdown"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FORCEREBOOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ForceReboot"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SETUPPROGRAMRAN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SetupProgramRan"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DOES_POLLING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PollingSupportNeeded"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_KNOWNDLLS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\SessionManager\\KnownDLLs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_KNOWN16DLLS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\SessionManager\\Known16DLLs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CHECKVERDLLS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\SessionManager\\CheckVerDLLs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_WARNVERDLLS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\SessionManager\\WarnVerDLLs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_HACKINIFILE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\SessionManager\\HackIniFiles"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CHECKBADAPPS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\SessionManager\\CheckBadApps"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_APPPATCH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\SessionManager\\AppPatches"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CHECKBADAPPS400"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\SessionManager\\CheckBadApps400"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_KNOWNVXDS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\SessionManager\\KnownVxDs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_UNINSTALLER_DISPLAYNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DisplayName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_UNINSTALLER_COMMANDLINE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UninstallString"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REINSTALL_DISPLAYNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DisplayName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REINSTALL_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ReinstallString"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REINSTALL_DEVICEINSTANCEIDS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeviceInstanceIds"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_DESKTOP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Control Panel\\Desktop"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_MOUSE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Control Panel\\Mouse"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_KEYBOARD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Control Panel\\Keyboard"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_COLORS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Control Panel\\Colors"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_SOUND"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Control Panel\\Sound"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_METRICS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Control Panel\\Desktop\\WindowMetrics"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_ICONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Control Panel\\Icons"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CURSORS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Control Panel\\Cursors"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CHECKDISK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Check Drive"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CHECKDISKSET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Settings"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CHECKDISKUDRVS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NoUnknownDDErrDrvs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_FAULT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Fault"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FAULT_LOGFILE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LogFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_AEDEBUG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows NT\\CurrentVersion\\AeDebug"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_AEDEBUG_DEBUGGER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Debugger"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_AEDEBUG_AUTO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Auto"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_GRPCONV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\GrpConv"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_REGITEMDELETEMESSAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Removal Message"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_LASTCHECK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\LastCheck"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_LASTOPTIMIZE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\LastOptimize"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_LASTBACKUP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\LastBackup"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CHKLASTCHECK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Check Drive\\LastCheck"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_CHKLASTSURFAN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Check Drive\\LastSurfaceAnalysis"
 		,"Attrs":[]
 	}
 	,{
@@ -930,6 +5704,475 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_SHARES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Network\\LanMan"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHARES_FLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Flags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHARES_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Type"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHARES_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Path"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHARES_REMARK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Remark"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHARES_RW_PASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Parm1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHARES_RO_PASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Parm2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_PRINT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\Print"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_PRINTERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\Print\\Printers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_PROVIDERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\Print\\Providers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_MONITORS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\Print\\Monitors"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_ENVIRONMENTS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\Print\\Environments"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_START_ON_BOOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StartOnBoot"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_PRINTERS_MASK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrintersMask"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DOS_SPOOL_MASK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DOSSpoolMask"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_CURRENT_ENV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Windows 4.0"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_DRIVERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Drivers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_PRINT_PROC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Print Processors"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_EVENTLABELS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AppEvents\\EventLabels"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_SCHEMES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AppEvents\\Schemes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_MULTIMEDIA_AUDIO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Multimedia\\Audio"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_JOYCURR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CurrentJoystickSettings"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_KEY_JOYSETTINGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"JoystickSettings"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYUSERVALUES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"JoystickUserValues"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYCALLOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"JoystickCallout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYNCONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Joystick%dConfiguration"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYNOEMNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Joystick%dOEMName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYNOEMCALLOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Joystick%dOEMCallout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMCALLOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCallout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMDATA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMData"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMXYLABEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMXYLabel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMZLABEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMZLabel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMRLABEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMRLabel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMPOVLABEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMPOVLabel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMULABEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMULabel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMVLABEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMVLabel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMTESTMOVEDESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMTestMoveDesc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMTESTBUTTONDESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMTestButtonDesc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMTESTMOVECAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMTestMoveCap"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMTESTBUTTONCAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMTestButtonCap"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMTESTWINCAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMTestWinCap"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMCALCAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCalCap"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMCALWINCAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCalWinCap"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMCAL1"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCal1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMCAL2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCal2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMCAL3"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCal3"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMCAL4"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCal4"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMCAL5"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCal5"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMCAL6"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCal6"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMCAL7"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCal7"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMCAL8"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCal8"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMCAL9"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCal9"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMCAL10"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCal10"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMCAL11"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCal11"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_JOYOEMCAL12"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OEMCal12"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_AUDIO_BITMAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"bitmap"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_AUDIO_ICON"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"icon"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_DEVICEINSTALLER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\Device Installer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_DIFX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Windows\\CurrentVersion\\DIFX"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SEARCHOPTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SearchOptions"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_BIOSINFO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\BiosInfo"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_PCIIR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\Pnp\\PciIrqRouting"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_OPTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Options"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_STAT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Status"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_TABLE_STAT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TableStatus"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_MINIPORT_STAT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MiniportStatus"
 		,"Attrs":[]
 	}
 	,{
@@ -1115,6 +6358,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_PATH_LASTGOOD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\LastKnownGoodRecovery\\LastGood"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_PATH_LASTGOODTMP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\LastKnownGoodRecovery\\LastGood.Tmp"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"LASTGOOD_OPERATION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1290,6 +6547,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"RegCloseKey"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"val_context"
@@ -1434,7 +6692,7 @@
 		"Name":"RegCloseKey"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1447,7 +6705,7 @@
 		"Name":"RegOverridePredefKey"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1461,7 +6719,7 @@
 		"Name":"RegOpenUserClassesRoot"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1477,7 +6735,7 @@
 		"Name":"RegOpenCurrentUser"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1491,7 +6749,7 @@
 		"Name":"RegDisablePredefinedCache"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1503,7 +6761,7 @@
 		"Name":"RegDisablePredefinedCacheEx"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -1515,7 +6773,7 @@
 		"Name":"RegConnectRegistryA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1530,7 +6788,7 @@
 		"Name":"RegConnectRegistryW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1545,7 +6803,7 @@
 		"Name":"RegConnectRegistryExA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"Native","Name":"Int32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -1561,7 +6819,7 @@
 		"Name":"RegConnectRegistryExW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"Native","Name":"Int32"}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -1577,7 +6835,7 @@
 		"Name":"RegCreateKeyA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1592,7 +6850,7 @@
 		"Name":"RegCreateKeyW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1607,7 +6865,7 @@
 		"Name":"RegCreateKeyExA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1628,7 +6886,7 @@
 		"Name":"RegCreateKeyExW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1649,7 +6907,7 @@
 		"Name":"RegCreateKeyTransactedA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -1672,7 +6930,7 @@
 		"Name":"RegCreateKeyTransactedW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -1695,7 +6953,7 @@
 		"Name":"RegDeleteKeyA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1709,7 +6967,7 @@
 		"Name":"RegDeleteKeyW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1723,7 +6981,7 @@
 		"Name":"RegDeleteKeyExA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -1739,7 +6997,7 @@
 		"Name":"RegDeleteKeyExW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -1755,7 +7013,7 @@
 		"Name":"RegDeleteKeyTransactedA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -1773,7 +7031,7 @@
 		"Name":"RegDeleteKeyTransactedW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -1791,7 +7049,7 @@
 		"Name":"RegDisableReflectionKey"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -1804,7 +7062,7 @@
 		"Name":"RegEnableReflectionKey"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -1817,7 +7075,7 @@
 		"Name":"RegQueryReflectionKey"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -1831,7 +7089,7 @@
 		"Name":"RegDeleteValueA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1845,7 +7103,7 @@
 		"Name":"RegDeleteValueW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1859,7 +7117,7 @@
 		"Name":"RegEnumKeyA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1875,7 +7133,7 @@
 		"Name":"RegEnumKeyW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1891,7 +7149,7 @@
 		"Name":"RegEnumKeyExA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1911,7 +7169,7 @@
 		"Name":"RegEnumKeyExW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1931,7 +7189,7 @@
 		"Name":"RegEnumValueA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1951,7 +7209,7 @@
 		"Name":"RegEnumValueW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1971,7 +7229,7 @@
 		"Name":"RegFlushKey"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -1984,7 +7242,7 @@
 		"Name":"RegGetKeySecurity"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -1992,7 +7250,7 @@
 		,"Params":[
 			{"Name":"hKey","Type":{"Kind":"ApiRef","Name":"HKEY","TargetKind":"Default","Api":"System.Registry","Parents":[]},"Attrs":["In"]}
 			,{"Name":"SecurityInformation","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["Out",{"Kind":"MemorySize","BytesParamIndex":3},"Optional"]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["Out",{"Kind":"MemorySize","BytesParamIndex":3},"Optional"]}
 			,{"Name":"lpcbSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["In","Out"]}
 		]
 	}
@@ -2000,7 +7258,7 @@
 		"Name":"RegLoadKeyA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2015,7 +7273,7 @@
 		"Name":"RegLoadKeyW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2030,7 +7288,7 @@
 		"Name":"RegNotifyChangeKeyValue"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2047,7 +7305,7 @@
 		"Name":"RegOpenKeyA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2062,7 +7320,7 @@
 		"Name":"RegOpenKeyW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2077,7 +7335,7 @@
 		"Name":"RegOpenKeyExA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2094,7 +7352,7 @@
 		"Name":"RegOpenKeyExW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2111,7 +7369,7 @@
 		"Name":"RegOpenKeyTransactedA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2130,7 +7388,7 @@
 		"Name":"RegOpenKeyTransactedW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2149,7 +7407,7 @@
 		"Name":"RegQueryInfoKeyA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2173,7 +7431,7 @@
 		"Name":"RegQueryInfoKeyW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2197,7 +7455,7 @@
 		"Name":"RegQueryValueA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2213,7 +7471,7 @@
 		"Name":"RegQueryValueW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2229,7 +7487,7 @@
 		"Name":"RegQueryMultipleValuesA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2246,7 +7504,7 @@
 		"Name":"RegQueryMultipleValuesW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2263,7 +7521,7 @@
 		"Name":"RegQueryValueExA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2281,7 +7539,7 @@
 		"Name":"RegQueryValueExW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2299,7 +7557,7 @@
 		"Name":"RegReplaceKeyA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2315,7 +7573,7 @@
 		"Name":"RegReplaceKeyW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2331,7 +7589,7 @@
 		"Name":"RegRestoreKeyA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2346,7 +7604,7 @@
 		"Name":"RegRestoreKeyW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2361,7 +7619,7 @@
 		"Name":"RegRenameKey"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -2376,7 +7634,7 @@
 		"Name":"RegSaveKeyA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2391,7 +7649,7 @@
 		"Name":"RegSaveKeyW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2406,7 +7664,7 @@
 		"Name":"RegSetKeySecurity"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -2414,14 +7672,14 @@
 		,"Params":[
 			{"Name":"hKey","Type":{"Kind":"ApiRef","Name":"HKEY","TargetKind":"Default","Api":"System.Registry","Parents":[]},"Attrs":["In"]}
 			,{"Name":"SecurityInformation","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["In"]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{
 		"Name":"RegSetValueA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2438,7 +7696,7 @@
 		"Name":"RegSetValueW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2455,7 +7713,7 @@
 		"Name":"RegSetValueExA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2473,7 +7731,7 @@
 		"Name":"RegSetValueExW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2491,7 +7749,7 @@
 		"Name":"RegUnLoadKeyA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2505,7 +7763,7 @@
 		"Name":"RegUnLoadKeyW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.0"
@@ -2519,7 +7777,7 @@
 		"Name":"RegDeleteKeyValueA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2534,7 +7792,7 @@
 		"Name":"RegDeleteKeyValueW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2549,7 +7807,7 @@
 		"Name":"RegSetKeyValueA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2567,7 +7825,7 @@
 		"Name":"RegSetKeyValueW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2585,7 +7843,7 @@
 		"Name":"RegDeleteTreeA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2599,7 +7857,7 @@
 		"Name":"RegDeleteTreeW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2613,7 +7871,7 @@
 		"Name":"RegCopyTreeA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2628,7 +7886,7 @@
 		"Name":"RegGetValueA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2647,7 +7905,7 @@
 		"Name":"RegGetValueW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2666,7 +7924,7 @@
 		"Name":"RegCopyTreeW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2681,7 +7939,7 @@
 		"Name":"RegLoadMUIStringA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2700,7 +7958,7 @@
 		"Name":"RegLoadMUIStringW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2719,7 +7977,7 @@
 		"Name":"RegLoadAppKeyA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2736,7 +7994,7 @@
 		"Name":"RegLoadAppKeyW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows6.0.6000"
@@ -2753,7 +8011,7 @@
 		"Name":"RegSaveKeyExA"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -2769,7 +8027,7 @@
 		"Name":"RegSaveKeyExW"
 		,"SetLastError":false
 		,"DllImport":"ADVAPI32"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows5.1.2600"
@@ -2785,7 +8043,7 @@
 		"Name":"GetRegistryValueWithFallbackW"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-core-state-helpers-l1-1-0"
-		,"ReturnType":{"Kind":"ApiRef","Name":"LSTATUS","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null

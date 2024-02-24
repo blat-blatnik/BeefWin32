@@ -29,11 +29,15 @@ static
 	public const uint32 ERROR_CONTEXT_ALREADY_REGISTERED = 15019;
 	public const uint32 ERROR_PARSING_FAILURE = 15020;
 	public const uint32 NETSH_ERROR_END = 15019;
+	public const String NS_GET_EVENT_IDS_FN_NAME = "GetEventIds";
 	public const uint32 MAX_NAME_LEN = 48;
 	public const uint32 NETSH_VERSION_50 = 20480;
+	public const String NETSH_ARG_DELIMITER = "=";
+	public const String NETSH_CMD_DELIMITER = " ";
 	public const uint32 NETSH_MAX_TOKEN_LENGTH = 64;
 	public const uint32 NETSH_MAX_CMD_TOKEN_LENGTH = 128;
 	public const uint32 DEFAULT_CONTEXT_PRIORITY = 100;
+	public const String GET_RESOURCE_STRING_FN_NAME = "GetResourceString";
 	#endregion
 	
 	#region Enums

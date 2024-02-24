@@ -125,13 +125,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Reconcile(out IReconcileInitiator pInitiator, uint32 dwFlags, HWND hwndOwner, HWND hwndProgressFeedback, uint32 ulcInput, IMoniker** rgpmkOtherInput, out int32 plOutIndex, out IStorage pstgNewResidues, void* pvReserved) mut => VT.Reconcile(ref this, out pInitiator, dwFlags, hwndOwner, hwndProgressFeedback, ulcInput, rgpmkOtherInput, out plOutIndex, out pstgNewResidues, pvReserved);
+		public HRESULT Reconcile(ref IReconcileInitiator pInitiator, uint32 dwFlags, HWND hwndOwner, HWND hwndProgressFeedback, uint32 ulcInput, IMoniker** rgpmkOtherInput, out int32 plOutIndex, ref IStorage pstgNewResidues, void* pvReserved) mut => VT.Reconcile(ref this, ref pInitiator, dwFlags, hwndOwner, hwndProgressFeedback, ulcInput, rgpmkOtherInput, out plOutIndex, ref pstgNewResidues, pvReserved);
 		public HRESULT GetProgressFeedbackMaxEstimate(out uint32 pulProgressMax) mut => VT.GetProgressFeedbackMaxEstimate(ref this, out pulProgressMax);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IReconcilableObject self, out IReconcileInitiator pInitiator, uint32 dwFlags, HWND hwndOwner, HWND hwndProgressFeedback, uint32 ulcInput, IMoniker** rgpmkOtherInput, out int32 plOutIndex, out IStorage pstgNewResidues, void* pvReserved) Reconcile;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IReconcilableObject self, ref IReconcileInitiator pInitiator, uint32 dwFlags, HWND hwndOwner, HWND hwndProgressFeedback, uint32 ulcInput, IMoniker** rgpmkOtherInput, out int32 plOutIndex, ref IStorage pstgNewResidues, void* pvReserved) Reconcile;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IReconcilableObject self, out uint32 pulProgressMax) GetProgressFeedbackMaxEstimate;
 		}
 	}
@@ -142,12 +142,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT IsMonikerInBriefcase(out IMoniker pmk) mut => VT.IsMonikerInBriefcase(ref this, out pmk);
+		public HRESULT IsMonikerInBriefcase(ref IMoniker pmk) mut => VT.IsMonikerInBriefcase(ref this, ref pmk);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBriefcaseInitiator self, out IMoniker pmk) IsMonikerInBriefcase;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBriefcaseInitiator self, ref IMoniker pmk) IsMonikerInBriefcase;
 		}
 	}
 	[CRepr]

@@ -10,6 +10,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"7c3f6998-1567-4bba-b52b-48d32141d613"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -47,6 +48,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"c22615d2-d318-4da2-8422-1fcaf77b10e4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -135,6 +137,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"5b2b3f99-328c-41d5-a6f7-7483ed8e71dd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -158,6 +161,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"3e59e6b7-c652-4daf-ad5e-16feb350cde3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -190,6 +194,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"cecbd2c3-a3a5-4749-9681-20e9161c6794"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -265,6 +270,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"bcdcd0de-330e-481b-b843-4898a6a8ebac"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -286,6 +292,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"720aea93-1964-4db0-b005-29eb9e2b18a9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IServiceProvider","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -299,7 +306,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"designModeDllPath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"designModeDllPath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]

@@ -2,6 +2,27 @@
 
 "Constants":[
 	{
+		"Name":"WC_MAGNIFIERA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Magnifier"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WC_MAGNIFIERW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Magnifier"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WC_MAGNIFIER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Magnifier"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"MS_SHOWMAGNIFIEDCURSOR"
 		,"Type":{"Kind":"Native","Name":"Int32"}
 		,"ValueType":"Int32"

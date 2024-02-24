@@ -4724,6 +4724,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"81bdcbca-64d4-426d-ae8d-ad0147f4275c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4936,6 +4937,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d0223b96-bf7a-43fd-92bd-a43b0d82b9eb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6501,6 +6503,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b07c4fe5-310d-4ba8-a23c-4f0f206f218b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6545,6 +6548,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"794950f2-adfc-458a-905e-10a10b0b503b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6645,6 +6649,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"05eec05d-8f7d-4362-b999-d1baf357c704"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6753,6 +6758,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"dd13c59c-36fa-4098-a8fb-c7ed39dc8546"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6788,6 +6794,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"efc5557e-6265-4613-8a94-43857889eb36"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6823,6 +6830,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6d3bdbdc-5b02-4415-b852-ce5e8bccb289"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6858,6 +6866,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"580ca87e-1d3c-4d54-991d-b7d3e3c298ce"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirect3DResource9","TargetKind":"Com","Api":"Graphics.Direct3D9","Parents":[]}
 		,"Methods":[
 			{
@@ -6936,6 +6945,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"85c31227-3de5-4f00-9b3a-f11ac38c18b5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirect3DBaseTexture9","TargetKind":"Com","Api":"Graphics.Direct3D9","Parents":[]}
 		,"Methods":[
 			{
@@ -7011,6 +7021,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2518526c-e789-4111-a7b9-47ef328d13e6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirect3DBaseTexture9","TargetKind":"Com","Api":"Graphics.Direct3D9","Parents":[]}
 		,"Methods":[
 			{
@@ -7086,6 +7097,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fff32f81-d953-473a-9223-93d652aba93f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirect3DBaseTexture9","TargetKind":"Com","Api":"Graphics.Direct3D9","Parents":[]}
 		,"Methods":[
 			{
@@ -7165,6 +7177,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b64bb1b5-fd70-4df6-bf91-19d0a12455e3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirect3DResource9","TargetKind":"Com","Api":"Graphics.Direct3D9","Parents":[]}
 		,"Methods":[
 			{
@@ -7213,6 +7226,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7c9dd65e-d3f7-4529-acee-785830acde35"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirect3DResource9","TargetKind":"Com","Api":"Graphics.Direct3D9","Parents":[]}
 		,"Methods":[
 			{
@@ -7261,6 +7275,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0cfbaf3a-9ff6-429a-99b3-a2796af8b89b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirect3DResource9","TargetKind":"Com","Api":"Graphics.Direct3D9","Parents":[]}
 		,"Methods":[
 			{
@@ -7345,6 +7360,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"24f416e6-1f67-4aa7-b88e-d33f6f3128a1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7458,6 +7474,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d9771460-a695-4f26-bbd3-27b840b541cc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7528,6 +7545,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"02177241-69fc-400c-8ff1-93a44df6861d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirect3D9","TargetKind":"Com","Api":"Graphics.Direct3D9","Parents":[]}
 		,"Methods":[
 			{
@@ -7611,6 +7629,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b18b10ce-2649-405a-870f-95f777d4313a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirect3DDevice9","TargetKind":"Com","Api":"Graphics.Direct3D9","Parents":[]}
 		,"Methods":[
 			{
@@ -7841,6 +7860,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"91886caf-1c3d-4d2e-a0ab-3e4c7d8d3303"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDirect3DSwapChain9","TargetKind":"Com","Api":"Graphics.Direct3D9","Parents":[]}
 		,"Methods":[
 			{

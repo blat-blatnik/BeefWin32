@@ -1651,17 +1651,17 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT CreateSyncProviderConfigUIRegistrationInstance(in SyncProviderConfigUIConfiguration pConfigUIConfig, ISyncProviderConfigUIInfo** ppConfigUIInfo) mut => VT.CreateSyncProviderConfigUIRegistrationInstance(ref this, pConfigUIConfig, ppConfigUIInfo);
+		public HRESULT CreateSyncProviderConfigUIRegistrationInstance(in SyncProviderConfigUIConfiguration pConfigUIConfig, out ISyncProviderConfigUIInfo* ppConfigUIInfo) mut => VT.CreateSyncProviderConfigUIRegistrationInstance(ref this, pConfigUIConfig, out ppConfigUIInfo);
 		public HRESULT UnregisterSyncProviderConfigUI(in Guid pguidInstanceId) mut => VT.UnregisterSyncProviderConfigUI(ref this, pguidInstanceId);
-		public HRESULT EnumerateSyncProviderConfigUIs(Guid* pguidContentType, uint32 dwSupportedArchitecture, IEnumSyncProviderConfigUIInfos** ppEnumSyncProviderConfigUIInfos) mut => VT.EnumerateSyncProviderConfigUIs(ref this, pguidContentType, dwSupportedArchitecture, ppEnumSyncProviderConfigUIInfos);
-		public HRESULT CreateSyncProviderRegistrationInstance(in SyncProviderConfiguration pProviderConfiguration, ISyncProviderInfo** ppProviderInfo) mut => VT.CreateSyncProviderRegistrationInstance(ref this, pProviderConfiguration, ppProviderInfo);
+		public HRESULT EnumerateSyncProviderConfigUIs(Guid* pguidContentType, uint32 dwSupportedArchitecture, out IEnumSyncProviderConfigUIInfos* ppEnumSyncProviderConfigUIInfos) mut => VT.EnumerateSyncProviderConfigUIs(ref this, pguidContentType, dwSupportedArchitecture, out ppEnumSyncProviderConfigUIInfos);
+		public HRESULT CreateSyncProviderRegistrationInstance(in SyncProviderConfiguration pProviderConfiguration, out ISyncProviderInfo* ppProviderInfo) mut => VT.CreateSyncProviderRegistrationInstance(ref this, pProviderConfiguration, out ppProviderInfo);
 		public HRESULT UnregisterSyncProvider(in Guid pguidInstanceId) mut => VT.UnregisterSyncProvider(ref this, pguidInstanceId);
-		public HRESULT GetSyncProviderConfigUIInfoforProvider(in Guid pguidProviderInstanceId, ISyncProviderConfigUIInfo** ppProviderConfigUIInfo) mut => VT.GetSyncProviderConfigUIInfoforProvider(ref this, pguidProviderInstanceId, ppProviderConfigUIInfo);
-		public HRESULT EnumerateSyncProviders(Guid* pguidContentType, uint32 dwStateFlagsToFilterMask, uint32 dwStateFlagsToFilter, in Guid refProviderClsId, uint32 dwSupportedArchitecture, IEnumSyncProviderInfos** ppEnumSyncProviderInfos) mut => VT.EnumerateSyncProviders(ref this, pguidContentType, dwStateFlagsToFilterMask, dwStateFlagsToFilter, refProviderClsId, dwSupportedArchitecture, ppEnumSyncProviderInfos);
-		public HRESULT GetSyncProviderInfo(in Guid pguidInstanceId, ISyncProviderInfo** ppProviderInfo) mut => VT.GetSyncProviderInfo(ref this, pguidInstanceId, ppProviderInfo);
-		public HRESULT GetSyncProviderFromInstanceId(in Guid pguidInstanceId, uint32 dwClsContext, IRegisteredSyncProvider** ppSyncProvider) mut => VT.GetSyncProviderFromInstanceId(ref this, pguidInstanceId, dwClsContext, ppSyncProvider);
-		public HRESULT GetSyncProviderConfigUIInfo(in Guid pguidInstanceId, ISyncProviderConfigUIInfo** ppConfigUIInfo) mut => VT.GetSyncProviderConfigUIInfo(ref this, pguidInstanceId, ppConfigUIInfo);
-		public HRESULT GetSyncProviderConfigUIFromInstanceId(in Guid pguidInstanceId, uint32 dwClsContext, ISyncProviderConfigUI** ppConfigUI) mut => VT.GetSyncProviderConfigUIFromInstanceId(ref this, pguidInstanceId, dwClsContext, ppConfigUI);
+		public HRESULT GetSyncProviderConfigUIInfoforProvider(in Guid pguidProviderInstanceId, out ISyncProviderConfigUIInfo* ppProviderConfigUIInfo) mut => VT.GetSyncProviderConfigUIInfoforProvider(ref this, pguidProviderInstanceId, out ppProviderConfigUIInfo);
+		public HRESULT EnumerateSyncProviders(Guid* pguidContentType, uint32 dwStateFlagsToFilterMask, uint32 dwStateFlagsToFilter, in Guid refProviderClsId, uint32 dwSupportedArchitecture, out IEnumSyncProviderInfos* ppEnumSyncProviderInfos) mut => VT.EnumerateSyncProviders(ref this, pguidContentType, dwStateFlagsToFilterMask, dwStateFlagsToFilter, refProviderClsId, dwSupportedArchitecture, out ppEnumSyncProviderInfos);
+		public HRESULT GetSyncProviderInfo(in Guid pguidInstanceId, out ISyncProviderInfo* ppProviderInfo) mut => VT.GetSyncProviderInfo(ref this, pguidInstanceId, out ppProviderInfo);
+		public HRESULT GetSyncProviderFromInstanceId(in Guid pguidInstanceId, uint32 dwClsContext, out IRegisteredSyncProvider* ppSyncProvider) mut => VT.GetSyncProviderFromInstanceId(ref this, pguidInstanceId, dwClsContext, out ppSyncProvider);
+		public HRESULT GetSyncProviderConfigUIInfo(in Guid pguidInstanceId, out ISyncProviderConfigUIInfo* ppConfigUIInfo) mut => VT.GetSyncProviderConfigUIInfo(ref this, pguidInstanceId, out ppConfigUIInfo);
+		public HRESULT GetSyncProviderConfigUIFromInstanceId(in Guid pguidInstanceId, uint32 dwClsContext, out ISyncProviderConfigUI* ppConfigUI) mut => VT.GetSyncProviderConfigUIFromInstanceId(ref this, pguidInstanceId, dwClsContext, out ppConfigUI);
 		public HRESULT GetSyncProviderState(in Guid pguidInstanceId, out uint32 pdwStateFlags) mut => VT.GetSyncProviderState(ref this, pguidInstanceId, out pdwStateFlags);
 		public HRESULT SetSyncProviderState(in Guid pguidInstanceId, uint32 dwStateFlagsMask, uint32 dwStateFlags) mut => VT.SetSyncProviderState(ref this, pguidInstanceId, dwStateFlagsMask, dwStateFlags);
 		public HRESULT RegisterForEvent(out HANDLE phEvent) mut => VT.RegisterForEvent(ref this, out phEvent);
@@ -1671,17 +1671,17 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in SyncProviderConfigUIConfiguration pConfigUIConfig, ISyncProviderConfigUIInfo** ppConfigUIInfo) CreateSyncProviderConfigUIRegistrationInstance;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in SyncProviderConfigUIConfiguration pConfigUIConfig, out ISyncProviderConfigUIInfo* ppConfigUIInfo) CreateSyncProviderConfigUIRegistrationInstance;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in Guid pguidInstanceId) UnregisterSyncProviderConfigUI;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, Guid* pguidContentType, uint32 dwSupportedArchitecture, IEnumSyncProviderConfigUIInfos** ppEnumSyncProviderConfigUIInfos) EnumerateSyncProviderConfigUIs;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in SyncProviderConfiguration pProviderConfiguration, ISyncProviderInfo** ppProviderInfo) CreateSyncProviderRegistrationInstance;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, Guid* pguidContentType, uint32 dwSupportedArchitecture, out IEnumSyncProviderConfigUIInfos* ppEnumSyncProviderConfigUIInfos) EnumerateSyncProviderConfigUIs;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in SyncProviderConfiguration pProviderConfiguration, out ISyncProviderInfo* ppProviderInfo) CreateSyncProviderRegistrationInstance;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in Guid pguidInstanceId) UnregisterSyncProvider;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in Guid pguidProviderInstanceId, ISyncProviderConfigUIInfo** ppProviderConfigUIInfo) GetSyncProviderConfigUIInfoforProvider;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, Guid* pguidContentType, uint32 dwStateFlagsToFilterMask, uint32 dwStateFlagsToFilter, in Guid refProviderClsId, uint32 dwSupportedArchitecture, IEnumSyncProviderInfos** ppEnumSyncProviderInfos) EnumerateSyncProviders;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in Guid pguidInstanceId, ISyncProviderInfo** ppProviderInfo) GetSyncProviderInfo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in Guid pguidInstanceId, uint32 dwClsContext, IRegisteredSyncProvider** ppSyncProvider) GetSyncProviderFromInstanceId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in Guid pguidInstanceId, ISyncProviderConfigUIInfo** ppConfigUIInfo) GetSyncProviderConfigUIInfo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in Guid pguidInstanceId, uint32 dwClsContext, ISyncProviderConfigUI** ppConfigUI) GetSyncProviderConfigUIFromInstanceId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in Guid pguidProviderInstanceId, out ISyncProviderConfigUIInfo* ppProviderConfigUIInfo) GetSyncProviderConfigUIInfoforProvider;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, Guid* pguidContentType, uint32 dwStateFlagsToFilterMask, uint32 dwStateFlagsToFilter, in Guid refProviderClsId, uint32 dwSupportedArchitecture, out IEnumSyncProviderInfos* ppEnumSyncProviderInfos) EnumerateSyncProviders;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in Guid pguidInstanceId, out ISyncProviderInfo* ppProviderInfo) GetSyncProviderInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in Guid pguidInstanceId, uint32 dwClsContext, out IRegisteredSyncProvider* ppSyncProvider) GetSyncProviderFromInstanceId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in Guid pguidInstanceId, out ISyncProviderConfigUIInfo* ppConfigUIInfo) GetSyncProviderConfigUIInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in Guid pguidInstanceId, uint32 dwClsContext, out ISyncProviderConfigUI* ppConfigUI) GetSyncProviderConfigUIFromInstanceId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in Guid pguidInstanceId, out uint32 pdwStateFlags) GetSyncProviderState;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, in Guid pguidInstanceId, uint32 dwStateFlagsMask, uint32 dwStateFlags) SetSyncProviderState;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderRegistration self, out HANDLE phEvent) RegisterForEvent;
@@ -1699,7 +1699,7 @@ static
 		public HRESULT Next(uint32 cFactories, ISyncProviderConfigUIInfo** ppSyncProviderConfigUIInfo, out uint32 pcFetched) mut => VT.Next(ref this, cFactories, ppSyncProviderConfigUIInfo, out pcFetched);
 		public HRESULT Skip(uint32 cFactories) mut => VT.Skip(ref this, cFactories);
 		public HRESULT Reset() mut => VT.Reset(ref this);
-		public HRESULT Clone(IEnumSyncProviderConfigUIInfos** ppEnum) mut => VT.Clone(ref this, ppEnum);
+		public HRESULT Clone(out IEnumSyncProviderConfigUIInfos* ppEnum) mut => VT.Clone(ref this, out ppEnum);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -1707,7 +1707,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSyncProviderConfigUIInfos self, uint32 cFactories, ISyncProviderConfigUIInfo** ppSyncProviderConfigUIInfo, out uint32 pcFetched) Next;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSyncProviderConfigUIInfos self, uint32 cFactories) Skip;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSyncProviderConfigUIInfos self) Reset;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSyncProviderConfigUIInfos self, IEnumSyncProviderConfigUIInfos** ppEnum) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSyncProviderConfigUIInfos self, out IEnumSyncProviderConfigUIInfos* ppEnum) Clone;
 		}
 	}
 	[CRepr]
@@ -1720,7 +1720,7 @@ static
 		public HRESULT Next(uint32 cInstances, ISyncProviderInfo** ppSyncProviderInfo, out uint32 pcFetched) mut => VT.Next(ref this, cInstances, ppSyncProviderInfo, out pcFetched);
 		public HRESULT Skip(uint32 cInstances) mut => VT.Skip(ref this, cInstances);
 		public HRESULT Reset() mut => VT.Reset(ref this);
-		public HRESULT Clone(IEnumSyncProviderInfos** ppEnum) mut => VT.Clone(ref this, ppEnum);
+		public HRESULT Clone(out IEnumSyncProviderInfos* ppEnum) mut => VT.Clone(ref this, out ppEnum);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
@@ -1728,7 +1728,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSyncProviderInfos self, uint32 cInstances, ISyncProviderInfo** ppSyncProviderInfo, out uint32 pcFetched) Next;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSyncProviderInfos self, uint32 cInstances) Skip;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSyncProviderInfos self) Reset;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSyncProviderInfos self, IEnumSyncProviderInfos** ppEnum) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSyncProviderInfos self, out IEnumSyncProviderInfos* ppEnum) Clone;
 		}
 	}
 	[CRepr]
@@ -1738,12 +1738,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetSyncProvider(uint32 dwClsContext, IRegisteredSyncProvider** ppSyncProvider) mut => VT.GetSyncProvider(ref this, dwClsContext, ppSyncProvider);
+		public HRESULT GetSyncProvider(uint32 dwClsContext, out IRegisteredSyncProvider* ppSyncProvider) mut => VT.GetSyncProvider(ref this, dwClsContext, out ppSyncProvider);
 
 		[CRepr]
 		public struct VTable : IPropertyStore.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderInfo self, uint32 dwClsContext, IRegisteredSyncProvider** ppSyncProvider) GetSyncProvider;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderInfo self, uint32 dwClsContext, out IRegisteredSyncProvider* ppSyncProvider) GetSyncProvider;
 		}
 	}
 	[CRepr]
@@ -1753,12 +1753,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetSyncProviderConfigUI(uint32 dwClsContext, ISyncProviderConfigUI** ppSyncProviderConfigUI) mut => VT.GetSyncProviderConfigUI(ref this, dwClsContext, ppSyncProviderConfigUI);
+		public HRESULT GetSyncProviderConfigUI(uint32 dwClsContext, out ISyncProviderConfigUI* ppSyncProviderConfigUI) mut => VT.GetSyncProviderConfigUI(ref this, dwClsContext, out ppSyncProviderConfigUI);
 
 		[CRepr]
 		public struct VTable : IPropertyStore.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderConfigUIInfo self, uint32 dwClsContext, ISyncProviderConfigUI** ppSyncProviderConfigUI) GetSyncProviderConfigUI;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderConfigUIInfo self, uint32 dwClsContext, out ISyncProviderConfigUI* ppSyncProviderConfigUI) GetSyncProviderConfigUI;
 		}
 	}
 	[CRepr]
@@ -1769,16 +1769,16 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT Init(in Guid pguidInstanceId, in Guid pguidContentType, IPropertyStore* pConfigurationProperties) mut => VT.Init(ref this, pguidInstanceId, pguidContentType, pConfigurationProperties);
-		public HRESULT GetRegisteredProperties(IPropertyStore** ppConfigUIProperties) mut => VT.GetRegisteredProperties(ref this, ppConfigUIProperties);
-		public HRESULT CreateAndRegisterNewSyncProvider(HWND hwndParent, IUnknown* pUnkContext, ISyncProviderInfo** ppProviderInfo) mut => VT.CreateAndRegisterNewSyncProvider(ref this, hwndParent, pUnkContext, ppProviderInfo);
+		public HRESULT GetRegisteredProperties(out IPropertyStore* ppConfigUIProperties) mut => VT.GetRegisteredProperties(ref this, out ppConfigUIProperties);
+		public HRESULT CreateAndRegisterNewSyncProvider(HWND hwndParent, IUnknown* pUnkContext, out ISyncProviderInfo* ppProviderInfo) mut => VT.CreateAndRegisterNewSyncProvider(ref this, hwndParent, pUnkContext, out ppProviderInfo);
 		public HRESULT ModifySyncProvider(HWND hwndParent, IUnknown* pUnkContext, ISyncProviderInfo* pProviderInfo) mut => VT.ModifySyncProvider(ref this, hwndParent, pUnkContext, pProviderInfo);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderConfigUI self, in Guid pguidInstanceId, in Guid pguidContentType, IPropertyStore* pConfigurationProperties) Init;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderConfigUI self, IPropertyStore** ppConfigUIProperties) GetRegisteredProperties;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderConfigUI self, HWND hwndParent, IUnknown* pUnkContext, ISyncProviderInfo** ppProviderInfo) CreateAndRegisterNewSyncProvider;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderConfigUI self, out IPropertyStore* ppConfigUIProperties) GetRegisteredProperties;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderConfigUI self, HWND hwndParent, IUnknown* pUnkContext, out ISyncProviderInfo* ppProviderInfo) CreateAndRegisterNewSyncProvider;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncProviderConfigUI self, HWND hwndParent, IUnknown* pUnkContext, ISyncProviderInfo* pProviderInfo) ModifySyncProvider;
 		}
 	}

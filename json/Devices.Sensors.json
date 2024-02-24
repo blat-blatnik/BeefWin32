@@ -2078,6 +2078,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"bd77db67-45a8-42dc-8d00-6dcf15f8377a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2090,7 +2091,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"sensorCategory","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In"]}
-					,{"Name":"ppSensorsFound","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISensorCollection","TargetKind":"Com","Api":"Devices.Sensors","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppSensorsFound","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISensorCollection","TargetKind":"Com","Api":"Devices.Sensors","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2103,7 +2104,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"sensorType","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In"]}
-					,{"Name":"ppSensorsFound","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISensorCollection","TargetKind":"Com","Api":"Devices.Sensors","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppSensorsFound","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISensorCollection","TargetKind":"Com","Api":"Devices.Sensors","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2116,7 +2117,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"sensorID","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In"]}
-					,{"Name":"ppSensor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISensor","TargetKind":"Com","Api":"Devices.Sensors","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppSensor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISensor","TargetKind":"Com","Api":"Devices.Sensors","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2153,6 +2154,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"d5fb0a7f-e74e-44f5-8e02-4806863a274f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2187,6 +2189,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"23571e11-e545-4dd8-a337-b89bf44b10df"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2199,7 +2202,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"ulIndex","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"ppSensor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISensor","TargetKind":"Com","Api":"Devices.Sensors","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppSensor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISensor","TargetKind":"Com","Api":"Devices.Sensors","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2269,6 +2272,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"5fa08f80-2657-458e-af75-46f73fa6ac5c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2316,7 +2320,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pFriendlyName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFriendlyName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2342,7 +2346,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pKeys","Type":{"Kind":"ApiRef","Name":"IPortableDeviceKeyCollection","TargetKind":"Com","Api":"Devices.PortableDevices","Parents":[]},"Attrs":["In","Optional"]}
-					,{"Name":"ppProperties","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPortableDeviceValues","TargetKind":"Com","Api":"Devices.PortableDevices","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppProperties","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPortableDeviceValues","TargetKind":"Com","Api":"Devices.PortableDevices","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2354,7 +2358,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppDataFields","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPortableDeviceKeyCollection","TargetKind":"Com","Api":"Devices.PortableDevices","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppDataFields","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPortableDeviceKeyCollection","TargetKind":"Com","Api":"Devices.PortableDevices","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2367,7 +2371,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pProperties","Type":{"Kind":"ApiRef","Name":"IPortableDeviceValues","TargetKind":"Com","Api":"Devices.PortableDevices","Parents":[]},"Attrs":["In","Optional"]}
-					,{"Name":"ppResults","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPortableDeviceValues","TargetKind":"Com","Api":"Devices.PortableDevices","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppResults","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPortableDeviceValues","TargetKind":"Com","Api":"Devices.PortableDevices","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2404,7 +2408,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppDataReport","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISensorDataReport","TargetKind":"Com","Api":"Devices.Sensors","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppDataReport","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISensorDataReport","TargetKind":"Com","Api":"Devices.Sensors","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -2429,7 +2433,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppValues","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":1,"Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}}},"Attrs":["Out","Optional"]}
+					{"Name":"ppValues","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":1,"Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}}},"Attrs":["Out"]}
 					,{"Name":"pCount","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
 				]
 			}
@@ -2466,6 +2470,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"0ab9df9b-c4b5-4796-8898-0470706a2e1d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2503,7 +2508,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pKeys","Type":{"Kind":"ApiRef","Name":"IPortableDeviceKeyCollection","TargetKind":"Com","Api":"Devices.PortableDevices","Parents":[]},"Attrs":["In","Optional"]}
-					,{"Name":"ppValues","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPortableDeviceValues","TargetKind":"Com","Api":"Devices.PortableDevices","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppValues","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IPortableDeviceValues","TargetKind":"Com","Api":"Devices.PortableDevices","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -2514,6 +2519,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"9b3b0b86-266a-4aad-b21f-fde5501001b7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2537,6 +2543,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"5d8dcc91-4641-47e7-b7c3-b74f48a6c391"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

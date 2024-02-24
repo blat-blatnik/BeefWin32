@@ -11,6 +11,8 @@ static
 	public const uint32 PROP_ID_SECURE_MIN = 26608;
 	public const uint32 PROP_ID_SECURE_MAX = 26623;
 	public const uint32 MAPI_DIM = 1;
+	public const uint32 fMapiUnicode = 0;
+	public const uint32 hrSuccess = 0;
 	public const uint32 MAPI_P1 = 268435456;
 	public const uint32 MAPI_SUBMITTED = 2147483648;
 	public const uint32 MAPI_SHORTTERM = 128;
@@ -19,6 +21,8 @@ static
 	public const uint32 MAPI_NOW = 16;
 	public const uint32 MAPI_NOTRESERVED = 8;
 	public const uint32 MAPI_COMPOUND = 128;
+	public const uint32 cchProfileNameMax = 64;
+	public const uint32 cchProfilePassMax = 64;
 	public const uint32 MV_FLAG = 4096;
 	public const uint32 PROP_ID_NULL = 0;
 	public const uint32 PROP_ID_INVALID = 65535;
@@ -32,6 +36,7 @@ static
 	public const uint32 TABLE_RESTRICT_DONE = 7;
 	public const uint32 TABLE_SETCOL_DONE = 8;
 	public const uint32 TABLE_RELOAD = 9;
+	public const String szMAPINotificationMsg = "MAPI Notify window message";
 	public const int32 MAPI_ERROR_VERSION = 0;
 	public const uint32 MAPI_USE_DEFAULT = 64;
 	public const uint32 MNID_ID = 0;
@@ -54,6 +59,8 @@ static
 	public const uint32 WAB_DISPLAY_LDAPURL = 1;
 	public const uint32 WAB_CONTEXT_ADRLIST = 2;
 	public const uint32 WAB_DISPLAY_ISNTDS = 4;
+	public const String WAB_DLL_NAME = "WAB32.DLL";
+	public const String WAB_DLL_PATH_KEY = "Software\\Microsoft\\WAB\\DLLPath";
 	public const HRESULT E_IMAPI_REQUEST_CANCELLED = -1062600702;
 	public const HRESULT E_IMAPI_RECORDER_REQUIRED = -1062600701;
 	public const HRESULT S_IMAPI_SPEEDADJUSTED = 11141124;
@@ -216,6 +223,9 @@ static
 	public const int32 PRILOWEST = -32768;
 	public const uint32 PRIHIGHEST = 32767;
 	public const uint32 PRIUSER = 0;
+	public const String OPENSTREAMONFILE = "OpenStreamOnFile";
+	public const String szHrDispatchNotifications = "HrDispatchNotifications";
+	public const String szScCreateConversationIndex = "ScCreateConversationIndex";
 	#endregion
 	
 	#region Enums
@@ -236,8 +246,7 @@ static
 	public function void LPFNDISMISS(uint ulUIParam, void* lpvContext);
 	public function int32 LPFNBUTTON(uint ulUIParam, void* lpvContext, uint32 cbEntryID, out ENTRYID lpSelection, uint32 ulFlags);
 	public function void CALLERRELEASE(uint32 ulCallerData, ref ITableData lpTblData, ref IMAPITable lpVue);
-	public function BOOL FNIDLE(void* param0);
-	public function BOOL PFNIDLE();
+	public function BOOL PFNIDLE(void* param0);
 	public function HRESULT LPOPENSTREAMONFILE(LPALLOCATEBUFFER lpAllocateBuffer, LPFREEBUFFER lpFreeBuffer, uint32 ulFlags, ref int8 lpszFileName, int8* lpszPrefix, out IStream* lppStream);
 	public function HRESULT LPDISPATCHNOTIFICATIONS(uint32 ulFlags);
 	public function int32 LPCREATECONVERSATIONINDEX(uint32 cbParent, out uint8 lpbParent, out uint32 lpcbConvIndex, out uint8* lppbConvIndex);

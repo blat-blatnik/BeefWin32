@@ -604,6 +604,21 @@
 		,"IntegerBase":"UInt32"
 	}
 	,{
+		"Name":"ICM_MODE"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Enum"
+		,"Flags":false
+		,"Scoped":false
+		,"Values":[
+			{"Name":"ICM_OFF","Value":1}
+			,{"Name":"ICM_ON","Value":2}
+			,{"Name":"ICM_QUERY","Value":3}
+			,{"Name":"ICM_DONE_OUTSIDEDC","Value":4}
+		]
+		,"IntegerBase":"Int32"
+	}
+	,{
 		"Name":"COLOR_MATCH_TO_TARGET_ACTION"
 		,"Architectures":[]
 		,"Platform":null
@@ -625,6 +640,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"DeleteColorSpace"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"LOGCOLORSPACEA"
@@ -885,6 +901,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1cd63475-07c4-46fe-a903-d655316d11fd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1046,6 +1063,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2dd80115-ad1e-41f6-a219-a4f4b583d1f9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1675,7 +1693,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"hdc","Type":{"Kind":"ApiRef","Name":"HDC","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]},"Attrs":["In"]}
-			,{"Name":"mode","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
+			,{"Name":"mode","Type":{"Kind":"ApiRef","Name":"ICM_MODE","TargetKind":"Default","Api":"UI.ColorSystem","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{
@@ -2384,7 +2402,7 @@
 		,"Platform":null
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"hxform","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":["In","Out"]}
+			{"Name":"hxform","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":["In"]}
 		]
 	}
 	,{
@@ -3295,7 +3313,7 @@
 		,"Platform":null
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"hcmTransform","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":["In","Out"]}
+			{"Name":"hcmTransform","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":["In"]}
 		]
 	}
 	,{

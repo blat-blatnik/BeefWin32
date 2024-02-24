@@ -238,6 +238,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"HeapDestroy"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"PROCESS_HEAP_ENTRY"
@@ -268,20 +269,6 @@
 				]
 				,"NestedTypes":[
 					{
-						"Name":"_Block_e__Struct"
-						,"Architectures":[]
-						,"Platform":null
-						,"Kind":"Struct"
-						,"Size":0
-						,"PackingSize":0
-						,"Fields":[
-							{"Name":"hMem","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
-							,{"Name":"dwReserved","Type":{"Kind":"Array","Shape":{"Size":3},"Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":[]}
-						]
-						,"NestedTypes":[
-						]
-					}
-					,{
 						"Name":"_Region_e__Struct"
 						,"Architectures":[]
 						,"Platform":null
@@ -293,6 +280,20 @@
 							,{"Name":"dwUnCommittedSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 							,{"Name":"lpFirstBlock","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":[]}
 							,{"Name":"lpLastBlock","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":[]}
+						]
+						,"NestedTypes":[
+						]
+					}
+					,{
+						"Name":"_Block_e__Struct"
+						,"Architectures":[]
+						,"Platform":null
+						,"Kind":"Struct"
+						,"Size":0
+						,"PackingSize":0
+						,"Fields":[
+							{"Name":"hMem","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
+							,{"Name":"dwReserved","Type":{"Kind":"Array","Shape":{"Size":3},"Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":[]}
 						]
 						,"NestedTypes":[
 						]
@@ -545,6 +546,21 @@
 		]
 	}
 	,{
+		"Name":"MEM_ADDRESS_REQUIREMENTS"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Struct"
+		,"Size":0
+		,"PackingSize":0
+		,"Fields":[
+			{"Name":"LowestStartingAddress","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":[]}
+			,{"Name":"HighestEndingAddress","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":[]}
+			,{"Name":"Alignment","Type":{"Kind":"Native","Name":"UIntPtr"},"Attrs":[]}
+		]
+		,"NestedTypes":[
+		]
+	}
+	,{
 		"Name":"MEM_EXTENDED_PARAMETER_TYPE"
 		,"Architectures":[]
 		,"Platform":null
@@ -711,7 +727,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"hHeap","Type":{"Kind":"ApiRef","Name":"HeapHandle","TargetKind":"Default","Api":"System.Memory","Parents":[]},"Attrs":["In","Out"]}
+			{"Name":"hHeap","Type":{"Kind":"ApiRef","Name":"HeapHandle","TargetKind":"Default","Api":"System.Memory","Parents":[]},"Attrs":["In"]}
 			,{"Name":"dwFlags","Type":{"Kind":"ApiRef","Name":"HEAP_FLAGS","TargetKind":"Default","Api":"System.Memory","Parents":[]},"Attrs":["In"]}
 			,{"Name":"lpMem","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["Optional"]}
 			,{"Name":"dwBytes","Type":{"Kind":"Native","Name":"UIntPtr"},"Attrs":["In"]}
@@ -727,7 +743,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"hHeap","Type":{"Kind":"ApiRef","Name":"HeapHandle","TargetKind":"Default","Api":"System.Memory","Parents":[]},"Attrs":["In","Out"]}
+			{"Name":"hHeap","Type":{"Kind":"ApiRef","Name":"HeapHandle","TargetKind":"Default","Api":"System.Memory","Parents":[]},"Attrs":["In"]}
 			,{"Name":"dwFlags","Type":{"Kind":"ApiRef","Name":"HEAP_FLAGS","TargetKind":"Default","Api":"System.Memory","Parents":[]},"Attrs":["In"]}
 			,{"Name":"lpMem","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["Optional"]}
 		]

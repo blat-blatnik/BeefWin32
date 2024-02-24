@@ -14,9 +14,14 @@ using Win32.UI.WindowsAndMessaging;
 static
 {
 	#region Constants
-	public const uint32 WM_CONTEXTMENU = 123;
-	public const uint32 WM_UNICHAR = 265;
-	public const uint32 WM_PRINTCLIENT = 792;
+	public const uint32 cchTextLimitDefault = 32767;
+	public const String MSFTEDIT_CLASS = "RICHEDIT50W";
+	public const String CERICHEDIT_CLASSA = "RichEditCEA";
+	public const String CERICHEDIT_CLASSW = "RichEditCEW";
+	public const String RICHEDIT_CLASSA = "RichEdit20A";
+	public const String RICHEDIT_CLASS10A = "RICHEDIT";
+	public const String RICHEDIT_CLASSW = "RichEdit20W";
+	public const String RICHEDIT_CLASS = "RichEdit20W";
 	public const uint32 EM_CANPASTE = 1074;
 	public const uint32 EM_DISPLAYBAND = 1075;
 	public const uint32 EM_EXGETSEL = 1076;
@@ -332,6 +337,7 @@ static
 	public const uint32 IMF_FORCEINACTIVE = 128;
 	public const uint32 IMF_FORCEREMEMBER = 256;
 	public const uint32 IMF_MULTIPLEEDIT = 1024;
+	public const uint32 yHeightCharPtsMost = 1638;
 	public const uint32 SCF_SELECTION = 1;
 	public const uint32 SCF_WORD = 2;
 	public const uint32 SCF_DEFAULT = 0;
@@ -359,6 +365,7 @@ static
 	public const uint32 SFF_PWD = 2048;
 	public const uint32 SF_RTFVAL = 1792;
 	public const uint32 MAX_TAB_STOPS = 32;
+	public const uint32 lDefaultTab = 720;
 	public const uint32 MAX_TABLE_CELLS = 63;
 	public const uint32 PFM_SPACEBEFORE = 64;
 	public const uint32 PFM_SPACEAFTER = 128;
@@ -391,12 +398,14 @@ static
 	public const uint32 PFN_UCROMAN = 6;
 	public const uint32 PFA_JUSTIFY = 4;
 	public const uint32 PFA_FULL_INTERWORD = 4;
-	public const uint32 WM_NOTIFY = 78;
 	public const uint32 GCMF_GRIPPER = 1;
 	public const uint32 GCMF_SPELLING = 2;
 	public const uint32 GCMF_TOUCHMENU = 16384;
 	public const uint32 GCMF_MOUSEMENU = 8192;
 	public const uint32 OLEOP_DOVERB = 1;
+	public const String CF_RTF = "Rich Text Format";
+	public const String CF_RTFNOOBJS = "Rich Text Format Without Objects";
+	public const String CF_RETEXTOBJ = "RichEdit Text and Objects";
 	public const uint32 ST_DEFAULT = 0;
 	public const uint32 ST_KEEPUNDO = 1;
 	public const uint32 ST_SELECTION = 2;
@@ -420,6 +429,7 @@ static
 	public const uint32 FR_MATCHDIAC = 536870912;
 	public const uint32 FR_MATCHKASHIDA = 1073741824;
 	public const uint32 FR_MATCHALEFHAMZA = 2147483648;
+	public const String RICHEDIT60_CLASS = "RICHEDIT60W";
 	public const uint32 PFA_FULL_NEWSPAPER = 5;
 	public const uint32 PFA_FULL_INTERLETTER = 6;
 	public const uint32 PFA_FULL_SCALED = 7;
@@ -2088,10 +2098,10 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetName(BSTR* pName) mut => VT.GetName(ref this, pName);
-		public HRESULT GetSelection(ITextSelection** ppSel) mut => VT.GetSelection(ref this, ppSel);
+		public HRESULT GetName(out BSTR pName) mut => VT.GetName(ref this, out pName);
+		public HRESULT GetSelection(out ITextSelection* ppSel) mut => VT.GetSelection(ref this, out ppSel);
 		public HRESULT GetStoryCount(out int32 pCount) mut => VT.GetStoryCount(ref this, out pCount);
-		public HRESULT GetStoryRanges(ITextStoryRanges** ppStories) mut => VT.GetStoryRanges(ref this, ppStories);
+		public HRESULT GetStoryRanges(out ITextStoryRanges* ppStories) mut => VT.GetStoryRanges(ref this, out ppStories);
 		public HRESULT GetSaved(out int32 pValue) mut => VT.GetSaved(ref this, out pValue);
 		public HRESULT SetSaved(tomConstants Value) mut => VT.SetSaved(ref this, Value);
 		public HRESULT GetDefaultTabStop(out float pValue) mut => VT.GetDefaultTabStop(ref this, out pValue);
@@ -2105,16 +2115,16 @@ static
 		public HRESULT EndEditCollection() mut => VT.EndEditCollection(ref this);
 		public HRESULT Undo(int32 Count, out int32 pCount) mut => VT.Undo(ref this, Count, out pCount);
 		public HRESULT Redo(int32 Count, out int32 pCount) mut => VT.Redo(ref this, Count, out pCount);
-		public HRESULT Range(int32 cpActive, int32 cpAnchor, ITextRange** ppRange) mut => VT.Range(ref this, cpActive, cpAnchor, ppRange);
-		public HRESULT RangeFromPoint(int32 x, int32 y, ITextRange** ppRange) mut => VT.RangeFromPoint(ref this, x, y, ppRange);
+		public HRESULT Range(int32 cpActive, int32 cpAnchor, out ITextRange* ppRange) mut => VT.Range(ref this, cpActive, cpAnchor, out ppRange);
+		public HRESULT RangeFromPoint(int32 x, int32 y, out ITextRange* ppRange) mut => VT.RangeFromPoint(ref this, x, y, out ppRange);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, BSTR* pName) GetName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, ITextSelection** ppSel) GetSelection;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, out BSTR pName) GetName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, out ITextSelection* ppSel) GetSelection;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, out int32 pCount) GetStoryCount;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, ITextStoryRanges** ppStories) GetStoryRanges;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, out ITextStoryRanges* ppStories) GetStoryRanges;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, out int32 pValue) GetSaved;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, tomConstants Value) SetSaved;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, out float pValue) GetDefaultTabStop;
@@ -2128,8 +2138,8 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self) EndEditCollection;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, int32 Count, out int32 pCount) Undo;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, int32 Count, out int32 pCount) Redo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, int32 cpActive, int32 cpAnchor, ITextRange** ppRange) Range;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, int32 x, int32 y, ITextRange** ppRange) RangeFromPoint;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, int32 cpActive, int32 cpAnchor, out ITextRange* ppRange) Range;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument self, int32 x, int32 y, out ITextRange* ppRange) RangeFromPoint;
 		}
 	}
 	[CRepr]
@@ -2139,20 +2149,20 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetText(BSTR* pbstr) mut => VT.GetText(ref this, pbstr);
+		public HRESULT GetText(out BSTR pbstr) mut => VT.GetText(ref this, out pbstr);
 		public HRESULT SetText(BSTR bstr) mut => VT.SetText(ref this, bstr);
 		public HRESULT GetChar(out int32 pChar) mut => VT.GetChar(ref this, out pChar);
 		public HRESULT SetChar(int32 Char) mut => VT.SetChar(ref this, Char);
-		public HRESULT GetDuplicate(ITextRange** ppRange) mut => VT.GetDuplicate(ref this, ppRange);
-		public HRESULT GetFormattedText(ITextRange** ppRange) mut => VT.GetFormattedText(ref this, ppRange);
+		public HRESULT GetDuplicate(out ITextRange* ppRange) mut => VT.GetDuplicate(ref this, out ppRange);
+		public HRESULT GetFormattedText(out ITextRange* ppRange) mut => VT.GetFormattedText(ref this, out ppRange);
 		public HRESULT SetFormattedText(ITextRange* pRange) mut => VT.SetFormattedText(ref this, pRange);
 		public HRESULT GetStart(out int32 pcpFirst) mut => VT.GetStart(ref this, out pcpFirst);
 		public HRESULT SetStart(int32 cpFirst) mut => VT.SetStart(ref this, cpFirst);
 		public HRESULT GetEnd(out int32 pcpLim) mut => VT.GetEnd(ref this, out pcpLim);
 		public HRESULT SetEnd(int32 cpLim) mut => VT.SetEnd(ref this, cpLim);
-		public HRESULT GetFont(ITextFont** ppFont) mut => VT.GetFont(ref this, ppFont);
+		public HRESULT GetFont(out ITextFont* ppFont) mut => VT.GetFont(ref this, out ppFont);
 		public HRESULT SetFont(ITextFont* pFont) mut => VT.SetFont(ref this, pFont);
-		public HRESULT GetPara(ITextPara** ppPara) mut => VT.GetPara(ref this, ppPara);
+		public HRESULT GetPara(out ITextPara* ppPara) mut => VT.GetPara(ref this, out ppPara);
 		public HRESULT SetPara(ITextPara* pPara) mut => VT.SetPara(ref this, pPara);
 		public HRESULT GetStoryLength(out int32 pCount) mut => VT.GetStoryLength(ref this, out pCount);
 		public HRESULT GetStoryType(out int32 pValue) mut => VT.GetStoryType(ref this, out pValue);
@@ -2189,25 +2199,25 @@ static
 		public HRESULT GetPoint(int32 Type, out int32 px, out int32 py) mut => VT.GetPoint(ref this, Type, out px, out py);
 		public HRESULT SetPoint(int32 x, int32 y, int32 Type, int32 Extend) mut => VT.SetPoint(ref this, x, y, Type, Extend);
 		public HRESULT ScrollIntoView(int32 Value) mut => VT.ScrollIntoView(ref this, Value);
-		public HRESULT GetEmbeddedObject(IUnknown** ppObject) mut => VT.GetEmbeddedObject(ref this, ppObject);
+		public HRESULT GetEmbeddedObject(out IUnknown* ppObject) mut => VT.GetEmbeddedObject(ref this, out ppObject);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, BSTR* pbstr) GetText;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, out BSTR pbstr) GetText;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, BSTR bstr) SetText;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, out int32 pChar) GetChar;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, int32 Char) SetChar;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, ITextRange** ppRange) GetDuplicate;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, ITextRange** ppRange) GetFormattedText;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, out ITextRange* ppRange) GetDuplicate;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, out ITextRange* ppRange) GetFormattedText;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, ITextRange* pRange) SetFormattedText;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, out int32 pcpFirst) GetStart;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, int32 cpFirst) SetStart;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, out int32 pcpLim) GetEnd;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, int32 cpLim) SetEnd;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, ITextFont** ppFont) GetFont;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, out ITextFont* ppFont) GetFont;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, ITextFont* pFont) SetFont;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, ITextPara** ppPara) GetPara;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, out ITextPara* ppPara) GetPara;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, ITextPara* pPara) SetPara;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, out int32 pCount) GetStoryLength;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, out int32 pValue) GetStoryType;
@@ -2244,7 +2254,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, int32 Type, out int32 px, out int32 py) GetPoint;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, int32 x, int32 y, int32 Type, int32 Extend) SetPoint;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, int32 Value) ScrollIntoView;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, IUnknown** ppObject) GetEmbeddedObject;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange self, out IUnknown* ppObject) GetEmbeddedObject;
 		}
 	}
 	[CRepr]
@@ -2287,7 +2297,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetDuplicate(ITextFont** ppFont) mut => VT.GetDuplicate(ref this, ppFont);
+		public HRESULT GetDuplicate(out ITextFont* ppFont) mut => VT.GetDuplicate(ref this, out ppFont);
 		public HRESULT SetDuplicate(ITextFont* pFont) mut => VT.SetDuplicate(ref this, pFont);
 		public HRESULT CanChange(out int32 pValue) mut => VT.CanChange(ref this, out pValue);
 		public HRESULT IsEqual(ITextFont* pFont, out int32 pValue) mut => VT.IsEqual(ref this, pFont, out pValue);
@@ -2316,7 +2326,7 @@ static
 		public HRESULT SetKerning(float Value) mut => VT.SetKerning(ref this, Value);
 		public HRESULT GetLanguageID(out int32 pValue) mut => VT.GetLanguageID(ref this, out pValue);
 		public HRESULT SetLanguageID(int32 Value) mut => VT.SetLanguageID(ref this, Value);
-		public HRESULT GetName(BSTR* pbstr) mut => VT.GetName(ref this, pbstr);
+		public HRESULT GetName(out BSTR pbstr) mut => VT.GetName(ref this, out pbstr);
 		public HRESULT SetName(BSTR bstr) mut => VT.SetName(ref this, bstr);
 		public HRESULT GetOutline(out int32 pValue) mut => VT.GetOutline(ref this, out pValue);
 		public HRESULT SetOutline(int32 Value) mut => VT.SetOutline(ref this, Value);
@@ -2346,7 +2356,7 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont self, ITextFont** ppFont) GetDuplicate;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont self, out ITextFont* ppFont) GetDuplicate;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont self, ITextFont* pFont) SetDuplicate;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont self, out int32 pValue) CanChange;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont self, ITextFont* pFont, out int32 pValue) IsEqual;
@@ -2375,7 +2385,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont self, float Value) SetKerning;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont self, out int32 pValue) GetLanguageID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont self, int32 Value) SetLanguageID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont self, BSTR* pbstr) GetName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont self, out BSTR pbstr) GetName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont self, BSTR bstr) SetName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont self, out int32 pValue) GetOutline;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont self, int32 Value) SetOutline;
@@ -2410,7 +2420,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetDuplicate(ITextPara** ppPara) mut => VT.GetDuplicate(ref this, ppPara);
+		public HRESULT GetDuplicate(out ITextPara* ppPara) mut => VT.GetDuplicate(ref this, out ppPara);
 		public HRESULT SetDuplicate(ITextPara* pPara) mut => VT.SetDuplicate(ref this, pPara);
 		public HRESULT CanChange(out int32 pValue) mut => VT.CanChange(ref this, out pValue);
 		public HRESULT IsEqual(ITextPara* pPara, out int32 pValue) mut => VT.IsEqual(ref this, pPara, out pValue);
@@ -2462,7 +2472,7 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextPara self, ITextPara** ppPara) GetDuplicate;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextPara self, out ITextPara* ppPara) GetDuplicate;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextPara self, ITextPara* pPara) SetDuplicate;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextPara self, out int32 pValue) CanChange;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextPara self, ITextPara* pPara, out int32 pValue) IsEqual;
@@ -2519,15 +2529,15 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT _NewEnum(IUnknown** ppunkEnum) mut => VT._NewEnum(ref this, ppunkEnum);
-		public HRESULT Item(int32 Index, ITextRange** ppRange) mut => VT.Item(ref this, Index, ppRange);
+		public HRESULT _NewEnum(out IUnknown* ppunkEnum) mut => VT._NewEnum(ref this, out ppunkEnum);
+		public HRESULT Item(int32 Index, out ITextRange* ppRange) mut => VT.Item(ref this, Index, out ppRange);
 		public HRESULT GetCount(out int32 pCount) mut => VT.GetCount(ref this, out pCount);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoryRanges self, IUnknown** ppunkEnum) _NewEnum;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoryRanges self, int32 Index, ITextRange** ppRange) Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoryRanges self, out IUnknown* ppunkEnum) _NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoryRanges self, int32 Index, out ITextRange* ppRange) Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoryRanges self, out int32 pCount) GetCount;
 		}
 	}
@@ -2540,33 +2550,33 @@ static
 		
 		public HRESULT GetCaretType(out int32 pValue) mut => VT.GetCaretType(ref this, out pValue);
 		public HRESULT SetCaretType(int32 Value) mut => VT.SetCaretType(ref this, Value);
-		public HRESULT GetDisplays(ITextDisplays** ppDisplays) mut => VT.GetDisplays(ref this, ppDisplays);
-		public HRESULT GetDocumentFont(ITextFont2** ppFont) mut => VT.GetDocumentFont(ref this, ppFont);
+		public HRESULT GetDisplays(out ITextDisplays* ppDisplays) mut => VT.GetDisplays(ref this, out ppDisplays);
+		public HRESULT GetDocumentFont(out ITextFont2* ppFont) mut => VT.GetDocumentFont(ref this, out ppFont);
 		public HRESULT SetDocumentFont(ITextFont2* pFont) mut => VT.SetDocumentFont(ref this, pFont);
-		public HRESULT GetDocumentPara(ITextPara2** ppPara) mut => VT.GetDocumentPara(ref this, ppPara);
+		public HRESULT GetDocumentPara(out ITextPara2* ppPara) mut => VT.GetDocumentPara(ref this, out ppPara);
 		public HRESULT SetDocumentPara(ITextPara2* pPara) mut => VT.SetDocumentPara(ref this, pPara);
 		public HRESULT GetEastAsianFlags(out tomConstants pFlags) mut => VT.GetEastAsianFlags(ref this, out pFlags);
-		public HRESULT GetGenerator(BSTR* pbstr) mut => VT.GetGenerator(ref this, pbstr);
+		public HRESULT GetGenerator(out BSTR pbstr) mut => VT.GetGenerator(ref this, out pbstr);
 		public HRESULT SetIMEInProgress(int32 Value) mut => VT.SetIMEInProgress(ref this, Value);
 		public HRESULT GetNotificationMode(out int32 pValue) mut => VT.GetNotificationMode(ref this, out pValue);
 		public HRESULT SetNotificationMode(int32 Value) mut => VT.SetNotificationMode(ref this, Value);
-		public HRESULT GetSelection2(ITextSelection2** ppSel) mut => VT.GetSelection2(ref this, ppSel);
-		public HRESULT GetStoryRanges2(ITextStoryRanges2** ppStories) mut => VT.GetStoryRanges2(ref this, ppStories);
+		public HRESULT GetSelection2(out ITextSelection2* ppSel) mut => VT.GetSelection2(ref this, out ppSel);
+		public HRESULT GetStoryRanges2(out ITextStoryRanges2* ppStories) mut => VT.GetStoryRanges2(ref this, out ppStories);
 		public HRESULT GetTypographyOptions(out int32 pOptions) mut => VT.GetTypographyOptions(ref this, out pOptions);
 		public HRESULT GetVersion(out int32 pValue) mut => VT.GetVersion(ref this, out pValue);
 		public HRESULT GetWindow(out int64 pHwnd) mut => VT.GetWindow(ref this, out pHwnd);
 		public HRESULT AttachMsgFilter(IUnknown* pFilter) mut => VT.AttachMsgFilter(ref this, pFilter);
 		public HRESULT CheckTextLimit(int32 cch, ref int32 pcch) mut => VT.CheckTextLimit(ref this, cch, ref pcch);
-		public HRESULT GetCallManager(IUnknown** ppVoid) mut => VT.GetCallManager(ref this, ppVoid);
+		public HRESULT GetCallManager(out IUnknown* ppVoid) mut => VT.GetCallManager(ref this, out ppVoid);
 		public HRESULT GetClientRect(tomConstants Type, out int32 pLeft, out int32 pTop, out int32 pRight, out int32 pBottom) mut => VT.GetClientRect(ref this, Type, out pLeft, out pTop, out pRight, out pBottom);
 		public HRESULT GetEffectColor(int32 Index, out int32 pValue) mut => VT.GetEffectColor(ref this, Index, out pValue);
 		public HRESULT GetImmContext(out int64 pContext) mut => VT.GetImmContext(ref this, out pContext);
-		public HRESULT GetPreferredFont(int32 cp, int32 CharRep, int32 Options, int32 curCharRep, int32 curFontSize, BSTR* pbstr, out int32 pPitchAndFamily, out int32 pNewFontSize) mut => VT.GetPreferredFont(ref this, cp, CharRep, Options, curCharRep, curFontSize, pbstr, out pPitchAndFamily, out pNewFontSize);
+		public HRESULT GetPreferredFont(int32 cp, int32 CharRep, int32 Options, int32 curCharRep, int32 curFontSize, out BSTR pbstr, out int32 pPitchAndFamily, out int32 pNewFontSize) mut => VT.GetPreferredFont(ref this, cp, CharRep, Options, curCharRep, curFontSize, out pbstr, out pPitchAndFamily, out pNewFontSize);
 		public HRESULT GetProperty(int32 Type, out int32 pValue) mut => VT.GetProperty(ref this, Type, out pValue);
-		public HRESULT GetStrings(ITextStrings** ppStrs) mut => VT.GetStrings(ref this, ppStrs);
+		public HRESULT GetStrings(out ITextStrings* ppStrs) mut => VT.GetStrings(ref this, out ppStrs);
 		public HRESULT Notify(int32 Notify) mut => VT.Notify(ref this, Notify);
-		public HRESULT Range2(int32 cpActive, int32 cpAnchor, ITextRange2** ppRange) mut => VT.Range2(ref this, cpActive, cpAnchor, ppRange);
-		public HRESULT RangeFromPoint2(int32 x, int32 y, int32 Type, ITextRange2** ppRange) mut => VT.RangeFromPoint2(ref this, x, y, Type, ppRange);
+		public HRESULT Range2(int32 cpActive, int32 cpAnchor, out ITextRange2* ppRange) mut => VT.Range2(ref this, cpActive, cpAnchor, out ppRange);
+		public HRESULT RangeFromPoint2(int32 x, int32 y, int32 Type, out ITextRange2* ppRange) mut => VT.RangeFromPoint2(ref this, x, y, Type, out ppRange);
 		public HRESULT ReleaseCallManager(IUnknown* pVoid) mut => VT.ReleaseCallManager(ref this, pVoid);
 		public HRESULT ReleaseImmContext(int64 Context) mut => VT.ReleaseImmContext(ref this, Context);
 		public HRESULT SetEffectColor(int32 Index, int32 Value) mut => VT.SetEffectColor(ref this, Index, Value);
@@ -2577,44 +2587,44 @@ static
 		public HRESULT UpdateWindow() mut => VT.UpdateWindow(ref this);
 		public HRESULT GetMathProperties(out int32 pOptions) mut => VT.GetMathProperties(ref this, out pOptions);
 		public HRESULT SetMathProperties(int32 Options, int32 Mask) mut => VT.SetMathProperties(ref this, Options, Mask);
-		public HRESULT GetActiveStory(ITextStory** ppStory) mut => VT.GetActiveStory(ref this, ppStory);
+		public HRESULT GetActiveStory(out ITextStory* ppStory) mut => VT.GetActiveStory(ref this, out ppStory);
 		public HRESULT SetActiveStory(ITextStory* pStory) mut => VT.SetActiveStory(ref this, pStory);
-		public HRESULT GetMainStory(ITextStory** ppStory) mut => VT.GetMainStory(ref this, ppStory);
-		public HRESULT GetNewStory(ITextStory** ppStory) mut => VT.GetNewStory(ref this, ppStory);
-		public HRESULT GetStory(int32 Index, ITextStory** ppStory) mut => VT.GetStory(ref this, Index, ppStory);
+		public HRESULT GetMainStory(out ITextStory* ppStory) mut => VT.GetMainStory(ref this, out ppStory);
+		public HRESULT GetNewStory(out ITextStory* ppStory) mut => VT.GetNewStory(ref this, out ppStory);
+		public HRESULT GetStory(int32 Index, out ITextStory* ppStory) mut => VT.GetStory(ref this, Index, out ppStory);
 
 		[CRepr]
 		public struct VTable : ITextDocument.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out int32 pValue) GetCaretType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 Value) SetCaretType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, ITextDisplays** ppDisplays) GetDisplays;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, ITextFont2** ppFont) GetDocumentFont;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out ITextDisplays* ppDisplays) GetDisplays;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out ITextFont2* ppFont) GetDocumentFont;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, ITextFont2* pFont) SetDocumentFont;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, ITextPara2** ppPara) GetDocumentPara;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out ITextPara2* ppPara) GetDocumentPara;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, ITextPara2* pPara) SetDocumentPara;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out tomConstants pFlags) GetEastAsianFlags;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, BSTR* pbstr) GetGenerator;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out BSTR pbstr) GetGenerator;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 Value) SetIMEInProgress;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out int32 pValue) GetNotificationMode;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 Value) SetNotificationMode;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, ITextSelection2** ppSel) GetSelection2;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, ITextStoryRanges2** ppStories) GetStoryRanges2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out ITextSelection2* ppSel) GetSelection2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out ITextStoryRanges2* ppStories) GetStoryRanges2;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out int32 pOptions) GetTypographyOptions;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out int32 pValue) GetVersion;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out int64 pHwnd) GetWindow;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, IUnknown* pFilter) AttachMsgFilter;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 cch, ref int32 pcch) CheckTextLimit;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, IUnknown** ppVoid) GetCallManager;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out IUnknown* ppVoid) GetCallManager;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, tomConstants Type, out int32 pLeft, out int32 pTop, out int32 pRight, out int32 pBottom) GetClientRect;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 Index, out int32 pValue) GetEffectColor;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out int64 pContext) GetImmContext;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 cp, int32 CharRep, int32 Options, int32 curCharRep, int32 curFontSize, BSTR* pbstr, out int32 pPitchAndFamily, out int32 pNewFontSize) GetPreferredFont;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 cp, int32 CharRep, int32 Options, int32 curCharRep, int32 curFontSize, out BSTR pbstr, out int32 pPitchAndFamily, out int32 pNewFontSize) GetPreferredFont;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 Type, out int32 pValue) GetProperty;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, ITextStrings** ppStrs) GetStrings;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out ITextStrings* ppStrs) GetStrings;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 Notify) Notify;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 cpActive, int32 cpAnchor, ITextRange2** ppRange) Range2;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 x, int32 y, int32 Type, ITextRange2** ppRange) RangeFromPoint2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 cpActive, int32 cpAnchor, out ITextRange2* ppRange) Range2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 x, int32 y, int32 Type, out ITextRange2* ppRange) RangeFromPoint2;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, IUnknown* pVoid) ReleaseCallManager;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int64 Context) ReleaseImmContext;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 Index, int32 Value) SetEffectColor;
@@ -2625,11 +2635,11 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self) UpdateWindow;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out int32 pOptions) GetMathProperties;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 Options, int32 Mask) SetMathProperties;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, ITextStory** ppStory) GetActiveStory;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out ITextStory* ppStory) GetActiveStory;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, ITextStory* pStory) SetActiveStory;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, ITextStory** ppStory) GetMainStory;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, ITextStory** ppStory) GetNewStory;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 Index, ITextStory** ppStory) GetStory;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out ITextStory* ppStory) GetMainStory;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, out ITextStory* ppStory) GetNewStory;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2 self, int32 Index, out ITextStory* ppStory) GetStory;
 		}
 	}
 	[CRepr]
@@ -2640,22 +2650,22 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT GetCch(out int32 pcch) mut => VT.GetCch(ref this, out pcch);
-		public HRESULT GetCells(IUnknown** ppCells) mut => VT.GetCells(ref this, ppCells);
-		public HRESULT GetColumn(IUnknown** ppColumn) mut => VT.GetColumn(ref this, ppColumn);
+		public HRESULT GetCells(out IUnknown* ppCells) mut => VT.GetCells(ref this, out ppCells);
+		public HRESULT GetColumn(out IUnknown* ppColumn) mut => VT.GetColumn(ref this, out ppColumn);
 		public HRESULT GetCount(out int32 pCount) mut => VT.GetCount(ref this, out pCount);
-		public HRESULT GetDuplicate2(ITextRange2** ppRange) mut => VT.GetDuplicate2(ref this, ppRange);
-		public HRESULT GetFont2(ITextFont2** ppFont) mut => VT.GetFont2(ref this, ppFont);
+		public HRESULT GetDuplicate2(out ITextRange2* ppRange) mut => VT.GetDuplicate2(ref this, out ppRange);
+		public HRESULT GetFont2(out ITextFont2* ppFont) mut => VT.GetFont2(ref this, out ppFont);
 		public HRESULT SetFont2(ITextFont2* pFont) mut => VT.SetFont2(ref this, pFont);
-		public HRESULT GetFormattedText2(ITextRange2** ppRange) mut => VT.GetFormattedText2(ref this, ppRange);
+		public HRESULT GetFormattedText2(out ITextRange2* ppRange) mut => VT.GetFormattedText2(ref this, out ppRange);
 		public HRESULT SetFormattedText2(ITextRange2* pRange) mut => VT.SetFormattedText2(ref this, pRange);
 		public HRESULT GetGravity(out int32 pValue) mut => VT.GetGravity(ref this, out pValue);
 		public HRESULT SetGravity(int32 Value) mut => VT.SetGravity(ref this, Value);
-		public HRESULT GetPara2(ITextPara2** ppPara) mut => VT.GetPara2(ref this, ppPara);
+		public HRESULT GetPara2(out ITextPara2* ppPara) mut => VT.GetPara2(ref this, out ppPara);
 		public HRESULT SetPara2(ITextPara2* pPara) mut => VT.SetPara2(ref this, pPara);
-		public HRESULT GetRow(ITextRow** ppRow) mut => VT.GetRow(ref this, ppRow);
+		public HRESULT GetRow(out ITextRow* ppRow) mut => VT.GetRow(ref this, out ppRow);
 		public HRESULT GetStartPara(out int32 pValue) mut => VT.GetStartPara(ref this, out pValue);
-		public HRESULT GetTable(IUnknown** ppTable) mut => VT.GetTable(ref this, ppTable);
-		public HRESULT GetURL(BSTR* pbstr) mut => VT.GetURL(ref this, pbstr);
+		public HRESULT GetTable(out IUnknown* ppTable) mut => VT.GetTable(ref this, out ppTable);
+		public HRESULT GetURL(out BSTR pbstr) mut => VT.GetURL(ref this, out pbstr);
 		public HRESULT SetURL(BSTR bstr) mut => VT.SetURL(ref this, bstr);
 		public HRESULT AddSubrange(int32 cp1, int32 cp2, int32 Activate) mut => VT.AddSubrange(ref this, cp1, cp2, Activate);
 		public HRESULT BuildUpMath(int32 Flags) mut => VT.BuildUpMath(ref this, Flags);
@@ -2667,7 +2677,7 @@ static
 		public HRESULT GetProperty(int32 Type, out int32 pValue) mut => VT.GetProperty(ref this, Type, out pValue);
 		public HRESULT GetRect(int32 Type, out int32 pLeft, out int32 pTop, out int32 pRight, out int32 pBottom, out int32 pHit) mut => VT.GetRect(ref this, Type, out pLeft, out pTop, out pRight, out pBottom, out pHit);
 		public HRESULT GetSubrange(int32 iSubrange, out int32 pcpFirst, out int32 pcpLim) mut => VT.GetSubrange(ref this, iSubrange, out pcpFirst, out pcpLim);
-		public HRESULT GetText2(int32 Flags, BSTR* pbstr) mut => VT.GetText2(ref this, Flags, pbstr);
+		public HRESULT GetText2(int32 Flags, out BSTR pbstr) mut => VT.GetText2(ref this, Flags, out pbstr);
 		public HRESULT HexToUnicode() mut => VT.HexToUnicode(ref this);
 		public HRESULT InsertTable(int32 cCol, int32 cRow, int32 AutoFit) mut => VT.InsertTable(ref this, cCol, cRow, AutoFit);
 		public HRESULT Linearize(int32 Flags) mut => VT.Linearize(ref this, Flags);
@@ -2684,22 +2694,22 @@ static
 		public struct VTable : ITextSelection.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, out int32 pcch) GetCch;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, IUnknown** ppCells) GetCells;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, IUnknown** ppColumn) GetColumn;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, out IUnknown* ppCells) GetCells;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, out IUnknown* ppColumn) GetColumn;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, out int32 pCount) GetCount;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, ITextRange2** ppRange) GetDuplicate2;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, ITextFont2** ppFont) GetFont2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, out ITextRange2* ppRange) GetDuplicate2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, out ITextFont2* ppFont) GetFont2;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, ITextFont2* pFont) SetFont2;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, ITextRange2** ppRange) GetFormattedText2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, out ITextRange2* ppRange) GetFormattedText2;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, ITextRange2* pRange) SetFormattedText2;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, out int32 pValue) GetGravity;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, int32 Value) SetGravity;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, ITextPara2** ppPara) GetPara2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, out ITextPara2* ppPara) GetPara2;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, ITextPara2* pPara) SetPara2;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, ITextRow** ppRow) GetRow;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, out ITextRow* ppRow) GetRow;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, out int32 pValue) GetStartPara;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, IUnknown** ppTable) GetTable;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, BSTR* pbstr) GetURL;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, out IUnknown* ppTable) GetTable;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, out BSTR pbstr) GetURL;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, BSTR bstr) SetURL;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, int32 cp1, int32 cp2, int32 Activate) AddSubrange;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, int32 Flags) BuildUpMath;
@@ -2711,7 +2721,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, int32 Type, out int32 pValue) GetProperty;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, int32 Type, out int32 pLeft, out int32 pTop, out int32 pRight, out int32 pBottom, out int32 pHit) GetRect;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, int32 iSubrange, out int32 pcpFirst, out int32 pcpLim) GetSubrange;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, int32 Flags, BSTR* pbstr) GetText2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, int32 Flags, out BSTR pbstr) GetText2;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self) HexToUnicode;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, int32 cCol, int32 cRow, int32 AutoFit) InsertTable;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextRange2 self, int32 Flags) Linearize;
@@ -2759,7 +2769,7 @@ static
 		public HRESULT SetCookie(int32 Value) mut => VT.SetCookie(ref this, Value);
 		public HRESULT GetDoubleStrike(out int32 pValue) mut => VT.GetDoubleStrike(ref this, out pValue);
 		public HRESULT SetDoubleStrike(int32 Value) mut => VT.SetDoubleStrike(ref this, Value);
-		public HRESULT GetDuplicate2(ITextFont2** ppFont) mut => VT.GetDuplicate2(ref this, ppFont);
+		public HRESULT GetDuplicate2(out ITextFont2* ppFont) mut => VT.GetDuplicate2(ref this, out ppFont);
 		public HRESULT SetDuplicate2(ITextFont2* pFont) mut => VT.SetDuplicate2(ref this, pFont);
 		public HRESULT GetLinkType(out int32 pValue) mut => VT.GetLinkType(ref this, out pValue);
 		public HRESULT GetMathZone(out int32 pValue) mut => VT.GetMathZone(ref this, out pValue);
@@ -2809,7 +2819,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont2 self, int32 Value) SetCookie;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont2 self, out int32 pValue) GetDoubleStrike;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont2 self, int32 Value) SetDoubleStrike;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont2 self, ITextFont2** ppFont) GetDuplicate2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont2 self, out ITextFont2* ppFont) GetDuplicate2;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont2 self, ITextFont2* pFont) SetDuplicate2;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont2 self, out int32 pValue) GetLinkType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextFont2 self, out int32 pValue) GetMathZone;
@@ -2847,8 +2857,8 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetBorders(IUnknown** ppBorders) mut => VT.GetBorders(ref this, ppBorders);
-		public HRESULT GetDuplicate2(ITextPara2** ppPara) mut => VT.GetDuplicate2(ref this, ppPara);
+		public HRESULT GetBorders(out IUnknown* ppBorders) mut => VT.GetBorders(ref this, out ppBorders);
+		public HRESULT GetDuplicate2(out ITextPara2* ppPara) mut => VT.GetDuplicate2(ref this, out ppPara);
 		public HRESULT SetDuplicate2(ITextPara2* pPara) mut => VT.SetDuplicate2(ref this, pPara);
 		public HRESULT GetFontAlignment(out int32 pValue) mut => VT.GetFontAlignment(ref this, out pValue);
 		public HRESULT SetFontAlignment(int32 Value) mut => VT.SetFontAlignment(ref this, Value);
@@ -2867,8 +2877,8 @@ static
 		[CRepr]
 		public struct VTable : ITextPara.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextPara2 self, IUnknown** ppBorders) GetBorders;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextPara2 self, ITextPara2** ppPara) GetDuplicate2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextPara2 self, out IUnknown* ppBorders) GetBorders;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextPara2 self, out ITextPara2* ppPara) GetDuplicate2;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextPara2 self, ITextPara2* pPara) SetDuplicate2;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextPara2 self, out int32 pValue) GetFontAlignment;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextPara2 self, int32 Value) SetFontAlignment;
@@ -2892,12 +2902,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Item2(int32 Index, ITextRange2** ppRange) mut => VT.Item2(ref this, Index, ppRange);
+		public HRESULT Item2(int32 Index, out ITextRange2* ppRange) mut => VT.Item2(ref this, Index, out ppRange);
 
 		[CRepr]
 		public struct VTable : ITextStoryRanges.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoryRanges2 self, int32 Index, ITextRange2** ppRange) Item2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoryRanges2 self, int32 Index, out ITextRange2* ppRange) Item2;
 		}
 	}
 	[CRepr]
@@ -2909,13 +2919,13 @@ static
 		
 		public HRESULT GetActive(out int32 pValue) mut => VT.GetActive(ref this, out pValue);
 		public HRESULT SetActive(int32 Value) mut => VT.SetActive(ref this, Value);
-		public HRESULT GetDisplay(IUnknown** ppDisplay) mut => VT.GetDisplay(ref this, ppDisplay);
+		public HRESULT GetDisplay(out IUnknown* ppDisplay) mut => VT.GetDisplay(ref this, out ppDisplay);
 		public HRESULT GetIndex(out int32 pValue) mut => VT.GetIndex(ref this, out pValue);
 		public HRESULT ComGetType(out int32 pValue) mut => VT.ComGetType(ref this, out pValue);
 		public HRESULT SetType(int32 Value) mut => VT.SetType(ref this, Value);
 		public HRESULT GetProperty(int32 Type, out int32 pValue) mut => VT.GetProperty(ref this, Type, out pValue);
-		public HRESULT GetRange(int32 cpActive, int32 cpAnchor, ITextRange2** ppRange) mut => VT.GetRange(ref this, cpActive, cpAnchor, ppRange);
-		public HRESULT GetText(int32 Flags, BSTR* pbstr) mut => VT.GetText(ref this, Flags, pbstr);
+		public HRESULT GetRange(int32 cpActive, int32 cpAnchor, out ITextRange2* ppRange) mut => VT.GetRange(ref this, cpActive, cpAnchor, out ppRange);
+		public HRESULT GetText(int32 Flags, out BSTR pbstr) mut => VT.GetText(ref this, Flags, out pbstr);
 		public HRESULT SetFormattedText(IUnknown* pUnk) mut => VT.SetFormattedText(ref this, pUnk);
 		public HRESULT SetProperty(int32 Type, int32 Value) mut => VT.SetProperty(ref this, Type, Value);
 		public HRESULT SetText(int32 Flags, BSTR bstr) mut => VT.SetText(ref this, Flags, bstr);
@@ -2925,13 +2935,13 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStory self, out int32 pValue) GetActive;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStory self, int32 Value) SetActive;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStory self, IUnknown** ppDisplay) GetDisplay;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStory self, out IUnknown* ppDisplay) GetDisplay;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStory self, out int32 pValue) GetIndex;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStory self, out int32 pValue) ComGetType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStory self, int32 Value) SetType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStory self, int32 Type, out int32 pValue) GetProperty;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStory self, int32 cpActive, int32 cpAnchor, ITextRange2** ppRange) GetRange;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStory self, int32 Flags, BSTR* pbstr) GetText;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStory self, int32 cpActive, int32 cpAnchor, out ITextRange2* ppRange) GetRange;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStory self, int32 Flags, out BSTR pbstr) GetText;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStory self, IUnknown* pUnk) SetFormattedText;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStory self, int32 Type, int32 Value) SetProperty;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStory self, int32 Flags, BSTR bstr) SetText;
@@ -2944,7 +2954,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Item(int32 Index, ITextRange2** ppRange) mut => VT.Item(ref this, Index, ppRange);
+		public HRESULT Item(int32 Index, out ITextRange2* ppRange) mut => VT.Item(ref this, Index, out ppRange);
 		public HRESULT GetCount(out int32 pCount) mut => VT.GetCount(ref this, out pCount);
 		public HRESULT Add(BSTR bstr) mut => VT.Add(ref this, bstr);
 		public HRESULT Append(ITextRange2* pRange, int32 iString) mut => VT.Append(ref this, pRange, iString);
@@ -2965,7 +2975,7 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStrings self, int32 Index, ITextRange2** ppRange) Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStrings self, int32 Index, out ITextRange2* ppRange) Item;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStrings self, out int32 pCount) GetCount;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStrings self, BSTR bstr) Add;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStrings self, ITextRange2* pRange, int32 iString) Append;
@@ -3113,11 +3123,11 @@ static
 		public HRESULT SetCaretType(int32 CaretType) mut => VT.SetCaretType(ref this, CaretType);
 		public HRESULT GetImmContext(out int64 pContext) mut => VT.GetImmContext(ref this, out pContext);
 		public HRESULT ReleaseImmContext(int64 Context) mut => VT.ReleaseImmContext(ref this, Context);
-		public HRESULT GetPreferredFont(int32 cp, int32 CharRep, int32 Option, int32 CharRepCur, int32 curFontSize, BSTR* pbstr, out int32 pPitchAndFamily, out int32 pNewFontSize) mut => VT.GetPreferredFont(ref this, cp, CharRep, Option, CharRepCur, curFontSize, pbstr, out pPitchAndFamily, out pNewFontSize);
+		public HRESULT GetPreferredFont(int32 cp, int32 CharRep, int32 Option, int32 CharRepCur, int32 curFontSize, out BSTR pbstr, out int32 pPitchAndFamily, out int32 pNewFontSize) mut => VT.GetPreferredFont(ref this, cp, CharRep, Option, CharRepCur, curFontSize, out pbstr, out pPitchAndFamily, out pNewFontSize);
 		public HRESULT GetNotificationMode(out int32 pMode) mut => VT.GetNotificationMode(ref this, out pMode);
 		public HRESULT SetNotificationMode(int32 Mode) mut => VT.SetNotificationMode(ref this, Mode);
 		public HRESULT GetClientRect(int32 Type, out int32 pLeft, out int32 pTop, out int32 pRight, out int32 pBottom) mut => VT.GetClientRect(ref this, Type, out pLeft, out pTop, out pRight, out pBottom);
-		public HRESULT GetSelection2(ITextSelection** ppSel) mut => VT.GetSelection2(ref this, ppSel);
+		public HRESULT GetSelection2(out ITextSelection* ppSel) mut => VT.GetSelection2(ref this, out ppSel);
 		public HRESULT GetWindow(out int32 phWnd) mut => VT.GetWindow(ref this, out phWnd);
 		public HRESULT GetFEFlags(out int32 pFlags) mut => VT.GetFEFlags(ref this, out pFlags);
 		public HRESULT UpdateWindow() mut => VT.UpdateWindow(ref this);
@@ -3126,9 +3136,9 @@ static
 		public HRESULT SysBeep() mut => VT.SysBeep(ref this);
 		public HRESULT Update(int32 Mode) mut => VT.Update(ref this, Mode);
 		public HRESULT Notify(int32 Notify) mut => VT.Notify(ref this, Notify);
-		public HRESULT GetDocumentFont(ITextFont** ppITextFont) mut => VT.GetDocumentFont(ref this, ppITextFont);
-		public HRESULT GetDocumentPara(ITextPara** ppITextPara) mut => VT.GetDocumentPara(ref this, ppITextPara);
-		public HRESULT GetCallManager(IUnknown** ppVoid) mut => VT.GetCallManager(ref this, ppVoid);
+		public HRESULT GetDocumentFont(out ITextFont* ppITextFont) mut => VT.GetDocumentFont(ref this, out ppITextFont);
+		public HRESULT GetDocumentPara(out ITextPara* ppITextPara) mut => VT.GetDocumentPara(ref this, out ppITextPara);
+		public HRESULT GetCallManager(out IUnknown* ppVoid) mut => VT.GetCallManager(ref this, out ppVoid);
 		public HRESULT ReleaseCallManager(IUnknown* pVoid) mut => VT.ReleaseCallManager(ref this, pVoid);
 
 		[CRepr]
@@ -3141,11 +3151,11 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, int32 CaretType) SetCaretType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, out int64 pContext) GetImmContext;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, int64 Context) ReleaseImmContext;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, int32 cp, int32 CharRep, int32 Option, int32 CharRepCur, int32 curFontSize, BSTR* pbstr, out int32 pPitchAndFamily, out int32 pNewFontSize) GetPreferredFont;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, int32 cp, int32 CharRep, int32 Option, int32 CharRepCur, int32 curFontSize, out BSTR pbstr, out int32 pPitchAndFamily, out int32 pNewFontSize) GetPreferredFont;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, out int32 pMode) GetNotificationMode;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, int32 Mode) SetNotificationMode;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, int32 Type, out int32 pLeft, out int32 pTop, out int32 pRight, out int32 pBottom) GetClientRect;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, ITextSelection** ppSel) GetSelection2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, out ITextSelection* ppSel) GetSelection2;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, out int32 phWnd) GetWindow;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, out int32 pFlags) GetFEFlags;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self) UpdateWindow;
@@ -3154,9 +3164,9 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self) SysBeep;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, int32 Mode) Update;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, int32 Notify) Notify;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, ITextFont** ppITextFont) GetDocumentFont;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, ITextPara** ppITextPara) GetDocumentPara;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, IUnknown** ppVoid) GetCallManager;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, out ITextFont* ppITextFont) GetDocumentFont;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, out ITextPara* ppITextPara) GetDocumentPara;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, out IUnknown* ppVoid) GetCallManager;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, IUnknown* pVoid) ReleaseCallManager;
 		}
 	}

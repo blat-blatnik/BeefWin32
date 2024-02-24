@@ -1400,14 +1400,14 @@ static
 		
 		public HRESULT open(BSTR bstrMethod, BSTR bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword) mut => VT.open(ref this, bstrMethod, bstrUrl, varAsync, bstrUser, bstrPassword);
 		public HRESULT setRequestHeader(BSTR bstrHeader, BSTR bstrValue) mut => VT.setRequestHeader(ref this, bstrHeader, bstrValue);
-		public HRESULT getResponseHeader(BSTR bstrHeader, BSTR* pbstrValue) mut => VT.getResponseHeader(ref this, bstrHeader, pbstrValue);
-		public HRESULT getAllResponseHeaders(BSTR* pbstrHeaders) mut => VT.getAllResponseHeaders(ref this, pbstrHeaders);
+		public HRESULT getResponseHeader(BSTR bstrHeader, out BSTR pbstrValue) mut => VT.getResponseHeader(ref this, bstrHeader, out pbstrValue);
+		public HRESULT getAllResponseHeaders(out BSTR pbstrHeaders) mut => VT.getAllResponseHeaders(ref this, out pbstrHeaders);
 		public HRESULT send(VARIANT varBody) mut => VT.send(ref this, varBody);
 		public HRESULT abort() mut => VT.abort(ref this);
 		public HRESULT get_status(out int32 plStatus) mut => VT.get_status(ref this, out plStatus);
-		public HRESULT get_statusText(BSTR* pbstrStatus) mut => VT.get_statusText(ref this, pbstrStatus);
-		public HRESULT get_responseXML(IDispatch** ppBody) mut => VT.get_responseXML(ref this, ppBody);
-		public HRESULT get_responseText(BSTR* pbstrBody) mut => VT.get_responseText(ref this, pbstrBody);
+		public HRESULT get_statusText(out BSTR pbstrStatus) mut => VT.get_statusText(ref this, out pbstrStatus);
+		public HRESULT get_responseXML(out IDispatch* ppBody) mut => VT.get_responseXML(ref this, out ppBody);
+		public HRESULT get_responseText(out BSTR pbstrBody) mut => VT.get_responseText(ref this, out pbstrBody);
 		public HRESULT get_responseBody(out VARIANT pvarBody) mut => VT.get_responseBody(ref this, out pvarBody);
 		public HRESULT get_responseStream(out VARIANT pvarBody) mut => VT.get_responseStream(ref this, out pvarBody);
 		public HRESULT get_readyState(out int32 plState) mut => VT.get_readyState(ref this, out plState);
@@ -1418,14 +1418,14 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, BSTR bstrMethod, BSTR bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword) open;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, BSTR bstrHeader, BSTR bstrValue) setRequestHeader;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, BSTR bstrHeader, BSTR* pbstrValue) getResponseHeader;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, BSTR* pbstrHeaders) getAllResponseHeaders;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, BSTR bstrHeader, out BSTR pbstrValue) getResponseHeader;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, out BSTR pbstrHeaders) getAllResponseHeaders;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, VARIANT varBody) send;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self) abort;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, out int32 plStatus) get_status;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, BSTR* pbstrStatus) get_statusText;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, IDispatch** ppBody) get_responseXML;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, BSTR* pbstrBody) get_responseText;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, out BSTR pbstrStatus) get_statusText;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, out IDispatch* ppBody) get_responseXML;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, out BSTR pbstrBody) get_responseText;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, out VARIANT pvarBody) get_responseBody;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, out VARIANT pvarBody) get_responseStream;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHttpRequest self, out int32 plState) get_readyState;

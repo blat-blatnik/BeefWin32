@@ -100,6 +100,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"1a1bb35f-abb8-451c-a1ae-33d98f1bef4a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -134,6 +135,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"112b1dff-d9dc-41f7-869f-d67fee7cb591"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -183,6 +185,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fdf8a2b9-02de-47f4-bc26-aa85ab5e5267"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITpmVirtualSmartCardManager","TargetKind":"Com","Api":"Security.Tpm","Parents":[]}
 		,"Methods":[
 			{
@@ -220,6 +223,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3c745a97-f375-4150-be17-5950f694c699"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITpmVirtualSmartCardManager2","TargetKind":"Com","Api":"Security.Tpm","Parents":[]}
 		,"Methods":[
 			{

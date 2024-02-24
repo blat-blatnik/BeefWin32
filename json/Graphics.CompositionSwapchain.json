@@ -55,6 +55,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2e217d3a-5abb-4138-9a13-a775593c89ca"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -89,6 +90,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5668bb79-3d8e-415c-b215-f38020f2d252"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -111,6 +113,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"956710fb-ea40-4eba-a3eb-4375a0eb4edc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPresentationContent","TargetKind":"Com","Api":"Graphics.CompositionSwapchain","Parents":[]}
 		,"Methods":[
 			{
@@ -220,6 +223,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b44b8bda-7282-495d-9dd7-ceadd8b4bb86"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -252,6 +256,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fb562f82-6292-470a-88b1-843661e7f20c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -421,6 +426,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8fb37b58-1d74-4f64-a49c-1f97a80a2ec0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -479,6 +485,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c9ed2a41-79cb-435e-964e-c8553055420c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPresentStatistics","TargetKind":"Com","Api":"Graphics.CompositionSwapchain","Parents":[]}
 		,"Methods":[
 			{
@@ -545,6 +552,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ab41d127-c101-4c0a-911d-f9f2e9d08e64"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPresentStatistics","TargetKind":"Com","Api":"Graphics.CompositionSwapchain","Parents":[]}
 		,"Methods":[
 			{
@@ -590,6 +598,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8c93be27-ad94-4da0-8fd4-2413132d124e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPresentStatistics","TargetKind":"Com","Api":"Graphics.CompositionSwapchain","Parents":[]}
 		,"Methods":[
 			{

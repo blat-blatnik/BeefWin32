@@ -325,6 +325,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"999bad24-9acd-45bb-8669-2a2fc0288b04"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -348,6 +349,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9eefe161-23ab-4f18-9b49-991b586ae970"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -405,6 +407,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3474628f-683d-42d2-abcb-db018c6503bc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

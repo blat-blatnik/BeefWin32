@@ -625,7 +625,6 @@ static
 	
 	#region Function pointers
 	public function void WINHTTP_STATUS_CALLBACK(void* hInternet, uint dwContext, uint32 dwInternetStatus, void* lpvStatusInformation, uint32 dwStatusInformationLength);
-	public function void LPWINHTTP_STATUS_CALLBACK();
 	#endregion
 	
 	#region Structs

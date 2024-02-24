@@ -296,6 +296,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"DRM_DEFAULTGROUPIDTYPE_WINDOWSAUTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WindowsAuthProvider"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DRM_DEFAULTGROUPIDTYPE_PASSPORT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PassportAuthProvider"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"DRM_SIGN_ONLINE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"

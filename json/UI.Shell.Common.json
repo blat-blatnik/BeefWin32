@@ -244,6 +244,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"92ca9dcd-5622-4bba-a805-5e9f541bd8c9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -280,6 +281,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"5632b1a4-e38a-400a-928a-d4cd63230295"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IObjectArray","TargetKind":"Com","Api":"UI.Shell.Common","Parents":[]}
 		,"Methods":[
 			{

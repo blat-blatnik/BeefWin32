@@ -218,6 +218,7 @@ static
 	public const uint32 RENDER_HINT_CLEAR = 0;
 	public const uint32 RENDER_HINT_VIDEO = 1;
 	public const uint32 RENDER_HINT_MAPPEDWINDOW = 2;
+	public const String WTS_PROPERTY_DEFAULT_CONFIG = "DefaultConfig";
 	public const uint32 TS_VC_LISTENER_STATIC_CHANNEL = 1;
 	public const uint32 WRdsGraphicsChannels_LossyChannelMaxMessageSize = 988;
 	public const uint32 RFX_RDP_MSG_PREFIX = 0;
@@ -1954,11 +1955,11 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_TerminalServicesProfilePath(BSTR* pVal) mut => VT.get_TerminalServicesProfilePath(ref this, pVal);
+		public HRESULT get_TerminalServicesProfilePath(out BSTR pVal) mut => VT.get_TerminalServicesProfilePath(ref this, out pVal);
 		public HRESULT put_TerminalServicesProfilePath(BSTR pNewVal) mut => VT.put_TerminalServicesProfilePath(ref this, pNewVal);
-		public HRESULT get_TerminalServicesHomeDirectory(BSTR* pVal) mut => VT.get_TerminalServicesHomeDirectory(ref this, pVal);
+		public HRESULT get_TerminalServicesHomeDirectory(out BSTR pVal) mut => VT.get_TerminalServicesHomeDirectory(ref this, out pVal);
 		public HRESULT put_TerminalServicesHomeDirectory(BSTR pNewVal) mut => VT.put_TerminalServicesHomeDirectory(ref this, pNewVal);
-		public HRESULT get_TerminalServicesHomeDrive(BSTR* pVal) mut => VT.get_TerminalServicesHomeDrive(ref this, pVal);
+		public HRESULT get_TerminalServicesHomeDrive(out BSTR pVal) mut => VT.get_TerminalServicesHomeDrive(ref this, out pVal);
 		public HRESULT put_TerminalServicesHomeDrive(BSTR pNewVal) mut => VT.put_TerminalServicesHomeDrive(ref this, pNewVal);
 		public HRESULT get_AllowLogon(out int32 pVal) mut => VT.get_AllowLogon(ref this, out pVal);
 		public HRESULT put_AllowLogon(int32 NewVal) mut => VT.put_AllowLogon(ref this, NewVal);
@@ -1980,19 +1981,19 @@ static
 		public HRESULT put_ConnectClientPrintersAtLogon(int32 NewVal) mut => VT.put_ConnectClientPrintersAtLogon(ref this, NewVal);
 		public HRESULT get_DefaultToMainPrinter(out int32 pVal) mut => VT.get_DefaultToMainPrinter(ref this, out pVal);
 		public HRESULT put_DefaultToMainPrinter(int32 NewVal) mut => VT.put_DefaultToMainPrinter(ref this, NewVal);
-		public HRESULT get_TerminalServicesWorkDirectory(BSTR* pVal) mut => VT.get_TerminalServicesWorkDirectory(ref this, pVal);
+		public HRESULT get_TerminalServicesWorkDirectory(out BSTR pVal) mut => VT.get_TerminalServicesWorkDirectory(ref this, out pVal);
 		public HRESULT put_TerminalServicesWorkDirectory(BSTR pNewVal) mut => VT.put_TerminalServicesWorkDirectory(ref this, pNewVal);
-		public HRESULT get_TerminalServicesInitialProgram(BSTR* pVal) mut => VT.get_TerminalServicesInitialProgram(ref this, pVal);
+		public HRESULT get_TerminalServicesInitialProgram(out BSTR pVal) mut => VT.get_TerminalServicesInitialProgram(ref this, out pVal);
 		public HRESULT put_TerminalServicesInitialProgram(BSTR pNewVal) mut => VT.put_TerminalServicesInitialProgram(ref this, pNewVal);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, BSTR* pVal) get_TerminalServicesProfilePath;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, out BSTR pVal) get_TerminalServicesProfilePath;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, BSTR pNewVal) put_TerminalServicesProfilePath;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, BSTR* pVal) get_TerminalServicesHomeDirectory;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, out BSTR pVal) get_TerminalServicesHomeDirectory;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, BSTR pNewVal) put_TerminalServicesHomeDirectory;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, BSTR* pVal) get_TerminalServicesHomeDrive;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, out BSTR pVal) get_TerminalServicesHomeDrive;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, BSTR pNewVal) put_TerminalServicesHomeDrive;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, out int32 pVal) get_AllowLogon;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, int32 NewVal) put_AllowLogon;
@@ -2014,9 +2015,9 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, int32 NewVal) put_ConnectClientPrintersAtLogon;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, out int32 pVal) get_DefaultToMainPrinter;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, int32 NewVal) put_DefaultToMainPrinter;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, BSTR* pVal) get_TerminalServicesWorkDirectory;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, out BSTR pVal) get_TerminalServicesWorkDirectory;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, BSTR pNewVal) put_TerminalServicesWorkDirectory;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, BSTR* pVal) get_TerminalServicesInitialProgram;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, out BSTR pVal) get_TerminalServicesInitialProgram;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTSUserEx self, BSTR pNewVal) put_TerminalServicesInitialProgram;
 		}
 	}
@@ -3113,8 +3114,8 @@ static
 		
 		public HRESULT AddResourceType(int16 fMachineWide, BSTR bstrFileExtension, BSTR bstrLauncher) mut => VT.AddResourceType(ref this, fMachineWide, bstrFileExtension, bstrLauncher);
 		public HRESULT DeleteResourceType(int16 fMachineWide, BSTR bstrFileExtension) mut => VT.DeleteResourceType(ref this, fMachineWide, bstrFileExtension);
-		public HRESULT GetRegisteredFileExtensions(int16 fMachineWide, SAFEARRAY** psaFileExtensions) mut => VT.GetRegisteredFileExtensions(ref this, fMachineWide, psaFileExtensions);
-		public HRESULT GetResourceTypeInfo(int16 fMachineWide, BSTR bstrFileExtension, BSTR* pbstrLauncher) mut => VT.GetResourceTypeInfo(ref this, fMachineWide, bstrFileExtension, pbstrLauncher);
+		public HRESULT GetRegisteredFileExtensions(int16 fMachineWide, out SAFEARRAY* psaFileExtensions) mut => VT.GetRegisteredFileExtensions(ref this, fMachineWide, out psaFileExtensions);
+		public HRESULT GetResourceTypeInfo(int16 fMachineWide, BSTR bstrFileExtension, out BSTR pbstrLauncher) mut => VT.GetResourceTypeInfo(ref this, fMachineWide, bstrFileExtension, out pbstrLauncher);
 		public HRESULT ModifyResourceType(int16 fMachineWide, BSTR bstrFileExtension, BSTR bstrLauncher) mut => VT.ModifyResourceType(ref this, fMachineWide, bstrFileExtension, bstrLauncher);
 
 		[CRepr]
@@ -3122,8 +3123,8 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWorkspaceResTypeRegistry self, int16 fMachineWide, BSTR bstrFileExtension, BSTR bstrLauncher) AddResourceType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWorkspaceResTypeRegistry self, int16 fMachineWide, BSTR bstrFileExtension) DeleteResourceType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWorkspaceResTypeRegistry self, int16 fMachineWide, SAFEARRAY** psaFileExtensions) GetRegisteredFileExtensions;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWorkspaceResTypeRegistry self, int16 fMachineWide, BSTR bstrFileExtension, BSTR* pbstrLauncher) GetResourceTypeInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWorkspaceResTypeRegistry self, int16 fMachineWide, out SAFEARRAY* psaFileExtensions) GetRegisteredFileExtensions;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWorkspaceResTypeRegistry self, int16 fMachineWide, BSTR bstrFileExtension, out BSTR pbstrLauncher) GetResourceTypeInfo;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWorkspaceResTypeRegistry self, int16 fMachineWide, BSTR bstrFileExtension, BSTR bstrLauncher) ModifyResourceType;
 		}
 	}
@@ -3866,7 +3867,7 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT ApplySettings(BSTR rdpFileContents) mut => VT.ApplySettings(ref this, rdpFileContents);
-		public HRESULT RetrieveSettings(BSTR* rdpFileContents) mut => VT.RetrieveSettings(ref this, rdpFileContents);
+		public HRESULT RetrieveSettings(out BSTR rdpFileContents) mut => VT.RetrieveSettings(ref this, out rdpFileContents);
 		public HRESULT GetRdpProperty(BSTR propertyName, out VARIANT value) mut => VT.GetRdpProperty(ref this, propertyName, out value);
 		public HRESULT SetRdpProperty(BSTR propertyName, VARIANT value) mut => VT.SetRdpProperty(ref this, propertyName, value);
 
@@ -3874,7 +3875,7 @@ static
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClientSettings self, BSTR rdpFileContents) ApplySettings;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClientSettings self, BSTR* rdpFileContents) RetrieveSettings;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClientSettings self, out BSTR rdpFileContents) RetrieveSettings;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClientSettings self, BSTR propertyName, out VARIANT value) GetRdpProperty;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClientSettings self, BSTR propertyName, VARIANT value) SetRdpProperty;
 		}
@@ -3889,7 +3890,7 @@ static
 		public HRESULT SuspendScreenUpdates() mut => VT.SuspendScreenUpdates(ref this);
 		public HRESULT ResumeScreenUpdates() mut => VT.ResumeScreenUpdates(ref this);
 		public HRESULT ExecuteRemoteAction(RemoteActionType remoteAction) mut => VT.ExecuteRemoteAction(ref this, remoteAction);
-		public HRESULT GetSnapshot(SnapshotEncodingType snapshotEncoding, SnapshotFormatType snapshotFormat, uint32 snapshotWidth, uint32 snapshotHeight, BSTR* snapshotData) mut => VT.GetSnapshot(ref this, snapshotEncoding, snapshotFormat, snapshotWidth, snapshotHeight, snapshotData);
+		public HRESULT GetSnapshot(SnapshotEncodingType snapshotEncoding, SnapshotFormatType snapshotFormat, uint32 snapshotWidth, uint32 snapshotHeight, out BSTR snapshotData) mut => VT.GetSnapshot(ref this, snapshotEncoding, snapshotFormat, snapshotWidth, snapshotHeight, out snapshotData);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
@@ -3897,7 +3898,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClientActions self) SuspendScreenUpdates;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClientActions self) ResumeScreenUpdates;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClientActions self, RemoteActionType remoteAction) ExecuteRemoteAction;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClientActions self, SnapshotEncodingType snapshotEncoding, SnapshotFormatType snapshotFormat, uint32 snapshotWidth, uint32 snapshotHeight, BSTR* snapshotData) GetSnapshot;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClientActions self, SnapshotEncodingType snapshotEncoding, SnapshotFormatType snapshotFormat, uint32 snapshotWidth, uint32 snapshotHeight, out BSTR snapshotData) GetSnapshot;
 		}
 	}
 	[CRepr]
@@ -3935,9 +3936,9 @@ static
 		public HRESULT Connect() mut => VT.Connect(ref this);
 		public HRESULT Disconnect() mut => VT.Disconnect(ref this);
 		public HRESULT Reconnect(uint32 width, uint32 height) mut => VT.Reconnect(ref this, width, height);
-		public HRESULT get_Settings(IRemoteDesktopClientSettings** settings) mut => VT.get_Settings(ref this, settings);
-		public HRESULT get_Actions(IRemoteDesktopClientActions** actions) mut => VT.get_Actions(ref this, actions);
-		public HRESULT get_TouchPointer(IRemoteDesktopClientTouchPointer** touchPointer) mut => VT.get_TouchPointer(ref this, touchPointer);
+		public HRESULT get_Settings(out IRemoteDesktopClientSettings* settings) mut => VT.get_Settings(ref this, out settings);
+		public HRESULT get_Actions(out IRemoteDesktopClientActions* actions) mut => VT.get_Actions(ref this, out actions);
+		public HRESULT get_TouchPointer(out IRemoteDesktopClientTouchPointer* touchPointer) mut => VT.get_TouchPointer(ref this, out touchPointer);
 		public HRESULT DeleteSavedCredentials(BSTR serverName) mut => VT.DeleteSavedCredentials(ref this, serverName);
 		public HRESULT UpdateSessionDisplaySettings(uint32 width, uint32 height) mut => VT.UpdateSessionDisplaySettings(ref this, width, height);
 		public HRESULT attachEvent(BSTR eventName, IDispatch* callback) mut => VT.attachEvent(ref this, eventName, callback);
@@ -3949,9 +3950,9 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClient self) Connect;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClient self) Disconnect;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClient self, uint32 width, uint32 height) Reconnect;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClient self, IRemoteDesktopClientSettings** settings) get_Settings;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClient self, IRemoteDesktopClientActions** actions) get_Actions;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClient self, IRemoteDesktopClientTouchPointer** touchPointer) get_TouchPointer;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClient self, out IRemoteDesktopClientSettings* settings) get_Settings;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClient self, out IRemoteDesktopClientActions* actions) get_Actions;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClient self, out IRemoteDesktopClientTouchPointer* touchPointer) get_TouchPointer;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClient self, BSTR serverName) DeleteSavedCredentials;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClient self, uint32 width, uint32 height) UpdateSessionDisplaySettings;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDesktopClient self, BSTR eventName, IDispatch* callback) attachEvent;
@@ -4087,13 +4088,13 @@ static
 	[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WTSCreateListenerA(HANDLE hServer, void* pReserved, uint32 Reserved, PSTR pListenerName, ref WTSLISTENERCONFIGA pBuffer, uint32 flag);
 	[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL WTSSetListenerSecurityW(HANDLE hServer, void* pReserved, uint32 Reserved, PWSTR pListenerName, uint32 SecurityInformation, ref SECURITY_DESCRIPTOR pSecurityDescriptor);
+	public static extern BOOL WTSSetListenerSecurityW(HANDLE hServer, void* pReserved, uint32 Reserved, PWSTR pListenerName, uint32 SecurityInformation, PSECURITY_DESCRIPTOR pSecurityDescriptor);
 	[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL WTSSetListenerSecurityA(HANDLE hServer, void* pReserved, uint32 Reserved, PSTR pListenerName, uint32 SecurityInformation, ref SECURITY_DESCRIPTOR pSecurityDescriptor);
+	public static extern BOOL WTSSetListenerSecurityA(HANDLE hServer, void* pReserved, uint32 Reserved, PSTR pListenerName, uint32 SecurityInformation, PSECURITY_DESCRIPTOR pSecurityDescriptor);
 	[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL WTSGetListenerSecurityW(HANDLE hServer, void* pReserved, uint32 Reserved, PWSTR pListenerName, uint32 SecurityInformation, SECURITY_DESCRIPTOR* pSecurityDescriptor, uint32 nLength, out uint32 lpnLengthNeeded);
+	public static extern BOOL WTSGetListenerSecurityW(HANDLE hServer, void* pReserved, uint32 Reserved, PWSTR pListenerName, uint32 SecurityInformation, PSECURITY_DESCRIPTOR pSecurityDescriptor, uint32 nLength, out uint32 lpnLengthNeeded);
 	[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL WTSGetListenerSecurityA(HANDLE hServer, void* pReserved, uint32 Reserved, PSTR pListenerName, uint32 SecurityInformation, SECURITY_DESCRIPTOR* pSecurityDescriptor, uint32 nLength, out uint32 lpnLengthNeeded);
+	public static extern BOOL WTSGetListenerSecurityA(HANDLE hServer, void* pReserved, uint32 Reserved, PSTR pListenerName, uint32 SecurityInformation, PSECURITY_DESCRIPTOR pSecurityDescriptor, uint32 nLength, out uint32 lpnLengthNeeded);
 	[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WTSEnableChildSessions(BOOL bEnable);
 	[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]

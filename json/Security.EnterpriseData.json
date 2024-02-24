@@ -10,6 +10,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4652651d-c1fe-4ba1-9f0a-c0f56596f721"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IInspectable","TargetKind":"Com","Api":"System.WinRT","Parents":[]}
 		,"Methods":[
 			{
@@ -50,6 +51,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"157cfbe4-a78d-4156-b384-61fdac41e686"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IInspectable","TargetKind":"Com","Api":"System.WinRT","Parents":[]}
 		,"Methods":[
 			{
@@ -146,6 +148,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c1c03933-b398-4d93-b0fd-2972adf802c2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IInspectable","TargetKind":"Com","Api":"System.WinRT","Parents":[]}
 		,"Methods":[
 			{

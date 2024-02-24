@@ -562,6 +562,55 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"CERT_RSA_1024_OID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.2.840.113549.1.1.1,1024"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CERT_RSA_2048_OID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.2.840.113549.1.1.1,2048"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CERT_RSA_3072_OID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.2.840.113549.1.1.1,3072"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CERT_RSASSA_PSS_SHA1_OID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.2.840.113549.1.1.10,1.3.14.3.2.26"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CERT_RSASSA_PSS_SHA256_OID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.2.840.113549.1.1.10,2.16.840.1.101.3.4.2.1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CERT_RSASSA_PSS_SHA384_OID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.2.840.113549.1.1.10,2.16.840.1.101.3.4.2.2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CERT_RSASSA_PSS_SHA512_OID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.2.840.113549.1.1.10,2.16.840.1.101.3.4.2.3"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"ENHANCED_STORAGE_PROPERTY_CERTIFICATE_ACT_FRIENDLY_NAME"
 		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
 		,"ValueType":"PropertyKey"
@@ -2956,6 +3005,167 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"KIND_CALENDAR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"calendar"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_COMMUNICATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"communication"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_CONTACT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"contact"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_DOCUMENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"document"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_EMAIL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"email"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_FEED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"feed"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_FOLDER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"folder"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_GAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"game"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_INSTANTMESSAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"instantmessage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_JOURNAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"journal"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_LINK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"link"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_MOVIE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"movie"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_MUSIC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"music"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_NOTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"note"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_PICTURE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"picture"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_PLAYLIST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"playlist"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_PROGRAM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"program"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_RECORDEDTV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"recordedtv"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_SEARCHFOLDER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"searchfolder"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_TASK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"task"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_VIDEO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"video"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_WEBHISTORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"webhistory"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KIND_UNKNOWN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"unknown"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"PKEY_KindText"
 		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
 		,"ValueType":"PropertyKey"
@@ -3548,6 +3758,41 @@
 		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"fceff153-e839-4cf3-a9e7-ea22832094b8","Pid":111}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STORAGE_PROVIDER_SHARE_STATUS_PRIVATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Private"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STORAGE_PROVIDER_SHARE_STATUS_SHARED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Shared"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STORAGE_PROVIDER_SHARE_STATUS_PUBLIC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Public"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STORAGE_PROVIDER_SHARE_STATUS_GROUP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Group"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STORAGE_PROVIDER_SHARE_STATUS_OWNER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Owner"
 		,"Attrs":[]
 	}
 	,{
@@ -6148,10 +6393,66 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"LAYOUTPATTERN_CVMFB_ALPHA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"alpha"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LAYOUTPATTERN_CVMFB_BETA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"beta"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LAYOUTPATTERN_CVMFB_GAMMA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"gamma"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LAYOUTPATTERN_CVMFB_DELTA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"delta"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"PKEY_LayoutPattern_ContentViewModeForSearch"
 		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"c9944a21-a406-48fe-8225-aec7e24c211b","Pid":501}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LAYOUTPATTERN_CVMFS_ALPHA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"alpha"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LAYOUTPATTERN_CVMFS_BETA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"beta"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LAYOUTPATTERN_CVMFS_GAMMA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"gamma"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LAYOUTPATTERN_CVMFS_DELTA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"delta"
 		,"Attrs":[]
 	}
 	,{
@@ -8493,6 +8794,90 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SFGAOSTR_FILESYS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"filesys"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SFGAOSTR_FILEANC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"fileanc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SFGAOSTR_STORAGEANC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"storageanc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SFGAOSTR_STREAM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"stream"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SFGAOSTR_LINK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"link"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SFGAOSTR_HIDDEN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"hidden"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SFGAOSTR_SUPERHIDDEN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"superhidden"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SFGAOSTR_FOLDER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"folder"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SFGAOSTR_NONENUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"nonenum"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SFGAOSTR_BROWSABLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"browsable"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SFGAOSTR_SYSTEM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"system"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SFGAOSTR_PLACEHOLDER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"placeholder"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"PKEY_StatusBarSelectedItemCount"
 		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
 		,"ValueType":"PropertyKey"
@@ -9235,6 +9620,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"09b224bd-1335-4631-a7ff-cfd3a92646d7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9271,6 +9657,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"6e7781f4-e0f2-4239-b976-a01abab52930"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9354,6 +9741,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"4da57d2e-8eb3-41f6-a07e-98b52b88242b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IEnhancedStorageACT","TargetKind":"Com","Api":"Storage.EnhancedStorage","Parents":[]}
 		,"Methods":[
 			{
@@ -9388,6 +9776,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"022150a1-113d-11df-bb61-001aa01bbc58"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IEnhancedStorageACT2","TargetKind":"Com","Api":"Storage.EnhancedStorage","Parents":[]}
 		,"Methods":[
 			{
@@ -9434,6 +9823,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"5aef78c6-2242-4703-bf49-44b29357a359"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9509,6 +9899,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b6f7f311-206f-4ff8-9c4b-27efee77a86f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

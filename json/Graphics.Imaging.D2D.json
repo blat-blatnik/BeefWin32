@@ -10,6 +10,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"04c75bf8-3ce1-473b-acc5-3cc4f5e94999"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -62,6 +63,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"7b816b45-1996-4476-b132-de9e247c8af0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWICImagingFactory","TargetKind":"Com","Api":"Graphics.Imaging","Parents":[]}
 		,"Methods":[
 			{

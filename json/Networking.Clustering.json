@@ -184,6 +184,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"CLUSREG_NAME_MIXED_MODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MixedMode"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"CLUSAPI_VERSION_SERVER2008"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1206,6 +1213,2687 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"CLUS_RESTYPE_NAME_GENAPP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Generic Application"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_GENSVC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Generic Service"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_GENSCRIPT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Generic Script"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_IPADDR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IP Address"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_NETNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Network Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_DNN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Distributed Network Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_FILESHR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"File Share"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_PRTSPLR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Print Spooler"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_IPV6_NATIVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IPv6 Address"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_IPV6_TUNNEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IPv6 Tunnel Address"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_VSSTASK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Volume Shadow Copy Service Task"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_WINS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WINS Service"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_DHCP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DHCP Service"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_MSMQ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft Message Queue Server"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_NEW_MSMQ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSMQ"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_MSMQ_TRIGGER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSMQTriggers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_MSDTC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Distributed Transaction Coordinator"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_NFS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NFS Share"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_NETWORK_FILE_SYSTEM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Network File System"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_ISNS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Microsoft iSNS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_HARDDISK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Physical Disk"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_PHYS_DISK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Physical Disk"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_FSWITNESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"File Share Witness"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_FILESERVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"File Server"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_SODAFILESERVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Scale Out File Server"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_DFS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Distributed File System"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_DFSR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DFS Replicated Folder"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_VM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Virtual Machine"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_VM_CONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Virtual Machine Configuration"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_ISCSITARGET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"iSCSI Target Server"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_STORAGE_POOL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Storage Pool"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_TASKSCHEDULER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Task Scheduler"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_VMREPLICA_BROKER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Virtual Machine Replication Broker"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_VMREPLICA_COORDINATOR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Virtual Machine Replication Coordinator"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_NFS_V2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Network File System"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_NFS_MSNS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NFS Multi Server Namespace"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_CAU"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ClusterAwareUpdatingResource"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_NV_PROVIDER_ADDRESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Provider Address"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_NAT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Nat"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_STORAGE_POLICIES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Storage Policies"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_STORQOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Storage QoS Policy Manager"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_HEALTH_SERVICE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Health Service"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_VM_WMI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Virtual Machine Cluster WMI"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_SDDC_MANAGEMENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SDDC Management"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_HCSVM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HCS Virtual Machine"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_VIRTUAL_IPV4"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Disjoint IPv4 Address"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_VIRTUAL_IPV6"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Disjoint IPv6 Address"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_CLOUD_WITNESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Cloud Witness"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_STORAGE_REPLICA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Storage Replica"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_CROSS_CLUSTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Cross Cluster Dependency Orchestrator"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_SCALEOUT_MASTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Scaleout Master"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_SCALEOUT_WORKER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Scaleout Worker"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RESTYPE_NAME_CONTAINER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Container"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RES_NAME_SCALEOUT_MASTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Scaleout Master"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_RES_NAME_SCALEOUT_WORKER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Scaleout Worker"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_CLUS_DESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_CLUS_SD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Security Descriptor"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_CLUS_DEFAULT_NETWORK_ROLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DefaultNetworkRole"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_QUORUM_ARBITRATION_TIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"QuorumArbitrationTimeMax"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_HANG_TIMEOUT_KEYNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ClusSvcHangTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_HANG_RECOVERY_ACTION_KEYNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HangRecoveryAction"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_CSA_VSS_STATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BackupInProgress"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_REQUEST_REPLY_TIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RequestReplyTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_WITNESS_FAILED_RESTART_INTERVAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WitnessRestartInterval"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_WITNESS_DATABASE_WRITE_TIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WitnessDatabaseWriteTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_ADD_EVICT_DELAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddEvictDelay"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FIXQUORUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FixQuorum"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PREVENTQUORUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PreventQuorum"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IGNORE_PERSISTENT_STATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IgnorePersistentStateOnStartup"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_SHARED_VOLUMES_ROOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SharedVolumesRoot"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ENABLE_CLUSTER_SHARED_VOLUMES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnableSharedVolumes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_SHARED_VOLUME_VSS_WRITER_OPERATION_TIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SharedVolumeVssWriterOperationTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"USE_CLIENT_ACCESS_NETWORKS_FOR_CSV"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UseClientAccessNetworksForSharedVolumes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_CSV_COMPATIBLE_FILTERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SharedVolumeCompatibleFilters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_CSV_INCOMPATIBLE_FILTERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SharedVolumeIncompatibleFilters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_GROUP_WAIT_DELAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ClusterGroupWaitDelay"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MINIMUM_PREEMPTOR_PRIORITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MinimumPreemptorPriority"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MINIMUM_NEVER_PREEMPT_PRIORITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MinimumNeverPreemptPriority"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_ENFORCED_ANTIAFFINITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ClusterEnforcedAntiaffinity"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_SHUTDOWN_TIMEOUT_MINUTES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShutdownTimeoutInMinutes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_CSV_MDS_SD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SharedVolumeSecurityDescriptor"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FAILOVER_MOVE_MIGRATION_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FailoverMoveMigrationType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_CSV_BLOCK_CACHE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BlockCacheSize"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_ROUTE_HISTORY_LENGTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RouteHistoryLength"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_LAST_RECENT_EVENTS_RESET_TIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RecentEventsResetTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_DRAIN_ON_SHUTDOWN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DrainOnShutdown"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETFT_IPSEC_ENABLED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NetftIPSecEnabled"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_WITNESS_DYNAMIC_WEIGHT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WitnessDynamicWeight"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_MESSAGE_BUFFER_LENGTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MessageBufferLength"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_DATABASE_READ_WRITE_MODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DatabaseReadWriteMode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FUNCTIONAL_LEVEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ClusterFunctionalLevel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_UPGRADE_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ClusterUpgradeVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESILIENCY_LEVEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResiliencyLevel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESILIENCY_DEFAULT_SECONDS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResiliencyDefaultPeriod"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_QUARANTINE_THRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"QuarantineThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_QUARANTINE_DURATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"QuarantineDuration"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_S2D_ENABLED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"S2DEnabled"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_S2D_BUS_TYPES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"S2DBusTypes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_S2D_CACHE_PAGE_SIZE_KBYTES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"S2DCachePageSizeKBytes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_S2D_OPTIMIZATIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"S2DOptimizations"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_S2D_IO_LATENCY_THRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"S2DIOLatencyThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_S2D_CACHE_DESIRED_STATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"S2DCacheDesiredState"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_S2D_CACHE_METADATA_RESERVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"S2DCacheMetadataReserveBytes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_S2D_CACHE_FLASH_RESERVE_PERCENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"S2DCacheFlashReservePercent"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_S2D_CACHE_BEHAVIOR_FLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"S2DCacheBehavior"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_NAME_PREFERRED_SITE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PreferredSite"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_NAME_AUTO_BALANCER_MODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AutoBalancerMode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_NAME_AUTO_BALANCER_LEVEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AutoBalancerLevel"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GROUP_DEPENDENCY_TIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GroupDependencyTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PLACEMENT_OPTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PlacementOptions"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_ENABLED_EVENT_LOGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnabledEventLogs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_SAME_SUBNET_DELAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SameSubnetDelay"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_CROSS_SUBNET_DELAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CrossSubnetDelay"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_CROSS_SITE_DELAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CrossSiteDelay"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_SAME_SUBNET_THRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SameSubnetThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_CROSS_SUBNET_THRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CrossSubnetThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_CROSS_SITE_THRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CrossSiteThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PLUMB_ALL_CROSS_SUBNET_ROUTES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PlumbAllCrossSubnetRoutes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NodeName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_HIGHEST_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NodeHighestVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_LOWEST_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NodeLowestVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_DESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_MAJOR_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MajorVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_MINOR_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MinorVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_BUILD_NUMBER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BuildNumber"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_CSDVERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CSDVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_WEIGHT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NodeWeight"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_DYNAMIC_WEIGHT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DynamicWeight"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_IS_PRIMARY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IsPrimary"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_DRAIN_STATUS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NodeDrainStatus"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_DRAIN_TARGET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NodeDrainTarget"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_NEEDS_PQ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NeedsPreventQuorum"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_FDID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FaultDomainId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_STATUS_INFO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StatusInformation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_FAULT_DOMAIN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FaultDomain"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_MODEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Model"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_SERIALNUMBER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SerialNumber"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NODE_MANUFACTURER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Manufacturer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GroupType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_DESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_PERSISTENT_STATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersistentState"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_FAILBACK_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AutoFailbackType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_FAILBACK_WIN_START"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FailbackWindowStart"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_FAILBACK_WIN_END"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FailbackWindowEnd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_FAILOVER_THRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FailoverThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_FAILOVER_PERIOD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FailoverPeriod"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_PRIORITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Priority"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_DEFAULT_OWNER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DefaultOwner"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_STATUS_INFORMATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StatusInformation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_ANTI_AFFINITY_CLASS_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AntiAffinityClassNames"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_START_DELAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GroupStartDelay"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_CCF_EPOCH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CCFEpoch"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_CCF_EPOCH_HIGH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CCFEpochHigh"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_RESILIENCY_PERIOD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResiliencyPeriod"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_PREFERRED_SITE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PreferredSite"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_COLD_START_SETTING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ColdStartSetting"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_FAULT_DOMAIN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FaultDomain"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_UPDATE_DOMAIN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UpdateDomain"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_PLACEMENT_OPTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PlacementOptions"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GRP_LOCK_MOVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LockedFromMoving"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Type"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_DESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_SEPARATE_MONITOR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SeparateMonitor"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_PERSISTENT_STATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersistentState"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_LOOKS_ALIVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LooksAlivePollInterval"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_IS_ALIVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IsAlivePollInterval"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_RESTART_ACTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RestartAction"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_RESTART_THRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RestartThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_RESTART_PERIOD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RestartPeriod"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_RESTART_DELAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RestartDelay"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_RETRY_PERIOD_ON_FAILURE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RetryPeriodOnFailure"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_EMBEDDED_FAILURE_ACTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EmbeddedFailureAction"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_PENDING_TIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PendingTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_DEADLOCK_TIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeadlockTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_MONITOR_PID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MonitorProcessId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_STATUS_INFORMATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StatusInformation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_LAST_OPERATION_STATUS_CODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LastOperationStatusCode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_DATA1"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResourceSpecificData1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_DATA2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResourceSpecificData2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RES_STATUS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResourceSpecificStatus"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESTYPE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESTYPE_DESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESTYPE_DLL_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DllName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESTYPE_ADMIN_EXTENSIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AdminExtensions"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESTYPE_LOOKS_ALIVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LooksAlivePollInterval"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESTYPE_IS_ALIVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IsAlivePollInterval"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESTYPE_PENDING_TIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PendingTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESTYPE_DEADLOCK_TIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeadlockTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESTYPE_DUMP_POLICY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DumpPolicy"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESTYPE_DUMP_LOG_QUERY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DumpLogQuery"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESTYPE_DUMP_SERVICES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DumpServices"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESTYPE_ENABLED_EVENT_LOGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnabledEventLogs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESTYPE_MAX_MONITORS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MaximumMonitors"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESTYPE_WPR_START_AFTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WprStartAfter"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_RESTYPE_WPR_PROFILES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WprProfiles"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NET_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NET_IPV6_ADDRESSES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IPv6Addresses"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NET_IPV6_PREFIXLENGTHS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IPv6PrefixLengths"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NET_IPV4_ADDRESSES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IPv4Addresses"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NET_IPV4_PREFIXLENGTHS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IPv4PrefixLengths"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NET_ADDRESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Address"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NET_ADDRESS_MASK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AddressMask"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NET_DESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NET_ROLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Role"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NET_SPEED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LinkSpeed"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NET_RDMA_CAPABLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RdmaCapable"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NET_RSS_CAPABLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RssCapable"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NET_METRIC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Metric"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NET_AUTOMETRIC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AutoMetric"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETIFACE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETIFACE_NODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Node"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETIFACE_NETWORK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Network"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETIFACE_ADAPTER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Adapter"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETIFACE_ADAPTER_ID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AdapterId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETIFACE_DHCP_ENABLED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DhcpEnabled"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETIFACE_IPV6_ADDRESSES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IPv6Addresses"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETIFACE_IPV4_ADDRESSES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IPv4Addresses"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETIFACE_ADDRESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Address"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETIFACE_DESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GROUPSET_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GROUPSET_STARTUP_SETTING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StartupSetting"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GROUPSET_STARTUP_COUNT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StartupCount"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GROUPSET_STARTUP_DELAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StartupDelay"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GROUPSET_IS_GLOBAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IsGlobal"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GROUPSET_STATUS_INFORMATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StatusInformation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GROUPSET_IS_AVAILABILITY_SET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IsAvailabilitySet"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GROUPSET_UPDATE_DOMAINS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UpdateDomains"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GROUPSET_FAULT_DOMAINS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FaultDomains"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GROUPSET_RESERVE_NODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ReserveSpareNode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GROUPSET_AVAILABILITY_SET_INDEX_TO_NODE_MAPPING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NodeDomainInfo"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_AFFINITYRULE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_AFFINITYRULE_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RuleType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_AFFINITYRULE_GROUPS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Groups"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_AFFINITYRULE_ENABLED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Enabled"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_START_MEMORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StartMemory"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_VIRTUAL_NUMA_COUNT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VirtualNumaCount"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_DDA_DEVICE_ALLOCATIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DdaDeviceAllocations"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GPUP_DEVICE_ALLOCATIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GpupDeviceAllocations"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_DISKIDTYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DiskIdType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_DISKSIGNATURE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DiskSignature"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_DISKIDGUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DiskIdGuid"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_DISKRUNCHKDSK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DiskRunChkDsk"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_DISKUNIQUEIDS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DiskUniqueIds"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_DISKVOLUMEINFO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DiskVolumeInfo"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_DISKARBTYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DiskArbType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_DISKARBINTERVAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DiskArbInterval"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_DISKPATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DiskPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_DISKRELOAD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DiskReload"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_MAINTMODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MaintenanceMode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_DISKIODELAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MaxIoLatency"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_MIGRATEFIXUP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MigrateDriveLetters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_CSVWRITETHROUGH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CsvEnforceWriteThrough"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_CSVBLOCKCACHE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnableBlockCache"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_FASTONLINEARBITRATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FastOnlineArbitrate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_SPACEIDGUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VirtualDiskId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_POOLIDGUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PoolId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_CSVSNAPSHOTDIFFAREASIZE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SnapshotDiffSize"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_CSVSNAPSHOTAGELIMIT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SnapshotAgeLimit"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_DISKGUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DiskGuid"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_VOLSNAPACTIVATETIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VolsnapActivateTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PHYSDISK_DISKRECOVERYACTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DiskRecoveryAction"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VirtualDiskName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_DESCRIPTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VirtualDiskDescription"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_HEALTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VirtualDiskHealth"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_STATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VirtualDiskState"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_PROVISIONING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VirtualDiskProvisioning"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_RESILIENCYTYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VirtualDiskResiliencyType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_RESILIENCYCOLUMNS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VirtualDiskResiliencyColumns"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_RESILIENCYINTERLEAVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VirtualDiskResiliencyInterleave"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GENAPP_COMMAND_LINE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CommandLine"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GENAPP_CURRENT_DIRECTORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CurrentDirectory"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GENAPP_USE_NETWORK_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UseNetworkName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GENSCRIPT_SCRIPT_FILEPATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ScriptFilepath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GENSVC_SERVICE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServiceName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GENSVC_STARTUP_PARAMS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StartupParameters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_GENSVC_USE_NETWORK_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UseNetworkName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_NETWORK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Network"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_ADDRESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Address"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_SUBNET_MASK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SubnetMask"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_ENABLE_NETBIOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnableNetBIOS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_OVERRIDE_ADDRMATCH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OverrideAddressMatch"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_ENABLE_DHCP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnableDhcp"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_LEASE_OBTAINED_TIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LeaseObtainedTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_LEASE_TERMINATES_TIME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LeaseExpiresTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_T1"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"T1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_T2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"T2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_DHCP_SERVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DhcpServer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_DHCP_ADDRESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DhcpAddress"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_DHCP_SUBNET_MASK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DhcpSubnetMask"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_SHARED_NETNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SharedNetname"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_PROBE_PORT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ProbePort"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPADDR_PROBE_FAILURE_THRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ProbeFailureThreshold"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPV6_NATIVE_NETWORK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Network"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPV6_NATIVE_ADDRESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Address"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPV6_NATIVE_PREFIX_LENGTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrefixLength"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPV6_TUNNEL_ADDRESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Address"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_IPV6_TUNNEL_TUNNELTYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TunnelType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_CREATING_DC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CreatingDC"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_OBJECT_ID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ObjectGUID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_DNS_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DnsName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_REMAP_PIPE_NAMES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RemapPipeNames"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_RESOURCE_DATA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResourceData"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_STATUS_NETBIOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StatusNetBIOS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_STATUS_DNS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StatusDNS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_STATUS_KERBEROS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StatusKerberos"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_VCO_CONTAINER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VcoContainer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_LAST_DNS_UPDATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LastDNSUpdateTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_CONTAINERGUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CryptoContainerGUID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_HOST_TTL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HostRecordTTL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_PUBLISH_PTR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PublishPTRRecords"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_REMOVEVCO_ONDELETE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeleteVcoOnResCleanup"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_REGISTER_ALL_IP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RegisterAllProvidersIP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_KEYNAME_OBJECTGUIDS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ObjectGUIDs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_EXCLUDE_NETWORKS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ExcludeNetworks"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_ALIASES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Aliases"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_IN_USE_NETWORKS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InUseNetworks"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_DNS_SUFFIX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DnsSuffix"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_AD_AWARE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ADAware"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_NETNAME_DNN_DISABLE_CLONES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DisableClones"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PRTSPOOL_DEFAULT_SPOOL_DIR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DefaultSpoolDirectory"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_PRTSPOOL_TIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"JobCompletionTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FILESHR_SERVER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServerName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FILESHR_SHARE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShareName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FILESHR_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Path"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FILESHR_REMARK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Remark"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FILESHR_MAX_USERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MaxUsers"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FILESHR_SD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Security Descriptor"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FILESHR_SHARE_SUBDIRS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShareSubDirs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FILESHR_HIDE_SUBDIR_SHARES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HideSubDirShares"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FILESHR_IS_DFS_ROOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IsDfsRoot"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FILESHR_SHARE_FLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShareFlags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FILESHR_CA_TIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CATimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_DHCP_DATABASE_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DatabasePath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_DHCP_BACKUP_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BackupPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_LOG_FILE_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LogFilePath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_WINS_DATABASE_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DatabasePath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_WINS_BACKUP_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BackupPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_VSSTASK_CURRENTDIRECTORY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CurrentDirectory"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_VSSTASK_APPNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ApplicationName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_VSSTASK_APPPARAMS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ApplicationParams"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_VSSTASK_TRIGGERARRAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TriggerArray"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FSWITNESS_SHARE_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SharePath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FSWITNESS_ARB_DELAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ArbitrationDelay"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_FSWITNESS_IMPERSONATE_CNO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ImpersonateCNO"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_POOLNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_POOLDESC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_POOLDRIVEIDS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriveIds"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_POOLHEALTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Health"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_POOLSTATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"State"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_POOLTOTALCAPACITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TotalCapacity"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_POOLCONSUMEDCAPACITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ConsumedCapacity"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_POOLARBITRATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Arbitrate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_POOLREEVALTIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ReEvaluatePlacementTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_POOLQUORUMSHARE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PoolQuorumShare"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_STORAGESPACE_POOLQUORUMUSERACCOUNT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PoolQuorumUserAccount"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_SOFS_SMBASYMMETRYMODE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SmbAsymmetryMode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_VIP_PREFIX_LENGTH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrefixLength"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_VIP_ADAPTER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AdapterName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_VIP_ADDRESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Address"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_VIP_VSID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VSID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_VIP_RDID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RDID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_CLOUDWITNESS_PRIMARY_TOKEN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrimaryToken"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_CLOUDWITNESS_PRIMARY_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PrimaryKey"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_CLOUDWITNESS_ACCOUNT_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AccountName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_CLOUDWITNESS_ENDPOINT_INFO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EndpointInfo"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSREG_NAME_CLOUDWITNESS_CONTAINER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ContainerName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLOUD_WITNESS_CONTAINER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"msft-cloud-witness"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_NAME_RES_TYPE_SOURCE_RESID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SourceResourceId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_NAME_RES_TYPE_TARGET_RESID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TargetResourceId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_NAME_RES_TYPE_SOURCE_VOLUMES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SourceVolumes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_NAME_RES_TYPE_TARGET_VOLUMES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TargetVolumes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_NAME_RES_TYPE_DATA_RESID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DataResourceId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_NAME_RES_TYPE_LOG_RESID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LogResourceId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_NAME_RES_TYPE_LOG_VOLUME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LogVolume"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_NAME_RES_TYPE_REPLICATION_GROUPID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ReplicationGroupId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_NAME_RES_TYPE_CLUSTER_GROUPID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ClusterGroupId"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_NAME_RES_TYPE_REPLICATION_GROUP_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ReplicationClusterGroupType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_NAME_RES_TYPE_MINIMUM_LOG_SIZE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MinimumLogSizeInBytes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_NAME_RES_TYPE_UNIT_LOG_SIZE_CHANGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UnitOfLogSizeChangeInBytes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUS_NAME_RES_TYPE_LOG_MULTIPLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LogSizeMultiple"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SR_REPLICATED_PARTITION_DISALLOW_MULTINODE_IO"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1234,10 +3922,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"STARTUP_ROUTINE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Startup"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"CLRES_VERSION_V1_00"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":256
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STARTUP_EX_ROUTINE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StartupEx"
 		,"Attrs":[]
 	}
 	,{
@@ -1266,6 +3968,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSRES_NAME_GET_OPERATION_CONTEXT_FLAGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Flags"
 		,"Attrs":[]
 	}
 	,{
@@ -1493,6 +4202,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"CLUSTER_HEALTH_FAULT_PROPERTY_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ClusterHealth"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"CLUSTER_HEALTH_FAULT_ARGS"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1546,6 +4262,55 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":6
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_HEALTH_FAULT_ID_LABEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Id"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_HEALTH_FAULT_ERRORTYPE_LABEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ErrorType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_HEALTH_FAULT_ERRORCODE_LABEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ErrorCode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_HEALTH_FAULT_DESCRIPTION_LABEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_HEALTH_FAULT_PROVIDER_LABEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Provider"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_HEALTH_FAULT_FLAGS_LABEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Flags"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLUSTER_HEALTH_FAULT_RESERVED_LABEL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Reserved"
 		,"Attrs":[]
 	}
 	,{
@@ -7809,7 +10574,7 @@
 		,"Params":[
 			{"Name":"hKey","Type":{"Kind":"ApiRef","Name":"HKEY","TargetKind":"Default","Api":"System.Registry","Parents":[]},"Attrs":["In"]}
 			,{"Name":"RequestedInformation","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["Out",{"Kind":"MemorySize","BytesParamIndex":3}]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["Out",{"Kind":"MemorySize","BytesParamIndex":3}]}
 			,{"Name":"lpcbSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["In","Out"]}
 		]
 	}
@@ -7825,7 +10590,7 @@
 		,"Params":[
 			{"Name":"hKey","Type":{"Kind":"ApiRef","Name":"HKEY","TargetKind":"Default","Api":"System.Registry","Parents":[]},"Attrs":["In"]}
 			,{"Name":"SecurityInformation","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["In","Out"]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{
@@ -11469,6 +14234,7 @@
 		,"Platform":"windowsServer2003"
 		,"Kind":"Com"
 		,"Guid":"97dede50-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11525,6 +14291,7 @@
 		,"Platform":"windowsServer2003"
 		,"Kind":"Com"
 		,"Guid":"97dede51-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11570,6 +14337,7 @@
 		,"Platform":"windowsServer2003"
 		,"Kind":"Com"
 		,"Guid":"97dede52-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11606,6 +14374,7 @@
 		,"Platform":"windowsServer2003"
 		,"Kind":"Com"
 		,"Guid":"97dede53-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11628,6 +14397,7 @@
 		,"Platform":"windowsServer2003"
 		,"Kind":"Com"
 		,"Guid":"97dede54-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11650,6 +14420,7 @@
 		,"Platform":"windowsServer2003"
 		,"Kind":"Com"
 		,"Guid":"97dede55-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11700,6 +14471,7 @@
 		,"Platform":"windowsServer2003"
 		,"Kind":"Com"
 		,"Guid":"97dede56-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11722,6 +14494,7 @@
 		,"Platform":"windowsServer2003"
 		,"Kind":"Com"
 		,"Guid":"97dede57-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11744,6 +14517,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"97dede60-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11766,6 +14540,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"97dede61-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11789,6 +14564,7 @@
 		,"Platform":"windowsServer2003"
 		,"Kind":"Com"
 		,"Guid":"97dede62-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11824,6 +14600,7 @@
 		,"Platform":"windowsServer2003"
 		,"Kind":"Com"
 		,"Guid":"97dede63-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11847,6 +14624,7 @@
 		,"Platform":"windowsServer2003"
 		,"Kind":"Com"
 		,"Guid":"97dede64-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11873,6 +14651,7 @@
 		,"Platform":"windowsServer2003"
 		,"Kind":"Com"
 		,"Guid":"97dede65-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11896,6 +14675,7 @@
 		,"Platform":"windowsServer2003"
 		,"Kind":"Com"
 		,"Guid":"97dede66-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11919,6 +14699,7 @@
 		,"Platform":"windowsServer2003"
 		,"Kind":"Com"
 		,"Guid":"97dede67-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11954,6 +14735,7 @@
 		,"Platform":"windowsServer2003"
 		,"Kind":"Com"
 		,"Guid":"97dede68-fc6b-11cf-b5f5-00a0c90ab505"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12257,6 +15039,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e606e6-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12280,9 +15063,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrDomainName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppClusters","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusterNames","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -12309,6 +15090,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e606e2-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12357,9 +15139,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pbstrDomainName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -12373,6 +15153,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e606ec-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12421,9 +15202,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pbstrClusterName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -12451,6 +15230,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e60702-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12475,6 +15255,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e60716-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12625,6 +15406,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e606e4-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12927,6 +15709,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e606f8-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13124,6 +15907,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e606fa-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13172,9 +15956,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppNode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusNode","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -13188,6 +15970,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e606f2-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13352,6 +16135,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e606f4-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13400,9 +16184,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppClusNetwork","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusNetwork","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -13416,6 +16198,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e606ee-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13538,6 +16321,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e606f0-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13586,9 +16370,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppClusNetInterface","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusNetInterface","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -13602,6 +16384,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e606fc-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13650,9 +16433,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppClusNetInterface","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusNetInterface","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -13666,6 +16447,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e606f6-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13714,9 +16496,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppClusNetInterface","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusNetInterface","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -13730,6 +16510,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e60706-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13960,6 +16741,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e60708-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14008,9 +16790,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppClusResGroup","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusResGroup","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -14049,6 +16829,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e6070a-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14491,6 +17272,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e60704-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14539,9 +17321,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppClusResource","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusResource","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -14606,6 +17386,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e606ea-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14654,9 +17435,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppClusResource","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusResource","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -14697,6 +17476,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e60714-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14745,9 +17525,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppClusResource","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusResource","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -14788,6 +17566,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e6070c-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14836,9 +17615,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppClusResource","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusResource","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -14880,6 +17657,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e606e8-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -14928,9 +17706,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppNode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusNode","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -15006,6 +17782,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e6070e-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15054,9 +17831,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppNode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusNode","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -15108,6 +17883,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e60718-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15156,9 +17932,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppNode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusNode","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -15172,6 +17946,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e60710-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15319,6 +18094,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e60712-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15367,9 +18143,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppClusResType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusResType","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -15412,6 +18186,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e606fe-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15629,6 +18404,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e6071a-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15765,6 +18541,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e6071c-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15802,9 +18579,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppPropertyValue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusPropertyValue","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -15844,6 +18619,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e60700-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15892,9 +18668,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppClusProperty","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusProperty","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -16002,6 +18776,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e6071e-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16039,9 +18814,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pvarValue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -16080,6 +18853,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e60720-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16188,6 +18962,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"8802d4fe-b32e-4ad1-9dbd-64f18e1166ce"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISClusPartition","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}
 		,"Methods":[
 			{
@@ -16268,6 +19043,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e60722-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16305,9 +19081,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppPartition","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusPartition","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -16321,6 +19095,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e60724-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16387,6 +19162,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e60726-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16424,9 +19200,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppDisk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusDisk","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -16440,6 +19214,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e60728-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16506,6 +19281,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e6072a-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16554,9 +19330,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pbstrRegistryKey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -16594,6 +19368,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e6072c-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16642,9 +19417,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pbstrCyrptoKey","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -16682,6 +19455,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f2e6072e-2631-11d1-89f1-00a0c90d061e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -16730,9 +19504,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"varIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppClusResource","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISClusResource","TargetKind":"Com","Api":"Networking.Clustering","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -19687,7 +22459,7 @@
 		,"Params":[
 			{"Name":"hKey","Type":{"Kind":"ApiRef","Name":"HKEY","TargetKind":"Default","Api":"System.Registry","Parents":[]},"Attrs":["In"]}
 			,{"Name":"RequestedInformation","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["Out",{"Kind":"MemorySize","BytesParamIndex":3}]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["Out",{"Kind":"MemorySize","BytesParamIndex":3}]}
 			,{"Name":"lpcbSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["In","Out"]}
 		]
 	}
@@ -19703,7 +22475,7 @@
 		,"Params":[
 			{"Name":"hKey","Type":{"Kind":"ApiRef","Name":"HKEY","TargetKind":"Default","Api":"System.Registry","Parents":[]},"Attrs":["In"]}
 			,{"Name":"SecurityInformation","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["In"]}
+			,{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{

@@ -1838,117 +1838,117 @@ static
 	
 	#region Functions
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetCurrentPackageId(out uint32 bufferLength, uint8* buffer);
+	public static extern WIN32_ERROR GetCurrentPackageId(out uint32 bufferLength, uint8* buffer);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetCurrentPackageFullName(out uint32 packageFullNameLength, char16* packageFullName);
+	public static extern WIN32_ERROR GetCurrentPackageFullName(out uint32 packageFullNameLength, char16* packageFullName);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetCurrentPackageFamilyName(out uint32 packageFamilyNameLength, char16* packageFamilyName);
+	public static extern WIN32_ERROR GetCurrentPackageFamilyName(out uint32 packageFamilyNameLength, char16* packageFamilyName);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetCurrentPackagePath(out uint32 pathLength, char16* path);
+	public static extern WIN32_ERROR GetCurrentPackagePath(out uint32 pathLength, char16* path);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetPackageId(HANDLE hProcess, out uint32 bufferLength, uint8* buffer);
+	public static extern WIN32_ERROR GetPackageId(HANDLE hProcess, out uint32 bufferLength, uint8* buffer);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetPackageFullName(HANDLE hProcess, out uint32 packageFullNameLength, char16* packageFullName);
+	public static extern WIN32_ERROR GetPackageFullName(HANDLE hProcess, out uint32 packageFullNameLength, char16* packageFullName);
 	[Import("api-ms-win-appmodel-runtime-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetPackageFullNameFromToken(HANDLE token, out uint32 packageFullNameLength, char16* packageFullName);
+	public static extern WIN32_ERROR GetPackageFullNameFromToken(HANDLE token, out uint32 packageFullNameLength, char16* packageFullName);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetPackageFamilyName(HANDLE hProcess, out uint32 packageFamilyNameLength, char16* packageFamilyName);
+	public static extern WIN32_ERROR GetPackageFamilyName(HANDLE hProcess, out uint32 packageFamilyNameLength, char16* packageFamilyName);
 	[Import("api-ms-win-appmodel-runtime-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetPackageFamilyNameFromToken(HANDLE token, out uint32 packageFamilyNameLength, char16* packageFamilyName);
+	public static extern WIN32_ERROR GetPackageFamilyNameFromToken(HANDLE token, out uint32 packageFamilyNameLength, char16* packageFamilyName);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetPackagePath(in PACKAGE_ID packageId, uint32 reserved, out uint32 pathLength, char16* path);
+	public static extern WIN32_ERROR GetPackagePath(in PACKAGE_ID packageId, uint32 reserved, out uint32 pathLength, char16* path);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetPackagePathByFullName(PWSTR packageFullName, out uint32 pathLength, char16* path);
+	public static extern WIN32_ERROR GetPackagePathByFullName(PWSTR packageFullName, out uint32 pathLength, char16* path);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetStagedPackagePathByFullName(PWSTR packageFullName, out uint32 pathLength, char16* path);
+	public static extern WIN32_ERROR GetStagedPackagePathByFullName(PWSTR packageFullName, out uint32 pathLength, char16* path);
 	[Import("api-ms-win-appmodel-runtime-l1-1-3.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetPackagePathByFullName2(PWSTR packageFullName, PackagePathType packagePathType, out uint32 pathLength, char16* path);
+	public static extern WIN32_ERROR GetPackagePathByFullName2(PWSTR packageFullName, PackagePathType packagePathType, out uint32 pathLength, char16* path);
 	[Import("api-ms-win-appmodel-runtime-l1-1-3.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetStagedPackagePathByFullName2(PWSTR packageFullName, PackagePathType packagePathType, out uint32 pathLength, char16* path);
+	public static extern WIN32_ERROR GetStagedPackagePathByFullName2(PWSTR packageFullName, PackagePathType packagePathType, out uint32 pathLength, char16* path);
 	[Import("api-ms-win-appmodel-runtime-l1-1-3.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetCurrentPackageInfo2(uint32 flags, PackagePathType packagePathType, out uint32 bufferLength, uint8* buffer, uint32* count);
+	public static extern WIN32_ERROR GetCurrentPackageInfo2(uint32 flags, PackagePathType packagePathType, out uint32 bufferLength, uint8* buffer, uint32* count);
 	[Import("api-ms-win-appmodel-runtime-l1-1-3.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetCurrentPackagePath2(PackagePathType packagePathType, out uint32 pathLength, char16* path);
+	public static extern WIN32_ERROR GetCurrentPackagePath2(PackagePathType packagePathType, out uint32 pathLength, char16* path);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetCurrentApplicationUserModelId(out uint32 applicationUserModelIdLength, char16* applicationUserModelId);
+	public static extern WIN32_ERROR GetCurrentApplicationUserModelId(out uint32 applicationUserModelIdLength, char16* applicationUserModelId);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetApplicationUserModelId(HANDLE hProcess, out uint32 applicationUserModelIdLength, char16* applicationUserModelId);
+	public static extern WIN32_ERROR GetApplicationUserModelId(HANDLE hProcess, out uint32 applicationUserModelIdLength, char16* applicationUserModelId);
 	[Import("api-ms-win-appmodel-runtime-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetApplicationUserModelIdFromToken(HANDLE token, out uint32 applicationUserModelIdLength, char16* applicationUserModelId);
+	public static extern WIN32_ERROR GetApplicationUserModelIdFromToken(HANDLE token, out uint32 applicationUserModelIdLength, char16* applicationUserModelId);
 	[Import("api-ms-win-appmodel-runtime-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 VerifyPackageFullName(PWSTR packageFullName);
+	public static extern WIN32_ERROR VerifyPackageFullName(PWSTR packageFullName);
 	[Import("api-ms-win-appmodel-runtime-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 VerifyPackageFamilyName(PWSTR packageFamilyName);
+	public static extern WIN32_ERROR VerifyPackageFamilyName(PWSTR packageFamilyName);
 	[Import("api-ms-win-appmodel-runtime-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 VerifyPackageId(in PACKAGE_ID packageId);
+	public static extern WIN32_ERROR VerifyPackageId(in PACKAGE_ID packageId);
 	[Import("api-ms-win-appmodel-runtime-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 VerifyApplicationUserModelId(PWSTR applicationUserModelId);
+	public static extern WIN32_ERROR VerifyApplicationUserModelId(PWSTR applicationUserModelId);
 	[Import("api-ms-win-appmodel-runtime-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 VerifyPackageRelativeApplicationId(PWSTR packageRelativeApplicationId);
+	public static extern WIN32_ERROR VerifyPackageRelativeApplicationId(PWSTR packageRelativeApplicationId);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 PackageIdFromFullName(PWSTR packageFullName, uint32 flags, out uint32 bufferLength, uint8* buffer);
+	public static extern WIN32_ERROR PackageIdFromFullName(PWSTR packageFullName, uint32 flags, out uint32 bufferLength, uint8* buffer);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 PackageFullNameFromId(in PACKAGE_ID packageId, out uint32 packageFullNameLength, char16* packageFullName);
+	public static extern WIN32_ERROR PackageFullNameFromId(in PACKAGE_ID packageId, out uint32 packageFullNameLength, char16* packageFullName);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 PackageFamilyNameFromId(in PACKAGE_ID packageId, out uint32 packageFamilyNameLength, char16* packageFamilyName);
+	public static extern WIN32_ERROR PackageFamilyNameFromId(in PACKAGE_ID packageId, out uint32 packageFamilyNameLength, char16* packageFamilyName);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 PackageFamilyNameFromFullName(PWSTR packageFullName, out uint32 packageFamilyNameLength, char16* packageFamilyName);
+	public static extern WIN32_ERROR PackageFamilyNameFromFullName(PWSTR packageFullName, out uint32 packageFamilyNameLength, char16* packageFamilyName);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 PackageNameAndPublisherIdFromFamilyName(PWSTR packageFamilyName, out uint32 packageNameLength, char16* packageName, out uint32 packagePublisherIdLength, char16* packagePublisherId);
+	public static extern WIN32_ERROR PackageNameAndPublisherIdFromFamilyName(PWSTR packageFamilyName, out uint32 packageNameLength, char16* packageName, out uint32 packagePublisherIdLength, char16* packagePublisherId);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 FormatApplicationUserModelId(PWSTR packageFamilyName, PWSTR packageRelativeApplicationId, out uint32 applicationUserModelIdLength, char16* applicationUserModelId);
+	public static extern WIN32_ERROR FormatApplicationUserModelId(PWSTR packageFamilyName, PWSTR packageRelativeApplicationId, out uint32 applicationUserModelIdLength, char16* applicationUserModelId);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 ParseApplicationUserModelId(PWSTR applicationUserModelId, out uint32 packageFamilyNameLength, char16* packageFamilyName, out uint32 packageRelativeApplicationIdLength, char16* packageRelativeApplicationId);
+	public static extern WIN32_ERROR ParseApplicationUserModelId(PWSTR applicationUserModelId, out uint32 packageFamilyNameLength, char16* packageFamilyName, out uint32 packageRelativeApplicationIdLength, char16* packageRelativeApplicationId);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetPackagesByPackageFamily(PWSTR packageFamilyName, out uint32 count, PWSTR* packageFullNames, out uint32 bufferLength, char16* buffer);
+	public static extern WIN32_ERROR GetPackagesByPackageFamily(PWSTR packageFamilyName, out uint32 count, PWSTR* packageFullNames, out uint32 bufferLength, char16* buffer);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 FindPackagesByPackageFamily(PWSTR packageFamilyName, uint32 packageFilters, out uint32 count, PWSTR* packageFullNames, out uint32 bufferLength, char16* buffer, uint32* packageProperties);
+	public static extern WIN32_ERROR FindPackagesByPackageFamily(PWSTR packageFamilyName, uint32 packageFilters, out uint32 count, PWSTR* packageFullNames, out uint32 bufferLength, char16* buffer, uint32* packageProperties);
 	[Import("api-ms-win-appmodel-runtime-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetStagedPackageOrigin(PWSTR packageFullName, out PackageOrigin origin);
+	public static extern WIN32_ERROR GetStagedPackageOrigin(PWSTR packageFullName, out PackageOrigin origin);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetCurrentPackageInfo(uint32 flags, out uint32 bufferLength, uint8* buffer, uint32* count);
+	public static extern WIN32_ERROR GetCurrentPackageInfo(uint32 flags, out uint32 bufferLength, uint8* buffer, uint32* count);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 OpenPackageInfoByFullName(PWSTR packageFullName, uint32 reserved, out _PACKAGE_INFO_REFERENCE* packageInfoReference);
+	public static extern WIN32_ERROR OpenPackageInfoByFullName(PWSTR packageFullName, uint32 reserved, out _PACKAGE_INFO_REFERENCE* packageInfoReference);
 	[Import("api-ms-win-appmodel-runtime-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 OpenPackageInfoByFullNameForUser(PSID userSid, PWSTR packageFullName, uint32 reserved, out _PACKAGE_INFO_REFERENCE* packageInfoReference);
+	public static extern WIN32_ERROR OpenPackageInfoByFullNameForUser(PSID userSid, PWSTR packageFullName, uint32 reserved, out _PACKAGE_INFO_REFERENCE* packageInfoReference);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 ClosePackageInfo(ref _PACKAGE_INFO_REFERENCE packageInfoReference);
+	public static extern WIN32_ERROR ClosePackageInfo(ref _PACKAGE_INFO_REFERENCE packageInfoReference);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetPackageInfo(ref _PACKAGE_INFO_REFERENCE packageInfoReference, uint32 flags, out uint32 bufferLength, uint8* buffer, uint32* count);
+	public static extern WIN32_ERROR GetPackageInfo(ref _PACKAGE_INFO_REFERENCE packageInfoReference, uint32 flags, out uint32 bufferLength, uint8* buffer, uint32* count);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetPackageApplicationIds(ref _PACKAGE_INFO_REFERENCE packageInfoReference, out uint32 bufferLength, uint8* buffer, uint32* count);
+	public static extern WIN32_ERROR GetPackageApplicationIds(ref _PACKAGE_INFO_REFERENCE packageInfoReference, out uint32 bufferLength, uint8* buffer, uint32* count);
 	[Import("api-ms-win-appmodel-runtime-l1-1-3.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 GetPackageInfo2(ref _PACKAGE_INFO_REFERENCE packageInfoReference, uint32 flags, PackagePathType packagePathType, out uint32 bufferLength, uint8* buffer, uint32* count);
+	public static extern WIN32_ERROR GetPackageInfo2(ref _PACKAGE_INFO_REFERENCE packageInfoReference, uint32 flags, PackagePathType packagePathType, out uint32 bufferLength, uint8* buffer, uint32* count);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CheckIsMSIXPackage(PWSTR packageFullName, out BOOL isMSIXPackage);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernelbase.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT TryCreatePackageDependency(PSID user, PWSTR packageFamilyName, PACKAGE_VERSION minVersion, PackageDependencyProcessorArchitectures packageDependencyProcessorArchitectures, PackageDependencyLifetimeKind lifetimeKind, PWSTR lifetimeArtifact, CreatePackageDependencyOptions options, PWSTR* packageDependencyId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernelbase.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT DeletePackageDependency(PWSTR packageDependencyId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernelbase.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT AddPackageDependency(PWSTR packageDependencyId, int32 rank, AddPackageDependencyOptions options, out PACKAGEDEPENDENCY_CONTEXT__* packageDependencyContext, PWSTR* packageFullName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernelbase.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT RemovePackageDependency(ref PACKAGEDEPENDENCY_CONTEXT__ packageDependencyContext);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernelbase.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetResolvedPackageFullNameForPackageDependency(PWSTR packageDependencyId, PWSTR* packageFullName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernelbase.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetIdForPackageDependencyContext(ref PACKAGEDEPENDENCY_CONTEXT__ packageDependencyContext, PWSTR* packageDependencyId);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 AppPolicyGetLifecycleManagement(HANDLE processToken, out AppPolicyLifecycleManagement policy);
+	public static extern WIN32_ERROR AppPolicyGetLifecycleManagement(HANDLE processToken, out AppPolicyLifecycleManagement policy);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 AppPolicyGetWindowingModel(HANDLE processToken, out AppPolicyWindowingModel policy);
+	public static extern WIN32_ERROR AppPolicyGetWindowingModel(HANDLE processToken, out AppPolicyWindowingModel policy);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 AppPolicyGetMediaFoundationCodecLoading(HANDLE processToken, out AppPolicyMediaFoundationCodecLoading policy);
+	public static extern WIN32_ERROR AppPolicyGetMediaFoundationCodecLoading(HANDLE processToken, out AppPolicyMediaFoundationCodecLoading policy);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 AppPolicyGetClrCompat(HANDLE processToken, out AppPolicyClrCompat policy);
+	public static extern WIN32_ERROR AppPolicyGetClrCompat(HANDLE processToken, out AppPolicyClrCompat policy);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 AppPolicyGetThreadInitializationType(HANDLE processToken, out AppPolicyThreadInitializationType policy);
+	public static extern WIN32_ERROR AppPolicyGetThreadInitializationType(HANDLE processToken, out AppPolicyThreadInitializationType policy);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 AppPolicyGetShowDeveloperDiagnostic(HANDLE processToken, out AppPolicyShowDeveloperDiagnostic policy);
+	public static extern WIN32_ERROR AppPolicyGetShowDeveloperDiagnostic(HANDLE processToken, out AppPolicyShowDeveloperDiagnostic policy);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 AppPolicyGetProcessTerminationMethod(HANDLE processToken, out AppPolicyProcessTerminationMethod policy);
+	public static extern WIN32_ERROR AppPolicyGetProcessTerminationMethod(HANDLE processToken, out AppPolicyProcessTerminationMethod policy);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 AppPolicyGetCreateFileAccess(HANDLE processToken, out AppPolicyCreateFileAccess policy);
+	public static extern WIN32_ERROR AppPolicyGetCreateFileAccess(HANDLE processToken, out AppPolicyCreateFileAccess policy);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreatePackageVirtualizationContext(PWSTR packageFamilyName, out PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__* context);
 	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]

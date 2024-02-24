@@ -105,23 +105,20 @@ static
 		public int64 value;
 	}
 	[CRepr]
+	public struct HSTRING_HEADER
+	{
+		public uint32 flags;
+		public uint32 length;
+		public uint32 padding1;
+		public uint32 padding2;
+		public int data;
+	}
+	[CRepr]
 	public struct ServerInformation
 	{
 		public uint32 dwServerPid;
 		public uint32 dwServerTid;
 		public uint64 ui64ServerAddress;
-	}
-	[CRepr]
-	public struct HSTRING_HEADER
-	{
-		public _Reserved_e__Union Reserved;
-		
-		[CRepr, Union]
-		public struct _Reserved_e__Union
-		{
-			public void* Reserved1;
-			public CHAR[24] Reserved2;
-		}
 	}
 	[CRepr]
 	public struct DispatcherQueueOptions
@@ -203,14 +200,14 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT GetIids(out uint32 iidCount, Guid** iids) mut => VT.GetIids(ref this, out iidCount, iids);
-		public HRESULT GetRuntimeClassName(HSTRING* className) mut => VT.GetRuntimeClassName(ref this, className);
+		public HRESULT GetRuntimeClassName(out HSTRING className) mut => VT.GetRuntimeClassName(ref this, out className);
 		public HRESULT GetTrustLevel(out TrustLevel trustLevel) mut => VT.GetTrustLevel(ref this, out trustLevel);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IInspectable self, out uint32 iidCount, Guid** iids) GetIids;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IInspectable self, HSTRING* className) GetRuntimeClassName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IInspectable self, out HSTRING className) GetRuntimeClassName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IInspectable self, out TrustLevel trustLevel) GetTrustLevel;
 		}
 	}
@@ -566,12 +563,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT ActivateInstance(IInspectable** instance) mut => VT.ActivateInstance(ref this, instance);
+		public HRESULT ActivateInstance(out IInspectable* instance) mut => VT.ActivateInstance(ref this, out instance);
 
 		[CRepr]
 		public struct VTable : IInspectable.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IActivationFactory self, IInspectable** instance) ActivateInstance;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IActivationFactory self, out IInspectable* instance) ActivateInstance;
 		}
 	}
 	[CRepr]
@@ -672,12 +669,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetWeakReference(IWeakReference** weakReference) mut => VT.GetWeakReference(ref this, weakReference);
+		public HRESULT GetWeakReference(out IWeakReference* weakReference) mut => VT.GetWeakReference(ref this, out weakReference);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWeakReferenceSource self, IWeakReference** weakReference) GetWeakReference;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWeakReferenceSource self, out IWeakReference* weakReference) GetWeakReference;
 		}
 	}
 	[CRepr]
@@ -738,6 +735,86 @@ static
 		public struct VTable : IInspectable.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMessageDispatcher self) PumpMessages;
+		}
+	}
+	[CRepr]
+	public struct ICoreWindowInterop : IUnknown
+	{
+		public const new Guid IID = .(0x45d64a29, 0xa63e, 0x4cb6, 0xb4, 0x98, 0x57, 0x81, 0xd2, 0x98, 0xcb, 0x4f);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT get_WindowHandle(out HWND hwnd) mut => VT.get_WindowHandle(ref this, out hwnd);
+		public HRESULT put_MessageHandled(uint8 value) mut => VT.put_MessageHandled(ref this, value);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreWindowInterop self, out HWND hwnd) get_WindowHandle;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreWindowInterop self, uint8 value) put_MessageHandled;
+		}
+	}
+	[CRepr]
+	public struct ICoreInputInterop : IUnknown
+	{
+		public const new Guid IID = .(0x40bfe3e3, 0xb75a, 0x4479, 0xac, 0x96, 0x47, 0x53, 0x65, 0x74, 0x9b, 0xb8);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT SetInputSource(IUnknown* value) mut => VT.SetInputSource(ref this, value);
+		public HRESULT put_MessageHandled(uint8 value) mut => VT.put_MessageHandled(ref this, value);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreInputInterop self, IUnknown* value) SetInputSource;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreInputInterop self, uint8 value) put_MessageHandled;
+		}
+	}
+	[CRepr]
+	public struct ICoreWindowComponentInterop : IUnknown
+	{
+		public const new Guid IID = .(0x0576ab31, 0xa310, 0x4c40, 0xba, 0x31, 0xfd, 0x37, 0xe0, 0x29, 0x8d, 0xfa);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT ConfigureComponentInput(uint32 hostViewInstanceId, HWND hwndHost, IUnknown* inputSourceVisual) mut => VT.ConfigureComponentInput(ref this, hostViewInstanceId, hwndHost, inputSourceVisual);
+		public HRESULT GetViewInstanceId(out uint32 componentViewInstanceId) mut => VT.GetViewInstanceId(ref this, out componentViewInstanceId);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreWindowComponentInterop self, uint32 hostViewInstanceId, HWND hwndHost, IUnknown* inputSourceVisual) ConfigureComponentInput;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreWindowComponentInterop self, out uint32 componentViewInstanceId) GetViewInstanceId;
+		}
+	}
+	[CRepr]
+	public struct ICoreWindowAdapterInterop : IInspectable
+	{
+		public const new Guid IID = .(0x7a5b6fd1, 0xcd73, 0x4b6c, 0x9c, 0xf4, 0x2e, 0x86, 0x9e, 0xaf, 0x47, 0x0a);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT get_AppActivationClientAdapter(out IUnknown* value) mut => VT.get_AppActivationClientAdapter(ref this, out value);
+		public HRESULT get_ApplicationViewClientAdapter(out IUnknown* value) mut => VT.get_ApplicationViewClientAdapter(ref this, out value);
+		public HRESULT get_CoreApplicationViewClientAdapter(out IUnknown* value) mut => VT.get_CoreApplicationViewClientAdapter(ref this, out value);
+		public HRESULT get_HoloViewClientAdapter(out IUnknown* value) mut => VT.get_HoloViewClientAdapter(ref this, out value);
+		public HRESULT get_PositionerClientAdapter(out IUnknown* value) mut => VT.get_PositionerClientAdapter(ref this, out value);
+		public HRESULT get_SystemNavigationClientAdapter(out IUnknown* value) mut => VT.get_SystemNavigationClientAdapter(ref this, out value);
+		public HRESULT get_TitleBarClientAdapter(out IUnknown* value) mut => VT.get_TitleBarClientAdapter(ref this, out value);
+		public HRESULT SetWindowClientAdapter(IUnknown* value) mut => VT.SetWindowClientAdapter(ref this, value);
+
+		[CRepr]
+		public struct VTable : IInspectable.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreWindowAdapterInterop self, out IUnknown* value) get_AppActivationClientAdapter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreWindowAdapterInterop self, out IUnknown* value) get_ApplicationViewClientAdapter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreWindowAdapterInterop self, out IUnknown* value) get_CoreApplicationViewClientAdapter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreWindowAdapterInterop self, out IUnknown* value) get_HoloViewClientAdapter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreWindowAdapterInterop self, out IUnknown* value) get_PositionerClientAdapter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreWindowAdapterInterop self, out IUnknown* value) get_SystemNavigationClientAdapter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreWindowAdapterInterop self, out IUnknown* value) get_TitleBarClientAdapter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreWindowAdapterInterop self, IUnknown* value) SetWindowClientAdapter;
 		}
 	}
 	#endregion
@@ -879,5 +956,9 @@ static
 	public static extern HRESULT CreateRandomAccessStreamOverStream(ref IStream stream, BSOS_OPTIONS options, in Guid riid, void** ppv);
 	[Import("api-ms-win-shcore-stream-winrt-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateStreamOverRandomAccessStream(ref IUnknown randomAccessStream, in Guid riid, void** ppv);
+	[Import("windows.ui.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HRESULT CreateControlInput(in Guid riid, void** ppv);
+	[Import("windows.ui.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HRESULT CreateControlInputEx(ref IUnknown pCoreWindow, in Guid riid, void** ppv);
 	#endregion
 }

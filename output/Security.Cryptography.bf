@@ -11,6 +11,12 @@ static
 	#region Constants
 	public const int32 CERT_COMPARE_SHIFT = 16;
 	public const uint32 BCRYPT_OBJECT_ALIGNMENT = 16;
+	public const String BCRYPT_KDF_HASH = "HASH";
+	public const String BCRYPT_KDF_HMAC = "HMAC";
+	public const String BCRYPT_KDF_TLS_PRF = "TLS_PRF";
+	public const String BCRYPT_KDF_SP80056A_CONCAT = "SP800_56A_CONCAT";
+	public const String BCRYPT_KDF_RAW_SECRET = "TRUNCATE";
+	public const String BCRYPT_KDF_HKDF = "HKDF";
 	public const uint32 KDF_HASH_ALGORITHM = 0;
 	public const uint32 KDF_SECRET_PREPEND = 1;
 	public const uint32 KDF_SECRET_APPEND = 2;
@@ -36,6 +42,45 @@ static
 	public const uint32 BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO_VERSION = 1;
 	public const uint32 BCRYPT_AUTH_MODE_CHAIN_CALLS_FLAG = 1;
 	public const uint32 BCRYPT_AUTH_MODE_IN_PROGRESS_FLAG = 2;
+	public const String BCRYPT_OPAQUE_KEY_BLOB = "OpaqueKeyBlob";
+	public const String BCRYPT_KEY_DATA_BLOB = "KeyDataBlob";
+	public const String BCRYPT_AES_WRAP_KEY_BLOB = "Rfc3565KeyWrapBlob";
+	public const String BCRYPT_OBJECT_LENGTH = "ObjectLength";
+	public const String BCRYPT_ALGORITHM_NAME = "AlgorithmName";
+	public const String BCRYPT_PROVIDER_HANDLE = "ProviderHandle";
+	public const String BCRYPT_CHAINING_MODE = "ChainingMode";
+	public const String BCRYPT_BLOCK_LENGTH = "BlockLength";
+	public const String BCRYPT_KEY_LENGTH = "KeyLength";
+	public const String BCRYPT_KEY_OBJECT_LENGTH = "KeyObjectLength";
+	public const String BCRYPT_KEY_STRENGTH = "KeyStrength";
+	public const String BCRYPT_KEY_LENGTHS = "KeyLengths";
+	public const String BCRYPT_BLOCK_SIZE_LIST = "BlockSizeList";
+	public const String BCRYPT_EFFECTIVE_KEY_LENGTH = "EffectiveKeyLength";
+	public const String BCRYPT_HASH_LENGTH = "HashDigestLength";
+	public const String BCRYPT_HASH_OID_LIST = "HashOIDList";
+	public const String BCRYPT_PADDING_SCHEMES = "PaddingSchemes";
+	public const String BCRYPT_SIGNATURE_LENGTH = "SignatureLength";
+	public const String BCRYPT_HASH_BLOCK_LENGTH = "HashBlockLength";
+	public const String BCRYPT_AUTH_TAG_LENGTH = "AuthTagLength";
+	public const String BCRYPT_PRIMITIVE_TYPE = "PrimitiveType";
+	public const String BCRYPT_IS_KEYED_HASH = "IsKeyedHash";
+	public const String BCRYPT_IS_REUSABLE_HASH = "IsReusableHash";
+	public const String BCRYPT_MESSAGE_BLOCK_LENGTH = "MessageBlockLength";
+	public const String BCRYPT_PUBLIC_KEY_LENGTH = "PublicKeyLength";
+	public const String BCRYPT_PCP_PLATFORM_TYPE_PROPERTY = "PCP_PLATFORM_TYPE";
+	public const String BCRYPT_PCP_PROVIDER_VERSION_PROPERTY = "PCP_PROVIDER_VERSION";
+	public const String BCRYPT_MULTI_OBJECT_LENGTH = "MultiObjectLength";
+	public const String BCRYPT_IS_IFX_TPM_WEAK_KEY = "IsIfxTpmWeakKey";
+	public const String BCRYPT_HKDF_HASH_ALGORITHM = "HkdfHashAlgorithm";
+	public const String BCRYPT_HKDF_SALT_AND_FINALIZE = "HkdfSaltAndFinalize";
+	public const String BCRYPT_HKDF_PRK_AND_FINALIZE = "HkdfPrkAndFinalize";
+	public const String BCRYPT_INITIALIZATION_VECTOR = "IV";
+	public const String BCRYPT_CHAIN_MODE_NA = "ChainingModeN/A";
+	public const String BCRYPT_CHAIN_MODE_CBC = "ChainingModeCBC";
+	public const String BCRYPT_CHAIN_MODE_ECB = "ChainingModeECB";
+	public const String BCRYPT_CHAIN_MODE_CFB = "ChainingModeCFB";
+	public const String BCRYPT_CHAIN_MODE_CCM = "ChainingModeCCM";
+	public const String BCRYPT_CHAIN_MODE_GCM = "ChainingModeGCM";
 	public const uint32 BCRYPT_SUPPORTED_PAD_ROUTER = 1;
 	public const uint32 BCRYPT_SUPPORTED_PAD_PKCS1_ENC = 2;
 	public const uint32 BCRYPT_SUPPORTED_PAD_PKCS1_SIG = 4;
@@ -45,6 +90,20 @@ static
 	public const uint32 BCRYPT_GENERATE_IV = 32;
 	public const uint32 BCRYPT_PAD_PKCS1_OPTIONAL_HASH_OID = 16;
 	public const uint32 BCRYPTBUFFER_VERSION = 0;
+	public const String BCRYPT_PUBLIC_KEY_BLOB = "PUBLICBLOB";
+	public const String BCRYPT_PRIVATE_KEY_BLOB = "PRIVATEBLOB";
+	public const String BCRYPT_RSAPUBLIC_BLOB = "RSAPUBLICBLOB";
+	public const String BCRYPT_RSAPRIVATE_BLOB = "RSAPRIVATEBLOB";
+	public const String LEGACY_RSAPUBLIC_BLOB = "CAPIPUBLICBLOB";
+	public const String LEGACY_RSAPRIVATE_BLOB = "CAPIPRIVATEBLOB";
+	public const String BCRYPT_RSAFULLPRIVATE_BLOB = "RSAFULLPRIVATEBLOB";
+	public const String BCRYPT_GLOBAL_PARAMETERS = "SecretAgreementParam";
+	public const String BCRYPT_PRIVATE_KEY = "PrivKeyVal";
+	public const String BCRYPT_ECCPUBLIC_BLOB = "ECCPUBLICBLOB";
+	public const String BCRYPT_ECCPRIVATE_BLOB = "ECCPRIVATEBLOB";
+	public const String BCRYPT_ECCFULLPUBLIC_BLOB = "ECCFULLPUBLICBLOB";
+	public const String BCRYPT_ECCFULLPRIVATE_BLOB = "ECCFULLPRIVATEBLOB";
+	public const String SSL_ECCPUBLIC_BLOB = "SSLECCPUBLICBLOB";
 	public const uint32 BCRYPT_ECDH_PUBLIC_P256_MAGIC = 827016005;
 	public const uint32 BCRYPT_ECDH_PRIVATE_P256_MAGIC = 843793221;
 	public const uint32 BCRYPT_ECDH_PUBLIC_P384_MAGIC = 860570437;
@@ -62,14 +121,116 @@ static
 	public const uint32 BCRYPT_ECDSA_PUBLIC_GENERIC_MAGIC = 1346650949;
 	public const uint32 BCRYPT_ECDSA_PRIVATE_GENERIC_MAGIC = 1447314245;
 	public const uint32 BCRYPT_ECC_FULLKEY_BLOB_V1 = 1;
+	public const String BCRYPT_DH_PUBLIC_BLOB = "DHPUBLICBLOB";
+	public const String BCRYPT_DH_PRIVATE_BLOB = "DHPRIVATEBLOB";
+	public const String LEGACY_DH_PUBLIC_BLOB = "CAPIDHPUBLICBLOB";
+	public const String LEGACY_DH_PRIVATE_BLOB = "CAPIDHPRIVATEBLOB";
+	public const String BCRYPT_DH_PARAMETERS = "DHParameters";
 	public const uint32 BCRYPT_DH_PARAMETERS_MAGIC = 1297107012;
+	public const String BCRYPT_DSA_PUBLIC_BLOB = "DSAPUBLICBLOB";
+	public const String BCRYPT_DSA_PRIVATE_BLOB = "DSAPRIVATEBLOB";
+	public const String LEGACY_DSA_PUBLIC_BLOB = "CAPIDSAPUBLICBLOB";
+	public const String LEGACY_DSA_PRIVATE_BLOB = "CAPIDSAPRIVATEBLOB";
+	public const String LEGACY_DSA_V2_PUBLIC_BLOB = "V2CAPIDSAPUBLICBLOB";
+	public const String LEGACY_DSA_V2_PRIVATE_BLOB = "V2CAPIDSAPRIVATEBLOB";
 	public const uint32 BCRYPT_DSA_PUBLIC_MAGIC_V2 = 843206724;
 	public const uint32 BCRYPT_DSA_PRIVATE_MAGIC_V2 = 844517444;
 	public const uint32 BCRYPT_KEY_DATA_BLOB_MAGIC = 1296188491;
 	public const uint32 BCRYPT_KEY_DATA_BLOB_VERSION1 = 1;
+	public const String BCRYPT_DSA_PARAMETERS = "DSAParameters";
 	public const uint32 BCRYPT_DSA_PARAMETERS_MAGIC = 1297109828;
 	public const uint32 BCRYPT_DSA_PARAMETERS_MAGIC_V2 = 843927620;
+	public const String BCRYPT_ECC_PARAMETERS = "ECCParameters";
+	public const String BCRYPT_ECC_CURVE_NAME = "ECCCurveName";
+	public const String BCRYPT_ECC_CURVE_NAME_LIST = "ECCCurveNameList";
 	public const uint32 BCRYPT_ECC_PARAMETERS_MAGIC = 1346585413;
+	public const String BCRYPT_ECC_CURVE_BRAINPOOLP160R1 = "brainpoolP160r1";
+	public const String BCRYPT_ECC_CURVE_BRAINPOOLP160T1 = "brainpoolP160t1";
+	public const String BCRYPT_ECC_CURVE_BRAINPOOLP192R1 = "brainpoolP192r1";
+	public const String BCRYPT_ECC_CURVE_BRAINPOOLP192T1 = "brainpoolP192t1";
+	public const String BCRYPT_ECC_CURVE_BRAINPOOLP224R1 = "brainpoolP224r1";
+	public const String BCRYPT_ECC_CURVE_BRAINPOOLP224T1 = "brainpoolP224t1";
+	public const String BCRYPT_ECC_CURVE_BRAINPOOLP256R1 = "brainpoolP256r1";
+	public const String BCRYPT_ECC_CURVE_BRAINPOOLP256T1 = "brainpoolP256t1";
+	public const String BCRYPT_ECC_CURVE_BRAINPOOLP320R1 = "brainpoolP320r1";
+	public const String BCRYPT_ECC_CURVE_BRAINPOOLP320T1 = "brainpoolP320t1";
+	public const String BCRYPT_ECC_CURVE_BRAINPOOLP384R1 = "brainpoolP384r1";
+	public const String BCRYPT_ECC_CURVE_BRAINPOOLP384T1 = "brainpoolP384t1";
+	public const String BCRYPT_ECC_CURVE_BRAINPOOLP512R1 = "brainpoolP512r1";
+	public const String BCRYPT_ECC_CURVE_BRAINPOOLP512T1 = "brainpoolP512t1";
+	public const String BCRYPT_ECC_CURVE_25519 = "curve25519";
+	public const String BCRYPT_ECC_CURVE_EC192WAPI = "ec192wapi";
+	public const String BCRYPT_ECC_CURVE_NISTP192 = "nistP192";
+	public const String BCRYPT_ECC_CURVE_NISTP224 = "nistP224";
+	public const String BCRYPT_ECC_CURVE_NISTP256 = "nistP256";
+	public const String BCRYPT_ECC_CURVE_NISTP384 = "nistP384";
+	public const String BCRYPT_ECC_CURVE_NISTP521 = "nistP521";
+	public const String BCRYPT_ECC_CURVE_NUMSP256T1 = "numsP256t1";
+	public const String BCRYPT_ECC_CURVE_NUMSP384T1 = "numsP384t1";
+	public const String BCRYPT_ECC_CURVE_NUMSP512T1 = "numsP512t1";
+	public const String BCRYPT_ECC_CURVE_SECP160K1 = "secP160k1";
+	public const String BCRYPT_ECC_CURVE_SECP160R1 = "secP160r1";
+	public const String BCRYPT_ECC_CURVE_SECP160R2 = "secP160r2";
+	public const String BCRYPT_ECC_CURVE_SECP192K1 = "secP192k1";
+	public const String BCRYPT_ECC_CURVE_SECP192R1 = "secP192r1";
+	public const String BCRYPT_ECC_CURVE_SECP224K1 = "secP224k1";
+	public const String BCRYPT_ECC_CURVE_SECP224R1 = "secP224r1";
+	public const String BCRYPT_ECC_CURVE_SECP256K1 = "secP256k1";
+	public const String BCRYPT_ECC_CURVE_SECP256R1 = "secP256r1";
+	public const String BCRYPT_ECC_CURVE_SECP384R1 = "secP384r1";
+	public const String BCRYPT_ECC_CURVE_SECP521R1 = "secP521r1";
+	public const String BCRYPT_ECC_CURVE_WTLS7 = "wtls7";
+	public const String BCRYPT_ECC_CURVE_WTLS9 = "wtls9";
+	public const String BCRYPT_ECC_CURVE_WTLS12 = "wtls12";
+	public const String BCRYPT_ECC_CURVE_X962P192V1 = "x962P192v1";
+	public const String BCRYPT_ECC_CURVE_X962P192V2 = "x962P192v2";
+	public const String BCRYPT_ECC_CURVE_X962P192V3 = "x962P192v3";
+	public const String BCRYPT_ECC_CURVE_X962P239V1 = "x962P239v1";
+	public const String BCRYPT_ECC_CURVE_X962P239V2 = "x962P239v2";
+	public const String BCRYPT_ECC_CURVE_X962P239V3 = "x962P239v3";
+	public const String BCRYPT_ECC_CURVE_X962P256V1 = "x962P256v1";
+	public const String MS_PRIMITIVE_PROVIDER = "Microsoft Primitive Provider";
+	public const String MS_PLATFORM_CRYPTO_PROVIDER = "Microsoft Platform Crypto Provider";
+	public const String BCRYPT_RSA_ALGORITHM = "RSA";
+	public const String BCRYPT_RSA_SIGN_ALGORITHM = "RSA_SIGN";
+	public const String BCRYPT_DH_ALGORITHM = "DH";
+	public const String BCRYPT_DSA_ALGORITHM = "DSA";
+	public const String BCRYPT_RC2_ALGORITHM = "RC2";
+	public const String BCRYPT_RC4_ALGORITHM = "RC4";
+	public const String BCRYPT_AES_ALGORITHM = "AES";
+	public const String BCRYPT_DES_ALGORITHM = "DES";
+	public const String BCRYPT_DESX_ALGORITHM = "DESX";
+	public const String BCRYPT_3DES_ALGORITHM = "3DES";
+	public const String BCRYPT_3DES_112_ALGORITHM = "3DES_112";
+	public const String BCRYPT_MD2_ALGORITHM = "MD2";
+	public const String BCRYPT_MD4_ALGORITHM = "MD4";
+	public const String BCRYPT_MD5_ALGORITHM = "MD5";
+	public const String BCRYPT_SHA1_ALGORITHM = "SHA1";
+	public const String BCRYPT_SHA256_ALGORITHM = "SHA256";
+	public const String BCRYPT_SHA384_ALGORITHM = "SHA384";
+	public const String BCRYPT_SHA512_ALGORITHM = "SHA512";
+	public const String BCRYPT_AES_GMAC_ALGORITHM = "AES-GMAC";
+	public const String BCRYPT_AES_CMAC_ALGORITHM = "AES-CMAC";
+	public const String BCRYPT_ECDSA_P256_ALGORITHM = "ECDSA_P256";
+	public const String BCRYPT_ECDSA_P384_ALGORITHM = "ECDSA_P384";
+	public const String BCRYPT_ECDSA_P521_ALGORITHM = "ECDSA_P521";
+	public const String BCRYPT_ECDH_P256_ALGORITHM = "ECDH_P256";
+	public const String BCRYPT_ECDH_P384_ALGORITHM = "ECDH_P384";
+	public const String BCRYPT_ECDH_P521_ALGORITHM = "ECDH_P521";
+	public const String BCRYPT_RNG_ALGORITHM = "RNG";
+	public const String BCRYPT_RNG_FIPS186_DSA_ALGORITHM = "FIPS186DSARNG";
+	public const String BCRYPT_RNG_DUAL_EC_ALGORITHM = "DUALECRNG";
+	public const String BCRYPT_SP800108_CTR_HMAC_ALGORITHM = "SP800_108_CTR_HMAC";
+	public const String BCRYPT_SP80056A_CONCAT_ALGORITHM = "SP800_56A_CONCAT";
+	public const String BCRYPT_PBKDF2_ALGORITHM = "PBKDF2";
+	public const String BCRYPT_CAPI_KDF_ALGORITHM = "CAPI_KDF";
+	public const String BCRYPT_TLS1_1_KDF_ALGORITHM = "TLS1_1_KDF";
+	public const String BCRYPT_TLS1_2_KDF_ALGORITHM = "TLS1_2_KDF";
+	public const String BCRYPT_ECDSA_ALGORITHM = "ECDSA";
+	public const String BCRYPT_ECDH_ALGORITHM = "ECDH";
+	public const String BCRYPT_XTS_AES_ALGORITHM = "XTS-AES";
+	public const String BCRYPT_HKDF_ALGORITHM = "HKDF";
+	public const String BCRYPT_CHACHA20_POLY1305_ALGORITHM = "CHACHA20_POLY1305";
 	public const uint32 BCRYPT_KEY_DERIVATION_INTERFACE = 7;
 	public const BCRYPT_ALG_HANDLE BCRYPT_MD2_ALG_HANDLE = 1;
 	public const BCRYPT_ALG_HANDLE BCRYPT_MD4_ALG_HANDLE = 17;
@@ -149,6 +310,35 @@ static
 	public const uint32 CRYPT_OVERWRITE = 1;
 	public const uint32 CRYPT_PRIORITY_TOP = 0;
 	public const uint32 CRYPT_PRIORITY_BOTTOM = 4294967295;
+	public const String CRYPT_DEFAULT_CONTEXT = "Default";
+	public const String wszXMLNS_DIGSIG = "http://www.w3.org/2000/09/xmldsig#";
+	public const String wszXMLNS_DIGSIG_SignatureProperties = "http://www.w3.org/2000/09/xmldsig#SignatureProperties";
+	public const String wszXMLNS_DIGSIG_Id = "Id";
+	public const String wszURI_XMLNS_DIGSIG_BASE64 = "http://www.w3.org/2000/09/xmldsig#base64";
+	public const String wszURI_XMLNS_DIGSIG_SHA1 = "http://www.w3.org/2000/09/xmldsig#sha1";
+	public const String wszURI_XMLNS_DIGSIG_SHA256 = "http://www.w3.org/2001/04/xmlenc#sha256";
+	public const String wszURI_XMLNS_DIGSIG_SHA384 = "http://www.w3.org/2001/04/xmldsig-more#sha384";
+	public const String wszURI_XMLNS_DIGSIG_SHA512 = "http://www.w3.org/2001/04/xmlenc#sha512";
+	public const String wszURI_XMLNS_DIGSIG_RSA_SHA1 = "http://www.w3.org/2000/09/xmldsig#rsa-sha1";
+	public const String wszURI_XMLNS_DIGSIG_DSA_SHA1 = "http://www.w3.org/2000/09/xmldsig#dsa-sha1";
+	public const String wszURI_XMLNS_DIGSIG_RSA_SHA256 = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256";
+	public const String wszURI_XMLNS_DIGSIG_RSA_SHA384 = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha384";
+	public const String wszURI_XMLNS_DIGSIG_RSA_SHA512 = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha512";
+	public const String wszURI_XMLNS_DIGSIG_ECDSA_SHA1 = "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha1";
+	public const String wszURI_XMLNS_DIGSIG_ECDSA_SHA256 = "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256";
+	public const String wszURI_XMLNS_DIGSIG_ECDSA_SHA384 = "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha384";
+	public const String wszURI_XMLNS_DIGSIG_ECDSA_SHA512 = "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha512";
+	public const String wszURI_XMLNS_DIGSIG_HMAC_SHA1 = "http://www.w3.org/2000/09/xmldsig#hmac-sha1";
+	public const String wszURI_XMLNS_DIGSIG_HMAC_SHA256 = "http://www.w3.org/2001/04/xmldsig-more#hmac-sha256";
+	public const String wszURI_XMLNS_DIGSIG_HMAC_SHA384 = "http://www.w3.org/2001/04/xmldsig-more#hmac-sha384";
+	public const String wszURI_XMLNS_DIGSIG_HMAC_SHA512 = "http://www.w3.org/2001/04/xmldsig-more#hmac-sha512";
+	public const String wszURI_CANONICALIZATION_C14N = "http://www.w3.org/TR/2001/REC-xml-c14n-20010315";
+	public const String wszURI_CANONICALIZATION_C14NC = "http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments";
+	public const String wszURI_CANONICALIZATION_EXSLUSIVE_C14N = "http://www.w3.org/2001/10/xml-exc-c14n#";
+	public const String wszURI_CANONICALIZATION_EXSLUSIVE_C14NC = "http://www.w3.org/2001/10/xml-exc-c14n#WithComments";
+	public const String wszURI_TRANSFORM_XPATH = "http://www.w3.org/TR/1999/REC-xpath-19991116";
+	public const String wszURI_XMLNS_TRANSFORM_BASE64 = "http://www.w3.org/2000/09/xmldsig#base64";
+	public const String wszURI_XMLNS_TRANSFORM_ENVELOPED = "http://www.w3.org/2000/09/xmldsig#enveloped-signature";
 	public const uint32 CRYPT_XML_BLOB_MAX = 2147483640;
 	public const uint32 CRYPT_XML_ID_MAX = 256;
 	public const uint32 CRYPT_XML_SIGNATURES_MAX = 16;
@@ -185,12 +375,14 @@ static
 	public const uint32 CRYPT_XML_FLAG_ADD_OBJECT_CREATE_COPY = 1;
 	public const uint32 CRYPT_XML_FLAG_CREATE_REFERENCE_AS_OBJECT = 1;
 	public const uint32 CRYPT_XML_DIGEST_REFERENCE_DATA_TRANSFORMED = 1;
-	public const uint32 CRYPT_XML_GROUP_ID_HASH = 1;
-	public const uint32 CRYPT_XML_GROUP_ID_SIGN = 2;
 	public const uint32 CRYPT_XML_ALGORITHM_INFO_FIND_BY_URI = 1;
 	public const uint32 CRYPT_XML_ALGORITHM_INFO_FIND_BY_NAME = 2;
 	public const uint32 CRYPT_XML_ALGORITHM_INFO_FIND_BY_CNG_ALGID = 3;
 	public const uint32 CRYPT_XML_ALGORITHM_INFO_FIND_BY_CNG_SIGN_ALGID = 4;
+	public const String szFORCE_KEY_PROTECTION = "ForceKeyProtection";
+	public const uint32 dwFORCE_KEY_PROTECTION_DISABLED = 0;
+	public const uint32 dwFORCE_KEY_PROTECTION_USER_SELECT = 1;
+	public const uint32 dwFORCE_KEY_PROTECTION_HIGH = 2;
 	public const uint32 CRYPTPROTECT_PROMPT_ON_UNPROTECT = 1;
 	public const uint32 CRYPTPROTECT_PROMPT_ON_PROTECT = 2;
 	public const uint32 CRYPTPROTECT_PROMPT_RESERVED = 4;
@@ -211,8 +403,53 @@ static
 	public const uint32 CRYPTPROTECTMEMORY_SAME_LOGON = 2;
 	public const uint32 NCRYPT_MAX_KEY_NAME_LENGTH = 512;
 	public const uint32 NCRYPT_MAX_ALG_ID_LENGTH = 512;
+	public const String MS_KEY_STORAGE_PROVIDER = "Microsoft Software Key Storage Provider";
+	public const String MS_SMART_CARD_KEY_STORAGE_PROVIDER = "Microsoft Smart Card Key Storage Provider";
+	public const String MS_PLATFORM_KEY_STORAGE_PROVIDER = "Microsoft Platform Crypto Provider";
+	public const String MS_NGC_KEY_STORAGE_PROVIDER = "Microsoft Passport Key Storage Provider";
+	public const String TPM_RSA_SRK_SEAL_KEY = "MICROSOFT_PCP_KSP_RSA_SEAL_KEY_3BD1C4BF-004E-4E2F-8A4D-0BF633DCB074";
+	public const String NCRYPT_RSA_ALGORITHM = "RSA";
+	public const String NCRYPT_RSA_SIGN_ALGORITHM = "RSA_SIGN";
+	public const String NCRYPT_DH_ALGORITHM = "DH";
+	public const String NCRYPT_DSA_ALGORITHM = "DSA";
+	public const String NCRYPT_MD2_ALGORITHM = "MD2";
+	public const String NCRYPT_MD4_ALGORITHM = "MD4";
+	public const String NCRYPT_MD5_ALGORITHM = "MD5";
+	public const String NCRYPT_SHA1_ALGORITHM = "SHA1";
+	public const String NCRYPT_SHA256_ALGORITHM = "SHA256";
+	public const String NCRYPT_SHA384_ALGORITHM = "SHA384";
+	public const String NCRYPT_SHA512_ALGORITHM = "SHA512";
+	public const String NCRYPT_ECDSA_P256_ALGORITHM = "ECDSA_P256";
+	public const String NCRYPT_ECDSA_P384_ALGORITHM = "ECDSA_P384";
+	public const String NCRYPT_ECDSA_P521_ALGORITHM = "ECDSA_P521";
+	public const String NCRYPT_ECDH_P256_ALGORITHM = "ECDH_P256";
+	public const String NCRYPT_ECDH_P384_ALGORITHM = "ECDH_P384";
+	public const String NCRYPT_ECDH_P521_ALGORITHM = "ECDH_P521";
+	public const String NCRYPT_AES_ALGORITHM = "AES";
+	public const String NCRYPT_RC2_ALGORITHM = "RC2";
+	public const String NCRYPT_3DES_ALGORITHM = "3DES";
+	public const String NCRYPT_DES_ALGORITHM = "DES";
+	public const String NCRYPT_DESX_ALGORITHM = "DESX";
+	public const String NCRYPT_3DES_112_ALGORITHM = "3DES_112";
+	public const String NCRYPT_SP800108_CTR_HMAC_ALGORITHM = "SP800_108_CTR_HMAC";
+	public const String NCRYPT_SP80056A_CONCAT_ALGORITHM = "SP800_56A_CONCAT";
+	public const String NCRYPT_PBKDF2_ALGORITHM = "PBKDF2";
+	public const String NCRYPT_CAPI_KDF_ALGORITHM = "CAPI_KDF";
+	public const String NCRYPT_ECDSA_ALGORITHM = "ECDSA";
+	public const String NCRYPT_ECDH_ALGORITHM = "ECDH";
+	public const String NCRYPT_KEY_STORAGE_ALGORITHM = "KEY_STORAGE";
+	public const String NCRYPT_HMAC_SHA256_ALGORITHM = "HMAC-SHA256";
 	public const uint32 NCRYPT_KEY_DERIVATION_INTERFACE = 7;
 	public const uint32 NCRYPT_KEY_PROTECTION_INTERFACE = 65540;
+	public const String NCRYPT_RSA_ALGORITHM_GROUP = "RSA";
+	public const String NCRYPT_DH_ALGORITHM_GROUP = "DH";
+	public const String NCRYPT_DSA_ALGORITHM_GROUP = "DSA";
+	public const String NCRYPT_ECDSA_ALGORITHM_GROUP = "ECDSA";
+	public const String NCRYPT_ECDH_ALGORITHM_GROUP = "ECDH";
+	public const String NCRYPT_AES_ALGORITHM_GROUP = "AES";
+	public const String NCRYPT_RC2_ALGORITHM_GROUP = "RC2";
+	public const String NCRYPT_DES_ALGORITHM_GROUP = "DES";
+	public const String NCRYPT_KEY_DERIVATION_GROUP = "KEY_DERIVATION";
 	public const uint32 NCRYPTBUFFER_VERSION = 0;
 	public const uint32 NCRYPTBUFFER_EMPTY = 0;
 	public const uint32 NCRYPTBUFFER_DATA = 1;
@@ -286,12 +523,111 @@ static
 	public const uint32 NCRYPT_USE_PER_BOOT_KEY_FLAG = 262144;
 	public const uint32 NCRYPT_KEY_DERIVATION_OPERATION = 64;
 	public const uint32 NCRYPT_AUTHORITY_KEY_FLAG = 256;
+	public const String NCRYPT_NAME_PROPERTY = "Name";
+	public const String NCRYPT_UNIQUE_NAME_PROPERTY = "Unique Name";
+	public const String NCRYPT_ALGORITHM_PROPERTY = "Algorithm Name";
+	public const String NCRYPT_LENGTH_PROPERTY = "Length";
+	public const String NCRYPT_LENGTHS_PROPERTY = "Lengths";
+	public const String NCRYPT_BLOCK_LENGTH_PROPERTY = "Block Length";
+	public const String NCRYPT_PUBLIC_LENGTH_PROPERTY = "PublicKeyLength";
+	public const String NCRYPT_SIGNATURE_LENGTH_PROPERTY = "SignatureLength";
+	public const String NCRYPT_CHAINING_MODE_PROPERTY = "Chaining Mode";
+	public const String NCRYPT_AUTH_TAG_LENGTH = "AuthTagLength";
+	public const String NCRYPT_UI_POLICY_PROPERTY = "UI Policy";
+	public const String NCRYPT_EXPORT_POLICY_PROPERTY = "Export Policy";
+	public const String NCRYPT_WINDOW_HANDLE_PROPERTY = "HWND Handle";
+	public const String NCRYPT_USE_CONTEXT_PROPERTY = "Use Context";
+	public const String NCRYPT_IMPL_TYPE_PROPERTY = "Impl Type";
+	public const String NCRYPT_KEY_USAGE_PROPERTY = "Key Usage";
+	public const String NCRYPT_KEY_TYPE_PROPERTY = "Key Type";
+	public const String NCRYPT_VERSION_PROPERTY = "Version";
+	public const String NCRYPT_SECURITY_DESCR_SUPPORT_PROPERTY = "Security Descr Support";
+	public const String NCRYPT_SECURITY_DESCR_PROPERTY = "Security Descr";
+	public const String NCRYPT_USE_COUNT_ENABLED_PROPERTY = "Enabled Use Count";
+	public const String NCRYPT_USE_COUNT_PROPERTY = "Use Count";
+	public const String NCRYPT_LAST_MODIFIED_PROPERTY = "Modified";
+	public const String NCRYPT_MAX_NAME_LENGTH_PROPERTY = "Max Name Length";
+	public const String NCRYPT_ALGORITHM_GROUP_PROPERTY = "Algorithm Group";
+	public const String NCRYPT_DH_PARAMETERS_PROPERTY = "DHParameters";
+	public const String NCRYPT_ECC_PARAMETERS_PROPERTY = "ECCParameters";
+	public const String NCRYPT_ECC_CURVE_NAME_PROPERTY = "ECCCurveName";
+	public const String NCRYPT_ECC_CURVE_NAME_LIST_PROPERTY = "ECCCurveNameList";
+	public const String NCRYPT_USE_VIRTUAL_ISOLATION_PROPERTY = "Virtual Iso";
+	public const String NCRYPT_USE_PER_BOOT_KEY_PROPERTY = "Per Boot Key";
+	public const String NCRYPT_PROVIDER_HANDLE_PROPERTY = "Provider Handle";
+	public const String NCRYPT_PIN_PROPERTY = "SmartCardPin";
+	public const String NCRYPT_READER_PROPERTY = "SmartCardReader";
+	public const String NCRYPT_SMARTCARD_GUID_PROPERTY = "SmartCardGuid";
+	public const String NCRYPT_CERTIFICATE_PROPERTY = "SmartCardKeyCertificate";
+	public const String NCRYPT_PIN_PROMPT_PROPERTY = "SmartCardPinPrompt";
+	public const String NCRYPT_USER_CERTSTORE_PROPERTY = "SmartCardUserCertStore";
+	public const String NCRYPT_ROOT_CERTSTORE_PROPERTY = "SmartcardRootCertStore";
+	public const String NCRYPT_SECURE_PIN_PROPERTY = "SmartCardSecurePin";
+	public const String NCRYPT_ASSOCIATED_ECDH_KEY = "SmartCardAssociatedECDHKey";
+	public const String NCRYPT_SCARD_PIN_ID = "SmartCardPinId";
+	public const String NCRYPT_SCARD_PIN_INFO = "SmartCardPinInfo";
+	public const String NCRYPT_READER_ICON_PROPERTY = "SmartCardReaderIcon";
+	public const String NCRYPT_KDF_SECRET_VALUE = "KDFKeySecret";
+	public const String NCRYPT_DISMISS_UI_TIMEOUT_SEC_PROPERTY = "SmartCardDismissUITimeoutSeconds";
+	public const String NCRYPT_PCP_PLATFORM_TYPE_PROPERTY = "PCP_PLATFORM_TYPE";
+	public const String NCRYPT_PCP_PROVIDER_VERSION_PROPERTY = "PCP_PROVIDER_VERSION";
+	public const String NCRYPT_PCP_EKPUB_PROPERTY = "PCP_EKPUB";
+	public const String NCRYPT_PCP_EKCERT_PROPERTY = "PCP_EKCERT";
+	public const String NCRYPT_PCP_EKNVCERT_PROPERTY = "PCP_EKNVCERT";
+	public const String NCRYPT_PCP_RSA_EKPUB_PROPERTY = "PCP_RSA_EKPUB";
+	public const String NCRYPT_PCP_RSA_EKCERT_PROPERTY = "PCP_RSA_EKCERT";
+	public const String NCRYPT_PCP_RSA_EKNVCERT_PROPERTY = "PCP_RSA_EKNVCERT";
+	public const String NCRYPT_PCP_ECC_EKPUB_PROPERTY = "PCP_ECC_EKPUB";
+	public const String NCRYPT_PCP_ECC_EKCERT_PROPERTY = "PCP_ECC_EKCERT";
+	public const String NCRYPT_PCP_ECC_EKNVCERT_PROPERTY = "PCP_ECC_EKNVCERT";
+	public const String NCRYPT_PCP_SRKPUB_PROPERTY = "PCP_SRKPUB";
+	public const String NCRYPT_PCP_PCRTABLE_PROPERTY = "PCP_PCRTABLE";
+	public const String NCRYPT_PCP_CHANGEPASSWORD_PROPERTY = "PCP_CHANGEPASSWORD";
+	public const String NCRYPT_PCP_PASSWORD_REQUIRED_PROPERTY = "PCP_PASSWORD_REQUIRED";
+	public const String NCRYPT_PCP_USAGEAUTH_PROPERTY = "PCP_USAGEAUTH";
+	public const String NCRYPT_PCP_MIGRATIONPASSWORD_PROPERTY = "PCP_MIGRATIONPASSWORD";
+	public const String NCRYPT_PCP_EXPORT_ALLOWED_PROPERTY = "PCP_EXPORT_ALLOWED";
+	public const String NCRYPT_PCP_STORAGEPARENT_PROPERTY = "PCP_STORAGEPARENT";
+	public const String NCRYPT_PCP_PROVIDERHANDLE_PROPERTY = "PCP_PROVIDERMHANDLE";
+	public const String NCRYPT_PCP_PLATFORMHANDLE_PROPERTY = "PCP_PLATFORMHANDLE";
+	public const String NCRYPT_PCP_PLATFORM_BINDING_PCRMASK_PROPERTY = "PCP_PLATFORM_BINDING_PCRMASK";
+	public const String NCRYPT_PCP_PLATFORM_BINDING_PCRDIGESTLIST_PROPERTY = "PCP_PLATFORM_BINDING_PCRDIGESTLIST";
+	public const String NCRYPT_PCP_PLATFORM_BINDING_PCRDIGEST_PROPERTY = "PCP_PLATFORM_BINDING_PCRDIGEST";
+	public const String NCRYPT_PCP_KEY_USAGE_POLICY_PROPERTY = "PCP_KEY_USAGE_POLICY";
+	public const String NCRYPT_PCP_RSA_SCHEME_PROPERTY = "PCP_RSA_SCHEME";
+	public const String NCRYPT_PCP_TPM12_IDBINDING_PROPERTY = "PCP_TPM12_IDBINDING";
+	public const String NCRYPT_PCP_TPM12_IDBINDING_DYNAMIC_PROPERTY = "PCP_TPM12_IDBINDING_DYNAMIC";
+	public const String NCRYPT_PCP_TPM12_IDACTIVATION_PROPERTY = "PCP_TPM12_IDACTIVATION";
+	public const String NCRYPT_PCP_KEYATTESTATION_PROPERTY = "PCP_TPM12_KEYATTESTATION";
+	public const String NCRYPT_PCP_ALTERNATE_KEY_STORAGE_LOCATION_PROPERTY = "PCP_ALTERNATE_KEY_STORAGE_LOCATION";
+	public const String NCRYPT_PCP_PLATFORM_BINDING_PCRALGID_PROPERTY = "PCP_PLATFORM_BINDING_PCRALGID";
+	public const String NCRYPT_PCP_HMAC_AUTH_POLICYREF = "PCP_HMAC_AUTH_POLICYREF";
+	public const String NCRYPT_PCP_HMAC_AUTH_POLICYINFO = "PCP_HMAC_AUTH_POLICYINFO";
+	public const String NCRYPT_PCP_HMAC_AUTH_NONCE = "PCP_HMAC_AUTH_NONCE";
+	public const String NCRYPT_PCP_HMAC_AUTH_SIGNATURE = "PCP_HMAC_AUTH_SIGNATURE";
+	public const String NCRYPT_PCP_HMAC_AUTH_TICKET = "PCP_HMAC_AUTH_TICKET";
+	public const String NCRYPT_PCP_NO_DA_PROTECTION_PROPERTY = "PCP_NO_DA_PROTECTION";
+	public const String NCRYPT_PCP_TPM_MANUFACTURER_ID_PROPERTY = "PCP_TPM_MANUFACTURER_ID";
+	public const String NCRYPT_PCP_TPM_FW_VERSION_PROPERTY = "PCP_TPM_FW_VERSION";
+	public const String NCRYPT_PCP_TPM2BNAME_PROPERTY = "PCP_TPM2BNAME";
+	public const String NCRYPT_PCP_TPM_VERSION_PROPERTY = "PCP_TPM_VERSION";
+	public const String NCRYPT_PCP_RAW_POLICYDIGEST_PROPERTY = "PCP_RAW_POLICYDIGEST";
+	public const String NCRYPT_PCP_KEY_CREATIONHASH_PROPERTY = "PCP_KEY_CREATIONHASH";
+	public const String NCRYPT_PCP_KEY_CREATIONTICKET_PROPERTY = "PCP_KEY_CREATIONTICKET";
+	public const String NCRYPT_PCP_RSA_SCHEME_HASH_ALG_PROPERTY = "PCP_RSA_SCHEME_HASH_ALG";
+	public const String NCRYPT_PCP_TPM_IFX_RSA_KEYGEN_PROHIBITED_PROPERTY = "PCP_TPM_IFX_RSA_KEYGEN_PROHIBITED";
+	public const String NCRYPT_PCP_TPM_IFX_RSA_KEYGEN_VULNERABILITY_PROPERTY = "PCP_TPM_IFX_RSA_KEYGEN_VULNERABILITY";
 	public const uint32 IFX_RSA_KEYGEN_VUL_NOT_AFFECTED = 0;
 	public const uint32 IFX_RSA_KEYGEN_VUL_AFFECTED_LEVEL_1 = 1;
 	public const uint32 IFX_RSA_KEYGEN_VUL_AFFECTED_LEVEL_2 = 2;
+	public const String NCRYPT_PCP_SESSIONID_PROPERTY = "PCP_SESSIONID";
+	public const String NCRYPT_PCP_PSS_SALT_SIZE_PROPERTY = "PSS Salt Size";
 	public const uint32 NCRYPT_TPM_PSS_SALT_SIZE_UNKNOWN = 0;
 	public const uint32 NCRYPT_TPM_PSS_SALT_SIZE_MAXIMUM = 1;
 	public const uint32 NCRYPT_TPM_PSS_SALT_SIZE_HASHSIZE = 2;
+	public const String NCRYPT_PCP_INTERMEDIATE_CA_EKCERT_PROPERTY = "PCP_INTERMEDIATE_CA_EKCERT";
+	public const String NCRYPT_PCP_PCRTABLE_ALGORITHM_PROPERTY = "PCP_PCRTABLE_ALGORITHM";
+	public const String NCRYPT_PCP_SYMMETRIC_KEYBITS_PROPERTY = "PCP_SYMMETRIC_KEYBITS";
 	public const uint32 NCRYPT_TPM_PAD_PSS_IGNORE_SALT = 32;
 	public const uint32 NCRYPT_TPM12_PROVIDER = 65536;
 	public const uint32 NCRYPT_PCP_SIGNATURE_KEY = 1;
@@ -299,6 +635,11 @@ static
 	public const uint32 NCRYPT_PCP_STORAGE_KEY = 4;
 	public const uint32 NCRYPT_PCP_IDENTITY_KEY = 8;
 	public const uint32 NCRYPT_PCP_HMACVERIFICATION_KEY = 16;
+	public const String NCRYPT_SCARD_NGC_KEY_NAME = "SmartCardNgcKeyName";
+	public const String NCRYPT_INITIALIZATION_VECTOR = "IV";
+	public const String NCRYPT_CHANGEPASSWORD_PROPERTY = "PCP_CHANGEPASSWORD";
+	public const String NCRYPT_ALTERNATE_KEY_STORAGE_LOCATION_PROPERTY = "PCP_ALTERNATE_KEY_STORAGE_LOCATION";
+	public const String NCRYPT_KEY_ACCESS_POLICY_PROPERTY = "Key Access Policy";
 	public const uint32 NCRYPT_MAX_PROPERTY_NAME = 64;
 	public const uint32 NCRYPT_MAX_PROPERTY_DATA = 1048576;
 	public const uint32 NCRYPT_ALLOW_EXPORT_FLAG = 1;
@@ -319,16 +660,47 @@ static
 	public const uint32 NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG = 2;
 	public const uint32 NCRYPT_UI_FINGERPRINT_PROTECTION_FLAG = 4;
 	public const uint32 NCRYPT_UI_APPCONTAINER_ACCESS_MEDIUM_FLAG = 8;
+	public const String NCRYPT_PIN_CACHE_FREE_APPLICATION_TICKET_PROPERTY = "PinCacheFreeApplicationTicket";
+	public const String NCRYPT_PIN_CACHE_FLAGS_PROPERTY = "PinCacheFlags";
 	public const uint32 NCRYPT_PIN_CACHE_DISABLE_DPL_FLAG = 1;
+	public const String NCRYPT_PIN_CACHE_APPLICATION_TICKET_PROPERTY = "PinCacheApplicationTicket";
+	public const String NCRYPT_PIN_CACHE_APPLICATION_IMAGE_PROPERTY = "PinCacheApplicationImage";
+	public const String NCRYPT_PIN_CACHE_APPLICATION_STATUS_PROPERTY = "PinCacheApplicationStatus";
+	public const String NCRYPT_PIN_CACHE_PIN_PROPERTY = "PinCachePin";
+	public const String NCRYPT_PIN_CACHE_IS_GESTURE_REQUIRED_PROPERTY = "PinCacheIsGestureRequired";
 	public const uint32 NCRYPT_PIN_CACHE_REQUIRE_GESTURE_FLAG = 1;
 	public const uint32 NCRYPT_PIN_CACHE_APPLICATION_TICKET_BYTE_LENGTH = 90;
+	public const String NCRYPT_PIN_CACHE_CLEAR_PROPERTY = "PinCacheClear";
 	public const uint32 NCRYPT_PIN_CACHE_CLEAR_FOR_CALLING_PROCESS_OPTION = 1;
 	public const uint32 NCRYPT_KEY_ACCESS_POLICY_VERSION = 1;
 	public const uint32 NCRYPT_ALLOW_SILENT_KEY_ACCESS = 1;
 	public const uint32 NCRYPT_CIPHER_KEY_BLOB_MAGIC = 1380470851;
 	public const uint32 NCRYPT_KDF_KEY_BLOB_MAGIC = 826688587;
 	public const uint32 NCRYPT_PROTECTED_KEY_BLOB_MAGIC = 1263817296;
+	public const String NCRYPT_CIPHER_KEY_BLOB = "CipherKeyBlob";
+	public const String NCRYPT_KDF_KEY_BLOB = "KDFKeyBlob";
+	public const String NCRYPT_PROTECTED_KEY_BLOB = "ProtectedKeyBlob";
+	public const String NCRYPT_TPM_LOADABLE_KEY_BLOB = "PcpTpmProtectedKeyBlob";
 	public const uint32 NCRYPT_TPM_LOADABLE_KEY_BLOB_MAGIC = 1297371211;
+	public const String NCRYPT_PKCS7_ENVELOPE_BLOB = "PKCS7_ENVELOPE";
+	public const String NCRYPT_PKCS8_PRIVATE_KEY_BLOB = "PKCS8_PRIVATEKEY";
+	public const String NCRYPT_OPAQUETRANSPORT_BLOB = "OpaqueTransport";
+	public const String NCRYPT_ISOLATED_KEY_ENVELOPE_BLOB = "ISOLATED_KEY_ENVELOPE";
+	public const String NCRYPT_DESCR_DELIMITER_OR = "OR";
+	public const String NCRYPT_DESCR_DELIMITER_AND = "AND";
+	public const String NCRYPT_DESCR_EQUAL = "=";
+	public const String MS_KEY_PROTECTION_PROVIDER = "Microsoft Key Protection Provider";
+	public const String NCRYPT_KEY_PROTECTION_ALGORITHM_SID = "SID";
+	public const String NCRYPT_KEY_PROTECTION_ALGORITHM_LOCAL = "LOCAL";
+	public const String NCRYPT_KEY_PROTECTION_LOCAL_LOGON = "logon";
+	public const String NCRYPT_KEY_PROTECTION_LOCAL_USER = "user";
+	public const String NCRYPT_KEY_PROTECTION_LOCAL_MACHINE = "machine";
+	public const String NCRYPT_KEY_PROTECTION_ALGORITHM_SDDL = "SDDL";
+	public const String NCRYPT_KEY_PROTECTION_ALGORITHM_WEBCREDENTIALS = "WEBCREDENTIALS";
+	public const String NCRYPT_KEY_PROTECTION_ALGORITHM_LOCKEDCREDENTIALS = "LOCKEDCREDENTIALS";
+	public const String NCRYPT_KEY_PROTECTION_ALGORITHM_CERTIFICATE = "CERTIFICATE";
+	public const String NCRYPT_KEY_PROTECTION_CERT_HASHID = "HashId";
+	public const String NCRYPT_KEY_PROTECTION_CERT_CERTBLOB = "CertBlob";
 	public const uint32 NCRYPT_NAMED_DESCRIPTOR_FLAG = 1;
 	public const uint32 NCRYPT_PROTECTION_INFO_TYPE_DESCRIPTOR_STRING = 1;
 	public const uint32 ALG_CLASS_ANY = 0;
@@ -573,11 +945,300 @@ static
 	public const uint32 PROV_STT_BRND = 9;
 	public const uint32 PROV_STT_ROOT = 10;
 	public const uint32 PROV_STT_ISS = 11;
+	public const String MS_DEF_PROV_A = "Microsoft Base Cryptographic Provider v1.0";
+	public const String MS_DEF_PROV_W = "Microsoft Base Cryptographic Provider v1.0";
+	public const String MS_DEF_PROV = "Microsoft Base Cryptographic Provider v1.0";
+	public const String MS_ENHANCED_PROV_A = "Microsoft Enhanced Cryptographic Provider v1.0";
+	public const String MS_ENHANCED_PROV_W = "Microsoft Enhanced Cryptographic Provider v1.0";
+	public const String MS_ENHANCED_PROV = "Microsoft Enhanced Cryptographic Provider v1.0";
+	public const String MS_STRONG_PROV_A = "Microsoft Strong Cryptographic Provider";
+	public const String MS_STRONG_PROV_W = "Microsoft Strong Cryptographic Provider";
+	public const String MS_STRONG_PROV = "Microsoft Strong Cryptographic Provider";
+	public const String MS_DEF_RSA_SIG_PROV_A = "Microsoft RSA Signature Cryptographic Provider";
+	public const String MS_DEF_RSA_SIG_PROV_W = "Microsoft RSA Signature Cryptographic Provider";
+	public const String MS_DEF_RSA_SIG_PROV = "Microsoft RSA Signature Cryptographic Provider";
+	public const String MS_DEF_RSA_SCHANNEL_PROV_A = "Microsoft RSA SChannel Cryptographic Provider";
+	public const String MS_DEF_RSA_SCHANNEL_PROV_W = "Microsoft RSA SChannel Cryptographic Provider";
+	public const String MS_DEF_RSA_SCHANNEL_PROV = "Microsoft RSA SChannel Cryptographic Provider";
+	public const String MS_DEF_DSS_PROV_A = "Microsoft Base DSS Cryptographic Provider";
+	public const String MS_DEF_DSS_PROV_W = "Microsoft Base DSS Cryptographic Provider";
+	public const String MS_DEF_DSS_PROV = "Microsoft Base DSS Cryptographic Provider";
+	public const String MS_DEF_DSS_DH_PROV_A = "Microsoft Base DSS and Diffie-Hellman Cryptographic Provider";
+	public const String MS_DEF_DSS_DH_PROV_W = "Microsoft Base DSS and Diffie-Hellman Cryptographic Provider";
+	public const String MS_DEF_DSS_DH_PROV = "Microsoft Base DSS and Diffie-Hellman Cryptographic Provider";
+	public const String MS_ENH_DSS_DH_PROV_A = "Microsoft Enhanced DSS and Diffie-Hellman Cryptographic Provider";
+	public const String MS_ENH_DSS_DH_PROV_W = "Microsoft Enhanced DSS and Diffie-Hellman Cryptographic Provider";
+	public const String MS_ENH_DSS_DH_PROV = "Microsoft Enhanced DSS and Diffie-Hellman Cryptographic Provider";
+	public const String MS_DEF_DH_SCHANNEL_PROV_A = "Microsoft DH SChannel Cryptographic Provider";
+	public const String MS_DEF_DH_SCHANNEL_PROV_W = "Microsoft DH SChannel Cryptographic Provider";
+	public const String MS_DEF_DH_SCHANNEL_PROV = "Microsoft DH SChannel Cryptographic Provider";
+	public const String MS_SCARD_PROV_A = "Microsoft Base Smart Card Crypto Provider";
+	public const String MS_SCARD_PROV_W = "Microsoft Base Smart Card Crypto Provider";
+	public const String MS_SCARD_PROV = "Microsoft Base Smart Card Crypto Provider";
+	public const String MS_ENH_RSA_AES_PROV_A = "Microsoft Enhanced RSA and AES Cryptographic Provider";
+	public const String MS_ENH_RSA_AES_PROV_W = "Microsoft Enhanced RSA and AES Cryptographic Provider";
+	public const String MS_ENH_RSA_AES_PROV_XP_A = "Microsoft Enhanced RSA and AES Cryptographic Provider (Prototype)";
+	public const String MS_ENH_RSA_AES_PROV_XP_W = "Microsoft Enhanced RSA and AES Cryptographic Provider (Prototype)";
+	public const String MS_ENH_RSA_AES_PROV_XP = "Microsoft Enhanced RSA and AES Cryptographic Provider (Prototype)";
+	public const String MS_ENH_RSA_AES_PROV = "Microsoft Enhanced RSA and AES Cryptographic Provider";
 	public const uint32 MAXUIDLEN = 64;
+	public const String EXPO_OFFLOAD_REG_VALUE = "ExpoOffload";
+	public const String EXPO_OFFLOAD_FUNC_NAME = "OffloadModExpo";
+	public const String szKEY_CRYPTOAPI_PRIVATE_KEY_OPTIONS = "Software\\Policies\\Microsoft\\Cryptography";
+	public const String szKEY_CACHE_ENABLED = "CachePrivateKeys";
+	public const String szKEY_CACHE_SECONDS = "PrivateKeyLifetimeSeconds";
+	public const String szPRIV_KEY_CACHE_MAX_ITEMS = "PrivKeyCacheMaxItems";
+	public const uint32 cPRIV_KEY_CACHE_MAX_ITEMS_DEFAULT = 20;
+	public const String szPRIV_KEY_CACHE_PURGE_INTERVAL_SECONDS = "PrivKeyCachePurgeIntervalSeconds";
+	public const uint32 cPRIV_KEY_CACHE_PURGE_INTERVAL_SECONDS_DEFAULT = 86400;
 	public const uint32 CUR_BLOB_VERSION = 2;
 	public const uint32 SCHANNEL_MAC_KEY = 0;
 	public const uint32 SCHANNEL_ENC_KEY = 1;
 	public const uint32 INTERNATIONAL_USAGE = 1;
+	public const String szOID_RSA = "1.2.840.113549";
+	public const String szOID_PKCS = "1.2.840.113549.1";
+	public const String szOID_RSA_HASH = "1.2.840.113549.2";
+	public const String szOID_RSA_ENCRYPT = "1.2.840.113549.3";
+	public const String szOID_PKCS_1 = "1.2.840.113549.1.1";
+	public const String szOID_PKCS_2 = "1.2.840.113549.1.2";
+	public const String szOID_PKCS_3 = "1.2.840.113549.1.3";
+	public const String szOID_PKCS_4 = "1.2.840.113549.1.4";
+	public const String szOID_PKCS_5 = "1.2.840.113549.1.5";
+	public const String szOID_PKCS_6 = "1.2.840.113549.1.6";
+	public const String szOID_PKCS_7 = "1.2.840.113549.1.7";
+	public const String szOID_PKCS_8 = "1.2.840.113549.1.8";
+	public const String szOID_PKCS_9 = "1.2.840.113549.1.9";
+	public const String szOID_PKCS_10 = "1.2.840.113549.1.10";
+	public const String szOID_PKCS_12 = "1.2.840.113549.1.12";
+	public const String szOID_RSA_RSA = "1.2.840.113549.1.1.1";
+	public const String szOID_RSA_MD2RSA = "1.2.840.113549.1.1.2";
+	public const String szOID_RSA_MD4RSA = "1.2.840.113549.1.1.3";
+	public const String szOID_RSA_MD5RSA = "1.2.840.113549.1.1.4";
+	public const String szOID_RSA_SHA1RSA = "1.2.840.113549.1.1.5";
+	public const String szOID_RSA_SETOAEP_RSA = "1.2.840.113549.1.1.6";
+	public const String szOID_RSAES_OAEP = "1.2.840.113549.1.1.7";
+	public const String szOID_RSA_MGF1 = "1.2.840.113549.1.1.8";
+	public const String szOID_RSA_PSPECIFIED = "1.2.840.113549.1.1.9";
+	public const String szOID_RSA_SSA_PSS = "1.2.840.113549.1.1.10";
+	public const String szOID_RSA_SHA256RSA = "1.2.840.113549.1.1.11";
+	public const String szOID_RSA_SHA384RSA = "1.2.840.113549.1.1.12";
+	public const String szOID_RSA_SHA512RSA = "1.2.840.113549.1.1.13";
+	public const String szOID_RSA_DH = "1.2.840.113549.1.3.1";
+	public const String szOID_RSA_data = "1.2.840.113549.1.7.1";
+	public const String szOID_RSA_signedData = "1.2.840.113549.1.7.2";
+	public const String szOID_RSA_envelopedData = "1.2.840.113549.1.7.3";
+	public const String szOID_RSA_signEnvData = "1.2.840.113549.1.7.4";
+	public const String szOID_RSA_digestedData = "1.2.840.113549.1.7.5";
+	public const String szOID_RSA_hashedData = "1.2.840.113549.1.7.5";
+	public const String szOID_RSA_encryptedData = "1.2.840.113549.1.7.6";
+	public const String szOID_RSA_emailAddr = "1.2.840.113549.1.9.1";
+	public const String szOID_RSA_unstructName = "1.2.840.113549.1.9.2";
+	public const String szOID_RSA_contentType = "1.2.840.113549.1.9.3";
+	public const String szOID_RSA_messageDigest = "1.2.840.113549.1.9.4";
+	public const String szOID_RSA_signingTime = "1.2.840.113549.1.9.5";
+	public const String szOID_RSA_counterSign = "1.2.840.113549.1.9.6";
+	public const String szOID_RSA_challengePwd = "1.2.840.113549.1.9.7";
+	public const String szOID_RSA_unstructAddr = "1.2.840.113549.1.9.8";
+	public const String szOID_RSA_extCertAttrs = "1.2.840.113549.1.9.9";
+	public const String szOID_RSA_certExtensions = "1.2.840.113549.1.9.14";
+	public const String szOID_RSA_SMIMECapabilities = "1.2.840.113549.1.9.15";
+	public const String szOID_RSA_preferSignedData = "1.2.840.113549.1.9.15.1";
+	public const String szOID_TIMESTAMP_TOKEN = "1.2.840.113549.1.9.16.1.4";
+	public const String szOID_RFC3161_counterSign = "1.3.6.1.4.1.311.3.3.1";
+	public const String szOID_RSA_SMIMEalg = "1.2.840.113549.1.9.16.3";
+	public const String szOID_RSA_SMIMEalgESDH = "1.2.840.113549.1.9.16.3.5";
+	public const String szOID_RSA_SMIMEalgCMS3DESwrap = "1.2.840.113549.1.9.16.3.6";
+	public const String szOID_RSA_SMIMEalgCMSRC2wrap = "1.2.840.113549.1.9.16.3.7";
+	public const String szOID_RSA_MD2 = "1.2.840.113549.2.2";
+	public const String szOID_RSA_MD4 = "1.2.840.113549.2.4";
+	public const String szOID_RSA_MD5 = "1.2.840.113549.2.5";
+	public const String szOID_RSA_RC2CBC = "1.2.840.113549.3.2";
+	public const String szOID_RSA_RC4 = "1.2.840.113549.3.4";
+	public const String szOID_RSA_DES_EDE3_CBC = "1.2.840.113549.3.7";
+	public const String szOID_RSA_RC5_CBCPad = "1.2.840.113549.3.9";
+	public const String szOID_ANSI_X942 = "1.2.840.10046";
+	public const String szOID_ANSI_X942_DH = "1.2.840.10046.2.1";
+	public const String szOID_X957 = "1.2.840.10040";
+	public const String szOID_X957_DSA = "1.2.840.10040.4.1";
+	public const String szOID_X957_SHA1DSA = "1.2.840.10040.4.3";
+	public const String szOID_ECC_PUBLIC_KEY = "1.2.840.10045.2.1";
+	public const String szOID_ECC_CURVE_P256 = "1.2.840.10045.3.1.7";
+	public const String szOID_ECC_CURVE_P384 = "1.3.132.0.34";
+	public const String szOID_ECC_CURVE_P521 = "1.3.132.0.35";
+	public const String szOID_ECC_CURVE_BRAINPOOLP160R1 = "1.3.36.3.3.2.8.1.1.1";
+	public const String szOID_ECC_CURVE_BRAINPOOLP160T1 = "1.3.36.3.3.2.8.1.1.2";
+	public const String szOID_ECC_CURVE_BRAINPOOLP192R1 = "1.3.36.3.3.2.8.1.1.3";
+	public const String szOID_ECC_CURVE_BRAINPOOLP192T1 = "1.3.36.3.3.2.8.1.1.4";
+	public const String szOID_ECC_CURVE_BRAINPOOLP224R1 = "1.3.36.3.3.2.8.1.1.5";
+	public const String szOID_ECC_CURVE_BRAINPOOLP224T1 = "1.3.36.3.3.2.8.1.1.6";
+	public const String szOID_ECC_CURVE_BRAINPOOLP256R1 = "1.3.36.3.3.2.8.1.1.7";
+	public const String szOID_ECC_CURVE_BRAINPOOLP256T1 = "1.3.36.3.3.2.8.1.1.8";
+	public const String szOID_ECC_CURVE_BRAINPOOLP320R1 = "1.3.36.3.3.2.8.1.1.9";
+	public const String szOID_ECC_CURVE_BRAINPOOLP320T1 = "1.3.36.3.3.2.8.1.1.10";
+	public const String szOID_ECC_CURVE_BRAINPOOLP384R1 = "1.3.36.3.3.2.8.1.1.11";
+	public const String szOID_ECC_CURVE_BRAINPOOLP384T1 = "1.3.36.3.3.2.8.1.1.12";
+	public const String szOID_ECC_CURVE_BRAINPOOLP512R1 = "1.3.36.3.3.2.8.1.1.13";
+	public const String szOID_ECC_CURVE_BRAINPOOLP512T1 = "1.3.36.3.3.2.8.1.1.14";
+	public const String szOID_ECC_CURVE_EC192WAPI = "1.2.156.11235.1.1.2.1";
+	public const String szOID_CN_ECDSA_SHA256 = "1.2.156.11235.1.1.1";
+	public const String szOID_ECC_CURVE_NISTP192 = "1.2.840.10045.3.1.1";
+	public const String szOID_ECC_CURVE_NISTP224 = "1.3.132.0.33";
+	public const String szOID_ECC_CURVE_NISTP256 = "1.2.840.10045.3.1.7";
+	public const String szOID_ECC_CURVE_NISTP384 = "1.3.132.0.34";
+	public const String szOID_ECC_CURVE_NISTP521 = "1.3.132.0.35";
+	public const String szOID_ECC_CURVE_SECP160K1 = "1.3.132.0.9";
+	public const String szOID_ECC_CURVE_SECP160R1 = "1.3.132.0.8";
+	public const String szOID_ECC_CURVE_SECP160R2 = "1.3.132.0.30";
+	public const String szOID_ECC_CURVE_SECP192K1 = "1.3.132.0.31";
+	public const String szOID_ECC_CURVE_SECP192R1 = "1.2.840.10045.3.1.1";
+	public const String szOID_ECC_CURVE_SECP224K1 = "1.3.132.0.32";
+	public const String szOID_ECC_CURVE_SECP224R1 = "1.3.132.0.33";
+	public const String szOID_ECC_CURVE_SECP256K1 = "1.3.132.0.10";
+	public const String szOID_ECC_CURVE_SECP256R1 = "1.2.840.10045.3.1.7";
+	public const String szOID_ECC_CURVE_SECP384R1 = "1.3.132.0.34";
+	public const String szOID_ECC_CURVE_SECP521R1 = "1.3.132.0.35";
+	public const String szOID_ECC_CURVE_WTLS7 = "1.3.132.0.30";
+	public const String szOID_ECC_CURVE_WTLS9 = "2.23.43.1.4.9";
+	public const String szOID_ECC_CURVE_WTLS12 = "1.3.132.0.33";
+	public const String szOID_ECC_CURVE_X962P192V1 = "1.2.840.10045.3.1.1";
+	public const String szOID_ECC_CURVE_X962P192V2 = "1.2.840.10045.3.1.2";
+	public const String szOID_ECC_CURVE_X962P192V3 = "1.2.840.10045.3.1.3";
+	public const String szOID_ECC_CURVE_X962P239V1 = "1.2.840.10045.3.1.4";
+	public const String szOID_ECC_CURVE_X962P239V2 = "1.2.840.10045.3.1.5";
+	public const String szOID_ECC_CURVE_X962P239V3 = "1.2.840.10045.3.1.6";
+	public const String szOID_ECC_CURVE_X962P256V1 = "1.2.840.10045.3.1.7";
+	public const String szOID_ECDSA_SHA1 = "1.2.840.10045.4.1";
+	public const String szOID_ECDSA_SPECIFIED = "1.2.840.10045.4.3";
+	public const String szOID_ECDSA_SHA256 = "1.2.840.10045.4.3.2";
+	public const String szOID_ECDSA_SHA384 = "1.2.840.10045.4.3.3";
+	public const String szOID_ECDSA_SHA512 = "1.2.840.10045.4.3.4";
+	public const String szOID_NIST_AES128_CBC = "2.16.840.1.101.3.4.1.2";
+	public const String szOID_NIST_AES192_CBC = "2.16.840.1.101.3.4.1.22";
+	public const String szOID_NIST_AES256_CBC = "2.16.840.1.101.3.4.1.42";
+	public const String szOID_NIST_AES128_WRAP = "2.16.840.1.101.3.4.1.5";
+	public const String szOID_NIST_AES192_WRAP = "2.16.840.1.101.3.4.1.25";
+	public const String szOID_NIST_AES256_WRAP = "2.16.840.1.101.3.4.1.45";
+	public const String szOID_DH_SINGLE_PASS_STDDH_SHA1_KDF = "1.3.133.16.840.63.0.2";
+	public const String szOID_DH_SINGLE_PASS_STDDH_SHA256_KDF = "1.3.132.1.11.1";
+	public const String szOID_DH_SINGLE_PASS_STDDH_SHA384_KDF = "1.3.132.1.11.2";
+	public const String szOID_DS = "2.5";
+	public const String szOID_DSALG = "2.5.8";
+	public const String szOID_DSALG_CRPT = "2.5.8.1";
+	public const String szOID_DSALG_HASH = "2.5.8.2";
+	public const String szOID_DSALG_SIGN = "2.5.8.3";
+	public const String szOID_DSALG_RSA = "2.5.8.1.1";
+	public const String szOID_OIW = "1.3.14";
+	public const String szOID_OIWSEC = "1.3.14.3.2";
+	public const String szOID_OIWSEC_md4RSA = "1.3.14.3.2.2";
+	public const String szOID_OIWSEC_md5RSA = "1.3.14.3.2.3";
+	public const String szOID_OIWSEC_md4RSA2 = "1.3.14.3.2.4";
+	public const String szOID_OIWSEC_desECB = "1.3.14.3.2.6";
+	public const String szOID_OIWSEC_desCBC = "1.3.14.3.2.7";
+	public const String szOID_OIWSEC_desOFB = "1.3.14.3.2.8";
+	public const String szOID_OIWSEC_desCFB = "1.3.14.3.2.9";
+	public const String szOID_OIWSEC_desMAC = "1.3.14.3.2.10";
+	public const String szOID_OIWSEC_rsaSign = "1.3.14.3.2.11";
+	public const String szOID_OIWSEC_dsa = "1.3.14.3.2.12";
+	public const String szOID_OIWSEC_shaDSA = "1.3.14.3.2.13";
+	public const String szOID_OIWSEC_mdc2RSA = "1.3.14.3.2.14";
+	public const String szOID_OIWSEC_shaRSA = "1.3.14.3.2.15";
+	public const String szOID_OIWSEC_dhCommMod = "1.3.14.3.2.16";
+	public const String szOID_OIWSEC_desEDE = "1.3.14.3.2.17";
+	public const String szOID_OIWSEC_sha = "1.3.14.3.2.18";
+	public const String szOID_OIWSEC_mdc2 = "1.3.14.3.2.19";
+	public const String szOID_OIWSEC_dsaComm = "1.3.14.3.2.20";
+	public const String szOID_OIWSEC_dsaCommSHA = "1.3.14.3.2.21";
+	public const String szOID_OIWSEC_rsaXchg = "1.3.14.3.2.22";
+	public const String szOID_OIWSEC_keyHashSeal = "1.3.14.3.2.23";
+	public const String szOID_OIWSEC_md2RSASign = "1.3.14.3.2.24";
+	public const String szOID_OIWSEC_md5RSASign = "1.3.14.3.2.25";
+	public const String szOID_OIWSEC_sha1 = "1.3.14.3.2.26";
+	public const String szOID_OIWSEC_dsaSHA1 = "1.3.14.3.2.27";
+	public const String szOID_OIWSEC_dsaCommSHA1 = "1.3.14.3.2.28";
+	public const String szOID_OIWSEC_sha1RSASign = "1.3.14.3.2.29";
+	public const String szOID_OIWDIR = "1.3.14.7.2";
+	public const String szOID_OIWDIR_CRPT = "1.3.14.7.2.1";
+	public const String szOID_OIWDIR_HASH = "1.3.14.7.2.2";
+	public const String szOID_OIWDIR_SIGN = "1.3.14.7.2.3";
+	public const String szOID_OIWDIR_md2 = "1.3.14.7.2.2.1";
+	public const String szOID_OIWDIR_md2RSA = "1.3.14.7.2.3.1";
+	public const String szOID_INFOSEC = "2.16.840.1.101.2.1";
+	public const String szOID_INFOSEC_sdnsSignature = "2.16.840.1.101.2.1.1.1";
+	public const String szOID_INFOSEC_mosaicSignature = "2.16.840.1.101.2.1.1.2";
+	public const String szOID_INFOSEC_sdnsConfidentiality = "2.16.840.1.101.2.1.1.3";
+	public const String szOID_INFOSEC_mosaicConfidentiality = "2.16.840.1.101.2.1.1.4";
+	public const String szOID_INFOSEC_sdnsIntegrity = "2.16.840.1.101.2.1.1.5";
+	public const String szOID_INFOSEC_mosaicIntegrity = "2.16.840.1.101.2.1.1.6";
+	public const String szOID_INFOSEC_sdnsTokenProtection = "2.16.840.1.101.2.1.1.7";
+	public const String szOID_INFOSEC_mosaicTokenProtection = "2.16.840.1.101.2.1.1.8";
+	public const String szOID_INFOSEC_sdnsKeyManagement = "2.16.840.1.101.2.1.1.9";
+	public const String szOID_INFOSEC_mosaicKeyManagement = "2.16.840.1.101.2.1.1.10";
+	public const String szOID_INFOSEC_sdnsKMandSig = "2.16.840.1.101.2.1.1.11";
+	public const String szOID_INFOSEC_mosaicKMandSig = "2.16.840.1.101.2.1.1.12";
+	public const String szOID_INFOSEC_SuiteASignature = "2.16.840.1.101.2.1.1.13";
+	public const String szOID_INFOSEC_SuiteAConfidentiality = "2.16.840.1.101.2.1.1.14";
+	public const String szOID_INFOSEC_SuiteAIntegrity = "2.16.840.1.101.2.1.1.15";
+	public const String szOID_INFOSEC_SuiteATokenProtection = "2.16.840.1.101.2.1.1.16";
+	public const String szOID_INFOSEC_SuiteAKeyManagement = "2.16.840.1.101.2.1.1.17";
+	public const String szOID_INFOSEC_SuiteAKMandSig = "2.16.840.1.101.2.1.1.18";
+	public const String szOID_INFOSEC_mosaicUpdatedSig = "2.16.840.1.101.2.1.1.19";
+	public const String szOID_INFOSEC_mosaicKMandUpdSig = "2.16.840.1.101.2.1.1.20";
+	public const String szOID_INFOSEC_mosaicUpdatedInteg = "2.16.840.1.101.2.1.1.21";
+	public const String szOID_NIST_sha256 = "2.16.840.1.101.3.4.2.1";
+	public const String szOID_NIST_sha384 = "2.16.840.1.101.3.4.2.2";
+	public const String szOID_NIST_sha512 = "2.16.840.1.101.3.4.2.3";
+	public const String szOID_COMMON_NAME = "2.5.4.3";
+	public const String szOID_SUR_NAME = "2.5.4.4";
+	public const String szOID_DEVICE_SERIAL_NUMBER = "2.5.4.5";
+	public const String szOID_COUNTRY_NAME = "2.5.4.6";
+	public const String szOID_LOCALITY_NAME = "2.5.4.7";
+	public const String szOID_STATE_OR_PROVINCE_NAME = "2.5.4.8";
+	public const String szOID_STREET_ADDRESS = "2.5.4.9";
+	public const String szOID_ORGANIZATION_NAME = "2.5.4.10";
+	public const String szOID_ORGANIZATIONAL_UNIT_NAME = "2.5.4.11";
+	public const String szOID_TITLE = "2.5.4.12";
+	public const String szOID_DESCRIPTION = "2.5.4.13";
+	public const String szOID_SEARCH_GUIDE = "2.5.4.14";
+	public const String szOID_BUSINESS_CATEGORY = "2.5.4.15";
+	public const String szOID_POSTAL_ADDRESS = "2.5.4.16";
+	public const String szOID_POSTAL_CODE = "2.5.4.17";
+	public const String szOID_POST_OFFICE_BOX = "2.5.4.18";
+	public const String szOID_PHYSICAL_DELIVERY_OFFICE_NAME = "2.5.4.19";
+	public const String szOID_TELEPHONE_NUMBER = "2.5.4.20";
+	public const String szOID_TELEX_NUMBER = "2.5.4.21";
+	public const String szOID_TELETEXT_TERMINAL_IDENTIFIER = "2.5.4.22";
+	public const String szOID_FACSIMILE_TELEPHONE_NUMBER = "2.5.4.23";
+	public const String szOID_X21_ADDRESS = "2.5.4.24";
+	public const String szOID_INTERNATIONAL_ISDN_NUMBER = "2.5.4.25";
+	public const String szOID_REGISTERED_ADDRESS = "2.5.4.26";
+	public const String szOID_DESTINATION_INDICATOR = "2.5.4.27";
+	public const String szOID_PREFERRED_DELIVERY_METHOD = "2.5.4.28";
+	public const String szOID_PRESENTATION_ADDRESS = "2.5.4.29";
+	public const String szOID_SUPPORTED_APPLICATION_CONTEXT = "2.5.4.30";
+	public const String szOID_MEMBER = "2.5.4.31";
+	public const String szOID_OWNER = "2.5.4.32";
+	public const String szOID_ROLE_OCCUPANT = "2.5.4.33";
+	public const String szOID_SEE_ALSO = "2.5.4.34";
+	public const String szOID_USER_PASSWORD = "2.5.4.35";
+	public const String szOID_USER_CERTIFICATE = "2.5.4.36";
+	public const String szOID_CA_CERTIFICATE = "2.5.4.37";
+	public const String szOID_AUTHORITY_REVOCATION_LIST = "2.5.4.38";
+	public const String szOID_CERTIFICATE_REVOCATION_LIST = "2.5.4.39";
+	public const String szOID_CROSS_CERTIFICATE_PAIR = "2.5.4.40";
+	public const String szOID_GIVEN_NAME = "2.5.4.42";
+	public const String szOID_INITIALS = "2.5.4.43";
+	public const String szOID_DN_QUALIFIER = "2.5.4.46";
+	public const String szOID_DOMAIN_COMPONENT = "0.9.2342.19200300.100.1.25";
+	public const String szOID_PKCS_12_FRIENDLY_NAME_ATTR = "1.2.840.113549.1.9.20";
+	public const String szOID_PKCS_12_LOCAL_KEY_ID = "1.2.840.113549.1.9.21";
+	public const String szOID_PKCS_12_KEY_PROVIDER_NAME_ATTR = "1.3.6.1.4.1.311.17.1";
+	public const String szOID_LOCAL_MACHINE_KEYSET = "1.3.6.1.4.1.311.17.2";
+	public const String szOID_PKCS_12_EXTENDED_ATTRIBUTES = "1.3.6.1.4.1.311.17.3";
+	public const String szOID_PKCS_12_PROTECTED_PASSWORD_SECRET_BAG_TYPE_ID = "1.3.6.1.4.1.311.17.4";
+	public const String szOID_KEYID_RDN = "1.3.6.1.4.1.311.10.7.1";
+	public const String szOID_EV_RDN_LOCALE = "1.3.6.1.4.1.311.60.2.1.1";
+	public const String szOID_EV_RDN_STATE_OR_PROVINCE = "1.3.6.1.4.1.311.60.2.1.2";
+	public const String szOID_EV_RDN_COUNTRY = "1.3.6.1.4.1.311.60.2.1.3";
 	public const uint32 CERT_RDN_TYPE_MASK = 255;
 	public const uint32 CERT_RDN_FLAGS_MASK = 4278190080;
 	public const uint32 CERT_RDN_ENABLE_T61_UNICODE_FLAG = 2147483648;
@@ -586,6 +1247,9 @@ static
 	public const uint32 CERT_RDN_DISABLE_CHECK_TYPE_FLAG = 1073741824;
 	public const uint32 CERT_RDN_DISABLE_IE4_UTF8_FLAG = 16777216;
 	public const uint32 CERT_RDN_ENABLE_PUNYCODE_FLAG = 33554432;
+	public const String CERT_RSA_PUBLIC_KEY_OBJID = "1.2.840.113549.1.1.1";
+	public const String CERT_DEFAULT_OID_PUBLIC_KEY_SIGN = "1.2.840.113549.1.1.1";
+	public const String CERT_DEFAULT_OID_PUBLIC_KEY_XCHG = "1.2.840.113549.1.1.1";
 	public const uint32 CRYPT_ECC_PRIVATE_KEY_INFO_v1 = 1;
 	public const uint32 CERT_V1 = 0;
 	public const uint32 CERT_V2 = 1;
@@ -639,9 +1303,293 @@ static
 	public const uint32 CRYPT_DECODE_ENABLE_PUNYCODE_FLAG = 33554432;
 	public const uint32 CRYPT_DECODE_ENABLE_UTF8PERCENT_FLAG = 67108864;
 	public const uint32 CRYPT_ENCODE_DECODE_NONE = 0;
+	public const PSTR X509_CERT = (PSTR)(void*)1;
+	public const PSTR X509_CERT_TO_BE_SIGNED = (PSTR)(void*)2;
+	public const PSTR X509_CERT_CRL_TO_BE_SIGNED = (PSTR)(void*)3;
+	public const PSTR X509_CERT_REQUEST_TO_BE_SIGNED = (PSTR)(void*)4;
+	public const PSTR X509_EXTENSIONS = (PSTR)(void*)5;
+	public const PSTR X509_NAME_VALUE = (PSTR)(void*)6;
+	public const PSTR X509_NAME = (PSTR)(void*)7;
+	public const PSTR X509_PUBLIC_KEY_INFO = (PSTR)(void*)8;
+	public const PSTR X509_AUTHORITY_KEY_ID = (PSTR)(void*)9;
+	public const PSTR X509_KEY_ATTRIBUTES = (PSTR)(void*)10;
+	public const PSTR X509_KEY_USAGE_RESTRICTION = (PSTR)(void*)11;
+	public const PSTR X509_ALTERNATE_NAME = (PSTR)(void*)12;
+	public const PSTR X509_BASIC_CONSTRAINTS = (PSTR)(void*)13;
+	public const PSTR X509_KEY_USAGE = (PSTR)(void*)14;
+	public const PSTR X509_BASIC_CONSTRAINTS2 = (PSTR)(void*)15;
+	public const PSTR X509_CERT_POLICIES = (PSTR)(void*)16;
+	public const PSTR PKCS_UTC_TIME = (PSTR)(void*)17;
+	public const PSTR PKCS_TIME_REQUEST = (PSTR)(void*)18;
+	public const PSTR RSA_CSP_PUBLICKEYBLOB = (PSTR)(void*)19;
+	public const PSTR X509_UNICODE_NAME = (PSTR)(void*)20;
+	public const PSTR X509_KEYGEN_REQUEST_TO_BE_SIGNED = (PSTR)(void*)21;
+	public const PSTR PKCS_ATTRIBUTE = (PSTR)(void*)22;
+	public const PSTR PKCS_CONTENT_INFO_SEQUENCE_OF_ANY = (PSTR)(void*)23;
+	public const PSTR X509_UNICODE_NAME_VALUE = (PSTR)(void*)24;
+	public const int32 X509_ANY_STRING = 6;
+	public const int32 X509_UNICODE_ANY_STRING = 24;
+	public const PSTR X509_OCTET_STRING = (PSTR)(void*)25;
+	public const PSTR X509_BITS = (PSTR)(void*)26;
+	public const PSTR X509_INTEGER = (PSTR)(void*)27;
+	public const PSTR X509_MULTI_BYTE_INTEGER = (PSTR)(void*)28;
+	public const PSTR X509_ENUMERATED = (PSTR)(void*)29;
+	public const PSTR X509_CHOICE_OF_TIME = (PSTR)(void*)30;
+	public const PSTR X509_AUTHORITY_KEY_ID2 = (PSTR)(void*)31;
+	public const PSTR X509_AUTHORITY_INFO_ACCESS = (PSTR)(void*)32;
+	public const int32 X509_SUBJECT_INFO_ACCESS = 32;
+	public const int32 X509_CRL_REASON_CODE = 29;
+	public const PSTR PKCS_CONTENT_INFO = (PSTR)(void*)33;
+	public const PSTR X509_SEQUENCE_OF_ANY = (PSTR)(void*)34;
+	public const PSTR X509_CRL_DIST_POINTS = (PSTR)(void*)35;
+	public const PSTR X509_ENHANCED_KEY_USAGE = (PSTR)(void*)36;
+	public const PSTR PKCS_CTL = (PSTR)(void*)37;
+	public const PSTR X509_MULTI_BYTE_UINT = (PSTR)(void*)38;
+	public const int32 X509_DSS_PUBLICKEY = 38;
+	public const PSTR X509_DSS_PARAMETERS = (PSTR)(void*)39;
+	public const PSTR X509_DSS_SIGNATURE = (PSTR)(void*)40;
+	public const PSTR PKCS_RC2_CBC_PARAMETERS = (PSTR)(void*)41;
+	public const PSTR PKCS_SMIME_CAPABILITIES = (PSTR)(void*)42;
+	public const PSTR X509_QC_STATEMENTS_EXT = (PSTR)(void*)42;
+	public const PSTR PKCS_RSA_PRIVATE_KEY = (PSTR)(void*)43;
+	public const PSTR PKCS_PRIVATE_KEY_INFO = (PSTR)(void*)44;
+	public const PSTR PKCS_ENCRYPTED_PRIVATE_KEY_INFO = (PSTR)(void*)45;
+	public const PSTR X509_PKIX_POLICY_QUALIFIER_USERNOTICE = (PSTR)(void*)46;
+	public const int32 X509_DH_PUBLICKEY = 38;
+	public const PSTR X509_DH_PARAMETERS = (PSTR)(void*)47;
+	public const PSTR PKCS_ATTRIBUTES = (PSTR)(void*)48;
+	public const PSTR PKCS_SORTED_CTL = (PSTR)(void*)49;
+	public const PSTR X509_ECC_SIGNATURE = (PSTR)(void*)47;
+	public const PSTR X942_DH_PARAMETERS = (PSTR)(void*)50;
+	public const PSTR X509_BITS_WITHOUT_TRAILING_ZEROES = (PSTR)(void*)51;
+	public const PSTR X942_OTHER_INFO = (PSTR)(void*)52;
+	public const PSTR X509_CERT_PAIR = (PSTR)(void*)53;
+	public const PSTR X509_ISSUING_DIST_POINT = (PSTR)(void*)54;
+	public const PSTR X509_NAME_CONSTRAINTS = (PSTR)(void*)55;
+	public const PSTR X509_POLICY_MAPPINGS = (PSTR)(void*)56;
+	public const PSTR X509_POLICY_CONSTRAINTS = (PSTR)(void*)57;
+	public const PSTR X509_CROSS_CERT_DIST_POINTS = (PSTR)(void*)58;
+	public const PSTR CMC_DATA = (PSTR)(void*)59;
+	public const PSTR CMC_RESPONSE = (PSTR)(void*)60;
+	public const PSTR CMC_STATUS = (PSTR)(void*)61;
+	public const PSTR CMC_ADD_EXTENSIONS = (PSTR)(void*)62;
+	public const PSTR CMC_ADD_ATTRIBUTES = (PSTR)(void*)63;
+	public const PSTR X509_CERTIFICATE_TEMPLATE = (PSTR)(void*)64;
+	public const PSTR OCSP_SIGNED_REQUEST = (PSTR)(void*)65;
+	public const PSTR OCSP_REQUEST = (PSTR)(void*)66;
+	public const PSTR OCSP_RESPONSE = (PSTR)(void*)67;
+	public const PSTR OCSP_BASIC_SIGNED_RESPONSE = (PSTR)(void*)68;
+	public const PSTR OCSP_BASIC_RESPONSE = (PSTR)(void*)69;
+	public const PSTR X509_LOGOTYPE_EXT = (PSTR)(void*)70;
+	public const PSTR X509_BIOMETRIC_EXT = (PSTR)(void*)71;
+	public const PSTR CNG_RSA_PUBLIC_KEY_BLOB = (PSTR)(void*)72;
+	public const PSTR X509_OBJECT_IDENTIFIER = (PSTR)(void*)73;
+	public const PSTR X509_ALGORITHM_IDENTIFIER = (PSTR)(void*)74;
+	public const PSTR PKCS_RSA_SSA_PSS_PARAMETERS = (PSTR)(void*)75;
+	public const PSTR PKCS_RSAES_OAEP_PARAMETERS = (PSTR)(void*)76;
+	public const PSTR ECC_CMS_SHARED_INFO = (PSTR)(void*)77;
+	public const PSTR TIMESTAMP_REQUEST = (PSTR)(void*)78;
+	public const PSTR TIMESTAMP_RESPONSE = (PSTR)(void*)79;
+	public const PSTR TIMESTAMP_INFO = (PSTR)(void*)80;
+	public const PSTR X509_CERT_BUNDLE = (PSTR)(void*)81;
+	public const PSTR X509_ECC_PRIVATE_KEY = (PSTR)(void*)82;
+	public const PSTR CNG_RSA_PRIVATE_KEY_BLOB = (PSTR)(void*)83;
+	public const PSTR X509_SUBJECT_DIR_ATTRS = (PSTR)(void*)84;
+	public const PSTR X509_ECC_PARAMETERS = (PSTR)(void*)85;
+	public const PSTR PKCS7_SIGNER_INFO = (PSTR)(void*)500;
+	public const PSTR CMS_SIGNER_INFO = (PSTR)(void*)501;
+	public const String szOID_AUTHORITY_KEY_IDENTIFIER = "2.5.29.1";
+	public const String szOID_KEY_ATTRIBUTES = "2.5.29.2";
+	public const String szOID_CERT_POLICIES_95 = "2.5.29.3";
+	public const String szOID_KEY_USAGE_RESTRICTION = "2.5.29.4";
+	public const String szOID_SUBJECT_ALT_NAME = "2.5.29.7";
+	public const String szOID_ISSUER_ALT_NAME = "2.5.29.8";
+	public const String szOID_BASIC_CONSTRAINTS = "2.5.29.10";
+	public const String szOID_KEY_USAGE = "2.5.29.15";
+	public const String szOID_PRIVATEKEY_USAGE_PERIOD = "2.5.29.16";
+	public const String szOID_BASIC_CONSTRAINTS2 = "2.5.29.19";
+	public const String szOID_CERT_POLICIES = "2.5.29.32";
+	public const String szOID_ANY_CERT_POLICY = "2.5.29.32.0";
+	public const String szOID_INHIBIT_ANY_POLICY = "2.5.29.54";
+	public const String szOID_AUTHORITY_KEY_IDENTIFIER2 = "2.5.29.35";
+	public const String szOID_SUBJECT_KEY_IDENTIFIER = "2.5.29.14";
+	public const String szOID_SUBJECT_ALT_NAME2 = "2.5.29.17";
+	public const String szOID_ISSUER_ALT_NAME2 = "2.5.29.18";
+	public const String szOID_CRL_REASON_CODE = "2.5.29.21";
+	public const String szOID_REASON_CODE_HOLD = "2.5.29.23";
+	public const String szOID_CRL_DIST_POINTS = "2.5.29.31";
+	public const String szOID_ENHANCED_KEY_USAGE = "2.5.29.37";
+	public const String szOID_ANY_ENHANCED_KEY_USAGE = "2.5.29.37.0";
+	public const String szOID_CRL_NUMBER = "2.5.29.20";
+	public const String szOID_DELTA_CRL_INDICATOR = "2.5.29.27";
+	public const String szOID_ISSUING_DIST_POINT = "2.5.29.28";
+	public const String szOID_FRESHEST_CRL = "2.5.29.46";
+	public const String szOID_NAME_CONSTRAINTS = "2.5.29.30";
+	public const String szOID_POLICY_MAPPINGS = "2.5.29.33";
+	public const String szOID_LEGACY_POLICY_MAPPINGS = "2.5.29.5";
+	public const String szOID_POLICY_CONSTRAINTS = "2.5.29.36";
+	public const String szOID_RENEWAL_CERTIFICATE = "1.3.6.1.4.1.311.13.1";
+	public const String szOID_ENROLLMENT_NAME_VALUE_PAIR = "1.3.6.1.4.1.311.13.2.1";
+	public const String szOID_ENROLLMENT_CSP_PROVIDER = "1.3.6.1.4.1.311.13.2.2";
+	public const String szOID_OS_VERSION = "1.3.6.1.4.1.311.13.2.3";
+	public const String szOID_ENROLLMENT_AGENT = "1.3.6.1.4.1.311.20.2.1";
+	public const String szOID_PKIX = "1.3.6.1.5.5.7";
+	public const String szOID_PKIX_PE = "1.3.6.1.5.5.7.1";
+	public const String szOID_AUTHORITY_INFO_ACCESS = "1.3.6.1.5.5.7.1.1";
+	public const String szOID_SUBJECT_INFO_ACCESS = "1.3.6.1.5.5.7.1.11";
+	public const String szOID_BIOMETRIC_EXT = "1.3.6.1.5.5.7.1.2";
+	public const String szOID_QC_STATEMENTS_EXT = "1.3.6.1.5.5.7.1.3";
+	public const String szOID_LOGOTYPE_EXT = "1.3.6.1.5.5.7.1.12";
+	public const String szOID_TLS_FEATURES_EXT = "1.3.6.1.5.5.7.1.24";
+	public const String szOID_CERT_EXTENSIONS = "1.3.6.1.4.1.311.2.1.14";
+	public const String szOID_NEXT_UPDATE_LOCATION = "1.3.6.1.4.1.311.10.2";
+	public const String szOID_REMOVE_CERTIFICATE = "1.3.6.1.4.1.311.10.8.1";
+	public const String szOID_CROSS_CERT_DIST_POINTS = "1.3.6.1.4.1.311.10.9.1";
+	public const String szOID_CTL = "1.3.6.1.4.1.311.10.1";
+	public const String szOID_SORTED_CTL = "1.3.6.1.4.1.311.10.1.1";
+	public const String szOID_SERIALIZED = "1.3.6.1.4.1.311.10.3.3.1";
+	public const String szOID_NT_PRINCIPAL_NAME = "1.3.6.1.4.1.311.20.2.3";
+	public const String szOID_INTERNATIONALIZED_EMAIL_ADDRESS = "1.3.6.1.4.1.311.20.2.4";
+	public const String szOID_PRODUCT_UPDATE = "1.3.6.1.4.1.311.31.1";
+	public const String szOID_ANY_APPLICATION_POLICY = "1.3.6.1.4.1.311.10.12.1";
+	public const String szOID_AUTO_ENROLL_CTL_USAGE = "1.3.6.1.4.1.311.20.1";
+	public const String szOID_ENROLL_CERTTYPE_EXTENSION = "1.3.6.1.4.1.311.20.2";
+	public const String szOID_CERT_MANIFOLD = "1.3.6.1.4.1.311.20.3";
+	public const String szOID_CERTSRV_CA_VERSION = "1.3.6.1.4.1.311.21.1";
+	public const String szOID_CERTSRV_PREVIOUS_CERT_HASH = "1.3.6.1.4.1.311.21.2";
+	public const String szOID_CRL_VIRTUAL_BASE = "1.3.6.1.4.1.311.21.3";
+	public const String szOID_CRL_NEXT_PUBLISH = "1.3.6.1.4.1.311.21.4";
+	public const String szOID_KP_CA_EXCHANGE = "1.3.6.1.4.1.311.21.5";
+	public const String szOID_KP_PRIVACY_CA = "1.3.6.1.4.1.311.21.36";
+	public const String szOID_KP_KEY_RECOVERY_AGENT = "1.3.6.1.4.1.311.21.6";
+	public const String szOID_CERTIFICATE_TEMPLATE = "1.3.6.1.4.1.311.21.7";
+	public const String szOID_ENTERPRISE_OID_ROOT = "1.3.6.1.4.1.311.21.8";
+	public const String szOID_RDN_DUMMY_SIGNER = "1.3.6.1.4.1.311.21.9";
+	public const String szOID_APPLICATION_CERT_POLICIES = "1.3.6.1.4.1.311.21.10";
+	public const String szOID_APPLICATION_POLICY_MAPPINGS = "1.3.6.1.4.1.311.21.11";
+	public const String szOID_APPLICATION_POLICY_CONSTRAINTS = "1.3.6.1.4.1.311.21.12";
+	public const String szOID_ARCHIVED_KEY_ATTR = "1.3.6.1.4.1.311.21.13";
+	public const String szOID_CRL_SELF_CDP = "1.3.6.1.4.1.311.21.14";
+	public const String szOID_REQUIRE_CERT_CHAIN_POLICY = "1.3.6.1.4.1.311.21.15";
+	public const String szOID_ARCHIVED_KEY_CERT_HASH = "1.3.6.1.4.1.311.21.16";
+	public const String szOID_ISSUED_CERT_HASH = "1.3.6.1.4.1.311.21.17";
+	public const String szOID_DS_EMAIL_REPLICATION = "1.3.6.1.4.1.311.21.19";
+	public const String szOID_REQUEST_CLIENT_INFO = "1.3.6.1.4.1.311.21.20";
+	public const String szOID_ENCRYPTED_KEY_HASH = "1.3.6.1.4.1.311.21.21";
+	public const String szOID_CERTSRV_CROSSCA_VERSION = "1.3.6.1.4.1.311.21.22";
+	public const String szOID_NTDS_REPLICATION = "1.3.6.1.4.1.311.25.1";
+	public const String szOID_SUBJECT_DIR_ATTRS = "2.5.29.9";
+	public const String szOID_PKIX_KP = "1.3.6.1.5.5.7.3";
+	public const String szOID_PKIX_KP_SERVER_AUTH = "1.3.6.1.5.5.7.3.1";
+	public const String szOID_PKIX_KP_CLIENT_AUTH = "1.3.6.1.5.5.7.3.2";
+	public const String szOID_PKIX_KP_CODE_SIGNING = "1.3.6.1.5.5.7.3.3";
+	public const String szOID_PKIX_KP_EMAIL_PROTECTION = "1.3.6.1.5.5.7.3.4";
+	public const String szOID_PKIX_KP_IPSEC_END_SYSTEM = "1.3.6.1.5.5.7.3.5";
+	public const String szOID_PKIX_KP_IPSEC_TUNNEL = "1.3.6.1.5.5.7.3.6";
+	public const String szOID_PKIX_KP_IPSEC_USER = "1.3.6.1.5.5.7.3.7";
+	public const String szOID_PKIX_KP_TIMESTAMP_SIGNING = "1.3.6.1.5.5.7.3.8";
+	public const String szOID_PKIX_KP_OCSP_SIGNING = "1.3.6.1.5.5.7.3.9";
+	public const String szOID_PKIX_OCSP_NOCHECK = "1.3.6.1.5.5.7.48.1.5";
+	public const String szOID_PKIX_OCSP_NONCE = "1.3.6.1.5.5.7.48.1.2";
+	public const String szOID_IPSEC_KP_IKE_INTERMEDIATE = "1.3.6.1.5.5.8.2.2";
+	public const String szOID_PKINIT_KP_KDC = "1.3.6.1.5.2.3.5";
+	public const String szOID_KP_CTL_USAGE_SIGNING = "1.3.6.1.4.1.311.10.3.1";
+	public const String szOID_KP_TIME_STAMP_SIGNING = "1.3.6.1.4.1.311.10.3.2";
+	public const String szOID_SERVER_GATED_CRYPTO = "1.3.6.1.4.1.311.10.3.3";
+	public const String szOID_SGC_NETSCAPE = "2.16.840.1.113730.4.1";
+	public const String szOID_KP_EFS = "1.3.6.1.4.1.311.10.3.4";
+	public const String szOID_EFS_RECOVERY = "1.3.6.1.4.1.311.10.3.4.1";
+	public const String szOID_WHQL_CRYPTO = "1.3.6.1.4.1.311.10.3.5";
+	public const String szOID_ATTEST_WHQL_CRYPTO = "1.3.6.1.4.1.311.10.3.5.1";
+	public const String szOID_NT5_CRYPTO = "1.3.6.1.4.1.311.10.3.6";
+	public const String szOID_OEM_WHQL_CRYPTO = "1.3.6.1.4.1.311.10.3.7";
+	public const String szOID_EMBEDDED_NT_CRYPTO = "1.3.6.1.4.1.311.10.3.8";
+	public const String szOID_ROOT_LIST_SIGNER = "1.3.6.1.4.1.311.10.3.9";
+	public const String szOID_KP_QUALIFIED_SUBORDINATION = "1.3.6.1.4.1.311.10.3.10";
+	public const String szOID_KP_KEY_RECOVERY = "1.3.6.1.4.1.311.10.3.11";
+	public const String szOID_KP_DOCUMENT_SIGNING = "1.3.6.1.4.1.311.10.3.12";
+	public const String szOID_KP_LIFETIME_SIGNING = "1.3.6.1.4.1.311.10.3.13";
+	public const String szOID_KP_MOBILE_DEVICE_SOFTWARE = "1.3.6.1.4.1.311.10.3.14";
+	public const String szOID_KP_SMART_DISPLAY = "1.3.6.1.4.1.311.10.3.15";
+	public const String szOID_KP_CSP_SIGNATURE = "1.3.6.1.4.1.311.10.3.16";
+	public const String szOID_KP_FLIGHT_SIGNING = "1.3.6.1.4.1.311.10.3.27";
+	public const String szOID_PLATFORM_MANIFEST_BINARY_ID = "1.3.6.1.4.1.311.10.3.28";
+	public const String szOID_DRM = "1.3.6.1.4.1.311.10.5.1";
+	public const String szOID_DRM_INDIVIDUALIZATION = "1.3.6.1.4.1.311.10.5.2";
+	public const String szOID_LICENSES = "1.3.6.1.4.1.311.10.6.1";
+	public const String szOID_LICENSE_SERVER = "1.3.6.1.4.1.311.10.6.2";
+	public const String szOID_KP_SMARTCARD_LOGON = "1.3.6.1.4.1.311.20.2.2";
+	public const String szOID_KP_KERNEL_MODE_CODE_SIGNING = "1.3.6.1.4.1.311.61.1.1";
+	public const String szOID_KP_KERNEL_MODE_TRUSTED_BOOT_SIGNING = "1.3.6.1.4.1.311.61.4.1";
+	public const String szOID_REVOKED_LIST_SIGNER = "1.3.6.1.4.1.311.10.3.19";
+	public const String szOID_WINDOWS_KITS_SIGNER = "1.3.6.1.4.1.311.10.3.20";
+	public const String szOID_WINDOWS_RT_SIGNER = "1.3.6.1.4.1.311.10.3.21";
+	public const String szOID_PROTECTED_PROCESS_LIGHT_SIGNER = "1.3.6.1.4.1.311.10.3.22";
+	public const String szOID_WINDOWS_TCB_SIGNER = "1.3.6.1.4.1.311.10.3.23";
+	public const String szOID_PROTECTED_PROCESS_SIGNER = "1.3.6.1.4.1.311.10.3.24";
+	public const String szOID_WINDOWS_THIRD_PARTY_COMPONENT_SIGNER = "1.3.6.1.4.1.311.10.3.25";
+	public const String szOID_WINDOWS_SOFTWARE_EXTENSION_SIGNER = "1.3.6.1.4.1.311.10.3.26";
+	public const String szOID_DISALLOWED_LIST = "1.3.6.1.4.1.311.10.3.30";
+	public const String szOID_PIN_RULES_SIGNER = "1.3.6.1.4.1.311.10.3.31";
+	public const String szOID_PIN_RULES_CTL = "1.3.6.1.4.1.311.10.3.32";
+	public const String szOID_PIN_RULES_EXT = "1.3.6.1.4.1.311.10.3.33";
+	public const String szOID_PIN_RULES_DOMAIN_NAME = "1.3.6.1.4.1.311.10.3.34";
+	public const String szOID_PIN_RULES_LOG_END_DATE_EXT = "1.3.6.1.4.1.311.10.3.35";
+	public const String szOID_IUM_SIGNING = "1.3.6.1.4.1.311.10.3.37";
+	public const String szOID_EV_WHQL_CRYPTO = "1.3.6.1.4.1.311.10.3.39";
+	public const String szOID_BIOMETRIC_SIGNING = "1.3.6.1.4.1.311.10.3.41";
+	public const String szOID_ENCLAVE_SIGNING = "1.3.6.1.4.1.311.10.3.42";
+	public const String szOID_SYNC_ROOT_CTL_EXT = "1.3.6.1.4.1.311.10.3.50";
+	public const String szOID_HPKP_DOMAIN_NAME_CTL = "1.3.6.1.4.1.311.10.3.60";
+	public const String szOID_HPKP_HEADER_VALUE_CTL = "1.3.6.1.4.1.311.10.3.61";
+	public const String szOID_KP_KERNEL_MODE_HAL_EXTENSION_SIGNING = "1.3.6.1.4.1.311.61.5.1";
+	public const String szOID_WINDOWS_STORE_SIGNER = "1.3.6.1.4.1.311.76.3.1";
+	public const String szOID_DYNAMIC_CODE_GEN_SIGNER = "1.3.6.1.4.1.311.76.5.1";
+	public const String szOID_MICROSOFT_PUBLISHER_SIGNER = "1.3.6.1.4.1.311.76.8.1";
+	public const String szOID_YESNO_TRUST_ATTR = "1.3.6.1.4.1.311.10.4.1";
+	public const String szOID_SITE_PIN_RULES_INDEX_ATTR = "1.3.6.1.4.1.311.10.4.2";
+	public const String szOID_SITE_PIN_RULES_FLAGS_ATTR = "1.3.6.1.4.1.311.10.4.3";
 	public const uint32 SITE_PIN_RULES_ALL_SUBDOMAINS_FLAG = 1;
+	public const String szOID_PKIX_POLICY_QUALIFIER_CPS = "1.3.6.1.5.5.7.2.1";
+	public const String szOID_PKIX_POLICY_QUALIFIER_USERNOTICE = "1.3.6.1.5.5.7.2.2";
+	public const String szOID_ROOT_PROGRAM_FLAGS = "1.3.6.1.4.1.311.60.1.1";
 	public const uint32 CERT_ROOT_PROGRAM_FLAG_OU = 16;
 	public const uint32 CERT_ROOT_PROGRAM_FLAG_ADDRESS = 8;
+	public const String szOID_CERT_POLICIES_95_QUALIFIER1 = "2.16.840.1.113733.1.7.1.1";
+	public const String szOID_RDN_TPM_MANUFACTURER = "2.23.133.2.1";
+	public const String szOID_RDN_TPM_MODEL = "2.23.133.2.2";
+	public const String szOID_RDN_TPM_VERSION = "2.23.133.2.3";
+	public const String szOID_RDN_TCG_PLATFORM_MANUFACTURER = "2.23.133.2.4";
+	public const String szOID_RDN_TCG_PLATFORM_MODEL = "2.23.133.2.5";
+	public const String szOID_RDN_TCG_PLATFORM_VERSION = "2.23.133.2.6";
+	public const String szOID_CT_CERT_SCTLIST = "1.3.6.1.4.1.11129.2.4.2";
+	public const String szOID_ENROLL_EK_INFO = "1.3.6.1.4.1.311.21.23";
+	public const String szOID_ENROLL_AIK_INFO = "1.3.6.1.4.1.311.21.39";
+	public const String szOID_ENROLL_ATTESTATION_STATEMENT = "1.3.6.1.4.1.311.21.24";
+	public const String szOID_ENROLL_KSP_NAME = "1.3.6.1.4.1.311.21.25";
+	public const String szOID_ENROLL_EKPUB_CHALLENGE = "1.3.6.1.4.1.311.21.26";
+	public const String szOID_ENROLL_CAXCHGCERT_HASH = "1.3.6.1.4.1.311.21.27";
+	public const String szOID_ENROLL_ATTESTATION_CHALLENGE = "1.3.6.1.4.1.311.21.28";
+	public const String szOID_ENROLL_ENCRYPTION_ALGORITHM = "1.3.6.1.4.1.311.21.29";
+	public const String szOID_KP_TPM_EK_CERTIFICATE = "2.23.133.8.1";
+	public const String szOID_KP_TPM_PLATFORM_CERTIFICATE = "2.23.133.8.2";
+	public const String szOID_KP_TPM_AIK_CERTIFICATE = "2.23.133.8.3";
+	public const String szOID_ENROLL_EKVERIFYKEY = "1.3.6.1.4.1.311.21.30";
+	public const String szOID_ENROLL_EKVERIFYCERT = "1.3.6.1.4.1.311.21.31";
+	public const String szOID_ENROLL_EKVERIFYCREDS = "1.3.6.1.4.1.311.21.32";
+	public const String szOID_ENROLL_SCEP_ERROR = "1.3.6.1.4.1.311.21.33";
+	public const String szOID_ENROLL_SCEP_SERVER_STATE = "1.3.6.1.4.1.311.21.34";
+	public const String szOID_ENROLL_SCEP_CHALLENGE_ANSWER = "1.3.6.1.4.1.311.21.35";
+	public const String szOID_ENROLL_SCEP_CLIENT_REQUEST = "1.3.6.1.4.1.311.21.37";
+	public const String szOID_ENROLL_SCEP_SERVER_MESSAGE = "1.3.6.1.4.1.311.21.38";
+	public const String szOID_ENROLL_SCEP_SERVER_SECRET = "1.3.6.1.4.1.311.21.40";
+	public const String szOID_ENROLL_KEY_AFFINITY = "1.3.6.1.4.1.311.21.41";
+	public const String szOID_ENROLL_SCEP_SIGNER_HASH = "1.3.6.1.4.1.311.21.42";
+	public const String szOID_ENROLL_EK_CA_KEYID = "1.3.6.1.4.1.311.21.43";
+	public const String szOID_ATTR_SUPPORTED_ALGORITHMS = "2.5.4.52";
+	public const String szOID_ATTR_TPM_SPECIFICATION = "2.23.133.2.16";
+	public const String szOID_ATTR_PLATFORM_SPECIFICATION = "2.23.133.2.17";
+	public const String szOID_ATTR_TPM_SECURITY_ASSERTIONS = "2.23.133.2.18";
 	public const uint32 CERT_UNICODE_RDN_ERR_INDEX_MASK = 1023;
 	public const uint32 CERT_UNICODE_RDN_ERR_INDEX_SHIFT = 22;
 	public const uint32 CERT_UNICODE_ATTR_ERR_INDEX_MASK = 63;
@@ -666,6 +1614,11 @@ static
 	public const uint32 CERT_ALT_NAME_VALUE_ERR_INDEX_SHIFT = 0;
 	public const uint32 CERT_CA_SUBJECT_FLAG = 128;
 	public const uint32 CERT_END_ENTITY_SUBJECT_FLAG = 64;
+	public const String szOID_PKIX_ACC_DESCR = "1.3.6.1.5.5.7.48";
+	public const String szOID_PKIX_OCSP = "1.3.6.1.5.5.7.48.1";
+	public const String szOID_PKIX_CA_ISSUERS = "1.3.6.1.5.5.7.48.2";
+	public const String szOID_PKIX_TIME_STAMPING = "1.3.6.1.5.5.7.48.3";
+	public const String szOID_PKIX_CA_REPOSITORY = "1.3.6.1.5.5.7.48.5";
 	public const uint32 CRL_REASON_PRIVILEGE_WITHDRAWN = 9;
 	public const uint32 CRL_REASON_AA_COMPROMISE = 10;
 	public const uint32 CRL_DIST_POINT_NO_NAME = 0;
@@ -696,7 +1649,31 @@ static
 	public const uint32 CRYPT_RC2_56BIT_VERSION = 52;
 	public const uint32 CRYPT_RC2_64BIT_VERSION = 120;
 	public const uint32 CRYPT_RC2_128BIT_VERSION = 58;
+	public const String szOID_QC_EU_COMPLIANCE = "0.4.0.1862.1.1";
+	public const String szOID_QC_SSCD = "0.4.0.1862.1.4";
 	public const uint32 PKCS_RSA_SSA_PSS_TRAILER_FIELD_BC = 1;
+	public const String szOID_VERISIGN_PRIVATE_6_9 = "2.16.840.1.113733.1.6.9";
+	public const String szOID_VERISIGN_ONSITE_JURISDICTION_HASH = "2.16.840.1.113733.1.6.11";
+	public const String szOID_VERISIGN_BITSTRING_6_13 = "2.16.840.1.113733.1.6.13";
+	public const String szOID_VERISIGN_ISS_STRONG_CRYPTO = "2.16.840.1.113733.1.8.1";
+	public const String szOIDVerisign_MessageType = "2.16.840.1.113733.1.9.2";
+	public const String szOIDVerisign_PkiStatus = "2.16.840.1.113733.1.9.3";
+	public const String szOIDVerisign_FailInfo = "2.16.840.1.113733.1.9.4";
+	public const String szOIDVerisign_SenderNonce = "2.16.840.1.113733.1.9.5";
+	public const String szOIDVerisign_RecipientNonce = "2.16.840.1.113733.1.9.6";
+	public const String szOIDVerisign_TransactionID = "2.16.840.1.113733.1.9.7";
+	public const String szOID_NETSCAPE = "2.16.840.1.113730";
+	public const String szOID_NETSCAPE_CERT_EXTENSION = "2.16.840.1.113730.1";
+	public const String szOID_NETSCAPE_CERT_TYPE = "2.16.840.1.113730.1.1";
+	public const String szOID_NETSCAPE_BASE_URL = "2.16.840.1.113730.1.2";
+	public const String szOID_NETSCAPE_REVOCATION_URL = "2.16.840.1.113730.1.3";
+	public const String szOID_NETSCAPE_CA_REVOCATION_URL = "2.16.840.1.113730.1.4";
+	public const String szOID_NETSCAPE_CERT_RENEWAL_URL = "2.16.840.1.113730.1.7";
+	public const String szOID_NETSCAPE_CA_POLICY_URL = "2.16.840.1.113730.1.8";
+	public const String szOID_NETSCAPE_SSL_SERVER_NAME = "2.16.840.1.113730.1.12";
+	public const String szOID_NETSCAPE_COMMENT = "2.16.840.1.113730.1.13";
+	public const String szOID_NETSCAPE_DATA_TYPE = "2.16.840.1.113730.2";
+	public const String szOID_NETSCAPE_CERT_SEQUENCE = "2.16.840.1.113730.2.5";
 	public const uint32 NETSCAPE_SSL_CLIENT_AUTH_CERT_TYPE = 128;
 	public const uint32 NETSCAPE_SSL_SERVER_AUTH_CERT_TYPE = 64;
 	public const uint32 NETSCAPE_SMIME_CERT_TYPE = 32;
@@ -704,6 +1681,31 @@ static
 	public const uint32 NETSCAPE_SSL_CA_CERT_TYPE = 4;
 	public const uint32 NETSCAPE_SMIME_CA_CERT_TYPE = 2;
 	public const uint32 NETSCAPE_SIGN_CA_CERT_TYPE = 1;
+	public const String szOID_CT_PKI_DATA = "1.3.6.1.5.5.7.12.2";
+	public const String szOID_CT_PKI_RESPONSE = "1.3.6.1.5.5.7.12.3";
+	public const String szOID_PKIX_NO_SIGNATURE = "1.3.6.1.5.5.7.6.2";
+	public const String szOID_CMC = "1.3.6.1.5.5.7.7";
+	public const String szOID_CMC_STATUS_INFO = "1.3.6.1.5.5.7.7.1";
+	public const String szOID_CMC_IDENTIFICATION = "1.3.6.1.5.5.7.7.2";
+	public const String szOID_CMC_IDENTITY_PROOF = "1.3.6.1.5.5.7.7.3";
+	public const String szOID_CMC_DATA_RETURN = "1.3.6.1.5.5.7.7.4";
+	public const String szOID_CMC_TRANSACTION_ID = "1.3.6.1.5.5.7.7.5";
+	public const String szOID_CMC_SENDER_NONCE = "1.3.6.1.5.5.7.7.6";
+	public const String szOID_CMC_RECIPIENT_NONCE = "1.3.6.1.5.5.7.7.7";
+	public const String szOID_CMC_ADD_EXTENSIONS = "1.3.6.1.5.5.7.7.8";
+	public const String szOID_CMC_ENCRYPTED_POP = "1.3.6.1.5.5.7.7.9";
+	public const String szOID_CMC_DECRYPTED_POP = "1.3.6.1.5.5.7.7.10";
+	public const String szOID_CMC_LRA_POP_WITNESS = "1.3.6.1.5.5.7.7.11";
+	public const String szOID_CMC_GET_CERT = "1.3.6.1.5.5.7.7.15";
+	public const String szOID_CMC_GET_CRL = "1.3.6.1.5.5.7.7.16";
+	public const String szOID_CMC_REVOKE_REQUEST = "1.3.6.1.5.5.7.7.17";
+	public const String szOID_CMC_REG_INFO = "1.3.6.1.5.5.7.7.18";
+	public const String szOID_CMC_RESPONSE_INFO = "1.3.6.1.5.5.7.7.19";
+	public const String szOID_CMC_QUERY_PENDING = "1.3.6.1.5.5.7.7.21";
+	public const String szOID_CMC_ID_POP_LINK_RANDOM = "1.3.6.1.5.5.7.7.22";
+	public const String szOID_CMC_ID_POP_LINK_WITNESS = "1.3.6.1.5.5.7.7.23";
+	public const String szOID_CMC_ID_CONFIRM_CERT_ACCEPTANCE = "1.3.6.1.5.5.7.7.24";
+	public const String szOID_CMC_ADD_ATTRIBUTES = "1.3.6.1.4.1.311.10.10.1";
 	public const uint32 CMC_TAGGED_CERT_REQUEST_CHOICE = 1;
 	public const uint32 CMC_OTHER_INFO_NO_CHOICE = 0;
 	public const uint32 CMC_OTHER_INFO_FAIL_CHOICE = 1;
@@ -726,6 +1728,8 @@ static
 	public const uint32 CMC_FAIL_NO_KEY_REUSE = 10;
 	public const uint32 CMC_FAIL_INTERNAL_CA_ERROR = 11;
 	public const uint32 CMC_FAIL_TRY_LATER = 12;
+	public const String szOID_LOYALTY_OTHER_LOGOTYPE = "1.3.6.1.5.5.7.20.1";
+	public const String szOID_BACKGROUND_OTHER_LOGOTYPE = "1.3.6.1.5.5.7.20.2";
 	public const uint32 CERT_BIOMETRIC_PICTURE_TYPE = 0;
 	public const uint32 CERT_BIOMETRIC_SIGNATURE_TYPE = 1;
 	public const uint32 OCSP_REQUEST_V1 = 0;
@@ -735,12 +1739,30 @@ static
 	public const uint32 OCSP_TRY_LATER_RESPONSE = 3;
 	public const uint32 OCSP_SIG_REQUIRED_RESPONSE = 5;
 	public const uint32 OCSP_UNAUTHORIZED_RESPONSE = 6;
+	public const String szOID_PKIX_OCSP_BASIC_SIGNED_RESPONSE = "1.3.6.1.5.5.7.48.1.1";
 	public const uint32 OCSP_BASIC_GOOD_CERT_STATUS = 0;
 	public const uint32 OCSP_BASIC_REVOKED_CERT_STATUS = 1;
 	public const uint32 OCSP_BASIC_UNKNOWN_CERT_STATUS = 2;
 	public const uint32 OCSP_BASIC_RESPONSE_V1 = 0;
 	public const uint32 OCSP_BASIC_BY_NAME_RESPONDER_ID = 1;
 	public const uint32 OCSP_BASIC_BY_KEY_RESPONDER_ID = 2;
+	public const String CRYPT_OID_ENCODE_OBJECT_FUNC = "CryptDllEncodeObject";
+	public const String CRYPT_OID_DECODE_OBJECT_FUNC = "CryptDllDecodeObject";
+	public const String CRYPT_OID_ENCODE_OBJECT_EX_FUNC = "CryptDllEncodeObjectEx";
+	public const String CRYPT_OID_DECODE_OBJECT_EX_FUNC = "CryptDllDecodeObjectEx";
+	public const String CRYPT_OID_CREATE_COM_OBJECT_FUNC = "CryptDllCreateCOMObject";
+	public const String CRYPT_OID_VERIFY_REVOCATION_FUNC = "CertDllVerifyRevocation";
+	public const String CRYPT_OID_VERIFY_CTL_USAGE_FUNC = "CertDllVerifyCTLUsage";
+	public const String CRYPT_OID_FORMAT_OBJECT_FUNC = "CryptDllFormatObject";
+	public const String CRYPT_OID_FIND_OID_INFO_FUNC = "CryptDllFindOIDInfo";
+	public const String CRYPT_OID_FIND_LOCALIZED_NAME_FUNC = "CryptDllFindLocalizedName";
+	public const String CRYPT_OID_REGPATH = "Software\\Microsoft\\Cryptography\\OID";
+	public const String CRYPT_OID_REG_ENCODING_TYPE_PREFIX = "EncodingType ";
+	public const String CRYPT_OID_REG_DLL_VALUE_NAME = "Dll";
+	public const String CRYPT_OID_REG_FUNC_NAME_VALUE_NAME = "FuncName";
+	public const String CRYPT_OID_REG_FUNC_NAME_VALUE_NAME_A = "FuncName";
+	public const String CRYPT_OID_REG_FLAGS_VALUE_NAME = "CryptFlags";
+	public const String CRYPT_DEFAULT_OID = "DEFAULT";
 	public const uint32 CRYPT_INSTALL_OID_FUNC_BEFORE_FLAG = 1;
 	public const uint32 CRYPT_GET_INSTALLED_OID_FUNC_FLAG = 1;
 	public const uint32 CRYPT_REGISTER_FIRST_INDEX = 0;
@@ -748,6 +1770,13 @@ static
 	public const uint32 CRYPT_MATCH_ANY_ENCODING_TYPE = 4294967295;
 	public const uint32 CALG_OID_INFO_CNG_ONLY = 4294967295;
 	public const uint32 CALG_OID_INFO_PARAMETERS = 4294967294;
+	public const String CRYPT_OID_INFO_HASH_PARAMETERS_ALGORITHM = "CryptOIDInfoHashParameters";
+	public const String CRYPT_OID_INFO_ECC_PARAMETERS_ALGORITHM = "CryptOIDInfoECCParameters";
+	public const String CRYPT_OID_INFO_MGF1_PARAMETERS_ALGORITHM = "CryptOIDInfoMgf1Parameters";
+	public const String CRYPT_OID_INFO_NO_SIGN_ALGORITHM = "CryptOIDInfoNoSign";
+	public const String CRYPT_OID_INFO_OAEP_PARAMETERS_ALGORITHM = "CryptOIDInfoOAEPParameters";
+	public const String CRYPT_OID_INFO_ECC_WRAP_PARAMETERS_ALGORITHM = "CryptOIDInfoECCWrapParameters";
+	public const String CRYPT_OID_INFO_NO_PARAMETERS_ALGORITHM = "CryptOIDInfoNoParameters";
 	public const uint32 CRYPT_HASH_ALG_OID_GROUP_ID = 1;
 	public const uint32 CRYPT_ENCRYPT_ALG_OID_GROUP_ID = 2;
 	public const uint32 CRYPT_PUBKEY_ALG_OID_GROUP_ID = 3;
@@ -781,8 +1810,24 @@ static
 	public const uint32 CRYPT_OID_INFO_OID_GROUP_BIT_LEN_SHIFT = 16;
 	public const uint32 CRYPT_INSTALL_OID_INFO_BEFORE_FLAG = 1;
 	public const uint32 CRYPT_LOCALIZED_NAME_ENCODING_TYPE = 0;
+	public const String CRYPT_LOCALIZED_NAME_OID = "LocalizedNames";
+	public const String CERT_STRONG_SIGN_ECDSA_ALGORITHM = "ECDSA";
 	public const uint32 CERT_STRONG_SIGN_SERIALIZED_INFO_CHOICE = 1;
 	public const uint32 CERT_STRONG_SIGN_OID_INFO_CHOICE = 2;
+	public const String szOID_CERT_STRONG_SIGN_OS_PREFIX = "1.3.6.1.4.1.311.72.1.";
+	public const String szOID_CERT_STRONG_SIGN_OS_1 = "1.3.6.1.4.1.311.72.1.1";
+	public const String szOID_CERT_STRONG_SIGN_OS_CURRENT = "1.3.6.1.4.1.311.72.1.1";
+	public const String szOID_CERT_STRONG_KEY_OS_PREFIX = "1.3.6.1.4.1.311.72.2.";
+	public const String szOID_CERT_STRONG_KEY_OS_1 = "1.3.6.1.4.1.311.72.2.1";
+	public const String szOID_CERT_STRONG_KEY_OS_CURRENT = "1.3.6.1.4.1.311.72.2.1";
+	public const String szOID_PKCS_7_DATA = "1.2.840.113549.1.7.1";
+	public const String szOID_PKCS_7_SIGNED = "1.2.840.113549.1.7.2";
+	public const String szOID_PKCS_7_ENVELOPED = "1.2.840.113549.1.7.3";
+	public const String szOID_PKCS_7_SIGNEDANDENVELOPED = "1.2.840.113549.1.7.4";
+	public const String szOID_PKCS_7_DIGESTED = "1.2.840.113549.1.7.5";
+	public const String szOID_PKCS_7_ENCRYPTED = "1.2.840.113549.1.7.6";
+	public const String szOID_PKCS_9_CONTENT_TYPE = "1.2.840.113549.1.9.3";
+	public const String szOID_PKCS_9_MESSAGE_DIGEST = "1.2.840.113549.1.9.4";
 	public const uint32 CMSG_ENCRYPTED = 6;
 	public const uint32 CMSG_MAIL_LIST_HANDLE_KEY_CHOICE = 1;
 	public const uint32 CMSG_KEY_TRANS_RECIPIENT = 1;
@@ -883,20 +1928,44 @@ static
 	public const uint32 CMSG_VERIFY_SIGNER_CHAIN = 3;
 	public const uint32 CMSG_VERIFY_SIGNER_NULL = 4;
 	public const uint32 CMSG_VERIFY_COUNTER_SIGN_ENABLE_STRONG_FLAG = 1;
+	public const String CMSG_OID_GEN_ENCRYPT_KEY_FUNC = "CryptMsgDllGenEncryptKey";
+	public const String CMSG_OID_EXPORT_ENCRYPT_KEY_FUNC = "CryptMsgDllExportEncryptKey";
+	public const String CMSG_OID_IMPORT_ENCRYPT_KEY_FUNC = "CryptMsgDllImportEncryptKey";
+	public const PSTR CMSG_DEFAULT_INSTALLABLE_FUNC_OID = (PSTR)(void*)1;
 	public const uint32 CMSG_CONTENT_ENCRYPT_PAD_ENCODED_LEN_FLAG = 1;
 	public const uint32 CMSG_CONTENT_ENCRYPT_FREE_PARA_FLAG = 1;
 	public const uint32 CMSG_CONTENT_ENCRYPT_FREE_OBJID_FLAG = 2;
 	public const uint32 CMSG_CONTENT_ENCRYPT_RELEASE_CONTEXT_FLAG = 32768;
+	public const String CMSG_OID_GEN_CONTENT_ENCRYPT_KEY_FUNC = "CryptMsgDllGenContentEncryptKey";
+	public const String CMSG_OID_CAPI1_GEN_CONTENT_ENCRYPT_KEY_FUNC = "CryptMsgDllGenContentEncryptKey";
+	public const String CMSG_OID_CNG_GEN_CONTENT_ENCRYPT_KEY_FUNC = "CryptMsgDllCNGGenContentEncryptKey";
 	public const uint32 CMSG_KEY_TRANS_ENCRYPT_FREE_PARA_FLAG = 1;
 	public const uint32 CMSG_KEY_TRANS_ENCRYPT_FREE_OBJID_FLAG = 2;
+	public const String CMSG_OID_EXPORT_KEY_TRANS_FUNC = "CryptMsgDllExportKeyTrans";
+	public const String CMSG_OID_CAPI1_EXPORT_KEY_TRANS_FUNC = "CryptMsgDllExportKeyTrans";
+	public const String CMSG_OID_CNG_EXPORT_KEY_TRANS_FUNC = "CryptMsgDllCNGExportKeyTrans";
 	public const uint32 CMSG_KEY_AGREE_ENCRYPT_FREE_PARA_FLAG = 1;
 	public const uint32 CMSG_KEY_AGREE_ENCRYPT_FREE_MATERIAL_FLAG = 2;
 	public const uint32 CMSG_KEY_AGREE_ENCRYPT_FREE_PUBKEY_ALG_FLAG = 4;
 	public const uint32 CMSG_KEY_AGREE_ENCRYPT_FREE_PUBKEY_PARA_FLAG = 8;
 	public const uint32 CMSG_KEY_AGREE_ENCRYPT_FREE_PUBKEY_BITS_FLAG = 16;
 	public const uint32 CMSG_KEY_AGREE_ENCRYPT_FREE_OBJID_FLAG = 32;
+	public const String CMSG_OID_EXPORT_KEY_AGREE_FUNC = "CryptMsgDllExportKeyAgree";
+	public const String CMSG_OID_CAPI1_EXPORT_KEY_AGREE_FUNC = "CryptMsgDllExportKeyAgree";
+	public const String CMSG_OID_CNG_EXPORT_KEY_AGREE_FUNC = "CryptMsgDllCNGExportKeyAgree";
 	public const uint32 CMSG_MAIL_LIST_ENCRYPT_FREE_PARA_FLAG = 1;
 	public const uint32 CMSG_MAIL_LIST_ENCRYPT_FREE_OBJID_FLAG = 2;
+	public const String CMSG_OID_EXPORT_MAIL_LIST_FUNC = "CryptMsgDllExportMailList";
+	public const String CMSG_OID_CAPI1_EXPORT_MAIL_LIST_FUNC = "CryptMsgDllExportMailList";
+	public const String CMSG_OID_IMPORT_KEY_TRANS_FUNC = "CryptMsgDllImportKeyTrans";
+	public const String CMSG_OID_CAPI1_IMPORT_KEY_TRANS_FUNC = "CryptMsgDllImportKeyTrans";
+	public const String CMSG_OID_IMPORT_KEY_AGREE_FUNC = "CryptMsgDllImportKeyAgree";
+	public const String CMSG_OID_CAPI1_IMPORT_KEY_AGREE_FUNC = "CryptMsgDllImportKeyAgree";
+	public const String CMSG_OID_IMPORT_MAIL_LIST_FUNC = "CryptMsgDllImportMailList";
+	public const String CMSG_OID_CAPI1_IMPORT_MAIL_LIST_FUNC = "CryptMsgDllImportMailList";
+	public const String CMSG_OID_CNG_IMPORT_KEY_TRANS_FUNC = "CryptMsgDllCNGImportKeyTrans";
+	public const String CMSG_OID_CNG_IMPORT_KEY_AGREE_FUNC = "CryptMsgDllCNGImportKeyAgree";
+	public const String CMSG_OID_CNG_IMPORT_CONTENT_ENCRYPT_KEY_FUNC = "CryptMsgDllCNGImportContentEncryptKey";
 	public const uint32 CERT_KEY_PROV_HANDLE_PROP_ID = 1;
 	public const uint32 CERT_KEY_PROV_INFO_PROP_ID = 2;
 	public const uint32 CERT_SHA1_HASH_PROP_ID = 3;
@@ -996,11 +2065,62 @@ static
 	public const uint32 CERT_LAST_RESERVED_PROP_ID = 32767;
 	public const uint32 CERT_FIRST_USER_PROP_ID = 32768;
 	public const uint32 CERT_LAST_USER_PROP_ID = 65535;
+	public const String szOID_CERT_PROP_ID_PREFIX = "1.3.6.1.4.1.311.10.11.";
+	public const String szOID_CERT_KEY_IDENTIFIER_PROP_ID = "1.3.6.1.4.1.311.10.11.20";
+	public const String szOID_CERT_ISSUER_SERIAL_NUMBER_MD5_HASH_PROP_ID = "1.3.6.1.4.1.311.10.11.28";
+	public const String szOID_CERT_SUBJECT_NAME_MD5_HASH_PROP_ID = "1.3.6.1.4.1.311.10.11.29";
+	public const String szOID_CERT_MD5_HASH_PROP_ID = "1.3.6.1.4.1.311.10.11.4";
+	public const String szOID_CERT_SIGNATURE_HASH_PROP_ID = "1.3.6.1.4.1.311.10.11.15";
+	public const String szOID_DISALLOWED_HASH = "1.3.6.1.4.1.311.10.11.15";
+	public const String szOID_CERT_DISALLOWED_FILETIME_PROP_ID = "1.3.6.1.4.1.311.10.11.104";
 	public const uint32 CERT_ACCESS_STATE_WRITE_PERSIST_FLAG = 1;
 	public const uint32 CERT_ACCESS_STATE_SYSTEM_STORE_FLAG = 2;
 	public const uint32 CERT_ACCESS_STATE_LM_SYSTEM_STORE_FLAG = 4;
 	public const uint32 CERT_ACCESS_STATE_GP_SYSTEM_STORE_FLAG = 8;
 	public const uint32 CERT_ACCESS_STATE_SHARED_USER_FLAG = 16;
+	public const String szOID_ROOT_PROGRAM_AUTO_UPDATE_CA_REVOCATION = "1.3.6.1.4.1.311.60.3.1";
+	public const String szOID_ROOT_PROGRAM_AUTO_UPDATE_END_REVOCATION = "1.3.6.1.4.1.311.60.3.2";
+	public const String szOID_ROOT_PROGRAM_NO_OCSP_FAILOVER_TO_CRL = "1.3.6.1.4.1.311.60.3.3";
+	public const PSTR CERT_STORE_PROV_MSG = (PSTR)(void*)1;
+	public const PSTR CERT_STORE_PROV_MEMORY = (PSTR)(void*)2;
+	public const PSTR CERT_STORE_PROV_FILE = (PSTR)(void*)3;
+	public const PSTR CERT_STORE_PROV_REG = (PSTR)(void*)4;
+	public const PSTR CERT_STORE_PROV_PKCS7 = (PSTR)(void*)5;
+	public const PSTR CERT_STORE_PROV_SERIALIZED = (PSTR)(void*)6;
+	public const PSTR CERT_STORE_PROV_FILENAME_A = (PSTR)(void*)7;
+	public const PSTR CERT_STORE_PROV_FILENAME_W = (PSTR)(void*)8;
+	public const int32 CERT_STORE_PROV_FILENAME = 8;
+	public const PSTR CERT_STORE_PROV_SYSTEM_A = (PSTR)(void*)9;
+	public const PSTR CERT_STORE_PROV_SYSTEM_W = (PSTR)(void*)10;
+	public const int32 CERT_STORE_PROV_SYSTEM = 10;
+	public const PSTR CERT_STORE_PROV_COLLECTION = (PSTR)(void*)11;
+	public const PSTR CERT_STORE_PROV_SYSTEM_REGISTRY_A = (PSTR)(void*)12;
+	public const PSTR CERT_STORE_PROV_SYSTEM_REGISTRY_W = (PSTR)(void*)13;
+	public const int32 CERT_STORE_PROV_SYSTEM_REGISTRY = 13;
+	public const PSTR CERT_STORE_PROV_PHYSICAL_W = (PSTR)(void*)14;
+	public const int32 CERT_STORE_PROV_PHYSICAL = 14;
+	public const PSTR CERT_STORE_PROV_SMART_CARD_W = (PSTR)(void*)15;
+	public const int32 CERT_STORE_PROV_SMART_CARD = 15;
+	public const PSTR CERT_STORE_PROV_LDAP_W = (PSTR)(void*)16;
+	public const int32 CERT_STORE_PROV_LDAP = 16;
+	public const PSTR CERT_STORE_PROV_PKCS12 = (PSTR)(void*)17;
+	public const String sz_CERT_STORE_PROV_MEMORY = "Memory";
+	public const String sz_CERT_STORE_PROV_FILENAME_W = "File";
+	public const String sz_CERT_STORE_PROV_FILENAME = "File";
+	public const String sz_CERT_STORE_PROV_SYSTEM_W = "System";
+	public const String sz_CERT_STORE_PROV_SYSTEM = "System";
+	public const String sz_CERT_STORE_PROV_PKCS7 = "PKCS7";
+	public const String sz_CERT_STORE_PROV_PKCS12 = "PKCS12";
+	public const String sz_CERT_STORE_PROV_SERIALIZED = "Serialized";
+	public const String sz_CERT_STORE_PROV_COLLECTION = "Collection";
+	public const String sz_CERT_STORE_PROV_SYSTEM_REGISTRY_W = "SystemRegistry";
+	public const String sz_CERT_STORE_PROV_SYSTEM_REGISTRY = "SystemRegistry";
+	public const String sz_CERT_STORE_PROV_PHYSICAL_W = "Physical";
+	public const String sz_CERT_STORE_PROV_PHYSICAL = "Physical";
+	public const String sz_CERT_STORE_PROV_SMART_CARD_W = "SmartCard";
+	public const String sz_CERT_STORE_PROV_SMART_CARD = "SmartCard";
+	public const String sz_CERT_STORE_PROV_LDAP_W = "Ldap";
+	public const String sz_CERT_STORE_PROV_LDAP = "Ldap";
 	public const uint32 CERT_STORE_SIGNATURE_FLAG = 1;
 	public const uint32 CERT_STORE_TIME_VALIDITY_FLAG = 2;
 	public const uint32 CERT_STORE_REVOCATION_FLAG = 4;
@@ -1024,6 +2144,9 @@ static
 	public const uint32 CERT_SYSTEM_STORE_LOCAL_MACHINE_GROUP_POLICY_ID = 8;
 	public const uint32 CERT_SYSTEM_STORE_LOCAL_MACHINE_ENTERPRISE_ID = 9;
 	public const uint32 CERT_SYSTEM_STORE_LOCAL_MACHINE_WCOS_ID = 10;
+	public const String CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH = "Software\\Policies\\Microsoft\\SystemCertificates";
+	public const String CERT_EFSBLOB_VALUE_NAME = "EFSBlob";
+	public const String CERT_PROT_ROOT_FLAGS_VALUE_NAME = "Flags";
 	public const uint32 CERT_PROT_ROOT_DISABLE_CURRENT_USER_FLAG = 1;
 	public const uint32 CERT_PROT_ROOT_INHIBIT_ADD_AT_INIT_FLAG = 2;
 	public const uint32 CERT_PROT_ROOT_INHIBIT_PURGE_LM_FLAG = 4;
@@ -1032,15 +2155,50 @@ static
 	public const uint32 CERT_PROT_ROOT_DISABLE_NT_AUTH_REQUIRED_FLAG = 16;
 	public const uint32 CERT_PROT_ROOT_DISABLE_NOT_DEFINED_NAME_CONSTRAINT_FLAG = 32;
 	public const uint32 CERT_PROT_ROOT_DISABLE_PEER_TRUST = 65536;
+	public const String CERT_PROT_ROOT_PEER_USAGES_VALUE_NAME = "PeerUsages";
+	public const String CERT_PROT_ROOT_PEER_USAGES_VALUE_NAME_A = "PeerUsages";
+	public const String CERT_LOCAL_MACHINE_SYSTEM_STORE_REGPATH = "Software\\Microsoft\\SystemCertificates";
+	public const String CERT_TRUST_PUB_AUTHENTICODE_FLAGS_VALUE_NAME = "AuthenticodeFlags";
 	public const uint32 CERT_TRUST_PUB_ALLOW_TRUST_MASK = 3;
 	public const uint32 CERT_TRUST_PUB_ALLOW_END_USER_TRUST = 0;
 	public const uint32 CERT_TRUST_PUB_ALLOW_MACHINE_ADMIN_TRUST = 1;
 	public const uint32 CERT_TRUST_PUB_ALLOW_ENTERPRISE_ADMIN_TRUST = 2;
 	public const uint32 CERT_TRUST_PUB_CHECK_PUBLISHER_REV_FLAG = 256;
 	public const uint32 CERT_TRUST_PUB_CHECK_TIMESTAMP_REV_FLAG = 512;
+	public const String CERT_OCM_SUBCOMPONENTS_LOCAL_MACHINE_REGPATH = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Setup\\OC Manager\\Subcomponents";
+	public const String CERT_OCM_SUBCOMPONENTS_ROOT_AUTO_UPDATE_VALUE_NAME = "RootAutoUpdate";
+	public const String CERT_DISABLE_ROOT_AUTO_UPDATE_VALUE_NAME = "DisableRootAutoUpdate";
+	public const String CERT_ENABLE_DISALLOWED_CERT_AUTO_UPDATE_VALUE_NAME = "EnableDisallowedCertAutoUpdate";
+	public const String CERT_DISABLE_PIN_RULES_AUTO_UPDATE_VALUE_NAME = "DisablePinRulesAutoUpdate";
+	public const String CERT_AUTO_UPDATE_ROOT_DIR_URL_VALUE_NAME = "RootDirUrl";
+	public const String CERT_AUTO_UPDATE_SYNC_FROM_DIR_URL_VALUE_NAME = "SyncFromDirUrl";
+	public const String CERT_AUTH_ROOT_AUTO_UPDATE_ROOT_DIR_URL_VALUE_NAME = "RootDirUrl";
+	public const String CERT_AUTH_ROOT_AUTO_UPDATE_SYNC_DELTA_TIME_VALUE_NAME = "SyncDeltaTime";
+	public const String CERT_AUTH_ROOT_AUTO_UPDATE_FLAGS_VALUE_NAME = "Flags";
 	public const uint32 CERT_AUTH_ROOT_AUTO_UPDATE_DISABLE_UNTRUSTED_ROOT_LOGGING_FLAG = 1;
 	public const uint32 CERT_AUTH_ROOT_AUTO_UPDATE_DISABLE_PARTIAL_CHAIN_LOGGING_FLAG = 2;
 	public const uint32 CERT_AUTO_UPDATE_DISABLE_RANDOM_QUERY_STRING_FLAG = 4;
+	public const String CERT_AUTH_ROOT_AUTO_UPDATE_LAST_SYNC_TIME_VALUE_NAME = "LastSyncTime";
+	public const String CERT_AUTH_ROOT_AUTO_UPDATE_ENCODED_CTL_VALUE_NAME = "EncodedCtl";
+	public const String CERT_AUTH_ROOT_CTL_FILENAME = "authroot.stl";
+	public const String CERT_AUTH_ROOT_CTL_FILENAME_A = "authroot.stl";
+	public const String CERT_AUTH_ROOT_CAB_FILENAME = "authrootstl.cab";
+	public const String CERT_AUTH_ROOT_SEQ_FILENAME = "authrootseq.txt";
+	public const String CERT_AUTH_ROOT_CERT_EXT = ".crt";
+	public const String CERT_DISALLOWED_CERT_AUTO_UPDATE_SYNC_DELTA_TIME_VALUE_NAME = "DisallowedCertSyncDeltaTime";
+	public const String CERT_DISALLOWED_CERT_AUTO_UPDATE_LAST_SYNC_TIME_VALUE_NAME = "DisallowedCertLastSyncTime";
+	public const String CERT_DISALLOWED_CERT_AUTO_UPDATE_ENCODED_CTL_VALUE_NAME = "DisallowedCertEncodedCtl";
+	public const String CERT_DISALLOWED_CERT_CTL_FILENAME = "disallowedcert.stl";
+	public const String CERT_DISALLOWED_CERT_CTL_FILENAME_A = "disallowedcert.stl";
+	public const String CERT_DISALLOWED_CERT_CAB_FILENAME = "disallowedcertstl.cab";
+	public const String CERT_DISALLOWED_CERT_AUTO_UPDATE_LIST_IDENTIFIER = "DisallowedCert_AutoUpdate_1";
+	public const String CERT_PIN_RULES_AUTO_UPDATE_SYNC_DELTA_TIME_VALUE_NAME = "PinRulesSyncDeltaTime";
+	public const String CERT_PIN_RULES_AUTO_UPDATE_LAST_SYNC_TIME_VALUE_NAME = "PinRulesLastSyncTime";
+	public const String CERT_PIN_RULES_AUTO_UPDATE_ENCODED_CTL_VALUE_NAME = "PinRulesEncodedCtl";
+	public const String CERT_PIN_RULES_CTL_FILENAME = "pinrules.stl";
+	public const String CERT_PIN_RULES_CTL_FILENAME_A = "pinrules.stl";
+	public const String CERT_PIN_RULES_CAB_FILENAME = "pinrulesstl.cab";
+	public const String CERT_PIN_RULES_AUTO_UPDATE_LIST_IDENTIFIER = "PinRules_AutoUpdate_1";
 	public const uint32 CERT_REGISTRY_STORE_REMOTE_FLAG = 65536;
 	public const uint32 CERT_REGISTRY_STORE_SERIALIZED_FLAG = 131072;
 	public const uint32 CERT_REGISTRY_STORE_CLIENT_GPT_FLAG = 2147483648;
@@ -1048,11 +2206,13 @@ static
 	public const uint32 CERT_REGISTRY_STORE_ROAMING_FLAG = 262144;
 	public const uint32 CERT_REGISTRY_STORE_MY_IE_DIRTY_FLAG = 524288;
 	public const uint32 CERT_REGISTRY_STORE_EXTERNAL_FLAG = 1048576;
+	public const String CERT_IE_DIRTY_FLAGS_REGPATH = "Software\\Microsoft\\Cryptography\\IEDirtyFlags";
 	public const uint32 CERT_FILE_STORE_COMMIT_ENABLE_FLAG = 65536;
 	public const uint32 CERT_LDAP_STORE_SIGN_FLAG = 65536;
 	public const uint32 CERT_LDAP_STORE_AREC_EXCLUSIVE_FLAG = 131072;
 	public const uint32 CERT_LDAP_STORE_OPENED_FLAG = 262144;
 	public const uint32 CERT_LDAP_STORE_UNBIND_FLAG = 524288;
+	public const String CRYPT_OID_OPEN_STORE_PROV_FUNC = "CertDllOpenStoreProv";
 	public const uint32 CERT_STORE_PROV_GP_SYSTEM_STORE_FLAG = 32;
 	public const uint32 CERT_STORE_PROV_SHARED_USER_FLAG = 64;
 	public const uint32 CERT_STORE_PROV_CLOSE_FUNC = 0;
@@ -1147,6 +2307,22 @@ static
 	public const uint32 CERT_PHYSICAL_STORE_REMOTE_OPEN_DISABLE_FLAG = 4;
 	public const uint32 CERT_PHYSICAL_STORE_INSERT_COMPUTER_NAME_ENABLE_FLAG = 8;
 	public const uint32 CERT_PHYSICAL_STORE_PREDEFINED_ENUM_FLAG = 1;
+	public const String CERT_PHYSICAL_STORE_DEFAULT_NAME = ".Default";
+	public const String CERT_PHYSICAL_STORE_GROUP_POLICY_NAME = ".GroupPolicy";
+	public const String CERT_PHYSICAL_STORE_LOCAL_MACHINE_NAME = ".LocalMachine";
+	public const String CERT_PHYSICAL_STORE_DS_USER_CERTIFICATE_NAME = ".UserCertificate";
+	public const String CERT_PHYSICAL_STORE_LOCAL_MACHINE_GROUP_POLICY_NAME = ".LocalMachineGroupPolicy";
+	public const String CERT_PHYSICAL_STORE_ENTERPRISE_NAME = ".Enterprise";
+	public const String CERT_PHYSICAL_STORE_AUTH_ROOT_NAME = ".AuthRoot";
+	public const String CERT_PHYSICAL_STORE_SMART_CARD_NAME = ".SmartCard";
+	public const String CRYPT_OID_OPEN_SYSTEM_STORE_PROV_FUNC = "CertDllOpenSystemStoreProv";
+	public const String CRYPT_OID_REGISTER_SYSTEM_STORE_FUNC = "CertDllRegisterSystemStore";
+	public const String CRYPT_OID_UNREGISTER_SYSTEM_STORE_FUNC = "CertDllUnregisterSystemStore";
+	public const String CRYPT_OID_ENUM_SYSTEM_STORE_FUNC = "CertDllEnumSystemStore";
+	public const String CRYPT_OID_REGISTER_PHYSICAL_STORE_FUNC = "CertDllRegisterPhysicalStore";
+	public const String CRYPT_OID_UNREGISTER_PHYSICAL_STORE_FUNC = "CertDllUnregisterPhysicalStore";
+	public const String CRYPT_OID_ENUM_PHYSICAL_STORE_FUNC = "CertDllEnumPhysicalStore";
+	public const String CRYPT_OID_SYSTEM_STORE_LOCATION_VALUE_NAME = "SystemStoreLocation";
 	public const uint32 CMSG_TRUSTED_SIGNER_FLAG = 1;
 	public const uint32 CMSG_SIGNER_ONLY_FLAG = 2;
 	public const uint32 CMSG_USE_SIGNER_INDEX_FLAG = 4;
@@ -1176,11 +2352,21 @@ static
 	public const uint32 CRYPT_VERIFY_CERT_SIGN_ISSUER_CHAIN = 3;
 	public const uint32 CRYPT_VERIFY_CERT_SIGN_ISSUER_NULL = 4;
 	public const uint32 CRYPT_VERIFY_CERT_SIGN_CHECK_WEAK_HASH_FLAG = 8;
+	public const String CRYPT_OID_EXTRACT_ENCODED_SIGNATURE_PARAMETERS_FUNC = "CryptDllExtractEncodedSignatureParameters";
+	public const String CRYPT_OID_SIGN_AND_ENCODE_HASH_FUNC = "CryptDllSignAndEncodeHash";
+	public const String CRYPT_OID_VERIFY_ENCODED_SIGNATURE_FUNC = "CryptDllVerifyEncodedSignature";
+	public const String CRYPT_OID_EXPORT_PUBLIC_KEY_INFO_FUNC = "CryptDllExportPublicKeyInfoEx";
+	public const String CRYPT_OID_EXPORT_PUBLIC_KEY_INFO_EX2_FUNC = "CryptDllExportPublicKeyInfoEx2";
+	public const String CRYPT_OID_EXPORT_PUBLIC_KEY_INFO_FROM_BCRYPT_HANDLE_FUNC = "CryptDllExportPublicKeyInfoFromBCryptKeyHandle";
+	public const String CRYPT_OID_IMPORT_PUBLIC_KEY_INFO_FUNC = "CryptDllImportPublicKeyInfoEx";
+	public const String CRYPT_OID_IMPORT_PUBLIC_KEY_INFO_EX2_FUNC = "CryptDllImportPublicKeyInfoEx2";
 	public const uint32 CRYPT_ACQUIRE_WINDOW_HANDLE_FLAG = 128;
 	public const uint32 CRYPT_ACQUIRE_NCRYPT_KEY_FLAGS_MASK = 458752;
 	public const uint32 CRYPT_ACQUIRE_ALLOW_NCRYPT_KEY_FLAG = 65536;
 	public const uint32 CRYPT_ACQUIRE_PREFER_NCRYPT_KEY_FLAG = 131072;
 	public const uint32 CRYPT_ACQUIRE_ONLY_NCRYPT_KEY_FLAG = 262144;
+	public const String CRYPT_OID_IMPORT_PRIVATE_KEY_INFO_FUNC = "CryptDllImportPrivateKeyInfoEx";
+	public const String CRYPT_OID_EXPORT_PRIVATE_KEY_INFO_FUNC = "CryptDllExportPrivateKeyInfoEx";
 	public const uint32 CRYPT_DELETE_KEYSET = 16;
 	public const uint32 CERT_XML_NAME_STR = 4;
 	public const uint32 CERT_NAME_STR_SEMICOLON_FLAG = 1073741824;
@@ -1212,6 +2398,18 @@ static
 	public const uint32 CRYPT_MESSAGE_KEYID_SIGNER_FLAG = 4;
 	public const uint32 CRYPT_MESSAGE_SILENT_KEYSET_FLAG = 64;
 	public const uint32 CRYPT_MESSAGE_KEYID_RECIPIENT_FLAG = 4;
+	public const PSTR CREDENTIAL_OID_PASSWORD_CREDENTIALS_A = (PSTR)(void*)1;
+	public const PSTR CREDENTIAL_OID_PASSWORD_CREDENTIALS_W = (PSTR)(void*)2;
+	public const int32 CREDENTIAL_OID_PASSWORD_CREDENTIALS = 2;
+	public const String SCHEME_OID_RETRIEVE_ENCODED_OBJECT_FUNC = "SchemeDllRetrieveEncodedObject";
+	public const String SCHEME_OID_RETRIEVE_ENCODED_OBJECTW_FUNC = "SchemeDllRetrieveEncodedObjectW";
+	public const String CONTEXT_OID_CREATE_OBJECT_CONTEXT_FUNC = "ContextDllCreateObjectContext";
+	public const PSTR CONTEXT_OID_CERTIFICATE = (PSTR)(void*)1;
+	public const PSTR CONTEXT_OID_CRL = (PSTR)(void*)2;
+	public const PSTR CONTEXT_OID_CTL = (PSTR)(void*)3;
+	public const PSTR CONTEXT_OID_PKCS7 = (PSTR)(void*)4;
+	public const PSTR CONTEXT_OID_CAPI2_ANY = (PSTR)(void*)5;
+	public const PSTR CONTEXT_OID_OCSP_RESP = (PSTR)(void*)6;
 	public const uint32 CRYPT_RETRIEVE_MULTIPLE_OBJECTS = 1;
 	public const uint32 CRYPT_CACHE_ONLY_RETRIEVAL = 2;
 	public const uint32 CRYPT_WIRE_ONLY_RETRIEVAL = 4;
@@ -1254,22 +2452,81 @@ static
 	public const uint32 CRYPTNET_URL_CACHE_RESPONSE_HTTP = 1;
 	public const uint32 CRYPTNET_URL_CACHE_RESPONSE_VALIDATED = 32768;
 	public const uint32 CRYPT_RETRIEVE_MAX_ERROR_CONTENT_LENGTH = 4096;
+	public const PSTR CRYPT_PARAM_ASYNC_RETRIEVAL_COMPLETION = (PSTR)(void*)1;
+	public const PSTR CRYPT_PARAM_CANCEL_ASYNC_RETRIEVAL = (PSTR)(void*)2;
+	public const String URL_OID_GET_OBJECT_URL_FUNC = "UrlDllGetObjectUrl";
+	public const PSTR URL_OID_CERTIFICATE_ISSUER = (PSTR)(void*)1;
+	public const PSTR URL_OID_CERTIFICATE_CRL_DIST_POINT = (PSTR)(void*)2;
+	public const PSTR URL_OID_CTL_ISSUER = (PSTR)(void*)3;
+	public const PSTR URL_OID_CTL_NEXT_UPDATE = (PSTR)(void*)4;
+	public const PSTR URL_OID_CRL_ISSUER = (PSTR)(void*)5;
+	public const PSTR URL_OID_CERTIFICATE_FRESHEST_CRL = (PSTR)(void*)6;
+	public const PSTR URL_OID_CRL_FRESHEST_CRL = (PSTR)(void*)7;
+	public const PSTR URL_OID_CROSS_CERT_DIST_POINT = (PSTR)(void*)8;
+	public const PSTR URL_OID_CERTIFICATE_OCSP = (PSTR)(void*)9;
+	public const PSTR URL_OID_CERTIFICATE_OCSP_AND_CRL_DIST_POINT = (PSTR)(void*)10;
+	public const PSTR URL_OID_CERTIFICATE_CRL_DIST_POINT_AND_OCSP = (PSTR)(void*)11;
+	public const PSTR URL_OID_CROSS_CERT_SUBJECT_INFO_ACCESS = (PSTR)(void*)12;
+	public const PSTR URL_OID_CERTIFICATE_ONLY_OCSP = (PSTR)(void*)13;
+	public const String TIME_VALID_OID_GET_OBJECT_FUNC = "TimeValidDllGetObject";
+	public const PSTR TIME_VALID_OID_GET_CTL = (PSTR)(void*)1;
+	public const PSTR TIME_VALID_OID_GET_CRL = (PSTR)(void*)2;
+	public const PSTR TIME_VALID_OID_GET_CRL_FROM_CERT = (PSTR)(void*)3;
+	public const PSTR TIME_VALID_OID_GET_FRESHEST_CRL_FROM_CERT = (PSTR)(void*)4;
+	public const PSTR TIME_VALID_OID_GET_FRESHEST_CRL_FROM_CRL = (PSTR)(void*)5;
+	public const String TIME_VALID_OID_FLUSH_OBJECT_FUNC = "TimeValidDllFlushObject";
+	public const PSTR TIME_VALID_OID_FLUSH_CTL = (PSTR)(void*)1;
+	public const PSTR TIME_VALID_OID_FLUSH_CRL = (PSTR)(void*)2;
+	public const PSTR TIME_VALID_OID_FLUSH_CRL_FROM_CERT = (PSTR)(void*)3;
+	public const PSTR TIME_VALID_OID_FLUSH_FRESHEST_CRL_FROM_CERT = (PSTR)(void*)4;
+	public const PSTR TIME_VALID_OID_FLUSH_FRESHEST_CRL_FROM_CRL = (PSTR)(void*)5;
 	public const uint32 CRYPT_KEYID_MACHINE_FLAG = 32;
 	public const uint32 CRYPT_KEYID_ALLOC_FLAG = 32768;
 	public const uint32 CRYPT_KEYID_DELETE_FLAG = 16;
 	public const uint32 CRYPT_KEYID_SET_NEW_FLAG = 8192;
+	public const String CERT_CHAIN_CONFIG_REGPATH = "Software\\Microsoft\\Cryptography\\OID\\EncodingType 0\\CertDllCreateCertificateChainEngine\\Config";
+	public const String CERT_CHAIN_MAX_URL_RETRIEVAL_BYTE_COUNT_VALUE_NAME = "MaxUrlRetrievalByteCount";
+	public const String CERT_CHAIN_CACHE_RESYNC_FILETIME_VALUE_NAME = "ChainCacheResyncFiletime";
+	public const String CERT_CHAIN_DISABLE_MANDATORY_BASIC_CONSTRAINTS_VALUE_NAME = "DisableMandatoryBasicConstraints";
+	public const String CERT_CHAIN_DISABLE_CA_NAME_CONSTRAINTS_VALUE_NAME = "DisableCANameConstraints";
+	public const String CERT_CHAIN_DISABLE_UNSUPPORTED_CRITICAL_EXTENSIONS_VALUE_NAME = "DisableUnsupportedCriticalExtensions";
+	public const String CERT_CHAIN_MAX_AIA_URL_COUNT_IN_CERT_VALUE_NAME = "MaxAIAUrlCountInCert";
 	public const uint32 CERT_CHAIN_MAX_AIA_URL_COUNT_IN_CERT_DEFAULT = 5;
+	public const String CERT_CHAIN_MAX_AIA_URL_RETRIEVAL_COUNT_PER_CHAIN_VALUE_NAME = "MaxAIAUrlRetrievalCountPerChain";
 	public const uint32 CERT_CHAIN_MAX_AIA_URL_RETRIEVAL_COUNT_PER_CHAIN_DEFAULT = 3;
+	public const String CERT_CHAIN_MAX_AIA_URL_RETRIEVAL_BYTE_COUNT_VALUE_NAME = "MaxAIAUrlRetrievalByteCount";
 	public const uint32 CERT_CHAIN_MAX_AIA_URL_RETRIEVAL_BYTE_COUNT_DEFAULT = 100000;
+	public const String CERT_CHAIN_MAX_AIA_URL_RETRIEVAL_CERT_COUNT_VALUE_NAME = "MaxAIAUrlRetrievalCertCount";
 	public const uint32 CERT_CHAIN_MAX_AIA_URL_RETRIEVAL_CERT_COUNT_DEFAULT = 10;
+	public const String CERT_CHAIN_OCSP_VALIDITY_SECONDS_VALUE_NAME = "OcspValiditySeconds";
+	public const String CERT_CHAIN_DISABLE_SERIAL_CHAIN_VALUE_NAME = "DisableSerialChain";
+	public const String CERT_CHAIN_SERIAL_CHAIN_LOG_FILE_NAME_VALUE_NAME = "SerialChainLogFileName";
+	public const String CERT_CHAIN_DISABLE_SYNC_WITH_SSL_TIME_VALUE_NAME = "DisableSyncWithSslTime";
+	public const String CERT_CHAIN_MAX_SSL_TIME_UPDATED_EVENT_COUNT_VALUE_NAME = "MaxSslTimeUpdatedEventCount";
 	public const uint32 CERT_CHAIN_MAX_SSL_TIME_UPDATED_EVENT_COUNT_DEFAULT = 5;
 	public const uint32 CERT_CHAIN_MAX_SSL_TIME_UPDATED_EVENT_COUNT_DISABLE = 4294967295;
+	public const String CERT_CHAIN_SSL_HANDSHAKE_LOG_FILE_NAME_VALUE_NAME = "SslHandshakeLogFileName";
+	public const String CERT_CHAIN_ENABLE_WEAK_SIGNATURE_FLAGS_VALUE_NAME = "EnableWeakSignatureFlags";
 	public const uint32 CERT_CHAIN_ENABLE_MD2_MD4_FLAG = 1;
 	public const uint32 CERT_CHAIN_ENABLE_WEAK_RSA_ROOT_FLAG = 2;
 	public const uint32 CERT_CHAIN_ENABLE_WEAK_LOGGING_FLAG = 4;
 	public const uint32 CERT_CHAIN_ENABLE_ONLY_WEAK_LOGGING_FLAG = 8;
+	public const String CERT_CHAIN_MIN_RSA_PUB_KEY_BIT_LENGTH_VALUE_NAME = "MinRsaPubKeyBitLength";
 	public const uint32 CERT_CHAIN_MIN_RSA_PUB_KEY_BIT_LENGTH_DEFAULT = 1023;
 	public const uint32 CERT_CHAIN_MIN_RSA_PUB_KEY_BIT_LENGTH_DISABLE = 4294967295;
+	public const String CERT_CHAIN_WEAK_RSA_PUB_KEY_TIME_VALUE_NAME = "WeakRsaPubKeyTime";
+	public const String CERT_CHAIN_WEAK_SIGNATURE_LOG_DIR_VALUE_NAME = "WeakSignatureLogDir";
+	public const String CERT_CHAIN_DEFAULT_CONFIG_SUBDIR = "Default";
+	public const String CERT_CHAIN_WEAK_PREFIX_NAME = "Weak";
+	public const String CERT_CHAIN_WEAK_THIRD_PARTY_CONFIG_NAME = "ThirdParty";
+	public const String CERT_CHAIN_WEAK_ALL_CONFIG_NAME = "All";
+	public const String CERT_CHAIN_WEAK_FLAGS_NAME = "Flags";
+	public const String CERT_CHAIN_WEAK_HYGIENE_NAME = "Hygiene";
+	public const String CERT_CHAIN_WEAK_AFTER_TIME_NAME = "AfterTime";
+	public const String CERT_CHAIN_WEAK_FILE_HASH_AFTER_TIME_NAME = "FileHashAfterTime";
+	public const String CERT_CHAIN_WEAK_TIMESTAMP_HASH_AFTER_TIME_NAME = "TimestampHashAfterTime";
+	public const String CERT_CHAIN_WEAK_MIN_BIT_LENGTH_NAME = "MinBitLength";
+	public const String CERT_CHAIN_WEAK_SHA256_ALLOW_NAME = "Sha256Allow";
 	public const uint32 CERT_CHAIN_MIN_PUB_KEY_BIT_LENGTH_DISABLE = 4294967295;
 	public const uint32 CERT_CHAIN_ENABLE_WEAK_SETTINGS_FLAG = 2147483648;
 	public const uint32 CERT_CHAIN_DISABLE_ECC_PARA_FLAG = 16;
@@ -1300,22 +2557,70 @@ static
 	public const uint32 CERT_CHAIN_AUTO_NETWORK_INFO = 6;
 	public const uint32 CERT_CHAIN_AUTO_SERIAL_LOCAL_MACHINE = 7;
 	public const uint32 CERT_CHAIN_AUTO_HPKP_RULE_INFO = 8;
+	public const String CERT_CHAIN_AUTO_FLAGS_VALUE_NAME = "AutoFlags";
 	public const uint32 CERT_CHAIN_AUTO_FLUSH_DISABLE_FLAG = 1;
 	public const uint32 CERT_CHAIN_AUTO_LOG_CREATE_FLAG = 2;
 	public const uint32 CERT_CHAIN_AUTO_LOG_FREE_FLAG = 4;
 	public const uint32 CERT_CHAIN_AUTO_LOG_FLUSH_FLAG = 8;
+	public const String CERT_CHAIN_AUTO_FLUSH_FIRST_DELTA_SECONDS_VALUE_NAME = "AutoFlushFirstDeltaSeconds";
+	public const String CERT_CHAIN_AUTO_FLUSH_NEXT_DELTA_SECONDS_VALUE_NAME = "AutoFlushNextDeltaSeconds";
+	public const String CERT_CHAIN_AUTO_LOG_FILE_NAME_VALUE_NAME = "AutoLogFileName";
+	public const String CERT_CHAIN_DISABLE_AUTO_FLUSH_PROCESS_NAME_LIST_VALUE_NAME = "DisableAutoFlushProcessNameList";
+	public const String CERT_SRV_OCSP_RESP_MIN_VALIDITY_SECONDS_VALUE_NAME = "SrvOcspRespMinValiditySeconds";
+	public const String CERT_SRV_OCSP_RESP_URL_RETRIEVAL_TIMEOUT_MILLISECONDS_VALUE_NAME = "SrvOcspRespUrlRetrievalTimeoutMilliseconds";
+	public const String CERT_SRV_OCSP_RESP_MAX_BEFORE_NEXT_UPDATE_SECONDS_VALUE_NAME = "SrvOcspRespMaxBeforeNextUpdateSeconds";
+	public const String CERT_SRV_OCSP_RESP_MIN_BEFORE_NEXT_UPDATE_SECONDS_VALUE_NAME = "SrvOcspRespMinBeforeNextUpdateSeconds";
+	public const String CERT_SRV_OCSP_RESP_MIN_AFTER_NEXT_UPDATE_SECONDS_VALUE_NAME = "SrvOcspRespMinAfterNextUpdateSeconds";
+	public const String CERT_SRV_OCSP_RESP_MIN_SYNC_CERT_FILE_SECONDS_VALUE_NAME = "SrvOcspRespMinSyncCertFileSeconds";
 	public const uint32 CERT_SRV_OCSP_RESP_MIN_SYNC_CERT_FILE_SECONDS_DEFAULT = 5;
+	public const String CERT_SRV_OCSP_RESP_MAX_SYNC_CERT_FILE_SECONDS_VALUE_NAME = "SrvOcspRespMaxSyncCertFileSeconds";
+	public const String CRYPTNET_MAX_CACHED_OCSP_PER_CRL_COUNT_VALUE_NAME = "CryptnetMaxCachedOcspPerCrlCount";
 	public const uint32 CRYPTNET_MAX_CACHED_OCSP_PER_CRL_COUNT_DEFAULT = 500;
 	public const uint32 CRYPTNET_OCSP_AFTER_CRL_DISABLE = 4294967295;
+	public const String CRYPTNET_URL_CACHE_DEFAULT_FLUSH_EXEMPT_SECONDS_VALUE_NAME = "CryptnetDefaultFlushExemptSeconds";
+	public const String CRYPTNET_PRE_FETCH_MIN_MAX_AGE_SECONDS_VALUE_NAME = "CryptnetPreFetchMinMaxAgeSeconds";
+	public const String CRYPTNET_PRE_FETCH_MAX_MAX_AGE_SECONDS_VALUE_NAME = "CryptnetPreFetchMaxMaxAgeSeconds";
+	public const String CRYPTNET_PRE_FETCH_MIN_OCSP_VALIDITY_PERIOD_SECONDS_VALUE_NAME = "CryptnetPreFetchMinOcspValidityPeriodSeconds";
+	public const String CRYPTNET_PRE_FETCH_AFTER_PUBLISH_PRE_FETCH_DIVISOR_VALUE_NAME = "CryptnetPreFetchAfterPublishPreFetchDivisor";
 	public const uint32 CRYPTNET_PRE_FETCH_AFTER_PUBLISH_PRE_FETCH_DIVISOR_DEFAULT = 10;
+	public const String CRYPTNET_PRE_FETCH_BEFORE_NEXT_UPDATE_PRE_FETCH_DIVISOR_VALUE_NAME = "CryptnetPreFetchBeforeNextUpdatePreFetchDivisor";
 	public const uint32 CRYPTNET_PRE_FETCH_BEFORE_NEXT_UPDATE_PRE_FETCH_DIVISOR_DEFAULT = 20;
+	public const String CRYPTNET_PRE_FETCH_MIN_BEFORE_NEXT_UPDATE_PRE_FETCH_PERIOD_SECONDS_VALUE_NAME = "CryptnetPreFetchMinBeforeNextUpdatePreFetchSeconds";
+	public const String CRYPTNET_PRE_FETCH_VALIDITY_PERIOD_AFTER_NEXT_UPDATE_PRE_FETCH_DIVISOR_VALUE_NAME = "CryptnetPreFetchValidityPeriodAfterNextUpdatePreFetchDivisor";
 	public const uint32 CRYPTNET_PRE_FETCH_VALIDITY_PERIOD_AFTER_NEXT_UPDATE_PRE_FETCH_DIVISOR_DEFAULT = 10;
+	public const String CRYPTNET_PRE_FETCH_MAX_AFTER_NEXT_UPDATE_PRE_FETCH_PERIOD_SECONDS_VALUE_NAME = "CryptnetPreFetchMaxAfterNextUpdatePreFetchPeriodSeconds";
+	public const String CRYPTNET_PRE_FETCH_MIN_AFTER_NEXT_UPDATE_PRE_FETCH_PERIOD_SECONDS_VALUE_NAME = "CryptnetPreFetchMinAfterNextUpdatePreFetchPeriodSeconds";
+	public const String CRYPTNET_PRE_FETCH_AFTER_CURRENT_TIME_PRE_FETCH_PERIOD_SECONDS_VALUE_NAME = "CryptnetPreFetchAfterCurrentTimePreFetchPeriodSeconds";
+	public const String CRYPTNET_PRE_FETCH_TRIGGER_PERIOD_SECONDS_VALUE_NAME = "CryptnetPreFetchTriggerPeriodSeconds";
 	public const uint32 CRYPTNET_PRE_FETCH_TRIGGER_DISABLE = 4294967295;
+	public const String CRYPTNET_PRE_FETCH_SCAN_AFTER_TRIGGER_DELAY_SECONDS_VALUE_NAME = "CryptnetPreFetchScanAfterTriggerDelaySeconds";
 	public const uint32 CRYPTNET_PRE_FETCH_SCAN_AFTER_TRIGGER_DELAY_SECONDS_DEFAULT = 60;
+	public const String CRYPTNET_PRE_FETCH_RETRIEVAL_TIMEOUT_SECONDS_VALUE_NAME = "CryptnetPreFetchRetrievalTimeoutSeconds";
+	public const String CRYPTNET_CRL_PRE_FETCH_PROCESS_NAME_LIST_VALUE_NAME = "ProcessNameList";
+	public const String CRYPTNET_CRL_PRE_FETCH_URL_LIST_VALUE_NAME = "PreFetchUrlList";
+	public const String CRYPTNET_CRL_PRE_FETCH_DISABLE_INFORMATION_EVENTS_VALUE_NAME = "DisableInformationEvents";
+	public const String CRYPTNET_CRL_PRE_FETCH_LOG_FILE_NAME_VALUE_NAME = "LogFileName";
+	public const String CRYPTNET_CRL_PRE_FETCH_TIMEOUT_SECONDS_VALUE_NAME = "TimeoutSeconds";
+	public const String CRYPTNET_CRL_PRE_FETCH_MAX_AGE_SECONDS_VALUE_NAME = "MaxAgeSeconds";
+	public const String CRYPTNET_CRL_PRE_FETCH_PUBLISH_BEFORE_NEXT_UPDATE_SECONDS_VALUE_NAME = "PublishBeforeNextUpdateSeconds";
+	public const String CRYPTNET_CRL_PRE_FETCH_PUBLISH_RANDOM_INTERVAL_SECONDS_VALUE_NAME = "PublishRandomIntervalSeconds";
+	public const String CRYPTNET_CRL_PRE_FETCH_MIN_BEFORE_NEXT_UPDATE_SECONDS_VALUE_NAME = "MinBeforeNextUpdateSeconds";
+	public const String CRYPTNET_CRL_PRE_FETCH_MIN_AFTER_NEXT_UPDATE_SECONDS_VALUE_NAME = "MinAfterNextUpdateSeconds";
+	public const String CERT_CHAIN_URL_RETRIEVAL_TIMEOUT_MILLISECONDS_VALUE_NAME = "ChainUrlRetrievalTimeoutMilliseconds";
+	public const String CERT_CHAIN_REV_ACCUMULATIVE_URL_RETRIEVAL_TIMEOUT_MILLISECONDS_VALUE_NAME = "ChainRevAccumulativeUrlRetrievalTimeoutMilliseconds";
+	public const String CERT_RETR_BEHAVIOR_INET_AUTH_VALUE_NAME = "EnableInetUnknownAuth";
+	public const String CERT_RETR_BEHAVIOR_INET_STATUS_VALUE_NAME = "EnableInetLocal";
+	public const String CERT_RETR_BEHAVIOR_FILE_VALUE_NAME = "AllowFileUrlScheme";
+	public const String CERT_RETR_BEHAVIOR_LDAP_VALUE_NAME = "DisableLDAPSignAndEncrypt";
+	public const String CRYPTNET_CACHED_OCSP_SWITCH_TO_CRL_COUNT_VALUE_NAME = "CryptnetCachedOcspSwitchToCrlCount";
 	public const uint32 CRYPTNET_CACHED_OCSP_SWITCH_TO_CRL_COUNT_DEFAULT = 50;
 	public const uint32 CRYPTNET_CRL_BEFORE_OCSP_ENABLE = 4294967295;
+	public const String CERT_CHAIN_DISABLE_AIA_URL_RETRIEVAL_VALUE_NAME = "DisableAIAUrlRetrieval";
+	public const String CERT_CHAIN_OPTIONS_VALUE_NAME = "Options";
 	public const uint32 CERT_CHAIN_OPTION_DISABLE_AIA_URL_RETRIEVAL = 2;
 	public const uint32 CERT_CHAIN_OPTION_ENABLE_SIA_URL_RETRIEVAL = 4;
+	public const String CERT_CHAIN_CROSS_CERT_DOWNLOAD_INTERVAL_HOURS_VALUE_NAME = "CrossCertDownloadIntervalHours";
+	public const String CERT_CHAIN_CRL_VALIDITY_EXT_PERIOD_HOURS_VALUE_NAME = "CRLValidityExtensionPeriod";
 	public const uint32 CERT_CHAIN_CRL_VALIDITY_EXT_PERIOD_HOURS_DEFAULT = 12;
 	public const uint32 CERT_CHAIN_CACHE_END_CERT = 1;
 	public const uint32 CERT_CHAIN_THREAD_STORE_SYNC = 2;
@@ -1394,8 +2699,22 @@ static
 	public const uint32 CERT_CHAIN_HAS_MOTW = 16384;
 	public const uint32 CERT_CHAIN_ONLY_ADDITIONAL_AND_AUTH_ROOT = 32768;
 	public const uint32 CERT_CHAIN_OPT_IN_WEAK_SIGNATURE = 65536;
+	public const PSTR REVOCATION_OID_CRL_REVOCATION = (PSTR)(void*)1;
 	public const uint32 CERT_CHAIN_FIND_BY_ISSUER = 1;
 	public const uint32 CERT_CHAIN_POLICY_IGNORE_WEAK_SIGNATURE_FLAG = 134217728;
+	public const String CRYPT_OID_VERIFY_CERTIFICATE_CHAIN_POLICY_FUNC = "CertDllVerifyCertificateChainPolicy";
+	public const PSTR CERT_CHAIN_POLICY_BASE = (PSTR)(void*)1;
+	public const PSTR CERT_CHAIN_POLICY_AUTHENTICODE = (PSTR)(void*)2;
+	public const PSTR CERT_CHAIN_POLICY_AUTHENTICODE_TS = (PSTR)(void*)3;
+	public const PSTR CERT_CHAIN_POLICY_SSL = (PSTR)(void*)4;
+	public const PSTR CERT_CHAIN_POLICY_BASIC_CONSTRAINTS = (PSTR)(void*)5;
+	public const PSTR CERT_CHAIN_POLICY_NT_AUTH = (PSTR)(void*)6;
+	public const PSTR CERT_CHAIN_POLICY_MICROSOFT_ROOT = (PSTR)(void*)7;
+	public const PSTR CERT_CHAIN_POLICY_EV = (PSTR)(void*)8;
+	public const PSTR CERT_CHAIN_POLICY_SSL_F12 = (PSTR)(void*)9;
+	public const PSTR CERT_CHAIN_POLICY_SSL_HPKP_HEADER = (PSTR)(void*)10;
+	public const PSTR CERT_CHAIN_POLICY_THIRD_PARTY_ROOT = (PSTR)(void*)11;
+	public const PSTR CERT_CHAIN_POLICY_SSL_KEY_PIN = (PSTR)(void*)12;
 	public const uint32 BASIC_CONSTRAINTS_CERT_CHAIN_POLICY_CA_FLAG = 2147483648;
 	public const uint32 BASIC_CONSTRAINTS_CERT_CHAIN_POLICY_END_ENTITY_FLAG = 1073741824;
 	public const uint32 MICROSOFT_ROOT_CERT_CHAIN_POLICY_ENABLE_TEST_ROOT_FLAG = 65536;
@@ -1425,12 +2744,23 @@ static
 	public const uint32 CRYPT_STRING_HASHDATA = 268435456;
 	public const uint32 CRYPT_STRING_NOCRLF = 1073741824;
 	public const uint32 CRYPT_STRING_NOCR = 2147483648;
+	public const String szOID_PKCS_12_PbeIds = "1.2.840.113549.1.12.1";
+	public const String szOID_PKCS_12_pbeWithSHA1And128BitRC4 = "1.2.840.113549.1.12.1.1";
+	public const String szOID_PKCS_12_pbeWithSHA1And40BitRC4 = "1.2.840.113549.1.12.1.2";
+	public const String szOID_PKCS_12_pbeWithSHA1And3KeyTripleDES = "1.2.840.113549.1.12.1.3";
+	public const String szOID_PKCS_12_pbeWithSHA1And2KeyTripleDES = "1.2.840.113549.1.12.1.4";
+	public const String szOID_PKCS_12_pbeWithSHA1And128BitRC2 = "1.2.840.113549.1.12.1.5";
+	public const String szOID_PKCS_12_pbeWithSHA1And40BitRC2 = "1.2.840.113549.1.12.1.6";
+	public const String szOID_PKCS_5_PBKDF2 = "1.2.840.113549.1.5.12";
+	public const String szOID_PKCS_5_PBES2 = "1.2.840.113549.1.5.13";
 	public const uint32 PKCS12_IMPORT_SILENT = 64;
 	public const uint32 PKCS12_ONLY_CERTIFICATES = 1024;
 	public const uint32 PKCS12_ONLY_NOT_ENCRYPTED_CERTIFICATES = 2048;
 	public const uint32 PKCS12_VIRTUAL_ISOLATION_KEY = 65536;
 	public const uint32 PKCS12_IMPORT_RESERVED_MASK = 4294901760;
 	public const uint32 PKCS12_ONLY_CERTIFICATES_PROVIDER_TYPE = 0;
+	public const String PKCS12_ONLY_CERTIFICATES_PROVIDER_NAME = "PfxProvider";
+	public const String PKCS12_ONLY_CERTIFICATES_CONTAINER_NAME = "PfxContainer";
 	public const uint32 REPORT_NO_PRIVATE_KEY = 1;
 	public const uint32 REPORT_NOT_ABLE_TO_EXPORT_PRIVATE_KEY = 2;
 	public const uint32 EXPORT_PRIVATE_KEYS = 4;
@@ -1442,9 +2772,20 @@ static
 	public const uint32 PKCS12_EXPORT_ECC_CURVE_PARAMETERS = 4096;
 	public const uint32 PKCS12_EXPORT_ECC_CURVE_OID = 8192;
 	public const uint32 PKCS12_EXPORT_RESERVED_MASK = 4294901760;
+	public const String PKCS12_PBKDF2_ID_HMAC_SHA1 = "1.2.840.113549.2.7";
+	public const String PKCS12_PBKDF2_ID_HMAC_SHA256 = "1.2.840.113549.2.9";
+	public const String PKCS12_PBKDF2_ID_HMAC_SHA384 = "1.2.840.113549.2.10";
+	public const String PKCS12_PBKDF2_ID_HMAC_SHA512 = "1.2.840.113549.2.11";
+	public const String PKCS12_PBES2_ALG_AES256_SHA256 = "AES256-SHA256";
+	public const String PKCS12_CONFIG_REGPATH = "Software\\Microsoft\\Windows\\CurrentVersion\\PFX";
+	public const String PKCS12_ENCRYPT_CERTIFICATES_VALUE_NAME = "EncryptCertificates";
 	public const uint32 CERT_SERVER_OCSP_RESPONSE_OPEN_PARA_READ_FLAG = 1;
 	public const uint32 CERT_SERVER_OCSP_RESPONSE_OPEN_PARA_WRITE_FLAG = 2;
 	public const uint32 CERT_SERVER_OCSP_RESPONSE_ASYNC_FLAG = 1;
+	public const PSTR CERT_RETRIEVE_ISSUER_LOGO = (PSTR)(void*)1;
+	public const PSTR CERT_RETRIEVE_SUBJECT_LOGO = (PSTR)(void*)2;
+	public const PSTR CERT_RETRIEVE_COMMUNITY_LOGO = (PSTR)(void*)3;
+	public const PSTR CERT_RETRIEVE_BIOMETRIC_PREDEFINED_BASE_TYPE = (PSTR)(void*)1000;
 	public const uint32 CERT_SELECT_MAX_PARA = 500;
 	public const uint32 CERT_SELECT_BY_ISSUER_DISPLAYNAME = 12;
 	public const uint32 CERT_SELECT_BY_FRIENDLYNAME = 13;
@@ -1473,6 +2814,9 @@ static
 	public const uint32 CRYPT_OBJECT_LOCATOR_LAST_RESERVED_NAME_TYPE = 32;
 	public const uint32 CRYPT_OBJECT_LOCATOR_FIRST_RESERVED_USER_NAME_TYPE = 33;
 	public const uint32 CRYPT_OBJECT_LOCATOR_LAST_RESERVED_USER_NAME_TYPE = 65535;
+	public const String SSL_OBJECT_LOCATOR_PFX_FUNC = "SslObjectLocatorInitializePfx";
+	public const String SSL_OBJECT_LOCATOR_ISSUER_LIST_FUNC = "SslObjectLocatorInitializeIssuerList";
+	public const String SSL_OBJECT_LOCATOR_CERT_VALIDATION_CONFIG_FUNC = "SslObjectLocatorInitializeCertValidationConfig";
 	public const uint32 CERT_FILE_HASH_USE_TYPE = 1;
 	public const uint32 CERT_TIMESTAMP_HASH_USE_TYPE = 2;
 	public const uint32 RECIPIENTPOLICYV1 = 1;
@@ -1519,6 +2863,15 @@ static
 	public typealias HCERTCHAINENGINE = int;
 	public typealias BCRYPT_ALG_HANDLE = int;
 	public typealias BCRYPT_KEY_HANDLE = int;
+	public typealias NCRYPT_HANDLE = uint;
+	public typealias NCRYPT_PROV_HANDLE = uint;
+	public typealias NCRYPT_KEY_HANDLE = uint;
+	public typealias NCRYPT_HASH_HANDLE = uint;
+	public typealias NCRYPT_SECRET_HANDLE = uint;
+	public typealias HCRYPTPROV_LEGACY = uint;
+	public typealias HCRYPTPROV_OR_NCRYPT_KEY_HANDLE = uint;
+	public typealias HCERTSTORE = void*;
+	public typealias HCERTSTOREPROV = void*;
 	#endregion
 	
 	#region Enums
@@ -2090,8 +3443,8 @@ static
 	}
 	public enum CRYPT_XML_GROUP_ID : uint32
 	{
-		HASH_________ = 1,
-		SIGN_________ = 2,
+		HASH = 1,
+		SIGN = 2,
 	}
 	public enum CERT_SELECT_CRITERIA_TYPE : uint32
 	{
@@ -2331,43 +3684,43 @@ static
 	public function BOOL PFN_CMSG_CNG_IMPORT_KEY_TRANS(out CMSG_CNG_CONTENT_DECRYPT_INFO pCNGContentDecryptInfo, ref CMSG_CTRL_KEY_TRANS_DECRYPT_PARA pKeyTransDecryptPara, uint32 dwFlags, void* pvReserved);
 	public function BOOL PFN_CMSG_CNG_IMPORT_KEY_AGREE(out CMSG_CNG_CONTENT_DECRYPT_INFO pCNGContentDecryptInfo, ref CMSG_CTRL_KEY_AGREE_DECRYPT_PARA pKeyAgreeDecryptPara, uint32 dwFlags, void* pvReserved);
 	public function BOOL PFN_CMSG_CNG_IMPORT_CONTENT_ENCRYPT_KEY(out CMSG_CNG_CONTENT_DECRYPT_INFO pCNGContentDecryptInfo, uint32 dwFlags, void* pvReserved);
-	public function BOOL PFN_CERT_DLL_OPEN_STORE_PROV_FUNC(PSTR lpszStoreProvider, CERT_QUERY_ENCODING_TYPE dwEncodingType, uint hCryptProv, CERT_OPEN_STORE_FLAGS dwFlags, void* pvPara, void* hCertStore, out CERT_STORE_PROV_INFO pStoreProvInfo);
-	public function void PFN_CERT_STORE_PROV_CLOSE(void* hStoreProv, uint32 dwFlags);
-	public function BOOL PFN_CERT_STORE_PROV_READ_CERT(void* hStoreProv, in CERT_CONTEXT pStoreCertContext, uint32 dwFlags, out CERT_CONTEXT* ppProvCertContext);
-	public function BOOL PFN_CERT_STORE_PROV_WRITE_CERT(void* hStoreProv, in CERT_CONTEXT pCertContext, uint32 dwFlags);
-	public function BOOL PFN_CERT_STORE_PROV_DELETE_CERT(void* hStoreProv, in CERT_CONTEXT pCertContext, uint32 dwFlags);
-	public function BOOL PFN_CERT_STORE_PROV_SET_CERT_PROPERTY(void* hStoreProv, in CERT_CONTEXT pCertContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
-	public function BOOL PFN_CERT_STORE_PROV_READ_CRL(void* hStoreProv, ref CRL_CONTEXT pStoreCrlContext, uint32 dwFlags, out CRL_CONTEXT* ppProvCrlContext);
-	public function BOOL PFN_CERT_STORE_PROV_WRITE_CRL(void* hStoreProv, ref CRL_CONTEXT pCrlContext, uint32 dwFlags);
-	public function BOOL PFN_CERT_STORE_PROV_DELETE_CRL(void* hStoreProv, ref CRL_CONTEXT pCrlContext, uint32 dwFlags);
-	public function BOOL PFN_CERT_STORE_PROV_SET_CRL_PROPERTY(void* hStoreProv, ref CRL_CONTEXT pCrlContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
-	public function BOOL PFN_CERT_STORE_PROV_READ_CTL(void* hStoreProv, ref CTL_CONTEXT pStoreCtlContext, uint32 dwFlags, out CTL_CONTEXT* ppProvCtlContext);
-	public function BOOL PFN_CERT_STORE_PROV_WRITE_CTL(void* hStoreProv, ref CTL_CONTEXT pCtlContext, uint32 dwFlags);
-	public function BOOL PFN_CERT_STORE_PROV_DELETE_CTL(void* hStoreProv, ref CTL_CONTEXT pCtlContext, uint32 dwFlags);
-	public function BOOL PFN_CERT_STORE_PROV_SET_CTL_PROPERTY(void* hStoreProv, ref CTL_CONTEXT pCtlContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
-	public function BOOL PFN_CERT_STORE_PROV_CONTROL(void* hStoreProv, uint32 dwFlags, uint32 dwCtrlType, void* pvCtrlPara);
-	public function BOOL PFN_CERT_STORE_PROV_FIND_CERT(void* hStoreProv, ref CERT_STORE_PROV_FIND_INFO pFindInfo, in CERT_CONTEXT pPrevCertContext, uint32 dwFlags, void** ppvStoreProvFindInfo, out CERT_CONTEXT* ppProvCertContext);
-	public function BOOL PFN_CERT_STORE_PROV_FREE_FIND_CERT(void* hStoreProv, in CERT_CONTEXT pCertContext, void* pvStoreProvFindInfo, uint32 dwFlags);
-	public function BOOL PFN_CERT_STORE_PROV_GET_CERT_PROPERTY(void* hStoreProv, in CERT_CONTEXT pCertContext, uint32 dwPropId, uint32 dwFlags, void* pvData, out uint32 pcbData);
-	public function BOOL PFN_CERT_STORE_PROV_FIND_CRL(void* hStoreProv, ref CERT_STORE_PROV_FIND_INFO pFindInfo, ref CRL_CONTEXT pPrevCrlContext, uint32 dwFlags, void** ppvStoreProvFindInfo, out CRL_CONTEXT* ppProvCrlContext);
-	public function BOOL PFN_CERT_STORE_PROV_FREE_FIND_CRL(void* hStoreProv, ref CRL_CONTEXT pCrlContext, void* pvStoreProvFindInfo, uint32 dwFlags);
-	public function BOOL PFN_CERT_STORE_PROV_GET_CRL_PROPERTY(void* hStoreProv, ref CRL_CONTEXT pCrlContext, uint32 dwPropId, uint32 dwFlags, void* pvData, out uint32 pcbData);
-	public function BOOL PFN_CERT_STORE_PROV_FIND_CTL(void* hStoreProv, ref CERT_STORE_PROV_FIND_INFO pFindInfo, ref CTL_CONTEXT pPrevCtlContext, uint32 dwFlags, void** ppvStoreProvFindInfo, out CTL_CONTEXT* ppProvCtlContext);
-	public function BOOL PFN_CERT_STORE_PROV_FREE_FIND_CTL(void* hStoreProv, ref CTL_CONTEXT pCtlContext, void* pvStoreProvFindInfo, uint32 dwFlags);
-	public function BOOL PFN_CERT_STORE_PROV_GET_CTL_PROPERTY(void* hStoreProv, ref CTL_CONTEXT pCtlContext, uint32 dwPropId, uint32 dwFlags, void* pvData, out uint32 pcbData);
+	public function BOOL PFN_CERT_DLL_OPEN_STORE_PROV_FUNC(PSTR lpszStoreProvider, CERT_QUERY_ENCODING_TYPE dwEncodingType, HCRYPTPROV_LEGACY hCryptProv, CERT_OPEN_STORE_FLAGS dwFlags, void* pvPara, HCERTSTORE hCertStore, out CERT_STORE_PROV_INFO pStoreProvInfo);
+	public function void PFN_CERT_STORE_PROV_CLOSE(HCERTSTOREPROV hStoreProv, uint32 dwFlags);
+	public function BOOL PFN_CERT_STORE_PROV_READ_CERT(HCERTSTOREPROV hStoreProv, in CERT_CONTEXT pStoreCertContext, uint32 dwFlags, out CERT_CONTEXT* ppProvCertContext);
+	public function BOOL PFN_CERT_STORE_PROV_WRITE_CERT(HCERTSTOREPROV hStoreProv, in CERT_CONTEXT pCertContext, uint32 dwFlags);
+	public function BOOL PFN_CERT_STORE_PROV_DELETE_CERT(HCERTSTOREPROV hStoreProv, in CERT_CONTEXT pCertContext, uint32 dwFlags);
+	public function BOOL PFN_CERT_STORE_PROV_SET_CERT_PROPERTY(HCERTSTOREPROV hStoreProv, in CERT_CONTEXT pCertContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
+	public function BOOL PFN_CERT_STORE_PROV_READ_CRL(HCERTSTOREPROV hStoreProv, ref CRL_CONTEXT pStoreCrlContext, uint32 dwFlags, out CRL_CONTEXT* ppProvCrlContext);
+	public function BOOL PFN_CERT_STORE_PROV_WRITE_CRL(HCERTSTOREPROV hStoreProv, ref CRL_CONTEXT pCrlContext, uint32 dwFlags);
+	public function BOOL PFN_CERT_STORE_PROV_DELETE_CRL(HCERTSTOREPROV hStoreProv, ref CRL_CONTEXT pCrlContext, uint32 dwFlags);
+	public function BOOL PFN_CERT_STORE_PROV_SET_CRL_PROPERTY(HCERTSTOREPROV hStoreProv, ref CRL_CONTEXT pCrlContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
+	public function BOOL PFN_CERT_STORE_PROV_READ_CTL(HCERTSTOREPROV hStoreProv, ref CTL_CONTEXT pStoreCtlContext, uint32 dwFlags, out CTL_CONTEXT* ppProvCtlContext);
+	public function BOOL PFN_CERT_STORE_PROV_WRITE_CTL(HCERTSTOREPROV hStoreProv, ref CTL_CONTEXT pCtlContext, uint32 dwFlags);
+	public function BOOL PFN_CERT_STORE_PROV_DELETE_CTL(HCERTSTOREPROV hStoreProv, ref CTL_CONTEXT pCtlContext, uint32 dwFlags);
+	public function BOOL PFN_CERT_STORE_PROV_SET_CTL_PROPERTY(HCERTSTOREPROV hStoreProv, ref CTL_CONTEXT pCtlContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
+	public function BOOL PFN_CERT_STORE_PROV_CONTROL(HCERTSTOREPROV hStoreProv, uint32 dwFlags, uint32 dwCtrlType, void* pvCtrlPara);
+	public function BOOL PFN_CERT_STORE_PROV_FIND_CERT(HCERTSTOREPROV hStoreProv, ref CERT_STORE_PROV_FIND_INFO pFindInfo, in CERT_CONTEXT pPrevCertContext, uint32 dwFlags, void** ppvStoreProvFindInfo, out CERT_CONTEXT* ppProvCertContext);
+	public function BOOL PFN_CERT_STORE_PROV_FREE_FIND_CERT(HCERTSTOREPROV hStoreProv, in CERT_CONTEXT pCertContext, void* pvStoreProvFindInfo, uint32 dwFlags);
+	public function BOOL PFN_CERT_STORE_PROV_GET_CERT_PROPERTY(HCERTSTOREPROV hStoreProv, in CERT_CONTEXT pCertContext, uint32 dwPropId, uint32 dwFlags, void* pvData, out uint32 pcbData);
+	public function BOOL PFN_CERT_STORE_PROV_FIND_CRL(HCERTSTOREPROV hStoreProv, ref CERT_STORE_PROV_FIND_INFO pFindInfo, ref CRL_CONTEXT pPrevCrlContext, uint32 dwFlags, void** ppvStoreProvFindInfo, out CRL_CONTEXT* ppProvCrlContext);
+	public function BOOL PFN_CERT_STORE_PROV_FREE_FIND_CRL(HCERTSTOREPROV hStoreProv, ref CRL_CONTEXT pCrlContext, void* pvStoreProvFindInfo, uint32 dwFlags);
+	public function BOOL PFN_CERT_STORE_PROV_GET_CRL_PROPERTY(HCERTSTOREPROV hStoreProv, ref CRL_CONTEXT pCrlContext, uint32 dwPropId, uint32 dwFlags, void* pvData, out uint32 pcbData);
+	public function BOOL PFN_CERT_STORE_PROV_FIND_CTL(HCERTSTOREPROV hStoreProv, ref CERT_STORE_PROV_FIND_INFO pFindInfo, ref CTL_CONTEXT pPrevCtlContext, uint32 dwFlags, void** ppvStoreProvFindInfo, out CTL_CONTEXT* ppProvCtlContext);
+	public function BOOL PFN_CERT_STORE_PROV_FREE_FIND_CTL(HCERTSTOREPROV hStoreProv, ref CTL_CONTEXT pCtlContext, void* pvStoreProvFindInfo, uint32 dwFlags);
+	public function BOOL PFN_CERT_STORE_PROV_GET_CTL_PROPERTY(HCERTSTOREPROV hStoreProv, ref CTL_CONTEXT pCtlContext, uint32 dwPropId, uint32 dwFlags, void* pvData, out uint32 pcbData);
 	public function BOOL PFN_CERT_CREATE_CONTEXT_SORT_FUNC(uint32 cbTotalEncoded, uint32 cbRemainEncoded, uint32 cEntry, void* pvSort);
 	public function BOOL PFN_CERT_ENUM_SYSTEM_STORE_LOCATION(PWSTR pwszStoreLocation, uint32 dwFlags, void* pvReserved, void* pvArg);
 	public function BOOL PFN_CERT_ENUM_SYSTEM_STORE(void* pvSystemStore, CERT_SYSTEM_STORE_FLAGS dwFlags, ref CERT_SYSTEM_STORE_INFO pStoreInfo, void* pvReserved, void* pvArg);
 	public function BOOL PFN_CERT_ENUM_PHYSICAL_STORE(void* pvSystemStore, uint32 dwFlags, PWSTR pwszStoreName, ref CERT_PHYSICAL_STORE_INFO pStoreInfo, void* pvReserved, void* pvArg);
 	public function BOOL PFN_CRYPT_EXTRACT_ENCODED_SIGNATURE_PARAMETERS_FUNC(uint32 dwCertEncodingType, ref CRYPT_ALGORITHM_IDENTIFIER pSignatureAlgorithm, void** ppvDecodedSignPara, out PWSTR ppwszCNGHashAlgid);
-	public function BOOL PFN_CRYPT_SIGN_AND_ENCODE_HASH_FUNC(uint hKey, uint32 dwCertEncodingType, ref CRYPT_ALGORITHM_IDENTIFIER pSignatureAlgorithm, void* pvDecodedSignPara, PWSTR pwszCNGPubKeyAlgid, PWSTR pwszCNGHashAlgid, ref uint8 pbComputedHash, uint32 cbComputedHash, uint8* pbSignature, out uint32 pcbSignature);
+	public function BOOL PFN_CRYPT_SIGN_AND_ENCODE_HASH_FUNC(NCRYPT_KEY_HANDLE hKey, uint32 dwCertEncodingType, ref CRYPT_ALGORITHM_IDENTIFIER pSignatureAlgorithm, void* pvDecodedSignPara, PWSTR pwszCNGPubKeyAlgid, PWSTR pwszCNGHashAlgid, ref uint8 pbComputedHash, uint32 cbComputedHash, uint8* pbSignature, out uint32 pcbSignature);
 	public function BOOL PFN_CRYPT_VERIFY_ENCODED_SIGNATURE_FUNC(uint32 dwCertEncodingType, ref CERT_PUBLIC_KEY_INFO pPubKeyInfo, ref CRYPT_ALGORITHM_IDENTIFIER pSignatureAlgorithm, void* pvDecodedSignPara, PWSTR pwszCNGPubKeyAlgid, PWSTR pwszCNGHashAlgid, ref uint8 pbComputedHash, uint32 cbComputedHash, ref uint8 pbSignature, uint32 cbSignature);
-	public function BOOL PFN_CRYPT_EXPORT_PUBLIC_KEY_INFO_EX2_FUNC(uint hNCryptKey, uint32 dwCertEncodingType, PSTR pszPublicKeyObjId, uint32 dwFlags, void* pvAuxInfo, CERT_PUBLIC_KEY_INFO* pInfo, out uint32 pcbInfo);
+	public function BOOL PFN_CRYPT_EXPORT_PUBLIC_KEY_INFO_EX2_FUNC(NCRYPT_KEY_HANDLE hNCryptKey, uint32 dwCertEncodingType, PSTR pszPublicKeyObjId, uint32 dwFlags, void* pvAuxInfo, CERT_PUBLIC_KEY_INFO* pInfo, out uint32 pcbInfo);
 	public function BOOL PFN_CRYPT_EXPORT_PUBLIC_KEY_INFO_FROM_BCRYPT_HANDLE_FUNC(BCRYPT_KEY_HANDLE hBCryptKey, uint32 dwCertEncodingType, PSTR pszPublicKeyObjId, uint32 dwFlags, void* pvAuxInfo, CERT_PUBLIC_KEY_INFO* pInfo, out uint32 pcbInfo);
 	public function BOOL PFN_IMPORT_PUBLIC_KEY_INFO_EX2_FUNC(uint32 dwCertEncodingType, ref CERT_PUBLIC_KEY_INFO pInfo, uint32 dwFlags, void* pvAuxInfo, out BCRYPT_KEY_HANDLE phKey);
 	public function BOOL PFN_IMPORT_PRIV_KEY_FUNC(uint hCryptProv, ref CRYPT_PRIVATE_KEY_INFO pPrivateKeyInfo, uint32 dwFlags, void* pvAuxInfo);
 	public function BOOL PFN_EXPORT_PRIV_KEY_FUNC(uint hCryptProv, uint32 dwKeySpec, PSTR pszPrivateKeyObjId, uint32 dwFlags, void* pvAuxInfo, CRYPT_PRIVATE_KEY_INFO* pPrivateKeyInfo, out uint32 pcbPrivateKeyInfo);
-	public function CERT_CONTEXT* PFN_CRYPT_GET_SIGNER_CERTIFICATE(void* pvGetArg, uint32 dwCertEncodingType, ref CERT_INFO pSignerId, void* hMsgCertStore);
+	public function CERT_CONTEXT* PFN_CRYPT_GET_SIGNER_CERTIFICATE(void* pvGetArg, uint32 dwCertEncodingType, ref CERT_INFO pSignerId, HCERTSTORE hMsgCertStore);
 	public function void PFN_CRYPT_ASYNC_PARAM_FREE_FUNC(PSTR pszParamOid, void* pvParam);
 	public function void PFN_FREE_ENCODED_OBJECT_FUNC(PSTR pszObjectOid, out CRYPT_BLOB_ARRAY pObject, void* pvFreeContext);
 	public function BOOL PFN_CRYPT_CANCEL_RETRIEVAL(uint32 dwFlags, void* pvArg);
@@ -2384,8 +3737,8 @@ static
 	public function void PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_IDENTIFIER(void* pPluginContext, ref CRYPTOAPI_BLOB pIdentifier);
 	public function BOOL PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_INITIALIZE(PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FLUSH pfnFlush, void* pContext, out uint32 pdwExpectedObjectCount, out CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE* ppFuncTable, void** ppPluginContext);
 	public function BOOL PFN_CERT_IS_WEAK_HASH(uint32 dwHashUseType, PWSTR pwszCNGHashAlgid, uint32 dwChainFlags, CERT_CHAIN_CONTEXT* pSignerChainContext, FILETIME* pTimeStamp, PWSTR pwszFileName);
-	public function int32 PFNCryptStreamOutputCallback(void* pvCallbackCtxt, in uint8 pbData, uint cbData, BOOL fFinal);
-	public function int32 PFNCryptStreamOutputCallbackEx(void* pvCallbackCtxt, uint8* pbData, uint cbData, NCRYPT_DESCRIPTOR_HANDLE hDescriptor, BOOL fFinal);
+	public function HRESULT PFNCryptStreamOutputCallback(void* pvCallbackCtxt, in uint8 pbData, uint cbData, BOOL fFinal);
+	public function HRESULT PFNCryptStreamOutputCallbackEx(void* pvCallbackCtxt, uint8* pbData, uint cbData, NCRYPT_DESCRIPTOR_HANDLE hDescriptor, BOOL fFinal);
 	public function HRESULT PFN_CRYPT_XML_WRITE_CALLBACK(void* pvCallbackState, in uint8 pbData, uint32 cbData);
 	public function HRESULT PFN_CRYPT_XML_DATA_PROVIDER_READ(void* pvCallbackState, out uint8 pbData, uint32 cbData, out uint32 pcbRead);
 	public function HRESULT PFN_CRYPT_XML_DATA_PROVIDER_CLOSE(void* pvCallbackState);
@@ -2397,10 +3750,10 @@ static
 	public function HRESULT CryptXmlDllDigestData(void* hDigest, in uint8 pbData, uint32 cbData);
 	public function HRESULT CryptXmlDllFinalizeDigest(void* hDigest, out uint8 pbDigest, uint32 cbDigest);
 	public function HRESULT CryptXmlDllCloseDigest(void* hDigest);
-	public function HRESULT CryptXmlDllSignData(in CRYPT_XML_ALGORITHM pSignatureMethod, uint hCryptProvOrNCryptKey, uint32 dwKeySpec, in uint8 pbInput, uint32 cbInput, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult);
+	public function HRESULT CryptXmlDllSignData(in CRYPT_XML_ALGORITHM pSignatureMethod, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE hCryptProvOrNCryptKey, uint32 dwKeySpec, in uint8 pbInput, uint32 cbInput, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult);
 	public function HRESULT CryptXmlDllVerifySignature(in CRYPT_XML_ALGORITHM pSignatureMethod, BCRYPT_KEY_HANDLE hKey, in uint8 pbInput, uint32 cbInput, in uint8 pbSignature, uint32 cbSignature);
 	public function HRESULT CryptXmlDllGetAlgorithmInfo(in CRYPT_XML_ALGORITHM pXmlAlgorithm, out CRYPT_XML_ALGORITHM_INFO* ppAlgInfo);
-	public function HRESULT CryptXmlDllEncodeKeyValue(uint hKey, CRYPT_XML_CHARSET dwCharset, void* pvCallbackState, PFN_CRYPT_XML_WRITE_CALLBACK pfnWrite);
+	public function HRESULT CryptXmlDllEncodeKeyValue(NCRYPT_KEY_HANDLE hKey, CRYPT_XML_CHARSET dwCharset, void* pvCallbackState, PFN_CRYPT_XML_WRITE_CALLBACK pfnWrite);
 	public function HRESULT CryptXmlDllCreateKey(in CRYPT_XML_BLOB pEncoded, out BCRYPT_KEY_HANDLE phKey);
 	#endregion
 	
@@ -2939,7 +4292,7 @@ static
 		public NCRYPT_EXPORTED_ISOLATED_KEY_HEADER Header;
 	}
 	[CRepr]
-	public struct __NCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT
+	public struct NCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT
 	{
 		public uint32 Magic;
 		public uint32 Version;
@@ -4081,7 +5434,7 @@ static
 		public struct _Anonymous_e__Union
 		{
 			public uint hCryptProv;
-			public uint hNCryptKey;
+			public NCRYPT_KEY_HANDLE hNCryptKey;
 		}
 	}
 	[CRepr]
@@ -4099,7 +5452,7 @@ static
 	public struct CMSG_ENVELOPED_ENCODE_INFO
 	{
 		public uint32 cbSize;
-		public uint hCryptProv;
+		public HCRYPTPROV_LEGACY hCryptProv;
 		public CRYPT_ALGORITHM_IDENTIFIER ContentEncryptionAlgorithm;
 		public void* pvEncryptionAuxInfo;
 		public uint32 cRecipients;
@@ -4111,7 +5464,7 @@ static
 		public uint32 cbSize;
 		public CRYPT_ALGORITHM_IDENTIFIER KeyEncryptionAlgorithm;
 		public void* pvKeyEncryptionAuxInfo;
-		public uint hCryptProv;
+		public HCRYPTPROV_LEGACY hCryptProv;
 		public CRYPT_BIT_BLOB RecipientPublicKey;
 		public CERT_ID RecipientId;
 	}
@@ -4132,7 +5485,7 @@ static
 		public void* pvKeyEncryptionAuxInfo;
 		public CRYPT_ALGORITHM_IDENTIFIER KeyWrapAlgorithm;
 		public void* pvKeyWrapAuxInfo;
-		public uint hCryptProv;
+		public HCRYPTPROV_LEGACY hCryptProv;
 		public uint32 dwKeySpec;
 		public CMSG_KEY_AGREE_OPTION dwKeyChoice;
 		public using _Anonymous_e__Union Anonymous;
@@ -4210,7 +5563,7 @@ static
 	public struct CMSG_HASHED_ENCODE_INFO
 	{
 		public uint32 cbSize;
-		public uint hCryptProv;
+		public HCRYPTPROV_LEGACY hCryptProv;
 		public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 		public void* pvHashAuxInfo;
 	}
@@ -4313,7 +5666,7 @@ static
 	public struct CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA
 	{
 		public uint32 cbSize;
-		public uint hCryptProv;
+		public HCRYPTPROV_LEGACY hCryptProv;
 		public uint32 dwSignerIndex;
 		public uint32 dwSignerType;
 		public void* pvSigner;
@@ -4330,7 +5683,7 @@ static
 		public struct _Anonymous_e__Union
 		{
 			public uint hCryptProv;
-			public uint hNCryptKey;
+			public NCRYPT_KEY_HANDLE hNCryptKey;
 		}
 	}
 	[CRepr]
@@ -4346,7 +5699,7 @@ static
 		public struct _Anonymous_e__Union
 		{
 			public uint hCryptProv;
-			public uint hNCryptKey;
+			public NCRYPT_KEY_HANDLE hNCryptKey;
 		}
 	}
 	[CRepr]
@@ -4364,7 +5717,7 @@ static
 		public struct _Anonymous_e__Union
 		{
 			public uint hCryptProv;
-			public uint hNCryptKey;
+			public NCRYPT_KEY_HANDLE hNCryptKey;
 		}
 	}
 	[CRepr]
@@ -4402,7 +5755,7 @@ static
 	public struct CMSG_CONTENT_ENCRYPT_INFO
 	{
 		public uint32 cbSize;
-		public uint hCryptProv;
+		public HCRYPTPROV_LEGACY hCryptProv;
 		public CRYPT_ALGORITHM_IDENTIFIER ContentEncryptionAlgorithm;
 		public void* pvEncryptionAuxInfo;
 		public uint32 cRecipients;
@@ -4475,7 +5828,7 @@ static
 		public CRYPT_ALGORITHM_IDENTIFIER ContentEncryptionAlgorithm;
 		public PFN_CMSG_ALLOC pfnAlloc;
 		public PFN_CMSG_FREE pfnFree;
-		public uint hNCryptKey;
+		public NCRYPT_KEY_HANDLE hNCryptKey;
 		public uint8* pbContentEncryptKey;
 		public uint32 cbContentEncryptKey;
 		public BCRYPT_KEY_HANDLE hCNGContentEncryptKey;
@@ -4488,7 +5841,7 @@ static
 		public uint8* pbCertEncoded;
 		public uint32 cbCertEncoded;
 		public CERT_INFO* pCertInfo;
-		public void* hCertStore;
+		public HCERTSTORE hCertStore;
 	}
 	[CRepr]
 	public struct CRL_CONTEXT
@@ -4497,7 +5850,7 @@ static
 		public uint8* pbCrlEncoded;
 		public uint32 cbCrlEncoded;
 		public CRL_INFO* pCrlInfo;
-		public void* hCertStore;
+		public HCERTSTORE hCertStore;
 	}
 	[CRepr]
 	public struct CTL_CONTEXT
@@ -4506,7 +5859,7 @@ static
 		public uint8* pbCtlEncoded;
 		public uint32 cbCtlEncoded;
 		public CTL_INFO* pCtlInfo;
-		public void* hCertStore;
+		public HCERTSTORE hCertStore;
 		public void* hCryptMsg;
 		public uint8* pbCtlContent;
 		public uint32 cbCtlContent;
@@ -4541,7 +5894,7 @@ static
 		public struct _Anonymous_e__Union
 		{
 			public uint hCryptProv;
-			public uint hNCryptKey;
+			public NCRYPT_KEY_HANDLE hNCryptKey;
 		}
 	}
 	[CRepr]
@@ -4600,7 +5953,7 @@ static
 		public uint32 cbSize;
 		public uint32 cStoreProvFunc;
 		public void** rgpvStoreProvFunc;
-		public void* hStoreProv;
+		public HCERTSTOREPROV hStoreProv;
 		public CERT_STORE_PROV_FLAGS dwStoreProvFlags;
 		public void* hStoreProvFuncAddr2;
 	}
@@ -4672,9 +6025,9 @@ static
 		public uint32 cbSize;
 		public CRYPTOAPI_BLOB ListIdentifier;
 		public uint32 cCtlStore;
-		public void** rghCtlStore;
+		public HCERTSTORE* rghCtlStore;
 		public uint32 cSignerStore;
-		public void** rghSignerStore;
+		public HCERTSTORE* rghSignerStore;
 	}
 	[CRepr]
 	public struct CTL_VERIFY_USAGE_STATUS
@@ -4702,8 +6055,8 @@ static
 		public uint32 cbSize;
 		public CERT_CONTEXT* pIssuerCert;
 		public uint32 cCertStore;
-		public void** rgCertStore;
-		public void* hCrlStore;
+		public HCERTSTORE* rgCertStore;
+		public HCERTSTORE hCrlStore;
 		public FILETIME* pftTimeToUse;
 	}
 	[CRepr]
@@ -4759,7 +6112,7 @@ static
 	{
 		public uint32 cbSize;
 		public uint32 dwMsgAndCertEncodingType;
-		public uint hCryptProv;
+		public HCRYPTPROV_LEGACY hCryptProv;
 		public PFN_CRYPT_GET_SIGNER_CERTIFICATE pfnGetSignerCertificate;
 		public void* pvGetArg;
 	}
@@ -4768,7 +6121,7 @@ static
 	{
 		public uint32 cbSize;
 		public uint32 dwMsgEncodingType;
-		public uint hCryptProv;
+		public HCRYPTPROV_LEGACY hCryptProv;
 		public CRYPT_ALGORITHM_IDENTIFIER ContentEncryptionAlgorithm;
 		public void* pvEncryptionAuxInfo;
 		public uint32 dwFlags;
@@ -4780,14 +6133,14 @@ static
 		public uint32 cbSize;
 		public uint32 dwMsgAndCertEncodingType;
 		public uint32 cCertStore;
-		public void** rghCertStore;
+		public HCERTSTORE* rghCertStore;
 	}
 	[CRepr]
 	public struct CRYPT_HASH_MESSAGE_PARA
 	{
 		public uint32 cbSize;
 		public uint32 dwMsgEncodingType;
-		public uint hCryptProv;
+		public HCRYPTPROV_LEGACY hCryptProv;
 		public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 		public void* pvHashAuxInfo;
 	}
@@ -4806,7 +6159,7 @@ static
 		public struct _Anonymous_e__Union
 		{
 			public uint hCryptProv;
-			public uint hNCryptKey;
+			public NCRYPT_KEY_HANDLE hNCryptKey;
 		}
 	}
 	[CRepr]
@@ -4814,7 +6167,7 @@ static
 	{
 		public uint32 cbSize;
 		public uint32 dwMsgEncodingType;
-		public uint hCryptProv;
+		public HCRYPTPROV_LEGACY hCryptProv;
 	}
 	[CRepr]
 	public struct CERT_CHAIN
@@ -4936,17 +6289,17 @@ static
 	public struct CERT_CHAIN_ENGINE_CONFIG
 	{
 		public uint32 cbSize;
-		public void* hRestrictedRoot;
-		public void* hRestrictedTrust;
-		public void* hRestrictedOther;
+		public HCERTSTORE hRestrictedRoot;
+		public HCERTSTORE hRestrictedTrust;
+		public HCERTSTORE hRestrictedOther;
 		public uint32 cAdditionalStore;
-		public void** rghAdditionalStore;
+		public HCERTSTORE* rghAdditionalStore;
 		public uint32 dwFlags;
 		public uint32 dwUrlRetrievalTimeout;
 		public uint32 MaximumCachedCertificates;
 		public uint32 CycleDetectionModulus;
-		public void* hExclusiveRoot;
-		public void* hExclusiveTrustedPeople;
+		public HCERTSTORE hExclusiveRoot;
+		public HCERTSTORE hExclusiveTrustedPeople;
 		public uint32 dwExclusiveFlags;
 	}
 	[CRepr]
@@ -5032,7 +6385,7 @@ static
 	{
 		public uint32 cbSize;
 		public HCERTCHAINENGINE hChainEngine;
-		public void* hAdditionalStore;
+		public HCERTSTORE hAdditionalStore;
 		public uint32 dwChainFlags;
 		public uint32 dwUrlRetrievalTimeout;
 		public FILETIME* pftCurrentTime;
@@ -5188,7 +6541,7 @@ static
 	{
 		public HCERTCHAINENGINE hChainEngine;
 		public FILETIME* pTime;
-		public void* hAdditionalStore;
+		public HCERTSTORE hAdditionalStore;
 		public CERT_CHAIN_PARA* pChainPara;
 		public uint32 dwFlags;
 	}
@@ -6044,59 +7397,59 @@ static
 	[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS BCryptGetFipsAlgorithmMode(out uint8 pfEnabled);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptOpenStorageProvider(out uint phProvider, PWSTR pszProviderName, uint32 dwFlags);
+	public static extern HRESULT NCryptOpenStorageProvider(out NCRYPT_PROV_HANDLE phProvider, PWSTR pszProviderName, uint32 dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptEnumAlgorithms(uint hProvider, NCRYPT_OPERATION dwAlgOperations, out uint32 pdwAlgCount, out NCryptAlgorithmName* ppAlgList, uint32 dwFlags);
+	public static extern HRESULT NCryptEnumAlgorithms(NCRYPT_PROV_HANDLE hProvider, NCRYPT_OPERATION dwAlgOperations, out uint32 pdwAlgCount, out NCryptAlgorithmName* ppAlgList, uint32 dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptIsAlgSupported(uint hProvider, PWSTR pszAlgId, uint32 dwFlags);
+	public static extern HRESULT NCryptIsAlgSupported(NCRYPT_PROV_HANDLE hProvider, PWSTR pszAlgId, uint32 dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptEnumKeys(uint hProvider, PWSTR pszScope, out NCryptKeyName* ppKeyName, void** ppEnumState, NCRYPT_FLAGS dwFlags);
+	public static extern HRESULT NCryptEnumKeys(NCRYPT_PROV_HANDLE hProvider, PWSTR pszScope, out NCryptKeyName* ppKeyName, void** ppEnumState, NCRYPT_FLAGS dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptEnumStorageProviders(out uint32 pdwProviderCount, out NCryptProviderName* ppProviderList, uint32 dwFlags);
+	public static extern HRESULT NCryptEnumStorageProviders(out uint32 pdwProviderCount, out NCryptProviderName* ppProviderList, uint32 dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptFreeBuffer(void* pvInput);
+	public static extern HRESULT NCryptFreeBuffer(void* pvInput);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptOpenKey(uint hProvider, out uint phKey, PWSTR pszKeyName, CERT_KEY_SPEC dwLegacyKeySpec, NCRYPT_FLAGS dwFlags);
+	public static extern HRESULT NCryptOpenKey(NCRYPT_PROV_HANDLE hProvider, out NCRYPT_KEY_HANDLE phKey, PWSTR pszKeyName, CERT_KEY_SPEC dwLegacyKeySpec, NCRYPT_FLAGS dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptCreatePersistedKey(uint hProvider, out uint phKey, PWSTR pszAlgId, PWSTR pszKeyName, CERT_KEY_SPEC dwLegacyKeySpec, NCRYPT_FLAGS dwFlags);
+	public static extern HRESULT NCryptCreatePersistedKey(NCRYPT_PROV_HANDLE hProvider, out NCRYPT_KEY_HANDLE phKey, PWSTR pszAlgId, PWSTR pszKeyName, CERT_KEY_SPEC dwLegacyKeySpec, NCRYPT_FLAGS dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptGetProperty(uint hObject, PWSTR pszProperty, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, OBJECT_SECURITY_INFORMATION dwFlags);
+	public static extern HRESULT NCryptGetProperty(NCRYPT_HANDLE hObject, PWSTR pszProperty, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, OBJECT_SECURITY_INFORMATION dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptSetProperty(uint hObject, PWSTR pszProperty, ref uint8 pbInput, uint32 cbInput, NCRYPT_FLAGS dwFlags);
+	public static extern HRESULT NCryptSetProperty(NCRYPT_HANDLE hObject, PWSTR pszProperty, ref uint8 pbInput, uint32 cbInput, NCRYPT_FLAGS dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptFinalizeKey(uint hKey, NCRYPT_FLAGS dwFlags);
+	public static extern HRESULT NCryptFinalizeKey(NCRYPT_KEY_HANDLE hKey, NCRYPT_FLAGS dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptEncrypt(uint hKey, uint8* pbInput, uint32 cbInput, void* pPaddingInfo, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, NCRYPT_FLAGS dwFlags);
+	public static extern HRESULT NCryptEncrypt(NCRYPT_KEY_HANDLE hKey, uint8* pbInput, uint32 cbInput, void* pPaddingInfo, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, NCRYPT_FLAGS dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptDecrypt(uint hKey, uint8* pbInput, uint32 cbInput, void* pPaddingInfo, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, NCRYPT_FLAGS dwFlags);
+	public static extern HRESULT NCryptDecrypt(NCRYPT_KEY_HANDLE hKey, uint8* pbInput, uint32 cbInput, void* pPaddingInfo, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, NCRYPT_FLAGS dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptImportKey(uint hProvider, uint hImportKey, PWSTR pszBlobType, BCryptBufferDesc* pParameterList, out uint phKey, ref uint8 pbData, uint32 cbData, NCRYPT_FLAGS dwFlags);
+	public static extern HRESULT NCryptImportKey(NCRYPT_PROV_HANDLE hProvider, NCRYPT_KEY_HANDLE hImportKey, PWSTR pszBlobType, BCryptBufferDesc* pParameterList, out NCRYPT_KEY_HANDLE phKey, ref uint8 pbData, uint32 cbData, NCRYPT_FLAGS dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptExportKey(uint hKey, uint hExportKey, PWSTR pszBlobType, BCryptBufferDesc* pParameterList, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, NCRYPT_FLAGS dwFlags);
+	public static extern HRESULT NCryptExportKey(NCRYPT_KEY_HANDLE hKey, NCRYPT_KEY_HANDLE hExportKey, PWSTR pszBlobType, BCryptBufferDesc* pParameterList, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, NCRYPT_FLAGS dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptSignHash(uint hKey, void* pPaddingInfo, ref uint8 pbHashValue, uint32 cbHashValue, uint8* pbSignature, uint32 cbSignature, out uint32 pcbResult, NCRYPT_FLAGS dwFlags);
+	public static extern HRESULT NCryptSignHash(NCRYPT_KEY_HANDLE hKey, void* pPaddingInfo, ref uint8 pbHashValue, uint32 cbHashValue, uint8* pbSignature, uint32 cbSignature, out uint32 pcbResult, NCRYPT_FLAGS dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptVerifySignature(uint hKey, void* pPaddingInfo, ref uint8 pbHashValue, uint32 cbHashValue, ref uint8 pbSignature, uint32 cbSignature, NCRYPT_FLAGS dwFlags);
+	public static extern HRESULT NCryptVerifySignature(NCRYPT_KEY_HANDLE hKey, void* pPaddingInfo, ref uint8 pbHashValue, uint32 cbHashValue, ref uint8 pbSignature, uint32 cbSignature, NCRYPT_FLAGS dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptDeleteKey(uint hKey, uint32 dwFlags);
+	public static extern HRESULT NCryptDeleteKey(NCRYPT_KEY_HANDLE hKey, uint32 dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptFreeObject(uint hObject);
+	public static extern HRESULT NCryptFreeObject(NCRYPT_HANDLE hObject);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL NCryptIsKeyHandle(uint hKey);
+	public static extern BOOL NCryptIsKeyHandle(NCRYPT_KEY_HANDLE hKey);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptTranslateHandle(uint* phProvider, out uint phKey, uint hLegacyProv, uint hLegacyKey, CERT_KEY_SPEC dwLegacyKeySpec, uint32 dwFlags);
+	public static extern HRESULT NCryptTranslateHandle(NCRYPT_PROV_HANDLE* phProvider, out NCRYPT_KEY_HANDLE phKey, uint hLegacyProv, uint hLegacyKey, CERT_KEY_SPEC dwLegacyKeySpec, uint32 dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptNotifyChangeKey(uint hProvider, out HANDLE phEvent, NCRYPT_FLAGS dwFlags);
+	public static extern HRESULT NCryptNotifyChangeKey(NCRYPT_PROV_HANDLE hProvider, out HANDLE phEvent, NCRYPT_FLAGS dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptSecretAgreement(uint hPrivKey, uint hPubKey, out uint phAgreedSecret, NCRYPT_FLAGS dwFlags);
+	public static extern HRESULT NCryptSecretAgreement(NCRYPT_KEY_HANDLE hPrivKey, NCRYPT_KEY_HANDLE hPubKey, out NCRYPT_SECRET_HANDLE phAgreedSecret, NCRYPT_FLAGS dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptDeriveKey(uint hSharedSecret, PWSTR pwszKDF, BCryptBufferDesc* pParameterList, uint8* pbDerivedKey, uint32 cbDerivedKey, out uint32 pcbResult, uint32 dwFlags);
+	public static extern HRESULT NCryptDeriveKey(NCRYPT_SECRET_HANDLE hSharedSecret, PWSTR pwszKDF, BCryptBufferDesc* pParameterList, uint8* pbDerivedKey, uint32 cbDerivedKey, out uint32 pcbResult, uint32 dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptKeyDerivation(uint hKey, BCryptBufferDesc* pParameterList, out uint8 pbDerivedKey, uint32 cbDerivedKey, out uint32 pcbResult, uint32 dwFlags);
+	public static extern HRESULT NCryptKeyDerivation(NCRYPT_KEY_HANDLE hKey, BCryptBufferDesc* pParameterList, out uint8 pbDerivedKey, uint32 cbDerivedKey, out uint32 pcbResult, uint32 dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptCreateClaim(uint hSubjectKey, uint hAuthorityKey, uint32 dwClaimType, BCryptBufferDesc* pParameterList, uint8* pbClaimBlob, uint32 cbClaimBlob, out uint32 pcbResult, uint32 dwFlags);
+	public static extern HRESULT NCryptCreateClaim(NCRYPT_KEY_HANDLE hSubjectKey, NCRYPT_KEY_HANDLE hAuthorityKey, uint32 dwClaimType, BCryptBufferDesc* pParameterList, uint8* pbClaimBlob, uint32 cbClaimBlob, out uint32 pcbResult, uint32 dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptVerifyClaim(uint hSubjectKey, uint hAuthorityKey, uint32 dwClaimType, BCryptBufferDesc* pParameterList, ref uint8 pbClaimBlob, uint32 cbClaimBlob, out BCryptBufferDesc pOutput, uint32 dwFlags);
+	public static extern HRESULT NCryptVerifyClaim(NCRYPT_KEY_HANDLE hSubjectKey, NCRYPT_KEY_HANDLE hAuthorityKey, uint32 dwClaimType, BCryptBufferDesc* pParameterList, ref uint8 pbClaimBlob, uint32 cbClaimBlob, out BCryptBufferDesc pOutput, uint32 dwFlags);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptFormatObject(uint32 dwCertEncodingType, uint32 dwFormatType, uint32 dwFormatStrType, void* pFormatStruct, PSTR lpszStructType, in uint8 pbEncoded, uint32 cbEncoded, void* pbFormat, out uint32 pcbFormat);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6148,7 +7501,7 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CryptMsgCalculateEncodedLength(uint32 dwMsgEncodingType, uint32 dwFlags, uint32 dwMsgType, void* pvMsgEncodeInfo, PSTR pszInnerContentObjID, uint32 cbData);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern void* CryptMsgOpenToDecode(uint32 dwMsgEncodingType, uint32 dwFlags, uint32 dwMsgType, uint hCryptProv, out CERT_INFO pRecipientInfo, CMSG_STREAM_INFO* pStreamInfo);
+	public static extern void* CryptMsgOpenToDecode(uint32 dwMsgEncodingType, uint32 dwFlags, uint32 dwMsgType, HCRYPTPROV_LEGACY hCryptProv, out CERT_INFO pRecipientInfo, CMSG_STREAM_INFO* pStreamInfo);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* CryptMsgDuplicate(void* hCryptMsg);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6160,29 +7513,29 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptMsgControl(void* hCryptMsg, uint32 dwFlags, uint32 dwCtrlType, void* pvCtrlPara);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptMsgVerifyCountersignatureEncoded(uint hCryptProv, uint32 dwEncodingType, ref uint8 pbSignerInfo, uint32 cbSignerInfo, ref uint8 pbSignerInfoCountersignature, uint32 cbSignerInfoCountersignature, ref CERT_INFO pciCountersigner);
+	public static extern BOOL CryptMsgVerifyCountersignatureEncoded(HCRYPTPROV_LEGACY hCryptProv, uint32 dwEncodingType, ref uint8 pbSignerInfo, uint32 cbSignerInfo, ref uint8 pbSignerInfoCountersignature, uint32 cbSignerInfoCountersignature, ref CERT_INFO pciCountersigner);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptMsgVerifyCountersignatureEncodedEx(uint hCryptProv, uint32 dwEncodingType, ref uint8 pbSignerInfo, uint32 cbSignerInfo, ref uint8 pbSignerInfoCountersignature, uint32 cbSignerInfoCountersignature, uint32 dwSignerType, void* pvSigner, uint32 dwFlags, void* pvExtra);
+	public static extern BOOL CryptMsgVerifyCountersignatureEncodedEx(HCRYPTPROV_LEGACY hCryptProv, uint32 dwEncodingType, ref uint8 pbSignerInfo, uint32 cbSignerInfo, ref uint8 pbSignerInfoCountersignature, uint32 cbSignerInfoCountersignature, uint32 dwSignerType, void* pvSigner, uint32 dwFlags, void* pvExtra);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptMsgCountersign(void* hCryptMsg, uint32 dwIndex, uint32 cCountersigners, CMSG_SIGNER_ENCODE_INFO* rgCountersigners);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptMsgCountersignEncoded(uint32 dwEncodingType, ref uint8 pbSignerInfo, uint32 cbSignerInfo, uint32 cCountersigners, CMSG_SIGNER_ENCODE_INFO* rgCountersigners, uint8* pbCountersignature, out uint32 pcbCountersignature);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern void* CertOpenStore(PSTR lpszStoreProvider, CERT_QUERY_ENCODING_TYPE dwEncodingType, uint hCryptProv, CERT_OPEN_STORE_FLAGS dwFlags, void* pvPara);
+	public static extern HCERTSTORE CertOpenStore(PSTR lpszStoreProvider, CERT_QUERY_ENCODING_TYPE dwEncodingType, HCRYPTPROV_LEGACY hCryptProv, CERT_OPEN_STORE_FLAGS dwFlags, void* pvPara);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern void* CertDuplicateStore(void* hCertStore);
+	public static extern HCERTSTORE CertDuplicateStore(HCERTSTORE hCertStore);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertSaveStore(void* hCertStore, CERT_QUERY_ENCODING_TYPE dwEncodingType, CERT_STORE_SAVE_AS dwSaveAs, CERT_STORE_SAVE_TO dwSaveTo, void* pvSaveToPara, uint32 dwFlags);
+	public static extern BOOL CertSaveStore(HCERTSTORE hCertStore, CERT_QUERY_ENCODING_TYPE dwEncodingType, CERT_STORE_SAVE_AS dwSaveAs, CERT_STORE_SAVE_TO dwSaveTo, void* pvSaveToPara, uint32 dwFlags);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertCloseStore(void* hCertStore, uint32 dwFlags);
+	public static extern BOOL CertCloseStore(HCERTSTORE hCertStore, uint32 dwFlags);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern CERT_CONTEXT* CertGetSubjectCertificateFromStore(void* hCertStore, uint32 dwCertEncodingType, ref CERT_INFO pCertId);
+	public static extern CERT_CONTEXT* CertGetSubjectCertificateFromStore(HCERTSTORE hCertStore, uint32 dwCertEncodingType, ref CERT_INFO pCertId);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern CERT_CONTEXT* CertEnumCertificatesInStore(void* hCertStore, CERT_CONTEXT* pPrevCertContext);
+	public static extern CERT_CONTEXT* CertEnumCertificatesInStore(HCERTSTORE hCertStore, CERT_CONTEXT* pPrevCertContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern CERT_CONTEXT* CertFindCertificateInStore(void* hCertStore, uint32 dwCertEncodingType, uint32 dwFindFlags, CERT_FIND_FLAGS dwFindType, void* pvFindPara, CERT_CONTEXT* pPrevCertContext);
+	public static extern CERT_CONTEXT* CertFindCertificateInStore(HCERTSTORE hCertStore, uint32 dwCertEncodingType, uint32 dwFindFlags, CERT_FIND_FLAGS dwFindType, void* pvFindPara, CERT_CONTEXT* pPrevCertContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern CERT_CONTEXT* CertGetIssuerCertificateFromStore(void* hCertStore, in CERT_CONTEXT pSubjectContext, CERT_CONTEXT* pPrevIssuerContext, out uint32 pdwFlags);
+	public static extern CERT_CONTEXT* CertGetIssuerCertificateFromStore(HCERTSTORE hCertStore, in CERT_CONTEXT pSubjectContext, CERT_CONTEXT* pPrevIssuerContext, out uint32 pdwFlags);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CertVerifySubjectCertificateContext(in CERT_CONTEXT pSubject, CERT_CONTEXT* pIssuer, out uint32 pdwFlags);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6202,11 +7555,11 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CertSetCertificateContextPropertiesFromCTLEntry(in CERT_CONTEXT pCertContext, ref CTL_ENTRY pCtlEntry, uint32 dwFlags);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern CRL_CONTEXT* CertGetCRLFromStore(void* hCertStore, CERT_CONTEXT* pIssuerContext, CRL_CONTEXT* pPrevCrlContext, out uint32 pdwFlags);
+	public static extern CRL_CONTEXT* CertGetCRLFromStore(HCERTSTORE hCertStore, CERT_CONTEXT* pIssuerContext, CRL_CONTEXT* pPrevCrlContext, out uint32 pdwFlags);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern CRL_CONTEXT* CertEnumCRLsInStore(void* hCertStore, CRL_CONTEXT* pPrevCrlContext);
+	public static extern CRL_CONTEXT* CertEnumCRLsInStore(HCERTSTORE hCertStore, CRL_CONTEXT* pPrevCrlContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern CRL_CONTEXT* CertFindCRLInStore(void* hCertStore, uint32 dwCertEncodingType, uint32 dwFindFlags, uint32 dwFindType, void* pvFindPara, CRL_CONTEXT* pPrevCrlContext);
+	public static extern CRL_CONTEXT* CertFindCRLInStore(HCERTSTORE hCertStore, uint32 dwCertEncodingType, uint32 dwFindFlags, uint32 dwFindType, void* pvFindPara, CRL_CONTEXT* pPrevCrlContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern CRL_CONTEXT* CertDuplicateCRLContext(CRL_CONTEXT* pCrlContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6224,17 +7577,17 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CertIsValidCRLForCertificate(in CERT_CONTEXT pCert, ref CRL_CONTEXT pCrl, uint32 dwFlags, void* pvReserved);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertAddEncodedCertificateToStore(void* hCertStore, uint32 dwCertEncodingType, in uint8 pbCertEncoded, uint32 cbCertEncoded, uint32 dwAddDisposition, CERT_CONTEXT** ppCertContext);
+	public static extern BOOL CertAddEncodedCertificateToStore(HCERTSTORE hCertStore, uint32 dwCertEncodingType, in uint8 pbCertEncoded, uint32 cbCertEncoded, uint32 dwAddDisposition, CERT_CONTEXT** ppCertContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertAddCertificateContextToStore(void* hCertStore, in CERT_CONTEXT pCertContext, uint32 dwAddDisposition, CERT_CONTEXT** ppStoreContext);
+	public static extern BOOL CertAddCertificateContextToStore(HCERTSTORE hCertStore, in CERT_CONTEXT pCertContext, uint32 dwAddDisposition, CERT_CONTEXT** ppStoreContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertAddSerializedElementToStore(void* hCertStore, in uint8 pbElement, uint32 cbElement, uint32 dwAddDisposition, uint32 dwFlags, uint32 dwContextTypeFlags, uint32* pdwContextType, void** ppvContext);
+	public static extern BOOL CertAddSerializedElementToStore(HCERTSTORE hCertStore, in uint8 pbElement, uint32 cbElement, uint32 dwAddDisposition, uint32 dwFlags, uint32 dwContextTypeFlags, uint32* pdwContextType, void** ppvContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CertDeleteCertificateFromStore(in CERT_CONTEXT pCertContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertAddEncodedCRLToStore(void* hCertStore, uint32 dwCertEncodingType, in uint8 pbCrlEncoded, uint32 cbCrlEncoded, uint32 dwAddDisposition, CRL_CONTEXT** ppCrlContext);
+	public static extern BOOL CertAddEncodedCRLToStore(HCERTSTORE hCertStore, uint32 dwCertEncodingType, in uint8 pbCrlEncoded, uint32 cbCrlEncoded, uint32 dwAddDisposition, CRL_CONTEXT** ppCrlContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertAddCRLContextToStore(void* hCertStore, ref CRL_CONTEXT pCrlContext, uint32 dwAddDisposition, CRL_CONTEXT** ppStoreContext);
+	public static extern BOOL CertAddCRLContextToStore(HCERTSTORE hCertStore, ref CRL_CONTEXT pCrlContext, uint32 dwAddDisposition, CRL_CONTEXT** ppStoreContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CertDeleteCRLFromStore(ref CRL_CONTEXT pCrlContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6254,35 +7607,35 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CertEnumCTLContextProperties(ref CTL_CONTEXT pCtlContext, uint32 dwPropId);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern CTL_CONTEXT* CertEnumCTLsInStore(void* hCertStore, CTL_CONTEXT* pPrevCtlContext);
+	public static extern CTL_CONTEXT* CertEnumCTLsInStore(HCERTSTORE hCertStore, CTL_CONTEXT* pPrevCtlContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern CTL_ENTRY* CertFindSubjectInCTL(uint32 dwEncodingType, uint32 dwSubjectType, void* pvSubject, ref CTL_CONTEXT pCtlContext, uint32 dwFlags);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern CTL_CONTEXT* CertFindCTLInStore(void* hCertStore, uint32 dwMsgAndCertEncodingType, uint32 dwFindFlags, CERT_FIND_TYPE dwFindType, void* pvFindPara, CTL_CONTEXT* pPrevCtlContext);
+	public static extern CTL_CONTEXT* CertFindCTLInStore(HCERTSTORE hCertStore, uint32 dwMsgAndCertEncodingType, uint32 dwFindFlags, CERT_FIND_TYPE dwFindType, void* pvFindPara, CTL_CONTEXT* pPrevCtlContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertAddEncodedCTLToStore(void* hCertStore, uint32 dwMsgAndCertEncodingType, in uint8 pbCtlEncoded, uint32 cbCtlEncoded, uint32 dwAddDisposition, CTL_CONTEXT** ppCtlContext);
+	public static extern BOOL CertAddEncodedCTLToStore(HCERTSTORE hCertStore, uint32 dwMsgAndCertEncodingType, in uint8 pbCtlEncoded, uint32 cbCtlEncoded, uint32 dwAddDisposition, CTL_CONTEXT** ppCtlContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertAddCTLContextToStore(void* hCertStore, ref CTL_CONTEXT pCtlContext, uint32 dwAddDisposition, CTL_CONTEXT** ppStoreContext);
+	public static extern BOOL CertAddCTLContextToStore(HCERTSTORE hCertStore, ref CTL_CONTEXT pCtlContext, uint32 dwAddDisposition, CTL_CONTEXT** ppStoreContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CertSerializeCTLStoreElement(ref CTL_CONTEXT pCtlContext, uint32 dwFlags, uint8* pbElement, out uint32 pcbElement);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CertDeleteCTLFromStore(ref CTL_CONTEXT pCtlContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertAddCertificateLinkToStore(void* hCertStore, in CERT_CONTEXT pCertContext, uint32 dwAddDisposition, CERT_CONTEXT** ppStoreContext);
+	public static extern BOOL CertAddCertificateLinkToStore(HCERTSTORE hCertStore, in CERT_CONTEXT pCertContext, uint32 dwAddDisposition, CERT_CONTEXT** ppStoreContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertAddCRLLinkToStore(void* hCertStore, ref CRL_CONTEXT pCrlContext, uint32 dwAddDisposition, CRL_CONTEXT** ppStoreContext);
+	public static extern BOOL CertAddCRLLinkToStore(HCERTSTORE hCertStore, ref CRL_CONTEXT pCrlContext, uint32 dwAddDisposition, CRL_CONTEXT** ppStoreContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertAddCTLLinkToStore(void* hCertStore, ref CTL_CONTEXT pCtlContext, uint32 dwAddDisposition, CTL_CONTEXT** ppStoreContext);
+	public static extern BOOL CertAddCTLLinkToStore(HCERTSTORE hCertStore, ref CTL_CONTEXT pCtlContext, uint32 dwAddDisposition, CTL_CONTEXT** ppStoreContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertAddStoreToCollection(void* hCollectionStore, void* hSiblingStore, uint32 dwUpdateFlags, uint32 dwPriority);
+	public static extern BOOL CertAddStoreToCollection(HCERTSTORE hCollectionStore, HCERTSTORE hSiblingStore, uint32 dwUpdateFlags, uint32 dwPriority);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern void CertRemoveStoreFromCollection(void* hCollectionStore, void* hSiblingStore);
+	public static extern void CertRemoveStoreFromCollection(HCERTSTORE hCollectionStore, HCERTSTORE hSiblingStore);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertControlStore(void* hCertStore, CERT_CONTROL_STORE_FLAGS dwFlags, uint32 dwCtrlType, void* pvCtrlPara);
+	public static extern BOOL CertControlStore(HCERTSTORE hCertStore, CERT_CONTROL_STORE_FLAGS dwFlags, uint32 dwCtrlType, void* pvCtrlPara);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertSetStoreProperty(void* hCertStore, uint32 dwPropId, uint32 dwFlags, void* pvData);
+	public static extern BOOL CertSetStoreProperty(HCERTSTORE hCertStore, uint32 dwPropId, uint32 dwFlags, void* pvData);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertGetStoreProperty(void* hCertStore, uint32 dwPropId, void* pvData, out uint32 pcbData);
+	public static extern BOOL CertGetStoreProperty(HCERTSTORE hCertStore, uint32 dwPropId, void* pvData, out uint32 pcbData);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* CertCreateContext(uint32 dwContextType, uint32 dwEncodingType, in uint8 pbEncoded, uint32 cbEncoded, uint32 dwFlags, CERT_CREATE_CONTEXT_PARA* pCreatePara);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6310,7 +7663,7 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CertGetValidUsages(uint32 cCerts, CERT_CONTEXT** rghCerts, out int32 cNumOIDs, PSTR* rghOIDs, out uint32 pcbOIDs);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptMsgGetAndVerifySigner(void* hCryptMsg, uint32 cSignerStore, void** rghSignerStore, uint32 dwFlags, CERT_CONTEXT** ppSigner, uint32* pdwSignerIndex);
+	public static extern BOOL CryptMsgGetAndVerifySigner(void* hCryptMsg, uint32 cSignerStore, HCERTSTORE* rghSignerStore, uint32 dwFlags, CERT_CONTEXT** ppSigner, uint32* pdwSignerIndex);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptMsgSignCTL(uint32 dwMsgEncodingType, ref uint8 pbCtlContent, uint32 cbCtlContent, ref CMSG_SIGNED_ENCODE_INFO pSignInfo, uint32 dwFlags, uint8* pbEncoded, out uint32 pcbEncoded);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6336,21 +7689,21 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CertGetPublicKeyLength(uint32 dwCertEncodingType, ref CERT_PUBLIC_KEY_INFO pPublicKey);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptVerifyCertificateSignature(uint hCryptProv, uint32 dwCertEncodingType, in uint8 pbEncoded, uint32 cbEncoded, ref CERT_PUBLIC_KEY_INFO pPublicKey);
+	public static extern BOOL CryptVerifyCertificateSignature(HCRYPTPROV_LEGACY hCryptProv, uint32 dwCertEncodingType, in uint8 pbEncoded, uint32 cbEncoded, ref CERT_PUBLIC_KEY_INFO pPublicKey);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptVerifyCertificateSignatureEx(uint hCryptProv, uint32 dwCertEncodingType, uint32 dwSubjectType, void* pvSubject, uint32 dwIssuerType, void* pvIssuer, CRYPT_VERIFY_CERT_FLAGS dwFlags, void* pvExtra);
+	public static extern BOOL CryptVerifyCertificateSignatureEx(HCRYPTPROV_LEGACY hCryptProv, uint32 dwCertEncodingType, uint32 dwSubjectType, void* pvSubject, uint32 dwIssuerType, void* pvIssuer, CRYPT_VERIFY_CERT_FLAGS dwFlags, void* pvExtra);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CertIsStrongHashToSign(ref CERT_STRONG_SIGN_PARA pStrongSignPara, PWSTR pwszCNGHashAlgid, CERT_CONTEXT* pSigningCert);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptHashToBeSigned(uint hCryptProv, uint32 dwCertEncodingType, in uint8 pbEncoded, uint32 cbEncoded, uint8* pbComputedHash, out uint32 pcbComputedHash);
+	public static extern BOOL CryptHashToBeSigned(HCRYPTPROV_LEGACY hCryptProv, uint32 dwCertEncodingType, in uint8 pbEncoded, uint32 cbEncoded, uint8* pbComputedHash, out uint32 pcbComputedHash);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptHashCertificate(uint hCryptProv, uint32 Algid, uint32 dwFlags, in uint8 pbEncoded, uint32 cbEncoded, uint8* pbComputedHash, out uint32 pcbComputedHash);
+	public static extern BOOL CryptHashCertificate(HCRYPTPROV_LEGACY hCryptProv, uint32 Algid, uint32 dwFlags, in uint8 pbEncoded, uint32 cbEncoded, uint8* pbComputedHash, out uint32 pcbComputedHash);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptHashCertificate2(PWSTR pwszCNGHashAlgid, uint32 dwFlags, void* pvReserved, uint8* pbEncoded, uint32 cbEncoded, uint8* pbComputedHash, out uint32 pcbComputedHash);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptSignCertificate(uint hCryptProvOrNCryptKey, uint32 dwKeySpec, uint32 dwCertEncodingType, in uint8 pbEncodedToBeSigned, uint32 cbEncodedToBeSigned, ref CRYPT_ALGORITHM_IDENTIFIER pSignatureAlgorithm, void* pvHashAuxInfo, uint8* pbSignature, out uint32 pcbSignature);
+	public static extern BOOL CryptSignCertificate(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE hCryptProvOrNCryptKey, uint32 dwKeySpec, uint32 dwCertEncodingType, in uint8 pbEncodedToBeSigned, uint32 cbEncodedToBeSigned, ref CRYPT_ALGORITHM_IDENTIFIER pSignatureAlgorithm, void* pvHashAuxInfo, uint8* pbSignature, out uint32 pcbSignature);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptSignAndEncodeCertificate(uint hCryptProvOrNCryptKey, CERT_KEY_SPEC dwKeySpec, uint32 dwCertEncodingType, PSTR lpszStructType, void* pvStructInfo, ref CRYPT_ALGORITHM_IDENTIFIER pSignatureAlgorithm, void* pvHashAuxInfo, uint8* pbEncoded, out uint32 pcbEncoded);
+	public static extern BOOL CryptSignAndEncodeCertificate(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE hCryptProvOrNCryptKey, CERT_KEY_SPEC dwKeySpec, uint32 dwCertEncodingType, PSTR lpszStructType, void* pvStructInfo, ref CRYPT_ALGORITHM_IDENTIFIER pSignatureAlgorithm, void* pvHashAuxInfo, uint8* pbEncoded, out uint32 pcbEncoded);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 CertVerifyTimeValidity(FILETIME* pTimeToVerify, ref CERT_INFO pCertInfo);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6376,9 +7729,9 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptUninstallDefaultContext(void* hDefaultContext, uint32 dwFlags, void* pvReserved);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptExportPublicKeyInfo(uint hCryptProvOrNCryptKey, uint32 dwKeySpec, uint32 dwCertEncodingType, CERT_PUBLIC_KEY_INFO* pInfo, out uint32 pcbInfo);
+	public static extern BOOL CryptExportPublicKeyInfo(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE hCryptProvOrNCryptKey, uint32 dwKeySpec, uint32 dwCertEncodingType, CERT_PUBLIC_KEY_INFO* pInfo, out uint32 pcbInfo);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptExportPublicKeyInfoEx(uint hCryptProvOrNCryptKey, uint32 dwKeySpec, uint32 dwCertEncodingType, PSTR pszPublicKeyObjId, uint32 dwFlags, void* pvAuxInfo, CERT_PUBLIC_KEY_INFO* pInfo, out uint32 pcbInfo);
+	public static extern BOOL CryptExportPublicKeyInfoEx(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE hCryptProvOrNCryptKey, uint32 dwKeySpec, uint32 dwCertEncodingType, PSTR pszPublicKeyObjId, uint32 dwFlags, void* pvAuxInfo, CERT_PUBLIC_KEY_INFO* pInfo, out uint32 pcbInfo);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptExportPublicKeyInfoFromBCryptKeyHandle(BCRYPT_KEY_HANDLE hBCryptKey, uint32 dwCertEncodingType, PSTR pszPublicKeyObjId, uint32 dwFlags, void* pvAuxInfo, CERT_PUBLIC_KEY_INFO* pInfo, out uint32 pcbInfo);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6388,7 +7741,7 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptImportPublicKeyInfoEx2(uint32 dwCertEncodingType, ref CERT_PUBLIC_KEY_INFO pInfo, CRYPT_IMPORT_PUBLIC_KEY_FLAGS dwFlags, void* pvAuxInfo, out BCRYPT_KEY_HANDLE phKey);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptAcquireCertificatePrivateKey(in CERT_CONTEXT pCert, CRYPT_ACQUIRE_FLAGS dwFlags, void* pvParameters, out uint phCryptProvOrNCryptKey, CERT_KEY_SPEC* pdwKeySpec, BOOL* pfCallerFreeProvOrNCryptKey);
+	public static extern BOOL CryptAcquireCertificatePrivateKey(in CERT_CONTEXT pCert, CRYPT_ACQUIRE_FLAGS dwFlags, void* pvParameters, out HCRYPTPROV_OR_NCRYPT_KEY_HANDLE phCryptProvOrNCryptKey, CERT_KEY_SPEC* pdwKeySpec, BOOL* pfCallerFreeProvOrNCryptKey);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptFindCertificateKeyProvInfo(in CERT_CONTEXT pCert, CRYPT_FIND_FLAGS dwFlags, void* pvReserved);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6396,7 +7749,7 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptExportPKCS8(uint hCryptProv, uint32 dwKeySpec, PSTR pszPrivateKeyObjId, uint32 dwFlags, void* pvAuxInfo, uint8* pbPrivateKeyBlob, out uint32 pcbPrivateKeyBlob);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptHashPublicKeyInfo(uint hCryptProv, uint32 Algid, uint32 dwFlags, uint32 dwCertEncodingType, ref CERT_PUBLIC_KEY_INFO pInfo, uint8* pbComputedHash, out uint32 pcbComputedHash);
+	public static extern BOOL CryptHashPublicKeyInfo(HCRYPTPROV_LEGACY hCryptProv, uint32 Algid, uint32 dwFlags, uint32 dwCertEncodingType, ref CERT_PUBLIC_KEY_INFO pInfo, uint8* pbComputedHash, out uint32 pcbComputedHash);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CertRDNValueToStrA(uint32 dwValueType, ref CRYPTOAPI_BLOB pValue, uint8* psz, uint32 csz);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6420,7 +7773,7 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 CryptGetMessageSignerCount(uint32 dwMsgEncodingType, in uint8 pbSignedBlob, uint32 cbSignedBlob);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern void* CryptGetMessageCertificates(uint32 dwMsgAndCertEncodingType, uint hCryptProv, uint32 dwFlags, in uint8 pbSignedBlob, uint32 cbSignedBlob);
+	public static extern HCERTSTORE CryptGetMessageCertificates(uint32 dwMsgAndCertEncodingType, HCRYPTPROV_LEGACY hCryptProv, uint32 dwFlags, in uint8 pbSignedBlob, uint32 cbSignedBlob);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptVerifyDetachedMessageSignature(ref CRYPT_VERIFY_MESSAGE_PARA pVerifyPara, uint32 dwSignerIndex, in uint8 pbDetachedSignBlob, uint32 cbDetachedSignBlob, uint32 cToBeSigned, uint8** rgpbToBeSigned, uint32* rgcbToBeSigned, CERT_CONTEXT** ppSignerCert);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6444,9 +7797,9 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptVerifyMessageSignatureWithKey(ref CRYPT_KEY_VERIFY_MESSAGE_PARA pVerifyPara, CERT_PUBLIC_KEY_INFO* pPublicKeyInfo, in uint8 pbSignedBlob, uint32 cbSignedBlob, uint8* pbDecoded, uint32* pcbDecoded);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern void* CertOpenSystemStoreA(uint hProv, PSTR szSubsystemProtocol);
+	public static extern HCERTSTORE CertOpenSystemStoreA(HCRYPTPROV_LEGACY hProv, PSTR szSubsystemProtocol);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern void* CertOpenSystemStoreW(uint hProv, PWSTR szSubsystemProtocol);
+	public static extern HCERTSTORE CertOpenSystemStoreW(HCRYPTPROV_LEGACY hProv, PWSTR szSubsystemProtocol);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CertAddEncodedCertificateToSystemStoreA(PSTR szCertStoreName, in uint8 pbCertEncoded, uint32 cbCertEncoded);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6454,7 +7807,7 @@ static
 	[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT FindCertsByIssuer(CERT_CHAIN* pCertChains, out uint32 pcbCertChains, out uint32 pcCertChains, uint8* pbEncodedIssuerName, uint32 cbEncodedIssuerName, PWSTR pwszPurpose, uint32 dwKeySpec);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptQueryObject(CERT_QUERY_OBJECT_TYPE dwObjectType, void* pvObject, CERT_QUERY_CONTENT_TYPE_FLAGS dwExpectedContentTypeFlags, CERT_QUERY_FORMAT_TYPE_FLAGS dwExpectedFormatTypeFlags, uint32 dwFlags, CERT_QUERY_ENCODING_TYPE* pdwMsgAndCertEncodingType, CERT_QUERY_CONTENT_TYPE* pdwContentType, CERT_QUERY_FORMAT_TYPE* pdwFormatType, void** phCertStore, void** phMsg, void** ppvContext);
+	public static extern BOOL CryptQueryObject(CERT_QUERY_OBJECT_TYPE dwObjectType, void* pvObject, CERT_QUERY_CONTENT_TYPE_FLAGS dwExpectedContentTypeFlags, CERT_QUERY_FORMAT_TYPE_FLAGS dwExpectedFormatTypeFlags, uint32 dwFlags, CERT_QUERY_ENCODING_TYPE* pdwMsgAndCertEncodingType, CERT_QUERY_CONTENT_TYPE* pdwContentType, CERT_QUERY_FORMAT_TYPE* pdwFormatType, HCERTSTORE* phCertStore, void** phMsg, void** ppvContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* CryptMemAlloc(uint32 cbSize);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6480,7 +7833,7 @@ static
 	[Import("cryptnet.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptGetObjectUrl(PSTR pszUrlOid, void* pvPara, CRYPT_GET_URL_FLAGS dwFlags, CRYPT_URL_ARRAY* pUrlArray, out uint32 pcbUrlArray, CRYPT_URL_INFO* pUrlInfo, uint32* pcbUrlInfo, void* pvReserved);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern CERT_CONTEXT* CertCreateSelfSignCertificate(uint hCryptProvOrNCryptKey, ref CRYPTOAPI_BLOB pSubjectIssuerBlob, CERT_CREATE_SELFSIGN_FLAGS dwFlags, CRYPT_KEY_PROV_INFO* pKeyProvInfo, CRYPT_ALGORITHM_IDENTIFIER* pSignatureAlgorithm, SYSTEMTIME* pStartTime, SYSTEMTIME* pEndTime, CERT_EXTENSIONS* pExtensions);
+	public static extern CERT_CONTEXT* CertCreateSelfSignCertificate(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE hCryptProvOrNCryptKey, ref CRYPTOAPI_BLOB pSubjectIssuerBlob, CERT_CREATE_SELFSIGN_FLAGS dwFlags, CRYPT_KEY_PROV_INFO* pKeyProvInfo, CRYPT_ALGORITHM_IDENTIFIER* pSignatureAlgorithm, SYSTEMTIME* pStartTime, SYSTEMTIME* pEndTime, CERT_EXTENSIONS* pExtensions);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptGetKeyIdentifierProperty(in CRYPTOAPI_BLOB pKeyIdentifier, uint32 dwPropId, uint32 dwFlags, PWSTR pwszComputerName, void* pvReserved, void* pvData, out uint32 pcbData);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6496,13 +7849,13 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CertResyncCertificateChainEngine(HCERTCHAINENGINE hChainEngine);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertGetCertificateChain(HCERTCHAINENGINE hChainEngine, in CERT_CONTEXT pCertContext, FILETIME* pTime, void* hAdditionalStore, ref CERT_CHAIN_PARA pChainPara, uint32 dwFlags, void* pvReserved, out CERT_CHAIN_CONTEXT* ppChainContext);
+	public static extern BOOL CertGetCertificateChain(HCERTCHAINENGINE hChainEngine, in CERT_CONTEXT pCertContext, FILETIME* pTime, HCERTSTORE hAdditionalStore, ref CERT_CHAIN_PARA pChainPara, uint32 dwFlags, void* pvReserved, out CERT_CHAIN_CONTEXT* ppChainContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void CertFreeCertificateChain(ref CERT_CHAIN_CONTEXT pChainContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern CERT_CHAIN_CONTEXT* CertDuplicateCertificateChain(ref CERT_CHAIN_CONTEXT pChainContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern CERT_CHAIN_CONTEXT* CertFindChainInStore(void* hCertStore, uint32 dwCertEncodingType, CERT_FIND_CHAIN_IN_STORE_FLAGS dwFindFlags, uint32 dwFindType, void* pvFindPara, CERT_CHAIN_CONTEXT* pPrevChainContext);
+	public static extern CERT_CHAIN_CONTEXT* CertFindChainInStore(HCERTSTORE hCertStore, uint32 dwCertEncodingType, CERT_FIND_CHAIN_IN_STORE_FLAGS dwFindFlags, uint32 dwFindType, void* pvFindPara, CERT_CHAIN_CONTEXT* pPrevChainContext);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CertVerifyCertificateChainPolicy(PSTR pszPolicyOID, ref CERT_CHAIN_CONTEXT pChainContext, ref CERT_CHAIN_POLICY_PARA pPolicyPara, out CERT_CHAIN_POLICY_STATUS pPolicyStatus);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6514,15 +7867,15 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptBinaryToStringW(in uint8 pbBinary, uint32 cbBinary, CRYPT_STRING dwFlags, char16* pszString, out uint32 pcchString);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern void* PFXImportCertStore(ref CRYPTOAPI_BLOB pPFX, PWSTR szPassword, CRYPT_KEY_FLAGS dwFlags);
+	public static extern HCERTSTORE PFXImportCertStore(ref CRYPTOAPI_BLOB pPFX, PWSTR szPassword, CRYPT_KEY_FLAGS dwFlags);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PFXIsPFXBlob(ref CRYPTOAPI_BLOB pPFX);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PFXVerifyPassword(ref CRYPTOAPI_BLOB pPFX, PWSTR szPassword, uint32 dwFlags);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL PFXExportCertStoreEx(void* hStore, out CRYPTOAPI_BLOB pPFX, PWSTR szPassword, void* pvPara, uint32 dwFlags);
+	public static extern BOOL PFXExportCertStoreEx(HCERTSTORE hStore, out CRYPTOAPI_BLOB pPFX, PWSTR szPassword, void* pvPara, uint32 dwFlags);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL PFXExportCertStore(void* hStore, out CRYPTOAPI_BLOB pPFX, PWSTR szPassword, uint32 dwFlags);
+	public static extern BOOL PFXExportCertStore(HCERTSTORE hStore, out CRYPTOAPI_BLOB pPFX, PWSTR szPassword, uint32 dwFlags);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* CertOpenServerOcspResponse(ref CERT_CHAIN_CONTEXT pChainContext, uint32 dwFlags, CERT_SERVER_OCSP_RESPONSE_OPEN_PARA* pOpenPara);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6538,13 +7891,13 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CertRetrieveLogoOrBiometricInfo(in CERT_CONTEXT pCertContext, PSTR lpszLogoOrBiometricType, uint32 dwRetrievalFlags, uint32 dwTimeout, uint32 dwFlags, void* pvReserved, out uint8* ppbData, out uint32 pcbData, PWSTR* ppwszMimeType);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CertSelectCertificateChains(Guid* pSelectionContext, uint32 dwFlags, CERT_SELECT_CHAIN_PARA* pChainParameters, uint32 cCriteria, CERT_SELECT_CRITERIA* rgpCriteria, void* hStore, out uint32 pcSelection, out CERT_CHAIN_CONTEXT** pprgpSelection);
+	public static extern BOOL CertSelectCertificateChains(Guid* pSelectionContext, uint32 dwFlags, CERT_SELECT_CHAIN_PARA* pChainParameters, uint32 cCriteria, CERT_SELECT_CRITERIA* rgpCriteria, HCERTSTORE hStore, out uint32 pcSelection, out CERT_CHAIN_CONTEXT** pprgpSelection);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void CertFreeCertificateChainList(ref CERT_CHAIN_CONTEXT* prgpSelection);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptRetrieveTimeStamp(PWSTR wszUrl, uint32 dwRetrievalFlags, uint32 dwTimeout, PSTR pszHashId, CRYPT_TIMESTAMP_PARA* pPara, in uint8 pbData, uint32 cbData, out CRYPT_TIMESTAMP_CONTEXT* ppTsContext, CERT_CONTEXT** ppTsSigner, void** phStore);
+	public static extern BOOL CryptRetrieveTimeStamp(PWSTR wszUrl, uint32 dwRetrievalFlags, uint32 dwTimeout, PSTR pszHashId, CRYPT_TIMESTAMP_PARA* pPara, in uint8 pbData, uint32 cbData, out CRYPT_TIMESTAMP_CONTEXT* ppTsContext, CERT_CONTEXT** ppTsSigner, HCERTSTORE* phStore);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL CryptVerifyTimeStampSignature(in uint8 pbTSContentInfo, uint32 cbTSContentInfo, uint8* pbData, uint32 cbData, void* hAdditionalStore, out CRYPT_TIMESTAMP_CONTEXT* ppTsContext, CERT_CONTEXT** ppTsSigner, void** phStore);
+	public static extern BOOL CryptVerifyTimeStampSignature(in uint8 pbTSContentInfo, uint32 cbTSContentInfo, uint8* pbData, uint32 cbData, HCERTSTORE hAdditionalStore, out CRYPT_TIMESTAMP_CONTEXT* ppTsContext, CERT_CONTEXT** ppTsSigner, HCERTSTORE* phStore);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CertIsWeakHash(uint32 dwHashUseType, PWSTR pwszCNGHashAlgid, uint32 dwChainFlags, CERT_CHAIN_CONTEXT* pSignerChainContext, FILETIME* pTimeStamp, PWSTR pwszFileName);
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6558,29 +7911,29 @@ static
 	[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptUnprotectMemory(void* pDataIn, uint32 cbDataIn, uint32 dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptRegisterProtectionDescriptorName(PWSTR pwszName, PWSTR pwszDescriptorString, uint32 dwFlags);
+	public static extern HRESULT NCryptRegisterProtectionDescriptorName(PWSTR pwszName, PWSTR pwszDescriptorString, uint32 dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptQueryProtectionDescriptorName(PWSTR pwszName, char16* pwszDescriptorString, out uint pcDescriptorString, uint32 dwFlags);
+	public static extern HRESULT NCryptQueryProtectionDescriptorName(PWSTR pwszName, char16* pwszDescriptorString, out uint pcDescriptorString, uint32 dwFlags);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptCreateProtectionDescriptor(PWSTR pwszDescriptorString, uint32 dwFlags, out NCRYPT_DESCRIPTOR_HANDLE phDescriptor);
+	public static extern HRESULT NCryptCreateProtectionDescriptor(PWSTR pwszDescriptorString, uint32 dwFlags, out NCRYPT_DESCRIPTOR_HANDLE phDescriptor);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptCloseProtectionDescriptor(NCRYPT_DESCRIPTOR_HANDLE hDescriptor);
+	public static extern HRESULT NCryptCloseProtectionDescriptor(NCRYPT_DESCRIPTOR_HANDLE hDescriptor);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptGetProtectionDescriptorInfo(NCRYPT_DESCRIPTOR_HANDLE hDescriptor, NCRYPT_ALLOC_PARA* pMemPara, uint32 dwInfoType, void** ppvInfo);
+	public static extern HRESULT NCryptGetProtectionDescriptorInfo(NCRYPT_DESCRIPTOR_HANDLE hDescriptor, NCRYPT_ALLOC_PARA* pMemPara, uint32 dwInfoType, void** ppvInfo);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptProtectSecret(NCRYPT_DESCRIPTOR_HANDLE hDescriptor, uint32 dwFlags, in uint8 pbData, uint32 cbData, NCRYPT_ALLOC_PARA* pMemPara, HWND hWnd, out uint8* ppbProtectedBlob, out uint32 pcbProtectedBlob);
+	public static extern HRESULT NCryptProtectSecret(NCRYPT_DESCRIPTOR_HANDLE hDescriptor, uint32 dwFlags, in uint8 pbData, uint32 cbData, NCRYPT_ALLOC_PARA* pMemPara, HWND hWnd, out uint8* ppbProtectedBlob, out uint32 pcbProtectedBlob);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptUnprotectSecret(NCRYPT_DESCRIPTOR_HANDLE* phDescriptor, NCRYPT_FLAGS dwFlags, in uint8 pbProtectedBlob, uint32 cbProtectedBlob, NCRYPT_ALLOC_PARA* pMemPara, HWND hWnd, out uint8* ppbData, out uint32 pcbData);
+	public static extern HRESULT NCryptUnprotectSecret(NCRYPT_DESCRIPTOR_HANDLE* phDescriptor, NCRYPT_FLAGS dwFlags, in uint8 pbProtectedBlob, uint32 cbProtectedBlob, NCRYPT_ALLOC_PARA* pMemPara, HWND hWnd, out uint8* ppbData, out uint32 pcbData);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptStreamOpenToProtect(NCRYPT_DESCRIPTOR_HANDLE hDescriptor, uint32 dwFlags, HWND hWnd, ref NCRYPT_PROTECT_STREAM_INFO pStreamInfo, out NCRYPT_STREAM_HANDLE phStream);
+	public static extern HRESULT NCryptStreamOpenToProtect(NCRYPT_DESCRIPTOR_HANDLE hDescriptor, uint32 dwFlags, HWND hWnd, ref NCRYPT_PROTECT_STREAM_INFO pStreamInfo, out NCRYPT_STREAM_HANDLE phStream);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptStreamOpenToUnprotect(ref NCRYPT_PROTECT_STREAM_INFO pStreamInfo, uint32 dwFlags, HWND hWnd, out NCRYPT_STREAM_HANDLE phStream);
+	public static extern HRESULT NCryptStreamOpenToUnprotect(ref NCRYPT_PROTECT_STREAM_INFO pStreamInfo, uint32 dwFlags, HWND hWnd, out NCRYPT_STREAM_HANDLE phStream);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptStreamOpenToUnprotectEx(ref NCRYPT_PROTECT_STREAM_INFO_EX pStreamInfo, uint32 dwFlags, HWND hWnd, out NCRYPT_STREAM_HANDLE phStream);
+	public static extern HRESULT NCryptStreamOpenToUnprotectEx(ref NCRYPT_PROTECT_STREAM_INFO_EX pStreamInfo, uint32 dwFlags, HWND hWnd, out NCRYPT_STREAM_HANDLE phStream);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptStreamUpdate(NCRYPT_STREAM_HANDLE hStream, in uint8 pbData, uint cbData, BOOL fFinal);
+	public static extern HRESULT NCryptStreamUpdate(NCRYPT_STREAM_HANDLE hStream, in uint8 pbData, uint cbData, BOOL fFinal);
 	[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 NCryptStreamClose(NCRYPT_STREAM_HANDLE hStream);
+	public static extern HRESULT NCryptStreamClose(NCRYPT_STREAM_HANDLE hStream);
 	[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CryptXmlClose(void* hCryptXml);
 	[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6598,7 +7951,7 @@ static
 	[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CryptXmlSetHMACSecret(void* hSignature, in uint8 pbSecret, uint32 cbSecret);
 	[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT CryptXmlSign(void* hSignature, uint hKey, CERT_KEY_SPEC dwKeySpec, CRYPT_XML_FLAGS dwFlags, CRYPT_XML_KEYINFO_SPEC dwKeyInfoSpec, void* pvKeyInfoSpec, in CRYPT_XML_ALGORITHM pSignatureMethod, in CRYPT_XML_ALGORITHM pCanonicalization);
+	public static extern HRESULT CryptXmlSign(void* hSignature, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE hKey, CERT_KEY_SPEC dwKeySpec, CRYPT_XML_FLAGS dwFlags, CRYPT_XML_KEYINFO_SPEC dwKeyInfoSpec, void* pvKeyInfoSpec, in CRYPT_XML_ALGORITHM pSignatureMethod, in CRYPT_XML_ALGORITHM pCanonicalization);
 	[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CryptXmlImportPublicKey(CRYPT_XML_FLAGS dwFlags, in CRYPT_XML_KEY_VALUE pKeyValue, out BCRYPT_KEY_HANDLE phKey);
 	[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]

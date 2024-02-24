@@ -11,6 +11,24 @@ using Win32.System.Registry;
 static
 {
 	#region Constants
+	public const String WLDP_DLL = "WLDP.DLL";
+	public const String WLDP_GETLOCKDOWNPOLICY_FN = "WldpGetLockdownPolicy";
+	public const String WLDP_ISCLASSINAPPROVEDLIST_FN = "WldpIsClassInApprovedList";
+	public const String WLDP_SETDYNAMICCODETRUST_FN = "WldpSetDynamicCodeTrust";
+	public const String WLDP_ISDYNAMICCODEPOLICYENABLED_FN = "WldpIsDynamicCodePolicyEnabled";
+	public const String WLDP_QUERYDANAMICCODETRUST_FN = "WldpQueryDynamicCodeTrust";
+	public const String WLDP_QUERYDYNAMICCODETRUST_FN = "WldpQueryDynamicCodeTrust";
+	public const String WLDP_QUERYWINDOWSLOCKDOWNMODE_FN = "WldpQueryWindowsLockdownMode";
+	public const String WLDP_SETWINDOWSLOCKDOWNRESTRICTION_FN = "WldpSetWindowsLockdownRestriction";
+	public const String WLDP_QUERYDEVICESECURITYINFORMATION_FN = "WldpQueryDeviceSecurityInformation";
+	public const String WLDP_QUERYWINDOWSLOCKDOWNRESTRICTION_FN = "WldpQueryWindowsLockdownRestriction";
+	public const String WLDP_ISAPPAPPROVEDBYPOLICY_FN = "WldpIsAppApprovedByPolicy";
+	public const String WLDP_QUERYPOLICYSETTINGENABLED_FN = "WldpQueryPolicySettingEnabled";
+	public const String WLDP_QUERYPOLICYSETTINGENABLED2_FN = "WldpQueryPolicySettingEnabled2";
+	public const String WLDP_ISWCOSPRODUCTIONCONFIGURATION_FN = "WldpIsWcosProductionConfiguration";
+	public const String WLDP_RESETWCOSPRODUCTIONCONFIGURATION_FN = "WldpResetWcosProductionConfiguration";
+	public const String WLDP_ISPRODUCTIONCONFIGURATION_FN = "WldpIsProductionConfiguration";
+	public const String WLDP_RESETPRODUCTIONCONFIGURATION_FN = "WldpResetProductionConfiguration";
 	public const uint32 WLDP_LOCKDOWN_UNDEFINED = 0;
 	public const uint32 WLDP_LOCKDOWN_DEFINED_FLAG = 2147483648;
 	public const uint32 WLDP_LOCKDOWN_CONFIG_CI_FLAG = 1;
@@ -158,14 +176,6 @@ static
 	public const uint32 FILE_TYPE_CHAR = 2;
 	public const uint32 FILE_TYPE_PIPE = 3;
 	public const uint32 FILE_TYPE_REMOTE = 32768;
-	public const uint32 NOPARITY = 0;
-	public const uint32 ODDPARITY = 1;
-	public const uint32 EVENPARITY = 2;
-	public const uint32 MARKPARITY = 3;
-	public const uint32 SPACEPARITY = 4;
-	public const uint32 ONESTOPBIT = 0;
-	public const uint32 ONE5STOPBITS = 1;
-	public const uint32 TWOSTOPBITS = 2;
 	public const uint32 IGNORE = 0;
 	public const uint32 INFINITE = 4294967295;
 	public const uint32 CBR_110 = 110;
@@ -245,6 +255,7 @@ static
 	public const uint32 SCS_POSIX_BINARY = 4;
 	public const uint32 SCS_OS216_BINARY = 5;
 	public const uint32 SCS_64BIT_BINARY = 6;
+	public const uint32 SCS_THIS_PLATFORM_BINARY = 6;
 	public const uint32 FIBER_FLAG_FLOAT_SWITCH = 1;
 	public const uint32 UMS_VERSION = 256;
 	public const uint32 FILE_SKIP_COMPLETION_PORT_ON_SUCCESS = 1;
@@ -294,6 +305,15 @@ static
 	public const uint32 PROCESS_CREATION_DESKTOP_APP_BREAKAWAY_DISABLE_PROCESS_TREE = 2;
 	public const uint32 PROCESS_CREATION_DESKTOP_APP_BREAKAWAY_OVERRIDE = 4;
 	public const uint32 ATOM_FLAG_GLOBAL = 2;
+	public const String GET_SYSTEM_WOW64_DIRECTORY_NAME_A_A = "GetSystemWow64DirectoryA";
+	public const String GET_SYSTEM_WOW64_DIRECTORY_NAME_A_W = "GetSystemWow64DirectoryA";
+	public const String GET_SYSTEM_WOW64_DIRECTORY_NAME_A_T = "GetSystemWow64DirectoryA";
+	public const String GET_SYSTEM_WOW64_DIRECTORY_NAME_W_A = "GetSystemWow64DirectoryW";
+	public const String GET_SYSTEM_WOW64_DIRECTORY_NAME_W_W = "GetSystemWow64DirectoryW";
+	public const String GET_SYSTEM_WOW64_DIRECTORY_NAME_W_T = "GetSystemWow64DirectoryW";
+	public const String GET_SYSTEM_WOW64_DIRECTORY_NAME_T_A = "GetSystemWow64DirectoryW";
+	public const String GET_SYSTEM_WOW64_DIRECTORY_NAME_T_W = "GetSystemWow64DirectoryW";
+	public const String GET_SYSTEM_WOW64_DIRECTORY_NAME_T_T = "GetSystemWow64DirectoryW";
 	public const uint32 BASE_SEARCH_PATH_ENABLE_SAFE_SEARCHMODE = 1;
 	public const uint32 BASE_SEARCH_PATH_DISABLE_SAFE_SEARCHMODE = 65536;
 	public const uint32 BASE_SEARCH_PATH_PERMANENT = 32768;
@@ -467,6 +487,8 @@ static
 	public const uint32 ARSR_NOMESSAGES = 8;
 	public const uint32 ARSR_REGSECTION = 128;
 	public const uint32 ARSR_REMOVREGBKDATA = 4096;
+	public const String REG_SAVE_LOG_KEY = "RegSaveLogFile";
+	public const String REG_RESTORE_LOG_KEY = "RegRestoreLogFile";
 	public const uint32 AFSR_RESTORE = 1;
 	public const uint32 AFSR_BACKNEW = 2;
 	public const uint32 AFSR_NODELETENEW = 4;
@@ -588,29 +610,6 @@ static
 		CO_TL_ENTITY = 1024,
 		ER_ENTITY = 896,
 		IF_ENTITY = 512,
-	}
-	public enum PROC_THREAD_ATTRIBUTE_NUM : int32
-	{
-		ParentProcess = 0,
-		HandleList = 2,
-		GroupAffinity = 3,
-		PreferredNode = 4,
-		IdealProcessor = 5,
-		UmsThread = 6,
-		MitigationPolicy = 7,
-		SecurityCapabilities = 9,
-		ProtectionLevel = 11,
-		JobList = 13,
-		ChildProcessPolicy = 14,
-		AllApplicationPackagesPolicy = 15,
-		Win32kFilter = 16,
-		SafeOpenPromptOriginClaim = 17,
-		DesktopAppPolicy = 18,
-		PseudoConsole = 22,
-		MitigationAuditPolicy = 24,
-		MachineType = 25,
-		ComponentFilter = 26,
-		EnableOptionalXStateFeatures = 27,
 	}
 	public enum FILE_INFORMATION_CLASS : int32
 	{

@@ -213,6 +213,7 @@ static
 	public const uint32 TARGET_IS_NT50_OR_LATER = 1;
 	public const uint32 TARGET_IS_NT40_OR_LATER = 1;
 	public const uint32 TARGET_IS_NT351_OR_WIN95_OR_LATER = 1;
+	public const uint32 cbNDRContext = 20;
 	public const uint32 USER_CALL_IS_ASYNC = 256;
 	public const uint32 USER_CALL_NEW_CORRELATION_DESC = 512;
 	public const int32 MIDL_WINRT_TYPE_SERIALIZATION_INFO_CURRENT_VERSION = 1;

@@ -2,6 +2,34 @@
 
 "Constants":[
 	{
+		"Name":"szImeJapan"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIME.Japan"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szImeKorea"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIME.Korea"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szImeChina"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIME.China"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szImeTaiwan"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIME.Taiwan"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"CLSID_VERSION_DEPENDENT_MSIME_JAPANESE"
 		,"Type":{"Kind":"Native","Name":"Guid"}
 		,"ValueType":"String"
@@ -671,6 +699,20 @@
 		,"Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ValueType":"Int32"
 		,"Value":-2147192053
+		,"Attrs":[]
+	}
+	,{
+		"Name":"cbCommentMax"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":256
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wchPrivate1"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":57344
 		,"Attrs":[]
 	}
 	,{
@@ -1829,10 +1871,31 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"RWM_SERVICE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIMEService"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"FID_MSIME_VERSION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RWM_UIREADY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIMEUIReady"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RWM_MOUSE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIMEMouseOperation"
 		,"Attrs":[]
 	}
 	,{
@@ -1899,6 +1962,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"RWM_RECONVERT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIMEReconvert"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"FID_RECONVERT_VERSION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1913,6 +1983,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"RWM_RECONVERTREQUEST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIMEReconvertRequest"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"VERSION_DOCUMENTFEED"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1920,10 +1997,31 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"RWM_DOCUMENTFEED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIMEDocumentFeed"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"VERSION_QUERYPOSITION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RWM_QUERYPOSITION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIMEQueryPosition"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RWM_MODEBIAS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIMEModeBias"
 		,"Attrs":[]
 	}
 	,{
@@ -1983,6 +2081,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"RWM_SHOWIMEPAD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIMEShowImePad"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SHOWIMEPAD_DEFAULT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -2001,6 +2106,27 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RWM_KEYMAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIMEKeyMap"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RWM_CHGKEYMAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIMEChangeKeyMap"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RWM_NTFYKEYMAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIMENotifyKeyMap"
 		,"Attrs":[]
 	}
 	,{
@@ -2134,6 +2260,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":7
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RWM_RECONVERTOPTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSIMEReconvertOptions"
 		,"Attrs":[]
 	}
 	,{
@@ -4795,6 +4928,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IClassFactory","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -4821,6 +4955,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"019f7151-e6db-11d0-83c3-00c04fddb82e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4994,6 +5129,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"019f7152-e6db-11d0-83c3-00c04fddb82e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5296,6 +5432,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"019f7153-e6db-11d0-83c3-00c04fddb82e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6093,6 +6230,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5d8e643c-c3a9-11d1-afef-00805f0c8b6d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6116,6 +6254,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5d8e643b-c3a9-11d1-afef-00805f0c8b6d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6189,6 +6328,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5d8e643a-c3a9-11d1-afef-00805f0c8b6d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6214,6 +6354,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"98752974-b0a6-489b-8f6f-bff3769c8eeb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6257,6 +6398,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"08c03412-f96b-11d0-a475-00aa006bcc59"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6316,6 +6458,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4955dd31-b159-11d0-8fcf-00aa006bcc59"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6375,6 +6518,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"09b5eab0-f997-11d1-93d4-0060b067b86e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6434,6 +6578,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b3458082-bd00-11d1-939b-0060b067b86e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6471,6 +6616,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b5cf2cfa-8aeb-11d1-9364-0060b067b86e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6539,6 +6685,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"08c0e040-62d1-11d1-9326-0060b067b86e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7528,6 +7675,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"08c03411-f96b-11d0-a475-00aa006bcc59"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8787,6 +8935,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6fe20962-d077-11d0-8fe7-00aa006bcc59"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9044,6 +9193,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e1c4bf0e-2d53-11d2-93e1-0060b067b86e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IActiveIME","TargetKind":"Com","Api":"UI.Input.Ime","Parents":[]}
 		,"Methods":[
 			{

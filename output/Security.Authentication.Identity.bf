@@ -15,6 +15,17 @@ using Win32.System.WindowsProgramming;
 static
 {
 	#region Constants
+	public const String NTLMSP_NAME_A = "NTLM";
+	public const String NTLMSP_NAME = "NTLM";
+	public const String MICROSOFT_KERBEROS_NAME_A = "Kerberos";
+	public const String MICROSOFT_KERBEROS_NAME_W = "Kerberos";
+	public const String MICROSOFT_KERBEROS_NAME = "Kerberos";
+	public const String NEGOSSP_NAME_W = "Negotiate";
+	public const String NEGOSSP_NAME_A = "Negotiate";
+	public const String NEGOSSP_NAME = "Negotiate";
+	public const String CLOUDAP_NAME_W = "CloudAP";
+	public const String ClOUDAP_NAME_A = "CloudAP";
+	public const String CLOUDAP_NAME = "CloudAP";
 	public const uint32 ISSP_LEVEL = 32;
 	public const uint32 ISSP_MODE = 1;
 	public const uint32 SECPKG_FLAG_INTEGRITY = 1;
@@ -224,6 +235,11 @@ static
 	public const uint32 MAX_PROTOCOL_ID_SIZE = 255;
 	public const uint32 SECQOP_WRAP_NO_ENCRYPT = 2147483649;
 	public const uint32 SECQOP_WRAP_OOB_DATA = 1073741824;
+	public const String SECURITY_ENTRYPOINT_ANSIW = "InitSecurityInterfaceW";
+	public const String SECURITY_ENTRYPOINT_ANSIA = "InitSecurityInterfaceA";
+	public const String SECURITY_ENTRYPOINT16 = "INITSECURITYINTERFACEA";
+	public const String SECURITY_ENTRYPOINT_ANSI = "InitSecurityInterfaceW";
+	public const String SECURITY_ENTRYPOINT = "INITSECURITYINTERFACEA";
 	public const uint32 SECURITY_SUPPORT_PROVIDER_INTERFACE_VERSION = 1;
 	public const uint32 SECURITY_SUPPORT_PROVIDER_INTERFACE_VERSION_2 = 2;
 	public const uint32 SECURITY_SUPPORT_PROVIDER_INTERFACE_VERSION_3 = 3;
@@ -306,11 +322,20 @@ static
 	public const uint32 SE_ADT_PARAMETER_EXTENSIBLE_AUDIT = 4;
 	public const uint32 SE_ADT_PARAMETER_GENERIC_AUDIT = 8;
 	public const uint32 SE_ADT_PARAMETER_WRITE_SYNCHRONOUS = 16;
+	public const String LSA_ADT_SECURITY_SOURCE_NAME = "Microsoft-Windows-Security-Auditing";
+	public const String LSA_ADT_LEGACY_SECURITY_SOURCE_NAME = "Security";
 	public const uint32 SE_ADT_POLICY_AUDIT_EVENT_TYPE_EX_BEGIN = 100;
 	public const int32 POLICY_AUDIT_EVENT_UNCHANGED = 0;
 	public const int32 POLICY_AUDIT_EVENT_SUCCESS = 1;
 	public const int32 POLICY_AUDIT_EVENT_FAILURE = 2;
 	public const int32 POLICY_AUDIT_EVENT_NONE = 4;
+	public const String LSA_AP_NAME_INITIALIZE_PACKAGE = "LsaApInitializePackage\x00";
+	public const String LSA_AP_NAME_LOGON_USER = "LsaApLogonUser\x00";
+	public const String LSA_AP_NAME_LOGON_USER_EX = "LsaApLogonUserEx\x00";
+	public const String LSA_AP_NAME_CALL_PACKAGE = "LsaApCallPackage\x00";
+	public const String LSA_AP_NAME_LOGON_TERMINATED = "LsaApLogonTerminated\x00";
+	public const String LSA_AP_NAME_CALL_PACKAGE_UNTRUSTED = "LsaApCallPackageUntrusted\x00";
+	public const String LSA_AP_NAME_CALL_PACKAGE_PASSTHROUGH = "LsaApCallPackagePassthrough\x00";
 	public const int32 POLICY_VIEW_LOCAL_INFORMATION = 1;
 	public const int32 POLICY_VIEW_AUDIT_INFORMATION = 2;
 	public const int32 POLICY_GET_PRIVATE_INFORMATION = 4;
@@ -375,8 +400,11 @@ static
 	public const uint32 MAX_RECORDS_IN_FOREST_TRUST_INFO = 4000;
 	public const int32 SECRET_SET_VALUE = 1;
 	public const int32 SECRET_QUERY_VALUE = 2;
+	public const String LSA_GLOBAL_SECRET_PREFIX = "G$";
 	public const uint32 LSA_GLOBAL_SECRET_PREFIX_LENGTH = 2;
+	public const String LSA_LOCAL_SECRET_PREFIX = "L$";
 	public const uint32 LSA_LOCAL_SECRET_PREFIX_LENGTH = 2;
+	public const String LSA_MACHINE_SECRET_PREFIX = "M$";
 	public const int32 LSA_SECRET_MAXIMUM_COUNT = 4096;
 	public const int32 LSA_SECRET_MAXIMUM_LENGTH = 512;
 	public const uint32 MAXIMUM_CAPES_PER_CAP = 127;
@@ -385,6 +413,16 @@ static
 	public const uint32 CENTRAL_ACCESS_POLICY_STAGED_FLAG = 65536;
 	public const uint32 LSASETCAPS_RELOAD_FLAG = 1;
 	public const uint32 LSASETCAPS_VALID_FLAG_MASK = 1;
+	public const String SE_INTERACTIVE_LOGON_NAME = "SeInteractiveLogonRight";
+	public const String SE_NETWORK_LOGON_NAME = "SeNetworkLogonRight";
+	public const String SE_BATCH_LOGON_NAME = "SeBatchLogonRight";
+	public const String SE_SERVICE_LOGON_NAME = "SeServiceLogonRight";
+	public const String SE_DENY_INTERACTIVE_LOGON_NAME = "SeDenyInteractiveLogonRight";
+	public const String SE_DENY_NETWORK_LOGON_NAME = "SeDenyNetworkLogonRight";
+	public const String SE_DENY_BATCH_LOGON_NAME = "SeDenyBatchLogonRight";
+	public const String SE_DENY_SERVICE_LOGON_NAME = "SeDenyServiceLogonRight";
+	public const String SE_REMOTE_INTERACTIVE_LOGON_NAME = "SeRemoteInteractiveLogonRight";
+	public const String SE_DENY_REMOTE_INTERACTIVE_LOGON_NAME = "SeDenyRemoteInteractiveLogonRight";
 	public const uint32 NEGOTIATE_MAX_PREFIX = 32;
 	public const uint32 NEGOTIATE_ALLOW_NTLM = 268435456;
 	public const uint32 NEGOTIATE_NEG_NTLM = 536870912;
@@ -458,6 +496,13 @@ static
 	public const Guid Audit_DirectoryServiceAccess = .(0x6997984f, 0x797a, 0x11d9, 0xbe, 0xd3, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 	public const Guid Audit_AccountLogon = .(0x69979850, 0x797a, 0x11d9, 0xbe, 0xd3, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 	public const int32 DOMAIN_NO_LM_OWF_CHANGE = 64;
+	public const String SAM_PASSWORD_CHANGE_NOTIFY_ROUTINE = "PasswordChangeNotify";
+	public const String SAM_INIT_NOTIFICATION_ROUTINE = "InitializeChangeNotify";
+	public const String SAM_PASSWORD_FILTER_ROUTINE = "PasswordFilter";
+	public const String MSV1_0_PACKAGE_NAME = "MICROSOFT_AUTHENTICATION_PACKAGE_V1_0";
+	public const String MSV1_0_PACKAGE_NAMEW = "MICROSOFT_AUTHENTICATION_PACKAGE_V1_0";
+	public const String MSV1_0_SUBAUTHENTICATION_KEY = "SYSTEM\\CurrentControlSet\\Control\\Lsa\\MSV1_0";
+	public const String MSV1_0_SUBAUTHENTICATION_VALUE = "Auth";
 	public const uint32 MSV1_0_CHALLENGE_LENGTH = 8;
 	public const uint32 MSV1_0_USER_SESSION_KEY_LENGTH = 16;
 	public const uint32 MSV1_0_LANMAN_SESSION_KEY_LENGTH = 8;
@@ -598,6 +643,8 @@ static
 	public const int32 KRB_NT_MS_PRINCIPAL_AND_ID = -129;
 	public const int32 KRB_NT_MS_BRANCH_ID = -133;
 	public const uint32 KRB_NT_X500_PRINCIPAL = 6;
+	public const String KRB_WELLKNOWN_STRING = "WELLKNOWN";
+	public const String KRB_ANONYMOUS_STRING = "ANONYMOUS";
 	public const uint32 KERB_WRAP_NO_ENCRYPT = 2147483649;
 	public const uint32 KERB_CERTIFICATE_LOGON_FLAG_CHECK_DUPLICATES = 1;
 	public const uint32 KERB_CERTIFICATE_LOGON_FLAG_USE_CERTIFICATE_INFO = 2;
@@ -641,6 +688,13 @@ static
 	public const uint32 AUDIT_ENUMERATE_USERS = 16;
 	public const uint32 AUDIT_SET_MISC_POLICY = 32;
 	public const uint32 AUDIT_QUERY_MISC_POLICY = 64;
+	public const String PKU2U_PACKAGE_NAME_A = "pku2u";
+	public const String PKU2U_PACKAGE_NAME = "pku2u";
+	public const String PKU2U_PACKAGE_NAME_W = "pku2u";
+	public const String SAM_CREDENTIAL_UPDATE_NOTIFY_ROUTINE = "CredentialUpdateNotify";
+	public const String SAM_CREDENTIAL_UPDATE_REGISTER_ROUTINE = "CredentialUpdateRegister";
+	public const String SAM_CREDENTIAL_UPDATE_FREE_ROUTINE = "CredentialUpdateFree";
+	public const String SAM_CREDENTIAL_UPDATE_REGISTER_MAPPED_ENTRYPOINTS_ROUTINE = "RegisterMappedEntrypoints";
 	public const uint32 SECPKG_CLIENT_PROCESS_TERMINATED = 1;
 	public const uint32 SECPKG_CLIENT_THREAD_TERMINATED = 2;
 	public const uint32 SECPKG_CALL_KERNEL_MODE = 1;
@@ -733,9 +787,13 @@ static
 	public const uint32 CREDP_FLAGS_TRUSTED_CALLER = 32;
 	public const uint32 CREDP_FLAGS_VALIDATE_PROXY_TARGET = 64;
 	public const uint32 CRED_MARSHALED_TI_SIZE_SIZE = 12;
+	public const String LSA_AP_NAME_LOGON_USER_EX2 = "LsaApLogonUserEx2\x00";
+	public const String SP_ACCEPT_CREDENTIALS_NAME = "SpAcceptCredentials\x00";
 	public const uint32 SECPKG_UNICODE_ATTRIBUTE = 2147483648;
 	public const uint32 SECPKG_ANSI_ATTRIBUTE = 0;
 	public const uint32 SECPKG_CREDENTIAL_ATTRIBUTE = 0;
+	public const String SECPKG_LSAMODEINIT_NAME = "SpLsaModeInitialize";
+	public const String SECPKG_USERMODEINIT_NAME = "SpUserModeInitialize";
 	public const uint32 SECPKG_INTERFACE_VERSION = 65536;
 	public const uint32 SECPKG_INTERFACE_VERSION_2 = 131072;
 	public const uint32 SECPKG_INTERFACE_VERSION_3 = 262144;
@@ -746,6 +804,27 @@ static
 	public const uint32 SECPKG_INTERFACE_VERSION_8 = 8388608;
 	public const uint32 SECPKG_INTERFACE_VERSION_9 = 16777216;
 	public const uint32 SECPKG_INTERFACE_VERSION_10 = 33554432;
+	public const String UNISP_NAME_A = "Microsoft Unified Security Protocol Provider";
+	public const String UNISP_NAME_W = "Microsoft Unified Security Protocol Provider";
+	public const String SSL2SP_NAME_A = "Microsoft SSL 2.0";
+	public const String SSL2SP_NAME_W = "Microsoft SSL 2.0";
+	public const String SSL3SP_NAME_A = "Microsoft SSL 3.0";
+	public const String SSL3SP_NAME_W = "Microsoft SSL 3.0";
+	public const String TLS1SP_NAME_A = "Microsoft TLS 1.0";
+	public const String TLS1SP_NAME_W = "Microsoft TLS 1.0";
+	public const String PCT1SP_NAME_A = "Microsoft PCT 1.0";
+	public const String PCT1SP_NAME_W = "Microsoft PCT 1.0";
+	public const String SCHANNEL_NAME_A = "Schannel";
+	public const String SCHANNEL_NAME_W = "Schannel";
+	public const String DEFAULT_TLS_SSP_NAME_A = "Default TLS SSP";
+	public const String DEFAULT_TLS_SSP_NAME_W = "Default TLS SSP";
+	public const String UNISP_NAME = "Microsoft Unified Security Protocol Provider";
+	public const String PCT1SP_NAME = "Microsoft PCT 1.0";
+	public const String SSL2SP_NAME = "Microsoft SSL 2.0";
+	public const String SSL3SP_NAME = "Microsoft SSL 3.0";
+	public const String TLS1SP_NAME = "Microsoft TLS 1.0";
+	public const String SCHANNEL_NAME = "Schannel";
+	public const String DEFAULT_TLS_SSP_NAME = "Default TLS SSP";
 	public const uint32 UNISP_RPC_ID = 14;
 	public const uint32 RCRED_STATUS_NOCRED = 0;
 	public const uint32 RCRED_CRED_EXISTS = 1;
@@ -850,12 +929,68 @@ static
 	public const uint32 SCH_CRED_X509_CERTCHAIN = 1;
 	public const uint32 SCH_CRED_X509_CAPI = 2;
 	public const uint32 SCH_CRED_CERT_CONTEXT = 3;
+	public const String SSL_CRACK_CERTIFICATE_NAME = "SslCrackCertificate";
+	public const String SSL_FREE_CERTIFICATE_NAME = "SslFreeCertificate";
+	public const String SL_INFO_KEY_CHANNEL = "Channel";
+	public const String SL_INFO_KEY_NAME = "Name";
+	public const String SL_INFO_KEY_AUTHOR = "Author";
+	public const String SL_INFO_KEY_DESCRIPTION = "Description";
+	public const String SL_INFO_KEY_LICENSOR_URL = "LicensorUrl";
+	public const String SL_INFO_KEY_DIGITAL_PID = "DigitalPID";
+	public const String SL_INFO_KEY_DIGITAL_PID2 = "DigitalPID2";
+	public const String SL_INFO_KEY_PARTIAL_PRODUCT_KEY = "PartialProductKey";
+	public const String SL_INFO_KEY_PRODUCT_SKU_ID = "ProductSkuId";
+	public const String SL_INFO_KEY_LICENSE_TYPE = "LicenseType";
+	public const String SL_INFO_KEY_VERSION = "Version";
+	public const String SL_INFO_KEY_SYSTEM_STATE = "SystemState";
+	public const String SL_INFO_KEY_ACTIVE_PLUGINS = "ActivePlugins";
+	public const String SL_INFO_KEY_SECURE_STORE_ID = "SecureStoreId";
+	public const String SL_INFO_KEY_BIOS_PKEY = "BiosProductKey";
+	public const String SL_INFO_KEY_BIOS_SLIC_STATE = "BiosSlicState";
+	public const String SL_INFO_KEY_BIOS_OA2_MINOR_VERSION = "BiosOA2MinorVersion";
+	public const String SL_INFO_KEY_BIOS_PKEY_DESCRIPTION = "BiosProductKeyDescription";
+	public const String SL_INFO_KEY_BIOS_PKEY_PKPN = "BiosProductKeyPkPn";
+	public const String SL_INFO_KEY_SECURE_PROCESSOR_ACTIVATION_URL = "SPCURL";
+	public const String SL_INFO_KEY_RIGHT_ACCOUNT_ACTIVATION_URL = "RACURL";
+	public const String SL_INFO_KEY_PRODUCT_KEY_ACTIVATION_URL = "PKCURL";
+	public const String SL_INFO_KEY_USE_LICENSE_ACTIVATION_URL = "EULURL";
+	public const String SL_INFO_KEY_IS_KMS = "IsKeyManagementService";
+	public const String SL_INFO_KEY_KMS_CURRENT_COUNT = "KeyManagementServiceCurrentCount";
+	public const String SL_INFO_KEY_KMS_REQUIRED_CLIENT_COUNT = "KeyManagementServiceRequiredClientCount";
+	public const String SL_INFO_KEY_KMS_UNLICENSED_REQUESTS = "KeyManagementServiceUnlicensedRequests";
+	public const String SL_INFO_KEY_KMS_LICENSED_REQUESTS = "KeyManagementServiceLicensedRequests";
+	public const String SL_INFO_KEY_KMS_OOB_GRACE_REQUESTS = "KeyManagementServiceOOBGraceRequests";
+	public const String SL_INFO_KEY_KMS_OOT_GRACE_REQUESTS = "KeyManagementServiceOOTGraceRequests";
+	public const String SL_INFO_KEY_KMS_NON_GENUINE_GRACE_REQUESTS = "KeyManagementServiceNonGenuineGraceRequests";
+	public const String SL_INFO_KEY_KMS_NOTIFICATION_REQUESTS = "KeyManagementServiceNotificationRequests";
+	public const String SL_INFO_KEY_KMS_TOTAL_REQUESTS = "KeyManagementServiceTotalRequests";
+	public const String SL_INFO_KEY_KMS_FAILED_REQUESTS = "KeyManagementServiceFailedRequests";
+	public const String SL_INFO_KEY_IS_PRS = "IsPRS";
+	public const String SL_PKEY_MS2005 = "msft:rm/algorithm/pkey/2005";
+	public const String SL_PKEY_MS2009 = "msft:rm/algorithm/pkey/2009";
+	public const String SL_PKEY_DETECT = "msft:rm/algorithm/pkey/detect";
+	public const String SL_EVENT_LICENSING_STATE_CHANGED = "msft:rm/event/licensingstatechanged";
+	public const String SL_EVENT_POLICY_CHANGED = "msft:rm/event/policychanged";
+	public const String SL_EVENT_USER_NOTIFICATION = "msft:rm/event/usernotification";
 	public const uint32 SL_SYSTEM_STATE_REBOOT_POLICY_FOUND = 1;
 	public const uint32 SL_SYSTEM_STATE_TAMPERED = 2;
 	public const uint32 SL_REARM_REBOOT_REQUIRED = 1;
 	public const uint32 SPP_MIGRATION_GATHER_MIGRATABLE_APPS = 1;
 	public const uint32 SPP_MIGRATION_GATHER_ACTIVATED_WINDOWS_STATE = 2;
 	public const uint32 SPP_MIGRATION_GATHER_ALL = 4294967295;
+	public const String SL_PROP_BRT_DATA = "SL_BRT_DATA";
+	public const String SL_PROP_BRT_COMMIT = "SL_BRT_COMMIT";
+	public const String SL_PROP_GENUINE_RESULT = "SL_GENUINE_RESULT";
+	public const String SL_PROP_NONGENUINE_GRACE_FLAG = "SL_NONGENUINE_GRACE_FLAG";
+	public const String SL_PROP_GET_GENUINE_AUTHZ = "SL_GET_GENUINE_AUTHZ";
+	public const String SL_PROP_GET_GENUINE_SERVER_AUTHZ = "SL_GET_GENUINE_SERVER_AUTHZ";
+	public const String SL_PROP_LAST_ACT_ATTEMPT_HRESULT = "SL_LAST_ACT_ATTEMPT_HRESULT";
+	public const String SL_PROP_LAST_ACT_ATTEMPT_TIME = "SL_LAST_ACT_ATTEMPT_TIME";
+	public const String SL_PROP_LAST_ACT_ATTEMPT_SERVER_FLAGS = "SL_LAST_ACT_ATTEMPT_SERVER_FLAGS";
+	public const String SL_PROP_ACTIVATION_VALIDATION_IN_PROGRESS = "SL_ACTIVATION_VALIDATION_IN_PROGRESS";
+	public const String SL_POLICY_EVALUATION_MODE_ENABLED = "Security-SPP-EvaluationModeEnabled";
+	public const String SL_DEFAULT_MIGRATION_ENCRYPTOR_URI = "msft:spp/migrationencryptor/tokenact/1.0";
+	public const String ID_CAP_SLAPI = "slapiQueryLicenseValue";
 	public const uint32 USER_ACCOUNT_DISABLED = 1;
 	public const uint32 USER_HOME_DIRECTORY_REQUIRED = 2;
 	public const uint32 USER_PASSWORD_NOT_REQUIRED = 4;
@@ -1313,6 +1448,9 @@ static
 	public const HRESULT SL_REMAPPING_MDOLLAR_OSR_LICENSE_BLOCKED = -2143310910;
 	public const HRESULT SL_REMAPPING_MDOLLAR_OSR_DEVICE_BLOCKED = -2143310909;
 	public const Guid WINDOWS_SLID = .(0x55c92734, 0xd682, 0x4d71, 0x98, 0x3e, 0xd6, 0xec, 0x3f, 0x16, 0x05, 0x9f);
+	public const String WDIGEST_SP_NAME_A = "WDigest";
+	public const String WDIGEST_SP_NAME_W = "WDigest";
+	public const String WDIGEST_SP_NAME = "WDigest";
 	#endregion
 	
 	#region Typedefs
@@ -2042,47 +2180,47 @@ static
 	public function NTSTATUS PSAM_PASSWORD_NOTIFICATION_ROUTINE(out UNICODE_STRING UserName, uint32 RelativeId, out UNICODE_STRING NewPassword);
 	public function BOOLEAN PSAM_INIT_NOTIFICATION_ROUTINE();
 	public function BOOLEAN PSAM_PASSWORD_FILTER_ROUTINE(ref UNICODE_STRING AccountName, ref UNICODE_STRING FullName, ref UNICODE_STRING Password, BOOLEAN SetOperation);
-	public function void SEC_GET_KEY_FN(void* Arg, void* Principal, uint32 KeyVer, void** Key, out int32 Status);
-	public function int32 ACQUIRE_CREDENTIALS_HANDLE_FN_W(out uint16 param0, out uint16 param1, uint32 param2, void* param3, void* param4, SEC_GET_KEY_FN param5, void* param6, out SecHandle param7, out LARGE_INTEGER param8);
-	public function int32 ACQUIRE_CREDENTIALS_HANDLE_FN_A(out int8 param0, out int8 param1, uint32 param2, void* param3, void* param4, SEC_GET_KEY_FN param5, void* param6, out SecHandle param7, out LARGE_INTEGER param8);
-	public function int32 FREE_CREDENTIALS_HANDLE_FN(out SecHandle param0);
-	public function int32 ADD_CREDENTIALS_FN_W(out SecHandle param0, out uint16 param1, out uint16 param2, uint32 param3, void* param4, SEC_GET_KEY_FN param5, void* param6, out LARGE_INTEGER param7);
-	public function int32 ADD_CREDENTIALS_FN_A(out SecHandle param0, out int8 param1, out int8 param2, uint32 param3, void* param4, SEC_GET_KEY_FN param5, void* param6, out LARGE_INTEGER param7);
-	public function int32 CHANGE_PASSWORD_FN_W(out uint16 param0, out uint16 param1, out uint16 param2, out uint16 param3, out uint16 param4, BOOLEAN param5, uint32 param6, out SecBufferDesc param7);
-	public function int32 CHANGE_PASSWORD_FN_A(out int8 param0, out int8 param1, out int8 param2, out int8 param3, out int8 param4, BOOLEAN param5, uint32 param6, out SecBufferDesc param7);
-	public function int32 INITIALIZE_SECURITY_CONTEXT_FN_W(out SecHandle param0, out SecHandle param1, out uint16 param2, uint32 param3, uint32 param4, uint32 param5, out SecBufferDesc param6, uint32 param7, out SecHandle param8, out SecBufferDesc param9, out uint32 param10, out LARGE_INTEGER param11);
-	public function int32 INITIALIZE_SECURITY_CONTEXT_FN_A(out SecHandle param0, out SecHandle param1, out int8 param2, uint32 param3, uint32 param4, uint32 param5, out SecBufferDesc param6, uint32 param7, out SecHandle param8, out SecBufferDesc param9, out uint32 param10, out LARGE_INTEGER param11);
-	public function int32 ACCEPT_SECURITY_CONTEXT_FN(out SecHandle param0, out SecHandle param1, out SecBufferDesc param2, uint32 param3, uint32 param4, out SecHandle param5, out SecBufferDesc param6, out uint32 param7, out LARGE_INTEGER param8);
-	public function int32 COMPLETE_AUTH_TOKEN_FN(out SecHandle param0, out SecBufferDesc param1);
-	public function int32 IMPERSONATE_SECURITY_CONTEXT_FN(out SecHandle param0);
-	public function int32 REVERT_SECURITY_CONTEXT_FN(out SecHandle param0);
-	public function int32 QUERY_SECURITY_CONTEXT_TOKEN_FN(out SecHandle param0, void** param1);
-	public function int32 DELETE_SECURITY_CONTEXT_FN(out SecHandle param0);
-	public function int32 APPLY_CONTROL_TOKEN_FN(out SecHandle param0, out SecBufferDesc param1);
-	public function int32 QUERY_CONTEXT_ATTRIBUTES_FN_W(out SecHandle param0, uint32 param1, void* param2);
-	public function int32 QUERY_CONTEXT_ATTRIBUTES_EX_FN_W(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
-	public function int32 QUERY_CONTEXT_ATTRIBUTES_FN_A(out SecHandle param0, uint32 param1, void* param2);
-	public function int32 QUERY_CONTEXT_ATTRIBUTES_EX_FN_A(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
-	public function int32 SET_CONTEXT_ATTRIBUTES_FN_W(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
-	public function int32 SET_CONTEXT_ATTRIBUTES_FN_A(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
-	public function int32 QUERY_CREDENTIALS_ATTRIBUTES_FN_W(out SecHandle param0, uint32 param1, void* param2);
-	public function int32 QUERY_CREDENTIALS_ATTRIBUTES_EX_FN_W(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
-	public function int32 QUERY_CREDENTIALS_ATTRIBUTES_FN_A(out SecHandle param0, uint32 param1, void* param2);
-	public function int32 QUERY_CREDENTIALS_ATTRIBUTES_EX_FN_A(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
-	public function int32 SET_CREDENTIALS_ATTRIBUTES_FN_W(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
-	public function int32 SET_CREDENTIALS_ATTRIBUTES_FN_A(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
-	public function int32 FREE_CONTEXT_BUFFER_FN(void* param0);
-	public function int32 MAKE_SIGNATURE_FN(out SecHandle param0, uint32 param1, out SecBufferDesc param2, uint32 param3);
-	public function int32 VERIFY_SIGNATURE_FN(out SecHandle param0, out SecBufferDesc param1, uint32 param2, out uint32 param3);
-	public function int32 ENCRYPT_MESSAGE_FN(out SecHandle param0, uint32 param1, out SecBufferDesc param2, uint32 param3);
-	public function int32 DECRYPT_MESSAGE_FN(out SecHandle param0, out SecBufferDesc param1, uint32 param2, out uint32 param3);
-	public function int32 ENUMERATE_SECURITY_PACKAGES_FN_W(out uint32 param0, out SecPkgInfoW* param1);
-	public function int32 ENUMERATE_SECURITY_PACKAGES_FN_A(out uint32 param0, out SecPkgInfoA* param1);
-	public function int32 QUERY_SECURITY_PACKAGE_INFO_FN_W(out uint16 param0, out SecPkgInfoW* param1);
-	public function int32 QUERY_SECURITY_PACKAGE_INFO_FN_A(out int8 param0, out SecPkgInfoA* param1);
-	public function int32 EXPORT_SECURITY_CONTEXT_FN(out SecHandle param0, uint32 param1, out SecBuffer param2, void** param3);
-	public function int32 IMPORT_SECURITY_CONTEXT_FN_W(out uint16 param0, out SecBuffer param1, void* param2, out SecHandle param3);
-	public function int32 IMPORT_SECURITY_CONTEXT_FN_A(out int8 param0, out SecBuffer param1, void* param2, out SecHandle param3);
+	public function void SEC_GET_KEY_FN(void* Arg, void* Principal, uint32 KeyVer, void** Key, out HRESULT Status);
+	public function HRESULT ACQUIRE_CREDENTIALS_HANDLE_FN_W(out uint16 param0, out uint16 param1, uint32 param2, void* param3, void* param4, SEC_GET_KEY_FN param5, void* param6, out SecHandle param7, out LARGE_INTEGER param8);
+	public function HRESULT ACQUIRE_CREDENTIALS_HANDLE_FN_A(out int8 param0, out int8 param1, uint32 param2, void* param3, void* param4, SEC_GET_KEY_FN param5, void* param6, out SecHandle param7, out LARGE_INTEGER param8);
+	public function HRESULT FREE_CREDENTIALS_HANDLE_FN(out SecHandle param0);
+	public function HRESULT ADD_CREDENTIALS_FN_W(out SecHandle param0, out uint16 param1, out uint16 param2, uint32 param3, void* param4, SEC_GET_KEY_FN param5, void* param6, out LARGE_INTEGER param7);
+	public function HRESULT ADD_CREDENTIALS_FN_A(out SecHandle param0, out int8 param1, out int8 param2, uint32 param3, void* param4, SEC_GET_KEY_FN param5, void* param6, out LARGE_INTEGER param7);
+	public function HRESULT CHANGE_PASSWORD_FN_W(out uint16 param0, out uint16 param1, out uint16 param2, out uint16 param3, out uint16 param4, BOOLEAN param5, uint32 param6, out SecBufferDesc param7);
+	public function HRESULT CHANGE_PASSWORD_FN_A(out int8 param0, out int8 param1, out int8 param2, out int8 param3, out int8 param4, BOOLEAN param5, uint32 param6, out SecBufferDesc param7);
+	public function HRESULT INITIALIZE_SECURITY_CONTEXT_FN_W(out SecHandle param0, out SecHandle param1, out uint16 param2, uint32 param3, uint32 param4, uint32 param5, out SecBufferDesc param6, uint32 param7, out SecHandle param8, out SecBufferDesc param9, out uint32 param10, out LARGE_INTEGER param11);
+	public function HRESULT INITIALIZE_SECURITY_CONTEXT_FN_A(out SecHandle param0, out SecHandle param1, out int8 param2, uint32 param3, uint32 param4, uint32 param5, out SecBufferDesc param6, uint32 param7, out SecHandle param8, out SecBufferDesc param9, out uint32 param10, out LARGE_INTEGER param11);
+	public function HRESULT ACCEPT_SECURITY_CONTEXT_FN(out SecHandle param0, out SecHandle param1, out SecBufferDesc param2, uint32 param3, uint32 param4, out SecHandle param5, out SecBufferDesc param6, out uint32 param7, out LARGE_INTEGER param8);
+	public function HRESULT COMPLETE_AUTH_TOKEN_FN(out SecHandle param0, out SecBufferDesc param1);
+	public function HRESULT IMPERSONATE_SECURITY_CONTEXT_FN(out SecHandle param0);
+	public function HRESULT REVERT_SECURITY_CONTEXT_FN(out SecHandle param0);
+	public function HRESULT QUERY_SECURITY_CONTEXT_TOKEN_FN(out SecHandle param0, void** param1);
+	public function HRESULT DELETE_SECURITY_CONTEXT_FN(out SecHandle param0);
+	public function HRESULT APPLY_CONTROL_TOKEN_FN(out SecHandle param0, out SecBufferDesc param1);
+	public function HRESULT QUERY_CONTEXT_ATTRIBUTES_FN_W(out SecHandle param0, uint32 param1, void* param2);
+	public function HRESULT QUERY_CONTEXT_ATTRIBUTES_EX_FN_W(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
+	public function HRESULT QUERY_CONTEXT_ATTRIBUTES_FN_A(out SecHandle param0, uint32 param1, void* param2);
+	public function HRESULT QUERY_CONTEXT_ATTRIBUTES_EX_FN_A(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
+	public function HRESULT SET_CONTEXT_ATTRIBUTES_FN_W(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
+	public function HRESULT SET_CONTEXT_ATTRIBUTES_FN_A(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
+	public function HRESULT QUERY_CREDENTIALS_ATTRIBUTES_FN_W(out SecHandle param0, uint32 param1, void* param2);
+	public function HRESULT QUERY_CREDENTIALS_ATTRIBUTES_EX_FN_W(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
+	public function HRESULT QUERY_CREDENTIALS_ATTRIBUTES_FN_A(out SecHandle param0, uint32 param1, void* param2);
+	public function HRESULT QUERY_CREDENTIALS_ATTRIBUTES_EX_FN_A(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
+	public function HRESULT SET_CREDENTIALS_ATTRIBUTES_FN_W(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
+	public function HRESULT SET_CREDENTIALS_ATTRIBUTES_FN_A(out SecHandle param0, uint32 param1, void* param2, uint32 param3);
+	public function HRESULT FREE_CONTEXT_BUFFER_FN(void* param0);
+	public function HRESULT MAKE_SIGNATURE_FN(out SecHandle param0, uint32 param1, out SecBufferDesc param2, uint32 param3);
+	public function HRESULT VERIFY_SIGNATURE_FN(out SecHandle param0, out SecBufferDesc param1, uint32 param2, out uint32 param3);
+	public function HRESULT ENCRYPT_MESSAGE_FN(out SecHandle param0, uint32 param1, out SecBufferDesc param2, uint32 param3);
+	public function HRESULT DECRYPT_MESSAGE_FN(out SecHandle param0, out SecBufferDesc param1, uint32 param2, out uint32 param3);
+	public function HRESULT ENUMERATE_SECURITY_PACKAGES_FN_W(out uint32 param0, out SecPkgInfoW* param1);
+	public function HRESULT ENUMERATE_SECURITY_PACKAGES_FN_A(out uint32 param0, out SecPkgInfoA* param1);
+	public function HRESULT QUERY_SECURITY_PACKAGE_INFO_FN_W(out uint16 param0, out SecPkgInfoW* param1);
+	public function HRESULT QUERY_SECURITY_PACKAGE_INFO_FN_A(out int8 param0, out SecPkgInfoA* param1);
+	public function HRESULT EXPORT_SECURITY_CONTEXT_FN(out SecHandle param0, uint32 param1, out SecBuffer param2, void** param3);
+	public function HRESULT IMPORT_SECURITY_CONTEXT_FN_W(out uint16 param0, out SecBuffer param1, void* param2, out SecHandle param3);
+	public function HRESULT IMPORT_SECURITY_CONTEXT_FN_A(out int8 param0, out SecBuffer param1, void* param2, out SecHandle param3);
 	public function SecurityFunctionTableA* INIT_SECURITY_INTERFACE_A();
 	public function SecurityFunctionTableW* INIT_SECURITY_INTERFACE_W();
 	public function NTSTATUS PLSA_CREATE_LOGON_SESSION(out LUID LogonId);
@@ -2235,8 +2373,8 @@ static
 	public function BOOL SSL_EMPTY_CACHE_FN_W(PWSTR pszTargetName, uint32 dwFlags);
 	public function BOOL SSL_CRACK_CERTIFICATE_FN(out uint8 pbCertificate, uint32 cbCertificate, BOOL VerifySignature, out X509Certificate* ppCertificate);
 	public function void SSL_FREE_CERTIFICATE_FN(out X509Certificate pCertificate);
-	public function int32 SslGetServerIdentityFn(ref uint8 ClientHello, uint32 ClientHelloSize, out uint8* ServerIdentity, out uint32 ServerIdentitySize, uint32 Flags);
-	public function int32 SslGetExtensionsFn(uint8* clientHello, uint32 clientHelloByteSize, SCH_EXTENSION_DATA* genericExtensions, uint8 genericExtensionsCount, out uint32 bytesToRead, SchGetExtensionsOptions flags);
+	public function HRESULT SslGetServerIdentityFn(ref uint8 ClientHello, uint32 ClientHelloSize, out uint8* ServerIdentity, out uint32 ServerIdentitySize, uint32 Flags);
+	public function HRESULT SslGetExtensionsFn(uint8* clientHello, uint32 clientHelloByteSize, SCH_EXTENSION_DATA* genericExtensions, uint8 genericExtensionsCount, out uint32 bytesToRead, SchGetExtensionsOptions flags);
 	#endregion
 	
 	#region Structs
@@ -2305,7 +2443,7 @@ static
 		public uint32[32] AccessReasons;
 		public uint32 ObjectTypeIndex;
 		public uint32 AccessGranted;
-		public SECURITY_DESCRIPTOR* SecurityDescriptor;
+		public PSECURITY_DESCRIPTOR SecurityDescriptor;
 	}
 	[CRepr]
 	public struct SE_ADT_CLAIMS
@@ -2618,9 +2756,9 @@ static
 		public uint32 LengthAppliesTo;
 		public uint8* AppliesTo;
 		public uint32 LengthSD;
-		public SECURITY_DESCRIPTOR* SD;
+		public PSECURITY_DESCRIPTOR SD;
 		public uint32 LengthStagedSD;
-		public SECURITY_DESCRIPTOR* StagedSD;
+		public PSECURITY_DESCRIPTOR StagedSD;
 		public uint32 Flags;
 	}
 	[CRepr]
@@ -4878,7 +5016,7 @@ static
 		public uint32 dwVersion;
 		public uint32 cCreds;
 		public CERT_CONTEXT** paCred;
-		public void* hRootStore;
+		public HCERTSTORE hRootStore;
 		public uint32 cMappers;
 		public _HMAPPER** aphMappers;
 		public uint32 cSupportedAlgs;
@@ -5341,9 +5479,9 @@ static
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditLookupCategoryGuidFromCategoryId(POLICY_AUDIT_EVENT_TYPE AuditCategoryId, out Guid pAuditCategoryGuid);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOLEAN AuditSetSecurity(uint32 SecurityInformation, ref SECURITY_DESCRIPTOR pSecurityDescriptor);
+	public static extern BOOLEAN AuditSetSecurity(uint32 SecurityInformation, PSECURITY_DESCRIPTOR pSecurityDescriptor);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOLEAN AuditQuerySecurity(uint32 SecurityInformation, out SECURITY_DESCRIPTOR* ppSecurityDescriptor);
+	public static extern BOOLEAN AuditQuerySecurity(uint32 SecurityInformation, out PSECURITY_DESCRIPTOR ppSecurityDescriptor);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditSetGlobalSaclW(PWSTR ObjectTypeName, ACL* Acl);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -5355,135 +5493,135 @@ static
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern void AuditFree(void* Buffer);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 AcquireCredentialsHandleW(PWSTR pszPrincipal, PWSTR pszPackage, SECPKG_CRED fCredentialUse, void* pvLogonId, void* pAuthData, SEC_GET_KEY_FN pGetKeyFn, void* pvGetKeyArgument, out SecHandle phCredential, LARGE_INTEGER* ptsExpiry);
+	public static extern HRESULT AcquireCredentialsHandleW(PWSTR pszPrincipal, PWSTR pszPackage, SECPKG_CRED fCredentialUse, void* pvLogonId, void* pAuthData, SEC_GET_KEY_FN pGetKeyFn, void* pvGetKeyArgument, out SecHandle phCredential, LARGE_INTEGER* ptsExpiry);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 AcquireCredentialsHandleA(PSTR pszPrincipal, PSTR pszPackage, SECPKG_CRED fCredentialUse, void* pvLogonId, void* pAuthData, SEC_GET_KEY_FN pGetKeyFn, void* pvGetKeyArgument, out SecHandle phCredential, LARGE_INTEGER* ptsExpiry);
+	public static extern HRESULT AcquireCredentialsHandleA(PSTR pszPrincipal, PSTR pszPackage, SECPKG_CRED fCredentialUse, void* pvLogonId, void* pAuthData, SEC_GET_KEY_FN pGetKeyFn, void* pvGetKeyArgument, out SecHandle phCredential, LARGE_INTEGER* ptsExpiry);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 FreeCredentialsHandle(ref SecHandle phCredential);
+	public static extern HRESULT FreeCredentialsHandle(ref SecHandle phCredential);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 AddCredentialsW(ref SecHandle hCredentials, PWSTR pszPrincipal, PWSTR pszPackage, uint32 fCredentialUse, void* pAuthData, SEC_GET_KEY_FN pGetKeyFn, void* pvGetKeyArgument, LARGE_INTEGER* ptsExpiry);
+	public static extern HRESULT AddCredentialsW(ref SecHandle hCredentials, PWSTR pszPrincipal, PWSTR pszPackage, uint32 fCredentialUse, void* pAuthData, SEC_GET_KEY_FN pGetKeyFn, void* pvGetKeyArgument, LARGE_INTEGER* ptsExpiry);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 AddCredentialsA(ref SecHandle hCredentials, PSTR pszPrincipal, PSTR pszPackage, uint32 fCredentialUse, void* pAuthData, SEC_GET_KEY_FN pGetKeyFn, void* pvGetKeyArgument, LARGE_INTEGER* ptsExpiry);
+	public static extern HRESULT AddCredentialsA(ref SecHandle hCredentials, PSTR pszPrincipal, PSTR pszPackage, uint32 fCredentialUse, void* pAuthData, SEC_GET_KEY_FN pGetKeyFn, void* pvGetKeyArgument, LARGE_INTEGER* ptsExpiry);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 ChangeAccountPasswordW(ref uint16 pszPackageName, ref uint16 pszDomainName, ref uint16 pszAccountName, ref uint16 pszOldPassword, ref uint16 pszNewPassword, BOOLEAN bImpersonating, uint32 dwReserved, out SecBufferDesc pOutput);
+	public static extern HRESULT ChangeAccountPasswordW(ref uint16 pszPackageName, ref uint16 pszDomainName, ref uint16 pszAccountName, ref uint16 pszOldPassword, ref uint16 pszNewPassword, BOOLEAN bImpersonating, uint32 dwReserved, out SecBufferDesc pOutput);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 ChangeAccountPasswordA(ref int8 pszPackageName, ref int8 pszDomainName, ref int8 pszAccountName, ref int8 pszOldPassword, ref int8 pszNewPassword, BOOLEAN bImpersonating, uint32 dwReserved, out SecBufferDesc pOutput);
+	public static extern HRESULT ChangeAccountPasswordA(ref int8 pszPackageName, ref int8 pszDomainName, ref int8 pszAccountName, ref int8 pszOldPassword, ref int8 pszNewPassword, BOOLEAN bImpersonating, uint32 dwReserved, out SecBufferDesc pOutput);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 InitializeSecurityContextW(SecHandle* phCredential, SecHandle* phContext, uint16* pszTargetName, uint32 fContextReq, uint32 Reserved1, uint32 TargetDataRep, SecBufferDesc* pInput, uint32 Reserved2, SecHandle* phNewContext, SecBufferDesc* pOutput, out uint32 pfContextAttr, LARGE_INTEGER* ptsExpiry);
+	public static extern HRESULT InitializeSecurityContextW(SecHandle* phCredential, SecHandle* phContext, uint16* pszTargetName, uint32 fContextReq, uint32 Reserved1, uint32 TargetDataRep, SecBufferDesc* pInput, uint32 Reserved2, SecHandle* phNewContext, SecBufferDesc* pOutput, out uint32 pfContextAttr, LARGE_INTEGER* ptsExpiry);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 InitializeSecurityContextA(SecHandle* phCredential, SecHandle* phContext, int8* pszTargetName, uint32 fContextReq, uint32 Reserved1, uint32 TargetDataRep, SecBufferDesc* pInput, uint32 Reserved2, SecHandle* phNewContext, SecBufferDesc* pOutput, out uint32 pfContextAttr, LARGE_INTEGER* ptsExpiry);
+	public static extern HRESULT InitializeSecurityContextA(SecHandle* phCredential, SecHandle* phContext, int8* pszTargetName, uint32 fContextReq, uint32 Reserved1, uint32 TargetDataRep, SecBufferDesc* pInput, uint32 Reserved2, SecHandle* phNewContext, SecBufferDesc* pOutput, out uint32 pfContextAttr, LARGE_INTEGER* ptsExpiry);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 AcceptSecurityContext(SecHandle* phCredential, SecHandle* phContext, SecBufferDesc* pInput, ACCEPT_SECURITY_CONTEXT_CONTEXT_REQ fContextReq, uint32 TargetDataRep, SecHandle* phNewContext, SecBufferDesc* pOutput, out uint32 pfContextAttr, LARGE_INTEGER* ptsExpiry);
+	public static extern HRESULT AcceptSecurityContext(SecHandle* phCredential, SecHandle* phContext, SecBufferDesc* pInput, ACCEPT_SECURITY_CONTEXT_CONTEXT_REQ fContextReq, uint32 TargetDataRep, SecHandle* phNewContext, SecBufferDesc* pOutput, out uint32 pfContextAttr, LARGE_INTEGER* ptsExpiry);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 CompleteAuthToken(ref SecHandle phContext, ref SecBufferDesc pToken);
+	public static extern HRESULT CompleteAuthToken(ref SecHandle phContext, ref SecBufferDesc pToken);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 ImpersonateSecurityContext(ref SecHandle phContext);
+	public static extern HRESULT ImpersonateSecurityContext(ref SecHandle phContext);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 RevertSecurityContext(ref SecHandle phContext);
+	public static extern HRESULT RevertSecurityContext(ref SecHandle phContext);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 QuerySecurityContextToken(ref SecHandle phContext, void** Token);
+	public static extern HRESULT QuerySecurityContextToken(ref SecHandle phContext, void** Token);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 DeleteSecurityContext(ref SecHandle phContext);
+	public static extern HRESULT DeleteSecurityContext(ref SecHandle phContext);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 ApplyControlToken(ref SecHandle phContext, ref SecBufferDesc pInput);
+	public static extern HRESULT ApplyControlToken(ref SecHandle phContext, ref SecBufferDesc pInput);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 QueryContextAttributesW(ref SecHandle phContext, SECPKG_ATTR ulAttribute, void* pBuffer);
+	public static extern HRESULT QueryContextAttributesW(ref SecHandle phContext, SECPKG_ATTR ulAttribute, void* pBuffer);
 	[Import("sspicli.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 QueryContextAttributesExW(ref SecHandle phContext, SECPKG_ATTR ulAttribute, void* pBuffer, uint32 cbBuffer);
+	public static extern HRESULT QueryContextAttributesExW(ref SecHandle phContext, SECPKG_ATTR ulAttribute, void* pBuffer, uint32 cbBuffer);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 QueryContextAttributesA(ref SecHandle phContext, SECPKG_ATTR ulAttribute, void* pBuffer);
+	public static extern HRESULT QueryContextAttributesA(ref SecHandle phContext, SECPKG_ATTR ulAttribute, void* pBuffer);
 	[Import("sspicli.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 QueryContextAttributesExA(ref SecHandle phContext, SECPKG_ATTR ulAttribute, void* pBuffer, uint32 cbBuffer);
+	public static extern HRESULT QueryContextAttributesExA(ref SecHandle phContext, SECPKG_ATTR ulAttribute, void* pBuffer, uint32 cbBuffer);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SetContextAttributesW(ref SecHandle phContext, SECPKG_ATTR ulAttribute, void* pBuffer, uint32 cbBuffer);
+	public static extern HRESULT SetContextAttributesW(ref SecHandle phContext, SECPKG_ATTR ulAttribute, void* pBuffer, uint32 cbBuffer);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SetContextAttributesA(ref SecHandle phContext, SECPKG_ATTR ulAttribute, void* pBuffer, uint32 cbBuffer);
+	public static extern HRESULT SetContextAttributesA(ref SecHandle phContext, SECPKG_ATTR ulAttribute, void* pBuffer, uint32 cbBuffer);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 QueryCredentialsAttributesW(ref SecHandle phCredential, uint32 ulAttribute, void* pBuffer);
+	public static extern HRESULT QueryCredentialsAttributesW(ref SecHandle phCredential, uint32 ulAttribute, void* pBuffer);
 	[Import("sspicli.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 QueryCredentialsAttributesExW(ref SecHandle phCredential, uint32 ulAttribute, void* pBuffer, uint32 cbBuffer);
+	public static extern HRESULT QueryCredentialsAttributesExW(ref SecHandle phCredential, uint32 ulAttribute, void* pBuffer, uint32 cbBuffer);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 QueryCredentialsAttributesA(ref SecHandle phCredential, uint32 ulAttribute, void* pBuffer);
+	public static extern HRESULT QueryCredentialsAttributesA(ref SecHandle phCredential, uint32 ulAttribute, void* pBuffer);
 	[Import("sspicli.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 QueryCredentialsAttributesExA(ref SecHandle phCredential, uint32 ulAttribute, void* pBuffer, uint32 cbBuffer);
+	public static extern HRESULT QueryCredentialsAttributesExA(ref SecHandle phCredential, uint32 ulAttribute, void* pBuffer, uint32 cbBuffer);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SetCredentialsAttributesW(ref SecHandle phCredential, uint32 ulAttribute, void* pBuffer, uint32 cbBuffer);
+	public static extern HRESULT SetCredentialsAttributesW(ref SecHandle phCredential, uint32 ulAttribute, void* pBuffer, uint32 cbBuffer);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SetCredentialsAttributesA(ref SecHandle phCredential, uint32 ulAttribute, void* pBuffer, uint32 cbBuffer);
+	public static extern HRESULT SetCredentialsAttributesA(ref SecHandle phCredential, uint32 ulAttribute, void* pBuffer, uint32 cbBuffer);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 FreeContextBuffer(void* pvContextBuffer);
+	public static extern HRESULT FreeContextBuffer(void* pvContextBuffer);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 MakeSignature(ref SecHandle phContext, uint32 fQOP, ref SecBufferDesc pMessage, uint32 MessageSeqNo);
+	public static extern HRESULT MakeSignature(ref SecHandle phContext, uint32 fQOP, ref SecBufferDesc pMessage, uint32 MessageSeqNo);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 VerifySignature(ref SecHandle phContext, ref SecBufferDesc pMessage, uint32 MessageSeqNo, out uint32 pfQOP);
+	public static extern HRESULT VerifySignature(ref SecHandle phContext, ref SecBufferDesc pMessage, uint32 MessageSeqNo, out uint32 pfQOP);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 EncryptMessage(ref SecHandle phContext, uint32 fQOP, ref SecBufferDesc pMessage, uint32 MessageSeqNo);
+	public static extern HRESULT EncryptMessage(ref SecHandle phContext, uint32 fQOP, ref SecBufferDesc pMessage, uint32 MessageSeqNo);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 DecryptMessage(ref SecHandle phContext, ref SecBufferDesc pMessage, uint32 MessageSeqNo, uint32* pfQOP);
+	public static extern HRESULT DecryptMessage(ref SecHandle phContext, ref SecBufferDesc pMessage, uint32 MessageSeqNo, uint32* pfQOP);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 EnumerateSecurityPackagesW(out uint32 pcPackages, out SecPkgInfoW* ppPackageInfo);
+	public static extern HRESULT EnumerateSecurityPackagesW(out uint32 pcPackages, out SecPkgInfoW* ppPackageInfo);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 EnumerateSecurityPackagesA(out uint32 pcPackages, out SecPkgInfoA* ppPackageInfo);
+	public static extern HRESULT EnumerateSecurityPackagesA(out uint32 pcPackages, out SecPkgInfoA* ppPackageInfo);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 QuerySecurityPackageInfoW(PWSTR pszPackageName, out SecPkgInfoW* ppPackageInfo);
+	public static extern HRESULT QuerySecurityPackageInfoW(PWSTR pszPackageName, out SecPkgInfoW* ppPackageInfo);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 QuerySecurityPackageInfoA(PSTR pszPackageName, out SecPkgInfoA* ppPackageInfo);
+	public static extern HRESULT QuerySecurityPackageInfoA(PSTR pszPackageName, out SecPkgInfoA* ppPackageInfo);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 ExportSecurityContext(ref SecHandle phContext, EXPORT_SECURITY_CONTEXT_FLAGS fFlags, out SecBuffer pPackedContext, void** pToken);
+	public static extern HRESULT ExportSecurityContext(ref SecHandle phContext, EXPORT_SECURITY_CONTEXT_FLAGS fFlags, out SecBuffer pPackedContext, void** pToken);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 ImportSecurityContextW(PWSTR pszPackage, ref SecBuffer pPackedContext, void* Token, out SecHandle phContext);
+	public static extern HRESULT ImportSecurityContextW(PWSTR pszPackage, ref SecBuffer pPackedContext, void* Token, out SecHandle phContext);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 ImportSecurityContextA(PSTR pszPackage, ref SecBuffer pPackedContext, void* Token, out SecHandle phContext);
+	public static extern HRESULT ImportSecurityContextA(PSTR pszPackage, ref SecBuffer pPackedContext, void* Token, out SecHandle phContext);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern SecurityFunctionTableA* InitSecurityInterfaceA();
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern SecurityFunctionTableW* InitSecurityInterfaceW();
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SaslEnumerateProfilesA(out PSTR ProfileList, out uint32 ProfileCount);
+	public static extern HRESULT SaslEnumerateProfilesA(out PSTR ProfileList, out uint32 ProfileCount);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SaslEnumerateProfilesW(out PWSTR ProfileList, out uint32 ProfileCount);
+	public static extern HRESULT SaslEnumerateProfilesW(out PWSTR ProfileList, out uint32 ProfileCount);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SaslGetProfilePackageA(PSTR ProfileName, out SecPkgInfoA* PackageInfo);
+	public static extern HRESULT SaslGetProfilePackageA(PSTR ProfileName, out SecPkgInfoA* PackageInfo);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SaslGetProfilePackageW(PWSTR ProfileName, out SecPkgInfoW* PackageInfo);
+	public static extern HRESULT SaslGetProfilePackageW(PWSTR ProfileName, out SecPkgInfoW* PackageInfo);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SaslIdentifyPackageA(ref SecBufferDesc pInput, out SecPkgInfoA* PackageInfo);
+	public static extern HRESULT SaslIdentifyPackageA(ref SecBufferDesc pInput, out SecPkgInfoA* PackageInfo);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SaslIdentifyPackageW(ref SecBufferDesc pInput, out SecPkgInfoW* PackageInfo);
+	public static extern HRESULT SaslIdentifyPackageW(ref SecBufferDesc pInput, out SecPkgInfoW* PackageInfo);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SaslInitializeSecurityContextW(SecHandle* phCredential, SecHandle* phContext, PWSTR pszTargetName, uint32 fContextReq, uint32 Reserved1, uint32 TargetDataRep, SecBufferDesc* pInput, uint32 Reserved2, SecHandle* phNewContext, SecBufferDesc* pOutput, out uint32 pfContextAttr, LARGE_INTEGER* ptsExpiry);
+	public static extern HRESULT SaslInitializeSecurityContextW(SecHandle* phCredential, SecHandle* phContext, PWSTR pszTargetName, uint32 fContextReq, uint32 Reserved1, uint32 TargetDataRep, SecBufferDesc* pInput, uint32 Reserved2, SecHandle* phNewContext, SecBufferDesc* pOutput, out uint32 pfContextAttr, LARGE_INTEGER* ptsExpiry);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SaslInitializeSecurityContextA(SecHandle* phCredential, SecHandle* phContext, PSTR pszTargetName, uint32 fContextReq, uint32 Reserved1, uint32 TargetDataRep, SecBufferDesc* pInput, uint32 Reserved2, SecHandle* phNewContext, SecBufferDesc* pOutput, out uint32 pfContextAttr, LARGE_INTEGER* ptsExpiry);
+	public static extern HRESULT SaslInitializeSecurityContextA(SecHandle* phCredential, SecHandle* phContext, PSTR pszTargetName, uint32 fContextReq, uint32 Reserved1, uint32 TargetDataRep, SecBufferDesc* pInput, uint32 Reserved2, SecHandle* phNewContext, SecBufferDesc* pOutput, out uint32 pfContextAttr, LARGE_INTEGER* ptsExpiry);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SaslAcceptSecurityContext(SecHandle* phCredential, SecHandle* phContext, SecBufferDesc* pInput, uint32 fContextReq, uint32 TargetDataRep, SecHandle* phNewContext, SecBufferDesc* pOutput, out uint32 pfContextAttr, LARGE_INTEGER* ptsExpiry);
+	public static extern HRESULT SaslAcceptSecurityContext(SecHandle* phCredential, SecHandle* phContext, SecBufferDesc* pInput, uint32 fContextReq, uint32 TargetDataRep, SecHandle* phNewContext, SecBufferDesc* pOutput, out uint32 pfContextAttr, LARGE_INTEGER* ptsExpiry);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SaslSetContextOption(ref SecHandle ContextHandle, uint32 Option, void* Value, uint32 Size);
+	public static extern HRESULT SaslSetContextOption(ref SecHandle ContextHandle, uint32 Option, void* Value, uint32 Size);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SaslGetContextOption(ref SecHandle ContextHandle, uint32 Option, void* Value, uint32 Size, uint32* Needed);
+	public static extern HRESULT SaslGetContextOption(ref SecHandle ContextHandle, uint32 Option, void* Value, uint32 Size, uint32* Needed);
 	[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SspiPromptForCredentialsW(PWSTR pszTargetName, void* pUiInfo, uint32 dwAuthError, PWSTR pszPackage, void* pInputAuthIdentity, void** ppAuthIdentity, int32* pfSave, uint32 dwFlags);
 	[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SspiPromptForCredentialsA(PSTR pszTargetName, void* pUiInfo, uint32 dwAuthError, PSTR pszPackage, void* pInputAuthIdentity, void** ppAuthIdentity, int32* pfSave, uint32 dwFlags);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SspiPrepareForCredRead(void* AuthIdentity, PWSTR pszTargetName, out uint32 pCredmanCredentialType, out PWSTR ppszCredmanTargetName);
+	public static extern HRESULT SspiPrepareForCredRead(void* AuthIdentity, PWSTR pszTargetName, out uint32 pCredmanCredentialType, out PWSTR ppszCredmanTargetName);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SspiPrepareForCredWrite(void* AuthIdentity, PWSTR pszTargetName, out uint32 pCredmanCredentialType, out PWSTR ppszCredmanTargetName, out PWSTR ppszCredmanUserName, out uint8* ppCredentialBlob, out uint32 pCredentialBlobSize);
+	public static extern HRESULT SspiPrepareForCredWrite(void* AuthIdentity, PWSTR pszTargetName, out uint32 pCredmanCredentialType, out PWSTR ppszCredmanTargetName, out PWSTR ppszCredmanUserName, out uint8* ppCredentialBlob, out uint32 pCredentialBlobSize);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SspiEncryptAuthIdentity(void* AuthData);
+	public static extern HRESULT SspiEncryptAuthIdentity(void* AuthData);
 	[Import("sspicli.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SspiEncryptAuthIdentityEx(uint32 Options, void* AuthData);
+	public static extern HRESULT SspiEncryptAuthIdentityEx(uint32 Options, void* AuthData);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SspiDecryptAuthIdentity(void* EncryptedAuthData);
+	public static extern HRESULT SspiDecryptAuthIdentity(void* EncryptedAuthData);
 	[Import("sspicli.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SspiDecryptAuthIdentityEx(uint32 Options, void* EncryptedAuthData);
+	public static extern HRESULT SspiDecryptAuthIdentityEx(uint32 Options, void* EncryptedAuthData);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN SspiIsAuthIdentityEncrypted(void* EncryptedAuthData);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SspiEncodeAuthIdentityAsStrings(void* pAuthIdentity, PWSTR* ppszUserName, PWSTR* ppszDomainName, PWSTR* ppszPackedCredentialsString);
+	public static extern HRESULT SspiEncodeAuthIdentityAsStrings(void* pAuthIdentity, PWSTR* ppszUserName, PWSTR* ppszDomainName, PWSTR* ppszPackedCredentialsString);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SspiValidateAuthIdentity(void* AuthData);
+	public static extern HRESULT SspiValidateAuthIdentity(void* AuthData);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SspiCopyAuthIdentity(void* AuthData, void** AuthDataCopy);
+	public static extern HRESULT SspiCopyAuthIdentity(void* AuthData, void** AuthDataCopy);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SspiFreeAuthIdentity(void* AuthData);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5491,27 +5629,27 @@ static
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SspiLocalFree(void* DataBuffer);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SspiEncodeStringsAsAuthIdentity(PWSTR pszUserName, PWSTR pszDomainName, PWSTR pszPackedCredentialsString, void** ppAuthIdentity);
+	public static extern HRESULT SspiEncodeStringsAsAuthIdentity(PWSTR pszUserName, PWSTR pszDomainName, PWSTR pszPackedCredentialsString, void** ppAuthIdentity);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SspiCompareAuthIdentities(void* AuthIdentity1, void* AuthIdentity2, BOOLEAN* SameSuppliedUser, BOOLEAN* SameSuppliedIdentity);
+	public static extern HRESULT SspiCompareAuthIdentities(void* AuthIdentity1, void* AuthIdentity2, BOOLEAN* SameSuppliedUser, BOOLEAN* SameSuppliedIdentity);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SspiMarshalAuthIdentity(void* AuthIdentity, out uint32 AuthIdentityLength, out int8* AuthIdentityByteArray);
+	public static extern HRESULT SspiMarshalAuthIdentity(void* AuthIdentity, out uint32 AuthIdentityLength, out int8* AuthIdentityByteArray);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SspiUnmarshalAuthIdentity(uint32 AuthIdentityLength, PSTR AuthIdentityByteArray, void** ppAuthIdentity);
+	public static extern HRESULT SspiUnmarshalAuthIdentity(uint32 AuthIdentityLength, PSTR AuthIdentityByteArray, void** ppAuthIdentity);
 	[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN SspiIsPromptingNeeded(uint32 ErrorOrNtStatus);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SspiGetTargetHostName(PWSTR pszTargetName, out PWSTR pszHostName);
+	public static extern HRESULT SspiGetTargetHostName(PWSTR pszTargetName, out PWSTR pszHostName);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SspiExcludePackage(void* AuthIdentity, PWSTR pszPackageName, void** ppNewAuthIdentity);
+	public static extern HRESULT SspiExcludePackage(void* AuthIdentity, PWSTR pszPackageName, void** ppNewAuthIdentity);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 AddSecurityPackageA(PSTR pszPackageName, SECURITY_PACKAGE_OPTIONS* pOptions);
+	public static extern HRESULT AddSecurityPackageA(PSTR pszPackageName, SECURITY_PACKAGE_OPTIONS* pOptions);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 AddSecurityPackageW(PWSTR pszPackageName, SECURITY_PACKAGE_OPTIONS* pOptions);
+	public static extern HRESULT AddSecurityPackageW(PWSTR pszPackageName, SECURITY_PACKAGE_OPTIONS* pOptions);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 DeleteSecurityPackageA(PSTR pszPackageName);
+	public static extern HRESULT DeleteSecurityPackageA(PSTR pszPackageName);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 DeleteSecurityPackageW(PWSTR pszPackageName);
+	public static extern HRESULT DeleteSecurityPackageW(PWSTR pszPackageName);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS CredMarshalTargetInfo(ref CREDENTIAL_TARGET_INFORMATIONW InTargetInfo, out uint16* Buffer, out uint32 BufferSize);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5529,29 +5667,29 @@ static
 	[Import("schannel.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SslGetMaximumKeySize(uint32 Reserved);
 	[Import("schannel.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SslGetServerIdentity(ref uint8 ClientHello, uint32 ClientHelloSize, out uint8* ServerIdentity, out uint32 ServerIdentitySize, uint32 Flags);
+	public static extern HRESULT SslGetServerIdentity(ref uint8 ClientHello, uint32 ClientHelloSize, out uint8* ServerIdentity, out uint32 ServerIdentitySize, uint32 Flags);
 	[Import("schannel.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 SslGetExtensions(uint8* clientHello, uint32 clientHelloByteSize, SCH_EXTENSION_DATA* genericExtensions, uint8 genericExtensionsCount, out uint32 bytesToRead, SchGetExtensionsOptions flags);
+	public static extern HRESULT SslGetExtensions(uint8* clientHello, uint32 clientHelloByteSize, SCH_EXTENSION_DATA* genericExtensions, uint8 genericExtensionsCount, out uint32 bytesToRead, SchGetExtensionsOptions flags);
 	[Import("tokenbinding.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 TokenBindingGenerateBinding(TOKENBINDING_KEY_PARAMETERS_TYPE keyType, PWSTR targetURL, TOKENBINDING_TYPE bindingType, void* tlsEKM, uint32 tlsEKMSize, TOKENBINDING_EXTENSION_FORMAT extensionFormat, void* extensionData, void** tokenBinding, out uint32 tokenBindingSize, TOKENBINDING_RESULT_DATA** resultData);
+	public static extern HRESULT TokenBindingGenerateBinding(TOKENBINDING_KEY_PARAMETERS_TYPE keyType, PWSTR targetURL, TOKENBINDING_TYPE bindingType, void* tlsEKM, uint32 tlsEKMSize, TOKENBINDING_EXTENSION_FORMAT extensionFormat, void* extensionData, void** tokenBinding, out uint32 tokenBindingSize, TOKENBINDING_RESULT_DATA** resultData);
 	[Import("tokenbinding.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 TokenBindingGenerateMessage(void** tokenBindings, uint32* tokenBindingsSize, uint32 tokenBindingsCount, void** tokenBindingMessage, out uint32 tokenBindingMessageSize);
+	public static extern HRESULT TokenBindingGenerateMessage(void** tokenBindings, uint32* tokenBindingsSize, uint32 tokenBindingsCount, void** tokenBindingMessage, out uint32 tokenBindingMessageSize);
 	[Import("tokenbinding.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 TokenBindingVerifyMessage(void* tokenBindingMessage, uint32 tokenBindingMessageSize, TOKENBINDING_KEY_PARAMETERS_TYPE keyType, void* tlsEKM, uint32 tlsEKMSize, out TOKENBINDING_RESULT_LIST* resultList);
+	public static extern HRESULT TokenBindingVerifyMessage(void* tokenBindingMessage, uint32 tokenBindingMessageSize, TOKENBINDING_KEY_PARAMETERS_TYPE keyType, void* tlsEKM, uint32 tlsEKMSize, out TOKENBINDING_RESULT_LIST* resultList);
 	[Import("tokenbinding.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 TokenBindingGetKeyTypesClient(out TOKENBINDING_KEY_TYPES* keyTypes);
+	public static extern HRESULT TokenBindingGetKeyTypesClient(out TOKENBINDING_KEY_TYPES* keyTypes);
 	[Import("tokenbinding.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 TokenBindingGetKeyTypesServer(out TOKENBINDING_KEY_TYPES* keyTypes);
+	public static extern HRESULT TokenBindingGetKeyTypesServer(out TOKENBINDING_KEY_TYPES* keyTypes);
 	[Import("tokenbinding.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 TokenBindingDeleteBinding(PWSTR targetURL);
+	public static extern HRESULT TokenBindingDeleteBinding(PWSTR targetURL);
 	[Import("tokenbinding.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 TokenBindingDeleteAllBindings();
+	public static extern HRESULT TokenBindingDeleteAllBindings();
 	[Import("tokenbinding.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 TokenBindingGenerateID(TOKENBINDING_KEY_PARAMETERS_TYPE keyType, void* publicKey, uint32 publicKeySize, out TOKENBINDING_RESULT_DATA* resultData);
+	public static extern HRESULT TokenBindingGenerateID(TOKENBINDING_KEY_PARAMETERS_TYPE keyType, void* publicKey, uint32 publicKeySize, out TOKENBINDING_RESULT_DATA* resultData);
 	[Import("tokenbinding.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 TokenBindingGenerateIDForUri(TOKENBINDING_KEY_PARAMETERS_TYPE keyType, PWSTR targetUri, out TOKENBINDING_RESULT_DATA* resultData);
+	public static extern HRESULT TokenBindingGenerateIDForUri(TOKENBINDING_KEY_PARAMETERS_TYPE keyType, PWSTR targetUri, out TOKENBINDING_RESULT_DATA* resultData);
 	[Import("tokenbinding.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 TokenBindingGetHighestSupportedVersion(out uint8 majorVersion, out uint8 minorVersion);
+	public static extern HRESULT TokenBindingGetHighestSupportedVersion(out uint8 majorVersion, out uint8 minorVersion);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN GetUserNameExA(EXTENDED_NAME_FORMAT NameFormat, uint8* lpNameBuffer, out uint32 nSize);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]

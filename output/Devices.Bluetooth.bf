@@ -6,200 +6,6 @@ using Win32.Foundation;
 static
 {
 	#region Constants
-	public const uint32 BT_PORT_MIN = 1;
-	public const uint32 BT_PORT_MAX = 65535;
-	public const uint32 BT_PORT_DYN_FIRST = 4097;
-	public const uint16 AF_BTH = 32;
-	public const uint16 PF_BTH = 32;
-	public const uint32 NS_BTH = 16;
-	public const Guid SVCID_BTH_PROVIDER = .(0x06aa63e0, 0x7d60, 0x41ff, 0xaf, 0xb2, 0x3e, 0xe6, 0xd2, 0xd9, 0x39, 0x2d);
-	public const uint32 BTH_ADDR_STRING_SIZE = 12;
-	public const uint32 BTHPROTO_RFCOMM = 3;
-	public const uint32 BTHPROTO_L2CAP = 256;
-	public const uint32 SOL_RFCOMM = 3;
-	public const uint32 SOL_L2CAP = 256;
-	public const uint32 SOL_SDP = 257;
-	public const uint32 SO_BTH_AUTHENTICATE = 2147483649;
-	public const uint32 SO_BTH_ENCRYPT = 2;
-	public const uint32 SO_BTH_MTU = 2147483655;
-	public const uint32 SO_BTH_MTU_MAX = 2147483656;
-	public const uint32 SO_BTH_MTU_MIN = 2147483658;
-	public const uint32 RFCOMM_MAX_MTU = 1011;
-	public const uint32 RFCOMM_MIN_MTU = 23;
-	public const uint32 BTH_SDP_VERSION = 1;
-	public const uint32 SDP_DEFAULT_INQUIRY_SECONDS = 6;
-	public const uint32 SDP_MAX_INQUIRY_SECONDS = 60;
-	public const uint32 SDP_DEFAULT_INQUIRY_MAX_RESPONSES = 255;
-	public const uint32 SDP_SERVICE_SEARCH_REQUEST = 1;
-	public const uint32 SDP_SERVICE_ATTRIBUTE_REQUEST = 2;
-	public const uint32 SDP_SERVICE_SEARCH_ATTRIBUTE_REQUEST = 3;
-	public const uint32 BTHNS_RESULT_DEVICE_CONNECTED = 65536;
-	public const uint32 BTHNS_RESULT_DEVICE_REMEMBERED = 131072;
-	public const uint32 BTHNS_RESULT_DEVICE_AUTHENTICATED = 262144;
-	public const uint32 RLS_ERROR = 1;
-	public const uint32 RLS_OVERRUN = 2;
-	public const uint32 RLS_PARITY = 4;
-	public const uint32 RLS_FRAMING = 8;
-	public const uint32 RPN_BAUD_2400 = 0;
-	public const uint32 RPN_BAUD_4800 = 1;
-	public const uint32 RPN_BAUD_7200 = 2;
-	public const uint32 RPN_BAUD_9600 = 3;
-	public const uint32 RPN_BAUD_19200 = 4;
-	public const uint32 RPN_BAUD_38400 = 5;
-	public const uint32 RPN_BAUD_57600 = 6;
-	public const uint32 RPN_BAUD_115200 = 7;
-	public const uint32 RPN_BAUD_230400 = 8;
-	public const uint32 RPN_DATA_5 = 0;
-	public const uint32 RPN_DATA_6 = 1;
-	public const uint32 RPN_DATA_7 = 2;
-	public const uint32 RPN_DATA_8 = 3;
-	public const uint32 RPN_STOP_1 = 0;
-	public const uint32 RPN_STOP_1_5 = 4;
-	public const uint32 RPN_PARITY_NONE = 0;
-	public const uint32 RPN_PARITY_ODD = 8;
-	public const uint32 RPN_PARITY_EVEN = 24;
-	public const uint32 RPN_PARITY_MARK = 40;
-	public const uint32 RPN_PARITY_SPACE = 56;
-	public const uint32 RPN_FLOW_X_IN = 1;
-	public const uint32 RPN_FLOW_X_OUT = 2;
-	public const uint32 RPN_FLOW_RTR_IN = 4;
-	public const uint32 RPN_FLOW_RTR_OUT = 8;
-	public const uint32 RPN_FLOW_RTC_IN = 16;
-	public const uint32 RPN_FLOW_RTC_OUT = 32;
-	public const uint32 RPN_PARAM_BAUD = 1;
-	public const uint32 RPN_PARAM_DATA = 2;
-	public const uint32 RPN_PARAM_STOP = 4;
-	public const uint32 RPN_PARAM_PARITY = 8;
-	public const uint32 RPN_PARAM_P_TYPE = 16;
-	public const uint32 RPN_PARAM_XON = 32;
-	public const uint32 RPN_PARAM_XOFF = 64;
-	public const uint32 RPN_PARAM_X_IN = 1;
-	public const uint32 RPN_PARAM_X_OUT = 2;
-	public const uint32 RPN_PARAM_RTR_IN = 4;
-	public const uint32 RPN_PARAM_RTR_OUT = 8;
-	public const uint32 RPN_PARAM_RTC_IN = 16;
-	public const uint32 RPN_PARAM_RTC_OUT = 32;
-	public const uint32 RFCOMM_CMD_NONE = 0;
-	public const uint32 RFCOMM_CMD_MSC = 1;
-	public const uint32 RFCOMM_CMD_RLS = 2;
-	public const uint32 RFCOMM_CMD_RPN = 3;
-	public const uint32 RFCOMM_CMD_RPN_REQUEST = 4;
-	public const uint32 RFCOMM_CMD_RPN_RESPONSE = 5;
-	public const uint32 BLUETOOTH_MAX_NAME_SIZE = 248;
-	public const uint32 BLUETOOTH_MAX_PASSKEY_SIZE = 16;
-	public const uint32 BLUETOOTH_MAX_PASSKEY_BUFFER_SIZE = 17;
-	public const uint32 BLUETOOTH_MAX_SERVICE_NAME_SIZE = 256;
-	public const uint32 BLUETOOTH_DEVICE_NAME_SIZE = 256;
-	public const uint32 BLUETOOTH_SERVICE_DISABLE = 0;
-	public const uint32 BLUETOOTH_SERVICE_ENABLE = 1;
-	public const Guid GUID_BLUETOOTHLE_DEVICE_INTERFACE = .(0x781aee18, 0x7733, 0x4ce4, 0xad, 0xd0, 0x91, 0xf4, 0x1c, 0x67, 0xb5, 0x92);
-	public const Guid GUID_BLUETOOTH_GATT_SERVICE_DEVICE_INTERFACE = .(0x6e3bb679, 0x4372, 0x40c8, 0x9e, 0xaa, 0x45, 0x09, 0xdf, 0x26, 0x0c, 0xd8);
-	public const Guid BTH_LE_ATT_BLUETOOTH_BASE_GUID = .(0x00000000, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5f, 0x9b, 0x34, 0xfb);
-	public const uint32 BTH_LE_SERVICE_GAP = 6144;
-	public const uint32 BTH_LE_SERVICE_GATT = 6145;
-	public const uint32 BTH_LE_GATT_ATTRIBUTE_TYPE_PRIMARY_SERVICE = 10240;
-	public const uint32 BTH_LE_GATT_ATTRIBUTE_TYPE_SECONDARY_SERVICE = 10241;
-	public const uint32 BTH_LE_GATT_ATTRIBUTE_TYPE_INCLUDE = 10242;
-	public const uint32 BTH_LE_GATT_ATTRIBUTE_TYPE_CHARACTERISTIC = 10243;
-	public const uint32 BTH_LE_GATT_CHARACTERISTIC_DESCRIPTOR_EXTENDED_PROPERTIES = 10496;
-	public const uint32 BTH_LE_GATT_CHARACTERISTIC_DESCRIPTOR_USER_DESCRIPTION = 10497;
-	public const uint32 BTH_LE_GATT_CHARACTERISTIC_DESCRIPTOR_CLIENT_CONFIGURATION = 10498;
-	public const uint32 BTH_LE_GATT_CHARACTERISTIC_DESCRIPTOR_SERVER_CONFIGURATION = 10499;
-	public const uint32 BTH_LE_GATT_CHARACTERISTIC_DESCRIPTOR_FORMAT = 10500;
-	public const uint32 BTH_LE_GATT_CHARACTERISTIC_DESCRIPTOR_AGGREGATE_FORMAT = 10501;
-	public const uint32 BTH_LE_GATT_CHARACTERISTIC_TYPE_DEVICE_NAME = 10752;
-	public const uint32 BTH_LE_GATT_CHARACTERISTIC_TYPE_APPEARANCE = 10753;
-	public const uint32 BTH_LE_GATT_CHARACTERISTIC_TYPE_PERIPHERAL_PRIVACY_FLAG = 10754;
-	public const uint32 BTH_LE_GATT_CHARACTERISTIC_TYPE_RECONNECTION_ADDRESS = 10755;
-	public const uint32 BTH_LE_GATT_CHARACTERISTIC_TYPE_PERIPHERAL_PREFERED_CONNECTION_PARAMETER = 10756;
-	public const uint32 BTH_LE_GATT_CHARACTERISTIC_TYPE_SERVICE_CHANGED = 10757;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_OFFSET = 6;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_MASK = 1023;
-	public const uint32 BTH_LE_GAP_APPEARANCE_SUB_CATEGORY_MASK = 63;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_UNCATEGORIZED = 0;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_PHONE = 1;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_COMPUTER = 2;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_WATCH = 3;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_CLOCK = 4;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_DISPLAY = 5;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_REMOTE_CONTROL = 6;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_EYE_GLASSES = 7;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_TAG = 8;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_KEYRING = 9;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_MEDIA_PLAYER = 10;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_BARCODE_SCANNER = 11;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_THERMOMETER = 12;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_HEART_RATE = 13;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_BLOOD_PRESSURE = 14;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_HID = 15;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_GLUCOSE_METER = 16;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_RUNNING_WALKING_SENSOR = 17;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_CYCLING = 18;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_PLUSE_OXIMETER = 49;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_WEIGHT_SCALE = 50;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_OUTDOOR_SPORTS_ACTIVITY = 81;
-	public const uint32 BTH_LE_GAP_APPEARANCE_SUBCATEGORY_GENERIC = 0;
-	public const uint32 BTH_LE_GAP_APPEARANCE_WATCH_SUBCATEGORY_SPORTS_WATCH = 1;
-	public const uint32 BTH_LE_GAP_APPEARANCE_THERMOMETER_SUBCATEGORY_EAR = 1;
-	public const uint32 BTH_LE_GAP_APPEARANCE_HEART_RATE_SUBCATEGORY_HEART_RATE_BELT = 1;
-	public const uint32 BTH_LE_GAP_APPEARANCE_BLOOD_PRESSURE_SUBCATEGORY_ARM = 1;
-	public const uint32 BTH_LE_GAP_APPEARANCE_BLOOD_PRESSURE_SUBCATEGORY_WRIST = 2;
-	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_KEYBOARD = 1;
-	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_MOUSE = 2;
-	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_JOYSTICK = 3;
-	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_GAMEPAD = 4;
-	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_DIGITIZER_TABLET = 5;
-	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_CARD_READER = 6;
-	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_DIGITAL_PEN = 7;
-	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_BARCODE_SCANNER = 8;
-	public const uint32 BTH_LE_GAP_APPEARANCE_RUNNING_WALKING_SENSOR_SUBCATEGORY_IN_SHOE = 1;
-	public const uint32 BTH_LE_GAP_APPEARANCE_RUNNING_WALKING_SENSOR_SUBCATEGORY_ON_SHOE = 2;
-	public const uint32 BTH_LE_GAP_APPEARANCE_RUNNING_WALKING_SENSOR_SUBCATEGORY_ON_HIP = 3;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CYCLING_SUBCATEGORY_CYCLING_COMPUTER = 1;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CYCLING_SUBCATEGORY_SPEED_SENSOR = 2;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CYCLING_SUBCATEGORY_CADENCE_SENSOR = 3;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CYCLING_SUBCATEGORY_POWER_SENSOR = 4;
-	public const uint32 BTH_LE_GAP_APPEARANCE_CYCLING_SUBCATEGORY_SPEED_AND_CADENCE_SENSOR = 5;
-	public const uint32 BTH_LE_GAP_APPEARANCE_PULSE_OXIMETER_SUBCATEGORY_FINGERTIP = 1;
-	public const uint32 BTH_LE_GAP_APPEARANCE_PULSE_OXIMETER_SUBCATEGORY_WRIST_WORN = 2;
-	public const uint32 BTH_LE_GAP_APPEARANCE_OUTDOOR_SPORTS_ACTIVITY_SUBCATEGORY_LOCATION_DISPLAY_DEVICE = 1;
-	public const uint32 BTH_LE_GAP_APPEARANCE_OUTDOOR_SPORTS_ACTIVITY_SUBCATEGORY_LOCATION_NAVIGATION_DISPLAY_DEVICE = 2;
-	public const uint32 BTH_LE_GAP_APPEARANCE_OUTDOOR_SPORTS_ACTIVITY_SUBCATEGORY_LOCATION_POD = 3;
-	public const uint32 BTH_LE_GAP_APPEARANCE_OUTDOOR_SPORTS_ACTIVITY_SUBCATEGORY_LOCATION_NAVIGATION_POD = 4;
-	public const uint32 BTH_LE_GATT_DEFAULT_MAX_INCLUDED_SERVICES_DEPTH = 3;
-	public const uint32 BTH_LE_ATT_TRANSACTION_TIMEOUT = 30;
-	public const uint32 BTH_LE_ATT_MAX_VALUE_SIZE = 512;
-	public const uint32 BTH_LE_ATT_CID = 4;
-	public const uint32 BTHLEENUM_ATT_MTU_MIN = 23;
-	public const uint32 BTHLEENUM_ATT_MTU_MAX = 65535;
-	public const uint32 BTHLEENUM_ATT_MTU_DEFAULT = 23;
-	public const uint32 BTHLEENUM_ATT_MTU_INITIAL_NEGOTIATION = 525;
-	public const uint32 BTH_LE_ERROR_INVALID_HANDLE = 1;
-	public const uint32 BTH_LE_ERROR_READ_NOT_PERMITTED = 2;
-	public const uint32 BTH_LE_ERROR_WRITE_NOT_PERMITTED = 3;
-	public const uint32 BTH_LE_ERROR_INVALID_PDU = 4;
-	public const uint32 BTH_LE_ERROR_INSUFFICIENT_AUTHENTICATION = 5;
-	public const uint32 BTH_LE_ERROR_REQUEST_NOT_SUPPORTED = 6;
-	public const uint32 BTH_LE_ERROR_INVALID_OFFSET = 7;
-	public const uint32 BTH_LE_ERROR_INSUFFICIENT_AUTHORIZATION = 8;
-	public const uint32 BTH_LE_ERROR_PREPARE_QUEUE_FULL = 9;
-	public const uint32 BTH_LE_ERROR_ATTRIBUTE_NOT_FOUND = 10;
-	public const uint32 BTH_LE_ERROR_ATTRIBUTE_NOT_LONG = 11;
-	public const uint32 BTH_LE_ERROR_INSUFFICIENT_ENCRYPTION_KEY_SIZE = 12;
-	public const uint32 BTH_LE_ERROR_INVALID_ATTRIBUTE_VALUE_LENGTH = 13;
-	public const uint32 BTH_LE_ERROR_UNLIKELY = 14;
-	public const uint32 BTH_LE_ERROR_INSUFFICIENT_ENCRYPTION = 15;
-	public const uint32 BTH_LE_ERROR_UNSUPPORTED_GROUP_TYPE = 16;
-	public const uint32 BTH_LE_ERROR_INSUFFICIENT_RESOURCES = 17;
-	public const uint32 BTH_LE_ERROR_UNKNOWN = 4096;
-	public const uint32 BLUETOOTH_GATT_FLAG_NONE = 0;
-	public const uint32 BLUETOOTH_GATT_FLAG_CONNECTION_ENCRYPTED = 1;
-	public const uint32 BLUETOOTH_GATT_FLAG_CONNECTION_AUTHENTICATED = 2;
-	public const uint32 BLUETOOTH_GATT_FLAG_FORCE_READ_FROM_DEVICE = 4;
-	public const uint32 BLUETOOTH_GATT_FLAG_FORCE_READ_FROM_CACHE = 8;
-	public const uint32 BLUETOOTH_GATT_FLAG_SIGNED_WRITE = 16;
-	public const uint32 BLUETOOTH_GATT_FLAG_WRITE_WITHOUT_RESPONSE = 32;
-	public const uint32 BLUETOOTH_GATT_FLAG_RETURN_ALL = 64;
 	public const uint32 BTH_MAJORVERSION = 2;
 	public const uint32 BTH_MINORVERSION = 1;
 	public const Guid GUID_BTHPORT_DEVICE_INTERFACE = .(0x0850302a, 0xb344, 0x4fda, 0x9b, 0xe9, 0x90, 0x57, 0x6b, 0x8d, 0x46, 0xf0);
@@ -752,6 +558,15 @@ static
 	public const uint32 PSM_ATT = 31;
 	public const uint32 PSM_3DSP = 33;
 	public const uint32 PSM_LE_IPSP = 35;
+	public const String STR_ADDR_FMTA = "(%02x:%02x:%02x:%02x:%02x:%02x)";
+	public const String STR_ADDR_FMTW = "(%02x:%02x:%02x:%02x:%02x:%02x)";
+	public const String STR_ADDR_SHORT_FMTA = "%04x%08x";
+	public const String STR_ADDR_SHORT_FMTW = "%04x%08x";
+	public const String STR_USBHCI_CLASS_HARDWAREIDA = "USB\\Class_E0&SubClass_01&Prot_01";
+	public const String STR_USBHCI_CLASS_HARDWAREIDW = "USB\\Class_E0&SubClass_01&Prot_01";
+	public const String STR_ADDR_FMT = "(%02x:%02x:%02x:%02x:%02x:%02x)";
+	public const String STR_ADDR_SHORT_FMT = "%04x%08x";
+	public const String STR_USBHCI_CLASS_HARDWAREID = "USB\\Class_E0&SubClass_01&Prot_01";
 	public const uint32 BTH_IOCTL_BASE = 0;
 	public const uint32 SDP_CONNECT_CACHE = 1;
 	public const uint32 SDP_CONNECT_ALLOW_PIN = 2;
@@ -776,6 +591,200 @@ static
 	public const uint64 BTH_HOST_FEATURE_LOW_ENERGY = 4uL;
 	public const uint64 BTH_HOST_FEATURE_SCO_HCI = 8uL;
 	public const uint64 BTH_HOST_FEATURE_SCO_HCIBYPASS = 16uL;
+	public const uint32 BLUETOOTH_MAX_NAME_SIZE = 248;
+	public const uint32 BLUETOOTH_MAX_PASSKEY_SIZE = 16;
+	public const uint32 BLUETOOTH_MAX_PASSKEY_BUFFER_SIZE = 17;
+	public const uint32 BLUETOOTH_MAX_SERVICE_NAME_SIZE = 256;
+	public const uint32 BLUETOOTH_DEVICE_NAME_SIZE = 256;
+	public const uint32 BLUETOOTH_SERVICE_DISABLE = 0;
+	public const uint32 BLUETOOTH_SERVICE_ENABLE = 1;
+	public const Guid GUID_BLUETOOTHLE_DEVICE_INTERFACE = .(0x781aee18, 0x7733, 0x4ce4, 0xad, 0xd0, 0x91, 0xf4, 0x1c, 0x67, 0xb5, 0x92);
+	public const Guid GUID_BLUETOOTH_GATT_SERVICE_DEVICE_INTERFACE = .(0x6e3bb679, 0x4372, 0x40c8, 0x9e, 0xaa, 0x45, 0x09, 0xdf, 0x26, 0x0c, 0xd8);
+	public const Guid BTH_LE_ATT_BLUETOOTH_BASE_GUID = .(0x00000000, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5f, 0x9b, 0x34, 0xfb);
+	public const uint32 BTH_LE_SERVICE_GAP = 6144;
+	public const uint32 BTH_LE_SERVICE_GATT = 6145;
+	public const uint32 BTH_LE_GATT_ATTRIBUTE_TYPE_PRIMARY_SERVICE = 10240;
+	public const uint32 BTH_LE_GATT_ATTRIBUTE_TYPE_SECONDARY_SERVICE = 10241;
+	public const uint32 BTH_LE_GATT_ATTRIBUTE_TYPE_INCLUDE = 10242;
+	public const uint32 BTH_LE_GATT_ATTRIBUTE_TYPE_CHARACTERISTIC = 10243;
+	public const uint32 BTH_LE_GATT_CHARACTERISTIC_DESCRIPTOR_EXTENDED_PROPERTIES = 10496;
+	public const uint32 BTH_LE_GATT_CHARACTERISTIC_DESCRIPTOR_USER_DESCRIPTION = 10497;
+	public const uint32 BTH_LE_GATT_CHARACTERISTIC_DESCRIPTOR_CLIENT_CONFIGURATION = 10498;
+	public const uint32 BTH_LE_GATT_CHARACTERISTIC_DESCRIPTOR_SERVER_CONFIGURATION = 10499;
+	public const uint32 BTH_LE_GATT_CHARACTERISTIC_DESCRIPTOR_FORMAT = 10500;
+	public const uint32 BTH_LE_GATT_CHARACTERISTIC_DESCRIPTOR_AGGREGATE_FORMAT = 10501;
+	public const uint32 BTH_LE_GATT_CHARACTERISTIC_TYPE_DEVICE_NAME = 10752;
+	public const uint32 BTH_LE_GATT_CHARACTERISTIC_TYPE_APPEARANCE = 10753;
+	public const uint32 BTH_LE_GATT_CHARACTERISTIC_TYPE_PERIPHERAL_PRIVACY_FLAG = 10754;
+	public const uint32 BTH_LE_GATT_CHARACTERISTIC_TYPE_RECONNECTION_ADDRESS = 10755;
+	public const uint32 BTH_LE_GATT_CHARACTERISTIC_TYPE_PERIPHERAL_PREFERED_CONNECTION_PARAMETER = 10756;
+	public const uint32 BTH_LE_GATT_CHARACTERISTIC_TYPE_SERVICE_CHANGED = 10757;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_OFFSET = 6;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_MASK = 1023;
+	public const uint32 BTH_LE_GAP_APPEARANCE_SUB_CATEGORY_MASK = 63;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_UNCATEGORIZED = 0;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_PHONE = 1;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_COMPUTER = 2;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_WATCH = 3;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_CLOCK = 4;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_DISPLAY = 5;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_REMOTE_CONTROL = 6;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_EYE_GLASSES = 7;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_TAG = 8;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_KEYRING = 9;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_MEDIA_PLAYER = 10;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_BARCODE_SCANNER = 11;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_THERMOMETER = 12;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_HEART_RATE = 13;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_BLOOD_PRESSURE = 14;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_HID = 15;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_GLUCOSE_METER = 16;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_RUNNING_WALKING_SENSOR = 17;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_CYCLING = 18;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_PLUSE_OXIMETER = 49;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_WEIGHT_SCALE = 50;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CATEGORY_OUTDOOR_SPORTS_ACTIVITY = 81;
+	public const uint32 BTH_LE_GAP_APPEARANCE_SUBCATEGORY_GENERIC = 0;
+	public const uint32 BTH_LE_GAP_APPEARANCE_WATCH_SUBCATEGORY_SPORTS_WATCH = 1;
+	public const uint32 BTH_LE_GAP_APPEARANCE_THERMOMETER_SUBCATEGORY_EAR = 1;
+	public const uint32 BTH_LE_GAP_APPEARANCE_HEART_RATE_SUBCATEGORY_HEART_RATE_BELT = 1;
+	public const uint32 BTH_LE_GAP_APPEARANCE_BLOOD_PRESSURE_SUBCATEGORY_ARM = 1;
+	public const uint32 BTH_LE_GAP_APPEARANCE_BLOOD_PRESSURE_SUBCATEGORY_WRIST = 2;
+	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_KEYBOARD = 1;
+	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_MOUSE = 2;
+	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_JOYSTICK = 3;
+	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_GAMEPAD = 4;
+	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_DIGITIZER_TABLET = 5;
+	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_CARD_READER = 6;
+	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_DIGITAL_PEN = 7;
+	public const uint32 BTH_LE_GAP_APPEARANCE_HID_SUBCATEGORY_BARCODE_SCANNER = 8;
+	public const uint32 BTH_LE_GAP_APPEARANCE_RUNNING_WALKING_SENSOR_SUBCATEGORY_IN_SHOE = 1;
+	public const uint32 BTH_LE_GAP_APPEARANCE_RUNNING_WALKING_SENSOR_SUBCATEGORY_ON_SHOE = 2;
+	public const uint32 BTH_LE_GAP_APPEARANCE_RUNNING_WALKING_SENSOR_SUBCATEGORY_ON_HIP = 3;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CYCLING_SUBCATEGORY_CYCLING_COMPUTER = 1;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CYCLING_SUBCATEGORY_SPEED_SENSOR = 2;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CYCLING_SUBCATEGORY_CADENCE_SENSOR = 3;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CYCLING_SUBCATEGORY_POWER_SENSOR = 4;
+	public const uint32 BTH_LE_GAP_APPEARANCE_CYCLING_SUBCATEGORY_SPEED_AND_CADENCE_SENSOR = 5;
+	public const uint32 BTH_LE_GAP_APPEARANCE_PULSE_OXIMETER_SUBCATEGORY_FINGERTIP = 1;
+	public const uint32 BTH_LE_GAP_APPEARANCE_PULSE_OXIMETER_SUBCATEGORY_WRIST_WORN = 2;
+	public const uint32 BTH_LE_GAP_APPEARANCE_OUTDOOR_SPORTS_ACTIVITY_SUBCATEGORY_LOCATION_DISPLAY_DEVICE = 1;
+	public const uint32 BTH_LE_GAP_APPEARANCE_OUTDOOR_SPORTS_ACTIVITY_SUBCATEGORY_LOCATION_NAVIGATION_DISPLAY_DEVICE = 2;
+	public const uint32 BTH_LE_GAP_APPEARANCE_OUTDOOR_SPORTS_ACTIVITY_SUBCATEGORY_LOCATION_POD = 3;
+	public const uint32 BTH_LE_GAP_APPEARANCE_OUTDOOR_SPORTS_ACTIVITY_SUBCATEGORY_LOCATION_NAVIGATION_POD = 4;
+	public const uint32 BTH_LE_GATT_DEFAULT_MAX_INCLUDED_SERVICES_DEPTH = 3;
+	public const uint32 BTH_LE_ATT_TRANSACTION_TIMEOUT = 30;
+	public const uint32 BTH_LE_ATT_MAX_VALUE_SIZE = 512;
+	public const uint32 BTH_LE_ATT_CID = 4;
+	public const uint32 BTHLEENUM_ATT_MTU_MIN = 23;
+	public const uint32 BTHLEENUM_ATT_MTU_MAX = 65535;
+	public const uint32 BTHLEENUM_ATT_MTU_DEFAULT = 23;
+	public const uint32 BTHLEENUM_ATT_MTU_INITIAL_NEGOTIATION = 525;
+	public const uint32 BTH_LE_ERROR_INVALID_HANDLE = 1;
+	public const uint32 BTH_LE_ERROR_READ_NOT_PERMITTED = 2;
+	public const uint32 BTH_LE_ERROR_WRITE_NOT_PERMITTED = 3;
+	public const uint32 BTH_LE_ERROR_INVALID_PDU = 4;
+	public const uint32 BTH_LE_ERROR_INSUFFICIENT_AUTHENTICATION = 5;
+	public const uint32 BTH_LE_ERROR_REQUEST_NOT_SUPPORTED = 6;
+	public const uint32 BTH_LE_ERROR_INVALID_OFFSET = 7;
+	public const uint32 BTH_LE_ERROR_INSUFFICIENT_AUTHORIZATION = 8;
+	public const uint32 BTH_LE_ERROR_PREPARE_QUEUE_FULL = 9;
+	public const uint32 BTH_LE_ERROR_ATTRIBUTE_NOT_FOUND = 10;
+	public const uint32 BTH_LE_ERROR_ATTRIBUTE_NOT_LONG = 11;
+	public const uint32 BTH_LE_ERROR_INSUFFICIENT_ENCRYPTION_KEY_SIZE = 12;
+	public const uint32 BTH_LE_ERROR_INVALID_ATTRIBUTE_VALUE_LENGTH = 13;
+	public const uint32 BTH_LE_ERROR_UNLIKELY = 14;
+	public const uint32 BTH_LE_ERROR_INSUFFICIENT_ENCRYPTION = 15;
+	public const uint32 BTH_LE_ERROR_UNSUPPORTED_GROUP_TYPE = 16;
+	public const uint32 BTH_LE_ERROR_INSUFFICIENT_RESOURCES = 17;
+	public const uint32 BTH_LE_ERROR_UNKNOWN = 4096;
+	public const uint32 BLUETOOTH_GATT_FLAG_NONE = 0;
+	public const uint32 BLUETOOTH_GATT_FLAG_CONNECTION_ENCRYPTED = 1;
+	public const uint32 BLUETOOTH_GATT_FLAG_CONNECTION_AUTHENTICATED = 2;
+	public const uint32 BLUETOOTH_GATT_FLAG_FORCE_READ_FROM_DEVICE = 4;
+	public const uint32 BLUETOOTH_GATT_FLAG_FORCE_READ_FROM_CACHE = 8;
+	public const uint32 BLUETOOTH_GATT_FLAG_SIGNED_WRITE = 16;
+	public const uint32 BLUETOOTH_GATT_FLAG_WRITE_WITHOUT_RESPONSE = 32;
+	public const uint32 BLUETOOTH_GATT_FLAG_RETURN_ALL = 64;
+	public const uint32 BT_PORT_MIN = 1;
+	public const uint32 BT_PORT_MAX = 65535;
+	public const uint32 BT_PORT_DYN_FIRST = 4097;
+	public const uint16 AF_BTH = 32;
+	public const uint16 PF_BTH = 32;
+	public const uint32 NS_BTH = 16;
+	public const Guid SVCID_BTH_PROVIDER = .(0x06aa63e0, 0x7d60, 0x41ff, 0xaf, 0xb2, 0x3e, 0xe6, 0xd2, 0xd9, 0x39, 0x2d);
+	public const uint32 BTH_ADDR_STRING_SIZE = 12;
+	public const uint32 BTHPROTO_RFCOMM = 3;
+	public const uint32 BTHPROTO_L2CAP = 256;
+	public const uint32 SOL_RFCOMM = 3;
+	public const uint32 SOL_L2CAP = 256;
+	public const uint32 SOL_SDP = 257;
+	public const uint32 SO_BTH_AUTHENTICATE = 2147483649;
+	public const uint32 SO_BTH_ENCRYPT = 2;
+	public const uint32 SO_BTH_MTU = 2147483655;
+	public const uint32 SO_BTH_MTU_MAX = 2147483656;
+	public const uint32 SO_BTH_MTU_MIN = 2147483658;
+	public const uint32 RFCOMM_MAX_MTU = 1011;
+	public const uint32 RFCOMM_MIN_MTU = 23;
+	public const uint32 BTH_SDP_VERSION = 1;
+	public const uint32 SDP_DEFAULT_INQUIRY_SECONDS = 6;
+	public const uint32 SDP_MAX_INQUIRY_SECONDS = 60;
+	public const uint32 SDP_DEFAULT_INQUIRY_MAX_RESPONSES = 255;
+	public const uint32 SDP_SERVICE_SEARCH_REQUEST = 1;
+	public const uint32 SDP_SERVICE_ATTRIBUTE_REQUEST = 2;
+	public const uint32 SDP_SERVICE_SEARCH_ATTRIBUTE_REQUEST = 3;
+	public const uint32 BTHNS_RESULT_DEVICE_CONNECTED = 65536;
+	public const uint32 BTHNS_RESULT_DEVICE_REMEMBERED = 131072;
+	public const uint32 BTHNS_RESULT_DEVICE_AUTHENTICATED = 262144;
+	public const uint32 RLS_ERROR = 1;
+	public const uint32 RLS_OVERRUN = 2;
+	public const uint32 RLS_PARITY = 4;
+	public const uint32 RLS_FRAMING = 8;
+	public const uint32 RPN_BAUD_2400 = 0;
+	public const uint32 RPN_BAUD_4800 = 1;
+	public const uint32 RPN_BAUD_7200 = 2;
+	public const uint32 RPN_BAUD_9600 = 3;
+	public const uint32 RPN_BAUD_19200 = 4;
+	public const uint32 RPN_BAUD_38400 = 5;
+	public const uint32 RPN_BAUD_57600 = 6;
+	public const uint32 RPN_BAUD_115200 = 7;
+	public const uint32 RPN_BAUD_230400 = 8;
+	public const uint32 RPN_DATA_5 = 0;
+	public const uint32 RPN_DATA_6 = 1;
+	public const uint32 RPN_DATA_7 = 2;
+	public const uint32 RPN_DATA_8 = 3;
+	public const uint32 RPN_STOP_1 = 0;
+	public const uint32 RPN_STOP_1_5 = 4;
+	public const uint32 RPN_PARITY_NONE = 0;
+	public const uint32 RPN_PARITY_ODD = 8;
+	public const uint32 RPN_PARITY_EVEN = 24;
+	public const uint32 RPN_PARITY_MARK = 40;
+	public const uint32 RPN_PARITY_SPACE = 56;
+	public const uint32 RPN_FLOW_X_IN = 1;
+	public const uint32 RPN_FLOW_X_OUT = 2;
+	public const uint32 RPN_FLOW_RTR_IN = 4;
+	public const uint32 RPN_FLOW_RTR_OUT = 8;
+	public const uint32 RPN_FLOW_RTC_IN = 16;
+	public const uint32 RPN_FLOW_RTC_OUT = 32;
+	public const uint32 RPN_PARAM_BAUD = 1;
+	public const uint32 RPN_PARAM_DATA = 2;
+	public const uint32 RPN_PARAM_STOP = 4;
+	public const uint32 RPN_PARAM_PARITY = 8;
+	public const uint32 RPN_PARAM_P_TYPE = 16;
+	public const uint32 RPN_PARAM_XON = 32;
+	public const uint32 RPN_PARAM_XOFF = 64;
+	public const uint32 RPN_PARAM_X_IN = 1;
+	public const uint32 RPN_PARAM_X_OUT = 2;
+	public const uint32 RPN_PARAM_RTR_IN = 4;
+	public const uint32 RPN_PARAM_RTR_OUT = 8;
+	public const uint32 RPN_PARAM_RTC_IN = 16;
+	public const uint32 RPN_PARAM_RTC_OUT = 32;
+	public const uint32 RFCOMM_CMD_NONE = 0;
+	public const uint32 RFCOMM_CMD_MSC = 1;
+	public const uint32 RFCOMM_CMD_RLS = 2;
+	public const uint32 RFCOMM_CMD_RPN = 3;
+	public const uint32 RFCOMM_CMD_RPN_REQUEST = 4;
+	public const uint32 RFCOMM_CMD_RPN_RESPONSE = 5;
 	#endregion
 	
 	#region Typedefs
@@ -863,6 +872,20 @@ static
 		RequiredGeneralBonding = 5,
 		NotDefined = 255,
 	}
+	public enum BTH_LE_GATT_DESCRIPTOR_TYPE : int32
+	{
+		CharacteristicExtendedProperties = 0,
+		CharacteristicUserDescription = 1,
+		ClientCharacteristicConfiguration = 2,
+		ServerCharacteristicConfiguration = 3,
+		CharacteristicFormat = 4,
+		CharacteristicAggregateFormat = 5,
+		CustomDescriptor = 6,
+	}
+	public enum BTH_LE_GATT_EVENT_TYPE : int32
+	{
+		CharacteristicValueChangedEvent = 0,
+	}
 	#endregion
 	
 	#region Function pointers
@@ -870,6 +893,7 @@ static
 	public function BOOL PFN_AUTHENTICATION_CALLBACK(void* pvParam, out BLUETOOTH_DEVICE_INFO pDevice);
 	public function BOOL PFN_AUTHENTICATION_CALLBACK_EX(void* pvParam, ref BLUETOOTH_AUTHENTICATION_CALLBACK_PARAMS pAuthCallbackParams);
 	public function BOOL PFN_BLUETOOTH_ENUM_ATTRIBUTES_CALLBACK(uint32 uAttribId, ref uint8 pValueStream, uint32 cbStreamSize, void* pvParam);
+	public function void PFNBLUETOOTH_GATT_EVENT_CALLBACK(BTH_LE_GATT_EVENT_TYPE EventType, void* EventOutParameter, void* Context);
 	#endregion
 	
 	#region Structs
@@ -1103,7 +1127,13 @@ static
 			public _alternative_e__Struct alternative;
 			
 			[CRepr]
-			public struct _sequence_e__Struct
+			public struct _alternative_e__Struct
+			{
+				public uint8* value;
+				public uint32 length;
+			}
+			[CRepr]
+			public struct _url_e__Struct
 			{
 				public uint8* value;
 				public uint32 length;
@@ -1115,13 +1145,7 @@ static
 				public uint32 length;
 			}
 			[CRepr]
-			public struct _alternative_e__Struct
-			{
-				public uint8* value;
-				public uint32 length;
-			}
-			[CRepr]
-			public struct _url_e__Struct
+			public struct _sequence_e__Struct
 			{
 				public uint8* value;
 				public uint32 length;
@@ -1134,6 +1158,120 @@ static
 		public uint16 encoding;
 		public uint16 mibeNum;
 		public uint16 attributeId;
+	}
+	[CRepr]
+	public struct BTH_LE_UUID
+	{
+		public BOOLEAN IsShortUuid;
+		public _Value_e__Union Value;
+		
+		[CRepr, Union]
+		public struct _Value_e__Union
+		{
+			public uint16 ShortUuid;
+			public Guid LongUuid;
+		}
+	}
+	[CRepr]
+	public struct BTH_LE_GATT_SERVICE
+	{
+		public BTH_LE_UUID ServiceUuid;
+		public uint16 AttributeHandle;
+	}
+	[CRepr]
+	public struct BTH_LE_GATT_CHARACTERISTIC
+	{
+		public uint16 ServiceHandle;
+		public BTH_LE_UUID CharacteristicUuid;
+		public uint16 AttributeHandle;
+		public uint16 CharacteristicValueHandle;
+		public BOOLEAN IsBroadcastable;
+		public BOOLEAN IsReadable;
+		public BOOLEAN IsWritable;
+		public BOOLEAN IsWritableWithoutResponse;
+		public BOOLEAN IsSignedWritable;
+		public BOOLEAN IsNotifiable;
+		public BOOLEAN IsIndicatable;
+		public BOOLEAN HasExtendedProperties;
+	}
+	[CRepr]
+	public struct BTH_LE_GATT_CHARACTERISTIC_VALUE
+	{
+		public uint32 DataSize;
+		public uint8[1] Data_array;
+		
+		public uint8* Data mut => &Data_array[0];
+	}
+	[CRepr]
+	public struct BTH_LE_GATT_DESCRIPTOR
+	{
+		public uint16 ServiceHandle;
+		public uint16 CharacteristicHandle;
+		public BTH_LE_GATT_DESCRIPTOR_TYPE DescriptorType;
+		public BTH_LE_UUID DescriptorUuid;
+		public uint16 AttributeHandle;
+	}
+	[CRepr]
+	public struct BTH_LE_GATT_DESCRIPTOR_VALUE
+	{
+		public BTH_LE_GATT_DESCRIPTOR_TYPE DescriptorType;
+		public BTH_LE_UUID DescriptorUuid;
+		public using _Anonymous_e__Union Anonymous;
+		public uint32 DataSize;
+		public uint8[1] Data_array;
+		
+		public uint8* Data mut => &Data_array[0];
+		
+		[CRepr, Union]
+		public struct _Anonymous_e__Union
+		{
+			public _CharacteristicExtendedProperties_e__Struct CharacteristicExtendedProperties;
+			public _ClientCharacteristicConfiguration_e__Struct ClientCharacteristicConfiguration;
+			public _ServerCharacteristicConfiguration_e__Struct ServerCharacteristicConfiguration;
+			public _CharacteristicFormat_e__Struct CharacteristicFormat;
+			
+			[CRepr]
+			public struct _ServerCharacteristicConfiguration_e__Struct
+			{
+				public BOOLEAN IsBroadcast;
+			}
+			[CRepr]
+			public struct _CharacteristicExtendedProperties_e__Struct
+			{
+				public BOOLEAN IsReliableWriteEnabled;
+				public BOOLEAN IsAuxiliariesWritable;
+			}
+			[CRepr]
+			public struct _CharacteristicFormat_e__Struct
+			{
+				public uint8 Format;
+				public uint8 Exponent;
+				public BTH_LE_UUID Unit;
+				public uint8 NameSpace;
+				public BTH_LE_UUID Description;
+			}
+			[CRepr]
+			public struct _ClientCharacteristicConfiguration_e__Struct
+			{
+				public BOOLEAN IsSubscribeToNotification;
+				public BOOLEAN IsSubscribeToIndication;
+			}
+		}
+	}
+	[CRepr]
+	public struct BLUETOOTH_GATT_VALUE_CHANGED_EVENT_REGISTRATION
+	{
+		public uint16 NumCharacteristics;
+		public BTH_LE_GATT_CHARACTERISTIC[1] Characteristics_array;
+		
+		public BTH_LE_GATT_CHARACTERISTIC* Characteristics mut => &Characteristics_array[0];
+	}
+	[CRepr]
+	public struct BLUETOOTH_GATT_VALUE_CHANGED_EVENT
+	{
+		public uint16 ChangedAttributeHandle;
+		public uint CharacteristicValueDataSize;
+		public BTH_LE_GATT_CHARACTERISTIC_VALUE* CharacteristicValue;
 	}
 	[CRepr, Packed(1)]
 	public struct SOCKADDR_BTH
@@ -1264,17 +1402,17 @@ static
 	public static extern uint32 BluetoothUpdateDeviceRecord(in BLUETOOTH_DEVICE_INFO pbtdi);
 	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 BluetoothRemoveDevice(in BLUETOOTH_ADDRESS pAddress);
-	[Import("bthprops.dll"), CLink, CallingConvention(.Stdcall)]
+	[Import("bthprops.cpl.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL BluetoothSelectDevices(out BLUETOOTH_SELECT_DEVICE_PARAMS pbtsdp);
-	[Import("bthprops.dll"), CLink, CallingConvention(.Stdcall)]
+	[Import("bthprops.cpl.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL BluetoothSelectDevicesFree(out BLUETOOTH_SELECT_DEVICE_PARAMS pbtsdp);
-	[Import("bthprops.dll"), CLink, CallingConvention(.Stdcall)]
+	[Import("bthprops.cpl.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL BluetoothDisplayDeviceProperties(HWND hwndParent, out BLUETOOTH_DEVICE_INFO pbtdi);
-	[Import("bthprops.dll"), CLink, CallingConvention(.Stdcall)]
+	[Import("bthprops.cpl.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 BluetoothAuthenticateDevice(HWND hwndParent, HANDLE hRadio, out BLUETOOTH_DEVICE_INFO pbtbi, char16* pszPasskey, uint32 ulPasskeyLength);
-	[Import("bthprops.dll"), CLink, CallingConvention(.Stdcall)]
+	[Import("bthprops.cpl.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 BluetoothAuthenticateDeviceEx(HWND hwndParentIn, HANDLE hRadioIn, out BLUETOOTH_DEVICE_INFO pbtdiInout, BLUETOOTH_OOB_DATA_INFO* pbtOobData, AUTHENTICATION_REQUIREMENTS authenticationRequirement);
-	[Import("bthprops.dll"), CLink, CallingConvention(.Stdcall)]
+	[Import("bthprops.cpl.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 BluetoothAuthenticateMultipleDevices(HWND hwndParent, HANDLE hRadio, uint32 cDevices, BLUETOOTH_DEVICE_INFO* rgbtdi);
 	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 BluetoothSetServiceState(HANDLE hRadio, in BLUETOOTH_DEVICE_INFO pbtdi, in Guid pGuidService, uint32 dwServiceFlags);
@@ -1312,5 +1450,31 @@ static
 	public static extern uint32 BluetoothSetLocalServiceInfo(HANDLE hRadioIn, in Guid pClassGuid, uint32 ulInstance, in BLUETOOTH_LOCAL_SERVICE_INFO pServiceInfoIn);
 	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL BluetoothIsVersionAvailable(uint8 MajorVersion, uint8 MinorVersion);
+	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HRESULT BluetoothGATTGetServices(HANDLE hDevice, uint16 ServicesBufferCount, BTH_LE_GATT_SERVICE* ServicesBuffer, out uint16 ServicesBufferActual, uint32 Flags);
+	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HRESULT BluetoothGATTGetIncludedServices(HANDLE hDevice, BTH_LE_GATT_SERVICE* ParentService, uint16 IncludedServicesBufferCount, BTH_LE_GATT_SERVICE* IncludedServicesBuffer, out uint16 IncludedServicesBufferActual, uint32 Flags);
+	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HRESULT BluetoothGATTGetCharacteristics(HANDLE hDevice, BTH_LE_GATT_SERVICE* Service, uint16 CharacteristicsBufferCount, BTH_LE_GATT_CHARACTERISTIC* CharacteristicsBuffer, out uint16 CharacteristicsBufferActual, uint32 Flags);
+	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HRESULT BluetoothGATTGetDescriptors(HANDLE hDevice, ref BTH_LE_GATT_CHARACTERISTIC Characteristic, uint16 DescriptorsBufferCount, BTH_LE_GATT_DESCRIPTOR* DescriptorsBuffer, out uint16 DescriptorsBufferActual, uint32 Flags);
+	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HRESULT BluetoothGATTGetCharacteristicValue(HANDLE hDevice, ref BTH_LE_GATT_CHARACTERISTIC Characteristic, uint32 CharacteristicValueDataSize, BTH_LE_GATT_CHARACTERISTIC_VALUE* CharacteristicValue, uint16* CharacteristicValueSizeRequired, uint32 Flags);
+	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HRESULT BluetoothGATTGetDescriptorValue(HANDLE hDevice, ref BTH_LE_GATT_DESCRIPTOR Descriptor, uint32 DescriptorValueDataSize, BTH_LE_GATT_DESCRIPTOR_VALUE* DescriptorValue, uint16* DescriptorValueSizeRequired, uint32 Flags);
+	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HRESULT BluetoothGATTBeginReliableWrite(HANDLE hDevice, out uint64 ReliableWriteContext, uint32 Flags);
+	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HRESULT BluetoothGATTSetCharacteristicValue(HANDLE hDevice, ref BTH_LE_GATT_CHARACTERISTIC Characteristic, ref BTH_LE_GATT_CHARACTERISTIC_VALUE CharacteristicValue, uint64 ReliableWriteContext, uint32 Flags);
+	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HRESULT BluetoothGATTEndReliableWrite(HANDLE hDevice, uint64 ReliableWriteContext, uint32 Flags);
+	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HRESULT BluetoothGATTAbortReliableWrite(HANDLE hDevice, uint64 ReliableWriteContext, uint32 Flags);
+	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HRESULT BluetoothGATTSetDescriptorValue(HANDLE hDevice, ref BTH_LE_GATT_DESCRIPTOR Descriptor, ref BTH_LE_GATT_DESCRIPTOR_VALUE DescriptorValue, uint32 Flags);
+	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HRESULT BluetoothGATTRegisterEvent(HANDLE hService, BTH_LE_GATT_EVENT_TYPE EventType, void* EventParameterIn, PFNBLUETOOTH_GATT_EVENT_CALLBACK Callback, void* CallbackContext, out int pEventHandle, uint32 Flags);
+	[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
+	public static extern HRESULT BluetoothGATTUnregisterEvent(int EventHandle, uint32 Flags);
 	#endregion
 }

@@ -422,7 +422,7 @@ static
 	#region Function pointers
 	public function void DNS_PROXY_COMPLETION_ROUTINE(void* completionContext, int32 status);
 	public function void PDNS_QUERY_COMPLETION_ROUTINE(void* pQueryContext, out DNS_QUERY_RESULT pQueryResults);
-	public function void PDNS_SERVICE_BROWSE_CALLBACK(uint32 Status, void* pQueryContext, ref DNS_RECORDA pDnsRecord);
+	public function void PDNS_SERVICE_BROWSE_CALLBACK(uint32 Status, void* pQueryContext, ref DNS_RECORDW pDnsRecord);
 	public function void PDNS_SERVICE_RESOLVE_COMPLETE(uint32 Status, void* pQueryContext, ref DNS_SERVICE_INSTANCE pInstance);
 	public function void PDNS_SERVICE_REGISTER_COMPLETE(uint32 Status, void* pQueryContext, ref DNS_SERVICE_INSTANCE pInstance);
 	public function void PMDNS_QUERY_CALLBACK(void* pQueryContext, out MDNS_QUERY_HANDLE pQueryHandle, out DNS_QUERY_RESULT pQueryResults);

@@ -347,6 +347,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"727cad4e-d6af-4c9e-8a08-d695b11caa49"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -371,6 +372,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b2d9f3ec-c9fe-4a11-a2ec-d86208f7c0a2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontFileLoader","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -424,6 +426,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"6d4865fe-0ab8-4d91-8f62-5dd6be34a3e0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -485,6 +488,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"739d886a-cef5-47dc-8769-1a8b41bebbb0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -589,6 +593,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"2f0da53a-2add-47cd-82ee-d9ec34688e75"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -654,6 +659,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"5f49804d-7024-4d43-bfa9-d25984f53849"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -870,6 +876,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"cca920e4-52f0-492b-bfa8-29c72ee0a468"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -895,6 +902,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"72755049-5ff7-435d-8348-4be97cfa6c7c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -929,6 +937,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"08256209-099a-4b34-b86d-c22b110e7771"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1018,6 +1027,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"a84cee02-3eea-4eee-a827-87c1a02a0fcc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1079,6 +1089,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"1a0d8438-1d97-4ec1-aef9-a2fb86ed6acb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1125,6 +1136,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"da20d8ef-812a-4c43-9802-62ec4abd7add"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontList","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -1177,6 +1189,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"acd16696-8c14-4f5d-877e-fe3fc1d32737"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1569,6 +1582,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"9c906818-31d7-4fd3-a151-7c5e225db55a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1875,6 +1889,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"55f1112b-1dc2-4b3c-9541-f46894ed85b6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1992,6 +2007,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"14885cc9-bab0-4f90-b6ed-5c366a2cd03d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -2028,6 +2044,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"688e1a58-5094-47c8-adc8-fbcea60ae92b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2105,6 +2122,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"5810cd44-0ca0-4701-b3fa-bec5182ae4f6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2172,6 +2190,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"b7e6163e-7f46-43b4-84b3-e4e6249c365d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2514,6 +2533,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"8339fde3-106f-47ab-8373-1c6295eb10b3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2579,6 +2599,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"eaf3a2da-ecf4-4d24-b644-b34f6842024b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2628,6 +2649,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"ef8a8135-5cc6-45fe-8825-c5a0724eb819"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWritePixelSnapping","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -2706,6 +2728,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"53737037-6d14-410b-9bfe-0b182bb70961"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteTextFormat","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -3245,6 +3268,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"5e5a32a3-8dff-4773-9ff6-0696eab77267"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3356,6 +3380,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"1edd9491-9853-4299-898f-6432983b6f3a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3447,6 +3472,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"7d97dbf7-e085-42d4-81e3-6a883bded118"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3500,6 +3526,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"b859ee5a-d838-4b5b-a2e8-1adc7d93db48"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4628,6 +4655,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"30572f99-dac6-41db-a16e-0486307e606a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFactory","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -4669,6 +4697,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"a71efdb4-9fdb-4838-ad90-cfc3be8c3daf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontFace","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -4846,6 +4875,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"acd16696-8c14-4f5d-877e-fe3fc1d32738"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFont","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -4905,6 +4935,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"94413cf4-a6fc-4248-8b50-6674348fcad3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteRenderingParams","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -4926,6 +4957,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"80dad800-e21f-4e83-96ce-bfcce500db7c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteTextAnalyzer","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -5102,6 +5134,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"639cfad8-0fb4-4b21-a58a-067920120009"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteTextAnalysisSource","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -5127,6 +5160,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"b0d941a0-85e7-4d8b-9fd3-5ced9934482a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteTextAnalysisSink","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -5154,6 +5188,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"9064d822-80a7-465c-a986-df65f78b8feb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteTextLayout","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -5235,6 +5270,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"791e8298-3ef3-4230-9880-c9bdecc42064"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteBitmapRenderTarget","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -5309,6 +5345,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"d3e0e934-22a0-427e-aae4-7d9574b59db1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteTextRenderer","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -5391,6 +5428,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"5f174b49-0d8b-4cfb-8bca-f1cce9d06c67"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteTextFormat","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -5494,6 +5532,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"1093c18f-8d5e-43f0-b064-0917311b525e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteTextLayout1","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -5609,6 +5648,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"553a9ff3-5693-4df7-b52b-74806f7f2eb9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteTextAnalyzer1","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -5670,6 +5710,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"efa008f9-f7a1-48bf-b05c-f224713cc0ff"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5702,6 +5743,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"fd882d06-8aba-4fb8-b849-8be8b73e14de"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5755,6 +5797,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"29748ed6-8c9c-4a6a-be0b-d912e8538944"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFont1","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -5776,6 +5819,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"d8b768ff-64bc-4e66-982b-ec8e87f693f7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontFace1","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -5873,6 +5917,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"d31fbe17-f157-41a2-8d24-cb779e0560e8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5907,6 +5952,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"f9d711c3-9777-40ae-87e8-3e5af9bf0948"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteRenderingParams1","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -5928,6 +5974,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"0439fc60-ca44-4994-8dee-3a9af7b732ec"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFactory1","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -6098,6 +6145,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"b7924baa-391b-412a-8c5c-e44cc2d867dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteRenderingParams2","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -6119,6 +6167,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"9a1b41c3-d3bb-466a-87fc-fe67556a3b65"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFactory2","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -6262,6 +6311,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"53585141-d9f8-4095-8321-d73cf6bd116b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6409,6 +6459,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2f642afe-9c68-4f40-b8be-457401afcb3d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6469,6 +6520,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"53585141-d9f8-4095-8321-d73cf6bd116c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontCollection","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -6504,6 +6556,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"da20d8ef-812a-4c43-9802-62ec4abd7adf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontFamily","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -6552,6 +6605,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"da20d8ef-812a-4c43-9802-62ec4abd7ade"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontList","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -6600,6 +6654,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"5e7fa7ca-dde3-424c-89f0-9fcd6fed58cd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6776,6 +6831,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"29748ed6-8c9c-4a6a-be0b-d912e8538944"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFont2","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -6845,6 +6901,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"d37d7598-09be-4222-a236-2081341cc1f2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontFace2","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -7037,6 +7094,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"cfee3140-1157-47ca-8b85-31bfcf3f2d0e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7112,6 +7170,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"b06fe5b9-43ec-4393-881b-dbe4dc72fda7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7136,6 +7195,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"b71e6052-5aea-4fa3-832e-f60d431f7e91"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7216,6 +7276,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4556be70-3abd-4f70-90be-421780a6f515"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteGdiInterop","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -7326,6 +7387,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"f67e0edd-9e3d-4ecc-8c32-4183253dfe70"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteTextFormat1","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -7360,6 +7422,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"07ddcd52-020e-4de8-ac33-6c953d83f92d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteTextLayout2","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -7455,6 +7518,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7c5f86da-c7a1-4f05-b8e1-55a179fe5a35"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteColorGlyphRunEnumerator","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -7477,6 +7541,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"27f2a904-4eb8-441d-9678-0563f53e3e2f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontFace3","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -7541,6 +7606,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4b0b5bd3-0797-4549-8ac5-fe915cc53856"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFactory3","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -7600,6 +7666,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3ff7715f-3cdc-4dc6-9b72-ec5621dccafd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontSetBuilder","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -7622,6 +7689,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ce25f8fd-863b-4d13-9651-c1f88dc73fe2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7668,6 +7736,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4db3757a-2c72-4ed9-b2b6-1ababe1aff9c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontFileStream","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -7745,6 +7814,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"68648c83-6ede-46c0-ab46-20083a887fde"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontFileLoader","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -7798,6 +7868,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"dc102f47-a12d-4b1c-822d-9e117e33043f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontFileLoader","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -7835,6 +7906,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"958db99a-be2a-4f09-af7d-65189803d1d3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFactory4","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -7980,6 +8052,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f3744d80-21f7-42eb-b35d-995bc72fc223"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFactory5","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -8092,6 +8165,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"98eff3a5-b667-479a-b145-e2fa5b9fdc29"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontFace4","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -8161,6 +8235,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1f803a76-6871-48e8-987f-b975551c50f2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8324,6 +8399,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c081fe77-2fd1-41ac-a5a3-34983c4ba61a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontFaceReference","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -8370,6 +8446,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ee5ba612-b131-463c-8f4f-3189b9401e45"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontSetBuilder1","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -8412,6 +8489,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7e9fda85-6c92-4053-bc47-7ae3530db4d3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontSet","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -8607,6 +8685,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0763a34-77af-445a-b735-08c37b0a5bf5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontList1","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -8629,6 +8708,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3ed49e77-a398-4261-b9cf-c126c2131ef3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontFamily1","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -8665,6 +8745,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"514039c6-4617-4064-bf8b-92ea83e506e0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontCollection1","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -8726,6 +8807,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"05a9bf42-223f-4441-b5fb-8263685f55e9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteTextLayout3","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -8800,6 +8882,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6d3b5641-e550-430d-a85b-b7bf48a93427"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteTextFormat2","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -8870,6 +8953,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2397599d-dd0d-4681-bd6a-f4f31eaade77"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontFallback","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -8901,6 +8985,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"dc7ead19-e54c-43af-b2da-4e2b79ba3f7f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontSet1","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -8922,6 +9007,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a4d055a6-f9e3-4e25-93b7-9e309f3af8e9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontCollection2","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -8943,6 +9029,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"35d0e0b3-9076-4d2e-a016-a91b568a06b4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFactory6","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -8996,6 +9083,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7c073ef2-a7f4-4045-8c32-8ab8ae640f90"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontSet2","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{
@@ -9044,6 +9132,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c4b1fe1b-6e84-47d5-b54c-a597981b06ad"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDWriteFontFace5","TargetKind":"Com","Api":"Graphics.DirectWrite","Parents":[]}
 		,"Methods":[
 			{

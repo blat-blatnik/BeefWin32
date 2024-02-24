@@ -2,24 +2,59 @@
 
 "Constants":[
 	{
-		"Name":"WM_CONTEXTMENU"
+		"Name":"cchTextLimitDefault"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
-		,"Value":123
+		,"Value":32767
 		,"Attrs":[]
 	}
 	,{
-		"Name":"WM_UNICHAR"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":265
+		"Name":"MSFTEDIT_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RICHEDIT50W"
 		,"Attrs":[]
 	}
 	,{
-		"Name":"WM_PRINTCLIENT"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":792
+		"Name":"CERICHEDIT_CLASSA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RichEditCEA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CERICHEDIT_CLASSW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RichEditCEW"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RICHEDIT_CLASSA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RichEdit20A"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RICHEDIT_CLASS10A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RICHEDIT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RICHEDIT_CLASSW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RichEdit20W"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RICHEDIT_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RichEdit20W"
 		,"Attrs":[]
 	}
 	,{
@@ -2228,6 +2263,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"yHeightCharPtsMost"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1638
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SCF_SELECTION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -2414,6 +2456,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":32
+		,"Attrs":[]
+	}
+	,{
+		"Name":"lDefaultTab"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":720
 		,"Attrs":[]
 	}
 	,{
@@ -2641,13 +2690,6 @@
 		,"Attrs":[]
 	}
 	,{
-		"Name":"WM_NOTIFY"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":78
-		,"Attrs":[]
-	}
-	,{
 		"Name":"GCMF_GRIPPER"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -2680,6 +2722,27 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CF_RTF"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Rich Text Format"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CF_RTFNOOBJS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Rich Text Format Without Objects"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CF_RETEXTOBJ"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RichEdit Text and Objects"
 		,"Attrs":[]
 	}
 	,{
@@ -2841,6 +2904,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2147483648
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RICHEDIT60_CLASS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RICHEDIT60W"
 		,"Attrs":[]
 	}
 	,{
@@ -4421,6 +4491,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4723,6 +4794,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5219,6 +5291,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5270,6 +5343,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITextHost","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}
 		,"Methods":[
 			{
@@ -5424,6 +5498,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITextServices","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}
 		,"Methods":[
 			{
@@ -5491,6 +5566,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"00020d00-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5703,6 +5779,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"00020d03-0000-0000-c000-000000000046"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6512,6 +6589,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8cc497c0-a1df-11ce-8098-00aa0047be5d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6523,7 +6601,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6535,7 +6613,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppSel","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextSelection","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppSel","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextSelection","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6559,7 +6637,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppStories","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextStoryRanges","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppStories","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextStoryRanges","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6732,7 +6810,7 @@
 				,"Params":[
 					{"Name":"cpActive","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"cpAnchor","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6746,7 +6824,7 @@
 				,"Params":[
 					{"Name":"x","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"y","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -6757,6 +6835,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8cc497c2-a1df-11ce-8098-00aa0047be5d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6768,7 +6847,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6816,7 +6895,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6828,7 +6907,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6900,7 +6979,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppFont","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextFont","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFont","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextFont","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6924,7 +7003,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppPara","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextPara","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppPara","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextPara","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7416,7 +7495,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppObject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -7427,6 +7506,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8cc497c1-a1df-11ce-8098-00aa0047be5d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITextRange","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}
 		,"Methods":[
 			{
@@ -7573,6 +7653,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8cc497c3-a1df-11ce-8098-00aa0047be5d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7584,7 +7665,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppFont","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextFont","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFont","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextFont","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7933,7 +8014,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8244,6 +8325,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8cc497c4-a1df-11ce-8098-00aa0047be5d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8255,7 +8337,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppPara","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextPara","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppPara","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextPara","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8838,6 +8920,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8cc497c5-a1df-11ce-8098-00aa0047be5d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8849,7 +8932,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppunkEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppunkEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8862,7 +8945,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8885,6 +8968,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"c241f5e0-7206-11d8-a2c7-00a0d1d6c6b3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITextDocument","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}
 		,"Methods":[
 			{
@@ -8920,7 +9004,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppDisplays","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextDisplays","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppDisplays","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextDisplays","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8932,7 +9016,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppFont","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextFont2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFont","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextFont2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8956,7 +9040,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppPara","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextPara2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppPara","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextPara2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8992,7 +9076,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9040,7 +9124,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppSel","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextSelection2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppSel","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextSelection2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9052,7 +9136,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppStories","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextStoryRanges2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppStories","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextStoryRanges2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9125,7 +9209,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppVoid","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppVoid","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9183,7 +9267,7 @@
 					,{"Name":"Options","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"curCharRep","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"curFontSize","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"pPitchAndFamily","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
 					,{"Name":"pNewFontSize","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
 				]
@@ -9210,7 +9294,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppStrs","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextStrings","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppStrs","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextStrings","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9236,7 +9320,7 @@
 				,"Params":[
 					{"Name":"cpActive","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"cpAnchor","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9251,7 +9335,7 @@
 					{"Name":"x","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"y","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"Type","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9385,7 +9469,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppStory","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextStory","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppStory","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextStory","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9409,7 +9493,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppStory","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextStory","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppStory","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextStory","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9421,7 +9505,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppStory","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextStory","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppStory","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextStory","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9434,7 +9518,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppStory","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextStory","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppStory","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextStory","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -9445,6 +9529,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"c241f5e2-7206-11d8-a2c7-00a0d1d6c6b3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITextSelection","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}
 		,"Methods":[
 			{
@@ -9468,7 +9553,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppCells","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppCells","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9480,7 +9565,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppColumn","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppColumn","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9504,7 +9589,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9516,7 +9601,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppFont","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextFont2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFont","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextFont2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9540,7 +9625,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9588,7 +9673,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppPara","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextPara2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppPara","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextPara2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9612,7 +9697,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppRow","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRow","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppRow","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRow","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9636,7 +9721,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppTable","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppTable","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9648,7 +9733,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9817,7 +9902,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Flags","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9977,6 +10062,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"c241f5e1-7206-11d8-a2c7-00a0d1d6c6b3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITextRange2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}
 		,"Methods":[
 		]
@@ -9987,6 +10073,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"c241f5e3-7206-11d8-a2c7-00a0d1d6c6b3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITextFont","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}
 		,"Methods":[
 			{
@@ -10202,7 +10289,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppFont","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextFont2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFont","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextFont2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10558,6 +10645,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"c241f5e4-7206-11d8-a2c7-00a0d1d6c6b3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITextPara","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}
 		,"Methods":[
 			{
@@ -10569,7 +10657,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppBorders","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppBorders","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10581,7 +10669,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppPara","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextPara2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppPara","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextPara2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10765,6 +10853,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"c241f5e5-7206-11d8-a2c7-00a0d1d6c6b3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITextStoryRanges","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}
 		,"Methods":[
 			{
@@ -10777,7 +10866,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -10788,6 +10877,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"c241f5f3-7206-11d8-a2c7-00a0d1d6c6b3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10823,7 +10913,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppDisplay","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppDisplay","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10886,7 +10976,7 @@
 				,"Params":[
 					{"Name":"cpActive","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"cpAnchor","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10899,7 +10989,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Flags","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10948,6 +11038,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"c241f5e7-7206-11d8-a2c7-00a0d1d6c6b3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10960,7 +11051,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppRange","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextRange2","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11177,6 +11268,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"c241f5ef-7206-11d8-a2c7-00a0d1d6c6b3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11755,6 +11847,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"c241f5f2-7206-11d8-a2c7-00a0d1d6c6b3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -11765,6 +11858,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"01c25500-4268-11d1-883a-3c8b00c10000"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITextDocument","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}
 		,"Methods":[
 			{
@@ -11867,7 +11961,7 @@
 					,{"Name":"Option","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"CharRepCur","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"curFontSize","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pbstr","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"pPitchAndFamily","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
 					,{"Name":"pNewFontSize","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
 				]
@@ -11921,7 +12015,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppSel","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextSelection","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppSel","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextSelection","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12028,7 +12122,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppITextFont","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextFont","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppITextFont","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextFont","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12040,7 +12134,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppITextPara","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextPara","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppITextPara","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ITextPara","TargetKind":"Com","Api":"UI.Controls.RichEdit","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12052,7 +12146,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppVoid","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppVoid","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{

@@ -52,6 +52,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b7d14566-0509-4cce-a71f-0a554233bd9b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -75,6 +76,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b824b49d-22ac-4161-ac8a-9916e8fa3f7f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -98,6 +100,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"886d8eeb-8cf2-4446-8d02-cdba1dbdcf99"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -170,6 +173,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"71604b0f-97b0-4764-8577-2f13e98a1422"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -230,7 +234,7 @@
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"GPS_DEFAULT","Value":0}
@@ -249,7 +253,7 @@
 			,{"Name":"GPS_VOLATILEPROPERTIESONLY","Value":4096}
 			,{"Name":"GPS_MASK_VALID","Value":8191}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"IObjectWithPropertyKey"
@@ -257,6 +261,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"fc0ca0a7-c316-4fd2-9031-3e628e6d4f23"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -290,14 +295,14 @@
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"PKA_SET","Value":0}
 			,{"Name":"PKA_APPEND","Value":1}
 			,{"Name":"PKA_DELETE","Value":2}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"IPropertyChange"
@@ -305,6 +310,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f917bc8a-1bba-4478-a245-1bde03eb9431"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IObjectWithPropertyKey","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}
 		,"Methods":[
 			{
@@ -328,6 +334,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"380f5cad-1b5e-42f2-805d-637fd392d31e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -425,6 +432,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"c8e2d566-186e-4d49-bf41-6909ead56acc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -462,6 +470,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"3017056d-9a91-4e90-937d-746c72abbf4f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPropertyStore","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}
 		,"Methods":[
 			{
@@ -541,6 +550,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"11e1fbf9-2d56-4a6b-8db3-7cd193a471f2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -611,6 +621,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"9b6e051c-5ddd-4321-9070-fe2acb55e794"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPropertyEnumType","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}
 		,"Methods":[
 			{
@@ -633,6 +644,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a99400f4-3d84-4557-94ba-1242fb2cc9a6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -695,7 +707,7 @@
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"PDTF_DEFAULT","Value":0}
@@ -712,17 +724,17 @@
 			,{"Name":"PDTF_SEARCHRAWVALUE","Value":1024}
 			,{"Name":"PDTF_DONTCOERCEEMPTYSTRINGS","Value":2048}
 			,{"Name":"PDTF_ALWAYSINSUPPLEMENTALSTORE","Value":4096}
-			,{"Name":"PDTF_ISSYSTEMPROPERTY","Value":-2147483648}
-			,{"Name":"PDTF_MASK_ALL","Value":-2147475457}
+			,{"Name":"PDTF_ISSYSTEMPROPERTY","Value":2147483648}
+			,{"Name":"PDTF_MASK_ALL","Value":2147491839}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"PROPDESC_VIEW_FLAGS"
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"PDVF_DEFAULT","Value":0}
@@ -740,7 +752,7 @@
 			,{"Name":"PDVF_CANWRAP","Value":4096}
 			,{"Name":"PDVF_MASK_ALL","Value":7167}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"PROPDESC_DISPLAYTYPE"
@@ -781,7 +793,7 @@
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"PDFF_DEFAULT","Value":0}
@@ -800,7 +812,7 @@
 			,{"Name":"PDFF_READONLY","Value":4096}
 			,{"Name":"PDFF_NOAUTOREADINGORDER","Value":8192}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"PROPDESC_SORTDESCRIPTION"
@@ -882,6 +894,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"6f79d558-3e96-4549-a1d1-7d75d2288814"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1153,6 +1166,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"57d2eded-5062-400e-b107-5dae79fe57a6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPropertyDescription","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}
 		,"Methods":[
 			{
@@ -1176,6 +1190,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f67104fc-2af9-46fd-b32d-243c1404f3d1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPropertyDescription","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}
 		,"Methods":[
 			{
@@ -1211,7 +1226,7 @@
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"PDSIF_DEFAULT","Value":0}
@@ -1221,7 +1236,7 @@
 			,{"Name":"PDSIF_ALWAYSINCLUDE","Value":8}
 			,{"Name":"PDSIF_USEFORTYPEAHEAD","Value":16}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"PROPDESC_COLUMNINDEX_TYPE"
@@ -1246,6 +1261,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"078f91bd-29a2-440f-924e-46a291524520"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPropertyDescription","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}
 		,"Methods":[
 			{
@@ -1304,6 +1320,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"507393f4-2a3d-4a60-b59e-d9c75716c2dd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPropertyDescription","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}
 		,"Methods":[
 			{
@@ -1346,6 +1363,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"ca724e8a-c3e6-442b-88a4-6fb0db8035a3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1478,6 +1496,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"1f9fc1d0-c39b-4b26-817f-011967d3440e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1514,6 +1533,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"bc110b6d-57e8-4148-a9c6-91015ab2f3a5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1555,6 +1575,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"40d4577f-e237-4bdb-bd69-58f089431b6a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPropertyStoreFactory","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}
 		,"Methods":[
 			{
@@ -1606,6 +1627,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"e318ad57-0aa0-450f-aca5-6fab7103d917"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1654,6 +1676,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"77effa68-4f98-4366-ba72-573b3d880571"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPersistSerializedPropStorage","TargetKind":"Com","Api":"UI.Shell.PropertiesSystem","Parents":[]}
 		,"Methods":[
 			{
@@ -1690,6 +1713,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fa955fd9-38be-4879-a6ce-824cf52d609f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1711,6 +1735,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"75121952-e0d0-43e5-9380-1d80483acf72"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1735,13 +1760,13 @@
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"PSTF_UTC","Value":0}
 			,{"Name":"PSTF_LOCAL","Value":1}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"PROPVAR_COMPARE_UNIT"
@@ -1766,7 +1791,7 @@
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"PVCF_DEFAULT","Value":0}
@@ -1777,14 +1802,14 @@
 			,{"Name":"PVCF_USESTRCMPIC","Value":16}
 			,{"Name":"PVCF_DIGITSASNUMBERS_CASESENSITIVE","Value":32}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"PROPVAR_CHANGE_FLAGS"
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"PVCHF_DEFAULT","Value":0}
@@ -1794,14 +1819,14 @@
 			,{"Name":"PVCHF_LOCALBOOL","Value":8}
 			,{"Name":"PVCHF_NOHEXSTRING","Value":16}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"DRAWPROGRESSFLAGS"
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"DPF_NONE","Value":0}
@@ -1811,14 +1836,14 @@
 			,{"Name":"DPF_WARNING","Value":8}
 			,{"Name":"DPF_STOPPED","Value":16}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"SYNC_TRANSFER_STATUS"
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"STS_NONE","Value":0}
@@ -1834,14 +1859,14 @@
 			,{"Name":"STS_INCOMPLETE","Value":512}
 			,{"Name":"STS_PLACEHOLDER_IFEMPTY","Value":1024}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"PLACEHOLDER_STATES"
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"PS_NONE","Value":0}
@@ -1852,41 +1877,41 @@
 			,{"Name":"PS_DEFAULT","Value":7}
 			,{"Name":"PS_ALL","Value":15}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"PROPERTYUI_NAME_FLAGS"
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"PUIFNF_DEFAULT","Value":0}
 			,{"Name":"PUIFNF_MNEMONIC","Value":1}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"PROPERTYUI_FLAGS"
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"PUIF_DEFAULT","Value":0}
 			,{"Name":"PUIF_RIGHTALIGN","Value":1}
 			,{"Name":"PUIF_NOLABELININFOTIP","Value":2}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"PROPERTYUI_FORMAT_FLAGS"
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"PUIFFDF_DEFAULT","Value":0}
@@ -1895,7 +1920,7 @@
 			,{"Name":"PUIFFDF_NOTIME","Value":4}
 			,{"Name":"PUIFFDF_FRIENDLYDATE","Value":8}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"IPropertyUI"
@@ -1903,6 +1928,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"757a7d9f-919a-4118-99d7-dbb208c8cc66"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2050,7 +2076,7 @@
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"SESF_NONE","Value":0}
@@ -2065,7 +2091,7 @@
 			,{"Name":"SESF_PAUSED_DUE_TO_USER_REQUEST","Value":256}
 			,{"Name":"SESF_ALL_FLAGS","Value":511}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"PROPPRG"

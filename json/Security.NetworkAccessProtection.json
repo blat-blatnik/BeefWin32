@@ -2,6 +2,90 @@
 
 "Constants":[
 	{
+		"Name":"maxSoHAttributeCount"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":100
+		,"Attrs":[]
+	}
+	,{
+		"Name":"maxSoHAttributeSize"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4000
+		,"Attrs":[]
+	}
+	,{
+		"Name":"minNetworkSoHSize"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":12
+		,"Attrs":[]
+	}
+	,{
+		"Name":"maxNetworkSoHSize"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4000
+		,"Attrs":[]
+	}
+	,{
+		"Name":"maxStringLength"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1024
+		,"Attrs":[]
+	}
+	,{
+		"Name":"maxSystemHealthEntityCount"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":20
+		,"Attrs":[]
+	}
+	,{
+		"Name":"maxEnforcerCount"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":20
+		,"Attrs":[]
+	}
+	,{
+		"Name":"maxPrivateDataSize"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":200
+		,"Attrs":[]
+	}
+	,{
+		"Name":"maxConnectionCountPerEnforcer"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":20
+		,"Attrs":[]
+	}
+	,{
+		"Name":"freshSoHRequest"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"shaFixup"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"failureCategoryCount"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":5
+		,"Attrs":[]
+	}
+	,{
 		"Name":"ComponentTypeEnforcementClientSoH"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -13,6 +97,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"percentageNotSupported"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":101
 		,"Attrs":[]
 	}
 ]

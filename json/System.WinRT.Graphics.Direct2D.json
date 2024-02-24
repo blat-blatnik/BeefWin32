@@ -32,6 +32,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2fc57384-a068-44d7-a331-30982fcf7177"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -118,6 +119,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0657af73-53fd-47cf-84ff-c8492d2a80a3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

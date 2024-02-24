@@ -2,10 +2,80 @@
 
 "Constants":[
 	{
+		"Name":"RADIUS_EXTENSION_INIT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RadiusExtensionInit"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RADIUS_EXTENSION_TERM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RadiusExtensionTerm"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RADIUS_EXTENSION_PROCESS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RadiusExtensionProcess"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RADIUS_EXTENSION_PROCESS_EX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RadiusExtensionProcessEx"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RADIUS_EXTENSION_FREE_ATTRIBUTES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RadiusExtensionFreeAttributes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"AUTHSRV_PARAMETERS_KEY_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\AuthSrv\\Parameters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"AUTHSRV_EXTENSIONS_VALUE_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ExtensionDLLs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"AUTHSRV_AUTHORIZATION_VALUE_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AuthorizationDLLs"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"AUTHSRV_ENFORCE_NP_FOR_PAP_CHALLENGE_RESPONSE_VALUE_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EnforceNetworkPolicyForPAPBasedChallengeResponse"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"RADIUS_EXTENSION_VERSION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RADIUS_EXTENSION_PROCESS2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RadiusExtensionProcess2"
 		,"Attrs":[]
 	}
 ]
@@ -937,6 +1007,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"479f6e75-49a2-11d2-8eca-00c04fc2f519"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1059,6 +1130,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"518e5ffe-d8ce-4f7e-a5db-b40a35419d3b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISdoMachine","TargetKind":"Com","Api":"NetworkManagement.NetworkPolicyServer","Parents":[]}
 		,"Methods":[
 			{
@@ -1132,6 +1204,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"479f6e74-49a2-11d2-8eca-00c04fc2f519"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1187,6 +1260,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"56bc53de-96db-11d1-bf3f-000000000000"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1284,6 +1358,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"56bc53e2-96db-11d1-bf3f-000000000000"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1395,6 +1470,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8aa85302-d2e2-4e20-8b1f-a571e437d6c9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISdo","TargetKind":"Com","Api":"NetworkManagement.NetworkPolicyServer","Parents":[]}
 		,"Methods":[
 			{
@@ -1446,6 +1522,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"d432e5f4-53d8-11d2-9a3a-00c04fb998ac"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1826,7 +1903,7 @@
 		,"Fields":[
 			{"Name":"cbSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"Add","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
-			,{"Name":"AttributeAt","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"RADIUS_ATTRIBUTE","TargetKind":"Default","Api":"NetworkManagement.NetworkPolicyServer","Parents":[]}}}}}}}}}}},"Attrs":["Const"]}
+			,{"Name":"AttributeAt","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":["Const"]}
 			,{"Name":"GetSize","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
 			,{"Name":"InsertAt","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}
 			,{"Name":"RemoveAt","Type":{"Kind":"Native","Name":"IntPtr"},"Attrs":[]}

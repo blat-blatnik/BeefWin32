@@ -2415,6 +2415,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"07829e45-9a34-408e-a011-bddf13487cd1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2570,9 +2571,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"fTCP","Type":{"Kind":"Native","Name":"Int16"},"Attrs":["In"]}
 					,{"Name":"fExternal","Type":{"Kind":"Native","Name":"Int16"},"Attrs":["In"]}
@@ -2586,9 +2585,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enDevice","Type":{"Kind":"ApiRef","Name":"RTC_AUDIO_DEVICE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"lVolume","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
@@ -2601,9 +2598,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enDevice","Type":{"Kind":"ApiRef","Name":"RTC_AUDIO_DEVICE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"plVolume","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out","RetVal"]}
@@ -2616,9 +2611,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enDevice","Type":{"Kind":"ApiRef","Name":"RTC_AUDIO_DEVICE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"fMuted","Type":{"Kind":"Native","Name":"Int16"},"Attrs":["In"]}
@@ -2631,9 +2624,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enDevice","Type":{"Kind":"ApiRef","Name":"RTC_AUDIO_DEVICE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pfMuted","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["Out","RetVal"]}
@@ -2646,9 +2637,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enDevice","Type":{"Kind":"ApiRef","Name":"RTC_VIDEO_DEVICE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppIVideoWindow","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IVideoWindow","TargetKind":"Com","Api":"Media.DirectShow","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -2661,9 +2650,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enDevice","Type":{"Kind":"ApiRef","Name":"RTC_AUDIO_DEVICE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"bstrDeviceName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
@@ -2676,9 +2663,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enDevice","Type":{"Kind":"ApiRef","Name":"RTC_AUDIO_DEVICE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pbstrDeviceName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -2691,9 +2676,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enDevice","Type":{"Kind":"ApiRef","Name":"RTC_AUDIO_DEVICE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"lVolume","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
@@ -2706,9 +2689,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enDevice","Type":{"Kind":"ApiRef","Name":"RTC_AUDIO_DEVICE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"plVolume","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out","RetVal"]}
@@ -2884,9 +2865,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enApplet","Type":{"Kind":"ApiRef","Name":"RTC_T120_APPLET","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pfRunning","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["Out","RetVal"]}
@@ -3007,6 +2986,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c91d71d-1064-42da-bfa5-572beb8eea84"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRTCClient","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}
 		,"Methods":[
 			{
@@ -3016,9 +2996,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enType","Type":{"Kind":"ApiRef","Name":"RTC_SESSION_TYPE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"enMode","Type":{"Kind":"ApiRef","Name":"RTC_ANSWER_MODE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
@@ -3031,9 +3009,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enType","Type":{"Kind":"ApiRef","Name":"RTC_SESSION_TYPE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"penMode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"RTC_ANSWER_MODE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -3142,9 +3118,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enSecurityType","Type":{"Kind":"ApiRef","Name":"RTC_SECURITY_TYPE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"enSecurityLevel","Type":{"Kind":"ApiRef","Name":"RTC_SECURITY_LEVEL","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
@@ -3157,9 +3131,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enSecurityType","Type":{"Kind":"ApiRef","Name":"RTC_SECURITY_TYPE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"penSecurityLevel","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"RTC_SECURITY_LEVEL","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -3172,9 +3144,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"lTransport","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"enListenMode","Type":{"Kind":"ApiRef","Name":"RTC_LISTEN_MODE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
@@ -3187,9 +3157,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"lTransport","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"penListenMode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"RTC_LISTEN_MODE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -3203,6 +3171,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"11c3cbcc-0744-42d1-968a-51aa1bb274c6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3276,9 +3245,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrPresentityURI","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppBuddy","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IRTCBuddy","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -3347,9 +3314,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrPresentityURI","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppWatcher","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IRTCWatcher","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -3461,6 +3426,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ad1809e8-62f7-4783-909a-29c9d2cb1d34"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRTCClientPresence","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}
 		,"Methods":[
 			{
@@ -3549,9 +3515,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrGroupName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ppGroup","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IRTCBuddyGroup","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -3584,9 +3548,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enMode","Type":{"Kind":"ApiRef","Name":"RTC_WATCHER_MATCH_MODE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"bstrPresentityURI","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
@@ -3600,9 +3562,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enProperty","Type":{"Kind":"ApiRef","Name":"RTC_PRESENCE_PROPERTY","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"bstrProperty","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
@@ -3615,9 +3575,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enProperty","Type":{"Kind":"ApiRef","Name":"RTC_PRESENCE_PROPERTY","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pbstrProperty","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -3689,6 +3647,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b9f5cf06-65b9-4a80-a0e6-73cae3ef3822"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3794,6 +3753,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a70909b5-f40e-4587-bb75-e6bc0845023e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRTCClientProvisioning","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}
 		,"Methods":[
 			{
@@ -3818,6 +3778,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d07eca9e-4062-4dd4-9e7d-722a49ba7303"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3883,9 +3844,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enURI","Type":{"Kind":"ApiRef","Name":"RTC_PROVIDER_URI","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pbstrURI","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -4081,6 +4040,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4b81f84e-bdc7-4184-9154-3cb2dd7917fb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRTCProfile","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}
 		,"Methods":[
 			{
@@ -4147,6 +4107,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"387c8086-99be-42fb-9973-7c0fc0ca9fa8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4408,9 +4369,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"lMediaType","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"EncryptionKey","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
@@ -4424,6 +4383,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"17d7cdfc-b007-484c-99d2-86a8a820991d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRTCSession","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}
 		,"Methods":[
 			{
@@ -4447,9 +4407,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enSecurityType","Type":{"Kind":"ApiRef","Name":"RTC_SECURITY_TYPE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"enSecurityLevel","Type":{"Kind":"ApiRef","Name":"RTC_SECURITY_LEVEL","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
@@ -4462,9 +4420,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enSecurityType","Type":{"Kind":"ApiRef","Name":"RTC_SECURITY_TYPE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"penSecurityLevel","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"RTC_SECURITY_LEVEL","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -4518,6 +4474,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e9a50d94-190b-4f82-9530-3b8ebf60758a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4647,6 +4604,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ae86add5-26b1-4414-af1d-b94cd938d739"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4727,6 +4685,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"79960a6b-0cb1-4dc8-a805-7318e99902e8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4793,6 +4752,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d6d5ab3b-770e-43e8-800a-79b062395fca"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4845,6 +4805,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"62e56edc-03fa-4121-94fb-23493fd0ae64"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRTCProfileEvent","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}
 		,"Methods":[
 			{
@@ -4869,6 +4830,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2b493b7a-3cba-4170-9c8b-76a9dacdd644"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4907,6 +4869,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"62d0991b-50ab-4f02-b948-ca94f26f8f95"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4973,6 +4936,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b5bad703-5952-48b3-9321-7f4500521506"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5039,6 +5003,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4f933171-6f95-4880-80d9-2ec8d495d261"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRTCSessionStateChangeEvent","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}
 		,"Methods":[
 			{
@@ -5062,9 +5027,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enSecurityType","Type":{"Kind":"ApiRef","Name":"RTC_SECURITY_TYPE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"penSecurityLevel","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"RTC_SECURITY_LEVEL","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -5105,6 +5068,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a6bff4c0-f7c8-4d3c-9a41-3550f78a95b0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5171,6 +5135,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f6fc2a9b-d5bc-4241-b436-1b8460c13832"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRTCSessionOperationCompleteEvent","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}
 		,"Methods":[
 			{
@@ -5208,6 +5173,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"09bcb597-f0fa-48f9-b420-468cea7fde04"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5260,6 +5226,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"099944fb-bcda-453e-8c41-e13da2adf7f3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5312,6 +5279,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4c23bf51-390c-4992-a41d-41eec05b2a4b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5378,6 +5346,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d3609541-1b29-4de5-a4ad-5aebaf319512"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5472,6 +5441,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f36d755d-17e6-404e-954f-0fc07574c78d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5496,6 +5466,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"484a7f1e-73f0-4990-bfc2-60bc3978a720"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRTCBuddyEvent","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}
 		,"Methods":[
 			{
@@ -5548,6 +5519,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f30d7261-587a-424f-822c-312788f43548"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5572,6 +5544,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e52891e8-188c-49af-b005-98ed13f83f9c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRTCWatcherEvent","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}
 		,"Methods":[
 			{
@@ -5610,6 +5583,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3a79e1d1-b736-4414-96f8-bbc7f08863e4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5676,6 +5650,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4e1d68ae-1912-4f49-b2c3-594fadfd425f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5742,6 +5717,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"52572d15-148c-4d97-a36c-2da55c289d63"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5805,9 +5781,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enSecurityType","Type":{"Kind":"ApiRef","Name":"RTC_SECURITY_TYPE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"penSecurityLevel","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"RTC_SECURITY_LEVEL","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -5846,6 +5820,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"11558d84-204c-43e7-99b0-2034e9417f7d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5921,6 +5896,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f777f570-a820-49d5-86bd-e099493f1518"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5987,6 +5963,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"38f0e78c-8b87-4c04-a82d-aedd83c909bb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6038,6 +6015,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"78673f32-4a0f-462c-89aa-ee7706707678"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6089,6 +6067,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ec7c8096-b918-4044-94f1-e4fba0361d5c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6112,9 +6091,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"Index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"pVariant","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -6142,6 +6119,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fcd56f29-4a4f-41b2-ba5c-f5bccc060bf6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6201,6 +6179,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"29b7c41c-ed82-4bca-84ad-39d5101b58e3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6260,6 +6239,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f7296917-5569-4b3b-b3af-98d1144b2b87"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6319,6 +6299,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a87d55d7-db74-4ed1-9ca4-77a0e41b413e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6378,6 +6359,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"742378d6-a141-4415-8f27-35d99076cf5d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6437,6 +6419,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8b22f92c-cd90-42db-a733-212205c3e3df"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6559,6 +6542,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fcb136c8-7b90-4e0c-befe-56edf0ba6f1c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRTCPresenceContact","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}
 		,"Methods":[
 			{
@@ -6597,6 +6581,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"102f9588-23e7-40e3-954d-cd7a1d5c0361"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRTCBuddy","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}
 		,"Methods":[
 			{
@@ -6657,9 +6642,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enProperty","Type":{"Kind":"ApiRef","Name":"RTC_PRESENCE_PROPERTY","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pbstrProperty","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -6713,6 +6696,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c7cedad8-346b-4d1b-ac02-a2088df9be4f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRTCPresenceContact","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}
 		,"Methods":[
 			{
@@ -6751,6 +6735,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d4d9967f-d011-4b1d-91e3-aba78f96393d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRTCWatcher","TargetKind":"Com","Api":"System.RealTimeCommunications","Parents":[]}
 		,"Methods":[
 			{
@@ -6789,6 +6774,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"60361e68-9164-4389-a4c6-d0b3925bda5e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6919,6 +6905,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"13fa24c7-5748-4b21-91f5-7397609ce747"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6942,6 +6929,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"da77c14b-6208-43ca-8ddf-5b60a0a69fac"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7000,6 +6988,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a072f1d6-0286-4e1f-85f2-17a2948456ec"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7022,6 +7011,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d5df3f03-4bde-4417-aefe-71177bdaea66"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7072,6 +7062,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b619882b-860c-4db4-be1b-693b6505bbe5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7108,6 +7099,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"288300f5-d23a-4365-9a73-9985c98c2881"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7117,9 +7109,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"bstrValue","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
@@ -7132,9 +7122,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pbstrValue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -7161,9 +7149,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enPreference","Type":{"Kind":"ApiRef","Name":"RTC_USER_SEARCH_PREFERENCE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"lValue","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
@@ -7176,9 +7162,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enPreference","Type":{"Kind":"ApiRef","Name":"RTC_USER_SEARCH_PREFERENCE","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"plValue","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out","RetVal"]}
@@ -7220,6 +7204,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"851278b2-9592-480f-8db5-2de86b26b54d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7229,9 +7214,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enColumn","Type":{"Kind":"ApiRef","Name":"RTC_USER_SEARCH_COLUMN","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pbstrValue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -7245,6 +7228,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"83d4d877-aa5d-4a5b-8d0e-002a8067e0e8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7304,6 +7288,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d8c8c3cd-7fac-4088-81c5-c24cbc0938e3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7410,6 +7395,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3d8fc2cd-5d76-44ab-bb68-2a80353b34a2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7476,6 +7462,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"176a6828-4fcc-4f28-a862-04597a6cf1c4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7576,6 +7563,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ba7f518e-d336-4070-93a6-865395c843f9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7600,6 +7588,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"708c2ab7-8bf8-42f8-8c7d-635197ad5539"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7659,6 +7648,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bc6a90dd-ad9a-48da-9b0c-2515e38521ad"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7696,9 +7686,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"enProperty","Type":{"Kind":"ApiRef","Name":"RTC_PRESENCE_PROPERTY","TargetKind":"Default","Api":"System.RealTimeCommunications","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pbstrProperty","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -7725,6 +7713,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"176ddfbe-fec0-4d55-bc87-84cff1ef7f91"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -7750,6 +7739,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5123e076-29e3-4bfd-84fe-0192d411e3e8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7784,6 +7774,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5e7abb2c-f2c1-4a61-bd35-deb7a08ab0f1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7826,6 +7817,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"79eb1402-0ab8-49c0-9e14-a1ae4ba93058"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

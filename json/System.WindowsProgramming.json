@@ -2,6 +2,132 @@
 
 "Constants":[
 	{
+		"Name":"WLDP_DLL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WLDP.DLL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_GETLOCKDOWNPOLICY_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpGetLockdownPolicy"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_ISCLASSINAPPROVEDLIST_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpIsClassInApprovedList"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_SETDYNAMICCODETRUST_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpSetDynamicCodeTrust"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_ISDYNAMICCODEPOLICYENABLED_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpIsDynamicCodePolicyEnabled"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_QUERYDANAMICCODETRUST_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpQueryDynamicCodeTrust"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_QUERYDYNAMICCODETRUST_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpQueryDynamicCodeTrust"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_QUERYWINDOWSLOCKDOWNMODE_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpQueryWindowsLockdownMode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_SETWINDOWSLOCKDOWNRESTRICTION_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpSetWindowsLockdownRestriction"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_QUERYDEVICESECURITYINFORMATION_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpQueryDeviceSecurityInformation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_QUERYWINDOWSLOCKDOWNRESTRICTION_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpQueryWindowsLockdownRestriction"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_ISAPPAPPROVEDBYPOLICY_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpIsAppApprovedByPolicy"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_QUERYPOLICYSETTINGENABLED_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpQueryPolicySettingEnabled"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_QUERYPOLICYSETTINGENABLED2_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpQueryPolicySettingEnabled2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_ISWCOSPRODUCTIONCONFIGURATION_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpIsWcosProductionConfiguration"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_RESETWCOSPRODUCTIONCONFIGURATION_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpResetWcosProductionConfiguration"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_ISPRODUCTIONCONFIGURATION_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpIsProductionConfiguration"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WLDP_RESETPRODUCTIONCONFIGURATION_FN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WldpResetProductionConfiguration"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WLDP_LOCKDOWN_UNDEFINED"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1031,62 +1157,6 @@
 		,"Attrs":[]
 	}
 	,{
-		"Name":"NOPARITY"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":0
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ODDPARITY"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":1
-		,"Attrs":[]
-	}
-	,{
-		"Name":"EVENPARITY"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":2
-		,"Attrs":[]
-	}
-	,{
-		"Name":"MARKPARITY"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":3
-		,"Attrs":[]
-	}
-	,{
-		"Name":"SPACEPARITY"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":4
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ONESTOPBIT"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":0
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ONE5STOPBITS"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":1
-		,"Attrs":[]
-	}
-	,{
-		"Name":"TWOSTOPBITS"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":2
-		,"Attrs":[]
-	}
-	,{
 		"Name":"IGNORE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1640,6 +1710,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SCS_THIS_PLATFORM_BINARY"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":6
+		,"Attrs":[]
+	}
+	,{
 		"Name":"FIBER_FLAG_FLOAT_SWITCH"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1980,6 +2057,69 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GET_SYSTEM_WOW64_DIRECTORY_NAME_A_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GetSystemWow64DirectoryA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GET_SYSTEM_WOW64_DIRECTORY_NAME_A_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GetSystemWow64DirectoryA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GET_SYSTEM_WOW64_DIRECTORY_NAME_A_T"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GetSystemWow64DirectoryA"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GET_SYSTEM_WOW64_DIRECTORY_NAME_W_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GetSystemWow64DirectoryW"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GET_SYSTEM_WOW64_DIRECTORY_NAME_W_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GetSystemWow64DirectoryW"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GET_SYSTEM_WOW64_DIRECTORY_NAME_W_T"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GetSystemWow64DirectoryW"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GET_SYSTEM_WOW64_DIRECTORY_NAME_T_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GetSystemWow64DirectoryW"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GET_SYSTEM_WOW64_DIRECTORY_NAME_T_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GetSystemWow64DirectoryW"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GET_SYSTEM_WOW64_DIRECTORY_NAME_T_T"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GetSystemWow64DirectoryW"
 		,"Attrs":[]
 	}
 	,{
@@ -3194,6 +3334,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REG_SAVE_LOG_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RegSaveLogFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REG_RESTORE_LOG_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RegRestoreLogFile"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"AFSR_RESTORE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -3961,6 +4115,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"FEATURE_STATE_CHANGE_SUBSCRIPTION"
@@ -3970,6 +4125,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"FH_SERVICE_PIPE_HANDLE"
@@ -3979,6 +4135,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"IMAGE_THUNK_DATA64"
@@ -4130,37 +4287,6 @@
 		]
 		,"NestedTypes":[
 		]
-	}
-	,{
-		"Name":"PROC_THREAD_ATTRIBUTE_NUM"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"Enum"
-		,"Flags":false
-		,"Scoped":false
-		,"Values":[
-			{"Name":"ProcThreadAttributeParentProcess","Value":0}
-			,{"Name":"ProcThreadAttributeHandleList","Value":2}
-			,{"Name":"ProcThreadAttributeGroupAffinity","Value":3}
-			,{"Name":"ProcThreadAttributePreferredNode","Value":4}
-			,{"Name":"ProcThreadAttributeIdealProcessor","Value":5}
-			,{"Name":"ProcThreadAttributeUmsThread","Value":6}
-			,{"Name":"ProcThreadAttributeMitigationPolicy","Value":7}
-			,{"Name":"ProcThreadAttributeSecurityCapabilities","Value":9}
-			,{"Name":"ProcThreadAttributeProtectionLevel","Value":11}
-			,{"Name":"ProcThreadAttributeJobList","Value":13}
-			,{"Name":"ProcThreadAttributeChildProcessPolicy","Value":14}
-			,{"Name":"ProcThreadAttributeAllApplicationPackagesPolicy","Value":15}
-			,{"Name":"ProcThreadAttributeWin32kFilter","Value":16}
-			,{"Name":"ProcThreadAttributeSafeOpenPromptOriginClaim","Value":17}
-			,{"Name":"ProcThreadAttributeDesktopAppPolicy","Value":18}
-			,{"Name":"ProcThreadAttributePseudoConsole","Value":22}
-			,{"Name":"ProcThreadAttributeMitigationAuditPolicy","Value":24}
-			,{"Name":"ProcThreadAttributeMachineType","Value":25}
-			,{"Name":"ProcThreadAttributeComponentFilter","Value":26}
-			,{"Name":"ProcThreadAttributeEnableOptionalXStateFeatures","Value":27}
-		]
-		,"IntegerBase":"Int32"
 	}
 	,{
 		"Name":"HW_PROFILE_INFOA"
@@ -4873,6 +4999,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"1bfa0c2c-fbcd-4776-bda4-88bf974e74f4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4940,6 +5067,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"b8733adf-3d68-4b8f-bb08-e28a0bed0376"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5065,6 +5193,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"d3e9e342-5deb-43b6-849e-6913b85d503a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5134,6 +5263,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f342d19e-cc22-4648-bb5d-03ccf75b47c5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5156,6 +5286,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ff19cbcf-9455-4937-b872-6b7929a460af"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5212,6 +5343,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b524f93f-80d5-4ec7-ae9e-d66e93ade1fa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5234,6 +5366,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c39948f0-6142-44fd-98ca-e1681a8d68b5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6244,6 +6377,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7a27faad-5ae6-4255-9030-c530936292e3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6327,6 +6461,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"cf38ed4b-2be7-4461-8b5e-9a466dc82ae3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

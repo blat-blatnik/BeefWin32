@@ -84,6 +84,14 @@ static
 	public const Guid SystemSyscallProviderGuid = .(0x434286f7, 0x6f1b, 0x45bb, 0xb3, 0x7e, 0x95, 0xf6, 0x23, 0x04, 0x6c, 0x7c);
 	public const Guid SystemInterruptProviderGuid = .(0xd4bbee17, 0xb545, 0x4888, 0x85, 0x8b, 0x74, 0x41, 0x69, 0x01, 0x5b, 0x25);
 	public const Guid SystemTimerProviderGuid = .(0x4f061568, 0xe215, 0x499f, 0xab, 0x2e, 0xed, 0xa0, 0xae, 0x89, 0x0a, 0x5b);
+	public const String KERNEL_LOGGER_NAMEW = "NT Kernel Logger";
+	public const String GLOBAL_LOGGER_NAMEW = "GlobalLogger";
+	public const String EVENT_LOGGER_NAMEW = "EventLog";
+	public const String DIAG_LOGGER_NAMEW = "DiagLog";
+	public const String KERNEL_LOGGER_NAMEA = "NT Kernel Logger";
+	public const String GLOBAL_LOGGER_NAMEA = "GlobalLogger";
+	public const String EVENT_LOGGER_NAMEA = "EventLog";
+	public const String DIAG_LOGGER_NAMEA = "DiagLog";
 	public const uint32 MAX_MOF_FIELDS = 16;
 	public const uint32 SYSTEM_EVENT_TYPE = 1;
 	public const uint32 EVENT_TRACE_TYPE_INFO = 0;
@@ -382,6 +390,9 @@ static
 	public const uint32 ETW_REFRENCE_TYPE_VALUE = 120;
 	public const uint32 TRACE_PROVIDER_FLAG_LEGACY = 1;
 	public const uint32 TRACE_PROVIDER_FLAG_PRE_ENABLE = 2;
+	public const String KERNEL_LOGGER_NAME = "NT Kernel Logger";
+	public const String GLOBAL_LOGGER_NAME = "GlobalLogger";
+	public const String EVENT_LOGGER_NAME = "EventLog";
 	public const uint32 ENABLE_TRACE_PARAMETERS_VERSION = 1;
 	public const uint32 ENABLE_TRACE_PARAMETERS_VERSION_2 = 2;
 	public const uint32 EVENT_MIN_LEVEL = 0;
@@ -2181,7 +2192,7 @@ static
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EventAccessControl(ref Guid Guid, uint32 Operation, PSID Sid, uint32 Rights, BOOLEAN AllowOrDeny);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern uint32 EventAccessQuery(ref Guid Guid, SECURITY_DESCRIPTOR* Buffer, out uint32 BufferSize);
+	public static extern uint32 EventAccessQuery(ref Guid Guid, PSECURITY_DESCRIPTOR Buffer, out uint32 BufferSize);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EventAccessRemove(ref Guid Guid);
 	[Import("tdh.dll"), CLink, CallingConvention(.Stdcall)]

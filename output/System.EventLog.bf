@@ -460,23 +460,23 @@ static
 	[Import("wevtapi.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EvtGetEventInfo(int Event, EVT_EVENT_PROPERTY_ID PropertyId, uint32 PropertyValueBufferSize, EVT_VARIANT* PropertyValueBuffer, out uint32 PropertyValueBufferUsed);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL ClearEventLogA(HANDLE hEventLog, PSTR lpBackupFileName);
+	public static extern BOOL ClearEventLogA(EventLogHandle hEventLog, PSTR lpBackupFileName);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL ClearEventLogW(HANDLE hEventLog, PWSTR lpBackupFileName);
+	public static extern BOOL ClearEventLogW(EventLogHandle hEventLog, PWSTR lpBackupFileName);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL BackupEventLogA(HANDLE hEventLog, PSTR lpBackupFileName);
+	public static extern BOOL BackupEventLogA(EventLogHandle hEventLog, PSTR lpBackupFileName);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL BackupEventLogW(HANDLE hEventLog, PWSTR lpBackupFileName);
+	public static extern BOOL BackupEventLogW(EventLogHandle hEventLog, PWSTR lpBackupFileName);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CloseEventLog(EventLogHandle hEventLog);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeregisterEventSource(EventSourceHandle hEventLog);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL NotifyChangeEventLog(HANDLE hEventLog, HANDLE hEvent);
+	public static extern BOOL NotifyChangeEventLog(EventLogHandle hEventLog, HANDLE hEvent);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL GetNumberOfEventLogRecords(HANDLE hEventLog, out uint32 NumberOfRecords);
+	public static extern BOOL GetNumberOfEventLogRecords(EventLogHandle hEventLog, out uint32 NumberOfRecords);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL GetOldestEventLogRecord(HANDLE hEventLog, out uint32 OldestRecord);
+	public static extern BOOL GetOldestEventLogRecord(EventLogHandle hEventLog, out uint32 OldestRecord);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern EventLogHandle OpenEventLogA(PSTR lpUNCServerName, PSTR lpSourceName);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -490,14 +490,14 @@ static
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern EventLogHandle OpenBackupEventLogW(PWSTR lpUNCServerName, PWSTR lpFileName);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL ReadEventLogA(HANDLE hEventLog, READ_EVENT_LOG_READ_FLAGS dwReadFlags, uint32 dwRecordOffset, void* lpBuffer, uint32 nNumberOfBytesToRead, out uint32 pnBytesRead, out uint32 pnMinNumberOfBytesNeeded);
+	public static extern BOOL ReadEventLogA(EventLogHandle hEventLog, READ_EVENT_LOG_READ_FLAGS dwReadFlags, uint32 dwRecordOffset, void* lpBuffer, uint32 nNumberOfBytesToRead, out uint32 pnBytesRead, out uint32 pnMinNumberOfBytesNeeded);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL ReadEventLogW(HANDLE hEventLog, READ_EVENT_LOG_READ_FLAGS dwReadFlags, uint32 dwRecordOffset, void* lpBuffer, uint32 nNumberOfBytesToRead, out uint32 pnBytesRead, out uint32 pnMinNumberOfBytesNeeded);
+	public static extern BOOL ReadEventLogW(EventLogHandle hEventLog, READ_EVENT_LOG_READ_FLAGS dwReadFlags, uint32 dwRecordOffset, void* lpBuffer, uint32 nNumberOfBytesToRead, out uint32 pnBytesRead, out uint32 pnMinNumberOfBytesNeeded);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL ReportEventA(HANDLE hEventLog, REPORT_EVENT_TYPE wType, uint16 wCategory, uint32 dwEventID, PSID lpUserSid, uint16 wNumStrings, uint32 dwDataSize, PSTR* lpStrings, void* lpRawData);
+	public static extern BOOL ReportEventA(EventSourceHandle hEventLog, REPORT_EVENT_TYPE wType, uint16 wCategory, uint32 dwEventID, PSID lpUserSid, uint16 wNumStrings, uint32 dwDataSize, PSTR* lpStrings, void* lpRawData);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL ReportEventW(HANDLE hEventLog, REPORT_EVENT_TYPE wType, uint16 wCategory, uint32 dwEventID, PSID lpUserSid, uint16 wNumStrings, uint32 dwDataSize, PWSTR* lpStrings, void* lpRawData);
+	public static extern BOOL ReportEventW(EventSourceHandle hEventLog, REPORT_EVENT_TYPE wType, uint16 wCategory, uint32 dwEventID, PSID lpUserSid, uint16 wNumStrings, uint32 dwDataSize, PWSTR* lpStrings, void* lpRawData);
 	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern BOOL GetEventLogInformation(HANDLE hEventLog, uint32 dwInfoLevel, void* lpBuffer, uint32 cbBufSize, out uint32 pcbBytesNeeded);
+	public static extern BOOL GetEventLogInformation(EventLogHandle hEventLog, uint32 dwInfoLevel, void* lpBuffer, uint32 cbBufSize, out uint32 pcbBytesNeeded);
 	#endregion
 }

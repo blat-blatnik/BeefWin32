@@ -3,7 +3,7 @@
 "Constants":[
 	{
 		"Name":"DEVPKEY_MTPBTH_IsConnected"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"ea1237fa-589d-4472-84e4-0abe36fd62ef","Pid":2}
 		,"Attrs":[]
@@ -48,6 +48,69 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4210952
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WPD_DEVICE_OBJECT_ID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DEVICE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PORTABLE_DEVICE_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PortableDeviceType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PORTABLE_DEVICE_ICON"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Icons"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PORTABLE_DEVICE_NAMESPACE_TIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PortableDeviceNameSpaceTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PORTABLE_DEVICE_NAMESPACE_EXCLUDE_FROM_SHELL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PortableDeviceNameSpaceExcludeFromShell"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PORTABLE_DEVICE_NAMESPACE_THUMBNAIL_CONTENT_TYPES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PortableDeviceNameSpaceThumbnailContentTypes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PORTABLE_DEVICE_IS_MASS_STORAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PortableDeviceIsMassStorage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PORTABLE_DEVICE_DRM_SCHEME_WMDRM10_PD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WMDRM10-PD"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PORTABLE_DEVICE_DRM_SCHEME_PDDRM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PDDRM"
 		,"Attrs":[]
 	}
 	,{
@@ -5224,6 +5287,1119 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_Undefined"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Undefined"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_Association"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Association"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_DeviceScript"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeviceScript"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_DeviceExecutable"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeviceExecutable"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_TextDocument"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TextDocument"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_HTMLDocument"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HTMLDocument"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_DPOFDocument"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DPOFDocument"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AIFFFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AIFFFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_WAVFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WAVFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MP3File"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MP3File"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AVIFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AVIFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MPEGFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MPEGFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ASFFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ASFFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_UnknownImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UnknownImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_EXIFImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EXIFImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_TIFFEPImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TIFFEPImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_FlashPixImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FlashPixImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_BMPImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BMPImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_CIFFImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CIFFImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GIFImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GIFImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_JFIFImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"JFIFImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_PCDImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PCDImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_PICTImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PICTImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_PNGImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PNGImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_TIFFImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TIFFImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_TIFFITImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TIFFITImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_JP2Image"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"JP2Image"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_JPXImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"JPXImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_FirmwareFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FirmwareFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_WBMPImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WBMPImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_JPEGXRImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"JPEGXRImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_HDPhotoImage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HDPhotoImage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_UndefinedAudio"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UndefinedAudio"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_WMAFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WMAFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_OGGFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OGGFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AACFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AACFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AudibleFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AudibleFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_FLACFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FLACFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_QCELPFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"QCELPFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AMRFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AMRFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_UndefinedVideo"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UndefinedVideo"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_WMVFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WMVFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MPEG4File"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MPEG4File"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MPEG2File"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MPEG2File"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_3GPPFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"3GPPFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_3GPP2File"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"3GPP2File"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AVCHDFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AVCHDFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ATSCTSFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ATSCTSFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_DVBTSFile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DVBTSFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_UndefinedCollection"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UndefinedCollection"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractMultimediaAlbum"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractMultimediaAlbum"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractImageAlbum"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractImageAlbum"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractAudioAlbum"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractAudioAlbum"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractVideoAlbum"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractVideoAlbum"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractAudioVideoAlbum"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractAudioVideoAlbum"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractChapteredProduction"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractChapteredProduction"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractAudioPlaylist"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractAudioPlaylist"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractVideoPlaylist"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractVideoPlaylist"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractMediacast"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractMediacast"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_WPLPlaylist"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WPLPlaylist"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_M3UPlaylist"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"M3UPlaylist"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MPLPlaylist"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MPLPlaylist"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ASXPlaylist"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ASXPlaylist"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_PSLPlaylist"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PSLPlaylist"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_UndefinedDocument"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UndefinedDocument"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractDocument"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractDocument"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_XMLDocument"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"XMLDocument"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_WordDocument"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WordDocument"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MHTDocument"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MHTDocument"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ExcelDocument"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ExcelDocument"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_PowerPointDocument"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PowerPointDocument"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_ObjectID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ObjectID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_ReferenceParentID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ReferenceParentID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_StorageID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StorageID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_ObjectFormat"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ObjectFormat"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_ProtectionStatus"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ProtectionStatus"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_ObjectSize"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ObjectSize"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_AssociationType"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AssociationType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_AssociationDesc"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AssociationDesc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_ObjectFileName"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ObjectFileName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_DateCreated"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DateCreated"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_DateModified"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DateModified"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_Keywords"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Keywords"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_ParentID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ParentID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_AllowedFolderContents"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AllowedFolderContents"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_Hidden"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Hidden"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_SystemObject"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SystemObject"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_PersistentUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersistentUID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_SyncID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SyncID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_PropertyBag"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PropertyBag"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_Name"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_Artist"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Artist"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_DateAuthored"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DateAuthored"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_Description"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Description"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_LanguageLocale"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LanguageLocale"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_Copyright"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Copyright"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_VideoObj_Source"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Source"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_GeographicOrigin"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GeographicOrigin"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_DateAdded"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DateAdded"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_NonConsumable"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NonConsumable"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_Corrupt"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Corrupt"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_Width"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Width"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_Height"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Height"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_Duration"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Duration"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_UserRating"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UserRating"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_Track"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Track"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_Genre"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Genre"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_Credits"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Credits"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AudioObj_Lyrics"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Lyrics"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_SubscriptionContentID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SubscriptionContentID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_Producer"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Producer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_UseCount"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"UseCount"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_SkipCount"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SkipCount"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_DateAccessed"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DateAccessed"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_ParentalRating"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ParentalRating"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_MediaType"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MediaType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_Composer"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Composer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_EffectiveRating"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EffectiveRating"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_Subtitle"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Subtitle"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_DateOriginalRelease"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DateOriginalRelease"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_AlbumName"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AlbumName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_AlbumArtist"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AlbumArtist"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_Mood"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Mood"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_DRMStatus"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DRMStatus"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_SubDescription"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SubDescription"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ImageObj_IsCropped"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IsCropped"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ImageObj_IsColorCorrected"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IsColorCorrected"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ImageObj_ImageBitDepth"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ImageBitDepth"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ImageObj_Aperature"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Aperature"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ImageObj_Exposure"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Exposure"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ImageObj_ISOSpeed"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ISOSpeed"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_Owner"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Owner"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_Editor"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Editor"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_WebMaster"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WebMaster"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_URLSource"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"URLSource"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_URLLink"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"URLLink"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_BookmarkTime"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BookmarkTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_BookmarkObject"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BookmarkObject"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_BookmarkByte"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BookmarkByte"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_DateRevised"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DateRevised"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_GenericObj_TimeToLive"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TimeToLive"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_MediaUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MediaUID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_TotalBitRate"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TotalBitRate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_BitRateType"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BitRateType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_SampleRate"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SampleRate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AudioObj_Channels"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Channels"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AudioObj_AudioBitDepth"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AudioBitDepth"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AudioObj_AudioBlockAlignment"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AudioBlockAlignment"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_VideoObj_ScanType"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ScanType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AudioObj_AudioFormatCode"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AudioFormatCode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AudioObj_AudioBitRate"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AudioBitRate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_VideoObj_VideoFormatCode"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VideoFormatCode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_VideoObj_VideoBitRate"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VideoBitRate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_VideoObj_VideoFrameRate"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VideoFrameRate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_VideoObj_KeyFrameDistance"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"KeyFrameDistance"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_BufferSize"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BufferSize"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_EncodingQuality"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EncodingQuality"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_EncodingProfile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EncodingProfile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MediaObj_AudioEncodingProfile"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AudioEncodingProfile"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"DEVSVC_SERVICEINFO_VERSION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5245,10 +6421,129 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_Services_ServiceDisplayName"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServiceDisplayName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_Services_ServiceIcon"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServiceIcon"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_Services_ServiceLocale"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServiceLocale"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_CalendarSvc"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Calendar"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"TYPE_CalendarSvc"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_CalendarSvc_SyncWindowStart"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SyncWindowStart"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_CalendarSvc_SyncWindowEnd"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SyncWindowEnd"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractActivity"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractActivity"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractActivityOccurrence"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractActivityOccurrence"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_VCalendar1Activity"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VCalendar1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ICalendarActivity"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ICalendar"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_CalendarObj_Location"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Location"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_CalendarObj_Accepted"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Accepted"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_CalendarObj_Tentative"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Tentative"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_CalendarObj_Declined"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Declined"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_CalendarObj_TimeZone"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TimeZone"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_CalendarObj_ReminderOffset"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ReminderOffset"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_CalendarObj_BusyStatus"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BusyStatus"
 		,"Attrs":[]
 	}
 	,{
@@ -5280,6 +6575,41 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_CalendarObj_PatternStartTime"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PatternStartTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_CalendarObj_PatternDuration"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PatternDuration"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_CalendarObj_BeginDateTime"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BeginDateTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_CalendarObj_EndDateTime"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EndDateTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_HintsSvc"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Hints"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"TYPE_HintsSvc"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5287,10 +6617,52 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_MessageSvc"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Message"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"TYPE_MessageSvc"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractMessage"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractMessage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractMessageFolder"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractMessageFolder"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_Subject"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Subject"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_Body"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Body"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_Priority"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Priority"
 		,"Attrs":[]
 	}
 	,{
@@ -5315,6 +6687,48 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_MessageObj_Category"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Category"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_Sender"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Sender"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_To"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"To"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_CC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CC"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_BCC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BCC"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_Read"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Read"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"ENUM_MessageObj_ReadFalse"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5326,6 +6740,27 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":255
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_ReceivedTime"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ReceivedTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_PatternOriginalDateTime"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PatternOriginalDateTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_PatternType"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PatternType"
 		,"Attrs":[]
 	}
 	,{
@@ -5354,6 +6789,34 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_PatternValidStartDate"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PatternValidStartDate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_PatternValidEndDate"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PatternValidEndDate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_PatternPeriod"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PatternPeriod"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_PatternDayOfWeek"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PatternDayOfWeek"
 		,"Attrs":[]
 	}
 	,{
@@ -5413,6 +6876,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_MessageObj_PatternDayOfMonth"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PatternDayOfMonth"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"RANGEMIN_MessageObj_PatternDayOfMonth"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5434,6 +6904,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_MessageObj_PatternMonthOfYear"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PatternMonthOfYear"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"RANGEMIN_MessageObj_PatternMonthOfYear"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5452,6 +6929,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_MessageObj_PatternInstance"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PatternInstance"
 		,"Attrs":[]
 	}
 	,{
@@ -5497,10 +6981,45 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_MessageObj_PatternDeleteDates"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PatternDeleteDates"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_DeviceMetadataSvc"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Metadata"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"TYPE_DeviceMetadataSvc"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_DeviceMetadataCAB"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeviceMetadataCAB"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_DeviceMetadataObj_ContentID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ContentID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_DeviceMetadataObj_DefaultCAB"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DefaultCAB"
 		,"Attrs":[]
 	}
 	,{
@@ -5518,6 +7037,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_NotesSvc"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Notes"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"TYPE_NotesSvc"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5525,10 +7051,31 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_AbstractNote"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractNote"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_StatusSvc"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Status"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"TYPE_StatusSvc"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_StatusSvc_SignalStrength"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SignalStrength"
 		,"Attrs":[]
 	}
 	,{
@@ -5553,10 +7100,24 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_StatusSvc_TextMessages"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TextMessages"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"RANGEMAX_StatusSvc_TextMessages"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":255
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_StatusSvc_NewPictures"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NewPictures"
 		,"Attrs":[]
 	}
 	,{
@@ -5567,6 +7128,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_StatusSvc_MissedCalls"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MissedCalls"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"RANGEMAX_StatusSvc_MissedCalls"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5574,10 +7142,38 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_StatusSvc_VoiceMail"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VoiceMail"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"RANGEMAX_StatusSvc_VoiceMail"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":255
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_StatusSvc_NetworkName"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NetworkName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_StatusSvc_NetworkType"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NetworkType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_StatusSvc_Roaming"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Roaming"
 		,"Attrs":[]
 	}
 	,{
@@ -5602,6 +7198,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_StatusSvc_BatteryLife"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BatteryLife"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"RANGEMIN_StatusSvc_BatteryLife"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5623,6 +7226,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_StatusSvc_ChargingState"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ChargingState"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"ENUM_StatusSvc_ChargingInactive"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5641,6 +7251,41 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_StatusSvc_StorageCapacity"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StorageCapacity"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_StatusSvc_StorageFreeSpace"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StorageFreeSpace"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_SyncSvc_SyncFormat"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SyncFormat"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_SyncSvc_LocalOnlyDelete"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LocalOnlyDelete"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_SyncSvc_FilterType"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FilterType"
 		,"Attrs":[]
 	}
 	,{
@@ -5672,6 +7317,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_SyncSvc_SyncObjectReferences"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SyncObjectReferences"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"ENUM_SyncSvc_SyncObjectReferencesDisabled"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -5686,10 +7338,66 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_SyncObj_LastAuthorProxyID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LastAuthorProxyID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_SyncSvc_BeginSync"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BeginSync"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_SyncSvc_EndSync"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EndSync"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_TasksSvc"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Tasks"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"TYPE_TasksSvc"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_TasksSvc_SyncActiveOnly"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FilterType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractTask"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractTask"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_TaskObj_ReminderDateTime"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ReminderDateTime"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_TaskObj_Complete"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Complete"
 		,"Attrs":[]
 	}
 	,{
@@ -5704,6 +7412,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":255
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_TaskObj_BeginDate"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BeginDate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_TaskObj_EndDate"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EndDate"
 		,"Attrs":[]
 	}
 	,{
@@ -5994,10 +7716,500 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"STR_WPDNSE_FAST_ENUM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WPDNSE Fast Enum"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STR_WPDNSE_SIMPLE_ITEM"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WPDNSE SimpleItem"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactsSvc"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Contacts"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"TYPE_ContactsSvc"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactSvc_SyncWithPhoneOnly"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FilterType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractContact"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractContact"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_VCard2Contact"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VCard2Contact"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_VCard3Contact"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"VCard3Contact"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AbstractContactGroup"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AbstractContactGroup"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_GivenName"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GivenName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_MiddleNames"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MiddleNames"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_FamilyName"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FamilyName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_Title"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Title"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_Suffix"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Suffix"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PhoneticGivenName"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PhoneticGivenName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PhoneticFamilyName"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PhoneticFamilyName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PersonalAddressFull"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersonalAddressFull"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PersonalAddressStreet"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersonalAddressStreet"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PersonalAddressLine2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersonalAddressLine2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PersonalAddressCity"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersonalAddressCity"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PersonalAddressRegion"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersonalAddressRegion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PersonalAddressPostalCode"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersonalAddressPostalCode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PersonalAddressCountry"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersonalAddressCountry"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_BusinessAddressFull"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BusinessAddressFull"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_BusinessAddressStreet"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BusinessAddressStreet"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_BusinessAddressLine2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BusinessAddressLine2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_BusinessAddressCity"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BusinessAddressCity"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_BusinessAddressRegion"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BusinessAddressRegion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_BusinessAddressPostalCode"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BusinessAddressPostalCode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_BusinessAddressCountry"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BusinessAddressCountry"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_OtherAddressFull"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OtherAddressFull"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_OtherAddressStreet"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OtherAddressStreet"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_OtherAddressLine2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OtherAddressLine2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_OtherAddressCity"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OtherAddressCity"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_OtherAddressRegion"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OtherAddressRegion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_OtherAddressPostalCode"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OtherAddressPostalCode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_OtherAddressCountry"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OtherAddressCountry"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_Email"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Email"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PersonalEmail"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersonalEmail"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PersonalEmail2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersonalEmail2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_BusinessEmail"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BusinessEmail"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_BusinessEmail2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BusinessEmail2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_OtherEmail"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OtherEmail"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_Phone"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Phone"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PersonalPhone"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersonalPhone"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PersonalPhone2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersonalPhone2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_BusinessPhone"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BusinessPhone"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_BusinessPhone2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BusinessPhone2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_MobilePhone"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MobilePhone"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_MobilePhone2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MobilePhone2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PersonalFax"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersonalFax"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_BusinessFax"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BusinessFax"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_Pager"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Pager"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_OtherPhone"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OtherPhone"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_WebAddress"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WebAddress"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PersonalWebAddress"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PersonalWebAddress"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_BusinessWebAddress"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BusinessWebAddress"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_IMAddress"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IMAddress"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_IMAddress2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IMAddress2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_IMAddress3"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IMAddress3"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_Organization"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Organization"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_PhoneticOrganization"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PhoneticOrganization"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_Role"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Role"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_Fax"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Fax"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_Spouse"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Spouse"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_Children"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Children"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_Assistant"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Assistant"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_Ringtone"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Ringtone"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_Birthdate"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Birthdate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_ContactObj_AnniversaryDate"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AnniversaryDate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_RingtonesSvc"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Ringtones"
 		,"Attrs":[]
 	}
 	,{
@@ -6008,10 +8220,108 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_RingtonesSvc_DefaultRingtone"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DefaultRingtone"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorSyncSvc"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AnchorSync"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"TYPE_AnchorSyncSvc"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorSyncSvc_VersionProps"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AnchorVersionProps"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorSyncSvc_ReplicaID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AnchorReplicaID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorSyncSvc_KnowledgeObjectID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AnchorKnowledgeObjectID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorSyncSvc_LastSyncProxyID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AnchorLastSyncProxyID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorSyncSvc_CurrentAnchor"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AnchorCurrentAnchor"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorSyncSvc_ProviderVersion"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AnchorProviderVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorSyncSvc_SyncFormat"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SyncFormat"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorSyncSvc_LocalOnlyDelete"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LocalOnlyDelete"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorSyncSvc_FilterType"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FilterType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorSyncKnowledge"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AnchorSyncKnowledge"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorResults"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AnchorResults"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorResults_AnchorState"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AnchorState"
 		,"Attrs":[]
 	}
 	,{
@@ -6033,6 +8343,41 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorResults_Anchor"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Anchor"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorResults_ResultObjectID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ResultObjectID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorSyncSvc_GetChangesSinceAnchor"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GetChangesSinceAnchor"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorSyncSvc_BeginSync"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BeginSync"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_AnchorSyncSvc_EndSync"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EndSync"
 		,"Attrs":[]
 	}
 	,{
@@ -6071,10 +8416,94 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"NAME_FullEnumSyncSvc"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FullEnumSync"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"TYPE_FullEnumSyncSvc"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_FullEnumSyncSvc_VersionProps"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FullEnumVersionProps"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_FullEnumSyncSvc_ReplicaID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FullEnumReplicaID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_FullEnumSyncSvc_KnowledgeObjectID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FullEnumKnowledgeObjectID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_FullEnumSyncSvc_LastSyncProxyID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FullEnumLastSyncProxyID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_FullEnumSyncSvc_ProviderVersion"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FullEnumProviderVersion"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_FullEnumSyncSvc_SyncFormat"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SyncFormat"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_FullEnumSyncSvc_LocalOnlyDelete"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LocalOnlyDelete"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_FullEnumSyncSvc_FilterType"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FilterType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_FullEnumSyncKnowledge"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FullEnumSyncKnowledge"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_FullEnumSyncSvc_BeginSync"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BeginSync"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"NAME_FullEnumSyncSvc_EndSync"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EndSync"
 		,"Attrs":[]
 	}
 ]
@@ -6610,6 +9039,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b32f4002-bb27-45ff-af4f-06631c1e8dad"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6676,6 +9106,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6848f6f2-3155-4f86-b6f5-263eeeab3143"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7203,6 +9634,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"dada2357-e0ad-492e-98db-dd61c53ba353"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7273,6 +9705,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"89b2e422-4f1b-4316-bcef-a44afea83eb3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7367,6 +9800,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6e3f2d79-4e07-48c4-8208-d8c2e5af4a99"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7486,6 +9920,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a1567595-4c2f-4574-a6fa-ecef917b9a40"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7591,6 +10026,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"625e2df8-6392-4cf0-9ad1-3cfa5f17775c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7713,6 +10149,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6a96ed84-7c73-4480-9938-bf5af477d426"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7856,6 +10293,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"9b4add96-f6bf-4034-8708-eca72bf10554"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPortableDeviceContent","TargetKind":"Com","Api":"Devices.PortableDevices","Parents":[]}
 		,"Methods":[
 			{
@@ -7881,6 +10319,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"10ece955-cf41-4728-bfa0-41eedf1bbf19"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7890,7 +10329,9 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[]
+				,"Attrs":[
+					"PreserveSig"
+				]
 				,"Params":[
 					{"Name":"cObjects","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"pObjIDs","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":0,"Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
@@ -7904,7 +10345,9 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[]
+				,"Attrs":[
+					"PreserveSig"
+				]
 				,"Params":[
 					{"Name":"cObjects","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 				]
@@ -7951,6 +10394,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7f6d695c-03df-4439-a809-59266beee3a6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8040,6 +10484,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fd8878ac-d841-4d17-891c-e6829cdb6934"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8132,6 +10577,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2c8c6dbf-e3dc-4061-becc-8542e810d126"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8281,6 +10727,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a8792a31-f385-493c-a893-40f64eb45f6e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8303,6 +10750,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"88e04db3-1012-4d64-9996-f703a950d3f4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8336,6 +10784,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"5e98025f-bfc4-47a2-9a5f-bc900a507c67"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8372,6 +10821,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"482b05c0-4056-44ed-9e0f-5e23b009da93"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8452,6 +10902,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"9deacb80-11e8-40e3-a9f3-f557986a7845"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8500,6 +10951,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"a8abc4e9-a84a-47a9-80b3-c5d9b172a961"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8538,6 +10990,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"d3bd3a44-d7b5-40a9-98b7-2fa4d01dec08"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8684,6 +11137,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"24dbd89d-413e-43e0-bd5b-197f3c56c886"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8899,6 +11353,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"e20333c9-fd34-412d-a381-cc6f2d820df7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8949,6 +11404,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"c424233c-afce-4828-a756-7ed7a2350083"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8972,6 +11428,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e56b0534-d9b9-425c-9b99-75f97cb3d7c8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9007,6 +11464,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bced49c8-8efe-41ed-960b-61313abd47a9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9029,6 +11487,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"5e1eafc3-e3d7-4132-96fa-759c0f9d1e0f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9052,6 +11511,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"94fc7953-5ca1-483a-8aee-df52e7747d00"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9096,6 +11556,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"bfdef549-9247-454f-bd82-06fe80853faa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9155,6 +11616,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"625e2df8-6392-4cf0-9ad1-3cfa5f17775c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9243,6 +11705,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"272c9ae0-7161-4ae0-91bd-9f448ee9c427"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9297,6 +11760,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6cfdcab5-fc47-42a5-9241-074b58830e73"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9332,6 +11796,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e5791fae-5665-4e0c-95be-5fde31644185"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9367,6 +11832,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"70aa1c9e-f2b4-4c61-86d3-6b9fb75fd1a2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9461,6 +11927,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"89d81f5f-c147-49ed-a11c-77b20c31e7c9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

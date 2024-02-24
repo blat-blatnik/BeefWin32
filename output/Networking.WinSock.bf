@@ -2,8 +2,6 @@ namespace Win32.Networking.WinSock;
 
 using System;
 using Win32.Foundation;
-using Win32.NetworkManagement.QoS;
-using Win32.NetworkManagement.WindowsFilteringPlatform;
 using Win32.System.Com;
 using Win32.System.IO;
 using Win32.System.Kernel;
@@ -15,12 +13,48 @@ static
 	public const Guid REAL_TIME_NOTIFICATION_CAPABILITY = .(0x6b59819a, 0x5cae, 0x492d, 0xa9, 0x01, 0x2a, 0x3c, 0x2c, 0x50, 0x16, 0x4f);
 	public const Guid REAL_TIME_NOTIFICATION_CAPABILITY_EX = .(0x6843da03, 0x154a, 0x4616, 0xa5, 0x08, 0x44, 0x37, 0x12, 0x95, 0xf9, 0x6b);
 	public const Guid ASSOCIATE_NAMERES_CONTEXT = .(0x59a38b67, 0xd4fe, 0x46e1, 0xba, 0x3c, 0x87, 0xea, 0x74, 0xca, 0x30, 0x49);
+	public const uint32 SIO_RCVALL = 2550136833;
+	public const uint32 SIO_RCVALL_MCAST = 2550136834;
+	public const uint32 SIO_RCVALL_IGMPMCAST = 2550136835;
+	public const uint32 SIO_KEEPALIVE_VALS = 2550136836;
+	public const uint32 SIO_ABSORB_RTRALERT = 2550136837;
+	public const uint32 SIO_UCAST_IF = 2550136838;
+	public const uint32 SIO_LIMIT_BROADCASTS = 2550136839;
+	public const uint32 SIO_INDEX_BIND = 2550136840;
+	public const uint32 SIO_INDEX_MCASTIF = 2550136841;
+	public const uint32 SIO_INDEX_ADD_MCAST = 2550136842;
+	public const uint32 SIO_INDEX_DEL_MCAST = 2550136843;
+	public const uint32 SIO_RCVALL_MCAST_IF = 2550136845;
+	public const uint32 SIO_RCVALL_IF = 2550136846;
+	public const uint32 SIO_LOOPBACK_FAST_PATH = 2550136848;
+	public const uint32 SIO_TCP_INITIAL_RTO = 2550136849;
+	public const uint32 SIO_APPLY_TRANSPORT_SETTING = 2550136851;
+	public const uint32 SIO_QUERY_TRANSPORT_SETTING = 2550136852;
+	public const uint32 SIO_TCP_SET_ICW = 2550136854;
+	public const uint32 SIO_TCP_SET_ACK_FREQUENCY = 2550136855;
+	public const uint32 SIO_SET_PRIORITY_HINT = 2550136856;
+	public const uint32 SIO_PRIORITY_HINT = 2550136856;
+	public const uint32 SIO_TCP_INFO = 3623878695;
+	public const uint32 SIO_CPU_AFFINITY = 2550136853;
+	public const uint32 SIO_TIMESTAMPING = 2550137067;
 	public const uint32 TIMESTAMPING_FLAG_RX = 1;
 	public const uint32 TIMESTAMPING_FLAG_TX = 2;
 	public const uint32 SO_TIMESTAMP = 12298;
 	public const uint32 SO_TIMESTAMP_ID = 12299;
+	public const uint32 SIO_GET_TX_TIMESTAMP = 2550137066;
 	public const uint32 TCP_INITIAL_RTO_DEFAULT_RTT = 0;
 	public const uint32 TCP_INITIAL_RTO_DEFAULT_MAX_SYN_RETRANSMISSIONS = 0;
+	public const uint32 SIO_ACQUIRE_PORT_RESERVATION = 2550136932;
+	public const uint32 SIO_RELEASE_PORT_RESERVATION = 2550136933;
+	public const uint32 SIO_ASSOCIATE_PORT_RESERVATION = 2550136934;
+	public const uint32 SIO_SET_SECURITY = 2550137032;
+	public const uint32 SIO_QUERY_SECURITY = 3623878857;
+	public const uint32 SIO_SET_PEER_TARGET_NAME = 2550137034;
+	public const uint32 SIO_DELETE_PEER_TARGET_NAME = 2550137035;
+	public const uint32 SIO_QUERY_WFP_CONNECTION_REDIRECT_RECORDS = 2550137052;
+	public const uint32 SIO_QUERY_WFP_CONNECTION_REDIRECT_CONTEXT = 2550137053;
+	public const uint32 SIO_SET_WFP_CONNECTION_REDIRECT_RECORDS = 2550137054;
+	public const uint32 SIO_SOCKET_USAGE_NOTIFICATION = 2550137036;
 	public const uint32 SOCKET_SETTINGS_GUARANTEE_ENCRYPTION = 1;
 	public const uint32 SOCKET_SETTINGS_ALLOW_INSECURE = 2;
 	public const uint32 SOCKET_SETTINGS_IPSEC_SKIP_FILTER_INSTANTIATION = 1;
@@ -33,10 +67,13 @@ static
 	public const uint32 SOCKET_INFO_CONNECTION_SECURED = 1;
 	public const uint32 SOCKET_INFO_CONNECTION_ENCRYPTED = 2;
 	public const uint32 SOCKET_INFO_CONNECTION_IMPERSONATED = 4;
+	public const uint32 SIO_QUERY_WFP_ALE_ENDPOINT_HANDLE = 1476395213;
+	public const uint32 SIO_QUERY_RSS_SCALABILITY_INFO = 1476395218;
 	public const uint32 IN4ADDR_LOOPBACK = 16777343;
 	public const uint32 IN4ADDR_LOOPBACKPREFIX_LENGTH = 8;
 	public const uint32 IN4ADDR_LINKLOCALPREFIX_LENGTH = 16;
 	public const uint32 IN4ADDR_MULTICASTPREFIX_LENGTH = 4;
+	public const uint32 SIO_SET_COMPATIBILITY_MODE = 2550137132;
 	public const uint32 RIO_MSG_DONT_NOTIFY = 1;
 	public const uint32 RIO_MSG_DEFER = 2;
 	public const uint32 RIO_MSG_WAITALL = 4;
@@ -119,6 +156,29 @@ static
 	public const uint32 IOC_WS2 = 134217728;
 	public const uint32 IOC_PROTOCOL = 268435456;
 	public const uint32 IOC_VENDOR = 402653184;
+	public const uint32 SIO_ASSOCIATE_HANDLE = 2281701377;
+	public const uint32 SIO_ENABLE_CIRCULAR_QUEUEING = 671088642;
+	public const uint32 SIO_FIND_ROUTE = 1207959555;
+	public const uint32 SIO_FLUSH = 671088644;
+	public const uint32 SIO_GET_BROADCAST_ADDRESS = 1207959557;
+	public const uint32 SIO_GET_EXTENSION_FUNCTION_POINTER = 3355443206;
+	public const uint32 SIO_GET_QOS = 3355443207;
+	public const uint32 SIO_GET_GROUP_QOS = 3355443208;
+	public const uint32 SIO_MULTIPOINT_LOOPBACK = 2281701385;
+	public const uint32 SIO_MULTICAST_SCOPE = 2281701386;
+	public const uint32 SIO_SET_QOS = 2281701387;
+	public const uint32 SIO_SET_GROUP_QOS = 2281701388;
+	public const uint32 SIO_TRANSLATE_HANDLE = 3355443213;
+	public const uint32 SIO_ROUTING_INTERFACE_QUERY = 3355443220;
+	public const uint32 SIO_ROUTING_INTERFACE_CHANGE = 2281701397;
+	public const uint32 SIO_ADDRESS_LIST_QUERY = 1207959574;
+	public const uint32 SIO_ADDRESS_LIST_CHANGE = 671088663;
+	public const uint32 SIO_QUERY_TARGET_PNP_HANDLE = 1207959576;
+	public const uint32 SIO_QUERY_RSS_PROCESSOR_INFO = 1207959589;
+	public const uint32 SIO_ADDRESS_LIST_SORT = 3355443225;
+	public const uint32 SIO_RESERVED_1 = 2281701402;
+	public const uint32 SIO_RESERVED_2 = 2281701409;
+	public const uint32 SIO_GET_MULTIPLE_EXTENSION_FUNCTION_POINTER = 3355443236;
 	public const uint32 IPPROTO_IP = 0;
 	public const uint32 IPPORT_TCPMUX = 1;
 	public const uint32 IPPORT_ECHO = 7;
@@ -450,6 +510,9 @@ static
 	public const uint32 SO_CONNECT_TIME = 28684;
 	public const uint32 SO_UPDATE_CONNECT_CONTEXT = 28688;
 	public const uint32 TCP_BSDURGENT = 28672;
+	public const uint32 SIO_UDP_CONNRESET = 2550136844;
+	public const uint32 SIO_SOCKET_CLOSE_NOTIFY = 2550136845;
+	public const uint32 SIO_UDP_NETRESET = 2550136847;
 	public const uint32 TF_DISCONNECT = 1;
 	public const uint32 TF_REUSE_SOCKET = 2;
 	public const uint32 TF_WRITE_BEHIND = 4;
@@ -467,6 +530,13 @@ static
 	public const uint32 DE_REUSE_SOCKET = 2;
 	public const uint32 NLA_ALLUSERS_NETWORK = 1;
 	public const uint32 NLA_FRIENDLY_NAME = 2;
+	public const uint32 SIO_BSP_HANDLE = 1207959579;
+	public const uint32 SIO_BSP_HANDLE_SELECT = 1207959580;
+	public const uint32 SIO_BSP_HANDLE_POLL = 1207959581;
+	public const uint32 SIO_BASE_HANDLE = 1207959586;
+	public const uint32 SIO_EXT_SELECT = 3355443230;
+	public const uint32 SIO_EXT_POLL = 3355443231;
+	public const uint32 SIO_EXT_SENDMSG = 3355443232;
 	public const uint32 SERVICE_RESOURCE = 1;
 	public const uint32 SERVICE_SERVICE = 2;
 	public const uint32 SERVICE_LOCAL = 4;
@@ -507,6 +577,18 @@ static
 	public const uint32 RES_SOFT_SEARCH = 1;
 	public const uint32 RES_FIND_MULTIPLE = 2;
 	public const uint32 RES_SERVICE = 4;
+	public const String SERVICE_TYPE_VALUE_SAPIDA = "SapId";
+	public const String SERVICE_TYPE_VALUE_SAPIDW = "SapId";
+	public const String SERVICE_TYPE_VALUE_CONNA = "ConnectionOriented";
+	public const String SERVICE_TYPE_VALUE_CONNW = "ConnectionOriented";
+	public const String SERVICE_TYPE_VALUE_TCPPORTA = "TcpPort";
+	public const String SERVICE_TYPE_VALUE_TCPPORTW = "TcpPort";
+	public const String SERVICE_TYPE_VALUE_UDPPORTA = "UdpPort";
+	public const String SERVICE_TYPE_VALUE_UDPPORTW = "UdpPort";
+	public const String SERVICE_TYPE_VALUE_SAPID = "SapId";
+	public const String SERVICE_TYPE_VALUE_CONN = "ConnectionOriented";
+	public const String SERVICE_TYPE_VALUE_TCPPORT = "TcpPort";
+	public const String SERVICE_TYPE_VALUE_UDPPORT = "UdpPort";
 	public const uint32 SET_SERVICE_PARTIAL_SUCCESS = 1;
 	public const uint32 FD_SETSIZE = 64;
 	public const uint32 IMPLINK_IP = 155;
@@ -541,7 +623,6 @@ static
 	public const uint16 PF_BAN = 21;
 	public const uint16 PF_MAX = 29;
 	public const uint32 SOMAXCONN = 5;
-	public const uint32 MSG_PEEK = 2;
 	public const uint32 MSG_MAXIOVLEN = 16;
 	public const uint32 MSG_PARTIAL = 32768;
 	public const uint32 MAXGETHOSTSTRUCT = 1024;
@@ -559,8 +640,6 @@ static
 	public const uint32 SO_PROTOCOL_INFO = 8197;
 	public const uint32 PVD_CONFIG = 12289;
 	public const uint16 PF_ATM = 22;
-	public const uint32 MSG_WAITALL = 8;
-	public const uint32 MSG_PUSH_IMMEDIATE = 32;
 	public const uint32 MSG_INTERRUPT = 16;
 	public const uint32 FD_READ_BIT = 0;
 	public const uint32 FD_WRITE_BIT = 1;
@@ -628,12 +707,18 @@ static
 	public const uint32 WSA_FLAG_ACCESS_SYSTEM_SECURITY = 64;
 	public const uint32 WSA_FLAG_NO_HANDLE_INHERIT = 128;
 	public const uint32 WSA_FLAG_REGISTERED_IO = 256;
+	public const uint32 SIO_NSP_NOTIFY_CHANGE = 2281701401;
 	public const uint32 TH_NETDEV = 1;
 	public const uint32 TH_TAPI = 2;
 	public const uint32 SERVICE_MULTIPLE = 1;
 	public const uint32 NS_LOCALNAME = 19;
 	public const uint32 RES_UNUSED_1 = 1;
 	public const uint32 RES_FLUSH_CACHE = 2;
+	public const String SERVICE_TYPE_VALUE_IPXPORTA = "IpxSocket";
+	public const String SERVICE_TYPE_VALUE_IPXPORTW = "IpxSocket";
+	public const String SERVICE_TYPE_VALUE_OBJECTIDA = "ObjectId";
+	public const String SERVICE_TYPE_VALUE_OBJECTIDW = "ObjectId";
+	public const String SERVICE_TYPE_VALUE_OBJECTID = "ObjectId";
 	public const uint32 LUP_DEEP = 1;
 	public const uint32 LUP_CONTAINERS = 2;
 	public const uint32 LUP_NOCONTAINERS = 4;
@@ -671,15 +756,15 @@ static
 	public const uint32 RESULT_IS_ADDED = 16;
 	public const uint32 RESULT_IS_CHANGED = 32;
 	public const uint32 RESULT_IS_DELETED = 64;
-	public const uint32 POLLRDNORM = 256;
-	public const uint32 POLLRDBAND = 512;
-	public const uint32 POLLPRI = 1024;
-	public const uint32 POLLWRNORM = 16;
-	public const uint32 POLLOUT = 16;
-	public const uint32 POLLWRBAND = 32;
-	public const uint32 POLLERR = 1;
-	public const uint32 POLLHUP = 2;
-	public const uint32 POLLNVAL = 4;
+	public const uint16 POLLRDNORM = 256;
+	public const uint16 POLLRDBAND = 512;
+	public const uint16 POLLPRI = 1024;
+	public const uint16 POLLWRNORM = 16;
+	public const uint16 POLLOUT = 16;
+	public const uint16 POLLWRBAND = 32;
+	public const uint16 POLLERR = 1;
+	public const uint16 POLLHUP = 2;
+	public const uint16 POLLNVAL = 4;
 	public const uint32 SOCK_NOTIFY_REGISTER_EVENT_NONE = 0;
 	public const uint32 SOCK_NOTIFY_REGISTER_EVENT_IN = 1;
 	public const uint32 SOCK_NOTIFY_REGISTER_EVENT_OUT = 2;
@@ -901,6 +986,9 @@ static
 	public const uint32 BITS_PER_BYTE = 8;
 	public const uint32 LOG2_BITS_PER_BYTE = 3;
 	public const uint32 UNIX_PATH_MAX = 108;
+	public const uint32 SIO_AF_UNIX_GETPEERPID = 1476395264;
+	public const uint32 SIO_AF_UNIX_SETBINDPARENTPATH = 2550137089;
+	public const uint32 SIO_AF_UNIX_SETCONNPARENTPATH = 2550137090;
 	public const uint32 ISOPROTO_TP0 = 25;
 	public const uint32 ISOPROTO_TP1 = 26;
 	public const uint32 ISOPROTO_TP2 = 27;
@@ -929,7 +1017,106 @@ static
 	public const uint32 VNSPROTO_IPC = 1;
 	public const uint32 VNSPROTO_RELIABLE_IPC = 2;
 	public const uint32 VNSPROTO_SPP = 3;
-	public const SOCKET INVALID_SOCKET = 4294967295;
+	public const uint32 _LITTLE_ENDIAN = 1234;
+	public const uint32 _BIG_ENDIAN = 4321;
+	public const uint32 _PDP_ENDIAN = 3412;
+	public const uint32 BYTE_ORDER = 1234;
+	public const uint32 DL_ADDRESS_LENGTH_MAXIMUM = 32;
+	public const uint32 DL_HEADER_LENGTH_MAXIMUM = 64;
+	public const uint32 SNAP_DSAP = 170;
+	public const uint32 SNAP_SSAP = 170;
+	public const uint32 SNAP_CONTROL = 3;
+	public const uint32 SNAP_OUI = 0;
+	public const uint32 ETH_LENGTH_OF_HEADER = 14;
+	public const uint32 ETH_LENGTH_OF_VLAN_HEADER = 4;
+	public const uint32 ETH_LENGTH_OF_SNAP_HEADER = 8;
+	public const uint32 ETHERNET_TYPE_MINIMUM = 1536;
+	public const uint32 ETHERNET_TYPE_IPV4 = 2048;
+	public const uint32 ETHERNET_TYPE_ARP = 2054;
+	public const uint32 ETHERNET_TYPE_IPV6 = 34525;
+	public const uint32 ETHERNET_TYPE_802_1Q = 33024;
+	public const uint32 ETHERNET_TYPE_802_1AD = 34984;
+	public const uint32 IP_VER_MASK = 240;
+	public const uint32 IPV4_VERSION = 4;
+	public const uint32 MAX_IPV4_PACKET = 65535;
+	public const uint32 MAX_IPV4_HLEN = 60;
+	public const uint32 IPV4_MINIMUM_MTU = 576;
+	public const uint32 IPV4_MIN_MINIMUM_MTU = 352;
+	public const uint32 IPV4_MAX_MINIMUM_MTU = 576;
+	public const uint32 SIZEOF_IP_OPT_ROUTING_HEADER = 3;
+	public const uint32 SIZEOF_IP_OPT_TIMESTAMP_HEADER = 4;
+	public const uint32 SIZEOF_IP_OPT_SECURITY = 11;
+	public const uint32 SIZEOF_IP_OPT_STREAMIDENTIFIER = 4;
+	public const uint32 SIZEOF_IP_OPT_ROUTERALERT = 4;
+	public const uint32 IP4_OFF_MASK = 65311;
+	public const uint32 ICMPV4_INVALID_PREFERENCE_LEVEL = 2147483648;
+	public const uint32 IGMP_QUERY_TYPE = 17;
+	public const uint32 IGMP_VERSION1_REPORT_TYPE = 18;
+	public const uint32 IGMP_VERSION2_REPORT_TYPE = 22;
+	public const uint32 IGMP_LEAVE_GROUP_TYPE = 23;
+	public const uint32 IGMP_VERSION3_REPORT_TYPE = 34;
+	public const uint32 IPV6_VERSION = 96;
+	public const uint32 IPV6_TRAFFIC_CLASS_MASK = 49167;
+	public const uint32 IPV6_FULL_TRAFFIC_CLASS_MASK = 61455;
+	public const uint32 IPV6_ECN_MASK = 12288;
+	public const uint32 IPV6_FLOW_LABEL_MASK = 4294905600;
+	public const uint32 MAX_IPV6_PAYLOAD = 65535;
+	public const uint32 IPV6_ECN_SHIFT = 12;
+	public const uint32 IPV6_MINIMUM_MTU = 1280;
+	public const uint32 IP6F_OFF_MASK = 63743;
+	public const uint32 IP6F_RESERVED_MASK = 1536;
+	public const uint32 IP6F_MORE_FRAG = 256;
+	public const uint32 EXT_LEN_UNIT = 8;
+	public const uint32 IP6OPT_TYPE_SKIP = 0;
+	public const uint32 IP6OPT_TYPE_DISCARD = 64;
+	public const uint32 IP6OPT_TYPE_FORCEICMP = 128;
+	public const uint32 IP6OPT_TYPE_ICMP = 192;
+	public const uint32 IP6OPT_MUTABLE = 32;
+	public const uint32 ICMP6_DST_UNREACH_NOROUTE = 0;
+	public const uint32 ICMP6_DST_UNREACH_ADMIN = 1;
+	public const uint32 ICMP6_DST_UNREACH_BEYONDSCOPE = 2;
+	public const uint32 ICMP6_DST_UNREACH_ADDR = 3;
+	public const uint32 ICMP6_DST_UNREACH_NOPORT = 4;
+	public const uint32 ICMP6_TIME_EXCEED_TRANSIT = 0;
+	public const uint32 ICMP6_TIME_EXCEED_REASSEMBLY = 1;
+	public const uint32 ICMP6_PARAMPROB_HEADER = 0;
+	public const uint32 ICMP6_PARAMPROB_NEXTHEADER = 1;
+	public const uint32 ICMP6_PARAMPROB_OPTION = 2;
+	public const uint32 ICMPV6_ECHO_REQUEST_FLAG_REVERSE = 1;
+	public const uint32 ND_RA_FLAG_MANAGED = 128;
+	public const uint32 ND_RA_FLAG_OTHER = 64;
+	public const uint32 ND_RA_FLAG_HOME_AGENT = 32;
+	public const uint32 ND_RA_FLAG_PREFERENCE = 24;
+	public const uint32 ND_NA_FLAG_ROUTER = 2147483648;
+	public const uint32 ND_NA_FLAG_SOLICITED = 1073741824;
+	public const uint32 ND_NA_FLAG_OVERRIDE = 536870912;
+	public const uint32 ND_OPT_PI_FLAG_ONLINK = 128;
+	public const uint32 ND_OPT_PI_FLAG_AUTO = 64;
+	public const uint32 ND_OPT_PI_FLAG_ROUTER_ADDR = 32;
+	public const uint32 ND_OPT_PI_FLAG_SITE_PREFIX = 16;
+	public const uint32 ND_OPT_PI_FLAG_ROUTE = 1;
+	public const uint32 ND_OPT_RI_FLAG_PREFERENCE = 24;
+	public const uint32 ND_OPT_RDNSS_MIN_LEN = 24;
+	public const uint32 ND_OPT_DNSSL_MIN_LEN = 16;
+	public const uint32 IN6_EMBEDDEDV4_UOCTET_POSITION = 8;
+	public const uint32 IN6_EMBEDDEDV4_BITS_IN_BYTE = 8;
+	public const uint32 TH_FIN = 1;
+	public const uint32 TH_SYN = 2;
+	public const uint32 TH_RST = 4;
+	public const uint32 TH_PSH = 8;
+	public const uint32 TH_ACK = 16;
+	public const uint32 TH_URG = 32;
+	public const uint32 TH_ECE = 64;
+	public const uint32 TH_CWR = 128;
+	public const uint32 TH_OPT_EOL = 0;
+	public const uint32 TH_OPT_NOP = 1;
+	public const uint32 TH_OPT_MSS = 2;
+	public const uint32 TH_OPT_WS = 3;
+	public const uint32 TH_OPT_SACK_PERMITTED = 4;
+	public const uint32 TH_OPT_SACK = 5;
+	public const uint32 TH_OPT_TS = 8;
+	public const uint32 TH_OPT_FASTOPEN = 34;
+	public const SOCKET INVALID_SOCKET = (SOCKET)-1;
 	public const uint32 WSA_INFINITE = 4294967295;
 	public const uint32 IOC_INOUT = 3221225472;
 	public const int32 FIONREAD = 1074030207;
@@ -940,6 +1127,7 @@ static
 	public const int32 SIOCSLOWAT = -2147192062;
 	public const int32 SIOCGLOWAT = 1074033411;
 	public const int32 SIOCATMARK = 1074033415;
+	public const uint16 POLLIN = 768;
 	public const int32 LM_HB_Extension = 128;
 	public const int32 LM_HB1_PnP = 1;
 	public const int32 LM_HB1_PDA_Palmtop = 2;
@@ -1059,6 +1247,12 @@ static
 		WSA_SECURE_HOST_NOT_FOUND = 11032,
 		WSA_IPSEC_NAME_POLICY_ERROR = 11033,
 	}
+	public enum ADDRESS_FAMILY : uint32
+	{
+		INET = 2,
+		INET6 = 23,
+		UNSPEC = 0,
+	}
 	public enum SET_SERVICE_OPERATION : uint32
 	{
 		REGISTER = 1,
@@ -1067,10 +1261,13 @@ static
 		ADD_TYPE = 4,
 		DELETE_TYPE = 5,
 	}
-	public enum SEND_FLAGS : uint32
+	public enum SEND_RECV_FLAGS : int32
 	{
-		DONTROUTE = 4,
 		OOB = 1,
+		PEEK = 2,
+		DONTROUTE = 4,
+		WAITALL = 8,
+		PUSH_IMMEDIATE = 32,
 	}
 	public enum RESOURCE_DISPLAY_TYPE : uint32
 	{
@@ -1484,6 +1681,109 @@ static
 		LspCategories = 0,
 		Audit = 1,
 	}
+	public enum IPV4_OPTION_TYPE : int32
+	{
+		EOL = 0,
+		NOP = 1,
+		SECURITY = 130,
+		LSRR = 131,
+		TS = 68,
+		RR = 7,
+		SSRR = 137,
+		SID = 136,
+		ROUTER_ALERT = 148,
+		MULTIDEST = 149,
+	}
+	public enum IP_OPTION_TIMESTAMP_FLAGS : int32
+	{
+		ONLY = 0,
+		ADDRESS = 1,
+		SPECIFIC_ADDRESS = 3,
+	}
+	public enum ICMP4_UNREACH_CODE : int32
+	{
+		NET = 0,
+		HOST = 1,
+		PROTOCOL = 2,
+		PORT = 3,
+		FRAG_NEEDED = 4,
+		SOURCEROUTE_FAILED = 5,
+		NET_UNKNOWN = 6,
+		HOST_UNKNOWN = 7,
+		ISOLATED = 8,
+		NET_ADMIN = 9,
+		HOST_ADMIN = 10,
+		NET_TOS = 11,
+		HOST_TOS = 12,
+		ADMIN = 13,
+	}
+	public enum ICMP4_TIME_EXCEED_CODE : int32
+	{
+		TRANSIT = 0,
+		REASSEMBLY = 1,
+	}
+	public enum ARP_OPCODE : int32
+	{
+		REQUEST = 1,
+		RESPONSE = 2,
+	}
+	public enum ARP_HARDWARE_TYPE : int32
+	{
+		ENET = 1,
+		_802 = 6,
+	}
+	public enum IGMP_MAX_RESP_CODE_TYPE : int32
+	{
+		NORMAL = 0,
+		FLOAT = 1,
+	}
+	public enum IPV6_OPTION_TYPE : int32
+	{
+		PAD1 = 0,
+		PADN = 1,
+		TUNNEL_LIMIT = 4,
+		ROUTER_ALERT = 5,
+		JUMBO = 194,
+		NSAP_ADDR = 195,
+	}
+	public enum ND_OPTION_TYPE : int32
+	{
+		SOURCE_LINKADDR = 1,
+		TARGET_LINKADDR = 2,
+		PREFIX_INFORMATION = 3,
+		REDIRECTED_HEADER = 4,
+		MTU = 5,
+		NBMA_SHORTCUT_LIMIT = 6,
+		ADVERTISEMENT_INTERVAL = 7,
+		HOME_AGENT_INFORMATION = 8,
+		SOURCE_ADDR_LIST = 9,
+		TARGET_ADDR_LIST = 10,
+		ROUTE_INFO = 24,
+		RDNSS = 25,
+		DNSSL = 31,
+	}
+	public enum MLD_MAX_RESP_CODE_TYPE : int32
+	{
+		NORMAL = 0,
+		FLOAT = 1,
+	}
+	public enum TUNNEL_SUB_TYPE : int32
+	{
+		NONE = 0,
+		CP = 1,
+		IPTLS = 2,
+		HA = 3,
+	}
+	public enum NPI_MODULEID_TYPE : int32
+	{
+		GUID = 1,
+		IF_LUID = 2,
+	}
+	public enum FALLBACK_INDEX : int32
+	{
+		TcpFastopen = 0,
+		Max = 1,
+	}
 	#endregion
 	
 	#region Function pointers
@@ -1599,6 +1899,18 @@ static
 	public struct RIO_CQ_t {}
 	[CRepr]
 	public struct RIO_RQ_t {}
+	[CRepr]
+	public struct FLOWSPEC
+	{
+		public uint32 TokenRate;
+		public uint32 TokenBucketSize;
+		public uint32 PeakBandwidth;
+		public uint32 Latency;
+		public uint32 DelayVariation;
+		public uint32 ServiceType;
+		public uint32 MaxSduSize;
+		public uint32 MinimumPolicedSize;
+	}
 	[CRepr]
 	public struct IN_ADDR
 	{
@@ -1985,6 +2297,13 @@ static
 		public uint16 l_linger;
 	}
 	[CRepr]
+	public struct QOS
+	{
+		public FLOWSPEC SendingFlowspec;
+		public FLOWSPEC ReceivingFlowspec;
+		public WSABUF ProviderSpecific;
+	}
+	[CRepr]
 	public struct WSANETWORKEVENTS
 	{
 		public int32 lNetworkEvents;
@@ -2071,17 +2390,17 @@ static
 				public OVERLAPPED* lpOverlapped;
 			}
 			[CRepr]
+			public struct _Apc_e__Struct
+			{
+				public OVERLAPPED* lpOverlapped;
+				public LPWSAOVERLAPPED_COMPLETION_ROUTINE lpfnCompletionProc;
+			}
+			[CRepr]
 			public struct _WindowMessage_e__Struct
 			{
 				public HWND hWnd;
 				public uint32 uMsg;
 				public WPARAM context;
-			}
-			[CRepr]
-			public struct _Apc_e__Struct
-			{
-				public OVERLAPPED* lpOverlapped;
-				public LPWSAOVERLAPPED_COMPLETION_ROUTINE lpfnCompletionProc;
 			}
 		}
 	}
@@ -3157,6 +3476,12 @@ static
 				public CHAR* information mut => &information_array[0];
 			}
 			[CRepr]
+			public struct _connectivity_e__Struct
+			{
+				public NLA_CONNECTIVITY_TYPE type;
+				public NLA_INTERNET internet;
+			}
+			[CRepr]
 			public struct _interfaceData_e__Struct
 			{
 				public uint32 dwType;
@@ -3164,12 +3489,6 @@ static
 				public CHAR[1] adapterName_array;
 				
 				public CHAR* adapterName mut => &adapterName_array[0];
-			}
-			[CRepr]
-			public struct _connectivity_e__Struct
-			{
-				public NLA_CONNECTIVITY_TYPE type;
-				public NLA_INTERNET internet;
 			}
 		}
 		[CRepr]
@@ -3573,6 +3892,791 @@ static
 		public uint8 hops;
 		public uint8[5] filler;
 	}
+	[CRepr, Union]
+	public struct DL_OUI
+	{
+		public uint8[3] Byte;
+		public using _Anonymous_e__Struct Anonymous;
+		
+		[CRepr]
+		public struct _Anonymous_e__Struct
+		{
+			public uint8 _bitfield;
+		}
+	}
+	[CRepr, Union]
+	public struct DL_EI48
+	{
+		public uint8[3] Byte;
+	}
+	[CRepr, Union]
+	public struct DL_EUI48
+	{
+		public uint8[6] Byte;
+		public using _Anonymous_e__Struct Anonymous;
+		
+		[CRepr]
+		public struct _Anonymous_e__Struct
+		{
+			public DL_OUI Oui;
+			public DL_EI48 Ei48;
+		}
+	}
+	[CRepr, Union]
+	public struct DL_EI64
+	{
+		public uint8[5] Byte;
+	}
+	[CRepr, Union]
+	public struct DL_EUI64
+	{
+		public uint8[8] Byte;
+		public uint64 Value;
+		public using _Anonymous_e__Struct Anonymous;
+		
+		[CRepr]
+		public struct _Anonymous_e__Struct
+		{
+			public DL_OUI Oui;
+			public using _Anonymous_e__Union Anonymous;
+			
+			[CRepr, Union]
+			public struct _Anonymous_e__Union
+			{
+				public DL_EI64 Ei64;
+				public using _Anonymous_e__Struct Anonymous;
+				
+				[CRepr]
+				public struct _Anonymous_e__Struct
+				{
+					public uint8 Type;
+					public uint8 Tse;
+					public DL_EI48 Ei48;
+				}
+			}
+		}
+	}
+	[CRepr]
+	public struct SNAP_HEADER
+	{
+		public uint8 Dsap;
+		public uint8 Ssap;
+		public uint8 Control;
+		public uint8[3] Oui;
+		public uint16 Type;
+	}
+	[CRepr]
+	public struct ETHERNET_HEADER
+	{
+		public DL_EUI48 Destination;
+		public DL_EUI48 Source;
+		public using _Anonymous_e__Union Anonymous;
+		
+		[CRepr, Union]
+		public struct _Anonymous_e__Union
+		{
+			public uint16 Type;
+			public uint16 Length;
+		}
+	}
+	[CRepr]
+	public struct VLAN_TAG
+	{
+		public using _Anonymous_e__Union Anonymous;
+		public uint16 Type;
+		
+		[CRepr, Union]
+		public struct _Anonymous_e__Union
+		{
+			public uint16 Tag;
+			public using _Anonymous_e__Struct Anonymous;
+			
+			[CRepr]
+			public struct _Anonymous_e__Struct
+			{
+				public uint16 _bitfield;
+			}
+		}
+	}
+	[CRepr]
+	public struct ICMP_HEADER
+	{
+		public uint8 Type;
+		public uint8 Code;
+		public uint16 Checksum;
+	}
+	[CRepr]
+	public struct ICMP_MESSAGE
+	{
+		public ICMP_HEADER Header;
+		public _Data_e__Union Data;
+		
+		[CRepr, Union]
+		public struct _Data_e__Union
+		{
+			public uint32[1] Data32_array;
+			public uint16[2] Data16;
+			public uint8[4] Data8;
+			
+			public uint32* Data32 mut => &Data32_array[0];
+		}
+	}
+	[CRepr]
+	public struct IPV4_HEADER
+	{
+		public _Anonymous1_e__Union Anonymous1;
+		public _Anonymous2_e__Union Anonymous2;
+		public uint16 TotalLength;
+		public uint16 Identification;
+		public _Anonymous3_e__Union Anonymous3;
+		public uint8 TimeToLive;
+		public uint8 Protocol;
+		public uint16 HeaderChecksum;
+		public IN_ADDR SourceAddress;
+		public IN_ADDR DestinationAddress;
+		
+		[CRepr, Union]
+		public struct _Anonymous3_e__Union
+		{
+			public uint16 FlagsAndOffset;
+			public using _Anonymous_e__Struct Anonymous;
+			
+			[CRepr]
+			public struct _Anonymous_e__Struct
+			{
+				public uint16 _bitfield;
+			}
+		}
+		[CRepr, Union]
+		public struct _Anonymous2_e__Union
+		{
+			public uint8 TypeOfServiceAndEcnField;
+			public using _Anonymous_e__Struct Anonymous;
+			
+			[CRepr]
+			public struct _Anonymous_e__Struct
+			{
+				public uint8 _bitfield;
+			}
+		}
+		[CRepr, Union]
+		public struct _Anonymous1_e__Union
+		{
+			public uint8 VersionAndHeaderLength;
+			public using _Anonymous_e__Struct Anonymous;
+			
+			[CRepr]
+			public struct _Anonymous_e__Struct
+			{
+				public uint8 _bitfield;
+			}
+		}
+	}
+	[CRepr]
+	public struct IPV4_OPTION_HEADER
+	{
+		public using _Anonymous_e__Union Anonymous;
+		public uint8 OptionLength;
+		
+		[CRepr, Union]
+		public struct _Anonymous_e__Union
+		{
+			public uint8 OptionType;
+			public using _Anonymous_e__Struct Anonymous;
+			
+			[CRepr]
+			public struct _Anonymous_e__Struct
+			{
+				public uint8 _bitfield;
+			}
+		}
+	}
+	[CRepr]
+	public struct IPV4_TIMESTAMP_OPTION
+	{
+		public IPV4_OPTION_HEADER OptionHeader;
+		public uint8 Pointer;
+		public using _Anonymous_e__Union Anonymous;
+		
+		[CRepr, Union]
+		public struct _Anonymous_e__Union
+		{
+			public uint8 FlagsOverflow;
+			public using _Anonymous_e__Struct Anonymous;
+			
+			[CRepr]
+			public struct _Anonymous_e__Struct
+			{
+				public uint8 _bitfield;
+			}
+		}
+	}
+	[CRepr]
+	public struct IPV4_ROUTING_HEADER
+	{
+		public IPV4_OPTION_HEADER OptionHeader;
+		public uint8 Pointer;
+	}
+	[CRepr]
+	public struct ICMPV4_ROUTER_SOLICIT
+	{
+		public ICMP_MESSAGE RsHeader;
+	}
+	[CRepr]
+	public struct ICMPV4_ROUTER_ADVERT_HEADER
+	{
+		public ICMP_MESSAGE RaHeader;
+	}
+	[CRepr]
+	public struct ICMPV4_ROUTER_ADVERT_ENTRY
+	{
+		public IN_ADDR RouterAdvertAddr;
+		public int32 PreferenceLevel;
+	}
+	[CRepr]
+	public struct ICMPV4_TIMESTAMP_MESSAGE
+	{
+		public ICMP_MESSAGE Header;
+		public uint32 OriginateTimestamp;
+		public uint32 ReceiveTimestamp;
+		public uint32 TransmitTimestamp;
+	}
+	[CRepr]
+	public struct ICMPV4_ADDRESS_MASK_MESSAGE
+	{
+		public ICMP_MESSAGE Header;
+		public uint32 AddressMask;
+	}
+	[CRepr]
+	public struct ARP_HEADER
+	{
+		public uint16 HardwareAddressSpace;
+		public uint16 ProtocolAddressSpace;
+		public uint8 HardwareAddressLength;
+		public uint8 ProtocolAddressLength;
+		public uint16 Opcode;
+		public uint8[1] SenderHardwareAddress_array;
+		
+		public uint8* SenderHardwareAddress mut => &SenderHardwareAddress_array[0];
+	}
+	[CRepr]
+	public struct IGMP_HEADER
+	{
+		public _Anonymous1_e__Union Anonymous1;
+		public _Anonymous2_e__Union Anonymous2;
+		public uint16 Checksum;
+		public IN_ADDR MulticastAddress;
+		
+		[CRepr, Union]
+		public struct _Anonymous1_e__Union
+		{
+			public using _Anonymous_e__Struct Anonymous;
+			public uint8 VersionType;
+			
+			[CRepr]
+			public struct _Anonymous_e__Struct
+			{
+				public uint8 _bitfield;
+			}
+		}
+		[CRepr, Union]
+		public struct _Anonymous2_e__Union
+		{
+			public uint8 Reserved;
+			public uint8 MaxRespTime;
+			public uint8 Code;
+		}
+	}
+	[CRepr]
+	public struct IGMPV3_QUERY_HEADER
+	{
+		public uint8 Type;
+		public _Anonymous1_e__Union Anonymous1;
+		public uint16 Checksum;
+		public IN_ADDR MulticastAddress;
+		public uint8 _bitfield;
+		public _Anonymous2_e__Union Anonymous2;
+		public uint16 SourceCount;
+		
+		[CRepr, Union]
+		public struct _Anonymous2_e__Union
+		{
+			public uint8 QueriersQueryInterfaceCode;
+			public using _Anonymous_e__Struct Anonymous;
+			
+			[CRepr]
+			public struct _Anonymous_e__Struct
+			{
+				public uint8 _bitfield;
+			}
+		}
+		[CRepr, Union]
+		public struct _Anonymous1_e__Union
+		{
+			public uint8 MaxRespCode;
+			public using _Anonymous_e__Struct Anonymous;
+			
+			[CRepr]
+			public struct _Anonymous_e__Struct
+			{
+				public uint8 _bitfield;
+			}
+		}
+	}
+	[CRepr]
+	public struct IGMPV3_REPORT_RECORD_HEADER
+	{
+		public uint8 Type;
+		public uint8 AuxillaryDataLength;
+		public uint16 SourceCount;
+		public IN_ADDR MulticastAddress;
+	}
+	[CRepr]
+	public struct IGMPV3_REPORT_HEADER
+	{
+		public uint8 Type;
+		public uint8 Reserved;
+		public uint16 Checksum;
+		public uint16 Reserved2;
+		public uint16 RecordCount;
+	}
+	[CRepr]
+	public struct IPV6_HEADER
+	{
+		public using _Anonymous_e__Union Anonymous;
+		public uint16 PayloadLength;
+		public uint8 NextHeader;
+		public uint8 HopLimit;
+		public IN6_ADDR SourceAddress;
+		public IN6_ADDR DestinationAddress;
+		
+		[CRepr, Union]
+		public struct _Anonymous_e__Union
+		{
+			public uint32 VersionClassFlow;
+			public using _Anonymous_e__Struct Anonymous;
+			
+			[CRepr]
+			public struct _Anonymous_e__Struct
+			{
+				public uint32 _bitfield;
+			}
+		}
+	}
+	[CRepr]
+	public struct IPV6_FRAGMENT_HEADER
+	{
+		public uint8 NextHeader;
+		public uint8 Reserved;
+		public using _Anonymous_e__Union Anonymous;
+		public uint32 Id;
+		
+		[CRepr, Union]
+		public struct _Anonymous_e__Union
+		{
+			public using _Anonymous_e__Struct Anonymous;
+			public uint16 OffsetAndFlags;
+			
+			[CRepr]
+			public struct _Anonymous_e__Struct
+			{
+				public uint16 _bitfield;
+			}
+		}
+	}
+	[CRepr]
+	public struct IPV6_EXTENSION_HEADER
+	{
+		public uint8 NextHeader;
+		public uint8 Length;
+	}
+	[CRepr]
+	public struct IPV6_OPTION_HEADER
+	{
+		public uint8 Type;
+		public uint8 DataLength;
+	}
+	[CRepr]
+	public struct IPV6_OPTION_JUMBOGRAM
+	{
+		public IPV6_OPTION_HEADER Header;
+		public uint8[4] JumbogramLength;
+	}
+	[CRepr]
+	public struct IPV6_OPTION_ROUTER_ALERT
+	{
+		public IPV6_OPTION_HEADER Header;
+		public uint8[2] Value;
+	}
+	[CRepr]
+	public struct IPV6_ROUTING_HEADER
+	{
+		public uint8 NextHeader;
+		public uint8 Length;
+		public uint8 RoutingType;
+		public uint8 SegmentsLeft;
+		public uint8[4] Reserved;
+	}
+	[CRepr]
+	public struct nd_router_solicit
+	{
+		public ICMP_MESSAGE nd_rs_hdr;
+	}
+	[CRepr]
+	public struct nd_router_advert
+	{
+		public ICMP_MESSAGE nd_ra_hdr;
+		public uint32 nd_ra_reachable;
+		public uint32 nd_ra_retransmit;
+	}
+	[CRepr, Union]
+	public struct IPV6_ROUTER_ADVERTISEMENT_FLAGS
+	{
+		public using _Anonymous_e__Struct Anonymous;
+		public uint8 Value;
+		
+		[CRepr]
+		public struct _Anonymous_e__Struct
+		{
+			public uint8 _bitfield;
+		}
+	}
+	[CRepr]
+	public struct nd_neighbor_solicit
+	{
+		public ICMP_MESSAGE nd_ns_hdr;
+		public IN6_ADDR nd_ns_target;
+	}
+	[CRepr]
+	public struct nd_neighbor_advert
+	{
+		public ICMP_MESSAGE nd_na_hdr;
+		public IN6_ADDR nd_na_target;
+	}
+	[CRepr, Union]
+	public struct IPV6_NEIGHBOR_ADVERTISEMENT_FLAGS
+	{
+		public using _Anonymous_e__Struct Anonymous;
+		public uint32 Value;
+		
+		[CRepr]
+		public struct _Anonymous_e__Struct
+		{
+			public uint8 _bitfield;
+			public uint8[3] Reserved2;
+		}
+	}
+	[CRepr]
+	public struct nd_redirect
+	{
+		public ICMP_MESSAGE nd_rd_hdr;
+		public IN6_ADDR nd_rd_target;
+		public IN6_ADDR nd_rd_dst;
+	}
+	[CRepr]
+	public struct nd_opt_hdr
+	{
+		public uint8 nd_opt_type;
+		public uint8 nd_opt_len;
+	}
+	[CRepr]
+	public struct nd_opt_prefix_info
+	{
+		public uint8 nd_opt_pi_type;
+		public uint8 nd_opt_pi_len;
+		public uint8 nd_opt_pi_prefix_len;
+		public _Anonymous1_e__Union Anonymous1;
+		public uint32 nd_opt_pi_valid_time;
+		public uint32 nd_opt_pi_preferred_time;
+		public _Anonymous2_e__Union Anonymous2;
+		public IN6_ADDR nd_opt_pi_prefix;
+		
+		[CRepr, Union]
+		public struct _Anonymous2_e__Union
+		{
+			public uint32 nd_opt_pi_reserved2;
+			public using _Anonymous_e__Struct Anonymous;
+			
+			[CRepr]
+			public struct _Anonymous_e__Struct
+			{
+				public uint8[3] nd_opt_pi_reserved3;
+				public uint8 nd_opt_pi_site_prefix_len;
+			}
+		}
+		[CRepr, Union]
+		public struct _Anonymous1_e__Union
+		{
+			public uint8 nd_opt_pi_flags_reserved;
+			public _Flags_e__Struct Flags;
+			
+			[CRepr]
+			public struct _Flags_e__Struct
+			{
+				public uint8 _bitfield;
+			}
+		}
+	}
+	[CRepr]
+	public struct nd_opt_rd_hdr
+	{
+		public uint8 nd_opt_rh_type;
+		public uint8 nd_opt_rh_len;
+		public uint16 nd_opt_rh_reserved1;
+		public uint32 nd_opt_rh_reserved2;
+	}
+	[CRepr]
+	public struct nd_opt_mtu
+	{
+		public uint8 nd_opt_mtu_type;
+		public uint8 nd_opt_mtu_len;
+		public uint16 nd_opt_mtu_reserved;
+		public uint32 nd_opt_mtu_mtu;
+	}
+	[CRepr]
+	public struct nd_opt_route_info
+	{
+		public uint8 nd_opt_ri_type;
+		public uint8 nd_opt_ri_len;
+		public uint8 nd_opt_ri_prefix_len;
+		public using _Anonymous_e__Union Anonymous;
+		public uint32 nd_opt_ri_route_lifetime;
+		public IN6_ADDR nd_opt_ri_prefix;
+		
+		[CRepr, Union]
+		public struct _Anonymous_e__Union
+		{
+			public uint8 nd_opt_ri_flags_reserved;
+			public _Flags_e__Struct Flags;
+			
+			[CRepr]
+			public struct _Flags_e__Struct
+			{
+				public uint8 _bitfield;
+			}
+		}
+	}
+	[CRepr]
+	public struct nd_opt_rdnss
+	{
+		public uint8 nd_opt_rdnss_type;
+		public uint8 nd_opt_rdnss_len;
+		public uint16 nd_opt_rdnss_reserved;
+		public uint32 nd_opt_rdnss_lifetime;
+	}
+	[CRepr]
+	public struct nd_opt_dnssl
+	{
+		public uint8 nd_opt_dnssl_type;
+		public uint8 nd_opt_dnssl_len;
+		public uint16 nd_opt_dnssl_reserved;
+		public uint32 nd_opt_dnssl_lifetime;
+	}
+	[CRepr]
+	public struct MLD_HEADER
+	{
+		public ICMP_HEADER IcmpHeader;
+		public uint16 MaxRespTime;
+		public uint16 Reserved;
+		public IN6_ADDR MulticastAddress;
+	}
+	[CRepr]
+	public struct MLDV2_QUERY_HEADER
+	{
+		public ICMP_HEADER IcmpHeader;
+		public _Anonymous1_e__Union Anonymous1;
+		public uint16 Reserved;
+		public IN6_ADDR MulticastAddress;
+		public uint8 _bitfield;
+		public _Anonymous2_e__Union Anonymous2;
+		public uint16 SourceCount;
+		
+		[CRepr, Union]
+		public struct _Anonymous2_e__Union
+		{
+			public uint8 QueriersQueryInterfaceCode;
+			public using _Anonymous_e__Struct Anonymous;
+			
+			[CRepr]
+			public struct _Anonymous_e__Struct
+			{
+				public uint8 _bitfield;
+			}
+		}
+		[CRepr, Union]
+		public struct _Anonymous1_e__Union
+		{
+			public uint16 MaxRespCode;
+			public using _Anonymous_e__Struct Anonymous;
+			
+			[CRepr]
+			public struct _Anonymous_e__Struct
+			{
+				public uint16 _bitfield;
+			}
+		}
+	}
+	[CRepr]
+	public struct MLDV2_REPORT_RECORD_HEADER
+	{
+		public uint8 Type;
+		public uint8 AuxillaryDataLength;
+		public uint16 SourceCount;
+		public IN6_ADDR MulticastAddress;
+	}
+	[CRepr]
+	public struct MLDV2_REPORT_HEADER
+	{
+		public ICMP_HEADER IcmpHeader;
+		public uint16 Reserved;
+		public uint16 RecordCount;
+	}
+	[CRepr, Packed(1)]
+	public struct tcp_hdr
+	{
+		public uint16 th_sport;
+		public uint16 th_dport;
+		public uint32 th_seq;
+		public uint32 th_ack;
+		public uint8 _bitfield;
+		public uint8 th_flags;
+		public uint16 th_win;
+		public uint16 th_sum;
+		public uint16 th_urp;
+	}
+	[CRepr, Packed(1)]
+	public struct tcp_opt_mss
+	{
+		public uint8 Kind;
+		public uint8 Length;
+		public uint16 Mss;
+	}
+	[CRepr]
+	public struct tcp_opt_ws
+	{
+		public uint8 Kind;
+		public uint8 Length;
+		public uint8 ShiftCnt;
+	}
+	[CRepr]
+	public struct tcp_opt_sack_permitted
+	{
+		public uint8 Kind;
+		public uint8 Length;
+	}
+	[CRepr]
+	public struct tcp_opt_sack
+	{
+		public uint8 Kind;
+		public uint8 Length;
+		public tcp_opt_sack_block[1] Block_array;
+		
+		public tcp_opt_sack_block* Block mut => &Block_array[0];
+		
+		[CRepr, Packed(1)]
+		public struct tcp_opt_sack_block
+		{
+			public uint32 Left;
+			public uint32 Right;
+		}
+	}
+	[CRepr, Packed(1)]
+	public struct tcp_opt_ts
+	{
+		public uint8 Kind;
+		public uint8 Length;
+		public uint32 Val;
+		public uint32 EcR;
+	}
+	[CRepr]
+	public struct tcp_opt_unknown
+	{
+		public uint8 Kind;
+		public uint8 Length;
+	}
+	[CRepr]
+	public struct tcp_opt_fastopen
+	{
+		public uint8 Kind;
+		public uint8 Length;
+		public uint8[1] Cookie_array;
+		
+		public uint8* Cookie mut => &Cookie_array[0];
+	}
+	[CRepr]
+	public struct DL_TUNNEL_ADDRESS
+	{
+		public COMPARTMENT_ID CompartmentId;
+		public SCOPE_ID ScopeId;
+		public uint8[1] IpAddress_array;
+		
+		public uint8* IpAddress mut => &IpAddress_array[0];
+	}
+	[CRepr]
+	public struct DL_TEREDO_ADDRESS
+	{
+		public uint8[6] Reserved;
+		public using _Anonymous_e__Union Anonymous;
+		
+		[CRepr, Union, Packed(1)]
+		public struct _Anonymous_e__Union
+		{
+			public DL_EUI64 Eui64;
+			public using _Anonymous_e__Struct Anonymous;
+			
+			[CRepr, Packed(1)]
+			public struct _Anonymous_e__Struct
+			{
+				public uint16 Flags;
+				public uint16 MappedPort;
+				public IN_ADDR MappedAddress;
+			}
+		}
+	}
+	[CRepr]
+	public struct DL_TEREDO_ADDRESS_PRV
+	{
+		public uint8[6] Reserved;
+		public using _Anonymous_e__Union Anonymous;
+		
+		[CRepr, Union, Packed(1)]
+		public struct _Anonymous_e__Union
+		{
+			public DL_EUI64 Eui64;
+			public using _Anonymous_e__Struct Anonymous;
+			
+			[CRepr, Packed(1)]
+			public struct _Anonymous_e__Struct
+			{
+				public uint16 Flags;
+				public uint16 MappedPort;
+				public IN_ADDR MappedAddress;
+				public IN_ADDR LocalAddress;
+				public uint32 InterfaceIndex;
+				public uint16 LocalPort;
+				public DL_EUI48 DlDestination;
+			}
+		}
+	}
+	[CRepr, Packed(1)]
+	public struct IPTLS_METADATA
+	{
+		public uint64 SequenceNumber;
+	}
+	[CRepr]
+	public struct NPI_MODULEID
+	{
+		public uint16 Length;
+		public NPI_MODULEID_TYPE Type;
+		public using _Anonymous_e__Union Anonymous;
+		
+		[CRepr, Union]
+		public struct _Anonymous_e__Union
+		{
+			public Guid Guid;
+			public LUID IfLuid;
+		}
+	}
 	#endregion
 	
 	#region Functions
@@ -3609,13 +4713,13 @@ static
 	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint16 ntohs(uint16 netshort);
 	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 recv(SOCKET s, PSTR buf, int32 len, int32 flags);
+	public static extern int32 recv(SOCKET s, PSTR buf, int32 len, SEND_RECV_FLAGS flags);
 	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 recvfrom(SOCKET s, PSTR buf, int32 len, int32 flags, SOCKADDR* from, int32* fromlen);
 	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 select(int32 nfds, fd_set* readfds, fd_set* writefds, fd_set* exceptfds, timeval* timeout);
 	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 send(SOCKET s, PSTR buf, int32 len, SEND_FLAGS flags);
+	public static extern int32 send(SOCKET s, PSTR buf, int32 len, SEND_RECV_FLAGS flags);
 	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 sendto(SOCKET s, PSTR buf, int32 len, int32 flags, in SOCKADDR to, int32 tolen);
 	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]

@@ -482,18 +482,18 @@ static
 		
 		public HRESULT GetError(out BG_ERROR_CONTEXT pContext, out HRESULT pCode) mut => VT.GetError(ref this, out pContext, out pCode);
 		public HRESULT GetFile(out IBackgroundCopyFile* pVal) mut => VT.GetFile(ref this, out pVal);
-		public HRESULT GetErrorDescription(uint32 LanguageId, PWSTR* pErrorDescription) mut => VT.GetErrorDescription(ref this, LanguageId, pErrorDescription);
-		public HRESULT GetErrorContextDescription(uint32 LanguageId, PWSTR* pContextDescription) mut => VT.GetErrorContextDescription(ref this, LanguageId, pContextDescription);
-		public HRESULT GetProtocol(PWSTR* pProtocol) mut => VT.GetProtocol(ref this, pProtocol);
+		public HRESULT GetErrorDescription(uint32 LanguageId, out PWSTR pErrorDescription) mut => VT.GetErrorDescription(ref this, LanguageId, out pErrorDescription);
+		public HRESULT GetErrorContextDescription(uint32 LanguageId, out PWSTR pContextDescription) mut => VT.GetErrorContextDescription(ref this, LanguageId, out pContextDescription);
+		public HRESULT GetProtocol(out PWSTR pProtocol) mut => VT.GetProtocol(ref this, out pProtocol);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyError self, out BG_ERROR_CONTEXT pContext, out HRESULT pCode) GetError;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyError self, out IBackgroundCopyFile* pVal) GetFile;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyError self, uint32 LanguageId, PWSTR* pErrorDescription) GetErrorDescription;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyError self, uint32 LanguageId, PWSTR* pContextDescription) GetErrorContextDescription;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyError self, PWSTR* pProtocol) GetProtocol;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyError self, uint32 LanguageId, out PWSTR pErrorDescription) GetErrorDescription;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyError self, uint32 LanguageId, out PWSTR pContextDescription) GetErrorContextDescription;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyError self, out PWSTR pProtocol) GetProtocol;
 		}
 	}
 	[CRepr]
@@ -671,7 +671,7 @@ static
 		public HRESULT SetNotifyCmdLine(PWSTR Program, PWSTR Parameters) mut => VT.SetNotifyCmdLine(ref this, Program, Parameters);
 		public HRESULT GetNotifyCmdLine(out PWSTR pProgram, out PWSTR pParameters) mut => VT.GetNotifyCmdLine(ref this, out pProgram, out pParameters);
 		public HRESULT GetReplyProgress(out BG_JOB_REPLY_PROGRESS pProgress) mut => VT.GetReplyProgress(ref this, out pProgress);
-		public HRESULT GetReplyData(uint8** ppBuffer, out uint64 pLength) mut => VT.GetReplyData(ref this, ppBuffer, out pLength);
+		public HRESULT GetReplyData(out uint8* ppBuffer, out uint64 pLength) mut => VT.GetReplyData(ref this, out ppBuffer, out pLength);
 		public HRESULT SetReplyFileName(PWSTR ReplyFileName) mut => VT.SetReplyFileName(ref this, ReplyFileName);
 		public HRESULT GetReplyFileName(out PWSTR pReplyFileName) mut => VT.GetReplyFileName(ref this, out pReplyFileName);
 		public HRESULT SetCredentials(ref BG_AUTH_CREDENTIALS credentials) mut => VT.SetCredentials(ref this, ref credentials);
@@ -683,7 +683,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, PWSTR Program, PWSTR Parameters) SetNotifyCmdLine;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, out PWSTR pProgram, out PWSTR pParameters) GetNotifyCmdLine;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, out BG_JOB_REPLY_PROGRESS pProgress) GetReplyProgress;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, uint8** ppBuffer, out uint64 pLength) GetReplyData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, out uint8* ppBuffer, out uint64 pLength) GetReplyData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, PWSTR ReplyFileName) SetReplyFileName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, out PWSTR pReplyFileName) GetReplyFileName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, ref BG_AUTH_CREDENTIALS credentials) SetCredentials;
@@ -738,9 +738,9 @@ static
 		public HRESULT SetClientCertificateByID(BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, uint8* pCertHashBlob) mut => VT.SetClientCertificateByID(ref this, StoreLocation, StoreName, pCertHashBlob);
 		public HRESULT SetClientCertificateByName(BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, PWSTR SubjectName) mut => VT.SetClientCertificateByName(ref this, StoreLocation, StoreName, SubjectName);
 		public HRESULT RemoveClientCertificate() mut => VT.RemoveClientCertificate(ref this);
-		public HRESULT GetClientCertificate(out BG_CERT_STORE_LOCATION pStoreLocation, PWSTR* pStoreName, uint8** ppCertHashBlob, PWSTR* pSubjectName) mut => VT.GetClientCertificate(ref this, out pStoreLocation, pStoreName, ppCertHashBlob, pSubjectName);
+		public HRESULT GetClientCertificate(out BG_CERT_STORE_LOCATION pStoreLocation, out PWSTR pStoreName, uint8** ppCertHashBlob, out PWSTR pSubjectName) mut => VT.GetClientCertificate(ref this, out pStoreLocation, out pStoreName, ppCertHashBlob, out pSubjectName);
 		public HRESULT SetCustomHeaders(PWSTR RequestHeaders) mut => VT.SetCustomHeaders(ref this, RequestHeaders);
-		public HRESULT GetCustomHeaders(PWSTR* pRequestHeaders) mut => VT.GetCustomHeaders(ref this, pRequestHeaders);
+		public HRESULT GetCustomHeaders(out PWSTR pRequestHeaders) mut => VT.GetCustomHeaders(ref this, out pRequestHeaders);
 		public HRESULT SetSecurityFlags(uint32 Flags) mut => VT.SetSecurityFlags(ref this, Flags);
 		public HRESULT GetSecurityFlags(out uint32 pFlags) mut => VT.GetSecurityFlags(ref this, out pFlags);
 
@@ -750,9 +750,9 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, uint8* pCertHashBlob) SetClientCertificateByID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, PWSTR SubjectName) SetClientCertificateByName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self) RemoveClientCertificate;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, out BG_CERT_STORE_LOCATION pStoreLocation, PWSTR* pStoreName, uint8** ppCertHashBlob, PWSTR* pSubjectName) GetClientCertificate;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, out BG_CERT_STORE_LOCATION pStoreLocation, out PWSTR pStoreName, uint8** ppCertHashBlob, out PWSTR pSubjectName) GetClientCertificate;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, PWSTR RequestHeaders) SetCustomHeaders;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, PWSTR* pRequestHeaders) GetCustomHeaders;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, out PWSTR pRequestHeaders) GetCustomHeaders;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, uint32 Flags) SetSecurityFlags;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, out uint32 pFlags) GetSecurityFlags;
 		}
@@ -814,14 +814,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetPeerName(PWSTR* pName) mut => VT.GetPeerName(ref this, pName);
+		public HRESULT GetPeerName(out PWSTR pName) mut => VT.GetPeerName(ref this, out pName);
 		public HRESULT IsAuthenticated(out BOOL pAuth) mut => VT.IsAuthenticated(ref this, out pAuth);
 		public HRESULT IsAvailable(out BOOL pOnline) mut => VT.IsAvailable(ref this, out pOnline);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeer self, PWSTR* pName) GetPeerName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeer self, out PWSTR pName) GetPeerName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeer self, out BOOL pAuth) IsAuthenticated;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeer self, out BOOL pOnline) IsAvailable;
 		}
@@ -867,7 +867,7 @@ static
 		public HRESULT ClearRecords() mut => VT.ClearRecords(ref this);
 		public HRESULT DeleteRecord(in Guid id) mut => VT.DeleteRecord(ref this, id);
 		public HRESULT DeleteUrl(PWSTR url) mut => VT.DeleteUrl(ref this, url);
-		public HRESULT EnumPeers(IEnumBitsPeers** ppEnum) mut => VT.EnumPeers(ref this, ppEnum);
+		public HRESULT EnumPeers(out IEnumBitsPeers* ppEnum) mut => VT.EnumPeers(ref this, out ppEnum);
 		public HRESULT ClearPeers() mut => VT.ClearPeers(ref this);
 		public HRESULT DiscoverPeers() mut => VT.DiscoverPeers(ref this);
 
@@ -885,7 +885,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self) ClearRecords;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self, in Guid id) DeleteRecord;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self, PWSTR url) DeleteUrl;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self, IEnumBitsPeers** ppEnum) EnumPeers;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self, out IEnumBitsPeers* ppEnum) EnumPeers;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self) ClearPeers;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self) DiscoverPeers;
 		}

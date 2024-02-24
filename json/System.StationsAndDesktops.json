@@ -121,6 +121,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"CloseWindowStation"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"HDESK"
@@ -130,6 +131,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"CloseDesktop"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"USEROBJECTFLAGS"

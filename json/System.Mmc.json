@@ -669,6 +669,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f7889da9-4a02-4837-bf89-1a6f2a021010"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -716,6 +717,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a50fa2e5-7e61-45eb-a8d4-9a07b3e851a8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -801,6 +803,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a3afb9cc-b653-4741-86ab-f0470ec1384c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -965,6 +968,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"de46cbdd-53f5-4635-af54-4fe71e923d3f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1123,6 +1127,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fc7a4252-78ac-4532-8c5a-563cfe138863"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -1133,6 +1138,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c0bccd30-de44-4528-8403-a05a6a1cc8ea"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1166,6 +1172,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e5e2d970-5bb3-4306-8804-b0968a31c8e6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1321,6 +1328,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f81ed800-7839-4447-945d-8e15da59ca55"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1344,9 +1352,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"PropertyName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"PropertyValue","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt16"}}},"Attrs":["Out","RetVal"]}
@@ -1400,6 +1406,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ebbb48dc-1a3b-4d86-b786-c21b28389012"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1473,6 +1480,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"225120d6-1e0f-40a3-93fe-1079e6a8017b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1698,6 +1706,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3be910f6-3459-49c6-a1bb-41e6be9df3ea"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1804,6 +1813,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2ef3de1d-b12a-49d1-92c5-0b00798768f1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1882,6 +1892,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ad4d6ca6-912f-409b-a26e-7fd234aef542"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1986,6 +1997,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"82dbea43-8ca4-44bc-a2ca-d18741059ec8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2037,6 +2049,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"383d4d97-fc44-478b-b139-6323dc48611c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2101,6 +2114,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fd1c5f63-2b16-4d06-9ab3-f45350b940ab"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2231,6 +2245,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d6b8c29d-a1ff-4d72-aab0-e381e9b9338d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2295,6 +2310,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6efc2da2-b38c-457e-9abb-ed2d189b8c38"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2554,9 +2570,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"ScopeNode","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"ContextMenu","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ContextMenu","TargetKind":"Com","Api":"System.Mmc","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -2775,9 +2789,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"Node","Type":{"Kind":"ApiRef","Name":"Node","TargetKind":"Com","Api":"System.Mmc","Parents":[]},"Attrs":["In"]}
 					,{"Name":"Column","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
@@ -2847,6 +2859,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"313b01df-b22f-4d42-b1b8-483cdcf51d35"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2898,6 +2911,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"dab39ce0-25e6-4e07-8362-ba9c95706545"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2921,9 +2935,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"IndexOrPath","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 					,{"Name":"MenuItem","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"MenuItem","TargetKind":"Com","Api":"System.Mmc","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -2951,6 +2963,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0178fad1-b361-4b27-96ad-67c57ebf2e1d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3042,6 +3055,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2886abc2-a425-42b2-91c6-e25c0e04581c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3105,6 +3119,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4600c3a5-e301-41d8-b6d0-ef2e4212e0ca"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3596,6 +3611,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"955ab28a-5218-11d0-a985-00c04fd8d565"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3695,6 +3711,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"43136eb2-d36c-11cf-adbc-00aa00a80033"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3797,6 +3814,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"e8315a52-7a1a-11d0-a2d2-00c04fd909dd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3822,6 +3840,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9cb396d8-ea83-11d0-aef1-00c04fb6dd2c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3872,6 +3891,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"43136eb1-d36c-11cf-adbc-00aa00a80033"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4020,6 +4040,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"43136eb3-d36c-11cf-adbc-00aa00a80033"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4178,6 +4199,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"43136eb7-d36c-11cf-adbc-00aa00a80033"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4200,6 +4222,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"43136eb6-d36c-11cf-adbc-00aa00a80033"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IContextMenuCallback","TargetKind":"Com","Api":"System.Mmc","Parents":[]}
 		,"Methods":[
 			{
@@ -4261,6 +4284,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"4f3b7a4f-cfac-11cf-b8e3-00c04fd8d5b0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4298,6 +4322,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"43136eb8-d36c-11cf-adbc-00aa00a80033"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4336,6 +4361,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"31da5fa0-e0eb-11cf-9f21-00aa003ca9f6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4534,6 +4560,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"bedeb620-f24d-11cf-8afc-00aa003ca9f6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4635,6 +4662,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"255f18cc-65db-11d1-a7dc-00c04fd8d565"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IConsoleNameSpace","TargetKind":"Com","Api":"System.Mmc","Parents":[]}
 		,"Methods":[
 			{
@@ -4670,6 +4698,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"85de64dd-ef21-11cf-a285-00c04fd8dbe6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4704,6 +4733,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"85de64de-ef21-11cf-a285-00c04fd8dbe6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4783,6 +4813,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"85de64dc-ef21-11cf-a285-00c04fd8dbe6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4819,6 +4850,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"69fb811e-6c1c-11d0-a2cb-00c04fd909dd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4868,6 +4900,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"49506520-6f40-11d0-a98b-00c04fd8d565"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4904,6 +4937,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"43136eb9-d36c-11cf-adbc-00aa00a80033"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4996,6 +5030,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"e49f7a60-74af-11d0-a286-00c04fd8fe93"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5058,6 +5093,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"1245208c-a151-11d0-a7d7-00c04fd909dd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5131,6 +5167,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"951ed750-d080-11d0-b197-000000000000"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5183,6 +5220,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a6b15ace-df59-11d0-a7dd-00c04fd909dd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5205,6 +5243,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b7a87232-4a51-11d1-a7ea-00c04fd909dd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IExtendPropertySheet","TargetKind":"Com","Api":"System.Mmc","Parents":[]}
 		,"Methods":[
 			{
@@ -5231,6 +5270,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9757abb8-1b32-11d1-a7ce-00c04fd8d565"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IHeaderCtrl","TargetKind":"Com","Api":"System.Mmc","Parents":[]}
 		,"Methods":[
 			{
@@ -5281,6 +5321,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"4861a010-20f9-11d2-a510-00c04fb6dd2c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISnapinHelp","TargetKind":"Com","Api":"System.Mmc","Parents":[]}
 		,"Methods":[
 			{
@@ -5438,6 +5479,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"338698b1-5a02-11d1-9fec-00600832db4a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5497,6 +5539,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"8dee6511-554d-11d1-9fea-00600832db4a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5587,6 +5630,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"103d842a-aa63-11d1-a7e1-00c04fd8d565"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IConsole","TargetKind":"Com","Api":"System.Mmc","Parents":[]}
 		,"Methods":[
 			{
@@ -5633,6 +5677,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"cc593830-b926-11d1-8063-0000f875a9ce"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5655,6 +5700,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"72782d7a-a4a0-11d1-af0f-00c04fb6dd2c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5700,6 +5746,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"de40b7a4-0f65-11d2-8e25-00c04f8ecd78"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5860,6 +5907,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"547c1354-024d-11d3-a707-00c04f8ef4cb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5940,6 +5988,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"80f94174-fccc-11d2-b991-00c04f8ecd78"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6030,6 +6079,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"96933476-0251-11d3-aeb0-00c04f8ecd78"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6162,6 +6212,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"cca0f2d2-82de-41b5-bf47-3b2076273d5c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IComponentData","TargetKind":"Com","Api":"System.Mmc","Parents":[]}
 		,"Methods":[
 			{
@@ -6186,6 +6237,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"79a2d615-4a10-4ed4-8c65-8633f9335095"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IComponent","TargetKind":"Com","Api":"System.Mmc","Parents":[]}
 		,"Methods":[
 			{
@@ -6236,6 +6288,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"e178bc0e-2ed0-4b5e-8097-42c9087e8b33"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6258,6 +6311,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a8d2c5fe-cdcb-4b9d-bde5-a27343ff54bc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6281,6 +6335,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"89995cee-d2ed-4c0e-ae5e-df7e76f3fa53"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6304,6 +6359,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"34dd928a-7599-41e5-9f5e-d6bc3062c2da"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6326,6 +6382,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"1cfbdd0e-62ca-49ce-a3af-dbb2de61b068"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6361,6 +6418,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"3333759f-fe4f-4975-b143-fec0a5dd6d65"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6385,6 +6443,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"15bc4d24-a522-4406-aa55-0749537a6865"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6409,6 +6468,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"4f85efdb-d0e1-498c-8d4a-d010dfdd404f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IConsole2","TargetKind":"Com","Api":"System.Mmc","Parents":[]}
 		,"Methods":[
 			{
@@ -6431,6 +6491,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"0f36e0eb-a7f1-4a81-be5a-9247f7de4b1b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IResultData","TargetKind":"Com","Api":"System.Mmc","Parents":[]}
 		,"Methods":[
 			{

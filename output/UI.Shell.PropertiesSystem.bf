@@ -14,7 +14,7 @@ static
 	#endregion
 	
 	#region Enums
-	public enum GETPROPERTYSTOREFLAGS : int32
+	public enum GETPROPERTYSTOREFLAGS : uint32
 	{
 		DEFAULT = 0,
 		HANDLERPROPERTIESONLY = 1,
@@ -32,7 +32,7 @@ static
 		VOLATILEPROPERTIESONLY = 4096,
 		MASK_VALID = 8191,
 	}
-	public enum PKA_FLAGS : int32
+	public enum PKA_FLAGS : uint32
 	{
 		SET = 0,
 		APPEND = 1,
@@ -52,7 +52,7 @@ static
 		DEFAULTVALUE = 2,
 		ENDRANGE = 3,
 	}
-	public enum PROPDESC_TYPE_FLAGS : int32
+	public enum PROPDESC_TYPE_FLAGS : uint32
 	{
 		DEFAULT = 0,
 		MULTIPLEVALUES = 1,
@@ -68,10 +68,10 @@ static
 		SEARCHRAWVALUE = 1024,
 		DONTCOERCEEMPTYSTRINGS = 2048,
 		ALWAYSINSUPPLEMENTALSTORE = 4096,
-		ISSYSTEMPROPERTY = -2147483648,
-		MASK_ALL = -2147475457,
+		ISSYSTEMPROPERTY = 2147483648,
+		MASK_ALL = 2147491839,
 	}
-	public enum PROPDESC_VIEW_FLAGS : int32
+	public enum PROPDESC_VIEW_FLAGS : uint32
 	{
 		DEFAULT = 0,
 		CENTERALIGN = 1,
@@ -106,7 +106,7 @@ static
 		PERCENT = 5,
 		ENUMERATED = 6,
 	}
-	public enum PROPDESC_FORMAT_FLAGS : int32
+	public enum PROPDESC_FORMAT_FLAGS : uint32
 	{
 		DEFAULT = 0,
 		PREFIXNAME = 1,
@@ -166,7 +166,7 @@ static
 		BOOLEAN = 4,
 		NUMBER = 5,
 	}
-	public enum PROPDESC_SEARCHINFO_FLAGS : int32
+	public enum PROPDESC_SEARCHINFO_FLAGS : uint32
 	{
 		DEFAULT = 0,
 		ININVERTEDINDEX = 1,
@@ -200,7 +200,7 @@ static
 		READONLY = 1,
 		TREAT_NEW_VALUES_AS_DIRTY = 2,
 	}
-	public enum PSTIME_FLAGS : int32
+	public enum PSTIME_FLAGS : uint32
 	{
 		UTC = 0,
 		LOCAL = 1,
@@ -215,7 +215,7 @@ static
 		MONTH = 5,
 		YEAR = 6,
 	}
-	public enum PROPVAR_COMPARE_FLAGS : int32
+	public enum PROPVAR_COMPARE_FLAGS : uint32
 	{
 		DEFAULT = 0,
 		TREATEMPTYASGREATERTHAN = 1,
@@ -225,7 +225,7 @@ static
 		USESTRCMPIC = 16,
 		DIGITSASNUMBERS_CASESENSITIVE = 32,
 	}
-	public enum PROPVAR_CHANGE_FLAGS : int32
+	public enum PROPVAR_CHANGE_FLAGS : uint32
 	{
 		DEFAULT = 0,
 		NOVALUEPROP = 1,
@@ -234,7 +234,7 @@ static
 		LOCALBOOL = 8,
 		NOHEXSTRING = 16,
 	}
-	public enum DRAWPROGRESSFLAGS : int32
+	public enum DRAWPROGRESSFLAGS : uint32
 	{
 		NONE = 0,
 		MARQUEE = 1,
@@ -243,7 +243,7 @@ static
 		WARNING = 8,
 		STOPPED = 16,
 	}
-	public enum SYNC_TRANSFER_STATUS : int32
+	public enum SYNC_TRANSFER_STATUS : uint32
 	{
 		NONE = 0,
 		NEEDSUPLOAD = 1,
@@ -258,7 +258,7 @@ static
 		INCOMPLETE = 512,
 		PLACEHOLDER_IFEMPTY = 1024,
 	}
-	public enum PLACEHOLDER_STATES : int32
+	public enum PLACEHOLDER_STATES : uint32
 	{
 		NONE = 0,
 		MARKED_FOR_OFFLINE_AVAILABILITY = 1,
@@ -268,18 +268,18 @@ static
 		DEFAULT = 7,
 		ALL = 15,
 	}
-	public enum PROPERTYUI_NAME_FLAGS : int32
+	public enum PROPERTYUI_NAME_FLAGS : uint32
 	{
 		DEFAULT = 0,
 		MNEMONIC = 1,
 	}
-	public enum PROPERTYUI_FLAGS : int32
+	public enum PROPERTYUI_FLAGS : uint32
 	{
 		DEFAULT = 0,
 		RIGHTALIGN = 1,
 		NOLABELININFOTIP = 2,
 	}
-	public enum PROPERTYUI_FORMAT_FLAGS : int32
+	public enum PROPERTYUI_FORMAT_FLAGS : uint32
 	{
 		DEFAULT = 0,
 		RIGHTTOLEFT = 1,
@@ -295,7 +295,7 @@ static
 		STOPPED = 4,
 		ERRORS = 5,
 	}
-	public enum SYNC_ENGINE_STATE_FLAGS : int32
+	public enum SYNC_ENGINE_STATE_FLAGS : uint32
 	{
 		NONE = 0,
 		SERVICE_QUOTA_NEARING_LIMIT = 1,

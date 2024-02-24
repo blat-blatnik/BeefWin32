@@ -83,14 +83,15 @@
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"JOB_OBJECT_CPU_RATE_CONTROL_ENABLE","Value":1}
 			,{"Name":"JOB_OBJECT_CPU_RATE_CONTROL_WEIGHT_BASED","Value":2}
 			,{"Name":"JOB_OBJECT_CPU_RATE_CONTROL_HARD_CAP","Value":4}
 			,{"Name":"JOB_OBJECT_CPU_RATE_CONTROL_NOTIFY","Value":8}
-			,{"Name":"JOB_OBJECT__CPU_RATE_CONTROL_MIN_MAX_RATE","Value":16}
+			,{"Name":"JOB_OBJECT_CPU_RATE_CONTROL_MIN_MAX_RATE","Value":16}
+			,{"Name":"JOB_OBJECT_CPU_RATE_CONTROL_VALID_FLAGS","Value":31}
 		]
 		,"IntegerBase":"UInt32"
 	}
@@ -554,7 +555,7 @@
 		,"Architectures":[]
 		,"Platform":null
 		,"Kind":"Enum"
-		,"Flags":false
+		,"Flags":true
 		,"Scoped":false
 		,"Values":[
 			{"Name":"JOB_OBJECT_NET_RATE_CONTROL_ENABLE","Value":1}
@@ -562,7 +563,7 @@
 			,{"Name":"JOB_OBJECT_NET_RATE_CONTROL_DSCP_TAG","Value":4}
 			,{"Name":"JOB_OBJECT_NET_RATE_CONTROL_VALID_FLAGS","Value":7}
 		]
-		,"IntegerBase":"Int32"
+		,"IntegerBase":"UInt32"
 	}
 	,{
 		"Name":"JOBOBJECT_NET_RATE_CONTROL_INFORMATION"

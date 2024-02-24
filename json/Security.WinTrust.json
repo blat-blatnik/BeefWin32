@@ -2,6 +2,20 @@
 
 "Constants":[
 	{
+		"Name":"WINTRUST_CONFIG_REGPATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Microsoft\\Cryptography\\Wintrust\\Config"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WINTRUST_MAX_HEADER_BYTES_TO_MAP_VALUE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MaxHeaderBytesToMap"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WINTRUST_MAX_HEADER_BYTES_TO_MAP_DEFAULT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -9,10 +23,31 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"WINTRUST_MAX_HASH_BYTES_TO_MAP_VALUE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MaxHashBytesToMap"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WINTRUST_MAX_HASH_BYTES_TO_MAP_DEFAULT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1048576
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WTD_PROV_FLAGS_MASK"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":65535
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WTD_CODE_INTEGRITY_DRIVER_MODE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":32768
 		,"Attrs":[]
 	}
 	,{
@@ -55,6 +90,27 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":3758096384
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WTCI_DONT_OPEN_STORES"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WTCI_OPEN_ONLY_ROOT"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WTCI_USE_LOCAL_MACHINE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4
 		,"Attrs":[]
 	}
 	,{
@@ -247,6 +303,83 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"CPD_CHOICE_SIP"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CPD_USE_NT5_CHAIN_FLAG"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2147483648
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CPD_REVOCATION_CHECK_NONE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":65536
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CPD_REVOCATION_CHECK_END_CERT"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":131072
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CPD_REVOCATION_CHECK_CHAIN"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":262144
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CPD_REVOCATION_CHECK_CHAIN_EXCLUDE_ROOT"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":524288
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CPD_RETURN_LOWER_QUALITY_CHAINS"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1048576
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CPD_UISTATE_MODE_PROMPT"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CPD_UISTATE_MODE_BLOCK"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CPD_UISTATE_MODE_ALLOW"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CPD_UISTATE_MODE_MASK"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":3
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WSS_OBJTRUST_SUPPORT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -268,10 +401,73 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SGNR_TYPE_TIMESTAMP"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":16
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CERT_CONFIDENCE_SIG"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":268435456
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CERT_CONFIDENCE_TIME"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":16777216
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CERT_CONFIDENCE_TIMENEST"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1048576
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CERT_CONFIDENCE_AUTHIDEXT"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":65536
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CERT_CONFIDENCE_HYGIENE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4096
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CERT_CONFIDENCE_HIGHEST"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":286330880
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WT_CURRENT_VERSION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":512
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WT_PROVIDER_DLL_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WINTRUST.DLL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WT_PROVIDER_CERTTRUST_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WintrustCertificateTrust"
 		,"Attrs":[]
 	}
 	,{
@@ -282,10 +478,409 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"szOID_TRUSTED_CODESIGNING_CA_LIST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.2.1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szOID_TRUSTED_CLIENT_AUTH_CA_LIST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.2.2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szOID_TRUSTED_SERVER_AUTH_CA_LIST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.2.3"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_COMMON_NAME_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"2.5.4.3"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_TIME_STAMP_REQUEST_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.3.2.1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_INDIRECT_DATA_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.4"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_SP_AGENCY_INFO_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.10"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_STATEMENT_TYPE_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.11"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_SP_OPUS_INFO_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.12"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_CERT_EXTENSIONS_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.14"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_PE_IMAGE_DATA_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.15"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_RAW_FILE_DATA_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.18"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_STRUCTURED_STORAGE_DATA_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.19"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_JAVA_CLASS_DATA_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.20"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_INDIVIDUAL_SP_KEY_PURPOSE_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.21"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_COMMERCIAL_SP_KEY_PURPOSE_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.22"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_CAB_DATA_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.25"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_GLUE_RDN_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.25"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_MINIMAL_CRITERIA_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.26"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_FINANCIAL_CRITERIA_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.27"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_LINK_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.28"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_SIGINFO_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.1.30"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_PE_IMAGE_PAGE_HASHES_V1_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.3.1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_PE_IMAGE_PAGE_HASHES_V2_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.3.2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szOID_NESTED_SIGNATURE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.4.1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szOID_INTENT_TO_SEAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.4.2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szOID_SEALING_SIGNATURE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.4.3"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szOID_SEALING_TIMESTAMP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.4.4"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szOID_ENHANCED_HASH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.5.1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_RELAXED_PE_MARKER_CHECK_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.6.1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_ENCRYPTED_DIGEST_RETRY_COUNT_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.2.6.2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szOID_PKCS_9_SEQUENCE_NUMBER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.2.840.113549.1.9.25.4"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CAT_NAMEVALUE_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.12.2.1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CAT_MEMBERINFO_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.12.2.2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CAT_MEMBERINFO2_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.12.2.3"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_WINDOWS_HELLO_COMPATIBILITY_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.10.41.1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_NATURAL_AUTH_PLUGIN_OBJID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.96.1.1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_SP_AGENCY_INFO_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2000
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_MINIMAL_CRITERIA_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2001
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_FINANCIAL_CRITERIA_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2002
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_INDIRECT_DATA_CONTENT_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2003
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_PE_IMAGE_DATA_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2004
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_LINK_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2005
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_STATEMENT_TYPE_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2006
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_SP_OPUS_INFO_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2007
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_CAB_DATA_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2008
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_JAVA_CLASS_DATA_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2009
+		,"Attrs":[]
+	}
+	,{
+		"Name":"INTENT_TO_SEAL_ATTRIBUTE_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2010
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SEALING_SIGNATURE_ATTRIBUTE_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2011
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SEALING_TIMESTAMP_ATTRIBUTE_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2012
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_SIGINFO_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2130
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CAT_NAMEVALUE_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2221
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CAT_MEMBERINFO_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2222
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CAT_MEMBERINFO2_STRUCT"
+		,"Type":{"Kind":"ApiRef","Name":"PSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}
+		,"ValueType":"Int32"
+		,"Value":2223
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SPC_UUID_LENGTH"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":16
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_URL_LINK_CHOICE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_MONIKER_LINK_CHOICE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SPC_FILE_LINK_CHOICE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":3
 		,"Attrs":[]
 	}
 	,{
@@ -358,6 +953,167 @@
 		,"Value":512
 		,"Attrs":[]
 	}
+	,{
+		"Name":"SP_POLICY_PROVIDER_DLL_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WINTRUST.DLL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SP_INIT_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SoftpubInitialize"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SP_OBJTRUST_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SoftpubLoadMessage"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SP_SIGTRUST_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SoftpubLoadSignature"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SP_CHKCERT_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SoftpubCheckCert"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SP_FINALPOLICY_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SoftpubAuthenticode"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SP_CLEANUPPOLICY_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SoftpubCleanup"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SP_TESTDUMPPOLICY_FUNCTION_TEST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SoftpubDumpStructure"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SP_GENERIC_CERT_INIT_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SoftpubDefCertInit"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GENERIC_CHAIN_FINALPOLICY_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GenericChainFinalProv"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GENERIC_CHAIN_CERTTRUST_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GenericChainCertificateTrust"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HTTPS_FINALPOLICY_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HTTPSFinalProv"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HTTPS_CHKCERT_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HTTPSCheckCertProv"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HTTPS_CERTTRUST_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HTTPSCertificateTrust"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"OFFICE_POLICY_PROVIDER_DLL_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WINTRUST.DLL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"OFFICE_INITPROV_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OfficeInitializePolicy"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"OFFICE_CLEANUPPOLICY_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"OfficeCleanupPolicy"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DRIVER_INITPROV_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverInitializePolicy"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DRIVER_FINALPOLPROV_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverFinalPolicy"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DRIVER_CLEANUPPOLICY_FUNCTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverCleanupPolicy"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CCPI_RESULT_ALLOW"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CCPI_RESULT_DENY"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CCPI_RESULT_AUDIT"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":3
+		,"Attrs":[]
+	}
 ]
 
 ,"Types":[
@@ -393,6 +1149,31 @@
 			,{"Name":"WTPF_VERIFY_V1_OFF","Value":65536}
 			,{"Name":"WTPF_IGNOREREVOCATIONONTS","Value":131072}
 			,{"Name":"WTPF_ALLOWONLYPERTRUST","Value":262144}
+		]
+		,"IntegerBase":"UInt32"
+	}
+	,{
+		"Name":"WINTRUST_DATA_PROVIDER_FLAGS"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Enum"
+		,"Flags":true
+		,"Scoped":false
+		,"Values":[
+			{"Name":"WTD_USE_IE4_TRUST_FLAG","Value":1}
+			,{"Name":"WTD_NO_IE4_CHAIN_FLAG","Value":2}
+			,{"Name":"WTD_NO_POLICY_USAGE_FLAG","Value":4}
+			,{"Name":"WTD_REVOCATION_CHECK_NONE","Value":16}
+			,{"Name":"WTD_REVOCATION_CHECK_END_CERT","Value":32}
+			,{"Name":"WTD_REVOCATION_CHECK_CHAIN","Value":64}
+			,{"Name":"WTD_REVOCATION_CHECK_CHAIN_EXCLUDE_ROOT","Value":128}
+			,{"Name":"WTD_SAFER_FLAG","Value":256}
+			,{"Name":"WTD_HASH_ONLY_FLAG","Value":512}
+			,{"Name":"WTD_USE_DEFAULT_OSVER_CHECK","Value":1024}
+			,{"Name":"WTD_LIFETIME_SIGNING_FLAG","Value":2048}
+			,{"Name":"WTD_CACHE_ONLY_URL_RETRIEVAL","Value":4096}
+			,{"Name":"WTD_DISABLE_MD2_MD4","Value":8192}
+			,{"Name":"WTD_MOTW","Value":16384}
 		]
 		,"IntegerBase":"UInt32"
 	}
@@ -500,7 +1281,7 @@
 			,{"Name":"dwStateAction","Type":{"Kind":"ApiRef","Name":"WINTRUST_DATA_STATE_ACTION","TargetKind":"Default","Api":"Security.WinTrust","Parents":[]},"Attrs":[]}
 			,{"Name":"hWVTStateData","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"pwszURLReference","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
-			,{"Name":"dwProvFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"dwProvFlags","Type":{"Kind":"ApiRef","Name":"WINTRUST_DATA_PROVIDER_FLAGS","TargetKind":"Default","Api":"Security.WinTrust","Parents":[]},"Attrs":[]}
 			,{"Name":"dwUIContext","Type":{"Kind":"ApiRef","Name":"WINTRUST_DATA_UICONTEXT","TargetKind":"Default","Api":"Security.WinTrust","Parents":[]},"Attrs":[]}
 			,{"Name":"pSignatureSettings","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"WINTRUST_SIGNATURE_SETTINGS","TargetKind":"Default","Api":"Security.WinTrust","Parents":[]}},"Attrs":[]}
 		]
@@ -611,7 +1392,7 @@
 			,{"Name":"pcwszDisplayName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Const"]}
 			,{"Name":"psSignerInfo","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CMSG_SIGNER_INFO","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"chStores","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"pahStores","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"pahStores","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 		]
 		,"NestedTypes":[
 		]
@@ -628,7 +1409,7 @@
 			,{"Name":"pcwszDisplayName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["Const"]}
 			,{"Name":"psCertContext","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CERT_CONTEXT","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"chStores","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"pahStores","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"pahStores","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"dwFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"psftVerifyAsOf","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"FILETIME","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":[]}
 		]
@@ -672,7 +1453,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"pProvData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CRYPT_PROVIDER_DATA","TargetKind":"Default","Api":"Security.WinTrust","Parents":[]}},"Attrs":["In"]}
-			,{"Name":"hStore2Add","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
+			,{"Name":"hStore2Add","Type":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{
@@ -850,7 +1631,7 @@
 			,{"Name":"cdwTrustStepErrors","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"padwTrustStepErrors","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":[]}
 			,{"Name":"chStores","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"pahStores","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":[]}
+			,{"Name":"pahStores","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"HCERTSTORE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]}},"Attrs":[]}
 			,{"Name":"dwEncoding","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"hMsg","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":[]}
 			,{"Name":"csSigners","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}

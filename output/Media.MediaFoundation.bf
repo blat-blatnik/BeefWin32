@@ -8,9 +8,7 @@ using Win32.Graphics.Direct3D9;
 using Win32.Graphics.Dxgi.Common;
 using Win32.Graphics.Gdi;
 using Win32.Media.Audio;
-using Win32.Media.DirectShow;
 using Win32.Media.DxMediaObjects;
-using Win32.Media.Streaming;
 using Win32.System.Com;
 using Win32.System.Com.StructuredStorage;
 using Win32.System.WinRT;
@@ -1123,7 +1121,7 @@ static
 	public const uint32 MF_QUOTA_EXCEEDED_ERR = 2154823702;
 	public const uint32 MF_PARSE_ERR = 2154823761;
 	public const uint32 MF_TYPE_ERR = 2154840069;
-	public const PROPERTYKEY DEVPKEY_DeviceInterface_IsVirtualCamera = .(.(0x6edc630d, 0xc2e3, 0x43b7, 0xb2, 0xd1, 0x20, 0x52, 0x5a, 0x1a, 0xf1, 0x20), 3);
+	public const DEVPROPKEY DEVPKEY_DeviceInterface_IsVirtualCamera = .(.(0x6edc630d, 0xc2e3, 0x43b7, 0xb2, 0xd1, 0x20, 0x52, 0x5a, 0x1a, 0xf1, 0x20), 3);
 	public const String g_wszSpeechFormatCaps = "SpeechFormatCap";
 	public const String g_wszWMCPCodecName = "_CODECNAME";
 	public const String g_wszWMCPSupportedVBRModes = "_SUPPORTEDVBRMODES";
@@ -1731,6 +1729,19 @@ static
 	{
 		NONE = 0,
 		NO_WAIT = 1,
+	}
+	public enum MPEG2VIDEOINFO_FLAGS : uint32
+	{
+		DoPanScan = 1,
+		DVDLine21Field1 = 2,
+		DVDLine21Field2 = 4,
+		SourceIsLetterboxed = 8,
+		FilmCameraMode = 16,
+		LetterboxAnalogOut = 32,
+		DSS_UserData = 64,
+		DVB_UserData = 128,
+		_27MhzTimebase = 256,
+		WidescreenAnalogOut = 512,
 	}
 	public enum MF_Plugin_Type : int32
 	{
@@ -3395,7 +3406,7 @@ static
 		TAMPERING_DETECTED = 4,
 		REVOKED_HDCP_DEVICE_ATTACHED = 8,
 	}
-	public enum PM_CONNECTOR_TYPE : int32
+	public enum OPM_CONNECTOR_TYPE : int32
 	{
 		CONNECTOR_TYPE_OTHER = -1,
 		CONNECTOR_TYPE_VGA = 0,
@@ -4474,7 +4485,7 @@ static
 		AES_CTR = 1,
 		AES_CBC = 2,
 	}
-	public enum _MFT_ENUM_FLAG : int32
+	public enum MFT_ENUM_FLAG : uint32
 	{
 		SYNCMFT = 1,
 		ASYNCMFT = 2,
@@ -5080,11 +5091,80 @@ static
 	
 	#region Structs
 	[CRepr]
+	public struct AM_MEDIA_TYPE
+	{
+		public Guid majortype;
+		public Guid subtype;
+		public BOOL bFixedSizeSamples;
+		public BOOL bTemporalCompression;
+		public uint32 lSampleSize;
+		public Guid formattype;
+		public IUnknown* pUnk;
+		public uint32 cbFormat;
+		public uint8* pbFormat;
+	}
+	[CRepr]
 	public struct CodecAPIEventData
 	{
 		public Guid guid;
 		public uint32 dataLength;
 		public uint32[3] reserved;
+	}
+	[CRepr]
+	public struct VIDEOINFOHEADER
+	{
+		public RECT rcSource;
+		public RECT rcTarget;
+		public uint32 dwBitRate;
+		public uint32 dwBitErrorRate;
+		public int64 AvgTimePerFrame;
+		public BITMAPINFOHEADER bmiHeader;
+	}
+	[CRepr]
+	public struct MPEG1VIDEOINFO
+	{
+		public VIDEOINFOHEADER hdr;
+		public uint32 dwStartTimeCode;
+		public uint32 cbSequenceHeader;
+		public uint8[1] bSequenceHeader_array;
+		
+		public uint8* bSequenceHeader mut => &bSequenceHeader_array[0];
+	}
+	[CRepr]
+	public struct VIDEOINFOHEADER2
+	{
+		public RECT rcSource;
+		public RECT rcTarget;
+		public uint32 dwBitRate;
+		public uint32 dwBitErrorRate;
+		public int64 AvgTimePerFrame;
+		public uint32 dwInterlaceFlags;
+		public uint32 dwCopyProtectFlags;
+		public uint32 dwPictAspectRatioX;
+		public uint32 dwPictAspectRatioY;
+		public using _Anonymous_e__Union Anonymous;
+		public uint32 dwReserved2;
+		public BITMAPINFOHEADER bmiHeader;
+		
+		[CRepr, Union]
+		public struct _Anonymous_e__Union
+		{
+			public uint32 dwControlFlags;
+			public uint32 dwReserved1;
+		}
+	}
+	[CRepr]
+	public struct MPEG2VIDEOINFO
+	{
+		public VIDEOINFOHEADER2 hdr;
+		public uint32 dwStartTimeCode;
+		public uint32 cbSequenceHeader;
+		public uint32 dwProfile;
+		public uint32 dwLevel;
+		public MPEG2VIDEOINFO_FLAGS dwFlags;
+		public uint32[1] dwSequenceHeader_array;
+		
+		public uint32* dwSequenceHeader mut => &dwSequenceHeader_array[0];
 	}
 	[CRepr]
 	public struct D3DOVERLAYCAPS
@@ -10483,6 +10563,74 @@ static
 		}
 	}
 	[CRepr]
+	public struct IMFDeviceTransform : IUnknown
+	{
+		public const new Guid IID = .(0xd818fbd8, 0xfc46, 0x42f2, 0x87, 0xac, 0x1e, 0xa2, 0xd1, 0xf9, 0xbf, 0x32);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT InitializeTransform(ref IMFAttributes pAttributes) mut => VT.InitializeTransform(ref this, ref pAttributes);
+		public HRESULT GetInputAvailableType(uint32 dwInputStreamID, uint32 dwTypeIndex, out IMFMediaType* pMediaType) mut => VT.GetInputAvailableType(ref this, dwInputStreamID, dwTypeIndex, out pMediaType);
+		public HRESULT GetInputCurrentType(uint32 dwInputStreamID, out IMFMediaType* pMediaType) mut => VT.GetInputCurrentType(ref this, dwInputStreamID, out pMediaType);
+		public HRESULT GetInputStreamAttributes(uint32 dwInputStreamID, out IMFAttributes* ppAttributes) mut => VT.GetInputStreamAttributes(ref this, dwInputStreamID, out ppAttributes);
+		public HRESULT GetOutputAvailableType(uint32 dwOutputStreamID, uint32 dwTypeIndex, out IMFMediaType* pMediaType) mut => VT.GetOutputAvailableType(ref this, dwOutputStreamID, dwTypeIndex, out pMediaType);
+		public HRESULT GetOutputCurrentType(uint32 dwOutputStreamID, out IMFMediaType* pMediaType) mut => VT.GetOutputCurrentType(ref this, dwOutputStreamID, out pMediaType);
+		public HRESULT GetOutputStreamAttributes(uint32 dwOutputStreamID, out IMFAttributes* ppAttributes) mut => VT.GetOutputStreamAttributes(ref this, dwOutputStreamID, out ppAttributes);
+		public HRESULT GetStreamCount(out uint32 pcInputStreams, out uint32 pcOutputStreams) mut => VT.GetStreamCount(ref this, out pcInputStreams, out pcOutputStreams);
+		public HRESULT GetStreamIDs(uint32 dwInputIDArraySize, out uint32 pdwInputStreamIds, uint32 dwOutputIDArraySize, out uint32 pdwOutputStreamIds) mut => VT.GetStreamIDs(ref this, dwInputIDArraySize, out pdwInputStreamIds, dwOutputIDArraySize, out pdwOutputStreamIds);
+		public HRESULT ProcessEvent(uint32 dwInputStreamID, ref IMFMediaEvent pEvent) mut => VT.ProcessEvent(ref this, dwInputStreamID, ref pEvent);
+		public HRESULT ProcessInput(uint32 dwInputStreamID, ref IMFSample pSample, uint32 dwFlags) mut => VT.ProcessInput(ref this, dwInputStreamID, ref pSample, dwFlags);
+		public HRESULT ProcessMessage(MFT_MESSAGE_TYPE eMessage, uint ulParam) mut => VT.ProcessMessage(ref this, eMessage, ulParam);
+		public HRESULT ProcessOutput(uint32 dwFlags, uint32 cOutputBufferCount, out MFT_OUTPUT_DATA_BUFFER pOutputSample, out uint32 pdwStatus) mut => VT.ProcessOutput(ref this, dwFlags, cOutputBufferCount, out pOutputSample, out pdwStatus);
+		public HRESULT SetInputStreamState(uint32 dwStreamID, ref IMFMediaType pMediaType, DeviceStreamState value, uint32 dwFlags) mut => VT.SetInputStreamState(ref this, dwStreamID, ref pMediaType, value, dwFlags);
+		public HRESULT GetInputStreamState(uint32 dwStreamID, out DeviceStreamState value) mut => VT.GetInputStreamState(ref this, dwStreamID, out value);
+		public HRESULT SetOutputStreamState(uint32 dwStreamID, ref IMFMediaType pMediaType, DeviceStreamState value, uint32 dwFlags) mut => VT.SetOutputStreamState(ref this, dwStreamID, ref pMediaType, value, dwFlags);
+		public HRESULT GetOutputStreamState(uint32 dwStreamID, out DeviceStreamState value) mut => VT.GetOutputStreamState(ref this, dwStreamID, out value);
+		public HRESULT GetInputStreamPreferredState(uint32 dwStreamID, out DeviceStreamState value, out IMFMediaType* ppMediaType) mut => VT.GetInputStreamPreferredState(ref this, dwStreamID, out value, out ppMediaType);
+		public HRESULT FlushInputStream(uint32 dwStreamIndex, uint32 dwFlags) mut => VT.FlushInputStream(ref this, dwStreamIndex, dwFlags);
+		public HRESULT FlushOutputStream(uint32 dwStreamIndex, uint32 dwFlags) mut => VT.FlushOutputStream(ref this, dwStreamIndex, dwFlags);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, ref IMFAttributes pAttributes) InitializeTransform;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwInputStreamID, uint32 dwTypeIndex, out IMFMediaType* pMediaType) GetInputAvailableType;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwInputStreamID, out IMFMediaType* pMediaType) GetInputCurrentType;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwInputStreamID, out IMFAttributes* ppAttributes) GetInputStreamAttributes;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwOutputStreamID, uint32 dwTypeIndex, out IMFMediaType* pMediaType) GetOutputAvailableType;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwOutputStreamID, out IMFMediaType* pMediaType) GetOutputCurrentType;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwOutputStreamID, out IMFAttributes* ppAttributes) GetOutputStreamAttributes;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, out uint32 pcInputStreams, out uint32 pcOutputStreams) GetStreamCount;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwInputIDArraySize, out uint32 pdwInputStreamIds, uint32 dwOutputIDArraySize, out uint32 pdwOutputStreamIds) GetStreamIDs;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwInputStreamID, ref IMFMediaEvent pEvent) ProcessEvent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwInputStreamID, ref IMFSample pSample, uint32 dwFlags) ProcessInput;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, MFT_MESSAGE_TYPE eMessage, uint ulParam) ProcessMessage;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwFlags, uint32 cOutputBufferCount, out MFT_OUTPUT_DATA_BUFFER pOutputSample, out uint32 pdwStatus) ProcessOutput;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwStreamID, ref IMFMediaType pMediaType, DeviceStreamState value, uint32 dwFlags) SetInputStreamState;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwStreamID, out DeviceStreamState value) GetInputStreamState;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwStreamID, ref IMFMediaType pMediaType, DeviceStreamState value, uint32 dwFlags) SetOutputStreamState;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwStreamID, out DeviceStreamState value) GetOutputStreamState;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwStreamID, out DeviceStreamState value, out IMFMediaType* ppMediaType) GetInputStreamPreferredState;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwStreamIndex, uint32 dwFlags) FlushInputStream;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransform self, uint32 dwStreamIndex, uint32 dwFlags) FlushOutputStream;
+		}
+	}
+	[CRepr]
+	public struct IMFDeviceTransformCallback : IUnknown
+	{
+		public const new Guid IID = .(0x6d5cb646, 0x29ec, 0x41fb, 0x81, 0x79, 0x8c, 0x4c, 0x6d, 0x75, 0x08, 0x11);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT OnBufferSent(ref IMFAttributes pCallbackAttributes, uint32 pinId) mut => VT.OnBufferSent(ref this, ref pCallbackAttributes, pinId);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransformCallback self, ref IMFAttributes pCallbackAttributes, uint32 pinId) OnBufferSent;
+		}
+	}
+	[CRepr]
 	public struct IMFMediaSession : IMFMediaEventGenerator
 	{
 		public const new Guid IID = .(0x90377834, 0x21d0, 0x4dee, 0x82, 0x14, 0xba, 0x2e, 0x3e, 0x6c, 0x11, 0x27);
@@ -12257,12 +12405,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT UpdateTopology(out IMFTopology pTopology) mut => VT.UpdateTopology(ref this, out pTopology);
+		public HRESULT UpdateTopology(ref IMFTopology pTopology) mut => VT.UpdateTopology(ref this, ref pTopology);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFRemoteDesktopPlugin self, out IMFTopology pTopology) UpdateTopology;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFRemoteDesktopPlugin self, ref IMFTopology pTopology) UpdateTopology;
 		}
 	}
 	[CRepr]
@@ -13139,7 +13287,7 @@ static
 		
 		public HRESULT GetHeaderSize(ref IMFMediaBuffer pIStartOfContent, out uint64 cbHeaderSize) mut => VT.GetHeaderSize(ref this, ref pIStartOfContent, out cbHeaderSize);
 		public HRESULT ParseHeader(ref IMFMediaBuffer pIHeaderBuffer, uint64 cbOffsetWithinHeader) mut => VT.ParseHeader(ref this, ref pIHeaderBuffer, cbOffsetWithinHeader);
-		public HRESULT GenerateHeader(out IMFMediaBuffer pIHeader, out uint32 pcbHeader) mut => VT.GenerateHeader(ref this, out pIHeader, out pcbHeader);
+		public HRESULT GenerateHeader(ref IMFMediaBuffer pIHeader, out uint32 pcbHeader) mut => VT.GenerateHeader(ref this, ref pIHeader, out pcbHeader);
 		public HRESULT GetProfile(out IMFASFProfile* ppIProfile) mut => VT.GetProfile(ref this, out ppIProfile);
 		public HRESULT SetProfile(ref IMFASFProfile pIProfile) mut => VT.SetProfile(ref this, ref pIProfile);
 		public HRESULT GeneratePresentationDescriptor(out IMFPresentationDescriptor* ppIPresentationDescriptor) mut => VT.GeneratePresentationDescriptor(ref this, out ppIPresentationDescriptor);
@@ -13150,7 +13298,7 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFASFContentInfo self, ref IMFMediaBuffer pIStartOfContent, out uint64 cbHeaderSize) GetHeaderSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFASFContentInfo self, ref IMFMediaBuffer pIHeaderBuffer, uint64 cbOffsetWithinHeader) ParseHeader;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFASFContentInfo self, out IMFMediaBuffer pIHeader, out uint32 pcbHeader) GenerateHeader;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFASFContentInfo self, ref IMFMediaBuffer pIHeader, out uint32 pcbHeader) GenerateHeader;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFASFContentInfo self, out IMFASFProfile* ppIProfile) GetProfile;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFASFContentInfo self, ref IMFASFProfile pIProfile) SetProfile;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFASFContentInfo self, out IMFPresentationDescriptor* ppIPresentationDescriptor) GeneratePresentationDescriptor;
@@ -13372,7 +13520,7 @@ static
 		public HRESULT ProcessSample(uint16 wStreamNumber, ref IMFSample pISample, int64 hnsTimestampAdjust) mut => VT.ProcessSample(ref this, wStreamNumber, ref pISample, hnsTimestampAdjust);
 		public HRESULT GetNextPacket(out uint32 pdwStatusFlags, out IMFSample* ppIPacket) mut => VT.GetNextPacket(ref this, out pdwStatusFlags, out ppIPacket);
 		public HRESULT Flush() mut => VT.Flush(ref this);
-		public HRESULT End(out IMFASFContentInfo pIContentInfo) mut => VT.End(ref this, out pIContentInfo);
+		public HRESULT End(ref IMFASFContentInfo pIContentInfo) mut => VT.End(ref this, ref pIContentInfo);
 		public HRESULT GetStatistics(uint16 wStreamNumber, out ASF_MUX_STATISTICS pMuxStats) mut => VT.GetStatistics(ref this, wStreamNumber, out pMuxStats);
 		public HRESULT SetSyncTolerance(uint32 msSyncTolerance) mut => VT.SetSyncTolerance(ref this, msSyncTolerance);
 
@@ -13385,7 +13533,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFASFMultiplexer self, uint16 wStreamNumber, ref IMFSample pISample, int64 hnsTimestampAdjust) ProcessSample;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFASFMultiplexer self, out uint32 pdwStatusFlags, out IMFSample* ppIPacket) GetNextPacket;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFASFMultiplexer self) Flush;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFASFMultiplexer self, out IMFASFContentInfo pIContentInfo) End;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFASFMultiplexer self, ref IMFASFContentInfo pIContentInfo) End;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFASFMultiplexer self, uint16 wStreamNumber, out ASF_MUX_STATISTICS pMuxStats) GetStatistics;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFASFMultiplexer self, uint32 msSyncTolerance) SetSyncTolerance;
 		}
@@ -16443,15 +16591,15 @@ static
 	[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT MFTEnum(Guid guidCategory, uint32 Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, out Guid* ppclsidMFT, out uint32 pcMFTs);
 	[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT MFTEnumEx(Guid guidCategory, uint32 Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, out IMFActivate** pppMFTActivate, out uint32 pnumMFTActivate);
+	public static extern HRESULT MFTEnumEx(Guid guidCategory, MFT_ENUM_FLAG Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, out IMFActivate** pppMFTActivate, out uint32 pnumMFTActivate);
 	[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT MFTEnum2(Guid guidCategory, uint32 Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, out IMFActivate** pppMFTActivate, out uint32 pnumMFTActivate);
+	public static extern HRESULT MFTEnum2(Guid guidCategory, MFT_ENUM_FLAG Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, out IMFActivate** pppMFTActivate, out uint32 pnumMFTActivate);
 	[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT MFTGetInfo(Guid clsidMFT, PWSTR* pszName, MFT_REGISTER_TYPE_INFO** ppInputTypes, uint32* pcInputTypes, MFT_REGISTER_TYPE_INFO** ppOutputTypes, uint32* pcOutputTypes, IMFAttributes** ppAttributes);
 	[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT MFGetPluginControl(out IMFPluginControl* ppPluginControl);
 	[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT MFGetMFTMerit(out IUnknown pMFT, uint32 cbVerifier, in uint8 verifier, out uint32 merit);
+	public static extern HRESULT MFGetMFTMerit(ref IUnknown pMFT, uint32 cbVerifier, in uint8 verifier, out uint32 merit);
 	[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT MFRegisterLocalSchemeHandler(PWSTR szScheme, ref IMFActivate pActivate);
 	[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]

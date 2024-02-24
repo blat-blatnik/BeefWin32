@@ -10,6 +10,7 @@ static
 	public const uint32 MI_FLAG_ANY = 127;
 	public const uint32 MI_FLAG_VERSION = 469762048;
 	public const uint32 MI_FLAG_ADOPT = 2147483648;
+	public const uint32 MI_CHAR_TYPE = 2;
 	public const uint32 MI_FLAG_CLASS = 1;
 	public const uint32 MI_FLAG_METHOD = 2;
 	public const uint32 MI_FLAG_PROPERTY = 4;
@@ -60,6 +61,8 @@ static
 	public const uint32 MI_OPERATIONFLAGS_POLYMORPHISM_SHALLOW = 128;
 	public const uint32 MI_OPERATIONFLAGS_POLYMORPHISM_DEEP_BASE_PROPS_ONLY = 384;
 	public const uint32 MI_OPERATIONFLAGS_REPORT_OPERATION_STARTED = 512;
+	public const String MI_SUBSCRIBE_BOOKMARK_OLDEST = "MI_SUBSCRIBE_BOOKMARK_OLDEST";
+	public const String MI_SUBSCRIBE_BOOKMARK_NEWEST = "MI_SUBSCRIBE_BOOKMARK_NEWEST";
 	public const uint32 MI_SERIALIZER_FLAGS_CLASS_DEEP = 1;
 	public const uint32 MI_SERIALIZER_FLAGS_INSTANCE_WITH_CLASS = 1;
 	public const uint32 WBEMS_DISPID_DERIVATION = 23;
@@ -3350,7 +3353,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT QueryInstances(ref IWbemServices pNamespace, PWSTR wszClass, int32 lFlags, ref IWbemContext pCtx, out IWbemObjectSink pSink) mut => VT.QueryInstances(ref this, ref pNamespace, wszClass, lFlags, ref pCtx, out pSink);
+		public HRESULT QueryInstances(ref IWbemServices pNamespace, PWSTR wszClass, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pSink) mut => VT.QueryInstances(ref this, ref pNamespace, wszClass, lFlags, ref pCtx, ref pSink);
 		public HRESULT CreateRefresher(ref IWbemServices pNamespace, int32 lFlags, out IWbemRefresher* ppRefresher) mut => VT.CreateRefresher(ref this, ref pNamespace, lFlags, out ppRefresher);
 		public HRESULT CreateRefreshableObject(ref IWbemServices pNamespace, ref IWbemObjectAccess pTemplate, ref IWbemRefresher pRefresher, int32 lFlags, ref IWbemContext pContext, out IWbemObjectAccess* ppRefreshable, out int32 plId) mut => VT.CreateRefreshableObject(ref this, ref pNamespace, ref pTemplate, ref pRefresher, lFlags, ref pContext, out ppRefreshable, out plId);
 		public HRESULT StopRefreshing(ref IWbemRefresher pRefresher, int32 lId, int32 lFlags) mut => VT.StopRefreshing(ref this, ref pRefresher, lId, lFlags);
@@ -3360,7 +3363,7 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, PWSTR wszClass, int32 lFlags, ref IWbemContext pCtx, out IWbemObjectSink pSink) QueryInstances;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, PWSTR wszClass, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pSink) QueryInstances;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, int32 lFlags, out IWbemRefresher* ppRefresher) CreateRefresher;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, ref IWbemObjectAccess pTemplate, ref IWbemRefresher pRefresher, int32 lFlags, ref IWbemContext pContext, out IWbemObjectAccess* ppRefreshable, out int32 plId) CreateRefreshableObject;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemHiPerfProvider self, ref IWbemRefresher pRefresher, int32 lId, int32 lFlags) StopRefreshing;

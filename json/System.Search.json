@@ -5448,6 +5448,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SQL_SS_DL_DEFAULT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"STATS.LOG"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SQL_SS_QL_DEFAULT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"QUERY.LOG"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SQL_SS_QI_DEFAULT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -7083,6 +7097,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":8
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MS_PERSIST_PROGID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MSPersist"
 		,"Attrs":[]
 	}
 	,{
@@ -9753,6 +9774,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SQL_SPEC_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"03.80"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SQL_SQLSTATE_SIZE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -10212,6 +10240,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":0
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SQL_OPT_TRACE_FILE_DEFAULT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\SQL.LOG"
 		,"Attrs":[]
 	}
 	,{
@@ -16753,6 +16788,27 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SQL_ALL_CATALOGS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"%"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SQL_ALL_SCHEMAS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"%"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SQL_ALL_TABLE_TYPES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"%"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SQL_DRIVER_NOPROMPT"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -17030,6 +17086,13 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SQL_ODBC_KEYWORDS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ABSOLUTE,ACTION,ADA,ADD,ALL,ALLOCATE,ALTER,AND,ANY,ARE,AS,ASC,ASSERTION,AT,AUTHORIZATION,AVG,BEGIN,BETWEEN,BIT,BIT_LENGTH,BOTH,BY,CASCADE,CASCADED,CASE,CAST,CATALOG,CHAR,CHAR_LENGTH,CHARACTER,CHARACTER_LENGTH,CHECK,CLOSE,COALESCE,COLLATE,COLLATION,COLUMN,COMMIT,CONNECT,CONNECTION,CONSTRAINT,CONSTRAINTS,CONTINUE,CONVERT,CORRESPONDING,COUNT,CREATE,CROSS,CURRENT,CURRENT_DATE,CURRENT_TIME,CURRENT_TIMESTAMP,CURRENT_USER,CURSOR,DATE,DAY,DEALLOCATE,DEC,DECIMAL,DECLARE,DEFAULT,DEFERRABLE,DEFERRED,DELETE,DESC,DESCRIBE,DESCRIPTOR,DIAGNOSTICS,DISCONNECT,DISTINCT,DOMAIN,DOUBLE,DROP,ELSE,END,END-EXEC,ESCAPE,EXCEPT,EXCEPTION,EXEC,EXECUTE,EXISTS,EXTERNAL,EXTRACT,FALSE,FETCH,FIRST,FLOAT,FOR,FOREIGN,FORTRAN,FOUND,FROM,FULL,GET,GLOBAL,GO,GOTO,GRANT,GROUP,HAVING,HOUR,IDENTITY,IMMEDIATE,IN,INCLUDE,INDEX,INDICATOR,INITIALLY,INNER,INPUT,INSENSITIVE,INSERT,INT,INTEGER,INTERSECT,INTERVAL,INTO,IS,ISOLATION,JOIN,KEY,LANGUAGE,LAST,LEADING,LEFT,LEVEL,LIKE,LOCAL,LOWER,MATCH,MAX,MIN,MINUTE,MODULE,MONTH,NAMES,NATIONAL,NATURAL,NCHAR,NEXT,NO,NONE,NOT,NULL,NULLIF,NUMERIC,OCTET_LENGTH,OF,ON,ONLY,OPEN,OPTION,OR,ORDER,OUTER,OUTPUT,OVERLAPS,PAD,PARTIAL,PASCAL,PLI,POSITION,PRECISION,PREPARE,PRESERVE,PRIMARY,PRIOR,PRIVILEGES,PROCEDURE,PUBLIC,READ,REAL,REFERENCES,RELATIVE,RESTRICT,REVOKE,RIGHT,ROLLBACK,ROWSSCHEMA,SCROLL,SECOND,SECTION,SELECT,SESSION,SESSION_USER,SET,SIZE,SMALLINT,SOME,SPACE,SQL,SQLCA,SQLCODE,SQLERROR,SQLSTATE,SQLWARNING,SUBSTRING,SUM,SYSTEM_USER,TABLE,TEMPORARY,THEN,TIME,TIMESTAMP,TIMEZONE_HOUR,TIMEZONE_MINUTE,TO,TRAILING,TRANSACTION,TRANSLATE,TRANSLATION,TRIM,TRUE,UNION,UNIQUE,UNKNOWN,UPDATE,UPPER,USAGE,USER,USING,VALUE,VALUES,VARCHAR,VARYING,VIEW,WHEN,WHENEVER,WHERE,WITH,WORK,WRITE,YEAR,ZONE"
 		,"Attrs":[]
 	}
 	,{
@@ -23710,6 +23773,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"cc907054-c058-101a-b554-08002b33b0e6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -23813,6 +23877,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"d53552c8-77e3-101a-b552-08002b33b0e6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -23881,6 +23946,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"fe77c330-7f42-11ce-be57-00aa0051fe20"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -23917,6 +23983,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"efbaf140-7f42-11ce-be57-00aa0051fe20"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -23966,6 +24033,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5e341ab7-02d0-11d1-900c-00a0c9063796"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -24016,6 +24084,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0b63e37a-9ccc-11d0-bcdb-00805fccce04"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -24083,6 +24152,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0b63e37b-9ccc-11d0-bcdb-00805fccce04"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -24151,6 +24221,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"c7310722-ac80-11d1-8df3-00c04fb6ef4f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -24218,6 +24289,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"40bdbd34-780b-48d3-9bb6-12ebd4ad2e75"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ILoadFilter","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -24244,6 +24316,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"4fdef69c-dbc9-454e-9910-b34f3c64b510"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -24269,6 +24342,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"0fc988d4-c935-4b97-a973-46282ea175c8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IPersistStream","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -24368,6 +24442,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"0db8851d-2e5b-47eb-9208-d28c325a01d7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ICondition","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -26006,6 +26081,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a8c-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26074,6 +26150,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a7c-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26157,6 +26234,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a55-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26225,6 +26303,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a7d-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRowset","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -26305,6 +26384,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a84-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26345,6 +26425,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a7e-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRowsetLocate","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -26389,6 +26470,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a93-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26425,6 +26507,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a9d-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26471,6 +26554,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a94-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26545,6 +26629,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0997a571-126e-11d0-9f8a-00a0c9a0631e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26569,6 +26654,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a97-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26606,6 +26692,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a98-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26642,6 +26729,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a9a-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26680,6 +26768,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a9b-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26733,6 +26822,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a99-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26772,6 +26862,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a05-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26842,6 +26933,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a6d-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRowsetChange","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -26931,6 +27023,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a09-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -26954,6 +27047,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a83-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27063,6 +27157,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a82-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27120,6 +27215,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a63-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27184,6 +27280,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a90-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27237,6 +27334,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a88-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27261,6 +27359,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a26-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27294,6 +27393,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a79-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27332,6 +27432,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a27-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ICommand","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -27386,6 +27487,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a64-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27438,6 +27540,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a10-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27479,6 +27582,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a11-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27517,6 +27621,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a1d-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27541,6 +27646,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a5d-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27603,6 +27709,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a1e-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27629,6 +27736,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a8a-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27683,6 +27791,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a8b-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27797,6 +27906,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a89-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27835,6 +27945,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a7a-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27901,6 +28012,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a96-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27955,6 +28067,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a95-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -27995,6 +28108,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a85-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28033,6 +28147,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a68-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28074,6 +28189,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a86-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28143,6 +28259,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a69-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28171,6 +28288,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a7b-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28214,6 +28332,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a07cccd1-8148-11d0-87bb-00c04fc33942"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28295,6 +28414,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a07cccd2-8148-11d0-87bb-00c04fc33942"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28336,6 +28456,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733aa0-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28364,6 +28485,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733aa5-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28404,6 +28526,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733aa6-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28430,6 +28553,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733aa8-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28453,6 +28577,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733aa7-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28513,6 +28638,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733aa9-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28555,6 +28681,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733aaa-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28597,6 +28724,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a67-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28689,6 +28817,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a66-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28744,6 +28873,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a74-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28767,6 +28897,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a75-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28790,6 +28921,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a5f-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITransaction","TargetKind":"Com","Api":"System.DistributedTransactionCoordinator","Parents":[]}
 		,"Methods":[
 			{
@@ -28827,6 +28959,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a5e-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28864,6 +28997,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a60-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28887,6 +29021,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733aa1-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -28966,6 +29101,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733aa2-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29044,6 +29180,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733aa3-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29150,6 +29287,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733aa4-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29198,6 +29336,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733abc-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITableDefinition","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -29227,6 +29366,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733aab-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ITableCreation","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -29285,6 +29425,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733ab4-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29339,6 +29480,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733ab5-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29362,6 +29504,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733aae-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRowChange","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -29400,6 +29543,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733aaf-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29438,6 +29582,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733ab1-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29513,6 +29658,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733ab0-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IBindResource","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -29594,6 +29740,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733ab2-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29625,6 +29772,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733ab3-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDBProperties","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -29646,6 +29794,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733ab8-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IColumnsInfo","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -29674,6 +29823,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733ab9-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29726,6 +29876,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733aba-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29738,7 +29889,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppSession","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppSession","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -29749,6 +29900,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733abb-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29761,7 +29913,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppRow","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppRow","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -29772,6 +29924,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733abd-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRowsetIndex","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -29806,6 +29959,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733abf-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -29844,6 +29998,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733ac2-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30053,6 +30208,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"2ebdee67-3505-43f8-9946-ea44abc8e5b0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30172,6 +30328,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"a5efe073-b16f-474f-9f3e-9f8b497a3e08"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30246,6 +30403,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"d6ebc66b-8921-4193-afdd-a1789fb7ff57"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IConditionFactory","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -30315,6 +30473,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"71d222e1-432f-429e-8c13-b6dafde5077a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IConditionFactory","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -30478,6 +30637,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"92d2cc58-4386-45a3-b98c-7e0ce64a4117"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30504,7 +30664,7 @@
 					{"Name":"pszInputString","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 					,{"Name":"lcidUserLocale","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"pTokenCollection","Type":{"Kind":"ApiRef","Name":"ITokenCollection","TargetKind":"Com","Api":"System.Search","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pNamedEntities","Type":{"Kind":"ApiRef","Name":"INamedEntityCollector","TargetKind":"Com","Api":"System.Search","Parents":[]},"Attrs":["In","Out"]}
+					,{"Name":"pNamedEntities","Type":{"Kind":"ApiRef","Name":"INamedEntityCollector","TargetKind":"Com","Api":"System.Search","Parents":[]},"Attrs":["In"]}
 				]
 			}
 			,{
@@ -30553,6 +30713,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"6bf0a714-3c18-430b-8b5d-83b1c234d3db"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30578,6 +30739,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"780102b0-c43b-4876-bc7b-5e9ba5c88794"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30601,6 +30763,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"24264891-e80b-4fd3-b7ce-4ff2fae8931f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30712,6 +30875,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"2769280b-5108-498c-9c7f-a51239b63147"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30783,6 +30947,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"abdbd0b1-7d54-49fb-ab5c-bff4130004cd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30817,6 +30982,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"8cf89bcb-394c-49b2-ae28-a59dd4ed7f68"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30920,6 +31086,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"22d8b4f2-f577-4adb-a335-c2ae88416fab"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30971,6 +31138,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"af2440f6-8afc-47d0-9a7f-396a0acfb43d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -30999,6 +31167,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"ca3fdca2-bfbe-4eed-90d7-0caef0a1bda1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -31022,6 +31191,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"a879e3c4-af77-44fb-8f37-ebd1487cf920"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -31088,6 +31258,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"0b63e318-9ccc-11d0-bcdb-00805fccce04"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -31241,7 +31412,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -31253,7 +31424,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppFilter","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFilter","TargetKind":"Com","Api":"Storage.IndexServer","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFilter","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFilter","TargetKind":"Com","Api":"Storage.IndexServer","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -31264,6 +31435,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c7310734-ac80-11d1-8df3-00c04fb6ef4f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUrlAccessor","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -31313,6 +31485,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"6fbc7005-0455-4874-b8ff-7439450241a3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUrlAccessor2","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -31326,7 +31499,7 @@
 				,"Params":[
 					{"Name":"pcwszURL","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 					,{"Name":"pcSidCount","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
-					,{"Name":"ppSidBlobs","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BLOB","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppSidBlobs","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BLOB","TargetKind":"Default","Api":"System.Com","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -31337,6 +31510,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"5cc51041-c8d2-41d7-bca3-9e9e286297dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUrlAccessor3","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -31372,6 +31546,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c731065d-ac80-11d1-8df3-00c04fb6ef4f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -31418,6 +31593,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c73106e1-ac80-11d1-8df3-00c04fb6ef4f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -31571,6 +31747,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c73106ba-ac80-11d1-8df3-00c04fb6ef4f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -31634,6 +31811,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"7789f0b2-b5b2-4722-8b65-5dbd150697a9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISearchProtocol","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -31661,6 +31839,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"0b63e385-9ccc-11d0-bcdb-00805fccce04"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -31686,6 +31865,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"04c18ccf-1f57-4cbd-88cc-3900f5195ce3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -31713,7 +31893,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppszTaskArg","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszTaskArg","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -31741,7 +31921,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppszURL","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszURL","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -31965,7 +32145,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppszUser","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszUser","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -31993,7 +32173,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppszPassword","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszPassword","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -32004,6 +32184,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"ab310581-ac80-11d1-8df3-00c04fb6ef52"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32052,7 +32233,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppenum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumSearchRoots","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppenum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumSearchRoots","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -32076,6 +32257,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"ab310581-ac80-11d1-8df3-00c04fb6ef53"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32089,7 +32271,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppszPatternOrURL","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszPatternOrURL","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -32142,6 +32324,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"ab310581-ac80-11d1-8df3-00c04fb6ef54"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32190,7 +32373,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppenum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumSearchScopeRules","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppenum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumSearchScopeRules","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -32216,6 +32399,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"ab310581-ac80-11d1-8df3-00c04fb6ef55"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32265,7 +32449,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppSearchRoots","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumSearchRoots","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppSearchRoots","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumSearchRoots","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -32319,7 +32503,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppSearchScopeRules","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumSearchScopeRules","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppSearchScopeRules","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumSearchScopeRules","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -32430,6 +32614,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"6292f7ad-4e19-4717-a534-8fc22bcd5ccd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISearchCrawlScopeManager","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -32501,6 +32686,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"ab310581-ac80-11d1-8df3-00c04fb6ef58"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32566,6 +32752,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"a2ffdf9b-4758-4f84-b729-df81a1a0612f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32614,6 +32801,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"ab310581-ac80-11d1-8df3-00c04fb6ef65"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32666,6 +32854,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"b5702e61-e75c-4b64-82a1-6cb4f832fccf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32744,6 +32933,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"ab310581-ac80-11d1-8df3-00c04fb6ef50"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -32757,7 +32947,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pszName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pszName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -32770,7 +32960,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pszName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"ppValue","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PROPVARIANT","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]}}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppValue","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PROPVARIANT","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -32936,7 +33126,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pszUrl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pszUrl","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -32961,7 +33151,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppISearchPersistentItemsChangedSink","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISearchPersistentItemsChangedSink","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppISearchPersistentItemsChangedSink","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISearchPersistentItemsChangedSink","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -32989,7 +33179,7 @@
 				,"Params":[
 					{"Name":"pISearchNotifyInlineSite","Type":{"Kind":"ApiRef","Name":"ISearchNotifyInlineSite","TargetKind":"Com","Api":"System.Search","Parents":[]},"Attrs":["In","Optional"]}
 					,{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppv","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppv","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
 					,{"Name":"pGUIDCatalogResetSignature","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["Out"]}
 					,{"Name":"pGUIDCheckPointSignature","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["Out"]}
 					,{"Name":"pdwLastCheckPointNumber","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
@@ -33029,7 +33219,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppExtensions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumString","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppExtensions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumString","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -33041,7 +33231,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppSearchQueryHelper","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISearchQueryHelper","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppSearchQueryHelper","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISearchQueryHelper","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -33081,7 +33271,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppCrawlScopeManager","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISearchCrawlScopeManager","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppCrawlScopeManager","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISearchCrawlScopeManager","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -33105,6 +33295,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"7ac3286d-4d1d-4817-84fc-c1c85e3af0d9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISearchCatalogManager","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -33170,6 +33361,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"ab310581-ac80-11d1-8df3-00c04fb6ef63"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33183,7 +33375,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pszConnectionString","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pszConnectionString","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -33323,7 +33515,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppszContentProperties","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszContentProperties","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -33351,7 +33543,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppszSelectColumns","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszSelectColumns","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -33379,7 +33571,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppszRestrictions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszRestrictions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -33407,7 +33599,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppszSorting","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszSorting","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -33420,7 +33612,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pszQuery","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"ppszSQL","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppszSQL","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -33490,6 +33682,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"42811652-079d-481b-87a2-09a69ecc5f44"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33568,6 +33761,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"1551aea5-5d66-4b11-86f5-d5634cb211b9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33631,6 +33825,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"ab310581-ac80-11d1-8df3-00c04fb6ef69"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33642,7 +33837,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppszVersionString","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszVersionString","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -33668,7 +33863,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pszName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"ppValue","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PROPVARIANT","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]}}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppValue","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PROPVARIANT","TargetKind":"Default","Api":"System.Com.StructuredStorage","Parents":[]}}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -33695,7 +33890,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppszProxyName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszProxyName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -33709,7 +33904,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppszBypassList","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszBypassList","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -33738,7 +33933,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pszCatalog","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"ppCatalogManager","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISearchCatalogManager","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppCatalogManager","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISearchCatalogManager","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -33752,7 +33947,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppszUserAgent","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszUserAgent","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -33819,6 +34014,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"dbab3f73-db19-4a79-bfc0-a61a93886ddf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISearchManager","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -33831,7 +34027,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pszCatalog","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"ppCatalogManager","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISearchCatalogManager","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppCatalogManager","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ISearchCatalogManager","TargetKind":"Com","Api":"System.Search","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -33861,6 +34057,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"24c3cbaa-ebc1-491a-9ef1-9f6d8deb1b8f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -33898,7 +34095,7 @@
 				,"Params":[
 					{"Name":"lcid","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppWordBreaker","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppWordBreaker","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
 					,{"Name":"pLcidUsed","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
 				]
 			}
@@ -33913,7 +34110,7 @@
 				,"Params":[
 					{"Name":"lcid","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppStemmer","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppStemmer","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}}},"Attrs":["Out"]}
 					,{"Name":"pLcidUsed","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
 				]
 			}
@@ -33962,6 +34159,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f72c8d96-6dbd-11d1-a1e8-00c04fc2fbe1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34050,6 +34248,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a97559f8-6c4a-11d1-a1e8-00c04fc2fbe1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34147,6 +34346,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f72c8d97-6dbd-11d1-a1e8-00c04fc2fbe1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34322,6 +34522,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"085fb2c0-0df8-11d1-8f4b-00a0c905413f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34437,6 +34638,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"614bc270-aedf-11d1-a1f9-00c04fc2fbe1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISubscriptionMgr","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -34602,6 +34804,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a8d-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34690,6 +34893,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a9c-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34755,6 +34959,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7c0ffab2-cd84-11d0-949a-00a0c91110ed"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34801,6 +35006,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7c0ffab3-cd84-11d0-949a-00a0c91110ed"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -34951,6 +35157,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e0e270c1-c0be-11d0-8fe4-00a0c90a6341"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35064,6 +35271,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"e0e270c0-c0be-11d0-8fe4-00a0c90a6341"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35258,6 +35466,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0ae9a4e4-18d4-11d1-b3b3-00aa00c1a924"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -35308,6 +35517,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"06210e88-01f5-11d1-b512-0080c781c384"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35347,6 +35557,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2206ccb0-19c1-11d1-89e0-00c04fd7a829"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35392,6 +35603,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2206ccb1-19c1-11d1-89e0-00c04fd7a829"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35407,7 +35619,7 @@
 					,{"Name":"dwClsCtx","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"pwszInitializationString","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
 					,{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppDataSource","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["In","Out","Optional"]}
+					,{"Name":"ppDataSource","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["In","Out"]}
 				]
 			}
 			,{
@@ -35421,7 +35633,7 @@
 				,"Params":[
 					{"Name":"pDataSource","Type":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Optional"]}
 					,{"Name":"fIncludePassword","Type":{"Kind":"Native","Name":"Byte"},"Attrs":["In"]}
-					,{"Name":"ppwszInitString","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppwszInitString","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -35438,7 +35650,7 @@
 					,{"Name":"dwClsCtx","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"pwszReserved","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional"]}
 					,{"Name":"riid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In","Const"]}
-					,{"Name":"ppDataSource","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppDataSource","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -35469,7 +35681,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pwszFileName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Optional","Const"]}
-					,{"Name":"ppwszInitializationString","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppwszInitializationString","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -35494,6 +35706,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2206ccb2-19c1-11d1-89e0-00c04fd7a829"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35533,7 +35746,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppADOConnection","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppADOConnection","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -35545,7 +35758,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppADOConnection","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["In","Out","Optional"]}
+					{"Name":"ppADOConnection","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["In","Out"]}
 					,{"Name":"pbSuccess","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["Out"]}
 				]
 			}
@@ -35570,6 +35783,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a8f-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35640,6 +35854,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"228972f0-b5ff-11d0-8a80-00c04fd611cd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -35663,6 +35878,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"228972f1-b5ff-11d0-8a80-00c04fd611cd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36014,6 +36230,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a72-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36038,6 +36255,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a71-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36065,6 +36283,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a6e-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36103,6 +36322,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a0f-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36139,6 +36359,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a12-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36162,6 +36383,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a73-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36219,6 +36441,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a44-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36288,6 +36511,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a45-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IRowsetWatchAll","TargetKind":"Com","Api":"System.Search","Parents":[]}
 		,"Methods":[
 			{
@@ -36382,6 +36606,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a6b-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36452,6 +36677,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a6a-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36573,6 +36799,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a4e-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36668,6 +36895,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a18-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36700,6 +36928,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a77-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36739,6 +36968,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a50-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -36776,6 +37006,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c733a4d-2a1c-11ce-ade5-00aa0044773d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -37036,6 +37267,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ed8ce7e0-106c-11ce-84e2-00aa004b9986"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -37085,6 +37317,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a7ac77ed-f8d7-11ce-a798-0020f8008024"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -37274,22 +37507,6 @@
 						]
 					}
 					,{
-						"Name":"_BinaryVal"
-						,"Architectures":[]
-						,"Platform":null
-						,"Kind":"Struct"
-						,"Size":0
-						,"PackingSize":0
-						,"Fields":[
-							{"Name":"sActualLength","Type":{"Kind":"Native","Name":"Int16"},"Attrs":[]}
-							,{"Name":"sMaxLength","Type":{"Kind":"Native","Name":"Int16"},"Attrs":[]}
-							,{"Name":"prgbBinaryVal","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}},"Attrs":[]}
-							,{"Name":"dwReserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-						]
-						,"NestedTypes":[
-						]
-					}
-					,{
 						"Name":"_BLOBType"
 						,"Architectures":[]
 						,"Platform":null
@@ -37321,6 +37538,22 @@
 						,"NestedTypes":[
 						]
 					}
+					,{
+						"Name":"_BinaryVal"
+						,"Architectures":[]
+						,"Platform":null
+						,"Kind":"Struct"
+						,"Size":0
+						,"PackingSize":0
+						,"Fields":[
+							{"Name":"sActualLength","Type":{"Kind":"Native","Name":"Int16"},"Attrs":[]}
+							,{"Name":"sMaxLength","Type":{"Kind":"Native","Name":"Int16"},"Attrs":[]}
+							,{"Name":"prgbBinaryVal","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}},"Attrs":[]}
+							,{"Name":"dwReserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+						]
+						,"NestedTypes":[
+						]
+					}
 				]
 			}
 		]
@@ -37331,6 +37564,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5cf4ca14-ef21-11d0-97e7-00c04fc2ad98"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -37353,6 +37587,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":null
+		,"Attrs":[]
 		,"Interface":null
 		,"Methods":[
 			{
@@ -37439,6 +37674,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5cf4ca12-ef21-11d0-97e7-00c04fc2ad98"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -37462,6 +37698,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5cf4ca13-ef21-11d0-97e7-00c04fc2ad98"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -37511,6 +37748,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4c2389fb-2511-11d4-b258-00c04f7971ce"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

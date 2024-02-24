@@ -161,7 +161,7 @@
 		,"Size":0
 		,"PackingSize":0
 		,"Fields":[
-			{"Name":"MACAddress","Type":{"Kind":"ApiRef","Name":"DL_EUI48","TargetKind":"Default","Api":"NetworkManagement.WindowsFilteringPlatform","Parents":[]},"Attrs":[]}
+			{"Name":"MACAddress","Type":{"Kind":"ApiRef","Name":"DL_EUI48","TargetKind":"Default","Api":"Networking.WinSock","Parents":[]},"Attrs":[]}
 			,{"Name":"CAFamily","Type":{"Kind":"Native","Name":"UInt16"},"Attrs":[]}
 			,{"Name":"CA","Type":{"Kind":"ApiRef","Name":"WNV_IP_ADDRESS","TargetKind":"Default","Api":"NetworkManagement.WindowsNetworkVirtualization","Parents":[]},"Attrs":[]}
 			,{"Name":"VirtualSubnetId","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}

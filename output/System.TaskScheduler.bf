@@ -435,15 +435,15 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Count(out int32 pCount) mut => VT.get_Count(ref this, out pCount);
-		public HRESULT get_Item(VARIANT index, ITaskFolder** ppFolder) mut => VT.get_Item(ref this, index, ppFolder);
-		public HRESULT get__NewEnum(IUnknown** ppEnum) mut => VT.get__NewEnum(ref this, ppEnum);
+		public HRESULT get_Item(VARIANT index, out ITaskFolder* ppFolder) mut => VT.get_Item(ref this, index, out ppFolder);
+		public HRESULT get__NewEnum(out IUnknown* ppEnum) mut => VT.get__NewEnum(ref this, out ppEnum);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolderCollection self, out int32 pCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolderCollection self, VARIANT index, ITaskFolder** ppFolder) get_Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolderCollection self, IUnknown** ppEnum) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolderCollection self, VARIANT index, out ITaskFolder* ppFolder) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolderCollection self, out IUnknown* ppEnum) get__NewEnum;
 		}
 	}
 	[CRepr]
@@ -453,27 +453,27 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetFolder(BSTR path, ITaskFolder** ppFolder) mut => VT.GetFolder(ref this, path, ppFolder);
-		public HRESULT GetRunningTasks(int32 flags, IRunningTaskCollection** ppRunningTasks) mut => VT.GetRunningTasks(ref this, flags, ppRunningTasks);
-		public HRESULT NewTask(uint32 flags, ITaskDefinition** ppDefinition) mut => VT.NewTask(ref this, flags, ppDefinition);
+		public HRESULT GetFolder(BSTR path, out ITaskFolder* ppFolder) mut => VT.GetFolder(ref this, path, out ppFolder);
+		public HRESULT GetRunningTasks(int32 flags, out IRunningTaskCollection* ppRunningTasks) mut => VT.GetRunningTasks(ref this, flags, out ppRunningTasks);
+		public HRESULT NewTask(uint32 flags, out ITaskDefinition* ppDefinition) mut => VT.NewTask(ref this, flags, out ppDefinition);
 		public HRESULT Connect(VARIANT serverName, VARIANT user, VARIANT domain, VARIANT password) mut => VT.Connect(ref this, serverName, user, domain, password);
 		public HRESULT get_Connected(out int16 pConnected) mut => VT.get_Connected(ref this, out pConnected);
-		public HRESULT get_TargetServer(BSTR* pServer) mut => VT.get_TargetServer(ref this, pServer);
-		public HRESULT get_ConnectedUser(BSTR* pUser) mut => VT.get_ConnectedUser(ref this, pUser);
-		public HRESULT get_ConnectedDomain(BSTR* pDomain) mut => VT.get_ConnectedDomain(ref this, pDomain);
+		public HRESULT get_TargetServer(out BSTR pServer) mut => VT.get_TargetServer(ref this, out pServer);
+		public HRESULT get_ConnectedUser(out BSTR pUser) mut => VT.get_ConnectedUser(ref this, out pUser);
+		public HRESULT get_ConnectedDomain(out BSTR pDomain) mut => VT.get_ConnectedDomain(ref this, out pDomain);
 		public HRESULT get_HighestVersion(out uint32 pVersion) mut => VT.get_HighestVersion(ref this, out pVersion);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, BSTR path, ITaskFolder** ppFolder) GetFolder;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, int32 flags, IRunningTaskCollection** ppRunningTasks) GetRunningTasks;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, uint32 flags, ITaskDefinition** ppDefinition) NewTask;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, BSTR path, out ITaskFolder* ppFolder) GetFolder;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, int32 flags, out IRunningTaskCollection* ppRunningTasks) GetRunningTasks;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, uint32 flags, out ITaskDefinition* ppDefinition) NewTask;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, VARIANT serverName, VARIANT user, VARIANT domain, VARIANT password) Connect;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, out int16 pConnected) get_Connected;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, BSTR* pServer) get_TargetServer;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, BSTR* pUser) get_ConnectedUser;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, BSTR* pDomain) get_ConnectedDomain;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, out BSTR pServer) get_TargetServer;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, out BSTR pUser) get_ConnectedUser;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, out BSTR pDomain) get_ConnectedDomain;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, out uint32 pVersion) get_HighestVersion;
 		}
 	}
@@ -522,16 +522,16 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetInput(BSTR* pInput) mut => VT.GetInput(ref this, pInput);
+		public HRESULT GetInput(out BSTR pInput) mut => VT.GetInput(ref this, out pInput);
 		public HRESULT SetOutput(BSTR input) mut => VT.SetOutput(ref this, input);
-		public HRESULT GetContext(BSTR* pContext) mut => VT.GetContext(ref this, pContext);
+		public HRESULT GetContext(out BSTR pContext) mut => VT.GetContext(ref this, out pContext);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskVariables self, BSTR* pInput) GetInput;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskVariables self, out BSTR pInput) GetInput;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskVariables self, BSTR input) SetOutput;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskVariables self, BSTR* pContext) GetContext;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskVariables self, out BSTR pContext) GetContext;
 		}
 	}
 	[CRepr]
@@ -587,11 +587,11 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(BSTR* pName) mut => VT.get_Name(ref this, pName);
-		public HRESULT get_InstanceGuid(BSTR* pGuid) mut => VT.get_InstanceGuid(ref this, pGuid);
-		public HRESULT get_Path(BSTR* pPath) mut => VT.get_Path(ref this, pPath);
+		public HRESULT get_Name(out BSTR pName) mut => VT.get_Name(ref this, out pName);
+		public HRESULT get_InstanceGuid(out BSTR pGuid) mut => VT.get_InstanceGuid(ref this, out pGuid);
+		public HRESULT get_Path(out BSTR pPath) mut => VT.get_Path(ref this, out pPath);
 		public HRESULT get_State(out TASK_STATE pState) mut => VT.get_State(ref this, out pState);
-		public HRESULT get_CurrentAction(BSTR* pName) mut => VT.get_CurrentAction(ref this, pName);
+		public HRESULT get_CurrentAction(out BSTR pName) mut => VT.get_CurrentAction(ref this, out pName);
 		public HRESULT Stop() mut => VT.Stop(ref this);
 		public HRESULT Refresh() mut => VT.Refresh(ref this);
 		public HRESULT get_EnginePID(out uint32 pPID) mut => VT.get_EnginePID(ref this, out pPID);
@@ -599,11 +599,11 @@ static
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, BSTR* pName) get_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, BSTR* pGuid) get_InstanceGuid;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, BSTR* pPath) get_Path;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, out BSTR pName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, out BSTR pGuid) get_InstanceGuid;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, out BSTR pPath) get_Path;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, out TASK_STATE pState) get_State;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, BSTR* pName) get_CurrentAction;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, out BSTR pName) get_CurrentAction;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self) Stop;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self) Refresh;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, out uint32 pPID) get_EnginePID;
@@ -617,15 +617,15 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Count(out int32 pCount) mut => VT.get_Count(ref this, out pCount);
-		public HRESULT get_Item(VARIANT index, IRunningTask** ppRunningTask) mut => VT.get_Item(ref this, index, ppRunningTask);
-		public HRESULT get__NewEnum(IUnknown** ppEnum) mut => VT.get__NewEnum(ref this, ppEnum);
+		public HRESULT get_Item(VARIANT index, out IRunningTask* ppRunningTask) mut => VT.get_Item(ref this, index, out ppRunningTask);
+		public HRESULT get__NewEnum(out IUnknown* ppEnum) mut => VT.get__NewEnum(ref this, out ppEnum);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTaskCollection self, out int32 pCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTaskCollection self, VARIANT index, IRunningTask** ppRunningTask) get_Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTaskCollection self, IUnknown** ppEnum) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTaskCollection self, VARIANT index, out IRunningTask* ppRunningTask) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTaskCollection self, out IUnknown* ppEnum) get__NewEnum;
 		}
 	}
 	[CRepr]
@@ -635,46 +635,46 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(BSTR* pName) mut => VT.get_Name(ref this, pName);
-		public HRESULT get_Path(BSTR* pPath) mut => VT.get_Path(ref this, pPath);
+		public HRESULT get_Name(out BSTR pName) mut => VT.get_Name(ref this, out pName);
+		public HRESULT get_Path(out BSTR pPath) mut => VT.get_Path(ref this, out pPath);
 		public HRESULT get_State(out TASK_STATE pState) mut => VT.get_State(ref this, out pState);
 		public HRESULT get_Enabled(out int16 pEnabled) mut => VT.get_Enabled(ref this, out pEnabled);
 		public HRESULT put_Enabled(int16 enabled) mut => VT.put_Enabled(ref this, enabled);
-		public HRESULT Run(VARIANT @params, IRunningTask** ppRunningTask) mut => VT.Run(ref this, @params, ppRunningTask);
-		public HRESULT RunEx(VARIANT @params, int32 flags, int32 sessionID, BSTR user, IRunningTask** ppRunningTask) mut => VT.RunEx(ref this, @params, flags, sessionID, user, ppRunningTask);
-		public HRESULT GetInstances(int32 flags, IRunningTaskCollection** ppRunningTasks) mut => VT.GetInstances(ref this, flags, ppRunningTasks);
+		public HRESULT Run(VARIANT @params, out IRunningTask* ppRunningTask) mut => VT.Run(ref this, @params, out ppRunningTask);
+		public HRESULT RunEx(VARIANT @params, int32 flags, int32 sessionID, BSTR user, out IRunningTask* ppRunningTask) mut => VT.RunEx(ref this, @params, flags, sessionID, user, out ppRunningTask);
+		public HRESULT GetInstances(int32 flags, out IRunningTaskCollection* ppRunningTasks) mut => VT.GetInstances(ref this, flags, out ppRunningTasks);
 		public HRESULT get_LastRunTime(out double pLastRunTime) mut => VT.get_LastRunTime(ref this, out pLastRunTime);
 		public HRESULT get_LastTaskResult(out int32 pLastTaskResult) mut => VT.get_LastTaskResult(ref this, out pLastTaskResult);
 		public HRESULT get_NumberOfMissedRuns(out int32 pNumberOfMissedRuns) mut => VT.get_NumberOfMissedRuns(ref this, out pNumberOfMissedRuns);
 		public HRESULT get_NextRunTime(out double pNextRunTime) mut => VT.get_NextRunTime(ref this, out pNextRunTime);
-		public HRESULT get_Definition(ITaskDefinition** ppDefinition) mut => VT.get_Definition(ref this, ppDefinition);
-		public HRESULT get_Xml(BSTR* pXml) mut => VT.get_Xml(ref this, pXml);
-		public HRESULT GetSecurityDescriptor(int32 securityInformation, BSTR* pSddl) mut => VT.GetSecurityDescriptor(ref this, securityInformation, pSddl);
+		public HRESULT get_Definition(out ITaskDefinition* ppDefinition) mut => VT.get_Definition(ref this, out ppDefinition);
+		public HRESULT get_Xml(out BSTR pXml) mut => VT.get_Xml(ref this, out pXml);
+		public HRESULT GetSecurityDescriptor(int32 securityInformation, out BSTR pSddl) mut => VT.GetSecurityDescriptor(ref this, securityInformation, out pSddl);
 		public HRESULT SetSecurityDescriptor(BSTR sddl, int32 flags) mut => VT.SetSecurityDescriptor(ref this, sddl, flags);
 		public HRESULT Stop(int32 flags) mut => VT.Stop(ref this, flags);
-		public HRESULT GetRunTimes(in SYSTEMTIME pstStart, in SYSTEMTIME pstEnd, out uint32 pCount, SYSTEMTIME** pRunTimes) mut => VT.GetRunTimes(ref this, pstStart, pstEnd, out pCount, pRunTimes);
+		public HRESULT GetRunTimes(in SYSTEMTIME pstStart, in SYSTEMTIME pstEnd, out uint32 pCount, out SYSTEMTIME* pRunTimes) mut => VT.GetRunTimes(ref this, pstStart, pstEnd, out pCount, out pRunTimes);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, BSTR* pName) get_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, BSTR* pPath) get_Path;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out BSTR pName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out BSTR pPath) get_Path;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out TASK_STATE pState) get_State;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out int16 pEnabled) get_Enabled;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, int16 enabled) put_Enabled;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, VARIANT @params, IRunningTask** ppRunningTask) Run;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, VARIANT @params, int32 flags, int32 sessionID, BSTR user, IRunningTask** ppRunningTask) RunEx;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, int32 flags, IRunningTaskCollection** ppRunningTasks) GetInstances;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, VARIANT @params, out IRunningTask* ppRunningTask) Run;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, VARIANT @params, int32 flags, int32 sessionID, BSTR user, out IRunningTask* ppRunningTask) RunEx;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, int32 flags, out IRunningTaskCollection* ppRunningTasks) GetInstances;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out double pLastRunTime) get_LastRunTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out int32 pLastTaskResult) get_LastTaskResult;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out int32 pNumberOfMissedRuns) get_NumberOfMissedRuns;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out double pNextRunTime) get_NextRunTime;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, ITaskDefinition** ppDefinition) get_Definition;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, BSTR* pXml) get_Xml;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, int32 securityInformation, BSTR* pSddl) GetSecurityDescriptor;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out ITaskDefinition* ppDefinition) get_Definition;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out BSTR pXml) get_Xml;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, int32 securityInformation, out BSTR pSddl) GetSecurityDescriptor;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, BSTR sddl, int32 flags) SetSecurityDescriptor;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, int32 flags) Stop;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, in SYSTEMTIME pstStart, in SYSTEMTIME pstEnd, out uint32 pCount, SYSTEMTIME** pRunTimes) GetRunTimes;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, in SYSTEMTIME pstStart, in SYSTEMTIME pstEnd, out uint32 pCount, out SYSTEMTIME* pRunTimes) GetRunTimes;
 		}
 	}
 	[CRepr]
@@ -1498,15 +1498,15 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Count(out int32 pCount) mut => VT.get_Count(ref this, out pCount);
-		public HRESULT get_Item(VARIANT index, IRegisteredTask** ppRegisteredTask) mut => VT.get_Item(ref this, index, ppRegisteredTask);
-		public HRESULT get__NewEnum(IUnknown** ppEnum) mut => VT.get__NewEnum(ref this, ppEnum);
+		public HRESULT get_Item(VARIANT index, out IRegisteredTask* ppRegisteredTask) mut => VT.get_Item(ref this, index, out ppRegisteredTask);
+		public HRESULT get__NewEnum(out IUnknown* ppEnum) mut => VT.get__NewEnum(ref this, out ppEnum);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTaskCollection self, out int32 pCount) get_Count;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTaskCollection self, VARIANT index, IRegisteredTask** ppRegisteredTask) get_Item;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTaskCollection self, IUnknown** ppEnum) get__NewEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTaskCollection self, VARIANT index, out IRegisteredTask* ppRegisteredTask) get_Item;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTaskCollection self, out IUnknown* ppEnum) get__NewEnum;
 		}
 	}
 	[CRepr]
@@ -1516,35 +1516,35 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(BSTR* pName) mut => VT.get_Name(ref this, pName);
-		public HRESULT get_Path(BSTR* pPath) mut => VT.get_Path(ref this, pPath);
-		public HRESULT GetFolder(BSTR path, ITaskFolder** ppFolder) mut => VT.GetFolder(ref this, path, ppFolder);
-		public HRESULT GetFolders(int32 flags, ITaskFolderCollection** ppFolders) mut => VT.GetFolders(ref this, flags, ppFolders);
-		public HRESULT CreateFolder(BSTR subFolderName, VARIANT sddl, ITaskFolder** ppFolder) mut => VT.CreateFolder(ref this, subFolderName, sddl, ppFolder);
+		public HRESULT get_Name(out BSTR pName) mut => VT.get_Name(ref this, out pName);
+		public HRESULT get_Path(out BSTR pPath) mut => VT.get_Path(ref this, out pPath);
+		public HRESULT GetFolder(BSTR path, out ITaskFolder* ppFolder) mut => VT.GetFolder(ref this, path, out ppFolder);
+		public HRESULT GetFolders(int32 flags, out ITaskFolderCollection* ppFolders) mut => VT.GetFolders(ref this, flags, out ppFolders);
+		public HRESULT CreateFolder(BSTR subFolderName, VARIANT sddl, out ITaskFolder* ppFolder) mut => VT.CreateFolder(ref this, subFolderName, sddl, out ppFolder);
 		public HRESULT DeleteFolder(BSTR subFolderName, int32 flags) mut => VT.DeleteFolder(ref this, subFolderName, flags);
-		public HRESULT GetTask(BSTR path, IRegisteredTask** ppTask) mut => VT.GetTask(ref this, path, ppTask);
-		public HRESULT GetTasks(int32 flags, IRegisteredTaskCollection** ppTasks) mut => VT.GetTasks(ref this, flags, ppTasks);
+		public HRESULT GetTask(BSTR path, out IRegisteredTask* ppTask) mut => VT.GetTask(ref this, path, out ppTask);
+		public HRESULT GetTasks(int32 flags, out IRegisteredTaskCollection* ppTasks) mut => VT.GetTasks(ref this, flags, out ppTasks);
 		public HRESULT DeleteTask(BSTR name, int32 flags) mut => VT.DeleteTask(ref this, name, flags);
-		public HRESULT RegisterTask(BSTR path, BSTR xmlText, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, IRegisteredTask** ppTask) mut => VT.RegisterTask(ref this, path, xmlText, flags, userId, password, logonType, sddl, ppTask);
-		public HRESULT RegisterTaskDefinition(BSTR path, ITaskDefinition* pDefinition, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, IRegisteredTask** ppTask) mut => VT.RegisterTaskDefinition(ref this, path, pDefinition, flags, userId, password, logonType, sddl, ppTask);
-		public HRESULT GetSecurityDescriptor(int32 securityInformation, BSTR* pSddl) mut => VT.GetSecurityDescriptor(ref this, securityInformation, pSddl);
+		public HRESULT RegisterTask(BSTR path, BSTR xmlText, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, out IRegisteredTask* ppTask) mut => VT.RegisterTask(ref this, path, xmlText, flags, userId, password, logonType, sddl, out ppTask);
+		public HRESULT RegisterTaskDefinition(BSTR path, ITaskDefinition* pDefinition, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, out IRegisteredTask* ppTask) mut => VT.RegisterTaskDefinition(ref this, path, pDefinition, flags, userId, password, logonType, sddl, out ppTask);
+		public HRESULT GetSecurityDescriptor(int32 securityInformation, out BSTR pSddl) mut => VT.GetSecurityDescriptor(ref this, securityInformation, out pSddl);
 		public HRESULT SetSecurityDescriptor(BSTR sddl, int32 flags) mut => VT.SetSecurityDescriptor(ref this, sddl, flags);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR* pName) get_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR* pPath) get_Path;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR path, ITaskFolder** ppFolder) GetFolder;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, int32 flags, ITaskFolderCollection** ppFolders) GetFolders;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR subFolderName, VARIANT sddl, ITaskFolder** ppFolder) CreateFolder;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, out BSTR pName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, out BSTR pPath) get_Path;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR path, out ITaskFolder* ppFolder) GetFolder;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, int32 flags, out ITaskFolderCollection* ppFolders) GetFolders;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR subFolderName, VARIANT sddl, out ITaskFolder* ppFolder) CreateFolder;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR subFolderName, int32 flags) DeleteFolder;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR path, IRegisteredTask** ppTask) GetTask;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, int32 flags, IRegisteredTaskCollection** ppTasks) GetTasks;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR path, out IRegisteredTask* ppTask) GetTask;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, int32 flags, out IRegisteredTaskCollection* ppTasks) GetTasks;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR name, int32 flags) DeleteTask;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR path, BSTR xmlText, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, IRegisteredTask** ppTask) RegisterTask;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR path, ITaskDefinition* pDefinition, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, IRegisteredTask** ppTask) RegisterTaskDefinition;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, int32 securityInformation, BSTR* pSddl) GetSecurityDescriptor;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR path, BSTR xmlText, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, out IRegisteredTask* ppTask) RegisterTask;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR path, ITaskDefinition* pDefinition, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, out IRegisteredTask* ppTask) RegisterTaskDefinition;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, int32 securityInformation, out BSTR pSddl) GetSecurityDescriptor;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR sddl, int32 flags) SetSecurityDescriptor;
 		}
 	}

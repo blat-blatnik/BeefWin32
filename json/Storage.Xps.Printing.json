@@ -64,6 +64,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"7a77dc5f-45d6-4dff-9307-d8cb846347ca"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"ISequentialStream","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -85,6 +86,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"5ab89b06-8194-425f-ab3b-d7a96e350161"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -132,6 +134,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"1b8efec4-3019-4c27-964e-367202156906"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -213,6 +216,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"ed90c8ad-5c34-4d05-a1ec-0e8a9b3ad7af"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -235,6 +239,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"d2959bf7-b31b-4a3d-9600-712eb1335ba4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -275,9 +280,9 @@
 			,{"Name":"completionEvent","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"printablePagesOn","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":6,"Child":{"Kind":"Native","Name":"Byte"}},"Attrs":["In"]}
 			,{"Name":"printablePagesOnCount","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"xpsPrintJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsPrintJob","TargetKind":"Com","Api":"Storage.Xps.Printing","Parents":[]}},"Attrs":["Out","Optional"]}
-			,{"Name":"documentStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsPrintJobStream","TargetKind":"Com","Api":"Storage.Xps.Printing","Parents":[]}},"Attrs":["Out","Optional"]}
-			,{"Name":"printTicketStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsPrintJobStream","TargetKind":"Com","Api":"Storage.Xps.Printing","Parents":[]}},"Attrs":["Out","Optional"]}
+			,{"Name":"xpsPrintJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsPrintJob","TargetKind":"Com","Api":"Storage.Xps.Printing","Parents":[]}},"Attrs":["Out"]}
+			,{"Name":"documentStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsPrintJobStream","TargetKind":"Com","Api":"Storage.Xps.Printing","Parents":[]}},"Attrs":["Out"]}
+			,{"Name":"printTicketStream","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsPrintJobStream","TargetKind":"Com","Api":"Storage.Xps.Printing","Parents":[]}},"Attrs":["Out"]}
 		]
 	}
 	,{
@@ -295,8 +300,8 @@
 			,{"Name":"outputFileName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 			,{"Name":"progressEvent","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"completionEvent","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-			,{"Name":"xpsPrintJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsPrintJob","TargetKind":"Com","Api":"Storage.Xps.Printing","Parents":[]}},"Attrs":["Out","Optional"]}
-			,{"Name":"printContentReceiver","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsOMPackageTarget","TargetKind":"Com","Api":"Storage.Xps","Parents":[]}},"Attrs":["Out","Optional"]}
+			,{"Name":"xpsPrintJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsPrintJob","TargetKind":"Com","Api":"Storage.Xps.Printing","Parents":[]}},"Attrs":["Out"]}
+			,{"Name":"printContentReceiver","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IXpsOMPackageTarget","TargetKind":"Com","Api":"Storage.Xps","Parents":[]}},"Attrs":["Out"]}
 		]
 	}
 ]

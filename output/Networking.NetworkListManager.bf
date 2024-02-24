@@ -8,6 +8,19 @@ using Win32.System.Ole;
 static
 {
 	#region Constants
+	public const String NA_DomainAuthenticationFailed = "NA_DomainAuthenticationFailed";
+	public const String NA_NetworkClass = "NA_NetworkClass";
+	public const String NA_NameSetByPolicy = "NA_NameSetByPolicy";
+	public const String NA_IconSetByPolicy = "NA_IconSetByPolicy";
+	public const String NA_DescriptionSetByPolicy = "NA_DescriptionSetByPolicy";
+	public const String NA_CategorySetByPolicy = "NA_CategorySetByPolicy";
+	public const String NA_NameReadOnly = "NA_NameReadOnly";
+	public const String NA_IconReadOnly = "NA_IconReadOnly";
+	public const String NA_DescriptionReadOnly = "NA_DescriptionReadOnly";
+	public const String NA_CategoryReadOnly = "NA_CategoryReadOnly";
+	public const String NA_AllowMerge = "NA_AllowMerge";
+	public const String NA_InternetConnectivityV4 = "NA_InternetConnectivityV4";
+	public const String NA_InternetConnectivityV6 = "NA_InternetConnectivityV6";
 	public const uint32 NLM_MAX_ADDRESS_LIST_SIZE = 10;
 	public const uint32 NLM_UNKNOWN_DATAPLAN_STATUS = 4294967295;
 	#endregion

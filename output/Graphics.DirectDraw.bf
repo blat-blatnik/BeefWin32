@@ -16,6 +16,9 @@ static
 	public const int32 DDENUM_ATTACHEDSECONDARYDEVICES = 1;
 	public const int32 DDENUM_DETACHEDSECONDARYDEVICES = 2;
 	public const int32 DDENUM_NONDISPLAYDEVICES = 4;
+	public const String REGSTR_KEY_DDHW_DESCRIPTION = "Description";
+	public const String REGSTR_KEY_DDHW_DRIVERNAME = "DriverName";
+	public const String REGSTR_PATH_DDHW = "Hardware\\DirectDrawDrivers";
 	public const int32 DDCREATE_HARDWAREONLY = 1;
 	public const int32 DDCREATE_EMULATIONONLY = 2;
 	public const uint32 MAX_DDDEVICEID_STRING = 512;
@@ -499,6 +502,8 @@ static
 	public const uint32 DDGET32BITDRIVERNAME = 11;
 	public const uint32 DDNEWCALLBACKFNS = 12;
 	public const uint32 DDVERSIONINFO = 13;
+	public const String DDHAL_DRIVER_DLLNAME = "DDRAW16.DLL";
+	public const String DDHAL_APP_DLLNAME = "DDRAW.DLL";
 	public const uint32 CCHDEVICENAME = 32;
 	public const uint32 MAX_DRIVER_NAME = 32;
 	public const uint32 MAX_PALETTE_SIZE = 256;

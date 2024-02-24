@@ -2,10 +2,6 @@ namespace Win32.NetworkManagement.Ndis;
 
 using System;
 using Win32.Foundation;
-using Win32.NetworkManagement.IpHelper;
-using Win32.NetworkManagement.WiFi;
-using Win32.Security.ExtensibleAuthenticationProtocol;
-using Win32.System.RemoteDesktop;
 
 static
 {
@@ -903,6 +899,16 @@ static
 	public const uint32 NDIS_DEVICE_WAKE_ON_PATTERN_MATCH_ENABLE = 2;
 	public const uint32 NDIS_DEVICE_WAKE_ON_MAGIC_PACKET_ENABLE = 4;
 	public const uint32 WAN_PROTOCOL_KEEPS_STATS = 1;
+	public const uint32 fNDIS_GUID_TO_OID = 1;
+	public const uint32 fNDIS_GUID_TO_STATUS = 2;
+	public const uint32 fNDIS_GUID_ANSI_STRING = 4;
+	public const uint32 fNDIS_GUID_UNICODE_STRING = 8;
+	public const uint32 fNDIS_GUID_ARRAY = 16;
+	public const uint32 fNDIS_GUID_ALLOW_READ = 32;
+	public const uint32 fNDIS_GUID_ALLOW_WRITE = 64;
+	public const uint32 fNDIS_GUID_METHOD = 128;
+	public const uint32 fNDIS_GUID_NDIS_RESERVED = 256;
+	public const uint32 fNDIS_GUID_SUPPORT_COMMON_HEADER = 512;
 	public const uint32 NDIS_PACKET_TYPE_DIRECTED = 1;
 	public const uint32 NDIS_PACKET_TYPE_MULTICAST = 2;
 	public const uint32 NDIS_PACKET_TYPE_ALL_MULTICAST = 4;
@@ -944,8 +950,6 @@ static
 	public const uint32 NDIS_MEDIA_CAP_TRANSMIT = 1;
 	public const uint32 NDIS_MEDIA_CAP_RECEIVE = 2;
 	public const uint32 NDIS_CO_MAC_OPTION_DYNAMIC_LINK_SPEED = 1;
-	public const uint32 NDIS_IF_MAX_STRING_SIZE = 256;
-	public const uint32 NDIS_MAX_PHYS_ADDRESS_LENGTH = 32;
 	public const uint32 NDIS_LINK_STATE_XMIT_LINK_SPEED_AUTO_NEGOTIATED = 1;
 	public const uint32 NDIS_LINK_STATE_RCV_LINK_SPEED_AUTO_NEGOTIATED = 2;
 	public const uint32 NDIS_LINK_STATE_DUPLEX_AUTO_NEGOTIATED = 4;
@@ -1610,6 +1614,7 @@ static
 	public const uint32 NDIS_HASH_UDP_IPV4 = 16384;
 	public const uint32 NDIS_HASH_UDP_IPV6 = 32768;
 	public const uint32 NDIS_HASH_UDP_IPV6_EX = 65536;
+	public const String DD_NDIS_DEVICE_NAME = "\\Device\\NDIS";
 	public const uint32 NDIS_MAXIMUM_PORTS = 16777216;
 	public const uint32 NDIS_OBJECT_REVISION_1 = 1;
 	public const uint32 NDIS_OFFLOAD_NOT_SUPPORTED = 0;
@@ -1836,14 +1841,114 @@ static
 	public const uint32 NDK_ADAPTER_FLAG_RDMA_READ_LOCAL_INVALIDATE_SUPPORTED = 16;
 	public const uint32 NDK_ADAPTER_FLAG_CQ_RESIZE_SUPPORTED = 256;
 	public const uint32 NDK_ADAPTER_FLAG_LOOPBACK_CONNECTIONS_SUPPORTED = 65536;
-	public const uint32 DOT11EXT_PSK_MAX_LENGTH = 64;
-	public const uint32 WDIAG_IHV_WLAN_ID_FLAG_SECURITY_ENABLED = 1;
-	public const uint32 MS_MAX_PROFILE_NAME_LENGTH = 256;
-	public const uint32 MS_PROFILE_GROUP_POLICY = 1;
-	public const uint32 MS_PROFILE_USER = 2;
+	public const uint32 NET_IF_OPER_STATUS_DOWN_NOT_AUTHENTICATED = 1;
+	public const uint32 NET_IF_OPER_STATUS_DOWN_NOT_MEDIA_CONNECTED = 2;
+	public const uint32 NET_IF_OPER_STATUS_DORMANT_PAUSED = 4;
+	public const uint32 NET_IF_OPER_STATUS_DORMANT_LOW_POWER = 8;
+	public const uint32 NET_IF_OID_IF_ALIAS = 1;
+	public const uint32 NET_IF_OID_COMPARTMENT_ID = 2;
+	public const uint32 NET_IF_OID_NETWORK_GUID = 3;
+	public const uint32 NET_IF_OID_IF_ENTRY = 4;
+	public const uint32 NET_SITEID_UNSPECIFIED = 0;
+	public const uint32 NET_SITEID_MAXUSER = 134217727;
+	public const uint32 NET_SITEID_MAXSYSTEM = 268435455;
+	public const uint32 NET_IFLUID_UNSPECIFIED = 0;
+	public const uint32 NIIF_HARDWARE_INTERFACE = 1;
+	public const uint32 NIIF_FILTER_INTERFACE = 2;
+	public const uint32 NIIF_NDIS_RESERVED1 = 4;
+	public const uint32 NIIF_NDIS_RESERVED2 = 8;
+	public const uint32 NIIF_NDIS_RESERVED3 = 16;
+	public const uint32 NIIF_NDIS_WDM_INTERFACE = 32;
+	public const uint32 NIIF_NDIS_ENDPOINT_INTERFACE = 64;
+	public const uint32 NIIF_NDIS_ISCSI_INTERFACE = 128;
+	public const uint32 NIIF_NDIS_RESERVED4 = 256;
+	public const uint32 IF_MAX_STRING_SIZE = 256;
+	public const uint32 IF_MAX_PHYS_ADDRESS_LENGTH = 32;
 	#endregion
 	
 	#region Enums
+	public enum NET_IF_OPER_STATUS : int32
+	{
+		UP = 1,
+		DOWN = 2,
+		TESTING = 3,
+		UNKNOWN = 4,
+		DORMANT = 5,
+		NOT_PRESENT = 6,
+		LOWER_LAYER_DOWN = 7,
+	}
+	public enum NET_IF_ADMIN_STATUS : int32
+	{
+		UP = 1,
+		DOWN = 2,
+		TESTING = 3,
+	}
+	public enum NET_IF_RCV_ADDRESS_TYPE : int32
+	{
+		OTHER = 1,
+		VOLATILE = 2,
+		NON_VOLATILE = 3,
+	}
+	public enum NET_IF_CONNECTION_TYPE : int32
+	{
+		DEDICATED = 1,
+		PASSIVE = 2,
+		DEMAND = 3,
+		MAXIMUM = 4,
+	}
+	public enum TUNNEL_TYPE : int32
+	{
+		NONE = 0,
+		OTHER = 1,
+		DIRECT = 2,
+		_6TO4 = 11,
+		ISATAP = 13,
+		TEREDO = 14,
+		IPHTTPS = 15,
+	}
+	public enum NET_IF_ACCESS_TYPE : int32
+	{
+		LOOPBACK = 1,
+		BROADCAST = 2,
+		POINT_TO_POINT = 3,
+		POINT_TO_MULTI_POINT = 4,
+		MAXIMUM = 5,
+	}
+	public enum NET_IF_DIRECTION_TYPE : int32
+	{
+		SENDRECEIVE = 0,
+		SENDONLY = 1,
+		RECEIVEONLY = 2,
+		MAXIMUM = 3,
+	}
+	public enum NET_IF_MEDIA_CONNECT_STATE : int32
+	{
+		Unknown = 0,
+		Connected = 1,
+		Disconnected = 2,
+	}
+	public enum NET_IF_MEDIA_DUPLEX_STATE : int32
+	{
+		Unknown = 0,
+		Half = 1,
+		Full = 2,
+	}
+	public enum IF_ADMINISTRATIVE_STATE : int32
+	{
+		DISABLED = 0,
+		ENABLED = 1,
+		DEMANDDIAL = 2,
+	}
+	public enum IF_OPER_STATUS : int32
+	{
+		Up = 1,
+		Down = 2,
+		Testing = 3,
+		Unknown = 4,
+		Dormant = 5,
+		NotPresent = 6,
+		LowerLayerDown = 7,
+	}
 	public enum NDIS_REQUEST_TYPE : int32
 	{
 		QueryInformation = 0,
@@ -2180,80 +2285,89 @@ static
 		NdkRoCEv2 = 4,
 		NdkMaxTechnology = 5,
 	}
-	public enum DOT11EXT_IHV_CONNECTION_PHASE : int32
-	{
-		any = 0,
-		initial_connection = 1,
-		post_l3_connection = 2,
-	}
-	public enum DOT11_MSONEX_RESULT : int32
-	{
-		SUCCESS = 0,
-		FAILURE = 1,
-		IN_PROGRESS = 2,
-	}
-	public enum DOT11EXT_IHV_INDICATION_TYPE : int32
-	{
-		NicSpecificNotification = 0,
-		PmkidCandidateList = 1,
-		TkipMicFailure = 2,
-		PhyStateChange = 3,
-		LinkQuality = 4,
-	}
-	#endregion
-	
-	#region Function pointers
-	public function uint32 DOT11EXT_ALLOCATE_BUFFER(uint32 dwByteCount, void** ppvBuffer);
-	public function void DOT11EXT_FREE_BUFFER(void* pvMemory);
-	public function uint32 DOT11EXT_SET_PROFILE_CUSTOM_USER_DATA(HANDLE hDot11SvcHandle, HANDLE hConnectSession, uint32 dwSessionID, uint32 dwDataSize, void* pvData);
-	public function uint32 DOT11EXT_GET_PROFILE_CUSTOM_USER_DATA(HANDLE hDot11SvcHandle, HANDLE hConnectSession, uint32 dwSessionID, out uint32 pdwDataSize, void** ppvData);
-	public function uint32 DOT11EXT_SET_CURRENT_PROFILE(HANDLE hDot11SvcHandle, HANDLE hConnectSession, DOT11EXT_IHV_CONNECTIVITY_PROFILE* pIhvConnProfile, DOT11EXT_IHV_SECURITY_PROFILE* pIhvSecProfile);
-	public function uint32 DOT11EXT_SEND_UI_REQUEST(HANDLE hDot11SvcHandle, ref DOT11EXT_IHV_UI_REQUEST pIhvUIRequest);
-	public function uint32 DOT11EXT_PRE_ASSOCIATE_COMPLETION(HANDLE hDot11SvcHandle, HANDLE hConnectSession, uint32 dwReasonCode, uint32 dwWin32Error);
-	public function uint32 DOT11EXT_POST_ASSOCIATE_COMPLETION(HANDLE hDot11SvcHandle, HANDLE hSecuritySessionID, uint8** pPeer, uint32 dwReasonCode, uint32 dwWin32Error);
-	public function uint32 DOT11EXT_SEND_NOTIFICATION(HANDLE hDot11SvcHandle, ref L2_NOTIFICATION_DATA pNotificationData);
-	public function uint32 DOT11EXT_SEND_PACKET(HANDLE hDot11SvcHandle, uint32 uPacketLen, void* pvPacket, HANDLE hSendCompletion);
-	public function uint32 DOT11EXT_SET_ETHERTYPE_HANDLING(HANDLE hDot11SvcHandle, uint32 uMaxBackLog, uint32 uNumOfExemption, DOT11_PRIVACY_EXEMPTION* pExemption, uint32 uNumOfRegistration, uint16* pusRegistration);
-	public function uint32 DOT11EXT_SET_AUTH_ALGORITHM(HANDLE hDot11SvcHandle, uint32 dwAuthAlgo);
-	public function uint32 DOT11EXT_SET_UNICAST_CIPHER_ALGORITHM(HANDLE hDot11SvcHandle, uint32 dwUnicastCipherAlgo);
-	public function uint32 DOT11EXT_SET_MULTICAST_CIPHER_ALGORITHM(HANDLE hDot11SvcHandle, uint32 dwMulticastCipherAlgo);
-	public function uint32 DOT11EXT_SET_DEFAULT_KEY(HANDLE hDot11SvcHandle, ref DOT11_CIPHER_DEFAULT_KEY_VALUE pKey, DOT11_DIRECTION dot11Direction);
-	public function uint32 DOT11EXT_SET_KEY_MAPPING_KEY(HANDLE hDot11SvcHandle, ref DOT11_CIPHER_KEY_MAPPING_KEY_VALUE pKey);
-	public function uint32 DOT11EXT_SET_DEFAULT_KEY_ID(HANDLE hDot11SvcHandle, uint32 uDefaultKeyId);
-	public function uint32 DOT11EXT_SET_EXCLUDE_UNENCRYPTED(HANDLE hDot11SvcHandle, BOOL bExcludeUnencrypted);
-	public function uint32 DOT11EXT_NIC_SPECIFIC_EXTENSION(HANDLE hDot11SvcHandle, uint32 dwInBufferSize, void* pvInBuffer, out uint32 pdwOutBufferSize, void* pvOutBuffer);
-	public function uint32 DOT11EXT_ONEX_START(HANDLE hDot11SvcHandle, EAP_ATTRIBUTES* pEapAttributes);
-	public function uint32 DOT11EXT_ONEX_STOP(HANDLE hDot11SvcHandle);
-	public function uint32 DOT11EXT_PROCESS_ONEX_PACKET(HANDLE hDot11SvcHandle, uint32 dwInPacketSize, void* pvInPacket);
-	public function uint32 DOT11EXT_REQUEST_VIRTUAL_STATION(HANDLE hDot11PrimaryHandle, void* pvReserved);
-	public function uint32 DOT11EXT_RELEASE_VIRTUAL_STATION(HANDLE hDot11PrimaryHandle, void* pvReserved);
-	public function uint32 DOT11EXT_QUERY_VIRTUAL_STATION_PROPERTIES(HANDLE hDot11SvcHandle, out BOOL pbIsVirtualStation, out Guid pgPrimary, void* pvReserved);
-	public function uint32 DOT11EXT_SET_VIRTUAL_STATION_AP_PROPERTIES(HANDLE hDot11SvcHandle, HANDLE hConnectSession, uint32 dwNumProperties, DOT11EXT_VIRTUAL_STATION_AP_PROPERTY* pProperties, void* pvReserved);
-	public function uint32 DOT11EXTIHV_GET_VERSION_INFO(out DOT11_IHV_VERSION_INFO pDot11IHVVersionInfo);
-	public function uint32 DOT11EXTIHV_INIT_SERVICE(uint32 dwVerNumUsed, ref DOT11EXT_APIS pDot11ExtAPI, void* pvReserved, out DOT11EXT_IHV_HANDLERS pDot11IHVHandlers);
-	public function uint32 DOT11EXTIHV_INIT_VIRTUAL_STATION(ref DOT11EXT_VIRTUAL_STATION_APIS pDot11ExtVSAPI, void* pvReserved);
-	public function void DOT11EXTIHV_DEINIT_SERVICE();
-	public function uint32 DOT11EXTIHV_INIT_ADAPTER(ref DOT11_ADAPTER pDot11Adapter, HANDLE hDot11SvcHandle, out HANDLE phIhvExtAdapter);
-	public function void DOT11EXTIHV_DEINIT_ADAPTER(HANDLE hIhvExtAdapter);
-	public function uint32 DOT11EXTIHV_PERFORM_PRE_ASSOCIATE(HANDLE hIhvExtAdapter, HANDLE hConnectSession, DOT11EXT_IHV_PROFILE_PARAMS* pIhvProfileParams, ref DOT11EXT_IHV_CONNECTIVITY_PROFILE pIhvConnProfile, ref DOT11EXT_IHV_SECURITY_PROFILE pIhvSecProfile, ref DOT11_BSS_LIST pConnectableBssid, out uint32 pdwReasonCode);
-	public function uint32 DOT11EXTIHV_ADAPTER_RESET(HANDLE hIhvExtAdapter);
-	public function uint32 DOT11EXTIHV_PERFORM_POST_ASSOCIATE(HANDLE hIhvExtAdapter, HANDLE hSecuritySessionID, ref DOT11_PORT_STATE pPortState, uint32 uDot11AssocParamsBytes, ref DOT11_ASSOCIATION_COMPLETION_PARAMETERS pDot11AssocParams);
-	public function uint32 DOT11EXTIHV_STOP_POST_ASSOCIATE(HANDLE hIhvExtAdapter, ref uint8* pPeer, uint32 dot11AssocStatus);
-	public function uint32 DOT11EXTIHV_VALIDATE_PROFILE(HANDLE hIhvExtAdapter, DOT11EXT_IHV_PROFILE_PARAMS* pIhvProfileParams, ref DOT11EXT_IHV_CONNECTIVITY_PROFILE pIhvConnProfile, ref DOT11EXT_IHV_SECURITY_PROFILE pIhvSecProfile, out uint32 pdwReasonCode);
-	public function uint32 DOT11EXTIHV_PERFORM_CAPABILITY_MATCH(HANDLE hIhvExtAdapter, DOT11EXT_IHV_PROFILE_PARAMS* pIhvProfileParams, ref DOT11EXT_IHV_CONNECTIVITY_PROFILE pIhvConnProfile, ref DOT11EXT_IHV_SECURITY_PROFILE pIhvSecProfile, DOT11_BSS_LIST* pConnectableBssid, out uint32 pdwReasonCode);
-	public function uint32 DOT11EXTIHV_CREATE_DISCOVERY_PROFILES(HANDLE hIhvExtAdapter, BOOL bInsecure, DOT11EXT_IHV_PROFILE_PARAMS* pIhvProfileParams, DOT11_BSS_LIST* pConnectableBssid, out DOT11EXT_IHV_DISCOVERY_PROFILE_LIST pIhvDiscoveryProfileList, out uint32 pdwReasonCode);
-	public function uint32 DOT11EXTIHV_PROCESS_SESSION_CHANGE(uint32 uEventType, ref WTSSESSION_NOTIFICATION pSessionNotification);
-	public function uint32 DOT11EXTIHV_RECEIVE_INDICATION(HANDLE hIhvExtAdapter, DOT11EXT_IHV_INDICATION_TYPE indicationType, uint32 uBufferLength, void* pvBuffer);
-	public function uint32 DOT11EXTIHV_RECEIVE_PACKET(HANDLE hIhvExtAdapter, uint32 dwInBufferSize, void* pvInBuffer);
-	public function uint32 DOT11EXTIHV_SEND_PACKET_COMPLETION(HANDLE hSendCompletion);
-	public function uint32 DOT11EXTIHV_IS_UI_REQUEST_PENDING(Guid guidUIRequest, out BOOL pbIsRequestPending);
-	public function uint32 DOT11EXTIHV_PROCESS_UI_RESPONSE(Guid guidUIRequest, uint32 dwByteCount, void* pvResponseBuffer);
-	public function uint32 DOT11EXTIHV_QUERY_UI_REQUEST(HANDLE hIhvExtAdapter, DOT11EXT_IHV_CONNECTION_PHASE connectionPhase, out DOT11EXT_IHV_UI_REQUEST* ppIhvUIRequest);
-	public function uint32 DOT11EXTIHV_ONEX_INDICATE_RESULT(HANDLE hIhvExtAdapter, DOT11_MSONEX_RESULT msOneXResult, DOT11_MSONEX_RESULT_PARAMS* pDot11MsOneXResultParams);
-	public function uint32 DOT11EXTIHV_CONTROL(HANDLE hIhvExtAdapter, uint32 dwInBufferSize, uint8* pInBuffer, uint32 dwOutBufferSize, uint8* pOutBuffer, out uint32 pdwBytesReturned);
 	#endregion
 	
 	#region Structs
+	[CRepr]
+	public struct NET_IF_RCV_ADDRESS_LH
+	{
+		public NET_IF_RCV_ADDRESS_TYPE ifRcvAddressType;
+		public uint16 ifRcvAddressLength;
+		public uint16 ifRcvAddressOffset;
+	}
+	[CRepr]
+	public struct NET_IF_ALIAS_LH
+	{
+		public uint16 ifAliasLength;
+		public uint16 ifAliasOffset;
+	}
+	[CRepr, Union]
+	public struct NET_LUID_LH
+	{
+		public uint64 Value;
+		public _Info_e__Struct Info;
+		
+		[CRepr]
+		public struct _Info_e__Struct
+		{
+			public uint64 _bitfield;
+		}
+	}
+	[CRepr]
+	public struct NET_PHYSICAL_LOCATION_LH
+	{
+		public uint32 BusNumber;
+		public uint32 SlotNumber;
+		public uint32 FunctionNumber;
+	}
+	[CRepr]
+	public struct IF_COUNTED_STRING_LH
+	{
+		public uint16 Length;
+		public char16[257] String;
+	}
+	[CRepr]
+	public struct IF_PHYSICAL_ADDRESS_LH
+	{
+		public uint16 Length;
+		public uint8[32] Address;
+	}
+	[CRepr]
+	public struct NDIS_INTERFACE_INFORMATION
+	{
+		public NET_IF_OPER_STATUS ifOperStatus;
+		public uint32 ifOperStatusFlags;
+		public NET_IF_MEDIA_CONNECT_STATE MediaConnectState;
+		public NET_IF_MEDIA_DUPLEX_STATE MediaDuplexState;
+		public uint32 ifMtu;
+		public BOOLEAN ifPromiscuousMode;
+		public BOOLEAN ifDeviceWakeUpEnable;
+		public uint64 XmitLinkSpeed;
+		public uint64 RcvLinkSpeed;
+		public uint64 ifLastChange;
+		public uint64 ifCounterDiscontinuityTime;
+		public uint64 ifInUnknownProtos;
+		public uint64 ifInDiscards;
+		public uint64 ifInErrors;
+		public uint64 ifHCInOctets;
+		public uint64 ifHCInUcastPkts;
+		public uint64 ifHCInMulticastPkts;
+		public uint64 ifHCInBroadcastPkts;
+		public uint64 ifHCOutOctets;
+		public uint64 ifHCOutUcastPkts;
+		public uint64 ifHCOutMulticastPkts;
+		public uint64 ifHCOutBroadcastPkts;
+		public uint64 ifOutErrors;
+		public uint64 ifOutDiscards;
+		public uint64 ifHCInUcastOctets;
+		public uint64 ifHCInMulticastOctets;
+		public uint64 ifHCInBroadcastOctets;
+		public uint64 ifHCOutUcastOctets;
+		public uint64 ifHCOutMulticastOctets;
+		public uint64 ifHCOutBroadcastOctets;
+		public uint32 CompartmentId;
+		public uint32 SupportedStatistics;
+	}
 	[CRepr]
 	public struct NDIS_STATISTICS_VALUE
 	{
@@ -3377,200 +3491,6 @@ static
 		public uint32 MaxCalleeData;
 		public uint32 AdapterFlags;
 		public NDK_RDMA_TECHNOLOGY RdmaTechnology;
-	}
-	[CRepr]
-	public struct DOT11_ADAPTER
-	{
-		public Guid gAdapterId;
-		public PWSTR pszDescription;
-		public DOT11_CURRENT_OPERATION_MODE Dot11CurrentOpMode;
-	}
-	[CRepr]
-	public struct DOT11_BSS_LIST
-	{
-		public uint32 uNumOfBytes;
-		public uint8* pucBuffer;
-	}
-	[CRepr]
-	public struct DOT11_PORT_STATE
-	{
-		public uint8[6] PeerMacAddress;
-		public uint32 uSessionId;
-		public BOOL bPortControlled;
-		public BOOL bPortAuthorized;
-	}
-	[CRepr, Packed(1)]
-	public struct DOT11_SECURITY_PACKET_HEADER
-	{
-		public uint8[6] PeerMac;
-		public uint16 usEtherType;
-		public uint8[1] Data_array;
-		
-		public uint8* Data mut => &Data_array[0];
-	}
-	[CRepr]
-	public struct DOT11_MSSECURITY_SETTINGS
-	{
-		public DOT11_AUTH_ALGORITHM dot11AuthAlgorithm;
-		public DOT11_CIPHER_ALGORITHM dot11CipherAlgorithm;
-		public BOOL fOneXEnabled;
-		public EAP_METHOD_TYPE eapMethodType;
-		public uint32 dwEapConnectionDataLen;
-		public uint8* pEapConnectionData;
-	}
-	[CRepr]
-	public struct DOT11EXT_IHV_SSID_LIST
-	{
-		public uint32 ulCount;
-		public DOT11_SSID[1] SSIDs_array;
-		
-		public DOT11_SSID* SSIDs mut => &SSIDs_array[0];
-	}
-	[CRepr]
-	public struct DOT11EXT_IHV_PROFILE_PARAMS
-	{
-		public DOT11EXT_IHV_SSID_LIST* pSsidList;
-		public DOT11_BSS_TYPE BssType;
-		public DOT11_MSSECURITY_SETTINGS* pMSSecuritySettings;
-	}
-	[CRepr]
-	public struct DOT11EXT_IHV_PARAMS
-	{
-		public DOT11EXT_IHV_PROFILE_PARAMS dot11ExtIhvProfileParams;
-		public char16[256] wstrProfileName;
-		public uint32 dwProfileTypeFlags;
-		public Guid interfaceGuid;
-	}
-	[CRepr]
-	public struct DOT11_IHV_VERSION_INFO
-	{
-		public uint32 dwVerMin;
-		public uint32 dwVerMax;
-	}
-	[CRepr]
-	public struct DOT11EXT_IHV_UI_REQUEST
-	{
-		public uint32 dwSessionId;
-		public Guid guidUIRequest;
-		public Guid UIPageClsid;
-		public uint32 dwByteCount;
-		public uint8* pvUIRequest;
-	}
-	[CRepr]
-	public struct DOT11_EAP_RESULT
-	{
-		public uint32 dwFailureReasonCode;
-		public EAP_ATTRIBUTES* pAttribArray;
-	}
-	[CRepr]
-	public struct DOT11_MSONEX_RESULT_PARAMS
-	{
-		public ONEX_AUTH_STATUS Dot11OnexAuthStatus;
-		public ONEX_REASON_CODE Dot11OneXReasonCode;
-		public uint8* pbMPPESendKey;
-		public uint32 dwMPPESendKeyLen;
-		public uint8* pbMPPERecvKey;
-		public uint32 dwMPPERecvKeyLen;
-		public DOT11_EAP_RESULT* pDot11EapResult;
-	}
-	[CRepr]
-	public struct DOT11EXT_IHV_CONNECTIVITY_PROFILE
-	{
-		public PWSTR pszXmlFragmentIhvConnectivity;
-	}
-	[CRepr]
-	public struct DOT11EXT_IHV_SECURITY_PROFILE
-	{
-		public PWSTR pszXmlFragmentIhvSecurity;
-		public BOOL bUseMSOnex;
-	}
-	[CRepr]
-	public struct DOT11EXT_IHV_DISCOVERY_PROFILE
-	{
-		public DOT11EXT_IHV_CONNECTIVITY_PROFILE IhvConnectivityProfile;
-		public DOT11EXT_IHV_SECURITY_PROFILE IhvSecurityProfile;
-	}
-	[CRepr]
-	public struct DOT11EXT_IHV_DISCOVERY_PROFILE_LIST
-	{
-		public uint32 dwCount;
-		public DOT11EXT_IHV_DISCOVERY_PROFILE* pIhvDiscoveryProfiles;
-	}
-	[CRepr]
-	public struct DOT11EXT_VIRTUAL_STATION_AP_PROPERTY
-	{
-		public DOT11_SSID dot11SSID;
-		public DOT11_AUTH_ALGORITHM dot11AuthAlgo;
-		public DOT11_CIPHER_ALGORITHM dot11CipherAlgo;
-		public BOOL bIsPassPhrase;
-		public uint32 dwKeyLength;
-		public uint8[64] ucKeyData;
-	}
-	[CRepr]
-	public struct WDIAG_IHV_WLAN_ID
-	{
-		public char16[256] strProfileName;
-		public DOT11_SSID Ssid;
-		public DOT11_BSS_TYPE BssType;
-		public uint32 dwFlags;
-		public uint32 dwReasonCode;
-	}
-	[CRepr]
-	public struct DOT11EXT_APIS
-	{
-		public DOT11EXT_ALLOCATE_BUFFER Dot11ExtAllocateBuffer;
-		public DOT11EXT_FREE_BUFFER Dot11ExtFreeBuffer;
-		public DOT11EXT_SET_PROFILE_CUSTOM_USER_DATA Dot11ExtSetProfileCustomUserData;
-		public DOT11EXT_GET_PROFILE_CUSTOM_USER_DATA Dot11ExtGetProfileCustomUserData;
-		public DOT11EXT_SET_CURRENT_PROFILE Dot11ExtSetCurrentProfile;
-		public DOT11EXT_SEND_UI_REQUEST Dot11ExtSendUIRequest;
-		public DOT11EXT_PRE_ASSOCIATE_COMPLETION Dot11ExtPreAssociateCompletion;
-		public DOT11EXT_POST_ASSOCIATE_COMPLETION Dot11ExtPostAssociateCompletion;
-		public DOT11EXT_SEND_NOTIFICATION Dot11ExtSendNotification;
-		public DOT11EXT_SEND_PACKET Dot11ExtSendPacket;
-		public DOT11EXT_SET_ETHERTYPE_HANDLING Dot11ExtSetEtherTypeHandling;
-		public DOT11EXT_SET_AUTH_ALGORITHM Dot11ExtSetAuthAlgorithm;
-		public DOT11EXT_SET_UNICAST_CIPHER_ALGORITHM Dot11ExtSetUnicastCipherAlgorithm;
-		public DOT11EXT_SET_MULTICAST_CIPHER_ALGORITHM Dot11ExtSetMulticastCipherAlgorithm;
-		public DOT11EXT_SET_DEFAULT_KEY Dot11ExtSetDefaultKey;
-		public DOT11EXT_SET_KEY_MAPPING_KEY Dot11ExtSetKeyMappingKey;
-		public DOT11EXT_SET_DEFAULT_KEY_ID Dot11ExtSetDefaultKeyId;
-		public DOT11EXT_NIC_SPECIFIC_EXTENSION Dot11ExtNicSpecificExtension;
-		public DOT11EXT_SET_EXCLUDE_UNENCRYPTED Dot11ExtSetExcludeUnencrypted;
-		public DOT11EXT_ONEX_START Dot11ExtStartOneX;
-		public DOT11EXT_ONEX_STOP Dot11ExtStopOneX;
-		public DOT11EXT_PROCESS_ONEX_PACKET Dot11ExtProcessSecurityPacket;
-	}
-	[CRepr]
-	public struct DOT11EXT_IHV_HANDLERS
-	{
-		public DOT11EXTIHV_DEINIT_SERVICE Dot11ExtIhvDeinitService;
-		public DOT11EXTIHV_INIT_ADAPTER Dot11ExtIhvInitAdapter;
-		public DOT11EXTIHV_DEINIT_ADAPTER Dot11ExtIhvDeinitAdapter;
-		public DOT11EXTIHV_PERFORM_PRE_ASSOCIATE Dot11ExtIhvPerformPreAssociate;
-		public DOT11EXTIHV_ADAPTER_RESET Dot11ExtIhvAdapterReset;
-		public DOT11EXTIHV_PERFORM_POST_ASSOCIATE Dot11ExtIhvPerformPostAssociate;
-		public DOT11EXTIHV_STOP_POST_ASSOCIATE Dot11ExtIhvStopPostAssociate;
-		public DOT11EXTIHV_VALIDATE_PROFILE Dot11ExtIhvValidateProfile;
-		public DOT11EXTIHV_PERFORM_CAPABILITY_MATCH Dot11ExtIhvPerformCapabilityMatch;
-		public DOT11EXTIHV_CREATE_DISCOVERY_PROFILES Dot11ExtIhvCreateDiscoveryProfiles;
-		public DOT11EXTIHV_PROCESS_SESSION_CHANGE Dot11ExtIhvProcessSessionChange;
-		public DOT11EXTIHV_RECEIVE_INDICATION Dot11ExtIhvReceiveIndication;
-		public DOT11EXTIHV_RECEIVE_PACKET Dot11ExtIhvReceivePacket;
-		public DOT11EXTIHV_SEND_PACKET_COMPLETION Dot11ExtIhvSendPacketCompletion;
-		public DOT11EXTIHV_IS_UI_REQUEST_PENDING Dot11ExtIhvIsUIRequestPending;
-		public DOT11EXTIHV_PROCESS_UI_RESPONSE Dot11ExtIhvProcessUIResponse;
-		public DOT11EXTIHV_QUERY_UI_REQUEST Dot11ExtIhvQueryUIRequest;
-		public DOT11EXTIHV_ONEX_INDICATE_RESULT Dot11ExtIhvOnexIndicateResult;
-		public DOT11EXTIHV_CONTROL Dot11ExtIhvControl;
-	}
-	[CRepr]
-	public struct DOT11EXT_VIRTUAL_STATION_APIS
-	{
-		public DOT11EXT_REQUEST_VIRTUAL_STATION Dot11ExtRequestVirtualStation;
-		public DOT11EXT_RELEASE_VIRTUAL_STATION Dot11ExtReleaseVirtualStation;
-		public DOT11EXT_QUERY_VIRTUAL_STATION_PROPERTIES Dot11ExtQueryVirtualStationProperties;
-		public DOT11EXT_SET_VIRTUAL_STATION_AP_PROPERTIES Dot11ExtSetVirtualStationAPProperties;
 	}
 	#endregion
 	

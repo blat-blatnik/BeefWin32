@@ -373,6 +373,223 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"eapPropCipherSuiteNegotiation"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropMutualAuth"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropIntegrity"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropReplayProtection"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":8
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropConfidentiality"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":16
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropKeyDerivation"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":32
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropKeyStrength64"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":64
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropKeyStrength128"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":128
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropKeyStrength256"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":256
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropKeyStrength512"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":512
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropKeyStrength1024"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1024
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropDictionaryAttackResistance"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2048
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropFastReconnect"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4096
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropCryptoBinding"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":8192
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropSessionIndependence"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":16384
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropFragmentation"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":32768
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropChannelBinding"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":65536
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropNap"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":131072
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropStandalone"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":262144
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropMppeEncryption"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":524288
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropTunnelMethod"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1048576
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropSupportsConfig"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2097152
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropCertifiedMethod"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4194304
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropHiddenMethod"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":8388608
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropMachineAuth"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":16777216
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropUserAuth"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":33554432
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropIdentityPrivacy"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":67108864
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropMethodChaining"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":134217728
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropSharedStateEquivalence"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":268435456
+		,"Attrs":[]
+	}
+	,{
+		"Name":"eapPropReserved"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2147483648
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EAP_VALUENAME_PROPERTIES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Properties"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"EAP_FLAG_Reserved1"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -653,10 +870,227 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"EAP_REGISTRY_LOCATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\EapHost\\Methods"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EAP_PEER_VALUENAME_DLL_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PeerDllPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EAP_PEER_VALUENAME_FRIENDLY_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PeerFriendlyName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EAP_PEER_VALUENAME_CONFIGUI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PeerConfigUIPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EAP_PEER_VALUENAME_REQUIRE_CONFIGUI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PeerRequireConfigUI"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EAP_PEER_VALUENAME_IDENTITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PeerIdentityPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EAP_PEER_VALUENAME_INTERACTIVEUI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PeerInteractiveUIPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EAP_PEER_VALUENAME_INVOKE_NAMEDLG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PeerInvokeUsernameDialog"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EAP_PEER_VALUENAME_INVOKE_PWDDLG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PeerInvokePasswordDialog"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EAP_PEER_VALUENAME_PROPERTIES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Properties"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EAP_AUTHENTICATOR_VALUENAME_DLL_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AuthenticatorDllPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EAP_AUTHENTICATOR_VALUENAME_FRIENDLY_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AuthenticatorFriendlyName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EAP_AUTHENTICATOR_VALUENAME_PROPERTIES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Properties"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EAP_AUTHENTICATOR_VALUENAME_CONFIGUI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"AuthenticatorConfigUIPath"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"EAP_METHOD_AUTHENTICATOR_CONFIG_IS_IDENTITY_PRIVACY"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_REGISTRY_LOCATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\Rasman\\PPP\\EAP"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Path"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_CONFIGUI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ConfigUIPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_INTERACTIVEUI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InteractiveUIPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_IDENTITY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IdentityPath"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_FRIENDLY_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FriendlyName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_DEFAULT_DATA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ConfigData"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_REQUIRE_CONFIGUI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RequireConfigUI"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_ENCRYPTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MPPEEncryptionSupported"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_INVOKE_NAMEDLG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InvokeUsernameDialog"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_INVOKE_PWDDLG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InvokePasswordDialog"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_CONFIG_CLSID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ConfigCLSID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_STANDALONE_SUPPORTED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"StandaloneSupported"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_ROLES_SUPPORTED"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"RolesSupported"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_PER_POLICY_CONFIG"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PerPolicyConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_ISTUNNEL_METHOD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IsTunnelMethod"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RAS_EAP_VALUENAME_FILTER_INNERMETHODS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FilterInnerMethods"
 		,"Attrs":[]
 	}
 	,{
@@ -692,6 +1126,34 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":16
+		,"Attrs":[]
+	}
+	,{
+		"Name":"raatARAPChallenge"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":33
+		,"Attrs":[]
+	}
+	,{
+		"Name":"raatARAPOldPassword"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":19
+		,"Attrs":[]
+	}
+	,{
+		"Name":"raatARAPNewPassword"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":20
+		,"Attrs":[]
+	}
+	,{
+		"Name":"raatARAPPasswordChangeReason"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":21
 		,"Attrs":[]
 	}
 	,{
@@ -1352,7 +1814,7 @@
 		,"PackingSize":0
 		,"Fields":[
 			{"Name":"wszTicket","Type":{"Kind":"Array","Shape":{"Size":45},"Child":{"Kind":"Native","Name":"Char"}},"Attrs":[]}
-			,{"Name":"hKey","Type":{"Kind":"Native","Name":"UIntPtr"},"Attrs":[]}
+			,{"Name":"hKey","Type":{"Kind":"ApiRef","Name":"NCRYPT_KEY_HANDLE","TargetKind":"Default","Api":"Security.Cryptography","Parents":[]},"Attrs":[]}
 			,{"Name":"hImpersonateToken","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 		]
 		,"NestedTypes":[
@@ -1533,6 +1995,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"66a2db16-d706-11d0-a37b-00c04fc9da04"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1579,6 +2042,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"66a2db17-d706-11d0-a37b-00c04fc9da04"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1658,6 +2122,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"66a2db18-d706-11d0-a37b-00c04fc9da04"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1737,6 +2202,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"66a2db19-d706-11d0-a37b-00c04fc9da04"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1830,6 +2296,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d565917a-85c4-4466-856e-671c3742ea9a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IEAPProviderConfig","TargetKind":"Com","Api":"Security.ExtensibleAuthenticationProtocol","Parents":[]}
 		,"Methods":[
 			{
@@ -1872,6 +2339,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b78ecd12-68bb-4f86-9bf0-8438dd3be982"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IEAPProviderConfig2","TargetKind":"Com","Api":"Security.ExtensibleAuthenticationProtocol","Parents":[]}
 		,"Methods":[
 			{

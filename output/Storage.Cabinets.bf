@@ -9,18 +9,41 @@ static
 	public const uint32 INCLUDED_FCI = 1;
 	public const uint32 _A_NAME_IS_UTF = 128;
 	public const uint32 _A_EXEC = 64;
+	public const uint32 statusFile = 0;
+	public const uint32 statusFolder = 1;
+	public const uint32 statusCabinet = 2;
 	public const uint32 INCLUDED_TYPES_FCI_FDI = 1;
 	public const int32 CB_MAX_DISK = 2147483647;
 	public const uint32 CB_MAX_FILENAME = 256;
 	public const uint32 CB_MAX_CABINET_NAME = 256;
 	public const uint32 CB_MAX_CAB_PATH = 256;
 	public const uint32 CB_MAX_DISK_NAME = 256;
+	public const uint32 tcompMASK_TYPE = 15;
+	public const uint32 tcompTYPE_NONE = 0;
+	public const uint32 tcompTYPE_MSZIP = 1;
+	public const uint32 tcompTYPE_QUANTUM = 2;
+	public const uint32 tcompTYPE_LZX = 3;
+	public const uint32 tcompBAD = 15;
+	public const uint32 tcompMASK_LZX_WINDOW = 7936;
+	public const uint32 tcompLZX_WINDOW_LO = 3840;
+	public const uint32 tcompLZX_WINDOW_HI = 5376;
+	public const uint32 tcompSHIFT_LZX_WINDOW = 8;
+	public const uint32 tcompMASK_QUANTUM_LEVEL = 240;
+	public const uint32 tcompQUANTUM_LEVEL_LO = 16;
+	public const uint32 tcompQUANTUM_LEVEL_HI = 112;
+	public const uint32 tcompSHIFT_QUANTUM_LEVEL = 4;
+	public const uint32 tcompMASK_QUANTUM_MEM = 7936;
+	public const uint32 tcompQUANTUM_MEM_LO = 2560;
+	public const uint32 tcompQUANTUM_MEM_HI = 5376;
+	public const uint32 tcompSHIFT_QUANTUM_MEM = 8;
+	public const uint32 tcompMASK_RESERVED = 57344;
 	public const uint32 INCLUDED_FDI = 1;
 	#endregion
 	
 	#region Enums
-	public enum FDICREATE_CPU_TYPE : uint32
+	public enum FDICREATE_CPU_TYPE : int32
 	{
+		cpuUNKNOWN = -1,
 		cpu80286 = 0,
 		cpu80386 = 1,
 	}

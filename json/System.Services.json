@@ -16,6 +16,48 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"SERVICES_ACTIVE_DATABASEW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServicesActive"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICES_FAILED_DATABASEW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServicesFailed"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICES_ACTIVE_DATABASEA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServicesActive"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICES_FAILED_DATABASEA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServicesFailed"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICES_ACTIVE_DATABASE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServicesActive"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SERVICES_FAILED_DATABASE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ServicesFailed"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SERVICE_NO_CHANGE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -862,6 +904,20 @@
 		,"Value":"2d7a2816-0c5e-45fc-9ce7-570e5ecde9c9"
 		,"Attrs":[]
 	}
+	,{
+		"Name":"SERVICE_TRIGGER_STARTED_ARGUMENT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TriggerStarted"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SC_AGGREGATE_STORAGE_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Control\\ServiceAggregatedEvents"
+		,"Attrs":[]
+	}
 ]
 
 ,"Types":[
@@ -924,10 +980,8 @@
 		,"Scoped":false
 		,"Values":[
 			{"Name":"SERVICE_DRIVER","Value":11}
-			,{"Name":"SERVICE_FILE_SYSTEM_DRIVER_","Value":2}
 			,{"Name":"SERVICE_KERNEL_DRIVER","Value":1}
 			,{"Name":"SERVICE_WIN32","Value":48}
-			,{"Name":"SERVICE_WIN32_OWN_PROCESS_","Value":16}
 			,{"Name":"SERVICE_WIN32_SHARE_PROCESS","Value":32}
 			,{"Name":"SERVICE_ADAPTER","Value":4}
 			,{"Name":"SERVICE_FILE_SYSTEM_DRIVER","Value":2}
@@ -1061,6 +1115,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"SERVICE_TRIGGER_CUSTOM_STATE_ID"
@@ -2478,7 +2533,7 @@
 		,"Params":[
 			{"Name":"hService","Type":{"Kind":"ApiRef","Name":"SC_HANDLE","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["In"]}
 			,{"Name":"dwSecurityInformation","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"lpSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["Out",{"Kind":"MemorySize","BytesParamIndex":3},"Optional"]}
+			,{"Name":"lpSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["Out",{"Kind":"MemorySize","BytesParamIndex":3},"Optional"]}
 			,{"Name":"cbBufSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"pcbBytesNeeded","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["Out"]}
 		]
@@ -2584,7 +2639,7 @@
 		,"Params":[
 			{"Name":"hService","Type":{"Kind":"ApiRef","Name":"SC_HANDLE","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["In"]}
 			,{"Name":"dwSecurityInformation","Type":{"Kind":"ApiRef","Name":"OBJECT_SECURITY_INFORMATION","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["In"]}
-			,{"Name":"lpSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["In"]}
+			,{"Name":"lpSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{

@@ -55,6 +55,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"CloseDecompressor"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"PFN_COMPRESS_ALLOCATE"

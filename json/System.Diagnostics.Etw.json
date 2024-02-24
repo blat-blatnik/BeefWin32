@@ -527,6 +527,62 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"KERNEL_LOGGER_NAMEW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NT Kernel Logger"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GLOBAL_LOGGER_NAMEW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GlobalLogger"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EVENT_LOGGER_NAMEW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EventLog"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIAG_LOGGER_NAMEW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DiagLog"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KERNEL_LOGGER_NAMEA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NT Kernel Logger"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GLOBAL_LOGGER_NAMEA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GlobalLogger"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EVENT_LOGGER_NAMEA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EventLog"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DIAG_LOGGER_NAMEA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DiagLog"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"MAX_MOF_FIELDS"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -2613,6 +2669,27 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"KERNEL_LOGGER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"NT Kernel Logger"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"GLOBAL_LOGGER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GlobalLogger"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EVENT_LOGGER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"EventLog"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"ENABLE_TRACE_PARAMETERS_VERSION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -3308,6 +3385,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"TdhCloseDecodingHandle"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"WNODE_HEADER"
@@ -6037,6 +6115,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"8cc97f40-9028-4ff3-9b62-7d1f79ca7bcb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6193,6 +6272,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"3ed25501-593f-43e9-8f38-3ab46f5a4a52"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6241,6 +6321,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"f754ad43-3bcc-4286-8009-9c5da214e84e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7152,7 +7233,7 @@
 		,"Attrs":[]
 		,"Params":[
 			{"Name":"Guid","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Guid"}},"Attrs":["In"]}
-			,{"Name":"Buffer","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["Out",{"Kind":"MemorySize","BytesParamIndex":2},"Optional"]}
+			,{"Name":"Buffer","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["Out",{"Kind":"MemorySize","BytesParamIndex":2},"Optional"]}
 			,{"Name":"BufferSize","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["In","Out"]}
 		]
 	}

@@ -58,6 +58,44 @@ static
 	public const uint32 _WIN32_MSI = 500;
 	public const uint32 MAX_GUID_CHARS = 38;
 	public const uint32 MAX_FEATURE_CHARS = 38;
+	public const String INSTALLPROPERTY_PACKAGENAME = "PackageName";
+	public const String INSTALLPROPERTY_TRANSFORMS = "Transforms";
+	public const String INSTALLPROPERTY_LANGUAGE = "Language";
+	public const String INSTALLPROPERTY_PRODUCTNAME = "ProductName";
+	public const String INSTALLPROPERTY_ASSIGNMENTTYPE = "AssignmentType";
+	public const String INSTALLPROPERTY_INSTANCETYPE = "InstanceType";
+	public const String INSTALLPROPERTY_AUTHORIZED_LUA_APP = "AuthorizedLUAApp";
+	public const String INSTALLPROPERTY_PACKAGECODE = "PackageCode";
+	public const String INSTALLPROPERTY_VERSION = "Version";
+	public const String INSTALLPROPERTY_PRODUCTICON = "ProductIcon";
+	public const String INSTALLPROPERTY_INSTALLEDPRODUCTNAME = "InstalledProductName";
+	public const String INSTALLPROPERTY_VERSIONSTRING = "VersionString";
+	public const String INSTALLPROPERTY_HELPLINK = "HelpLink";
+	public const String INSTALLPROPERTY_HELPTELEPHONE = "HelpTelephone";
+	public const String INSTALLPROPERTY_INSTALLLOCATION = "InstallLocation";
+	public const String INSTALLPROPERTY_INSTALLSOURCE = "InstallSource";
+	public const String INSTALLPROPERTY_INSTALLDATE = "InstallDate";
+	public const String INSTALLPROPERTY_PUBLISHER = "Publisher";
+	public const String INSTALLPROPERTY_LOCALPACKAGE = "LocalPackage";
+	public const String INSTALLPROPERTY_URLINFOABOUT = "URLInfoAbout";
+	public const String INSTALLPROPERTY_URLUPDATEINFO = "URLUpdateInfo";
+	public const String INSTALLPROPERTY_VERSIONMINOR = "VersionMinor";
+	public const String INSTALLPROPERTY_VERSIONMAJOR = "VersionMajor";
+	public const String INSTALLPROPERTY_PRODUCTID = "ProductID";
+	public const String INSTALLPROPERTY_REGCOMPANY = "RegCompany";
+	public const String INSTALLPROPERTY_REGOWNER = "RegOwner";
+	public const String INSTALLPROPERTY_INSTALLEDLANGUAGE = "InstalledLanguage";
+	public const String INSTALLPROPERTY_UNINSTALLABLE = "Uninstallable";
+	public const String INSTALLPROPERTY_PRODUCTSTATE = "State";
+	public const String INSTALLPROPERTY_PATCHSTATE = "State";
+	public const String INSTALLPROPERTY_PATCHTYPE = "PatchType";
+	public const String INSTALLPROPERTY_LUAENABLED = "LUAEnabled";
+	public const String INSTALLPROPERTY_DISPLAYNAME = "DisplayName";
+	public const String INSTALLPROPERTY_MOREINFOURL = "MoreInfoURL";
+	public const String INSTALLPROPERTY_LASTUSEDSOURCE = "LastUsedSource";
+	public const String INSTALLPROPERTY_LASTUSEDTYPE = "LastUsedType";
+	public const String INSTALLPROPERTY_MEDIAPACKAGEPATH = "MediaPackagePath";
+	public const String INSTALLPROPERTY_DISKPROMPT = "DiskPrompt";
 	public const uint32 MSI_INVALID_HASH_IS_FATAL = 1;
 	public const uint32 ERROR_ROLLBACK_DISABLED = 1653;
 	public const uint32 MSI_NULL_INTEGER = 2147483648;
@@ -85,6 +123,232 @@ static
 	public const uint32 SFC_SCAN_ONCE = 2;
 	public const uint32 SFC_SCAN_IMMEDIATE = 3;
 	public const uint32 SFC_QUOTA_DEFAULT = 50;
+	public const String SFC_IDLE_TRIGGER = "WFP_IDLE_TRIGGER";
+	public const String IPROPNAME_PRODUCTNAME = "ProductName";
+	public const String IPROPNAME_PRODUCTCODE = "ProductCode";
+	public const String IPROPNAME_PRODUCTVERSION = "ProductVersion";
+	public const String IPROPNAME_INSTALLLANGUAGE = "ProductLanguage";
+	public const String IPROPNAME_MANUFACTURER = "Manufacturer";
+	public const String IPROPNAME_UPGRADECODE = "UpgradeCode";
+	public const String IPROPNAME_PIDTEMPLATE = "PIDTemplate";
+	public const String IPROPNAME_DISKPROMPT = "DiskPrompt";
+	public const String IPROPNAME_LEFTUNIT = "LeftUnit";
+	public const String IPROPNAME_ADMIN_PROPERTIES = "AdminProperties";
+	public const String IPROPNAME_DEFAULTUIFONT = "DefaultUIFont";
+	public const String IPROPNAME_ALLOWEDPROPERTIES = "SecureCustomProperties";
+	public const String IPROPNAME_ENABLEUSERCONTROL = "EnableUserControl";
+	public const String IPROPNAME_HIDDEN_PROPERTIES = "MsiHiddenProperties";
+	public const String IPROPNAME_USERNAME = "USERNAME";
+	public const String IPROPNAME_COMPANYNAME = "COMPANYNAME";
+	public const String IPROPNAME_PIDKEY = "PIDKEY";
+	public const String IPROPNAME_PATCH = "PATCH";
+	public const String IPROPNAME_MSIPATCHREMOVE = "MSIPATCHREMOVE";
+	public const String IPROPNAME_TARGETDIR = "TARGETDIR";
+	public const String IPROPNAME_ACTION = "ACTION";
+	public const String IPROPNAME_LIMITUI = "LIMITUI";
+	public const String IPROPNAME_LOGACTION = "LOGACTION";
+	public const String IPROPNAME_ALLUSERS = "ALLUSERS";
+	public const String IPROPNAME_INSTALLLEVEL = "INSTALLLEVEL";
+	public const String IPROPNAME_REBOOT = "REBOOT";
+	public const String IPROPNAME_REBOOTPROMPT = "REBOOTPROMPT";
+	public const String IPROPNAME_EXECUTEMODE = "EXECUTEMODE";
+	public const String IPROPVALUE_EXECUTEMODE_NONE = "NONE";
+	public const String IPROPVALUE_EXECUTEMODE_SCRIPT = "SCRIPT";
+	public const String IPROPNAME_EXECUTEACTION = "EXECUTEACTION";
+	public const String IPROPNAME_SOURCELIST = "SOURCELIST";
+	public const String IPROPNAME_ROOTDRIVE = "ROOTDRIVE";
+	public const String IPROPNAME_TRANSFORMS = "TRANSFORMS";
+	public const String IPROPNAME_TRANSFORMSATSOURCE = "TRANSFORMSATSOURCE";
+	public const String IPROPNAME_TRANSFORMSSECURE = "TRANSFORMSSECURE";
+	public const String IPROPNAME_SEQUENCE = "SEQUENCE";
+	public const String IPROPNAME_SHORTFILENAMES = "SHORTFILENAMES";
+	public const String IPROPNAME_PRIMARYFOLDER = "PRIMARYFOLDER";
+	public const String IPROPNAME_AFTERREBOOT = "AFTERREBOOT";
+	public const String IPROPNAME_NOCOMPANYNAME = "NOCOMPANYNAME";
+	public const String IPROPNAME_NOUSERNAME = "NOUSERNAME";
+	public const String IPROPNAME_DISABLEROLLBACK = "DISABLEROLLBACK";
+	public const String IPROPNAME_AVAILABLEFREEREG = "AVAILABLEFREEREG";
+	public const String IPROPNAME_DISABLEADVTSHORTCUTS = "DISABLEADVTSHORTCUTS";
+	public const String IPROPNAME_PATCHNEWPACKAGECODE = "PATCHNEWPACKAGECODE";
+	public const String IPROPNAME_PATCHNEWSUMMARYSUBJECT = "PATCHNEWSUMMARYSUBJECT";
+	public const String IPROPNAME_PATCHNEWSUMMARYCOMMENTS = "PATCHNEWSUMMARYCOMMENTS";
+	public const String IPROPNAME_PRODUCTLANGUAGE = "PRODUCTLANGUAGE";
+	public const String IPROPNAME_CHECKCRCS = "MSICHECKCRCS";
+	public const String IPROPNAME_MSINODISABLEMEDIA = "MSINODISABLEMEDIA";
+	public const String IPROPNAME_CARRYINGNDP = "CARRYINGNDP";
+	public const String IPROPVALUE__CARRYINGNDP_URTREINSTALL = "URTREINSTALL";
+	public const String IPROPVALUE__CARRYINGNDP_URTUPGRADE = "URTUPGRADE";
+	public const String IPROPNAME_ENFORCE_UPGRADE_COMPONENT_RULES = "MSIENFORCEUPGRADECOMPONENTRULES";
+	public const String IPROPNAME_MSINEWINSTANCE = "MSINEWINSTANCE";
+	public const String IPROPNAME_MSIINSTANCEGUID = "MSIINSTANCEGUID";
+	public const String IPROPNAME_MSIPACKAGEDOWNLOADLOCALCOPY = "MSIPACKAGEDOWNLOADLOCALCOPY";
+	public const String IPROPNAME_MSIPATCHDOWNLOADLOCALCOPY = "MSIPATCHDOWNLOADLOCALCOPY";
+	public const String IPROPNAME_MSIDISABLELUAPATCHING = "MSIDISABLELUAPATCHING";
+	public const String IPROPNAME_MSILOGGINGMODE = "MsiLogging";
+	public const String IPROPNAME_MSILOGFILELOCATION = "MsiLogFileLocation";
+	public const String IPROPNAME_MSI_RM_CONTROL = "MSIRESTARTMANAGERCONTROL";
+	public const String IPROPVALUE_MSI_RM_CONTROL_DISABLE = "Disable";
+	public const String IPROPVALUE_MSI_RM_CONTROL_DISABLESHUTDOWN = "DisableShutdown";
+	public const String IPROPNAME_MSI_RM_SESSION_KEY = "MsiRestartManagerSessionKey";
+	public const String IPROPNAME_MSI_REBOOT_PENDING = "MsiSystemRebootPending";
+	public const String IPROPNAME_MSI_RM_SHUTDOWN = "MSIRMSHUTDOWN";
+	public const String IPROPNAME_MSI_RM_DISABLE_RESTART = "MSIDISABLERMRESTART";
+	public const String IPROPNAME_MSI_UAC_DEPLOYMENT_COMPLIANT = "MSIDEPLOYMENTCOMPLIANT";
+	public const String IPROPNAME_MSI_USE_REAL_ADMIN_DETECTION = "MSIUSEREALADMINDETECTION";
+	public const String IPROPNAME_MSI_UNINSTALL_SUPERSEDED_COMPONENTS = "MSIUNINSTALLSUPERSEDEDCOMPONENTS";
+	public const String IPROPNAME_MSIDISABLEEEUI = "MSIDISABLEEEUI";
+	public const String IPROPNAME_MSI_FASTINSTALL = "MSIFASTINSTALL";
+	public const String IPROPNAME_INSTALLPERUSER = "MSIINSTALLPERUSER";
+	public const String IPROPNAME_INTERNALINSTALLEDPERUSER = "MSIINTERNALINSTALLEDPERUSER";
+	public const String IPROPNAME_ARPAUTHORIZEDCDFPREFIX = "ARPAUTHORIZEDCDFPREFIX";
+	public const String IPROPNAME_ARPCOMMENTS = "ARPCOMMENTS";
+	public const String IPROPNAME_ARPCONTACT = "ARPCONTACT";
+	public const String IPROPNAME_ARPHELPLINK = "ARPHELPLINK";
+	public const String IPROPNAME_ARPHELPTELEPHONE = "ARPHELPTELEPHONE";
+	public const String IPROPNAME_ARPINSTALLLOCATION = "ARPINSTALLLOCATION";
+	public const String IPROPNAME_ARPNOMODIFY = "ARPNOMODIFY";
+	public const String IPROPNAME_ARPNOREMOVE = "ARPNOREMOVE";
+	public const String IPROPNAME_ARPNOREPAIR = "ARPNOREPAIR";
+	public const String IPROPNAME_ARPREADME = "ARPREADME";
+	public const String IPROPNAME_ARPSIZE = "ARPSIZE";
+	public const String IPROPNAME_ARPSYSTEMCOMPONENT = "ARPSYSTEMCOMPONENT";
+	public const String IPROPNAME_ARPURLINFOABOUT = "ARPURLINFOABOUT";
+	public const String IPROPNAME_ARPURLUPDATEINFO = "ARPURLUPDATEINFO";
+	public const String IPROPNAME_ARPPRODUCTICON = "ARPPRODUCTICON";
+	public const String IPROPNAME_ARPSETTINGSIDENTIFIER = "MSIARPSETTINGSIDENTIFIER";
+	public const String IPROPNAME_ARPSHIMFLAGS = "SHIMFLAGS";
+	public const String IPROPNAME_ARPSHIMVERSIONNT = "SHIMVERSIONNT";
+	public const String IPROPNAME_ARPSHIMSERVICEPACKLEVEL = "SHIMSERVICEPACKLEVEL";
+	public const String IPROPNAME_INSTALLED = "Installed";
+	public const String IPROPNAME_PRODUCTSTATE = "ProductState";
+	public const String IPROPNAME_PRESELECTED = "Preselected";
+	public const String IPROPNAME_RESUME = "RESUME";
+	public const String IPROPNAME_UPDATESTARTED = "UpdateStarted";
+	public const String IPROPNAME_PRODUCTID = "ProductID";
+	public const String IPROPNAME_OUTOFDISKSPACE = "OutOfDiskSpace";
+	public const String IPROPNAME_OUTOFNORBDISKSPACE = "OutOfNoRbDiskSpace";
+	public const String IPROPNAME_COSTINGCOMPLETE = "CostingComplete";
+	public const String IPROPNAME_SOURCEDIR = "SourceDir";
+	public const String IPROPNAME_REPLACEDINUSEFILES = "ReplacedInUseFiles";
+	public const String IPROPNAME_PRIMARYFOLDER_PATH = "PrimaryVolumePath";
+	public const String IPROPNAME_PRIMARYFOLDER_SPACEAVAILABLE = "PrimaryVolumeSpaceAvailable";
+	public const String IPROPNAME_PRIMARYFOLDER_SPACEREQUIRED = "PrimaryVolumeSpaceRequired";
+	public const String IPROPNAME_PRIMARYFOLDER_SPACEREMAINING = "PrimaryVolumeSpaceRemaining";
+	public const String IPROPNAME_ISADMINPACKAGE = "IsAdminPackage";
+	public const String IPROPNAME_ROLLBACKDISABLED = "RollbackDisabled";
+	public const String IPROPNAME_RESTRICTEDUSERCONTROL = "RestrictedUserControl";
+	public const String IPROPNAME_SOURCERESONLY = "MsiUISourceResOnly";
+	public const String IPROPNAME_HIDECANCEL = "MsiUIHideCancel";
+	public const String IPROPNAME_PROGRESSONLY = "MsiUIProgressOnly";
+	public const String IPROPNAME_UACONLY = "MsiUIUACOnly";
+	public const String IPROPNAME_TIME = "Time";
+	public const String IPROPNAME_DATE = "Date";
+	public const String IPROPNAME_DATETIME = "DateTime";
+	public const String IPROPNAME_ARM = "Arm";
+	public const String IPROPNAME_ARM64 = "Arm64";
+	public const String IPROPNAME_INTEL = "Intel";
+	public const String IPROPNAME_TEMPLATE_AMD64 = "AMD64";
+	public const String IPROPNAME_TEMPLATE_X64 = "x64";
+	public const String IPROPNAME_MSIAMD64 = "MsiAMD64";
+	public const String IPROPNAME_MSIX64 = "Msix64";
+	public const String IPROPNAME_INTEL64 = "Intel64";
+	public const String IPROPNAME_IA64 = "IA64";
+	public const String IPROPNAME_TEXTHEIGHT = "TextHeight";
+	public const String IPROPNAME_TEXTINTERNALLEADING = "TextInternalLeading";
+	public const String IPROPNAME_SCREENX = "ScreenX";
+	public const String IPROPNAME_SCREENY = "ScreenY";
+	public const String IPROPNAME_CAPTIONHEIGHT = "CaptionHeight";
+	public const String IPROPNAME_BORDERTOP = "BorderTop";
+	public const String IPROPNAME_BORDERSIDE = "BorderSide";
+	public const String IPROPNAME_COLORBITS = "ColorBits";
+	public const String IPROPNAME_PHYSICALMEMORY = "PhysicalMemory";
+	public const String IPROPNAME_VIRTUALMEMORY = "VirtualMemory";
+	public const String IPROPNAME_TEXTHEIGHT_CORRECTION = "TextHeightCorrection";
+	public const String IPROPNAME_MSITABLETPC = "MsiTabletPC";
+	public const String IPROPNAME_VERSIONNT = "VersionNT";
+	public const String IPROPNAME_VERSION9X = "Version9X";
+	public const String IPROPNAME_VERSIONNT64 = "VersionNT64";
+	public const String IPROPNAME_WINDOWSBUILD = "WindowsBuild";
+	public const String IPROPNAME_SERVICEPACKLEVEL = "ServicePackLevel";
+	public const String IPROPNAME_SERVICEPACKLEVELMINOR = "ServicePackLevelMinor";
+	public const String IPROPNAME_SHAREDWINDOWS = "SharedWindows";
+	public const String IPROPNAME_COMPUTERNAME = "ComputerName";
+	public const String IPROPNAME_SHELLADVTSUPPORT = "ShellAdvtSupport";
+	public const String IPROPNAME_OLEADVTSUPPORT = "OLEAdvtSupport";
+	public const String IPROPNAME_SYSTEMLANGUAGEID = "SystemLanguageID";
+	public const String IPROPNAME_TTCSUPPORT = "TTCSupport";
+	public const String IPROPNAME_TERMSERVER = "TerminalServer";
+	public const String IPROPNAME_REMOTEADMINTS = "RemoteAdminTS";
+	public const String IPROPNAME_REDIRECTEDDLLSUPPORT = "RedirectedDllSupport";
+	public const String IPROPNAME_NTPRODUCTTYPE = "MsiNTProductType";
+	public const String IPROPNAME_NTSUITEBACKOFFICE = "MsiNTSuiteBackOffice";
+	public const String IPROPNAME_NTSUITEDATACENTER = "MsiNTSuiteDataCenter";
+	public const String IPROPNAME_NTSUITEENTERPRISE = "MsiNTSuiteEnterprise";
+	public const String IPROPNAME_NTSUITESMALLBUSINESS = "MsiNTSuiteSmallBusiness";
+	public const String IPROPNAME_NTSUITESMALLBUSINESSRESTRICTED = "MsiNTSuiteSmallBusinessRestricted";
+	public const String IPROPNAME_NTSUITEPERSONAL = "MsiNTSuitePersonal";
+	public const String IPROPNAME_NTSUITEWEBSERVER = "MsiNTSuiteWebServer";
+	public const String IPROPNAME_NETASSEMBLYSUPPORT = "MsiNetAssemblySupport";
+	public const String IPROPNAME_WIN32ASSEMBLYSUPPORT = "MsiWin32AssemblySupport";
+	public const String IPROPNAME_LOGONUSER = "LogonUser";
+	public const String IPROPNAME_USERSID = "UserSID";
+	public const String IPROPNAME_ADMINUSER = "AdminUser";
+	public const String IPROPNAME_USERLANGUAGEID = "UserLanguageID";
+	public const String IPROPNAME_PRIVILEGED = "Privileged";
+	public const String IPROPNAME_RUNNINGELEVATED = "MsiRunningElevated";
+	public const String IPROPNAME_TRUEADMINUSER = "MsiTrueAdminUser";
+	public const String IPROPNAME_WINDOWS_FOLDER = "WindowsFolder";
+	public const String IPROPNAME_SYSTEM_FOLDER = "SystemFolder";
+	public const String IPROPNAME_SYSTEM16_FOLDER = "System16Folder";
+	public const String IPROPNAME_WINDOWS_VOLUME = "WindowsVolume";
+	public const String IPROPNAME_TEMP_FOLDER = "TempFolder";
+	public const String IPROPNAME_PROGRAMFILES_FOLDER = "ProgramFilesFolder";
+	public const String IPROPNAME_COMMONFILES_FOLDER = "CommonFilesFolder";
+	public const String IPROPNAME_SYSTEM64_FOLDER = "System64Folder";
+	public const String IPROPNAME_PROGRAMFILES64_FOLDER = "ProgramFiles64Folder";
+	public const String IPROPNAME_COMMONFILES64_FOLDER = "CommonFiles64Folder";
+	public const String IPROPNAME_STARTMENU_FOLDER = "StartMenuFolder";
+	public const String IPROPNAME_PROGRAMMENU_FOLDER = "ProgramMenuFolder";
+	public const String IPROPNAME_STARTUP_FOLDER = "StartupFolder";
+	public const String IPROPNAME_NETHOOD_FOLDER = "NetHoodFolder";
+	public const String IPROPNAME_PERSONAL_FOLDER = "PersonalFolder";
+	public const String IPROPNAME_SENDTO_FOLDER = "SendToFolder";
+	public const String IPROPNAME_DESKTOP_FOLDER = "DesktopFolder";
+	public const String IPROPNAME_TEMPLATE_FOLDER = "TemplateFolder";
+	public const String IPROPNAME_FONTS_FOLDER = "FontsFolder";
+	public const String IPROPNAME_FAVORITES_FOLDER = "FavoritesFolder";
+	public const String IPROPNAME_RECENT_FOLDER = "RecentFolder";
+	public const String IPROPNAME_APPDATA_FOLDER = "AppDataFolder";
+	public const String IPROPNAME_PRINTHOOD_FOLDER = "PrintHoodFolder";
+	public const String IPROPNAME_ADMINTOOLS_FOLDER = "AdminToolsFolder";
+	public const String IPROPNAME_COMMONAPPDATA_FOLDER = "CommonAppDataFolder";
+	public const String IPROPNAME_LOCALAPPDATA_FOLDER = "LocalAppDataFolder";
+	public const String IPROPNAME_MYPICTURES_FOLDER = "MyPicturesFolder";
+	public const String IPROPNAME_FEATUREADDLOCAL = "ADDLOCAL";
+	public const String IPROPNAME_FEATUREADDSOURCE = "ADDSOURCE";
+	public const String IPROPNAME_FEATUREADDDEFAULT = "ADDDEFAULT";
+	public const String IPROPNAME_FEATUREREMOVE = "REMOVE";
+	public const String IPROPNAME_FEATUREADVERTISE = "ADVERTISE";
+	public const String IPROPVALUE_FEATURE_ALL = "ALL";
+	public const String IPROPNAME_COMPONENTADDLOCAL = "COMPADDLOCAL";
+	public const String IPROPNAME_COMPONENTADDSOURCE = "COMPADDSOURCE";
+	public const String IPROPNAME_COMPONENTADDDEFAULT = "COMPADDDEFAULT";
+	public const String IPROPNAME_FILEADDLOCAL = "FILEADDLOCAL";
+	public const String IPROPNAME_FILEADDSOURCE = "FILEADDSOURCE";
+	public const String IPROPNAME_FILEADDDEFAULT = "FILEADDDEFAULT";
+	public const String IPROPNAME_REINSTALL = "REINSTALL";
+	public const String IPROPNAME_REINSTALLMODE = "REINSTALLMODE";
+	public const String IPROPNAME_PROMPTROLLBACKCOST = "PROMPTROLLBACKCOST";
+	public const String IPROPVALUE_RBCOST_PROMPT = "P";
+	public const String IPROPVALUE_RBCOST_SILENT = "D";
+	public const String IPROPVALUE_RBCOST_FAIL = "F";
+	public const String IPROPNAME_CUSTOMACTIONDATA = "CustomActionData";
+	public const String IACTIONNAME_INSTALL = "INSTALL";
+	public const String IACTIONNAME_ADVERTISE = "ADVERTISE";
+	public const String IACTIONNAME_ADMIN = "ADMIN";
+	public const String IACTIONNAME_SEQUENCE = "SEQUENCE";
+	public const String IACTIONNAME_COLLECTUSERINFO = "CollectUserInfo";
+	public const String IACTIONNAME_FIRSTRUN = "FirstRun";
 	public const uint32 PID_TITLE = 2;
 	public const uint32 PID_SUBJECT = 3;
 	public const uint32 PID_AUTHOR = 4;
@@ -2086,9 +2350,9 @@ static
 		public HRESULT get_ProductID(out Guid pProductID) mut => VT.get_ProductID(ref this, out pProductID);
 		public HRESULT get_InstanceID(out Guid pInstanceID) mut => VT.get_InstanceID(ref this, out pInstanceID);
 		public HRESULT get_OfferID(out Guid pOfferID) mut => VT.get_OfferID(ref this, out pOfferID);
-		public HRESULT get_DefaultTask(BSTR* pDefaultTask) mut => VT.get_DefaultTask(ref this, pDefaultTask);
-		public HRESULT get_AppTitle(BSTR* pAppTitle) mut => VT.get_AppTitle(ref this, pAppTitle);
-		public HRESULT get_IconPath(BSTR* pAppIconPath) mut => VT.get_IconPath(ref this, pAppIconPath);
+		public HRESULT get_DefaultTask(out BSTR pDefaultTask) mut => VT.get_DefaultTask(ref this, out pDefaultTask);
+		public HRESULT get_AppTitle(out BSTR pAppTitle) mut => VT.get_AppTitle(ref this, out pAppTitle);
+		public HRESULT get_IconPath(out BSTR pAppIconPath) mut => VT.get_IconPath(ref this, out pAppIconPath);
 		public HRESULT get_NotificationState(out BOOL pIsNotified) mut => VT.get_NotificationState(ref this, out pIsNotified);
 		public HRESULT get_AppInstallType(out PM_APPLICATION_INSTALL_TYPE pAppInstallType) mut => VT.get_AppInstallType(ref this, out pAppInstallType);
 		public HRESULT get_State(out PM_APPLICATION_STATE pState) mut => VT.get_State(ref this, out pState);
@@ -2098,19 +2362,19 @@ static
 		public HRESULT get_IsUninstallable(out BOOL pIsUninstallable) mut => VT.get_IsUninstallable(ref this, out pIsUninstallable);
 		public HRESULT get_IsThemable(out BOOL pIsThemable) mut => VT.get_IsThemable(ref this, out pIsThemable);
 		public HRESULT get_IsTrial(out BOOL pIsTrial) mut => VT.get_IsTrial(ref this, out pIsTrial);
-		public HRESULT get_InstallPath(BSTR* pInstallPath) mut => VT.get_InstallPath(ref this, pInstallPath);
-		public HRESULT get_DataRoot(BSTR* pDataRoot) mut => VT.get_DataRoot(ref this, pDataRoot);
+		public HRESULT get_InstallPath(out BSTR pInstallPath) mut => VT.get_InstallPath(ref this, out pInstallPath);
+		public HRESULT get_DataRoot(out BSTR pDataRoot) mut => VT.get_DataRoot(ref this, out pDataRoot);
 		public HRESULT get_Genre(out PM_APP_GENRE pGenre) mut => VT.get_Genre(ref this, out pGenre);
-		public HRESULT get_Publisher(BSTR* pPublisher) mut => VT.get_Publisher(ref this, pPublisher);
-		public HRESULT get_Author(BSTR* pAuthor) mut => VT.get_Author(ref this, pAuthor);
-		public HRESULT get_Description(BSTR* pDescription) mut => VT.get_Description(ref this, pDescription);
-		public HRESULT get_Version(BSTR* pVersion) mut => VT.get_Version(ref this, pVersion);
-		public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut => VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
+		public HRESULT get_Publisher(out BSTR pPublisher) mut => VT.get_Publisher(ref this, out pPublisher);
+		public HRESULT get_Author(out BSTR pAuthor) mut => VT.get_Author(ref this, out pAuthor);
+		public HRESULT get_Description(out BSTR pDescription) mut => VT.get_Description(ref this, out pDescription);
+		public HRESULT get_Version(out BSTR pVersion) mut => VT.get_Version(ref this, out pVersion);
+		public HRESULT get_InvocationInfo(out BSTR pImageUrn, out BSTR pParameters) mut => VT.get_InvocationInfo(ref this, out pImageUrn, out pParameters);
 		public HRESULT get_AppPlatMajorVersion(out uint8 pMajorVer) mut => VT.get_AppPlatMajorVersion(ref this, out pMajorVer);
 		public HRESULT get_AppPlatMinorVersion(out uint8 pMinorVer) mut => VT.get_AppPlatMinorVersion(ref this, out pMinorVer);
 		public HRESULT get_PublisherID(out Guid pPublisherID) mut => VT.get_PublisherID(ref this, out pPublisherID);
 		public HRESULT get_IsMultiCore(out BOOL pIsMultiCore) mut => VT.get_IsMultiCore(ref this, out pIsMultiCore);
-		public HRESULT get_SID(BSTR* pSID) mut => VT.get_SID(ref this, pSID);
+		public HRESULT get_SID(out BSTR pSID) mut => VT.get_SID(ref this, out pSID);
 		public HRESULT get_AppPlatMajorVersionLightUp(out uint8 pMajorVer) mut => VT.get_AppPlatMajorVersionLightUp(ref this, out pMajorVer);
 		public HRESULT get_AppPlatMinorVersionLightUp(out uint8 pMinorVer) mut => VT.get_AppPlatMinorVersionLightUp(ref this, out pMinorVer);
 		public HRESULT set_UpdateAvailable(BOOL IsUpdateAvailable) mut => VT.set_UpdateAvailable(ref this, IsUpdateAvailable);
@@ -2145,9 +2409,9 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out Guid pProductID) get_ProductID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out Guid pInstanceID) get_InstanceID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out Guid pOfferID) get_OfferID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pDefaultTask) get_DefaultTask;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pAppTitle) get_AppTitle;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pAppIconPath) get_IconPath;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BSTR pDefaultTask) get_DefaultTask;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BSTR pAppTitle) get_AppTitle;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BSTR pAppIconPath) get_IconPath;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsNotified) get_NotificationState;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out PM_APPLICATION_INSTALL_TYPE pAppInstallType) get_AppInstallType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out PM_APPLICATION_STATE pState) get_State;
@@ -2157,19 +2421,19 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsUninstallable) get_IsUninstallable;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsThemable) get_IsThemable;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsTrial) get_IsTrial;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pInstallPath) get_InstallPath;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pDataRoot) get_DataRoot;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BSTR pInstallPath) get_InstallPath;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BSTR pDataRoot) get_DataRoot;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out PM_APP_GENRE pGenre) get_Genre;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pPublisher) get_Publisher;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pAuthor) get_Author;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pDescription) get_Description;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pVersion) get_Version;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BSTR pPublisher) get_Publisher;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BSTR pAuthor) get_Author;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BSTR pDescription) get_Description;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BSTR pVersion) get_Version;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BSTR pImageUrn, out BSTR pParameters) get_InvocationInfo;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out uint8 pMajorVer) get_AppPlatMajorVersion;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out uint8 pMinorVer) get_AppPlatMinorVersion;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out Guid pPublisherID) get_PublisherID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsMultiCore) get_IsMultiCore;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pSID) get_SID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BSTR pSID) get_SID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out uint8 pMajorVer) get_AppPlatMajorVersionLightUp;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out uint8 pMinorVer) get_AppPlatMinorVersionLightUp;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BOOL IsUpdateAvailable) set_UpdateAvailable;
@@ -2207,14 +2471,14 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_PropertyID(out uint32 pPropID) mut => VT.get_PropertyID(ref this, out pPropID);
-		public HRESULT get_PropertyValue(BSTR* pPropValue) mut => VT.get_PropertyValue(ref this, pPropValue);
+		public HRESULT get_PropertyValue(out BSTR pPropValue) mut => VT.get_PropertyValue(ref this, out pPropValue);
 		public HRESULT set_Property(BSTR PropValue) mut => VT.set_Property(ref this, PropValue);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTilePropertyInfo self, out uint32 pPropID) get_PropertyID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTilePropertyInfo self, BSTR* pPropValue) get_PropertyValue;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTilePropertyInfo self, out BSTR pPropValue) get_PropertyValue;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTilePropertyInfo self, BSTR PropValue) set_Property;
 		}
 	}
@@ -2225,12 +2489,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Next(IPMTilePropertyInfo** ppPropInfo) mut => VT.get_Next(ref this, ppPropInfo);
+		public HRESULT get_Next(out IPMTilePropertyInfo* ppPropInfo) mut => VT.get_Next(ref this, out ppPropInfo);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTilePropertyEnumerator self, IPMTilePropertyInfo** ppPropInfo) get_Next;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTilePropertyEnumerator self, out IPMTilePropertyInfo* ppPropInfo) get_Next;
 		}
 	}
 	[CRepr]
@@ -2241,18 +2505,18 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_ProductID(out Guid pProductID) mut => VT.get_ProductID(ref this, out pProductID);
-		public HRESULT get_TileID(BSTR* pTileID) mut => VT.get_TileID(ref this, pTileID);
+		public HRESULT get_TileID(out BSTR pTileID) mut => VT.get_TileID(ref this, out pTileID);
 		public HRESULT get_TemplateType(out TILE_TEMPLATE_TYPE pTemplateType) mut => VT.get_TemplateType(ref this, out pTemplateType);
 		public HRESULT get_HubPinnedState(PM_TILE_HUBTYPE HubType, out BOOL pPinned) mut => VT.get_HubPinnedState(ref this, HubType, out pPinned);
 		public HRESULT get_HubPosition(PM_TILE_HUBTYPE HubType, out uint32 pPosition) mut => VT.get_HubPosition(ref this, HubType, out pPosition);
 		public HRESULT get_IsNotified(out BOOL pIsNotified) mut => VT.get_IsNotified(ref this, out pIsNotified);
 		public HRESULT get_IsDefault(out BOOL pIsDefault) mut => VT.get_IsDefault(ref this, out pIsDefault);
-		public HRESULT get_TaskID(BSTR* pTaskID) mut => VT.get_TaskID(ref this, pTaskID);
+		public HRESULT get_TaskID(out BSTR pTaskID) mut => VT.get_TaskID(ref this, out pTaskID);
 		public HRESULT get_TileType(out PM_STARTTILE_TYPE pStartTileType) mut => VT.get_TileType(ref this, out pStartTileType);
 		public HRESULT get_IsThemable(out BOOL pIsThemable) mut => VT.get_IsThemable(ref this, out pIsThemable);
-		public HRESULT get_PropertyById(uint32 PropID, IPMTilePropertyInfo** ppPropInfo) mut => VT.get_PropertyById(ref this, PropID, ppPropInfo);
-		public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut => VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
-		public HRESULT get_PropertyEnum(IPMTilePropertyEnumerator** ppTilePropEnum) mut => VT.get_PropertyEnum(ref this, ppTilePropEnum);
+		public HRESULT get_PropertyById(uint32 PropID, out IPMTilePropertyInfo* ppPropInfo) mut => VT.get_PropertyById(ref this, PropID, out ppPropInfo);
+		public HRESULT get_InvocationInfo(out BSTR pImageUrn, out BSTR pParameters) mut => VT.get_InvocationInfo(ref this, out pImageUrn, out pParameters);
+		public HRESULT get_PropertyEnum(out IPMTilePropertyEnumerator* ppTilePropEnum) mut => VT.get_PropertyEnum(ref this, out ppTilePropEnum);
 		public HRESULT get_HubTileSize(PM_TILE_HUBTYPE HubType, out PM_TILE_SIZE pSize) mut => VT.get_HubTileSize(ref this, HubType, out pSize);
 		public HRESULT set_HubPosition(PM_TILE_HUBTYPE HubType, uint32 Position) mut => VT.set_HubPosition(ref this, HubType, Position);
 		public HRESULT set_NotifiedState(BOOL Notified) mut => VT.set_NotifiedState(ref this, Notified);
@@ -2269,18 +2533,18 @@ static
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out Guid pProductID) get_ProductID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, BSTR* pTileID) get_TileID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out BSTR pTileID) get_TileID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out TILE_TEMPLATE_TYPE pTemplateType) get_TemplateType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, out BOOL pPinned) get_HubPinnedState;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, out uint32 pPosition) get_HubPosition;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out BOOL pIsNotified) get_IsNotified;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out BOOL pIsDefault) get_IsDefault;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, BSTR* pTaskID) get_TaskID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out BSTR pTaskID) get_TaskID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out PM_STARTTILE_TYPE pStartTileType) get_TileType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out BOOL pIsThemable) get_IsThemable;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, uint32 PropID, IPMTilePropertyInfo** ppPropInfo) get_PropertyById;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, IPMTilePropertyEnumerator** ppTilePropEnum) get_PropertyEnum;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, uint32 PropID, out IPMTilePropertyInfo* ppPropInfo) get_PropertyById;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out BSTR pImageUrn, out BSTR pParameters) get_InvocationInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out IPMTilePropertyEnumerator* ppTilePropEnum) get_PropertyEnum;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, out PM_TILE_SIZE pSize) get_HubTileSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, uint32 Position) set_HubPosition;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, BOOL Notified) set_NotifiedState;
@@ -2301,12 +2565,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Next(IPMTileInfo** ppTileInfo) mut => VT.get_Next(ref this, ppTileInfo);
+		public HRESULT get_Next(out IPMTileInfo* ppTileInfo) mut => VT.get_Next(ref this, out ppTileInfo);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfoEnumerator self, IPMTileInfo** ppTileInfo) get_Next;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfoEnumerator self, out IPMTileInfo* ppTileInfo) get_Next;
 		}
 	}
 	[CRepr]
@@ -2316,12 +2580,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Next(IPMApplicationInfo** ppAppInfo) mut => VT.get_Next(ref this, ppAppInfo);
+		public HRESULT get_Next(out IPMApplicationInfo* ppAppInfo) mut => VT.get_Next(ref this, out ppAppInfo);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfoEnumerator self, IPMApplicationInfo** ppAppInfo) get_Next;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfoEnumerator self, out IPMApplicationInfo* ppAppInfo) get_Next;
 		}
 	}
 	[CRepr]
@@ -2332,7 +2596,7 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_ProductID(out Guid pProductID) mut => VT.get_ProductID(ref this, out pProductID);
-		public HRESULT get_TileID(BSTR* pTileID) mut => VT.get_TileID(ref this, pTileID);
+		public HRESULT get_TileID(out BSTR pTileID) mut => VT.get_TileID(ref this, out pTileID);
 		public HRESULT get_NextSchedule(out FILETIME pNextSchedule) mut => VT.get_NextSchedule(ref this, out pNextSchedule);
 		public HRESULT set_NextSchedule(FILETIME ftNextSchedule) mut => VT.set_NextSchedule(ref this, ftNextSchedule);
 		public HRESULT get_StartSchedule(out FILETIME pStartSchedule) mut => VT.get_StartSchedule(ref this, out pStartSchedule);
@@ -2360,7 +2624,7 @@ static
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, out Guid pProductID) get_ProductID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, BSTR* pTileID) get_TileID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, out BSTR pTileID) get_TileID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, out FILETIME pNextSchedule) get_NextSchedule;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, FILETIME ftNextSchedule) set_NextSchedule;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, out FILETIME pStartSchedule) get_StartSchedule;
@@ -2392,12 +2656,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Next(IPMLiveTileJobInfo** ppLiveTileJobInfo) mut => VT.get_Next(ref this, ppLiveTileJobInfo);
+		public HRESULT get_Next(out IPMLiveTileJobInfo* ppLiveTileJobInfo) mut => VT.get_Next(ref this, out ppLiveTileJobInfo);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfoEnumerator self, IPMLiveTileJobInfo** ppLiveTileJobInfo) get_Next;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfoEnumerator self, out IPMLiveTileJobInfo* ppLiveTileJobInfo) get_Next;
 		}
 	}
 	[CRepr]
@@ -2434,7 +2698,7 @@ static
 		public HRESULT EnterprisePolicyIsApplicationAllowed(Guid productId, PWSTR publisherName, out BOOL pIsAllowed) mut => VT.EnterprisePolicyIsApplicationAllowed(ref this, productId, publisherName, out pIsAllowed);
 		public HRESULT BeginUpdateDeployedPackage(ref PM_UPDATEINFO pUpdateInfo) mut => VT.BeginUpdateDeployedPackage(ref this, ref pUpdateInfo);
 		public HRESULT ReportRestoreCancelled(Guid productID) mut => VT.ReportRestoreCancelled(ref this, productID);
-		public HRESULT ResolveResourceString(PWSTR resourceString, BSTR* pResolvedResourceString) mut => VT.ResolveResourceString(ref this, resourceString, pResolvedResourceString);
+		public HRESULT ResolveResourceString(PWSTR resourceString, out BSTR pResolvedResourceString) mut => VT.ResolveResourceString(ref this, resourceString, out pResolvedResourceString);
 		public HRESULT UpdateCapabilitiesForModernApps() mut => VT.UpdateCapabilitiesForModernApps(ref this);
 		public HRESULT ReportDownloadStatusUpdate(Guid productId) mut => VT.ReportDownloadStatusUpdate(ref this, productId);
 		public HRESULT BeginUninstallWithOptions(Guid productID, uint32 removalOptions) mut => VT.BeginUninstallWithOptions(ref this, productID, removalOptions);
@@ -2473,7 +2737,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid productId, PWSTR publisherName, out BOOL pIsAllowed) EnterprisePolicyIsApplicationAllowed;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, ref PM_UPDATEINFO pUpdateInfo) BeginUpdateDeployedPackage;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid productID) ReportRestoreCancelled;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, PWSTR resourceString, BSTR* pResolvedResourceString) ResolveResourceString;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, PWSTR resourceString, out BSTR pResolvedResourceString) ResolveResourceString;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self) UpdateCapabilitiesForModernApps;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid productId) ReportDownloadStatusUpdate;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid productID, uint32 removalOptions) BeginUninstallWithOptions;
@@ -2490,44 +2754,44 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_AllApplications(IPMApplicationInfoEnumerator** ppAppEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllApplications(ref this, ppAppEnum, Filter);
-		public HRESULT get_AllTiles(IPMTileInfoEnumerator** ppTileEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllTiles(ref this, ppTileEnum, Filter);
-		public HRESULT get_AllTasks(IPMTaskInfoEnumerator** ppTaskEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllTasks(ref this, ppTaskEnum, Filter);
-		public HRESULT get_AllExtensions(IPMExtensionInfoEnumerator** ppExtensionEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllExtensions(ref this, ppExtensionEnum, Filter);
-		public HRESULT get_AllBackgroundServiceAgents(IPMBackgroundServiceAgentInfoEnumerator** ppBSAEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllBackgroundServiceAgents(ref this, ppBSAEnum, Filter);
-		public HRESULT get_AllBackgroundWorkers(IPMBackgroundWorkerInfoEnumerator** ppBSWEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllBackgroundWorkers(ref this, ppBSWEnum, Filter);
-		public HRESULT get_ApplicationInfo(Guid ProductID, IPMApplicationInfo** ppAppInfo) mut => VT.get_ApplicationInfo(ref this, ProductID, ppAppInfo);
-		public HRESULT get_TileInfo(Guid ProductID, BSTR TileID, IPMTileInfo** ppTileInfo) mut => VT.get_TileInfo(ref this, ProductID, TileID, ppTileInfo);
-		public HRESULT get_TaskInfo(Guid ProductID, BSTR TaskID, IPMTaskInfo** ppTaskInfo) mut => VT.get_TaskInfo(ref this, ProductID, TaskID, ppTaskInfo);
-		public HRESULT get_TaskInfoEx(Guid ProductID, PWSTR TaskID, IPMTaskInfo** ppTaskInfo) mut => VT.get_TaskInfoEx(ref this, ProductID, TaskID, ppTaskInfo);
-		public HRESULT get_BackgroundServiceAgentInfo(uint32 BSAID, IPMBackgroundServiceAgentInfo** ppTaskInfo) mut => VT.get_BackgroundServiceAgentInfo(ref this, BSAID, ppTaskInfo);
-		public HRESULT get_AllLiveTileJobs(IPMLiveTileJobInfoEnumerator** ppLiveTileJobEnum) mut => VT.get_AllLiveTileJobs(ref this, ppLiveTileJobEnum);
-		public HRESULT get_LiveTileJob(Guid ProductID, BSTR TileID, PM_LIVETILE_RECURRENCE_TYPE RecurrenceType, IPMLiveTileJobInfo** ppLiveTileJobInfo) mut => VT.get_LiveTileJob(ref this, ProductID, TileID, RecurrenceType, ppLiveTileJobInfo);
-		public HRESULT get_ApplicationInfoExternal(Guid ProductID, IPMApplicationInfo** ppAppInfo) mut => VT.get_ApplicationInfoExternal(ref this, ProductID, ppAppInfo);
-		public HRESULT get_FileHandlerGenericLogo(BSTR FileType, PM_LOGO_SIZE LogoSize, BSTR* pLogo) mut => VT.get_FileHandlerGenericLogo(ref this, FileType, LogoSize, pLogo);
-		public HRESULT get_ApplicationInfoFromAccessClaims(BSTR SysAppID0, BSTR SysAppID1, IPMApplicationInfo** ppAppInfo) mut => VT.get_ApplicationInfoFromAccessClaims(ref this, SysAppID0, SysAppID1, ppAppInfo);
+		public HRESULT get_AllApplications(out IPMApplicationInfoEnumerator* ppAppEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllApplications(ref this, out ppAppEnum, Filter);
+		public HRESULT get_AllTiles(out IPMTileInfoEnumerator* ppTileEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllTiles(ref this, out ppTileEnum, Filter);
+		public HRESULT get_AllTasks(out IPMTaskInfoEnumerator* ppTaskEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllTasks(ref this, out ppTaskEnum, Filter);
+		public HRESULT get_AllExtensions(out IPMExtensionInfoEnumerator* ppExtensionEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllExtensions(ref this, out ppExtensionEnum, Filter);
+		public HRESULT get_AllBackgroundServiceAgents(out IPMBackgroundServiceAgentInfoEnumerator* ppBSAEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllBackgroundServiceAgents(ref this, out ppBSAEnum, Filter);
+		public HRESULT get_AllBackgroundWorkers(out IPMBackgroundWorkerInfoEnumerator* ppBSWEnum, PM_ENUM_FILTER Filter) mut => VT.get_AllBackgroundWorkers(ref this, out ppBSWEnum, Filter);
+		public HRESULT get_ApplicationInfo(Guid ProductID, out IPMApplicationInfo* ppAppInfo) mut => VT.get_ApplicationInfo(ref this, ProductID, out ppAppInfo);
+		public HRESULT get_TileInfo(Guid ProductID, BSTR TileID, out IPMTileInfo* ppTileInfo) mut => VT.get_TileInfo(ref this, ProductID, TileID, out ppTileInfo);
+		public HRESULT get_TaskInfo(Guid ProductID, BSTR TaskID, out IPMTaskInfo* ppTaskInfo) mut => VT.get_TaskInfo(ref this, ProductID, TaskID, out ppTaskInfo);
+		public HRESULT get_TaskInfoEx(Guid ProductID, PWSTR TaskID, out IPMTaskInfo* ppTaskInfo) mut => VT.get_TaskInfoEx(ref this, ProductID, TaskID, out ppTaskInfo);
+		public HRESULT get_BackgroundServiceAgentInfo(uint32 BSAID, out IPMBackgroundServiceAgentInfo* ppTaskInfo) mut => VT.get_BackgroundServiceAgentInfo(ref this, BSAID, out ppTaskInfo);
+		public HRESULT get_AllLiveTileJobs(out IPMLiveTileJobInfoEnumerator* ppLiveTileJobEnum) mut => VT.get_AllLiveTileJobs(ref this, out ppLiveTileJobEnum);
+		public HRESULT get_LiveTileJob(Guid ProductID, BSTR TileID, PM_LIVETILE_RECURRENCE_TYPE RecurrenceType, out IPMLiveTileJobInfo* ppLiveTileJobInfo) mut => VT.get_LiveTileJob(ref this, ProductID, TileID, RecurrenceType, out ppLiveTileJobInfo);
+		public HRESULT get_ApplicationInfoExternal(Guid ProductID, out IPMApplicationInfo* ppAppInfo) mut => VT.get_ApplicationInfoExternal(ref this, ProductID, out ppAppInfo);
+		public HRESULT get_FileHandlerGenericLogo(BSTR FileType, PM_LOGO_SIZE LogoSize, out BSTR pLogo) mut => VT.get_FileHandlerGenericLogo(ref this, FileType, LogoSize, out pLogo);
+		public HRESULT get_ApplicationInfoFromAccessClaims(BSTR SysAppID0, BSTR SysAppID1, out IPMApplicationInfo* ppAppInfo) mut => VT.get_ApplicationInfoFromAccessClaims(ref this, SysAppID0, SysAppID1, out ppAppInfo);
 		public HRESULT get_StartTileEnumeratorBlob(PM_ENUM_FILTER Filter, out uint32 pcTiles, PM_STARTTILEBLOB** ppTileBlobs) mut => VT.get_StartTileEnumeratorBlob(ref this, Filter, out pcTiles, ppTileBlobs);
 		public HRESULT get_StartAppEnumeratorBlob(PM_ENUM_FILTER Filter, out uint32 pcApps, PM_STARTAPPBLOB** ppAppBlobs) mut => VT.get_StartAppEnumeratorBlob(ref this, Filter, out pcApps, ppAppBlobs);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, IPMApplicationInfoEnumerator** ppAppEnum, PM_ENUM_FILTER Filter) get_AllApplications;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, IPMTileInfoEnumerator** ppTileEnum, PM_ENUM_FILTER Filter) get_AllTiles;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, IPMTaskInfoEnumerator** ppTaskEnum, PM_ENUM_FILTER Filter) get_AllTasks;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, IPMExtensionInfoEnumerator** ppExtensionEnum, PM_ENUM_FILTER Filter) get_AllExtensions;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, IPMBackgroundServiceAgentInfoEnumerator** ppBSAEnum, PM_ENUM_FILTER Filter) get_AllBackgroundServiceAgents;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, IPMBackgroundWorkerInfoEnumerator** ppBSWEnum, PM_ENUM_FILTER Filter) get_AllBackgroundWorkers;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, IPMApplicationInfo** ppAppInfo) get_ApplicationInfo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, BSTR TileID, IPMTileInfo** ppTileInfo) get_TileInfo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, BSTR TaskID, IPMTaskInfo** ppTaskInfo) get_TaskInfo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, PWSTR TaskID, IPMTaskInfo** ppTaskInfo) get_TaskInfoEx;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, uint32 BSAID, IPMBackgroundServiceAgentInfo** ppTaskInfo) get_BackgroundServiceAgentInfo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, IPMLiveTileJobInfoEnumerator** ppLiveTileJobEnum) get_AllLiveTileJobs;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, BSTR TileID, PM_LIVETILE_RECURRENCE_TYPE RecurrenceType, IPMLiveTileJobInfo** ppLiveTileJobInfo) get_LiveTileJob;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, IPMApplicationInfo** ppAppInfo) get_ApplicationInfoExternal;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, BSTR FileType, PM_LOGO_SIZE LogoSize, BSTR* pLogo) get_FileHandlerGenericLogo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, BSTR SysAppID0, BSTR SysAppID1, IPMApplicationInfo** ppAppInfo) get_ApplicationInfoFromAccessClaims;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, out IPMApplicationInfoEnumerator* ppAppEnum, PM_ENUM_FILTER Filter) get_AllApplications;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, out IPMTileInfoEnumerator* ppTileEnum, PM_ENUM_FILTER Filter) get_AllTiles;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, out IPMTaskInfoEnumerator* ppTaskEnum, PM_ENUM_FILTER Filter) get_AllTasks;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, out IPMExtensionInfoEnumerator* ppExtensionEnum, PM_ENUM_FILTER Filter) get_AllExtensions;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, out IPMBackgroundServiceAgentInfoEnumerator* ppBSAEnum, PM_ENUM_FILTER Filter) get_AllBackgroundServiceAgents;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, out IPMBackgroundWorkerInfoEnumerator* ppBSWEnum, PM_ENUM_FILTER Filter) get_AllBackgroundWorkers;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, out IPMApplicationInfo* ppAppInfo) get_ApplicationInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, BSTR TileID, out IPMTileInfo* ppTileInfo) get_TileInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, BSTR TaskID, out IPMTaskInfo* ppTaskInfo) get_TaskInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, PWSTR TaskID, out IPMTaskInfo* ppTaskInfo) get_TaskInfoEx;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, uint32 BSAID, out IPMBackgroundServiceAgentInfo* ppTaskInfo) get_BackgroundServiceAgentInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, out IPMLiveTileJobInfoEnumerator* ppLiveTileJobEnum) get_AllLiveTileJobs;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, BSTR TileID, PM_LIVETILE_RECURRENCE_TYPE RecurrenceType, out IPMLiveTileJobInfo* ppLiveTileJobInfo) get_LiveTileJob;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, out IPMApplicationInfo* ppAppInfo) get_ApplicationInfoExternal;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, BSTR FileType, PM_LOGO_SIZE LogoSize, out BSTR pLogo) get_FileHandlerGenericLogo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, BSTR SysAppID0, BSTR SysAppID1, out IPMApplicationInfo* ppAppInfo) get_ApplicationInfoFromAccessClaims;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, PM_ENUM_FILTER Filter, out uint32 pcTiles, PM_STARTTILEBLOB** ppTileBlobs) get_StartTileEnumeratorBlob;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, PM_ENUM_FILTER Filter, out uint32 pcApps, PM_STARTAPPBLOB** ppAppBlobs) get_StartAppEnumeratorBlob;
 		}
@@ -2540,17 +2804,17 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_ProductID(out Guid pProductID) mut => VT.get_ProductID(ref this, out pProductID);
-		public HRESULT get_TaskID(BSTR* pTaskID) mut => VT.get_TaskID(ref this, pTaskID);
-		public HRESULT get_NavigationPage(BSTR* pNavigationPage) mut => VT.get_NavigationPage(ref this, pNavigationPage);
+		public HRESULT get_TaskID(out BSTR pTaskID) mut => VT.get_TaskID(ref this, out pTaskID);
+		public HRESULT get_NavigationPage(out BSTR pNavigationPage) mut => VT.get_NavigationPage(ref this, out pNavigationPage);
 		public HRESULT get_TaskTransition(out PM_TASK_TRANSITION pTaskTransition) mut => VT.get_TaskTransition(ref this, out pTaskTransition);
 		public HRESULT get_RuntimeType(out PACKMAN_RUNTIME pRuntimetype) mut => VT.get_RuntimeType(ref this, out pRuntimetype);
 		public HRESULT get_ActivationPolicy(out PM_ACTIVATION_POLICY pActivationPolicy) mut => VT.get_ActivationPolicy(ref this, out pActivationPolicy);
 		public HRESULT get_TaskType(out PM_TASK_TYPE pTaskType) mut => VT.get_TaskType(ref this, out pTaskType);
-		public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut => VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
-		public HRESULT get_ImagePath(BSTR* pImagePath) mut => VT.get_ImagePath(ref this, pImagePath);
-		public HRESULT get_ImageParams(BSTR* pImageParams) mut => VT.get_ImageParams(ref this, pImageParams);
-		public HRESULT get_InstallRootFolder(BSTR* pInstallRootFolder) mut => VT.get_InstallRootFolder(ref this, pInstallRootFolder);
-		public HRESULT get_DataRootFolder(BSTR* pDataRootFolder) mut => VT.get_DataRootFolder(ref this, pDataRootFolder);
+		public HRESULT get_InvocationInfo(out BSTR pImageUrn, out BSTR pParameters) mut => VT.get_InvocationInfo(ref this, out pImageUrn, out pParameters);
+		public HRESULT get_ImagePath(out BSTR pImagePath) mut => VT.get_ImagePath(ref this, out pImagePath);
+		public HRESULT get_ImageParams(out BSTR pImageParams) mut => VT.get_ImageParams(ref this, out pImageParams);
+		public HRESULT get_InstallRootFolder(out BSTR pInstallRootFolder) mut => VT.get_InstallRootFolder(ref this, out pInstallRootFolder);
+		public HRESULT get_DataRootFolder(out BSTR pDataRootFolder) mut => VT.get_DataRootFolder(ref this, out pDataRootFolder);
 		public HRESULT get_IsSingleInstanceHost(out BOOL pIsSingleInstanceHost) mut => VT.get_IsSingleInstanceHost(ref this, out pIsSingleInstanceHost);
 		public HRESULT get_IsInteropEnabled(out BOOL pIsInteropEnabled) mut => VT.get_IsInteropEnabled(ref this, out pIsInteropEnabled);
 		public HRESULT get_ApplicationState(out PM_APPLICATION_STATE pApplicationState) mut => VT.get_ApplicationState(ref this, out pApplicationState);
@@ -2558,24 +2822,24 @@ static
 		public HRESULT get_Version(out uint8 pTargetMajorVersion, out uint8 pTargetMinorVersion) mut => VT.get_Version(ref this, out pTargetMajorVersion, out pTargetMinorVersion);
 		public HRESULT get_BitsPerPixel(out uint16 pBitsPerPixel) mut => VT.get_BitsPerPixel(ref this, out pBitsPerPixel);
 		public HRESULT get_SuppressesDehydration(out BOOL pSuppressesDehydration) mut => VT.get_SuppressesDehydration(ref this, out pSuppressesDehydration);
-		public HRESULT get_BackgroundExecutionAbilities(BSTR* pBackgroundExecutionAbilities) mut => VT.get_BackgroundExecutionAbilities(ref this, pBackgroundExecutionAbilities);
+		public HRESULT get_BackgroundExecutionAbilities(out BSTR pBackgroundExecutionAbilities) mut => VT.get_BackgroundExecutionAbilities(ref this, out pBackgroundExecutionAbilities);
 		public HRESULT get_IsOptedForExtendedMem(out BOOL pIsOptedIn) mut => VT.get_IsOptedForExtendedMem(ref this, out pIsOptedIn);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out Guid pProductID) get_ProductID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pTaskID) get_TaskID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pNavigationPage) get_NavigationPage;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BSTR pTaskID) get_TaskID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BSTR pNavigationPage) get_NavigationPage;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out PM_TASK_TRANSITION pTaskTransition) get_TaskTransition;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out PACKMAN_RUNTIME pRuntimetype) get_RuntimeType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out PM_ACTIVATION_POLICY pActivationPolicy) get_ActivationPolicy;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out PM_TASK_TYPE pTaskType) get_TaskType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pImagePath) get_ImagePath;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pImageParams) get_ImageParams;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pInstallRootFolder) get_InstallRootFolder;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pDataRootFolder) get_DataRootFolder;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BSTR pImageUrn, out BSTR pParameters) get_InvocationInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BSTR pImagePath) get_ImagePath;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BSTR pImageParams) get_ImageParams;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BSTR pInstallRootFolder) get_InstallRootFolder;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BSTR pDataRootFolder) get_DataRootFolder;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BOOL pIsSingleInstanceHost) get_IsSingleInstanceHost;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BOOL pIsInteropEnabled) get_IsInteropEnabled;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out PM_APPLICATION_STATE pApplicationState) get_ApplicationState;
@@ -2583,7 +2847,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out uint8 pTargetMajorVersion, out uint8 pTargetMinorVersion) get_Version;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out uint16 pBitsPerPixel) get_BitsPerPixel;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BOOL pSuppressesDehydration) get_SuppressesDehydration;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pBackgroundExecutionAbilities) get_BackgroundExecutionAbilities;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BSTR pBackgroundExecutionAbilities) get_BackgroundExecutionAbilities;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BOOL pIsOptedIn) get_IsOptedForExtendedMem;
 		}
 	}
@@ -2594,12 +2858,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Next(IPMTaskInfo** ppTaskInfo) mut => VT.get_Next(ref this, ppTaskInfo);
+		public HRESULT get_Next(out IPMTaskInfo* ppTaskInfo) mut => VT.get_Next(ref this, out ppTaskInfo);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfoEnumerator self, IPMTaskInfo** ppTaskInfo) get_Next;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfoEnumerator self, out IPMTaskInfo* ppTaskInfo) get_Next;
 		}
 	}
 	[CRepr]
@@ -2610,21 +2874,21 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_SupplierPID(out Guid pSupplierPID) mut => VT.get_SupplierPID(ref this, out pSupplierPID);
-		public HRESULT get_SupplierTaskID(BSTR* pSupplierTID) mut => VT.get_SupplierTaskID(ref this, pSupplierTID);
-		public HRESULT get_Title(BSTR* pTitle) mut => VT.get_Title(ref this, pTitle);
-		public HRESULT get_IconPath(BSTR* pIconPath) mut => VT.get_IconPath(ref this, pIconPath);
-		public HRESULT get_ExtraFile(BSTR* pFilePath) mut => VT.get_ExtraFile(ref this, pFilePath);
-		public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut => VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
+		public HRESULT get_SupplierTaskID(out BSTR pSupplierTID) mut => VT.get_SupplierTaskID(ref this, out pSupplierTID);
+		public HRESULT get_Title(out BSTR pTitle) mut => VT.get_Title(ref this, out pTitle);
+		public HRESULT get_IconPath(out BSTR pIconPath) mut => VT.get_IconPath(ref this, out pIconPath);
+		public HRESULT get_ExtraFile(out BSTR pFilePath) mut => VT.get_ExtraFile(ref this, out pFilePath);
+		public HRESULT get_InvocationInfo(out BSTR pImageUrn, out BSTR pParameters) mut => VT.get_InvocationInfo(ref this, out pImageUrn, out pParameters);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, out Guid pSupplierPID) get_SupplierPID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, BSTR* pSupplierTID) get_SupplierTaskID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, BSTR* pTitle) get_Title;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, BSTR* pIconPath) get_IconPath;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, BSTR* pFilePath) get_ExtraFile;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, out BSTR pSupplierTID) get_SupplierTaskID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, out BSTR pTitle) get_Title;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, out BSTR pIconPath) get_IconPath;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, out BSTR pFilePath) get_ExtraFile;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, out BSTR pImageUrn, out BSTR pParameters) get_InvocationInfo;
 		}
 	}
 	[CRepr]
@@ -2634,23 +2898,23 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Name(BSTR* pName) mut => VT.get_Name(ref this, pName);
-		public HRESULT get_DisplayName(BSTR* pDisplayName) mut => VT.get_DisplayName(ref this, pDisplayName);
-		public HRESULT get_Logo(PM_LOGO_SIZE LogoSize, BSTR* pLogo) mut => VT.get_Logo(ref this, LogoSize, pLogo);
-		public HRESULT get_ContentType(BSTR FileType, BSTR* pContentType) mut => VT.get_ContentType(ref this, FileType, pContentType);
-		public HRESULT get_FileType(BSTR ContentType, BSTR* pFileType) mut => VT.get_FileType(ref this, ContentType, pFileType);
-		public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut => VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
+		public HRESULT get_Name(out BSTR pName) mut => VT.get_Name(ref this, out pName);
+		public HRESULT get_DisplayName(out BSTR pDisplayName) mut => VT.get_DisplayName(ref this, out pDisplayName);
+		public HRESULT get_Logo(PM_LOGO_SIZE LogoSize, out BSTR pLogo) mut => VT.get_Logo(ref this, LogoSize, out pLogo);
+		public HRESULT get_ContentType(BSTR FileType, out BSTR pContentType) mut => VT.get_ContentType(ref this, FileType, out pContentType);
+		public HRESULT get_FileType(BSTR ContentType, out BSTR pFileType) mut => VT.get_FileType(ref this, ContentType, out pFileType);
+		public HRESULT get_InvocationInfo(out BSTR pImageUrn, out BSTR pParameters) mut => VT.get_InvocationInfo(ref this, out pImageUrn, out pParameters);
 		public HRESULT get_AllFileTypes(out uint32 pcbTypes, BSTR** ppTypes) mut => VT.get_AllFileTypes(ref this, out pcbTypes, ppTypes);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR* pName) get_Name;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR* pDisplayName) get_DisplayName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, PM_LOGO_SIZE LogoSize, BSTR* pLogo) get_Logo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR FileType, BSTR* pContentType) get_ContentType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR ContentType, BSTR* pFileType) get_FileType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, out BSTR pName) get_Name;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, out BSTR pDisplayName) get_DisplayName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, PM_LOGO_SIZE LogoSize, out BSTR pLogo) get_Logo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR FileType, out BSTR pContentType) get_ContentType;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR ContentType, out BSTR pFileType) get_FileType;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, out BSTR pImageUrn, out BSTR pParameters) get_InvocationInfo;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, out uint32 pcbTypes, BSTR** ppTypes) get_AllFileTypes;
 		}
 	}
@@ -2661,14 +2925,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Protocol(BSTR* pProtocol) mut => VT.get_Protocol(ref this, pProtocol);
-		public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut => VT.get_InvocationInfo(ref this, pImageUrn, pParameters);
+		public HRESULT get_Protocol(out BSTR pProtocol) mut => VT.get_Protocol(ref this, out pProtocol);
+		public HRESULT get_InvocationInfo(out BSTR pImageUrn, out BSTR pParameters) mut => VT.get_InvocationInfo(ref this, out pImageUrn, out pParameters);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionProtocolInfo self, BSTR* pProtocol) get_Protocol;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionProtocolInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionProtocolInfo self, out BSTR pProtocol) get_Protocol;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionProtocolInfo self, out BSTR pImageUrn, out BSTR pParameters) get_InvocationInfo;
 		}
 	}
 	[CRepr]
@@ -2697,12 +2961,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_InvocationInfo(BSTR* pAUMID, BSTR* pArgs) mut => VT.get_InvocationInfo(ref this, pAUMID, pArgs);
+		public HRESULT get_InvocationInfo(out BSTR pAUMID, out BSTR pArgs) mut => VT.get_InvocationInfo(ref this, out pAUMID, out pArgs);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionContractInfo self, BSTR* pAUMID, BSTR* pArgs) get_InvocationInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionContractInfo self, out BSTR pAUMID, out BSTR pArgs) get_InvocationInfo;
 		}
 	}
 	[CRepr]
@@ -2761,12 +3025,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Next(IPMExtensionInfo** ppExtensionInfo) mut => VT.get_Next(ref this, ppExtensionInfo);
+		public HRESULT get_Next(out IPMExtensionInfo* ppExtensionInfo) mut => VT.get_Next(ref this, out ppExtensionInfo);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfoEnumerator self, IPMExtensionInfo** ppExtensionInfo) get_Next;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfoEnumerator self, out IPMExtensionInfo* ppExtensionInfo) get_Next;
 		}
 	}
 	[CRepr]
@@ -2777,16 +3041,16 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_ProductID(out Guid pProductID) mut => VT.get_ProductID(ref this, out pProductID);
-		public HRESULT get_TaskID(BSTR* pTaskID) mut => VT.get_TaskID(ref this, pTaskID);
+		public HRESULT get_TaskID(out BSTR pTaskID) mut => VT.get_TaskID(ref this, out pTaskID);
 		public HRESULT get_BSAID(out uint32 pBSAID) mut => VT.get_BSAID(ref this, out pBSAID);
-		public HRESULT get_BGSpecifier(BSTR* pBGSpecifier) mut => VT.get_BGSpecifier(ref this, pBGSpecifier);
-		public HRESULT get_BGName(BSTR* pBGName) mut => VT.get_BGName(ref this, pBGName);
-		public HRESULT get_BGSource(BSTR* pBGSource) mut => VT.get_BGSource(ref this, pBGSource);
-		public HRESULT get_BGType(BSTR* pBGType) mut => VT.get_BGType(ref this, pBGType);
+		public HRESULT get_BGSpecifier(out BSTR pBGSpecifier) mut => VT.get_BGSpecifier(ref this, out pBGSpecifier);
+		public HRESULT get_BGName(out BSTR pBGName) mut => VT.get_BGName(ref this, out pBGName);
+		public HRESULT get_BGSource(out BSTR pBGSource) mut => VT.get_BGSource(ref this, out pBGSource);
+		public HRESULT get_BGType(out BSTR pBGType) mut => VT.get_BGType(ref this, out pBGType);
 		public HRESULT get_IsPeriodic(out BOOL pIsPeriodic) mut => VT.get_IsPeriodic(ref this, out pIsPeriodic);
 		public HRESULT get_IsScheduled(out BOOL pIsScheduled) mut => VT.get_IsScheduled(ref this, out pIsScheduled);
 		public HRESULT get_IsScheduleAllowed(out BOOL pIsScheduleAllowed) mut => VT.get_IsScheduleAllowed(ref this, out pIsScheduleAllowed);
-		public HRESULT get_Description(BSTR* pDescription) mut => VT.get_Description(ref this, pDescription);
+		public HRESULT get_Description(out BSTR pDescription) mut => VT.get_Description(ref this, out pDescription);
 		public HRESULT get_IsLaunchOnBoot(out BOOL pLaunchOnBoot) mut => VT.get_IsLaunchOnBoot(ref this, out pLaunchOnBoot);
 		public HRESULT set_IsScheduled(BOOL IsScheduled) mut => VT.set_IsScheduled(ref this, IsScheduled);
 		public HRESULT set_IsScheduleAllowed(BOOL IsScheduleAllowed) mut => VT.set_IsScheduleAllowed(ref this, IsScheduleAllowed);
@@ -2795,16 +3059,16 @@ static
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out Guid pProductID) get_ProductID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pTaskID) get_TaskID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out BSTR pTaskID) get_TaskID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out uint32 pBSAID) get_BSAID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pBGSpecifier) get_BGSpecifier;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pBGName) get_BGName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pBGSource) get_BGSource;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pBGType) get_BGType;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out BSTR pBGSpecifier) get_BGSpecifier;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out BSTR pBGName) get_BGName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out BSTR pBGSource) get_BGSource;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out BSTR pBGType) get_BGType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out BOOL pIsPeriodic) get_IsPeriodic;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out BOOL pIsScheduled) get_IsScheduled;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out BOOL pIsScheduleAllowed) get_IsScheduleAllowed;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pDescription) get_Description;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out BSTR pDescription) get_Description;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out BOOL pLaunchOnBoot) get_IsLaunchOnBoot;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BOOL IsScheduled) set_IsScheduled;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BOOL IsScheduleAllowed) set_IsScheduleAllowed;
@@ -2818,8 +3082,8 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_ProductID(out Guid pProductID) mut => VT.get_ProductID(ref this, out pProductID);
-		public HRESULT get_TaskID(BSTR* pTaskID) mut => VT.get_TaskID(ref this, pTaskID);
-		public HRESULT get_BGName(BSTR* pBGName) mut => VT.get_BGName(ref this, pBGName);
+		public HRESULT get_TaskID(out BSTR pTaskID) mut => VT.get_TaskID(ref this, out pTaskID);
+		public HRESULT get_BGName(out BSTR pBGName) mut => VT.get_BGName(ref this, out pBGName);
 		public HRESULT get_MaxStartupLatency(out uint32 pMaxStartupLatency) mut => VT.get_MaxStartupLatency(ref this, out pMaxStartupLatency);
 		public HRESULT get_ExpectedRuntime(out uint32 pExpectedRuntime) mut => VT.get_ExpectedRuntime(ref this, out pExpectedRuntime);
 		public HRESULT get_IsBootWorker(out BOOL pIsBootWorker) mut => VT.get_IsBootWorker(ref this, out pIsBootWorker);
@@ -2828,8 +3092,8 @@ static
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfo self, out Guid pProductID) get_ProductID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfo self, BSTR* pTaskID) get_TaskID;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfo self, BSTR* pBGName) get_BGName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfo self, out BSTR pTaskID) get_TaskID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfo self, out BSTR pBGName) get_BGName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfo self, out uint32 pMaxStartupLatency) get_MaxStartupLatency;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfo self, out uint32 pExpectedRuntime) get_ExpectedRuntime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfo self, out BOOL pIsBootWorker) get_IsBootWorker;
@@ -2842,12 +3106,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Next(IPMBackgroundServiceAgentInfo** ppBSAInfo) mut => VT.get_Next(ref this, ppBSAInfo);
+		public HRESULT get_Next(out IPMBackgroundServiceAgentInfo* ppBSAInfo) mut => VT.get_Next(ref this, out ppBSAInfo);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfoEnumerator self, IPMBackgroundServiceAgentInfo** ppBSAInfo) get_Next;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfoEnumerator self, out IPMBackgroundServiceAgentInfo* ppBSAInfo) get_Next;
 		}
 	}
 	[CRepr]
@@ -2857,12 +3121,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Next(IPMBackgroundWorkerInfo** ppBWInfo) mut => VT.get_Next(ref this, ppBWInfo);
+		public HRESULT get_Next(out IPMBackgroundWorkerInfo* ppBWInfo) mut => VT.get_Next(ref this, out ppBWInfo);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfoEnumerator self, IPMBackgroundWorkerInfo** ppBWInfo) get_Next;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfoEnumerator self, out IPMBackgroundWorkerInfo* ppBWInfo) get_Next;
 		}
 	}
 	#endregion

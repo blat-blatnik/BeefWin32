@@ -1,11 +1,12 @@
 namespace Win32.NetworkManagement.WiFi;
 
 using System;
+using Win32.Devices.Properties;
 using Win32.Foundation;
 using Win32.NetworkManagement.Ndis;
 using Win32.Security.ExtensibleAuthenticationProtocol;
 using Win32.System.Com;
-using Win32.UI.Shell.PropertiesSystem;
+using Win32.System.RemoteDesktop;
 
 static
 {
@@ -767,45 +768,53 @@ static
 	public const Guid GUID_DEVINTERFACE_WIFIDIRECT_DEVICE = .(0x439b20af, 0x8955, 0x405b, 0x99, 0xf0, 0xa6, 0x2a, 0xf0, 0xc6, 0x8d, 0x43);
 	public const Guid GUID_AEPSERVICE_WIFIDIRECT_DEVICE = .(0xcc29827c, 0x9caf, 0x4928, 0x99, 0xa9, 0x18, 0xf7, 0xc2, 0x38, 0x13, 0x89);
 	public const Guid GUID_DEVINTERFACE_ASP_INFRA_DEVICE = .(0xff823995, 0x7a72, 0x4c80, 0x87, 0x57, 0xc6, 0x7e, 0xe1, 0x3d, 0x1a, 0x49);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_DeviceAddress = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 1);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_InterfaceAddress = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 2);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_InterfaceGuid = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 3);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_GroupId = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 4);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_IsConnected = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 5);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_IsVisible = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 6);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_IsLegacyDevice = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 7);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_MiracastVersion = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 8);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_IsMiracastLCPSupported = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 9);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_Services = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 10);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_SupportedChannelList = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 11);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_InformationElements = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 12);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_DeviceAddressCopy = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 13);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_IsRecentlyAssociated = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 14);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_Service_Aeps = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 15);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_NoMiracastAutoProject = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 16);
-	public const PROPERTYKEY DEVPKEY_InfraCast_Supported = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 17);
-	public const PROPERTYKEY DEVPKEY_InfraCast_StreamSecuritySupported = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 18);
-	public const PROPERTYKEY DEVPKEY_InfraCast_AccessPointBssid = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 19);
-	public const PROPERTYKEY DEVPKEY_InfraCast_SinkHostName = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 20);
-	public const PROPERTYKEY DEVPKEY_InfraCast_ChallengeAep = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 21);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_IsDMGCapable = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 22);
-	public const PROPERTYKEY DEVPKEY_InfraCast_DevnodeAep = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 23);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_FoundWsbService = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 24);
-	public const PROPERTYKEY DEVPKEY_InfraCast_HostName_ResolutionMode = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 25);
-	public const PROPERTYKEY DEVPKEY_InfraCast_SinkIpAddress = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 26);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_TransientAssociation = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 27);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_LinkQuality = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 28);
-	public const PROPERTYKEY DEVPKEY_InfraCast_PinSupported = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 29);
-	public const PROPERTYKEY DEVPKEY_InfraCast_RtspTcpConnectionParametersSupported = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 30);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_Miracast_SessionMgmtControlPort = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 31);
-	public const PROPERTYKEY DEVPKEY_WiFiDirect_RtspTcpConnectionParametersSupported = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 32);
-	public const PROPERTYKEY DEVPKEY_WiFiDirectServices_ServiceAddress = .(.(0x31b37743, 0x7c5e, 0x4005, 0x93, 0xe6, 0xe9, 0x53, 0xf9, 0x2b, 0x82, 0xe9), 2);
-	public const PROPERTYKEY DEVPKEY_WiFiDirectServices_ServiceName = .(.(0x31b37743, 0x7c5e, 0x4005, 0x93, 0xe6, 0xe9, 0x53, 0xf9, 0x2b, 0x82, 0xe9), 3);
-	public const PROPERTYKEY DEVPKEY_WiFiDirectServices_ServiceInformation = .(.(0x31b37743, 0x7c5e, 0x4005, 0x93, 0xe6, 0xe9, 0x53, 0xf9, 0x2b, 0x82, 0xe9), 4);
-	public const PROPERTYKEY DEVPKEY_WiFiDirectServices_AdvertisementId = .(.(0x31b37743, 0x7c5e, 0x4005, 0x93, 0xe6, 0xe9, 0x53, 0xf9, 0x2b, 0x82, 0xe9), 5);
-	public const PROPERTYKEY DEVPKEY_WiFiDirectServices_ServiceConfigMethods = .(.(0x31b37743, 0x7c5e, 0x4005, 0x93, 0xe6, 0xe9, 0x53, 0xf9, 0x2b, 0x82, 0xe9), 6);
-	public const PROPERTYKEY DEVPKEY_WiFiDirectServices_RequestServiceInformation = .(.(0x31b37743, 0x7c5e, 0x4005, 0x93, 0xe6, 0xe9, 0x53, 0xf9, 0x2b, 0x82, 0xe9), 7);
-	public const PROPERTYKEY DEVPKEY_WiFi_InterfaceGuid = .(.(0xef1167eb, 0xcbfc, 0x4341, 0xa5, 0x68, 0xa7, 0xc9, 0x1a, 0x68, 0x98, 0x2c), 2);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_DeviceAddress = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 1);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_InterfaceAddress = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 2);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_InterfaceGuid = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 3);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_GroupId = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 4);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_IsConnected = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 5);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_IsVisible = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 6);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_IsLegacyDevice = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 7);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_MiracastVersion = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 8);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_IsMiracastLCPSupported = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 9);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_Services = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 10);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_SupportedChannelList = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 11);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_InformationElements = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 12);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_DeviceAddressCopy = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 13);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_IsRecentlyAssociated = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 14);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_Service_Aeps = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 15);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_NoMiracastAutoProject = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 16);
+	public const DEVPROPKEY DEVPKEY_InfraCast_Supported = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 17);
+	public const DEVPROPKEY DEVPKEY_InfraCast_StreamSecuritySupported = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 18);
+	public const DEVPROPKEY DEVPKEY_InfraCast_AccessPointBssid = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 19);
+	public const DEVPROPKEY DEVPKEY_InfraCast_SinkHostName = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 20);
+	public const DEVPROPKEY DEVPKEY_InfraCast_ChallengeAep = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 21);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_IsDMGCapable = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 22);
+	public const DEVPROPKEY DEVPKEY_InfraCast_DevnodeAep = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 23);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_FoundWsbService = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 24);
+	public const DEVPROPKEY DEVPKEY_InfraCast_HostName_ResolutionMode = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 25);
+	public const DEVPROPKEY DEVPKEY_InfraCast_SinkIpAddress = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 26);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_TransientAssociation = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 27);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_LinkQuality = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 28);
+	public const DEVPROPKEY DEVPKEY_InfraCast_PinSupported = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 29);
+	public const DEVPROPKEY DEVPKEY_InfraCast_RtspTcpConnectionParametersSupported = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 30);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_Miracast_SessionMgmtControlPort = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 31);
+	public const DEVPROPKEY DEVPKEY_WiFiDirect_RtspTcpConnectionParametersSupported = .(.(0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6e), 32);
+	public const DEVPROPKEY DEVPKEY_WiFiDirectServices_ServiceAddress = .(.(0x31b37743, 0x7c5e, 0x4005, 0x93, 0xe6, 0xe9, 0x53, 0xf9, 0x2b, 0x82, 0xe9), 2);
+	public const DEVPROPKEY DEVPKEY_WiFiDirectServices_ServiceName = .(.(0x31b37743, 0x7c5e, 0x4005, 0x93, 0xe6, 0xe9, 0x53, 0xf9, 0x2b, 0x82, 0xe9), 3);
+	public const DEVPROPKEY DEVPKEY_WiFiDirectServices_ServiceInformation = .(.(0x31b37743, 0x7c5e, 0x4005, 0x93, 0xe6, 0xe9, 0x53, 0xf9, 0x2b, 0x82, 0xe9), 4);
+	public const DEVPROPKEY DEVPKEY_WiFiDirectServices_AdvertisementId = .(.(0x31b37743, 0x7c5e, 0x4005, 0x93, 0xe6, 0xe9, 0x53, 0xf9, 0x2b, 0x82, 0xe9), 5);
+	public const DEVPROPKEY DEVPKEY_WiFiDirectServices_ServiceConfigMethods = .(.(0x31b37743, 0x7c5e, 0x4005, 0x93, 0xe6, 0xe9, 0x53, 0xf9, 0x2b, 0x82, 0xe9), 6);
+	public const DEVPROPKEY DEVPKEY_WiFiDirectServices_RequestServiceInformation = .(.(0x31b37743, 0x7c5e, 0x4005, 0x93, 0xe6, 0xe9, 0x53, 0xf9, 0x2b, 0x82, 0xe9), 7);
+	public const DEVPROPKEY DEVPKEY_WiFi_InterfaceGuid = .(.(0xef1167eb, 0xcbfc, 0x4341, 0xa5, 0x68, 0xa7, 0xc9, 0x1a, 0x68, 0x98, 0x2c), 2);
+	public const uint32 DOT11EXT_PSK_MAX_LENGTH = 64;
+	public const uint32 WDIAG_IHV_WLAN_ID_FLAG_SECURITY_ENABLED = 1;
+	public const String IHV_VERSION_FUNCTION_NAME = "Dot11ExtIhvGetVersionInfo";
+	public const String IHV_INIT_FUNCTION_NAME = "Dot11ExtIhvInitService";
+	public const String IHV_INIT_VS_FUNCTION_NAME = "Dot11ExtIhvInitVirtualStation";
+	public const uint32 MS_MAX_PROFILE_NAME_LENGTH = 256;
+	public const uint32 MS_PROFILE_GROUP_POLICY = 1;
+	public const uint32 MS_PROFILE_USER = 2;
 	#endregion
 	
 	#region Enums
@@ -1420,11 +1429,79 @@ static
 		PASSPHRASE_MISMATCH = 1,
 		OTHER = 2,
 	}
+	public enum DOT11EXT_IHV_CONNECTION_PHASE : int32
+	{
+		any = 0,
+		initial_connection = 1,
+		post_l3_connection = 2,
+	}
+	public enum DOT11_MSONEX_RESULT : int32
+	{
+		SUCCESS = 0,
+		FAILURE = 1,
+		IN_PROGRESS = 2,
+	}
+	public enum DOT11EXT_IHV_INDICATION_TYPE : int32
+	{
+		NicSpecificNotification = 0,
+		PmkidCandidateList = 1,
+		TkipMicFailure = 2,
+		PhyStateChange = 3,
+		LinkQuality = 4,
+	}
 	#endregion
 	
 	#region Function pointers
 	public function void WLAN_NOTIFICATION_CALLBACK(out L2_NOTIFICATION_DATA param0, void* param1);
 	public function void WFD_OPEN_SESSION_COMPLETE_CALLBACK(HANDLE hSessionHandle, void* pvContext, Guid guidSessionInterface, uint32 dwError, uint32 dwReasonCode);
+	public function uint32 DOT11EXT_ALLOCATE_BUFFER(uint32 dwByteCount, void** ppvBuffer);
+	public function void DOT11EXT_FREE_BUFFER(void* pvMemory);
+	public function uint32 DOT11EXT_SET_PROFILE_CUSTOM_USER_DATA(HANDLE hDot11SvcHandle, HANDLE hConnectSession, uint32 dwSessionID, uint32 dwDataSize, void* pvData);
+	public function uint32 DOT11EXT_GET_PROFILE_CUSTOM_USER_DATA(HANDLE hDot11SvcHandle, HANDLE hConnectSession, uint32 dwSessionID, out uint32 pdwDataSize, void** ppvData);
+	public function uint32 DOT11EXT_SET_CURRENT_PROFILE(HANDLE hDot11SvcHandle, HANDLE hConnectSession, DOT11EXT_IHV_CONNECTIVITY_PROFILE* pIhvConnProfile, DOT11EXT_IHV_SECURITY_PROFILE* pIhvSecProfile);
+	public function uint32 DOT11EXT_SEND_UI_REQUEST(HANDLE hDot11SvcHandle, ref DOT11EXT_IHV_UI_REQUEST pIhvUIRequest);
+	public function uint32 DOT11EXT_PRE_ASSOCIATE_COMPLETION(HANDLE hDot11SvcHandle, HANDLE hConnectSession, uint32 dwReasonCode, uint32 dwWin32Error);
+	public function uint32 DOT11EXT_POST_ASSOCIATE_COMPLETION(HANDLE hDot11SvcHandle, HANDLE hSecuritySessionID, uint8** pPeer, uint32 dwReasonCode, uint32 dwWin32Error);
+	public function uint32 DOT11EXT_SEND_NOTIFICATION(HANDLE hDot11SvcHandle, ref L2_NOTIFICATION_DATA pNotificationData);
+	public function uint32 DOT11EXT_SEND_PACKET(HANDLE hDot11SvcHandle, uint32 uPacketLen, void* pvPacket, HANDLE hSendCompletion);
+	public function uint32 DOT11EXT_SET_ETHERTYPE_HANDLING(HANDLE hDot11SvcHandle, uint32 uMaxBackLog, uint32 uNumOfExemption, DOT11_PRIVACY_EXEMPTION* pExemption, uint32 uNumOfRegistration, uint16* pusRegistration);
+	public function uint32 DOT11EXT_SET_AUTH_ALGORITHM(HANDLE hDot11SvcHandle, uint32 dwAuthAlgo);
+	public function uint32 DOT11EXT_SET_UNICAST_CIPHER_ALGORITHM(HANDLE hDot11SvcHandle, uint32 dwUnicastCipherAlgo);
+	public function uint32 DOT11EXT_SET_MULTICAST_CIPHER_ALGORITHM(HANDLE hDot11SvcHandle, uint32 dwMulticastCipherAlgo);
+	public function uint32 DOT11EXT_SET_DEFAULT_KEY(HANDLE hDot11SvcHandle, ref DOT11_CIPHER_DEFAULT_KEY_VALUE pKey, DOT11_DIRECTION dot11Direction);
+	public function uint32 DOT11EXT_SET_KEY_MAPPING_KEY(HANDLE hDot11SvcHandle, ref DOT11_CIPHER_KEY_MAPPING_KEY_VALUE pKey);
+	public function uint32 DOT11EXT_SET_DEFAULT_KEY_ID(HANDLE hDot11SvcHandle, uint32 uDefaultKeyId);
+	public function uint32 DOT11EXT_SET_EXCLUDE_UNENCRYPTED(HANDLE hDot11SvcHandle, BOOL bExcludeUnencrypted);
+	public function uint32 DOT11EXT_NIC_SPECIFIC_EXTENSION(HANDLE hDot11SvcHandle, uint32 dwInBufferSize, void* pvInBuffer, out uint32 pdwOutBufferSize, void* pvOutBuffer);
+	public function uint32 DOT11EXT_ONEX_START(HANDLE hDot11SvcHandle, EAP_ATTRIBUTES* pEapAttributes);
+	public function uint32 DOT11EXT_ONEX_STOP(HANDLE hDot11SvcHandle);
+	public function uint32 DOT11EXT_PROCESS_ONEX_PACKET(HANDLE hDot11SvcHandle, uint32 dwInPacketSize, void* pvInPacket);
+	public function uint32 DOT11EXT_REQUEST_VIRTUAL_STATION(HANDLE hDot11PrimaryHandle, void* pvReserved);
+	public function uint32 DOT11EXT_RELEASE_VIRTUAL_STATION(HANDLE hDot11PrimaryHandle, void* pvReserved);
+	public function uint32 DOT11EXT_QUERY_VIRTUAL_STATION_PROPERTIES(HANDLE hDot11SvcHandle, out BOOL pbIsVirtualStation, out Guid pgPrimary, void* pvReserved);
+	public function uint32 DOT11EXT_SET_VIRTUAL_STATION_AP_PROPERTIES(HANDLE hDot11SvcHandle, HANDLE hConnectSession, uint32 dwNumProperties, DOT11EXT_VIRTUAL_STATION_AP_PROPERTY* pProperties, void* pvReserved);
+	public function uint32 DOT11EXTIHV_GET_VERSION_INFO(out DOT11_IHV_VERSION_INFO pDot11IHVVersionInfo);
+	public function uint32 DOT11EXTIHV_INIT_SERVICE(uint32 dwVerNumUsed, ref DOT11EXT_APIS pDot11ExtAPI, void* pvReserved, out DOT11EXT_IHV_HANDLERS pDot11IHVHandlers);
+	public function uint32 DOT11EXTIHV_INIT_VIRTUAL_STATION(ref DOT11EXT_VIRTUAL_STATION_APIS pDot11ExtVSAPI, void* pvReserved);
+	public function void DOT11EXTIHV_DEINIT_SERVICE();
+	public function uint32 DOT11EXTIHV_INIT_ADAPTER(ref DOT11_ADAPTER pDot11Adapter, HANDLE hDot11SvcHandle, out HANDLE phIhvExtAdapter);
+	public function void DOT11EXTIHV_DEINIT_ADAPTER(HANDLE hIhvExtAdapter);
+	public function uint32 DOT11EXTIHV_PERFORM_PRE_ASSOCIATE(HANDLE hIhvExtAdapter, HANDLE hConnectSession, DOT11EXT_IHV_PROFILE_PARAMS* pIhvProfileParams, ref DOT11EXT_IHV_CONNECTIVITY_PROFILE pIhvConnProfile, ref DOT11EXT_IHV_SECURITY_PROFILE pIhvSecProfile, ref DOT11_BSS_LIST pConnectableBssid, out uint32 pdwReasonCode);
+	public function uint32 DOT11EXTIHV_ADAPTER_RESET(HANDLE hIhvExtAdapter);
+	public function uint32 DOT11EXTIHV_PERFORM_POST_ASSOCIATE(HANDLE hIhvExtAdapter, HANDLE hSecuritySessionID, ref DOT11_PORT_STATE pPortState, uint32 uDot11AssocParamsBytes, ref DOT11_ASSOCIATION_COMPLETION_PARAMETERS pDot11AssocParams);
+	public function uint32 DOT11EXTIHV_STOP_POST_ASSOCIATE(HANDLE hIhvExtAdapter, ref uint8* pPeer, uint32 dot11AssocStatus);
+	public function uint32 DOT11EXTIHV_VALIDATE_PROFILE(HANDLE hIhvExtAdapter, DOT11EXT_IHV_PROFILE_PARAMS* pIhvProfileParams, ref DOT11EXT_IHV_CONNECTIVITY_PROFILE pIhvConnProfile, ref DOT11EXT_IHV_SECURITY_PROFILE pIhvSecProfile, out uint32 pdwReasonCode);
+	public function uint32 DOT11EXTIHV_PERFORM_CAPABILITY_MATCH(HANDLE hIhvExtAdapter, DOT11EXT_IHV_PROFILE_PARAMS* pIhvProfileParams, ref DOT11EXT_IHV_CONNECTIVITY_PROFILE pIhvConnProfile, ref DOT11EXT_IHV_SECURITY_PROFILE pIhvSecProfile, DOT11_BSS_LIST* pConnectableBssid, out uint32 pdwReasonCode);
+	public function uint32 DOT11EXTIHV_CREATE_DISCOVERY_PROFILES(HANDLE hIhvExtAdapter, BOOL bInsecure, DOT11EXT_IHV_PROFILE_PARAMS* pIhvProfileParams, DOT11_BSS_LIST* pConnectableBssid, out DOT11EXT_IHV_DISCOVERY_PROFILE_LIST pIhvDiscoveryProfileList, out uint32 pdwReasonCode);
+	public function uint32 DOT11EXTIHV_PROCESS_SESSION_CHANGE(uint32 uEventType, ref WTSSESSION_NOTIFICATION pSessionNotification);
+	public function uint32 DOT11EXTIHV_RECEIVE_INDICATION(HANDLE hIhvExtAdapter, DOT11EXT_IHV_INDICATION_TYPE indicationType, uint32 uBufferLength, void* pvBuffer);
+	public function uint32 DOT11EXTIHV_RECEIVE_PACKET(HANDLE hIhvExtAdapter, uint32 dwInBufferSize, void* pvInBuffer);
+	public function uint32 DOT11EXTIHV_SEND_PACKET_COMPLETION(HANDLE hSendCompletion);
+	public function uint32 DOT11EXTIHV_IS_UI_REQUEST_PENDING(Guid guidUIRequest, out BOOL pbIsRequestPending);
+	public function uint32 DOT11EXTIHV_PROCESS_UI_RESPONSE(Guid guidUIRequest, uint32 dwByteCount, void* pvResponseBuffer);
+	public function uint32 DOT11EXTIHV_QUERY_UI_REQUEST(HANDLE hIhvExtAdapter, DOT11EXT_IHV_CONNECTION_PHASE connectionPhase, out DOT11EXT_IHV_UI_REQUEST* ppIhvUIRequest);
+	public function uint32 DOT11EXTIHV_ONEX_INDICATE_RESULT(HANDLE hIhvExtAdapter, DOT11_MSONEX_RESULT msOneXResult, DOT11_MSONEX_RESULT_PARAMS* pDot11MsOneXResultParams);
+	public function uint32 DOT11EXTIHV_CONTROL(HANDLE hIhvExtAdapter, uint32 dwInBufferSize, uint8* pInBuffer, uint32 dwOutBufferSize, uint8* pOutBuffer, out uint32 pdwBytesReturned);
 	#endregion
 	
 	#region Structs
@@ -3977,6 +4054,200 @@ static
 		public uint32 _bitfield;
 		public ONEX_VARIABLE_BLOB UserName;
 		public ONEX_VARIABLE_BLOB DomainName;
+	}
+	[CRepr]
+	public struct DOT11_ADAPTER
+	{
+		public Guid gAdapterId;
+		public PWSTR pszDescription;
+		public DOT11_CURRENT_OPERATION_MODE Dot11CurrentOpMode;
+	}
+	[CRepr]
+	public struct DOT11_BSS_LIST
+	{
+		public uint32 uNumOfBytes;
+		public uint8* pucBuffer;
+	}
+	[CRepr]
+	public struct DOT11_PORT_STATE
+	{
+		public uint8[6] PeerMacAddress;
+		public uint32 uSessionId;
+		public BOOL bPortControlled;
+		public BOOL bPortAuthorized;
+	}
+	[CRepr, Packed(1)]
+	public struct DOT11_SECURITY_PACKET_HEADER
+	{
+		public uint8[6] PeerMac;
+		public uint16 usEtherType;
+		public uint8[1] Data_array;
+		
+		public uint8* Data mut => &Data_array[0];
+	}
+	[CRepr]
+	public struct DOT11_MSSECURITY_SETTINGS
+	{
+		public DOT11_AUTH_ALGORITHM dot11AuthAlgorithm;
+		public DOT11_CIPHER_ALGORITHM dot11CipherAlgorithm;
+		public BOOL fOneXEnabled;
+		public EAP_METHOD_TYPE eapMethodType;
+		public uint32 dwEapConnectionDataLen;
+		public uint8* pEapConnectionData;
+	}
+	[CRepr]
+	public struct DOT11EXT_IHV_SSID_LIST
+	{
+		public uint32 ulCount;
+		public DOT11_SSID[1] SSIDs_array;
+		
+		public DOT11_SSID* SSIDs mut => &SSIDs_array[0];
+	}
+	[CRepr]
+	public struct DOT11EXT_IHV_PROFILE_PARAMS
+	{
+		public DOT11EXT_IHV_SSID_LIST* pSsidList;
+		public DOT11_BSS_TYPE BssType;
+		public DOT11_MSSECURITY_SETTINGS* pMSSecuritySettings;
+	}
+	[CRepr]
+	public struct DOT11EXT_IHV_PARAMS
+	{
+		public DOT11EXT_IHV_PROFILE_PARAMS dot11ExtIhvProfileParams;
+		public char16[256] wstrProfileName;
+		public uint32 dwProfileTypeFlags;
+		public Guid interfaceGuid;
+	}
+	[CRepr]
+	public struct DOT11_IHV_VERSION_INFO
+	{
+		public uint32 dwVerMin;
+		public uint32 dwVerMax;
+	}
+	[CRepr]
+	public struct DOT11EXT_IHV_UI_REQUEST
+	{
+		public uint32 dwSessionId;
+		public Guid guidUIRequest;
+		public Guid UIPageClsid;
+		public uint32 dwByteCount;
+		public uint8* pvUIRequest;
+	}
+	[CRepr]
+	public struct DOT11_EAP_RESULT
+	{
+		public uint32 dwFailureReasonCode;
+		public EAP_ATTRIBUTES* pAttribArray;
+	}
+	[CRepr]
+	public struct DOT11_MSONEX_RESULT_PARAMS
+	{
+		public ONEX_AUTH_STATUS Dot11OnexAuthStatus;
+		public ONEX_REASON_CODE Dot11OneXReasonCode;
+		public uint8* pbMPPESendKey;
+		public uint32 dwMPPESendKeyLen;
+		public uint8* pbMPPERecvKey;
+		public uint32 dwMPPERecvKeyLen;
+		public DOT11_EAP_RESULT* pDot11EapResult;
+	}
+	[CRepr]
+	public struct DOT11EXT_IHV_CONNECTIVITY_PROFILE
+	{
+		public PWSTR pszXmlFragmentIhvConnectivity;
+	}
+	[CRepr]
+	public struct DOT11EXT_IHV_SECURITY_PROFILE
+	{
+		public PWSTR pszXmlFragmentIhvSecurity;
+		public BOOL bUseMSOnex;
+	}
+	[CRepr]
+	public struct DOT11EXT_IHV_DISCOVERY_PROFILE
+	{
+		public DOT11EXT_IHV_CONNECTIVITY_PROFILE IhvConnectivityProfile;
+		public DOT11EXT_IHV_SECURITY_PROFILE IhvSecurityProfile;
+	}
+	[CRepr]
+	public struct DOT11EXT_IHV_DISCOVERY_PROFILE_LIST
+	{
+		public uint32 dwCount;
+		public DOT11EXT_IHV_DISCOVERY_PROFILE* pIhvDiscoveryProfiles;
+	}
+	[CRepr]
+	public struct DOT11EXT_VIRTUAL_STATION_AP_PROPERTY
+	{
+		public DOT11_SSID dot11SSID;
+		public DOT11_AUTH_ALGORITHM dot11AuthAlgo;
+		public DOT11_CIPHER_ALGORITHM dot11CipherAlgo;
+		public BOOL bIsPassPhrase;
+		public uint32 dwKeyLength;
+		public uint8[64] ucKeyData;
+	}
+	[CRepr]
+	public struct WDIAG_IHV_WLAN_ID
+	{
+		public char16[256] strProfileName;
+		public DOT11_SSID Ssid;
+		public DOT11_BSS_TYPE BssType;
+		public uint32 dwFlags;
+		public uint32 dwReasonCode;
+	}
+	[CRepr]
+	public struct DOT11EXT_APIS
+	{
+		public DOT11EXT_ALLOCATE_BUFFER Dot11ExtAllocateBuffer;
+		public DOT11EXT_FREE_BUFFER Dot11ExtFreeBuffer;
+		public DOT11EXT_SET_PROFILE_CUSTOM_USER_DATA Dot11ExtSetProfileCustomUserData;
+		public DOT11EXT_GET_PROFILE_CUSTOM_USER_DATA Dot11ExtGetProfileCustomUserData;
+		public DOT11EXT_SET_CURRENT_PROFILE Dot11ExtSetCurrentProfile;
+		public DOT11EXT_SEND_UI_REQUEST Dot11ExtSendUIRequest;
+		public DOT11EXT_PRE_ASSOCIATE_COMPLETION Dot11ExtPreAssociateCompletion;
+		public DOT11EXT_POST_ASSOCIATE_COMPLETION Dot11ExtPostAssociateCompletion;
+		public DOT11EXT_SEND_NOTIFICATION Dot11ExtSendNotification;
+		public DOT11EXT_SEND_PACKET Dot11ExtSendPacket;
+		public DOT11EXT_SET_ETHERTYPE_HANDLING Dot11ExtSetEtherTypeHandling;
+		public DOT11EXT_SET_AUTH_ALGORITHM Dot11ExtSetAuthAlgorithm;
+		public DOT11EXT_SET_UNICAST_CIPHER_ALGORITHM Dot11ExtSetUnicastCipherAlgorithm;
+		public DOT11EXT_SET_MULTICAST_CIPHER_ALGORITHM Dot11ExtSetMulticastCipherAlgorithm;
+		public DOT11EXT_SET_DEFAULT_KEY Dot11ExtSetDefaultKey;
+		public DOT11EXT_SET_KEY_MAPPING_KEY Dot11ExtSetKeyMappingKey;
+		public DOT11EXT_SET_DEFAULT_KEY_ID Dot11ExtSetDefaultKeyId;
+		public DOT11EXT_NIC_SPECIFIC_EXTENSION Dot11ExtNicSpecificExtension;
+		public DOT11EXT_SET_EXCLUDE_UNENCRYPTED Dot11ExtSetExcludeUnencrypted;
+		public DOT11EXT_ONEX_START Dot11ExtStartOneX;
+		public DOT11EXT_ONEX_STOP Dot11ExtStopOneX;
+		public DOT11EXT_PROCESS_ONEX_PACKET Dot11ExtProcessSecurityPacket;
+	}
+	[CRepr]
+	public struct DOT11EXT_IHV_HANDLERS
+	{
+		public DOT11EXTIHV_DEINIT_SERVICE Dot11ExtIhvDeinitService;
+		public DOT11EXTIHV_INIT_ADAPTER Dot11ExtIhvInitAdapter;
+		public DOT11EXTIHV_DEINIT_ADAPTER Dot11ExtIhvDeinitAdapter;
+		public DOT11EXTIHV_PERFORM_PRE_ASSOCIATE Dot11ExtIhvPerformPreAssociate;
+		public DOT11EXTIHV_ADAPTER_RESET Dot11ExtIhvAdapterReset;
+		public DOT11EXTIHV_PERFORM_POST_ASSOCIATE Dot11ExtIhvPerformPostAssociate;
+		public DOT11EXTIHV_STOP_POST_ASSOCIATE Dot11ExtIhvStopPostAssociate;
+		public DOT11EXTIHV_VALIDATE_PROFILE Dot11ExtIhvValidateProfile;
+		public DOT11EXTIHV_PERFORM_CAPABILITY_MATCH Dot11ExtIhvPerformCapabilityMatch;
+		public DOT11EXTIHV_CREATE_DISCOVERY_PROFILES Dot11ExtIhvCreateDiscoveryProfiles;
+		public DOT11EXTIHV_PROCESS_SESSION_CHANGE Dot11ExtIhvProcessSessionChange;
+		public DOT11EXTIHV_RECEIVE_INDICATION Dot11ExtIhvReceiveIndication;
+		public DOT11EXTIHV_RECEIVE_PACKET Dot11ExtIhvReceivePacket;
+		public DOT11EXTIHV_SEND_PACKET_COMPLETION Dot11ExtIhvSendPacketCompletion;
+		public DOT11EXTIHV_IS_UI_REQUEST_PENDING Dot11ExtIhvIsUIRequestPending;
+		public DOT11EXTIHV_PROCESS_UI_RESPONSE Dot11ExtIhvProcessUIResponse;
+		public DOT11EXTIHV_QUERY_UI_REQUEST Dot11ExtIhvQueryUIRequest;
+		public DOT11EXTIHV_ONEX_INDICATE_RESULT Dot11ExtIhvOnexIndicateResult;
+		public DOT11EXTIHV_CONTROL Dot11ExtIhvControl;
+	}
+	[CRepr]
+	public struct DOT11EXT_VIRTUAL_STATION_APIS
+	{
+		public DOT11EXT_REQUEST_VIRTUAL_STATION Dot11ExtRequestVirtualStation;
+		public DOT11EXT_RELEASE_VIRTUAL_STATION Dot11ExtReleaseVirtualStation;
+		public DOT11EXT_QUERY_VIRTUAL_STATION_PROPERTIES Dot11ExtQueryVirtualStationProperties;
+		public DOT11EXT_SET_VIRTUAL_STATION_AP_PROPERTIES Dot11ExtSetVirtualStationAPProperties;
 	}
 	#endregion
 	

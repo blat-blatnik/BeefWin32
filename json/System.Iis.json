@@ -2,6 +2,48 @@
 
 "Constants":[
 	{
+		"Name":"IISADMIN_EXTENSIONS_REG_KEYA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SOFTWARE\\Microsoft\\InetStp\\Extensions"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IISADMIN_EXTENSIONS_REG_KEYW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SOFTWARE\\Microsoft\\InetStp\\Extensions"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IISADMIN_EXTENSIONS_REG_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SOFTWARE\\Microsoft\\InetStp\\Extensions"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IISADMIN_EXTENSIONS_CLSID_MD_KEYA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LM/IISADMIN/EXTENSIONS/DCOMCLSIDS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IISADMIN_EXTENSIONS_CLSID_MD_KEYW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LM/IISADMIN/EXTENSIONS/DCOMCLSIDS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IISADMIN_EXTENSIONS_CLSID_MD_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LM/IISADMIN/EXTENSIONS/DCOMCLSIDS"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"ADMINDATA_MAX_NAME_LEN"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -188,6 +230,48 @@
 		,"Type":{"Kind":"Native","Name":"Guid"}
 		,"ValueType":"String"
 		,"Value":"3050f3d6-98b5-11cf-bb82-00aa00bdce0b"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_MD_LOCAL_MACHINE_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LM"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_MD_INSTANCE_ROOT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Root"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_MD_ISAPI_FILTERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"/Filters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_MD_SVC_INFO_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Info"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_MD_ADSI_SCHEMA_PATH_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"/Schema"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_MD_ADSI_SCHEMA_PATH_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"/Schema"
 		,"Attrs":[]
 	}
 	,{
@@ -4699,6 +4783,272 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"IIS_CLASS_COMPUTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsComputer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_WEB_SERVICE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsWebService"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_WEB_SERVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsWebServer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_WEB_INFO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsWebInfo"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_WEB_DIR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsWebDirectory"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_WEB_VDIR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsWebVirtualDir"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_WEB_FILE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsWebFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_FTP_SERVICE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsFtpService"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_FTP_SERVER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsFtpServer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_FTP_INFO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsFtpInfo"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_FTP_VDIR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsFtpVirtualDir"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_FILTERS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsFilters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_FILTER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsFilter"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_LOG_MODULES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsLogModules"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_LOG_MODULE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsLogModule"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_MIMEMAP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsMimeMap"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_CERTMAPPER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsCertMapper"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_COMPRESS_SCHEMES"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsCompressionSchemes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_COMPRESS_SCHEME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsCompressionScheme"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_COMPUTER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsComputer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_WEB_SERVICE_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsWebService"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_WEB_SERVER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsWebServer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_WEB_INFO_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsWebInfo"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_WEB_DIR_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsWebDirectory"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_WEB_VDIR_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsWebVirtualDir"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_WEB_FILE_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsWebFile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_FTP_SERVICE_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsFtpService"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_FTP_SERVER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsFtpServer"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_FTP_INFO_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsFtpInfo"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_FTP_VDIR_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsFtpVirtualDir"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_FILTERS_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsFilters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_FILTER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsFilter"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_LOG_MODULES_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsLogModules"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_LOG_MODULE_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsLogModule"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_MIMEMAP_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsMimeMap"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_CERTMAPPER_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsCertMapper"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_COMPRESS_SCHEMES_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsCompressionSchemes"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_CLASS_COMPRESS_SCHEME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIsCompressionScheme"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"CLSID_IisServiceControl"
 		,"Type":{"Kind":"Native","Name":"Guid"}
 		,"ValueType":"String"
@@ -4710,6 +5060,20 @@
 		,"Type":{"Kind":"Native","Name":"Guid"}
 		,"ValueType":"String"
 		,"Value":"e8fb8614-588f-11d2-9d61-00c04f79c5fe"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_WEBSOCKET"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"websockets"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IIS_WEBSOCKET_SERVER_VARIABLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IIS_WEBSOCK"
 		,"Attrs":[]
 	}
 	,{
@@ -4895,6 +5259,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"MD_DEFAULT_BACKUP_LOCATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MDBackUp"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"MD_HISTORY_LATEST"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -4934,6 +5305,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MD_INSERT_PATH_STRINGA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"<%INSERT_PATH%>"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MD_INSERT_PATH_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"<%INSERT_PATH%>"
 		,"Attrs":[]
 	}
 	,{
@@ -5497,6 +5882,62 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"HSE_IO_SYNC"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HSE_IO_ASYNC"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":2
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HSE_IO_DISCONNECT_AFTER_SEND"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HSE_IO_SEND_HEADERS"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":8
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HSE_IO_NODELAY"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":4096
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HSE_IO_FINAL_SEND"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":16
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HSE_IO_CACHE_RESPONSE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":32
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HSE_IO_TRY_SKIP_CUSTOM_ERRORS"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":64
+		,"Attrs":[]
+	}
+	,{
 		"Name":"HSE_URL_FLAGS_READ"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -6035,6 +6476,34 @@
 		,"Value":"a1c2040e-8840-4c31-ba11-9871031a19ea"
 		,"Attrs":[]
 	}
+	,{
+		"Name":"WEB_CORE_DLL_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"hwebcore.dll"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WEB_CORE_ACTIVATE_DLL_ENTRY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WebCoreActivate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WEB_CORE_SHUTDOWN_DLL_ENTRY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WebCoreShutdown"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WEB_CORE_SET_METADATA_DLL_ENTRY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"WebCoreSetMetadata"
+		,"Attrs":[]
+	}
 ]
 
 ,"Types":[
@@ -6065,6 +6534,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4d1a3f7b-412d-447c-b199-64f967e9a2da"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6087,6 +6557,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4659f95c-d5a8-4707-b2fc-6fd5794246cf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6102,7 +6573,7 @@
 					,{"Name":"pszSiteName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 					,{"Name":"pszUserName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 					,{"Name":"pszPassword","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"ppszCanonicalUserName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppszCanonicalUserName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"pfAuthenticated","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
@@ -6114,6 +6585,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c24efb65-9f3e-4996-8fb1-ce166916bab5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6140,7 +6612,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppszCanonicalUserName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszCanonicalUserName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 					,{"Name":"pfAuthenticated","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BOOL","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
@@ -6152,6 +6624,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"909c850d-8ca0-4674-96b8-cc2941535725"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6178,6 +6651,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3e83bf99-70ec-41ca-84b6-aca7c7a62caf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6215,6 +6689,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0933b392-18dd-4097-8b9c-83325c35d9a6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6229,7 +6704,7 @@
 					{"Name":"pszSessionId","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 					,{"Name":"pszSiteName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 					,{"Name":"pszUserName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
-					,{"Name":"ppszHomeDirectoryData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppszHomeDirectoryData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -6240,6 +6715,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"73f81638-6295-42bd-a2be-4a657f7c479c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6265,7 +6741,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppszHomeDirectoryData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppszHomeDirectoryData","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -6306,6 +6782,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a18a94cc-8299-4408-816c-7c3baca1a40e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6328,6 +6805,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"00a0ae46-2498-48b2-95e6-df678ed7d49f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6376,6 +6854,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a50ae7a1-a35a-42b4-a4f3-f4f7057a05d1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6402,6 +6881,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"860dc339-07e5-4a5c-9c61-8820cea012bc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6479,6 +6959,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a3c19b60-5a28-471a-8f93-ab30411cee82"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6502,6 +6983,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6ff5fd8f-fd8e-48b1-a3e0-bf7073db4db5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6568,6 +7050,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4522cbc6-16cd-49ad-8653-9a2c579e4280"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6591,6 +7074,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a16b2542-9694-4eb1-a564-6c2e91fdc133"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6625,6 +7109,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"51dfe970-f6f2-11d0-b9bd-00a0c922e750"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6789,6 +7274,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"70b51430-b6ca-11d0-b9b9-00a0c922e750"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7218,7 +7704,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"piadmbwInterface","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMSAdminBaseW","TargetKind":"Com","Api":"System.Iis","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"piadmbwInterface","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IMSAdminBaseW","TargetKind":"Com","Api":"System.Iis","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7252,6 +7738,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8298d101-f992-43b7-8eca-5052d885b995"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMSAdminBaseW","TargetKind":"Com","Api":"System.Iis","Parents":[]}
 		,"Methods":[
 			{
@@ -7354,6 +7841,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f612954d-3b0b-4c56-9563-227b7be624b4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IMSAdminBase2W","TargetKind":"Com","Api":"System.Iis","Parents":[]}
 		,"Methods":[
 			{
@@ -7380,6 +7868,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"29ff67ff-8050-480f-9f30-cc41635f2f9d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7406,6 +7895,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a9e69612-b80d-11d0-b9b9-00a0c922e750"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7440,6 +7930,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"a9e69613-b80d-11d0-b9b9-00a0c922e750"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

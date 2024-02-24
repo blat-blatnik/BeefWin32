@@ -167,7 +167,7 @@
 		,"Params":[
 			{"Name":"hProvider","Type":{"Kind":"ApiRef","Name":"HPTPROVIDER","TargetKind":"Default","Api":"Storage.Xps","Parents":[]},"Attrs":["In"]}
 			,{"Name":"pPrintTicket","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Optional"]}
-			,{"Name":"pCapabilities","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"pCapabilities","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 			,{"Name":"pbstrErrorMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
 		]
 	}
@@ -183,7 +183,7 @@
 		,"Params":[
 			{"Name":"hProvider","Type":{"Kind":"ApiRef","Name":"HPTPROVIDER","TargetKind":"Default","Api":"Storage.Xps","Parents":[]},"Attrs":["In"]}
 			,{"Name":"pPrintTicket","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Optional"]}
-			,{"Name":"pDeviceCapabilities","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"pDeviceCapabilities","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 			,{"Name":"pbstrErrorMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
 		]
 	}
@@ -200,7 +200,7 @@
 			{"Name":"hProvider","Type":{"Kind":"ApiRef","Name":"HPTPROVIDER","TargetKind":"Default","Api":"Storage.Xps","Parents":[]},"Attrs":["In"]}
 			,{"Name":"pszLocaleName","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Const"]}
 			,{"Name":"pPrintTicket","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Optional"]}
-			,{"Name":"pDeviceResources","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"pDeviceResources","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 			,{"Name":"pbstrErrorMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
 		]
 	}
@@ -218,7 +218,7 @@
 			,{"Name":"pBaseTicket","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 			,{"Name":"pDeltaTicket","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Optional"]}
 			,{"Name":"scope","Type":{"Kind":"ApiRef","Name":"EPrintTicketScope","TargetKind":"Default","Api":"Graphics.Printing.PrintTicket","Parents":[]},"Attrs":["In"]}
-			,{"Name":"pResultTicket","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"pResultTicket","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 			,{"Name":"pbstrErrorMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
 		]
 	}
@@ -255,7 +255,7 @@
 			,{"Name":"cbDevmode","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"pDevmode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"DEVMODEA","TargetKind":"Default","Api":"Graphics.Gdi","Parents":[]}},"Attrs":["In"]}
 			,{"Name":"scope","Type":{"Kind":"ApiRef","Name":"EPrintTicketScope","TargetKind":"Default","Api":"Graphics.Printing.PrintTicket","Parents":[]},"Attrs":["In"]}
-			,{"Name":"pPrintTicket","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In","Out"]}
+			,{"Name":"pPrintTicket","Type":{"Kind":"ApiRef","Name":"IStream","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 		]
 	}
 ]

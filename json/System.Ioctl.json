@@ -171,56 +171,56 @@
 	}
 	,{
 		"Name":"DEVPKEY_Storage_Portable"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"4d1ebee8-0803-4774-9842-b77db50265e9","Pid":2}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_Storage_Removable_Media"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"4d1ebee8-0803-4774-9842-b77db50265e9","Pid":3}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_Storage_System_Critical"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"4d1ebee8-0803-4774-9842-b77db50265e9","Pid":4}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_Storage_Disk_Number"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"4d1ebee8-0803-4774-9842-b77db50265e9","Pid":5}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_Storage_Partition_Number"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"4d1ebee8-0803-4774-9842-b77db50265e9","Pid":6}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_Storage_Mbr_Type"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"4d1ebee8-0803-4774-9842-b77db50265e9","Pid":7}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_Storage_Gpt_Type"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"4d1ebee8-0803-4774-9842-b77db50265e9","Pid":8}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_Storage_Gpt_Name"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"4d1ebee8-0803-4774-9842-b77db50265e9","Pid":9}
 		,"Attrs":[]
@@ -1206,6 +1206,20 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"STORAGE_CRASH_TELEMETRY_REGKEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Registry\\Machine\\System\\CurrentControlSet\\Control\\CrashControl\\StorageTelemetry"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STORAGE_DEVICE_TELEMETRY_REGKEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Storage\\StorageTelemetry"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"DDUMP_FLAG_DATA_READ_FROM_DEVICE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1252,6 +1266,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":16
+		,"Attrs":[]
+	}
+	,{
+		"Name":"TC_PUBLIC_DATA_TYPE_ATAGP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ATAGPLogPages"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"TC_PUBLIC_DATA_TYPE_ATASMART"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ATASMARTPages"
 		,"Attrs":[]
 	}
 	,{
@@ -14272,6 +14300,22 @@
 				]
 			}
 			,{
+				"Name":"_MftWritesUserLevel_e__Struct"
+				,"Architectures":[]
+				,"Platform":null
+				,"Kind":"Struct"
+				,"Size":0
+				,"PackingSize":0
+				,"Fields":[
+					{"Name":"Write","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+					,{"Name":"Create","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+					,{"Name":"SetInfo","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+					,{"Name":"Flush","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+				]
+				,"NestedTypes":[
+				]
+			}
+			,{
 				"Name":"_Allocate_e__Struct"
 				,"Architectures":[]
 				,"Platform":null
@@ -14289,22 +14333,6 @@
 					,{"Name":"HintsClusters","Type":{"Kind":"Native","Name":"UInt64"},"Attrs":[]}
 					,{"Name":"CacheClusters","Type":{"Kind":"Native","Name":"UInt64"},"Attrs":[]}
 					,{"Name":"CacheMissClusters","Type":{"Kind":"Native","Name":"UInt64"},"Attrs":[]}
-				]
-				,"NestedTypes":[
-				]
-			}
-			,{
-				"Name":"_MftWritesUserLevel_e__Struct"
-				,"Architectures":[]
-				,"Platform":null
-				,"Kind":"Struct"
-				,"Size":0
-				,"PackingSize":0
-				,"Fields":[
-					{"Name":"Write","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-					,{"Name":"Create","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-					,{"Name":"SetInfo","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-					,{"Name":"Flush","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 				]
 				,"NestedTypes":[
 				]
@@ -16230,22 +16258,6 @@
 						]
 					}
 					,{
-						"Name":"_DataStream"
-						,"Architectures":[]
-						,"Platform":null
-						,"Kind":"Struct"
-						,"Size":0
-						,"PackingSize":0
-						,"Fields":[
-							{"Name":"Length","Type":{"Kind":"Native","Name":"UInt16"},"Attrs":[]}
-							,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt16"},"Attrs":[]}
-							,{"Name":"Reserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-							,{"Name":"Vdl","Type":{"Kind":"Native","Name":"UInt64"},"Attrs":[]}
-						]
-						,"NestedTypes":[
-						]
-					}
-					,{
 						"Name":"_Ea"
 						,"Architectures":[]
 						,"Platform":null
@@ -16257,6 +16269,22 @@
 							,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt16"},"Attrs":[]}
 							,{"Name":"EaSize","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 							,{"Name":"EaInformationOffset","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+						]
+						,"NestedTypes":[
+						]
+					}
+					,{
+						"Name":"_DataStream"
+						,"Architectures":[]
+						,"Platform":null
+						,"Kind":"Struct"
+						,"Size":0
+						,"PackingSize":0
+						,"Fields":[
+							{"Name":"Length","Type":{"Kind":"Native","Name":"UInt16"},"Attrs":[]}
+							,{"Name":"Flags","Type":{"Kind":"Native","Name":"UInt16"},"Attrs":[]}
+							,{"Name":"Reserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+							,{"Name":"Vdl","Type":{"Kind":"Native","Name":"UInt64"},"Attrs":[]}
 						]
 						,"NestedTypes":[
 						]

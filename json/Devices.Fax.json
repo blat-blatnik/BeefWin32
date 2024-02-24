@@ -2,6 +2,13 @@
 
 "Constants":[
 	{
+		"Name":"prv_DEFAULT_PREFETCH_SIZE"
+		,"Type":{"Kind":"Native","Name":"UInt32"}
+		,"ValueType":"UInt32"
+		,"Value":100
+		,"Attrs":[]
+	}
+	,{
 		"Name":"FS_INITIALIZING"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -139,6 +146,27 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4096
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MS_FAXROUTE_PRINTING_GUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{aec1b37c-9af2-11d0-abf7-00c04fd91a4e}"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MS_FAXROUTE_FOLDER_GUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{92041a90-9af2-11d0-abf7-00c04fd91a4e}"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"MS_FAXROUTE_EMAIL_GUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{6bbf7bfe-9af2-11d0-abf7-00c04fd91a4e}"
 		,"Attrs":[]
 	}
 	,{
@@ -849,6 +877,41 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"CF_MSFAXSRV_DEVICE_ID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FAXSRV_DeviceID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CF_MSFAXSRV_FSP_GUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FAXSRV_FSPGuid"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CF_MSFAXSRV_SERVER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FAXSRV_ServerName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CF_MSFAXSRV_ROUTEEXT_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FAXSRV_RoutingExtName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CF_MSFAXSRV_ROUTING_METHOD_GUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FAXSRV_RoutingMethodGuid"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"STI_UNICODE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1220,6 +1283,34 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"STI_ADD_DEVICE_BROADCAST_ACTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Arrival"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STI_REMOVE_DEVICE_BROADCAST_ACTION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Removal"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STI_ADD_DEVICE_BROADCAST_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"STI\\"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STI_REMOVE_DEVICE_BROADCAST_STRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"STI\\"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"STI_DEVICE_CREATE_STATUS"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1451,10 +1542,164 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"REGSTR_VAL_TYPE_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Type"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_VENDOR_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Vendor"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DEVICETYPE_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeviceType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DEVICESUBTYPE_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeviceSubType"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DEV_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeviceName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DRIVER_DESC_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverDesc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_FRIENDLY_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FriendlyName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_GENERIC_CAPS_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Capabilities"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_HARDWARE_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HardwareConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_HARDWARE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HardwareConfig"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DEVICE_NAME_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DriverDesc"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_DATA_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DeviceData"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_GUID_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GUID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_GUID"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"GUID"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LAUNCH_APPS_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LaunchApplications"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LAUNCH_APPS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"LaunchApplications"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LAUNCHABLE_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Launchable"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_LAUNCHABLE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Launchable"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHUTDOWNDELAY_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShutdownIfUnusedDelay"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_SHUTDOWNDELAY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ShutdownIfUnusedDelay"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IS_DIGITAL_CAMERA_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"IsDigitalCamera"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"IS_DIGITAL_CAMERA_VAL"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SUPPORTS_MSCPLUS_STR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SupportsMSCPlus"
 		,"Attrs":[]
 	}
 	,{
@@ -1465,15 +1710,113 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"STI_DEVICE_VALUE_TWAIN_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TwainDS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STI_DEVICE_VALUE_ISIS_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ISISDriverName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STI_DEVICE_VALUE_ICM_PROFILE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ICMProfile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STI_DEVICE_VALUE_DEFAULT_LAUNCHAPP"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DefaultLaunchApp"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STI_DEVICE_VALUE_TIMEOUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PollTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STI_DEVICE_VALUE_DISABLE_NOTIFICATIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DisableNotifications"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BAUDRATE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BaudRate"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STI_DEVICE_VALUE_TWAIN_NAME_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TwainDS"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STI_DEVICE_VALUE_ISIS_NAME_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ISISDriverName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STI_DEVICE_VALUE_ICM_PROFILE_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ICMProfile"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STI_DEVICE_VALUE_DEFAULT_LAUNCHAPP_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DefaultLaunchApp"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STI_DEVICE_VALUE_TIMEOUT_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PollTimeout"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"STI_DEVICE_VALUE_DISABLE_NOTIFICATIONS_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DisableNotifications"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"REGSTR_VAL_BAUDRATE_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"BaudRate"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"DEVPKEY_WIA_DeviceType"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"6bdd1fc6-810f-11d0-bec7-08002be2092f","Pid":2}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_WIA_USDClassId"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"6bdd1fc6-810f-11d0-bec7-08002be2092f","Pid":3}
 		,"Attrs":[]
@@ -3777,6 +4120,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"8b86f485-fd7f-4824-886b-40c5caa617cc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3860,7 +4204,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrCSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrCSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -3874,7 +4218,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrTSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrTSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -3902,7 +4246,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrExtendedStatus","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrExtendedStatus","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4000,7 +4344,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrCallerId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrCallerId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4014,7 +4358,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrRoutingInformation","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrRoutingInformation","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -4062,6 +4406,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"475b6469-90a5-4878-a577-17a86e8e3462"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4087,7 +4432,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrServerName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrServerName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4099,7 +4444,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppFaxDeviceProviders","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxDeviceProviders","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxDeviceProviders","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxDeviceProviders","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4111,7 +4456,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppFaxDevices","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxDevices","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxDevices","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxDevices","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4125,7 +4470,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFaxInboundRouting","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxInboundRouting","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxInboundRouting","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxInboundRouting","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4139,7 +4484,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pFaxFolders","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxFolders","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxFolders","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxFolders","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4153,7 +4498,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFaxLoggingOptions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxLoggingOptions","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxLoggingOptions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxLoggingOptions","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4237,7 +4582,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFaxActivity","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxActivity","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxActivity","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxActivity","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4251,7 +4596,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFaxOutboundRouting","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRouting","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxOutboundRouting","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRouting","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4265,7 +4610,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFaxReceiptOptions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxReceiptOptions","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxReceiptOptions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxReceiptOptions","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4279,7 +4624,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFaxSecurity","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxSecurity","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxSecurity","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxSecurity","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4422,6 +4767,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"9fb76f62-4c7e-43a5-b6fd-502893f7e13e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4435,7 +4781,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4445,12 +4791,10 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"vIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxDeviceProvider","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxDeviceProvider","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxDeviceProvider","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxDeviceProvider","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4475,6 +4819,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"9e46783e-f34f-482e-a360-0416becbbd96"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4488,7 +4833,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4498,12 +4843,10 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"vIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxDevice","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxDevice","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxDevice","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxDevice","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4527,12 +4870,10 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"lId","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppFaxDevice","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxDevice","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppFaxDevice","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxDevice","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -4543,6 +4884,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"8148c20f-9d52-45b1-bf96-38fc12713527"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4554,7 +4896,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pFaxInboundRoutingExtensions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxInboundRoutingExtensions","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxInboundRoutingExtensions","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxInboundRoutingExtensions","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4566,7 +4908,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pFaxInboundRoutingMethods","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxInboundRoutingMethods","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxInboundRoutingMethods","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxInboundRoutingMethods","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -4577,6 +4919,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"dce3b2a8-a7ab-42bc-9d0a-3149457261a0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4590,7 +4933,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pFaxOutgoingQueue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingQueue","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxOutgoingQueue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingQueue","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4604,7 +4947,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pFaxIncomingQueue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingQueue","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxIncomingQueue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingQueue","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4618,7 +4961,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pFaxIncomingArchive","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingArchive","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxIncomingArchive","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingArchive","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4632,7 +4975,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pFaxOutgoingArchive","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingArchive","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxOutgoingArchive","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingArchive","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -4643,6 +4986,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"34e64fb9-6b31-4d32-8b27-d286c0c33606"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4656,7 +5000,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pFaxEventLogging","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxEventLogging","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxEventLogging","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxEventLogging","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4670,7 +5014,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pFaxActivityLogging","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxActivityLogging","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxActivityLogging","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxActivityLogging","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -4681,6 +5025,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"4b106f97-3df5-40f2-bc3c-44cb8115ebdf"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4758,6 +5103,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"25dc05a4-9909-41bd-a95b-7e5d1dec1d43"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4769,7 +5115,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pFaxOutboundRoutingGroups","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRoutingGroups","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxOutboundRoutingGroups","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRoutingGroups","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4781,7 +5127,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pFaxOutboundRoutingRules","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRoutingRules","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxOutboundRoutingRules","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRoutingRules","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -4820,6 +5166,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"378efaeb-5fcb-4afb-b2ee-e16e80614487"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4861,7 +5208,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrSMTPServer","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrSMTPServer","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4917,7 +5264,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrSMTPSender","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrSMTPSender","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -4945,7 +5292,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrSMTPUser","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrSMTPUser","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5001,7 +5348,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrSMTPPassword","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrSMTPPassword","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5098,6 +5445,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"77b508c1-09c0-47a2-91eb-fce7fdf2690e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5242,6 +5590,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"b207a246-09e3-4a4e-a7dc-fea31d29458f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5255,7 +5604,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrBody","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrBody","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5283,7 +5632,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFaxSender","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxSender","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxSender","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxSender","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5297,7 +5646,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFaxRecipients","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxRecipients","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxRecipients","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxRecipients","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5311,7 +5660,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrCoverPage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrCoverPage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5339,7 +5688,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrSubject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrSubject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5367,7 +5716,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrNote","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrNote","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5423,7 +5772,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrReceiptAddress","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrReceiptAddress","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5451,7 +5800,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrDocumentName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrDocumentName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5647,7 +5996,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppTapiConnection","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppTapiConnection","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5724,6 +6073,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"0d879d7d-f57a-4cc6-a6f9-3ee5d527b46a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5737,7 +6087,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrBillingCode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrBillingCode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5765,7 +6115,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrCity","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrCity","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5793,7 +6143,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrCompany","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrCompany","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5821,7 +6171,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrCountry","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrCountry","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5849,7 +6199,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrDepartment","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrDepartment","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5877,7 +6227,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrEmail","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrEmail","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5905,7 +6255,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrFaxNumber","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrFaxNumber","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5933,7 +6283,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrHomePhone","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrHomePhone","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5961,7 +6311,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -5989,7 +6339,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrTSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrTSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6017,7 +6367,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrOfficePhone","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrOfficePhone","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6045,7 +6395,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrOfficeLocation","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrOfficeLocation","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6073,7 +6423,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrState","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrState","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6101,7 +6451,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrStreetAddress","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrStreetAddress","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6129,7 +6479,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrTitle","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrTitle","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6157,7 +6507,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrZipCode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrZipCode","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6204,6 +6554,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"9a3da3a0-538d-42b6-9444-aaa57d0ce2bc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6217,7 +6568,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrFaxNumber","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrFaxNumber","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6245,7 +6596,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6270,6 +6621,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"b9c9de5a-894e-4492-9fa3-08c627c11d5d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6283,7 +6635,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6293,12 +6645,10 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"lIndex","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"ppFaxRecipient","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxRecipient","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppFaxRecipient","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxRecipient","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6326,7 +6676,7 @@
 				,"Params":[
 					{"Name":"bstrFaxNumber","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"bstrRecipientName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"ppFaxRecipient","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxRecipient","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"ppFaxRecipient","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxRecipient","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6349,6 +6699,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"76062cc7-f714-4fbd-aa06-ed6e4a4b70f3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6390,7 +6741,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrArchiveFolder","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrArchiveFolder","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6579,7 +6930,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"lPrefetchSize","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"pFaxIncomingMessageIterator","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingMessageIterator","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxIncomingMessageIterator","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingMessageIterator","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6592,7 +6943,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrMessageId","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxIncomingMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingMessage","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxIncomingMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingMessage","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -6603,6 +6954,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"902e64ef-8fd8-4b75-9725-6014df161545"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6664,7 +7016,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pFaxIncomingJobs","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingJobs","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxIncomingJobs","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingJobs","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6677,7 +7029,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrJobId","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxIncomingJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingJob","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxIncomingJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingJob","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -6688,6 +7040,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c9c28f40-8d80-4e53-810f-9a79919b49fd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6729,7 +7082,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrArchiveFolder","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrArchiveFolder","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6918,7 +7271,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"lPrefetchSize","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"pFaxOutgoingMessageIterator","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingMessageIterator","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxOutgoingMessageIterator","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingMessageIterator","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -6931,7 +7284,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrMessageId","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxOutgoingMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingMessage","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxOutgoingMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingMessage","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -6942,6 +7295,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"80b1df24-d9ac-4333-b373-487cedc80ce5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7255,7 +7609,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pFaxOutgoingJobs","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingJobs","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxOutgoingJobs","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingJobs","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7268,7 +7622,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrJobId","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxOutgoingJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingJob","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxOutgoingJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingJob","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -7279,6 +7633,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"fd73ecc4-6f06-4f52-82a8-f7ba06ae3108"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7292,7 +7647,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pFaxIncomingMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingMessage","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxIncomingMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingMessage","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7367,6 +7722,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"7cab88fa-2ef9-4851-b2f3-1d148fed8447"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7380,7 +7736,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7422,7 +7778,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrDeviceName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrDeviceName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7478,7 +7834,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrCSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrCSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7492,7 +7848,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrTSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrTSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7506,7 +7862,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrCallerId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrCallerId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7520,7 +7876,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrRoutingInformation","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrRoutingInformation","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7554,6 +7910,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"2c56d8e6-8c2f-4573-944c-e505f8f5aeed"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7567,7 +7924,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7577,12 +7934,10 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"vIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxOutgoingJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingJob","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxOutgoingJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingJob","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7607,6 +7962,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"6356daad-6614-4583-bf7a-3ad67bbfc71c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7620,7 +7976,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrSubject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrSubject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7634,7 +7990,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrDocumentName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrDocumentName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7676,7 +8032,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrSubmissionId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrSubmissionId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7690,7 +8046,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7760,7 +8116,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFaxSender","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxSender","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxSender","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxSender","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7774,7 +8130,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFaxRecipient","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxRecipient","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxRecipient","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxRecipient","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7844,7 +8200,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrExtendedStatus","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrExtendedStatus","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7928,7 +8284,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrCSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrCSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -7942,7 +8298,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrTSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrTSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8034,6 +8390,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"f5ec5d4f-b840-432f-9980-112fe42a9b7a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8047,7 +8404,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pFaxOutgoingMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingMessage","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxOutgoingMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingMessage","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8122,6 +8479,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"f0ea35de-caa5-4a7c-82c7-2b60ba5f2be2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8135,7 +8493,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrSubmissionId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrSubmissionId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8149,7 +8507,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8163,7 +8521,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrSubject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrSubject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8177,7 +8535,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrDocumentName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrDocumentName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8275,7 +8633,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFaxSender","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxSender","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxSender","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxSender","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8289,7 +8647,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFaxRecipient","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxRecipient","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxRecipient","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxRecipient","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8303,7 +8661,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrDeviceName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrDeviceName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8345,7 +8703,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrCSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrCSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8359,7 +8717,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrTSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrTSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8393,6 +8751,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"011f04e9-4fd6-4c23-9513-b6b66bb26be9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8406,7 +8765,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8416,12 +8775,10 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"vIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxIncomingJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingJob","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxIncomingJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingJob","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8446,6 +8803,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"207529e6-654a-4916-9f88-4d232ee8a107"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8473,7 +8831,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8543,7 +8901,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrExtendedStatus","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrExtendedStatus","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8613,7 +8971,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrCSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrCSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8627,7 +8985,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrTSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrTSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8641,7 +8999,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrCallerId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrCallerId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8655,7 +9013,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrRoutingInformation","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrRoutingInformation","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8732,6 +9090,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"290eac63-83ec-449c-8417-f148df8c682a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8745,7 +9104,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrFriendlyName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrFriendlyName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8759,7 +9118,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrImageName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrImageName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8773,7 +9132,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrUniqueName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrUniqueName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8787,7 +9146,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrTapiProviderName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrTapiProviderName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8924,6 +9283,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"49306c59-b52e-4867-9df4-ca5841c956d0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8951,7 +9311,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrDeviceName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrDeviceName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -8965,7 +9325,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrProviderUniqueName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrProviderUniqueName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9035,7 +9395,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrDescription","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrDescription","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9147,7 +9507,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrCSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrCSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9175,7 +9535,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrTSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrTSID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9286,6 +9646,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"1e29078b-5a69-497b-9592-49b7e7faddb5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9355,7 +9716,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrDatabasePath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrDatabasePath","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9417,6 +9778,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"0880d965-20e8-42e4-8e17-944f192caad4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9561,6 +9923,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"235cbef7-c2de-4bfd-b8da-75097c82c87f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9574,7 +9937,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9584,12 +9947,10 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"vIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxOutboundRoutingGroup","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRoutingGroup","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxOutboundRoutingGroup","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRoutingGroup","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9616,7 +9977,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxOutboundRoutingGroup","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRoutingGroup","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxOutboundRoutingGroup","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRoutingGroup","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9654,6 +10015,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"ca6289a1-7e25-4f87-9a0b-93365734962c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9667,7 +10029,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9695,7 +10057,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pFaxDeviceIds","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxDeviceIds","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxDeviceIds","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxDeviceIds","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -9706,6 +10068,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"2f0f813f-4ce9-443e-8ca1-738cfaeee149"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9719,7 +10082,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9729,9 +10092,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"lIndex","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"plDeviceId","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int32"}},"Attrs":["Out"]}
@@ -9796,6 +10157,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"dcefa1e7-ae7d-4ed6-8521-369edcca5120"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9809,7 +10171,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9819,12 +10181,10 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"lIndex","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"pFaxOutboundRoutingRule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRoutingRule","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxOutboundRoutingRule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRoutingRule","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9852,7 +10212,7 @@
 				,"Params":[
 					{"Name":"lCountryCode","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"lAreaCode","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"pFaxOutboundRoutingRule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRoutingRule","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxOutboundRoutingRule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRoutingRule","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -9894,7 +10254,7 @@
 					,{"Name":"bUseDevice","Type":{"Kind":"Native","Name":"Int16"},"Attrs":["In"]}
 					,{"Name":"bstrGroupName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"lDeviceId","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"pFaxOutboundRoutingRule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRoutingRule","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxOutboundRoutingRule","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutboundRoutingRule","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -9921,6 +10281,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"e1f795d5-07c2-469f-b027-acacc23219da"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10032,7 +10393,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrGroupName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrGroupName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10079,6 +10440,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"2f6c9673-7b26-42de-8eb0-915dcd2a4f4c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10092,7 +10454,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10102,12 +10464,10 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"vIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxInboundRoutingExtension","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxInboundRoutingExtension","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxInboundRoutingExtension","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxInboundRoutingExtension","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10132,6 +10492,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"885b5e08-c26c-4ef9-af83-51580a750be1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10145,7 +10506,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrFriendlyName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrFriendlyName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10159,7 +10520,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrImageName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrImageName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10173,7 +10534,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrUniqueName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrUniqueName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10296,6 +10657,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"783fca10-8908-4473-9d69-f67fbea0c6b9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10309,7 +10671,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10319,12 +10681,10 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"vIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxInboundRoutingMethod","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxInboundRoutingMethod","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxInboundRoutingMethod","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxInboundRoutingMethod","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10349,6 +10709,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"45700061-ad9d-4776-a8c4-64065492cf4b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10362,7 +10723,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10376,7 +10737,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrGUID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrGUID","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10390,7 +10751,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrFunctionName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrFunctionName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10404,7 +10765,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrExtensionFriendlyName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrExtensionFriendlyName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10418,7 +10779,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrExtensionImageName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrExtensionImageName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10479,6 +10840,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"e1347661-f9ef-4d6d-b4a5-c0a068b65cff"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IFaxDocument","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}
 		,"Methods":[
 			{
@@ -10492,7 +10854,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrSubmissionId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrSubmissionId","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -10559,6 +10921,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"10f4d0f7-0994-4543-ab6e-506949128c40"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -10600,7 +10963,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrArchiveLocation","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrArchiveLocation","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11151,6 +11514,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"571ced0f-5609-4f40-9176-547e3a72ca7c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IFaxServer","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}
 		,"Methods":[
 			{
@@ -11164,7 +11528,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFaxConfiguration","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxConfiguration","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxConfiguration","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxConfiguration","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11178,7 +11542,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppCurrentAccount","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccount","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppCurrentAccount","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccount","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11192,7 +11556,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFaxAccountSet","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccountSet","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxAccountSet","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccountSet","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11206,7 +11570,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFaxSecurity2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxSecurity2","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxSecurity2","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxSecurity2","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -11217,6 +11581,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"7428fbae-841e-47b8-86f4-2288946dca1b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11228,7 +11593,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppFaxAccounts","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccounts","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFaxAccounts","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccounts","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11241,7 +11606,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrAccountName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxAccount","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccount","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxAccount","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccount","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11254,7 +11619,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrAccountName","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxAccount","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccount","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxAccount","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccount","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11277,6 +11642,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"93ea8162-8be7-42d1-ae7b-ec74e2d989da"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11290,7 +11656,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppUnk","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11300,12 +11666,10 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"vIndex","Type":{"Kind":"ApiRef","Name":"VARIANT","TargetKind":"Default","Api":"System.Com","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxAccount","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccount","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxAccount","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccount","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11347,6 +11711,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"68535b33-5dc4-4086-be26-b76f9b711006"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11360,7 +11725,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrAccountName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrAccountName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11374,7 +11739,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"ppFolders","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccountFolders","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppFolders","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccountFolders","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11411,6 +11776,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"418a8d96-59a0-4789-b176-edf3dc8fa8f7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IFaxOutgoingJob","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}
 		,"Methods":[
 			{
@@ -11438,7 +11804,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrReceiptAddress","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrReceiptAddress","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11463,6 +11829,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"6463f89d-23d8-46a9-8f86-c47b77ca7926"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11476,7 +11843,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pFaxOutgoingQueue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccountOutgoingQueue","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxOutgoingQueue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccountOutgoingQueue","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11490,7 +11857,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pFaxIncomingQueue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccountIncomingQueue","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxIncomingQueue","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccountIncomingQueue","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11504,7 +11871,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pFaxIncomingArchive","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccountIncomingArchive","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxIncomingArchive","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccountIncomingArchive","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11518,7 +11885,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pFaxOutgoingArchive","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccountOutgoingArchive","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxOutgoingArchive","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxAccountOutgoingArchive","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -11529,6 +11896,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"dd142d92-0186-4a95-a090-cbc3eadba6b4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11540,7 +11908,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pFaxIncomingJobs","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingJobs","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxIncomingJobs","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingJobs","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11553,7 +11921,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrJobId","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxIncomingJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingJob","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxIncomingJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingJob","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -11564,6 +11932,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"0f1424e9-f22d-4553-b7a5-0d24bd0d7e46"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11575,7 +11944,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pFaxOutgoingJobs","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingJobs","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pFaxOutgoingJobs","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingJobs","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11588,7 +11957,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrJobId","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxOutgoingJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingJob","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxOutgoingJob","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingJob","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -11599,6 +11968,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b37df687-bc88-4b46-b3be-b458b3ea9e7f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IFaxOutgoingMessage","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}
 		,"Methods":[
 			{
@@ -11640,7 +12010,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrReceiptAddress","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrReceiptAddress","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11701,6 +12071,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"a8a5b6ef-e0d6-4aee-955c-91625bec9db4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11752,7 +12123,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"lPrefetchSize","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"pFaxIncomingMessageIterator","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingMessageIterator","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxIncomingMessageIterator","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingMessageIterator","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11765,7 +12136,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrMessageId","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxIncomingMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingMessage","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxIncomingMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxIncomingMessage","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -11776,6 +12147,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"5463076d-ec14-491f-926e-b3ceda5e5662"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11827,7 +12199,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"lPrefetchSize","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
-					,{"Name":"pFaxOutgoingMessageIterator","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingMessageIterator","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxOutgoingMessageIterator","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingMessageIterator","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -11840,7 +12212,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"bstrMessageId","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
-					,{"Name":"pFaxOutgoingMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingMessage","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pFaxOutgoingMessage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IFaxOutgoingMessage","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -11872,6 +12244,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"17d851f4-d09b-48fc-99c9-8f24c4db9ab1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -11974,6 +12347,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f9208503-e2bc-48f3-9ec0-e6236f9b509a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IFaxIncomingMessage","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}
 		,"Methods":[
 			{
@@ -11987,7 +12361,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrSubject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrSubject","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12015,7 +12389,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrSenderName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrSenderName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12043,7 +12417,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrSenderFaxNumber","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrSenderFaxNumber","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12099,7 +12473,7 @@
 					"SpecialName"
 				]
 				,"Params":[
-					{"Name":"pbstrRecipients","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pbstrRecipients","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -12211,6 +12585,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"2e037b27-cf8a-4abd-b1e0-5704943bea6f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -12221,6 +12596,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"ec9c69b9-5fe7-4805-9467-82fcd96af903"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12570,6 +12946,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"616ca8d6-a77a-4062-abfd-0e471241c7aa"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -12580,6 +12957,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"b9b3bc81-ac1b-46f3-b39d-0adc30e1b788"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -12736,6 +13114,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"0b5e5bd1-b8a9-47a0-a323-ef4a293ba06a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -13295,6 +13674,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"641bd880-2dc8-11d0-90ea-00aa0060f86c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13509,6 +13889,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6cfa5a80-2dc8-11d0-90ea-00aa0060f86c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13750,6 +14131,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"128a9860-52dc-11d0-9edf-444553540000"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -13911,6 +14293,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"0c9bb460-51ac-11d0-90ea-00aa0060f86c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -15000,7 +15383,7 @@
 		,"Params":[
 			{"Name":"hinst","Type":{"Kind":"ApiRef","Name":"HINSTANCE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"dwVer","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-			,{"Name":"ppSti","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IStillImageW","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out"]}
+			,{"Name":"ppSti","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IStillImageW","TargetKind":"Com","Api":"Devices.Fax","Parents":[]}},"Attrs":["Out","ComOutPtr"]}
 			,{"Name":"punkOuter","Type":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]},"Attrs":["In"]}
 		]
 	}

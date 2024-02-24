@@ -11,6 +11,10 @@ using Win32.UI.WindowsAndMessaging;
 static
 {
 	#region Constants
+	public const String szImeJapan = "MSIME.Japan";
+	public const String szImeKorea = "MSIME.Korea";
+	public const String szImeChina = "MSIME.China";
+	public const String szImeTaiwan = "MSIME.Taiwan";
 	public const Guid CLSID_VERSION_DEPENDENT_MSIME_JAPANESE = .(0x6a91029e, 0xaa49, 0x471b, 0xae, 0xe7, 0x7d, 0x33, 0x27, 0x85, 0x66, 0x0d);
 	public const HRESULT IFEC_S_ALREADY_DEFAULT = 291840;
 	public const uint32 FELANG_REQ_CONV = 65536;
@@ -107,6 +111,8 @@ static
 	public const HRESULT IFED_E_REGISTER_ILLEGAL_POS = -2147192055;
 	public const HRESULT IFED_E_REGISTER_IMPROPER_WORD = -2147192054;
 	public const HRESULT IFED_E_REGISTER_DISCONNECTED = -2147192053;
+	public const uint32 cbCommentMax = 256;
+	public const uint32 wchPrivate1 = 57344;
 	public const uint32 POS_UNDEFINED = 0;
 	public const uint32 JPOS_UNDEFINED = 0;
 	public const uint32 JPOS_MEISHI_FUTSU = 100;
@@ -272,7 +278,10 @@ static
 	public const uint32 VERSION_ID_KOREAN = 33554432;
 	public const uint32 VERSION_ID_CHINESE_TRADITIONAL = 67108864;
 	public const uint32 VERSION_ID_CHINESE_SIMPLIFIED = 134217728;
+	public const String RWM_SERVICE = "MSIMEService";
 	public const uint32 FID_MSIME_VERSION = 0;
+	public const String RWM_UIREADY = "MSIMEUIReady";
+	public const String RWM_MOUSE = "MSIMEMouseOperation";
 	public const uint32 VERSION_MOUSE_OPERATION = 1;
 	public const int32 IMEMOUSERET_NOTHANDLED = -1;
 	public const uint32 IMEMOUSE_VERSION = 255;
@@ -282,10 +291,15 @@ static
 	public const uint32 IMEMOUSE_MDOWN = 4;
 	public const uint32 IMEMOUSE_WUP = 16;
 	public const uint32 IMEMOUSE_WDOWN = 32;
+	public const String RWM_RECONVERT = "MSIMEReconvert";
 	public const uint32 FID_RECONVERT_VERSION = 268435456;
 	public const uint32 VERSION_RECONVERSION = 1;
+	public const String RWM_RECONVERTREQUEST = "MSIMEReconvertRequest";
 	public const uint32 VERSION_DOCUMENTFEED = 1;
+	public const String RWM_DOCUMENTFEED = "MSIMEDocumentFeed";
 	public const uint32 VERSION_QUERYPOSITION = 1;
+	public const String RWM_QUERYPOSITION = "MSIMEQueryPosition";
+	public const String RWM_MODEBIAS = "MSIMEModeBias";
 	public const uint32 VERSION_MODEBIAS = 1;
 	public const uint32 MODEBIAS_GETVERSION = 0;
 	public const uint32 MODEBIAS_SETVALUE = 1;
@@ -294,9 +308,13 @@ static
 	public const uint32 MODEBIASMODE_FILENAME = 1;
 	public const uint32 MODEBIASMODE_READING = 2;
 	public const uint32 MODEBIASMODE_DIGIT = 4;
+	public const String RWM_SHOWIMEPAD = "MSIMEShowImePad";
 	public const uint32 SHOWIMEPAD_DEFAULT = 0;
 	public const uint32 SHOWIMEPAD_CATEGORY = 1;
 	public const uint32 SHOWIMEPAD_GUID = 2;
+	public const String RWM_KEYMAP = "MSIMEKeyMap";
+	public const String RWM_CHGKEYMAP = "MSIMEChangeKeyMap";
+	public const String RWM_NTFYKEYMAP = "MSIMENotifyKeyMap";
 	public const uint32 FID_MSIME_KMS_VERSION = 1;
 	public const uint32 FID_MSIME_KMS_INIT = 2;
 	public const uint32 FID_MSIME_KMS_TERM = 3;
@@ -316,6 +334,7 @@ static
 	public const uint32 IMEKMS_INPTGL = 5;
 	public const uint32 IMEKMS_CANDIDATE = 6;
 	public const uint32 IMEKMS_TYPECAND = 7;
+	public const String RWM_RECONVERTOPTIONS = "MSIMEReconvertOptions";
 	public const uint32 RECONVOPT_NONE = 0;
 	public const uint32 RECONVOPT_USECANCELNOTIFY = 1;
 	public const uint32 GCSEX_CANCELRECONVERT = 268435456;

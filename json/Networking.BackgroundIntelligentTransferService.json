@@ -1508,6 +1508,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"01b7bd23-fb88-4a77-8490-5891d3e4653a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1554,6 +1555,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"ca51e165-c365-424c-8d41-24aaa4ff3c40"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1645,6 +1647,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"19c613a0-fcb8-4f28-81ae-897c3d078f81"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1682,7 +1685,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"LanguageId","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"pErrorDescription","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pErrorDescription","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1695,7 +1698,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"LanguageId","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"pContextDescription","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pContextDescription","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -1707,7 +1710,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pProtocol","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pProtocol","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 		]
@@ -1827,6 +1830,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"37668d37-507e-4160-9316-26306d150b12"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1992,7 +1996,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pVal","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					{"Name":"pVal","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out",{"Kind":"FreeWith","Func":"CoTaskMemFree"}]}
 				]
 			}
 			,{
@@ -2016,7 +2020,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pVal","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					{"Name":"pVal","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out",{"Kind":"FreeWith","Func":"CoTaskMemFree"}]}
 				]
 			}
 			,{
@@ -2040,7 +2044,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pVal","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					{"Name":"pVal","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out",{"Kind":"FreeWith","Func":"CoTaskMemFree"}]}
 				]
 			}
 			,{
@@ -2199,8 +2203,8 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pProxyUsage","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BG_JOB_PROXY_USAGE","TargetKind":"Default","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}},"Attrs":["Out"]}
-					,{"Name":"pProxyList","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
-					,{"Name":"pProxyBypassList","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					,{"Name":"pProxyList","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out",{"Kind":"FreeWith","Func":"CoTaskMemFree"}]}
+					,{"Name":"pProxyBypassList","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out",{"Kind":"FreeWith","Func":"CoTaskMemFree"}]}
 				]
 			}
 			,{
@@ -2222,6 +2226,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"1af4f612-3b71-466f-8f58-7b6f73ac57ad"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2293,6 +2298,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"97ea99c7-0186-4ad4-8df9-c5b4e0ed6b22"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2341,6 +2347,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"ca29d251-b4bb-4679-a3d9-ae8006119d54"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2422,6 +2429,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"5ce34c0d-0dc9-4c1f-897c-daa1b78cee7c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2476,7 +2484,7 @@
 				,"Params":[
 					{"Name":"hResult","Type":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 					,{"Name":"LanguageId","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
-					,{"Name":"pErrorDescription","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					,{"Name":"pErrorDescription","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out",{"Kind":"FreeWith","Func":"CoTaskMemFree"}]}
 				]
 			}
 		]
@@ -2579,6 +2587,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"54b50739-686f-45eb-9dff-d6a9a0faa9af"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IBackgroundCopyJob","TargetKind":"Com","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}
 		,"Methods":[
 			{
@@ -2628,7 +2637,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppBuffer","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}}},"Attrs":["Out","Optional"]}
+					{"Name":"ppBuffer","Type":{"Kind":"PointerTo","Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}}},"Attrs":["Out"]}
 					,{"Name":"pLength","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt64"}},"Attrs":["In","Out"]}
 				]
 			}
@@ -2710,6 +2719,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"443c8934-90ff-48ed-bcde-26f5c7450042"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IBackgroundCopyJob2","TargetKind":"Com","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}
 		,"Methods":[
 			{
@@ -2772,6 +2782,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"83e81b93-0873-474d-8a8c-f2018b1a939c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IBackgroundCopyFile","TargetKind":"Com","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}
 		,"Methods":[
 			{
@@ -2784,7 +2795,7 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"RangeCount","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"UInt32"}},"Attrs":["In","Out"]}
-					,{"Name":"Ranges","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":0,"Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BG_FILE_RANGE","TargetKind":"Default","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}}},"Attrs":["Out"]}
+					,{"Name":"Ranges","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":0,"Child":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BG_FILE_RANGE","TargetKind":"Default","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}}},"Attrs":["Out",{"Kind":"FreeWith","Func":"CoTaskMemFree"}]}
 				]
 			}
 			,{
@@ -2833,6 +2844,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"f1bd1079-9f01-4bdc-8036-f09b70095066"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2884,9 +2896,9 @@
 				,"Attrs":[]
 				,"Params":[
 					{"Name":"pStoreLocation","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BG_CERT_STORE_LOCATION","TargetKind":"Default","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}},"Attrs":["Out"]}
-					,{"Name":"pStoreName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
-					,{"Name":"ppCertHashBlob","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":20,"CountParamIndex":-1,"Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}}},"Attrs":["Out","Optional"]}
-					,{"Name":"pSubjectName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					,{"Name":"pStoreName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					,{"Name":"ppCertHashBlob","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":20,"CountParamIndex":-1,"Child":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Byte"}}},"Attrs":["Out",{"Kind":"FreeWith","Func":"CoTaskMemFree"}]}
+					,{"Name":"pSubjectName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out",{"Kind":"FreeWith","Func":"CoTaskMemFree"}]}
 				]
 			}
 			,{
@@ -2910,7 +2922,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pRequestHeaders","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pRequestHeaders","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out",{"Kind":"FreeWith","Func":"CoTaskMemFree"}]}
 				]
 			}
 			,{
@@ -2952,6 +2964,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"659cdeaf-489e-11d9-a9cd-000d56965251"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3046,6 +3059,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"659cdea4-489e-11d9-a9cd-000d56965251"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3117,6 +3131,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"659cdea2-489e-11d9-a9cd-000d56965251"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3128,7 +3143,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"pName","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -3163,6 +3178,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"659cdea5-489e-11d9-a9cd-000d56965251"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3234,6 +3250,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"659cdead-489e-11d9-a9cd-000d56965251"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3377,7 +3394,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"ppEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumBitsPeers","TargetKind":"Com","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}},"Attrs":["Out","Optional"]}
+					{"Name":"ppEnum","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IEnumBitsPeers","TargetKind":"Com","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}},"Attrs":["Out"]}
 				]
 			}
 			,{
@@ -3410,6 +3427,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"659cdeae-489e-11d9-a9cd-000d56965251"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IBackgroundCopyJob3","TargetKind":"Com","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}
 		,"Methods":[
 			{
@@ -3492,6 +3510,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"659cdeaa-489e-11d9-a9cd-000d56965251"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IBackgroundCopyFile2","TargetKind":"Com","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}
 		,"Methods":[
 			{
@@ -3503,7 +3522,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"pFilename","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					{"Name":"pFilename","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out",{"Kind":"FreeWith","Func":"CoTaskMemFree"}]}
 				]
 			}
 			,{
@@ -3550,6 +3569,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"659cdeac-489e-11d9-a9cd-000d56965251"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IBackgroundCopyCallback","TargetKind":"Com","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}
 		,"Methods":[
 			{
@@ -3580,6 +3600,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"9a2584c3-f7d2-457a-9a5e-22b67bffc7d2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3648,6 +3669,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"ef7e0655-7888-4960-b0e5-730846e03492"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IBackgroundCopyFile3","TargetKind":"Com","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}
 		,"Methods":[
 			{
@@ -3755,6 +3777,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"e847030c-bbba-4657-af6d-484aa42bf1fe"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IBackgroundCopyJob4","TargetKind":"Com","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}
 		,"Methods":[
 			{
@@ -3791,6 +3814,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"85c1657f-dafc-40e8-8834-df18ea25717e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IBackgroundCopyFile4","TargetKind":"Com","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}
 		,"Methods":[
 			{
@@ -3834,6 +3858,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"98c97bd2-e32b-4ad8-a528-95fd8b16bd42"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IBackgroundCopyCallback2","TargetKind":"Com","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}
 		,"Methods":[
 			{
@@ -3859,6 +3884,7 @@
 		,"Platform":"windows10.0.15063"
 		,"Kind":"Com"
 		,"Guid":"cf6784f7-d677-49fd-9368-cb47aee9d1ad"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IBackgroundCopyFile5","TargetKind":"Com","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}
 		,"Methods":[
 			{
@@ -3914,6 +3940,7 @@
 		,"Platform":"windows10.0.17763"
 		,"Kind":"Com"
 		,"Guid":"b591a192-a405-4fc3-8323-4c5c542578fc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IBackgroundCopyJobHttpOptions","TargetKind":"Com","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}
 		,"Methods":[
 			{
@@ -3937,7 +3964,7 @@
 				,"Platform":null
 				,"Attrs":[]
 				,"Params":[
-					{"Name":"method","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out"]}
+					{"Name":"method","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out",{"Kind":"FreeWith","Func":"CoTaskMemFree"}]}
 				]
 			}
 		]
@@ -3955,6 +3982,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4cec0d02-def7-4158-813a-c32a46945ff7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3983,6 +4011,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8a9263d3-fd4c-4eda-9b28-30132a4d4e3c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IBackgroundCopyJobHttpOptions2","TargetKind":"Com","Api":"Networking.BackgroundIntelligentTransferService","Parents":[]}
 		,"Methods":[
 			{
@@ -4023,6 +4052,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"29cfbbf7-09e4-4b97-b0bc-f2287e3d8eb3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4080,6 +4110,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"d5d2d542-5503-4e64-8b48-72ef91a32ee1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4125,6 +4156,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"59f5553c-2031-4629-bb18-2645a6970947"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4237,6 +4269,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"8baeba9d-8f1c-42c4-b82c-09ae79980d25"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4332,6 +4365,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"1ded80a7-53ea-424f-8a04-17fea9adc4f5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4531,6 +4565,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"d993e603-4aa4-47c5-8665-c20d39c2ba4f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4602,6 +4637,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"084f6593-3800-4e08-9b59-99fa59addf82"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4664,6 +4700,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"16f41c69-09f5-41d2-8cd8-3c08c47bc8a8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

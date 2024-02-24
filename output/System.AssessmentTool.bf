@@ -61,15 +61,15 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT get_Score(out float score) mut => VT.get_Score(ref this, out score);
-		public HRESULT get_Title(BSTR* title) mut => VT.get_Title(ref this, title);
-		public HRESULT get_Description(BSTR* description) mut => VT.get_Description(ref this, description);
+		public HRESULT get_Title(out BSTR title) mut => VT.get_Title(ref this, out title);
+		public HRESULT get_Description(out BSTR description) mut => VT.get_Description(ref this, out description);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATAssessmentInfo self, out float score) get_Score;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATAssessmentInfo self, BSTR* title) get_Title;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATAssessmentInfo self, BSTR* description) get_Description;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATAssessmentInfo self, out BSTR title) get_Title;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATAssessmentInfo self, out BSTR description) get_Description;
 		}
 	}
 	[CRepr]
@@ -79,20 +79,20 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetAssessmentInfo(WINSAT_ASSESSMENT_TYPE assessment, IProvideWinSATAssessmentInfo** ppinfo) mut => VT.GetAssessmentInfo(ref this, assessment, ppinfo);
+		public HRESULT GetAssessmentInfo(WINSAT_ASSESSMENT_TYPE assessment, out IProvideWinSATAssessmentInfo* ppinfo) mut => VT.GetAssessmentInfo(ref this, assessment, out ppinfo);
 		public HRESULT get_AssessmentState(out WINSAT_ASSESSMENT_STATE state) mut => VT.get_AssessmentState(ref this, out state);
 		public HRESULT get_AssessmentDateTime(out VARIANT fileTime) mut => VT.get_AssessmentDateTime(ref this, out fileTime);
 		public HRESULT get_SystemRating(out float level) mut => VT.get_SystemRating(ref this, out level);
-		public HRESULT get_RatingStateDesc(BSTR* description) mut => VT.get_RatingStateDesc(ref this, description);
+		public HRESULT get_RatingStateDesc(out BSTR description) mut => VT.get_RatingStateDesc(ref this, out description);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATResultsInfo self, WINSAT_ASSESSMENT_TYPE assessment, IProvideWinSATAssessmentInfo** ppinfo) GetAssessmentInfo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATResultsInfo self, WINSAT_ASSESSMENT_TYPE assessment, out IProvideWinSATAssessmentInfo* ppinfo) GetAssessmentInfo;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATResultsInfo self, out WINSAT_ASSESSMENT_STATE state) get_AssessmentState;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATResultsInfo self, out VARIANT fileTime) get_AssessmentDateTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATResultsInfo self, out float level) get_SystemRating;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATResultsInfo self, BSTR* description) get_RatingStateDesc;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATResultsInfo self, out BSTR description) get_RatingStateDesc;
 		}
 	}
 	[CRepr]
@@ -102,14 +102,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_XML(BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) mut => VT.get_XML(ref this, xPath, namespaces, ppDomNodeList);
-		public HRESULT get_Info(IProvideWinSATResultsInfo** ppWinSATAssessmentInfo) mut => VT.get_Info(ref this, ppWinSATAssessmentInfo);
+		public HRESULT get_XML(BSTR xPath, BSTR namespaces, out IXMLDOMNodeList* ppDomNodeList) mut => VT.get_XML(ref this, xPath, namespaces, out ppDomNodeList);
+		public HRESULT get_Info(out IProvideWinSATResultsInfo* ppWinSATAssessmentInfo) mut => VT.get_Info(ref this, out ppWinSATAssessmentInfo);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueryRecentWinSATAssessment self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_XML;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueryRecentWinSATAssessment self, IProvideWinSATResultsInfo** ppWinSATAssessmentInfo) get_Info;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueryRecentWinSATAssessment self, BSTR xPath, BSTR namespaces, out IXMLDOMNodeList* ppDomNodeList) get_XML;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueryRecentWinSATAssessment self, out IProvideWinSATResultsInfo* ppWinSATAssessmentInfo) get_Info;
 		}
 	}
 	[CRepr]
@@ -119,12 +119,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_Bitmap(WINSAT_BITMAP_SIZE bitmapSize, WINSAT_ASSESSMENT_STATE state, float rating, HBITMAP* pBitmap) mut => VT.get_Bitmap(ref this, bitmapSize, state, rating, pBitmap);
+		public HRESULT get_Bitmap(WINSAT_BITMAP_SIZE bitmapSize, WINSAT_ASSESSMENT_STATE state, float rating, out HBITMAP pBitmap) mut => VT.get_Bitmap(ref this, bitmapSize, state, rating, out pBitmap);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATVisuals self, WINSAT_BITMAP_SIZE bitmapSize, WINSAT_ASSESSMENT_STATE state, float rating, HBITMAP* pBitmap) get_Bitmap;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATVisuals self, WINSAT_BITMAP_SIZE bitmapSize, WINSAT_ASSESSMENT_STATE state, float rating, out HBITMAP pBitmap) get_Bitmap;
 		}
 	}
 	[CRepr]
@@ -134,12 +134,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_AllXML(BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) mut => VT.get_AllXML(ref this, xPath, namespaces, ppDomNodeList);
+		public HRESULT get_AllXML(BSTR xPath, BSTR namespaces, out IXMLDOMNodeList* ppDomNodeList) mut => VT.get_AllXML(ref this, xPath, namespaces, out ppDomNodeList);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueryAllWinSATAssessments self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_AllXML;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueryAllWinSATAssessments self, BSTR xPath, BSTR namespaces, out IXMLDOMNodeList* ppDomNodeList) get_AllXML;
 		}
 	}
 	[CRepr]

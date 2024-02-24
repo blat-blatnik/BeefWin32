@@ -471,6 +471,48 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"KSSTRING_Filter"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{9B365890-165F-11D0-A195-0020AFD156E4}"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KSSTRING_Pin"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{146F1A80-4791-11D0-A5D6-28DB04C10000}"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KSSTRING_Clock"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{53172480-4791-11D0-A5D6-28DB04C10000}"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KSSTRING_Allocator"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{642F5D00-4791-11D0-A5D6-28DB04C10000}"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KSSTRING_AllocatorEx"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{091BB63B-603F-11D1-B067-00A0C9062802}"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"KSSTRING_TopologyNode"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"{0621061A-EE75-11D0-B915-00A0C9223196}"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"KSALLOCATOR_REQUIREMENTF_INPLACE_MODIFIER"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1263,21 +1305,21 @@
 	}
 	,{
 		"Name":"DEVPKEY_KsAudio_PacketSize_Constraints"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"13e004d6-b066-43bd-913b-a415cd13da87","Pid":2}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_KsAudio_Controller_DeviceInterface_Path"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"13e004d6-b066-43bd-913b-a415cd13da87","Pid":3}
 		,"Attrs":[]
 	}
 	,{
 		"Name":"DEVPKEY_KsAudio_PacketSize_Constraints2"
-		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"Type":{"Kind":"ApiRef","Name":"DEVPROPKEY","TargetKind":"Default","Api":"Devices.Properties","Parents":[]}
 		,"ValueType":"PropertyKey"
 		,"Value":{"Fmtid":"9404f781-7191-409b-8b0b-80bf6ec229ae","Pid":2}
 		,"Attrs":[]
@@ -4484,6 +4526,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"28f54685-06fd-11d2-b27a-00a0c9223196"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4542,6 +4585,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"3cb4a69d-bb6f-4d2b-95b7-452d2c155db5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4578,6 +4622,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"4509f757-2d46-4637-8e62-ce7db944f57b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4613,6 +4658,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"478f3a9b-e0c9-4827-9228-6f5505ffe76a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4648,6 +4694,7 @@
 		,"Platform":"windows6.1"
 		,"Kind":"Com"
 		,"Guid":"d9bd72ed-290f-4581-9ff3-61027a8fe532"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4670,6 +4717,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c99af463-d629-4ec4-8c00-e54d68154248"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5030,20 +5078,6 @@
 						]
 					}
 					,{
-						"Name":"_Alignment_e__Struct"
-						,"Architectures":[]
-						,"Platform":null
-						,"Kind":"Struct"
-						,"Size":0
-						,"PackingSize":0
-						,"Fields":[
-							{"Name":"Unused","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":[]}
-							,{"Name":"Alignment","Type":{"Kind":"Array","Shape":{"Size":2},"Child":{"Kind":"Native","Name":"IntPtr"}},"Attrs":[]}
-						]
-						,"NestedTypes":[
-						]
-					}
-					,{
 						"Name":"_EventHandle_e__Struct"
 						,"Architectures":[]
 						,"Platform":null
@@ -5053,6 +5087,20 @@
 						,"Fields":[
 							{"Name":"Event","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 							,{"Name":"Reserved","Type":{"Kind":"Array","Shape":{"Size":2},"Child":{"Kind":"Native","Name":"UIntPtr"}},"Attrs":[]}
+						]
+						,"NestedTypes":[
+						]
+					}
+					,{
+						"Name":"_Alignment_e__Struct"
+						,"Architectures":[]
+						,"Platform":null
+						,"Kind":"Struct"
+						,"Size":0
+						,"PackingSize":0
+						,"Fields":[
+							{"Name":"Unused","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":[]}
+							,{"Name":"Alignment","Type":{"Kind":"Array","Shape":{"Size":2},"Child":{"Kind":"Native","Name":"IntPtr"}},"Attrs":[]}
 						]
 						,"NestedTypes":[
 						]
@@ -14692,7 +14740,7 @@
 		,"Values":[
 			{"Name":"KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_TYPE_DISABLE","Value":0}
 			,{"Name":"KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_TYPE_HOSTNTP","Value":1}
-			,{"Name":"KSPROPERYT_NETWORKCAMERACONTROL_NTPINFO_TYPE_CUSTOM","Value":2}
+			,{"Name":"KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_TYPE_CUSTOM","Value":2}
 		]
 		,"IntegerBase":"Int32"
 	}
@@ -17052,6 +17100,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"31efac30-515c-11d0-a9aa-00aa0061be93"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -17111,6 +17160,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"7f40eac0-3947-11d2-874e-00a0c9223196"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -17145,6 +17195,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"28f54683-06fd-11d2-b27a-00a0c9223196"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

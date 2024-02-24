@@ -2,6 +2,48 @@
 
 "Constants":[
 	{
+		"Name":"wszW32TimeRegKeyTimeProviders"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\W32Time\\TimeProviders"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszW32TimeRegKeyPolicyTimeProviders"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Software\\Policies\\Microsoft\\W32Time\\TimeProviders"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszW32TimeRegValueEnabled"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"Enabled"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszW32TimeRegValueDllName"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DllName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszW32TimeRegValueInputProvider"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"InputProvider"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszW32TimeRegValueMetaDataProvider"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MetaDataProvider"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"TSF_Hardware"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"

@@ -72,30 +72,6 @@ static
 	public const int32 PIDMSI_PRODUCTION = 10;
 	public const int32 PIDMSI_COPYRIGHT = 11;
 	public const uint32 CWCSTORAGENAME = 32;
-	public const int32 STGM_DIRECT = 0;
-	public const int32 STGM_TRANSACTED = 65536;
-	public const int32 STGM_SIMPLE = 134217728;
-	public const int32 STGM_READ = 0;
-	public const int32 STGM_WRITE = 1;
-	public const int32 STGM_READWRITE = 2;
-	public const int32 STGM_SHARE_DENY_NONE = 64;
-	public const int32 STGM_SHARE_DENY_READ = 48;
-	public const int32 STGM_SHARE_DENY_WRITE = 32;
-	public const int32 STGM_SHARE_EXCLUSIVE = 16;
-	public const int32 STGM_PRIORITY = 262144;
-	public const int32 STGM_DELETEONRELEASE = 67108864;
-	public const int32 STGM_NOSCRATCH = 1048576;
-	public const int32 STGM_CREATE = 4096;
-	public const int32 STGM_CONVERT = 131072;
-	public const int32 STGM_FAILIFTHERE = 0;
-	public const int32 STGM_NOSNAPSHOT = 2097152;
-	public const int32 STGM_DIRECT_SWMR = 4194304;
-	public const uint32 STGFMT_STORAGE = 0;
-	public const uint32 STGFMT_NATIVE = 1;
-	public const uint32 STGFMT_FILE = 3;
-	public const uint32 STGFMT_ANY = 4;
-	public const uint32 STGFMT_DOCFILE = 5;
-	public const uint32 STGFMT_DOCUMENT = 0;
 	public const uint32 STGOPTIONS_VERSION = 1;
 	public const uint32 CCH_MAX_PROPSTG_NAME = 31;
 	#endregion
@@ -106,13 +82,37 @@ static
 		LPWSTR = 0,
 		PROPID = 1,
 	}
-	public enum STGC : int32
+	[AllowDuplicates]
+	public enum STGM : uint32
 	{
-		DEFAULT = 0,
-		OVERWRITE = 1,
-		ONLYIFCURRENT = 2,
-		DANGEROUSLYCOMMITMERELYTODISKCACHE = 4,
-		CONSOLIDATE = 8,
+		DIRECT = 0,
+		TRANSACTED = 65536,
+		SIMPLE = 134217728,
+		READ = 0,
+		WRITE = 1,
+		READWRITE = 2,
+		SHARE_DENY_NONE = 64,
+		SHARE_DENY_READ = 48,
+		SHARE_DENY_WRITE = 32,
+		SHARE_EXCLUSIVE = 16,
+		PRIORITY = 262144,
+		DELETEONRELEASE = 67108864,
+		NOSCRATCH = 1048576,
+		CREATE = 4096,
+		CONVERT = 131072,
+		FAILIFTHERE = 0,
+		NOSNAPSHOT = 2097152,
+		DIRECT_SWMR = 4194304,
+	}
+	[AllowDuplicates]
+	public enum STGFMT : uint32
+	{
+		STORAGE = 0,
+		NATIVE = 1,
+		FILE = 3,
+		ANY = 4,
+		DOCFILE = 5,
+		DOCUMENT = 0,
 	}
 	public enum STGMOVE : int32
 	{
@@ -509,13 +509,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT CreateStream(PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, out IStream* ppstm) mut => VT.CreateStream(ref this, pwcsName, grfMode, reserved1, reserved2, out ppstm);
-		public HRESULT OpenStream(PWSTR pwcsName, void* reserved1, uint32 grfMode, uint32 reserved2, out IStream* ppstm) mut => VT.OpenStream(ref this, pwcsName, reserved1, grfMode, reserved2, out ppstm);
-		public HRESULT CreateStorage(PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, out IStorage* ppstg) mut => VT.CreateStorage(ref this, pwcsName, grfMode, reserved1, reserved2, out ppstg);
-		public HRESULT OpenStorage(PWSTR pwcsName, ref IStorage pstgPriority, uint32 grfMode, ref uint16* snbExclude, uint32 reserved, out IStorage* ppstg) mut => VT.OpenStorage(ref this, pwcsName, ref pstgPriority, grfMode, ref snbExclude, reserved, out ppstg);
+		public HRESULT CreateStream(PWSTR pwcsName, STGM grfMode, uint32 reserved1, uint32 reserved2, out IStream* ppstm) mut => VT.CreateStream(ref this, pwcsName, grfMode, reserved1, reserved2, out ppstm);
+		public HRESULT OpenStream(PWSTR pwcsName, void* reserved1, STGM grfMode, uint32 reserved2, out IStream* ppstm) mut => VT.OpenStream(ref this, pwcsName, reserved1, grfMode, reserved2, out ppstm);
+		public HRESULT CreateStorage(PWSTR pwcsName, STGM grfMode, uint32 reserved1, uint32 reserved2, out IStorage* ppstg) mut => VT.CreateStorage(ref this, pwcsName, grfMode, reserved1, reserved2, out ppstg);
+		public HRESULT OpenStorage(PWSTR pwcsName, ref IStorage pstgPriority, STGM grfMode, ref uint16* snbExclude, uint32 reserved, out IStorage* ppstg) mut => VT.OpenStorage(ref this, pwcsName, ref pstgPriority, grfMode, ref snbExclude, reserved, out ppstg);
 		public HRESULT CopyTo(uint32 ciidExclude, Guid* rgiidExclude, uint16** snbExclude, ref IStorage pstgDest) mut => VT.CopyTo(ref this, ciidExclude, rgiidExclude, snbExclude, ref pstgDest);
-		public HRESULT MoveElementTo(PWSTR pwcsName, ref IStorage pstgDest, PWSTR pwcsNewName, uint32 grfFlags) mut => VT.MoveElementTo(ref this, pwcsName, ref pstgDest, pwcsNewName, grfFlags);
-		public HRESULT Commit(uint32 grfCommitFlags) mut => VT.Commit(ref this, grfCommitFlags);
+		public HRESULT MoveElementTo(PWSTR pwcsName, ref IStorage pstgDest, PWSTR pwcsNewName, STGMOVE grfFlags) mut => VT.MoveElementTo(ref this, pwcsName, ref pstgDest, pwcsNewName, grfFlags);
+		public HRESULT Commit(STGC grfCommitFlags) mut => VT.Commit(ref this, grfCommitFlags);
 		public HRESULT Revert() mut => VT.Revert(ref this);
 		public HRESULT EnumElements(uint32 reserved1, void* reserved2, uint32 reserved3, out IEnumSTATSTG* ppenum) mut => VT.EnumElements(ref this, reserved1, reserved2, reserved3, out ppenum);
 		public HRESULT DestroyElement(PWSTR pwcsName) mut => VT.DestroyElement(ref this, pwcsName);
@@ -528,13 +528,13 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self, PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, out IStream* ppstm) CreateStream;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self, PWSTR pwcsName, void* reserved1, uint32 grfMode, uint32 reserved2, out IStream* ppstm) OpenStream;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self, PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, out IStorage* ppstg) CreateStorage;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self, PWSTR pwcsName, ref IStorage pstgPriority, uint32 grfMode, ref uint16* snbExclude, uint32 reserved, out IStorage* ppstg) OpenStorage;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self, PWSTR pwcsName, STGM grfMode, uint32 reserved1, uint32 reserved2, out IStream* ppstm) CreateStream;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self, PWSTR pwcsName, void* reserved1, STGM grfMode, uint32 reserved2, out IStream* ppstm) OpenStream;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self, PWSTR pwcsName, STGM grfMode, uint32 reserved1, uint32 reserved2, out IStorage* ppstg) CreateStorage;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self, PWSTR pwcsName, ref IStorage pstgPriority, STGM grfMode, ref uint16* snbExclude, uint32 reserved, out IStorage* ppstg) OpenStorage;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self, uint32 ciidExclude, Guid* rgiidExclude, uint16** snbExclude, ref IStorage pstgDest) CopyTo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self, PWSTR pwcsName, ref IStorage pstgDest, PWSTR pwcsNewName, uint32 grfFlags) MoveElementTo;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self, uint32 grfCommitFlags) Commit;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self, PWSTR pwcsName, ref IStorage pstgDest, PWSTR pwcsNewName, STGMOVE grfFlags) MoveElementTo;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self, STGC grfCommitFlags) Commit;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self) Revert;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self, uint32 reserved1, void* reserved2, uint32 reserved3, out IEnumSTATSTG* ppenum) EnumElements;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorage self, PWSTR pwcsName) DestroyElement;
@@ -843,11 +843,11 @@ static
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT FreePropVariantArray(uint32 cVariants, PROPVARIANT* rgvars);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT StgCreateDocfile(PWSTR pwcsName, uint32 grfMode, uint32 reserved, out IStorage* ppstgOpen);
+	public static extern HRESULT StgCreateDocfile(PWSTR pwcsName, STGM grfMode, uint32 reserved, out IStorage* ppstgOpen);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT StgCreateDocfileOnILockBytes(ref ILockBytes plkbyt, uint32 grfMode, uint32 reserved, out IStorage* ppstgOpen);
+	public static extern HRESULT StgCreateDocfileOnILockBytes(ref ILockBytes plkbyt, STGM grfMode, uint32 reserved, out IStorage* ppstgOpen);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT StgOpenStorage(PWSTR pwcsName, IStorage* pstgPriority, uint32 grfMode, uint16** snbExclude, uint32 reserved, out IStorage* ppstgOpen);
+	public static extern HRESULT StgOpenStorage(PWSTR pwcsName, IStorage* pstgPriority, STGM grfMode, uint16** snbExclude, uint32 reserved, out IStorage* ppstgOpen);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgOpenStorageOnILockBytes(ref ILockBytes plkbyt, IStorage* pstgPriority, uint32 grfMode, uint16** snbExclude, uint32 reserved, out IStorage* ppstgOpen);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -857,9 +857,9 @@ static
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgSetTimes(PWSTR lpszName, FILETIME* pctime, FILETIME* patime, FILETIME* pmtime);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT StgCreateStorageEx(PWSTR pwcsName, uint32 grfMode, uint32 stgfmt, uint32 grfAttrs, STGOPTIONS* pStgOptions, SECURITY_DESCRIPTOR* pSecurityDescriptor, in Guid riid, void** ppObjectOpen);
+	public static extern HRESULT StgCreateStorageEx(PWSTR pwcsName, STGM grfMode, STGFMT stgfmt, uint32 grfAttrs, STGOPTIONS* pStgOptions, PSECURITY_DESCRIPTOR pSecurityDescriptor, in Guid riid, void** ppObjectOpen);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern HRESULT StgOpenStorageEx(PWSTR pwcsName, uint32 grfMode, uint32 stgfmt, uint32 grfAttrs, STGOPTIONS* pStgOptions, SECURITY_DESCRIPTOR* pSecurityDescriptor, in Guid riid, void** ppObjectOpen);
+	public static extern HRESULT StgOpenStorageEx(PWSTR pwcsName, STGM grfMode, STGFMT stgfmt, uint32 grfAttrs, STGOPTIONS* pStgOptions, PSECURITY_DESCRIPTOR pSecurityDescriptor, in Guid riid, void** ppObjectOpen);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgCreatePropStg(ref IUnknown pUnk, in Guid fmtid, in Guid pclsid, uint32 grfFlags, uint32 dwReserved, out IPropertyStorage* ppPropStg);
 	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]

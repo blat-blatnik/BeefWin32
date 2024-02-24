@@ -30,6 +30,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"DD_SCSI_DEVICE_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Device\\ScsiPort"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"IOCTL_SCSI_PASS_THROUGH"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -209,6 +216,83 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":32
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IOCTL_MINIPORT_SIGNATURE_SCSIDISK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SCSIDISK"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IOCTL_MINIPORT_SIGNATURE_HYBRDISK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"HYBRDISK"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IOCTL_MINIPORT_SIGNATURE_DSM_NOTIFICATION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MPDSM   "
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IOCTL_MINIPORT_SIGNATURE_DSM_GENERAL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"MPDSMGEN"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IOCTL_MINIPORT_SIGNATURE_FIRMWARE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"FIRMWARE"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IOCTL_MINIPORT_SIGNATURE_QUERY_PROTOCOL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"PROTOCOL"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IOCTL_MINIPORT_SIGNATURE_SET_PROTOCOL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SETPROTO"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IOCTL_MINIPORT_SIGNATURE_QUERY_TEMPERATURE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TEMPERAT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IOCTL_MINIPORT_SIGNATURE_SET_TEMPERATURE_THRESHOLD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"SETTEMPT"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IOCTL_MINIPORT_SIGNATURE_QUERY_PHYSICAL_TOPOLOGY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"TOPOLOGY"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"IOCTL_MINIPORT_SIGNATURE_ENDURANCE_INFO"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ENDURINF"
 		,"Attrs":[]
 	}
 	,{
@@ -990,51 +1074,135 @@
 	}
 	,{
 		"Name":"ISCSI_SECURITY_FLAG_TUNNEL_MODE_PREFERRED"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":64
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0x00000040"
 		,"Attrs":[]
 	}
 	,{
 		"Name":"ISCSI_SECURITY_FLAG_TRANSPORT_MODE_PREFERRED"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":32
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0x00000020"
 		,"Attrs":[]
 	}
 	,{
 		"Name":"ISCSI_SECURITY_FLAG_PFS_ENABLED"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":16
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0x00000010"
 		,"Attrs":[]
 	}
 	,{
 		"Name":"ISCSI_SECURITY_FLAG_AGGRESSIVE_MODE_ENABLED"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":8
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0x00000008"
 		,"Attrs":[]
 	}
 	,{
 		"Name":"ISCSI_SECURITY_FLAG_MAIN_MODE_ENABLED"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":4
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0x00000004"
 		,"Attrs":[]
 	}
 	,{
 		"Name":"ISCSI_SECURITY_FLAG_IKE_IPSEC_ENABLED"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":2
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0x00000002"
 		,"Attrs":[]
 	}
 	,{
 		"Name":"ISCSI_SECURITY_FLAG_VALID"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":1
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0x00000001"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ISCSI_LOGIN_OPTIONS_HEADER_DIGEST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0x00000001"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ISCSI_LOGIN_OPTIONS_DATA_DIGEST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0x00000002"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ISCSI_LOGIN_OPTIONS_MAXIMUM_CONNECTIONS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0x00000004"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ISCSI_LOGIN_OPTIONS_DEFAULT_TIME_2_WAIT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0x00000008"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ISCSI_LOGIN_OPTIONS_DEFAULT_TIME_2_RETAIN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0x00000010"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ISCSI_LOGIN_OPTIONS_USERNAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0x00000020"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ISCSI_LOGIN_OPTIONS_PASSWORD"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0x00000040"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ISCSI_LOGIN_OPTIONS_AUTH_TYPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"0x00000080"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ID_IPV4_ADDR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ID_FQDN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ID_USER_FQDN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"3"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ID_IPV6_ADDR"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"5"
 		,"Attrs":[]
 	}
 	,{
@@ -1080,62 +1248,6 @@
 		,"Attrs":[]
 	}
 	,{
-		"Name":"ISCSI_LOGIN_OPTIONS_HEADER_DIGEST"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":1
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ISCSI_LOGIN_OPTIONS_DATA_DIGEST"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":2
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ISCSI_LOGIN_OPTIONS_MAXIMUM_CONNECTIONS"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":4
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ISCSI_LOGIN_OPTIONS_DEFAULT_TIME_2_WAIT"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":8
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ISCSI_LOGIN_OPTIONS_DEFAULT_TIME_2_RETAIN"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":16
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ISCSI_LOGIN_OPTIONS_USERNAME"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":32
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ISCSI_LOGIN_OPTIONS_PASSWORD"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":64
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ISCSI_LOGIN_OPTIONS_AUTH_TYPE"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":128
-		,"Attrs":[]
-	}
-	,{
 		"Name":"ISCSI_LOGIN_OPTIONS_VERSION"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1154,34 +1266,6 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":4
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ID_IPV4_ADDR"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":1
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ID_FQDN"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":2
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ID_USER_FQDN"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":3
-		,"Attrs":[]
-	}
-	,{
-		"Name":"ID_IPV6_ADDR"
-		,"Type":{"Kind":"Native","Name":"UInt32"}
-		,"ValueType":"UInt32"
-		,"Value":5
 		,"Attrs":[]
 	}
 ]
@@ -2315,19 +2399,6 @@
 		]
 	}
 	,{
-		"Name":"DUMP_DEVICE_POWERON_ROUTINE"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"FunctionPointer"
-		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
-		,"ReturnAttrs":[]
-		,"Attrs":[]
-		,"Params":[
-			{"Name":"Context","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
-		]
-	}
-	,{
 		"Name":"PDUMP_DEVICE_POWERON_ROUTINE"
 		,"Architectures":[]
 		,"Platform":null
@@ -2337,6 +2408,7 @@
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
+			{"Name":"Context","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Void"}},"Attrs":["In"]}
 		]
 	}
 	,{

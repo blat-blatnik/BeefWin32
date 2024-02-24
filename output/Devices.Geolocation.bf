@@ -862,23 +862,23 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetAddressLine1(BSTR* pbstrAddress1) mut => VT.GetAddressLine1(ref this, pbstrAddress1);
-		public HRESULT GetAddressLine2(BSTR* pbstrAddress2) mut => VT.GetAddressLine2(ref this, pbstrAddress2);
-		public HRESULT GetCity(BSTR* pbstrCity) mut => VT.GetCity(ref this, pbstrCity);
-		public HRESULT GetStateProvince(BSTR* pbstrStateProvince) mut => VT.GetStateProvince(ref this, pbstrStateProvince);
-		public HRESULT GetPostalCode(BSTR* pbstrPostalCode) mut => VT.GetPostalCode(ref this, pbstrPostalCode);
-		public HRESULT GetCountryRegion(BSTR* pbstrCountryRegion) mut => VT.GetCountryRegion(ref this, pbstrCountryRegion);
+		public HRESULT GetAddressLine1(out BSTR pbstrAddress1) mut => VT.GetAddressLine1(ref this, out pbstrAddress1);
+		public HRESULT GetAddressLine2(out BSTR pbstrAddress2) mut => VT.GetAddressLine2(ref this, out pbstrAddress2);
+		public HRESULT GetCity(out BSTR pbstrCity) mut => VT.GetCity(ref this, out pbstrCity);
+		public HRESULT GetStateProvince(out BSTR pbstrStateProvince) mut => VT.GetStateProvince(ref this, out pbstrStateProvince);
+		public HRESULT GetPostalCode(out BSTR pbstrPostalCode) mut => VT.GetPostalCode(ref this, out pbstrPostalCode);
+		public HRESULT GetCountryRegion(out BSTR pbstrCountryRegion) mut => VT.GetCountryRegion(ref this, out pbstrCountryRegion);
 		public HRESULT GetDetailLevel(out uint32 pDetailLevel) mut => VT.GetDetailLevel(ref this, out pDetailLevel);
 
 		[CRepr]
 		public struct VTable : ILocationReport.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICivicAddressReport self, BSTR* pbstrAddress1) GetAddressLine1;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICivicAddressReport self, BSTR* pbstrAddress2) GetAddressLine2;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICivicAddressReport self, BSTR* pbstrCity) GetCity;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICivicAddressReport self, BSTR* pbstrStateProvince) GetStateProvince;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICivicAddressReport self, BSTR* pbstrPostalCode) GetPostalCode;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICivicAddressReport self, BSTR* pbstrCountryRegion) GetCountryRegion;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICivicAddressReport self, out BSTR pbstrAddress1) GetAddressLine1;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICivicAddressReport self, out BSTR pbstrAddress2) GetAddressLine2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICivicAddressReport self, out BSTR pbstrCity) GetCity;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICivicAddressReport self, out BSTR pbstrStateProvince) GetStateProvince;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICivicAddressReport self, out BSTR pbstrPostalCode) GetPostalCode;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICivicAddressReport self, out BSTR pbstrCountryRegion) GetCountryRegion;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICivicAddressReport self, out uint32 pDetailLevel) GetDetailLevel;
 		}
 	}
@@ -891,7 +891,7 @@ static
 		
 		public HRESULT RegisterForReport(ILocationEvents* pEvents, in Guid reportType, uint32 dwRequestedReportInterval) mut => VT.RegisterForReport(ref this, pEvents, reportType, dwRequestedReportInterval);
 		public HRESULT UnregisterForReport(in Guid reportType) mut => VT.UnregisterForReport(ref this, reportType);
-		public HRESULT GetReport(in Guid reportType, ILocationReport** ppLocationReport) mut => VT.GetReport(ref this, reportType, ppLocationReport);
+		public HRESULT GetReport(in Guid reportType, out ILocationReport* ppLocationReport) mut => VT.GetReport(ref this, reportType, out ppLocationReport);
 		public HRESULT GetReportStatus(in Guid reportType, out LOCATION_REPORT_STATUS pStatus) mut => VT.GetReportStatus(ref this, reportType, out pStatus);
 		public HRESULT GetReportInterval(in Guid reportType, out uint32 pMilliseconds) mut => VT.GetReportInterval(ref this, reportType, out pMilliseconds);
 		public HRESULT SetReportInterval(in Guid reportType, uint32 millisecondsRequested) mut => VT.SetReportInterval(ref this, reportType, millisecondsRequested);
@@ -904,7 +904,7 @@ static
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocation self, ILocationEvents* pEvents, in Guid reportType, uint32 dwRequestedReportInterval) RegisterForReport;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocation self, in Guid reportType) UnregisterForReport;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocation self, in Guid reportType, ILocationReport** ppLocationReport) GetReport;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocation self, in Guid reportType, out ILocationReport* ppLocationReport) GetReport;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocation self, in Guid reportType, out LOCATION_REPORT_STATUS pStatus) GetReportStatus;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocation self, in Guid reportType, out uint32 pMilliseconds) GetReportInterval;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocation self, in Guid reportType, uint32 millisecondsRequested) SetReportInterval;
@@ -938,13 +938,13 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT SetReport(in Guid reportType, ILocationReport* pLocationReport) mut => VT.SetReport(ref this, reportType, pLocationReport);
-		public HRESULT GetReport(in Guid reportType, ILocationReport** ppLocationReport) mut => VT.GetReport(ref this, reportType, ppLocationReport);
+		public HRESULT GetReport(in Guid reportType, out ILocationReport* ppLocationReport) mut => VT.GetReport(ref this, reportType, out ppLocationReport);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDefaultLocation self, in Guid reportType, ILocationReport* pLocationReport) SetReport;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDefaultLocation self, in Guid reportType, ILocationReport** ppLocationReport) GetReport;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDefaultLocation self, in Guid reportType, out ILocationReport* ppLocationReport) GetReport;
 		}
 	}
 	[CRepr]
@@ -996,24 +996,24 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_AddressLine1(BSTR* pAddress1) mut => VT.get_AddressLine1(ref this, pAddress1);
-		public HRESULT get_AddressLine2(BSTR* pAddress2) mut => VT.get_AddressLine2(ref this, pAddress2);
-		public HRESULT get_City(BSTR* pCity) mut => VT.get_City(ref this, pCity);
-		public HRESULT get_StateProvince(BSTR* pStateProvince) mut => VT.get_StateProvince(ref this, pStateProvince);
-		public HRESULT get_PostalCode(BSTR* pPostalCode) mut => VT.get_PostalCode(ref this, pPostalCode);
-		public HRESULT get_CountryRegion(BSTR* pCountryRegion) mut => VT.get_CountryRegion(ref this, pCountryRegion);
+		public HRESULT get_AddressLine1(out BSTR pAddress1) mut => VT.get_AddressLine1(ref this, out pAddress1);
+		public HRESULT get_AddressLine2(out BSTR pAddress2) mut => VT.get_AddressLine2(ref this, out pAddress2);
+		public HRESULT get_City(out BSTR pCity) mut => VT.get_City(ref this, out pCity);
+		public HRESULT get_StateProvince(out BSTR pStateProvince) mut => VT.get_StateProvince(ref this, out pStateProvince);
+		public HRESULT get_PostalCode(out BSTR pPostalCode) mut => VT.get_PostalCode(ref this, out pPostalCode);
+		public HRESULT get_CountryRegion(out BSTR pCountryRegion) mut => VT.get_CountryRegion(ref this, out pCountryRegion);
 		public HRESULT get_DetailLevel(out uint32 pDetailLevel) mut => VT.get_DetailLevel(ref this, out pDetailLevel);
 		public HRESULT get_Timestamp(out double pVal) mut => VT.get_Timestamp(ref this, out pVal);
 
 		[CRepr]
 		public struct VTable : IDispatch.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDispCivicAddressReport self, BSTR* pAddress1) get_AddressLine1;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDispCivicAddressReport self, BSTR* pAddress2) get_AddressLine2;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDispCivicAddressReport self, BSTR* pCity) get_City;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDispCivicAddressReport self, BSTR* pStateProvince) get_StateProvince;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDispCivicAddressReport self, BSTR* pPostalCode) get_PostalCode;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDispCivicAddressReport self, BSTR* pCountryRegion) get_CountryRegion;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDispCivicAddressReport self, out BSTR pAddress1) get_AddressLine1;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDispCivicAddressReport self, out BSTR pAddress2) get_AddressLine2;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDispCivicAddressReport self, out BSTR pCity) get_City;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDispCivicAddressReport self, out BSTR pStateProvince) get_StateProvince;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDispCivicAddressReport self, out BSTR pPostalCode) get_PostalCode;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDispCivicAddressReport self, out BSTR pCountryRegion) get_CountryRegion;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDispCivicAddressReport self, out uint32 pDetailLevel) get_DetailLevel;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDispCivicAddressReport self, out double pVal) get_Timestamp;
 		}
@@ -1054,12 +1054,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_LatLongReport(IDispLatLongReport** pVal) mut => VT.get_LatLongReport(ref this, pVal);
+		public HRESULT get_LatLongReport(out IDispLatLongReport* pVal) mut => VT.get_LatLongReport(ref this, out pVal);
 
 		[CRepr]
 		public struct VTable : ILocationReportFactory.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILatLongReportFactory self, IDispLatLongReport** pVal) get_LatLongReport;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ILatLongReportFactory self, out IDispLatLongReport* pVal) get_LatLongReport;
 		}
 	}
 	[CRepr]
@@ -1069,12 +1069,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT get_CivicAddressReport(IDispCivicAddressReport** pVal) mut => VT.get_CivicAddressReport(ref this, pVal);
+		public HRESULT get_CivicAddressReport(out IDispCivicAddressReport* pVal) mut => VT.get_CivicAddressReport(ref this, out pVal);
 
 		[CRepr]
 		public struct VTable : ILocationReportFactory.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICivicAddressReportFactory self, IDispCivicAddressReport** pVal) get_CivicAddressReport;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ICivicAddressReportFactory self, out IDispCivicAddressReport* pVal) get_CivicAddressReport;
 		}
 	}
 	[CRepr]

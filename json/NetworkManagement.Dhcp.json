@@ -1920,6 +1920,27 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"DHCP_CALLOUT_LIST_KEY"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"System\\CurrentControlSet\\Services\\DHCPServer\\Parameters"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DHCP_CALLOUT_LIST_VALUE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CalloutDlls"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DHCP_CALLOUT_ENTRY_POINT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"DhcpServerCalloutEntry"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"DHCP_CONTROL_START"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"

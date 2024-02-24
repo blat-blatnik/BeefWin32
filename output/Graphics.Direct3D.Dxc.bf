@@ -8,6 +8,27 @@ static
 {
 	#region Constants
 	public const uint32 DXC_HASHFLAG_INCLUDES_SOURCE = 1;
+	public const String DXC_ARG_DEBUG = "-Zi";
+	public const String DXC_ARG_SKIP_VALIDATION = "-Vd";
+	public const String DXC_ARG_SKIP_OPTIMIZATIONS = "-Od";
+	public const String DXC_ARG_PACK_MATRIX_ROW_MAJOR = "-Zpr";
+	public const String DXC_ARG_PACK_MATRIX_COLUMN_MAJOR = "-Zpc";
+	public const String DXC_ARG_AVOID_FLOW_CONTROL = "-Gfa";
+	public const String DXC_ARG_PREFER_FLOW_CONTROL = "-Gfp";
+	public const String DXC_ARG_ENABLE_STRICTNESS = "-Ges";
+	public const String DXC_ARG_ENABLE_BACKWARDS_COMPATIBILITY = "-Gec";
+	public const String DXC_ARG_IEEE_STRICTNESS = "-Gis";
+	public const String DXC_ARG_OPTIMIZATION_LEVEL0 = "-O0";
+	public const String DXC_ARG_OPTIMIZATION_LEVEL1 = "-O1";
+	public const String DXC_ARG_OPTIMIZATION_LEVEL2 = "-O2";
+	public const String DXC_ARG_OPTIMIZATION_LEVEL3 = "-O3";
+	public const String DXC_ARG_WARNINGS_ARE_ERRORS = "-WX";
+	public const String DXC_ARG_RESOURCES_MAY_ALIAS = "-res_may_alias";
+	public const String DXC_ARG_ALL_RESOURCES_BOUND = "-all_resources_bound";
+	public const String DXC_ARG_DEBUG_NAME_FOR_SOURCE = "-Zss";
+	public const String DXC_ARG_DEBUG_NAME_FOR_BINARY = "-Zsb";
+	public const String DXC_EXTRA_OUTPUT_NAME_STDOUT = "*stdout*";
+	public const String DXC_EXTRA_OUTPUT_NAME_STDERR = "*stderr*";
 	public const uint32 DxcValidatorFlags_Default = 0;
 	public const uint32 DxcValidatorFlags_InPlaceEdit = 1;
 	public const uint32 DxcValidatorFlags_RootSignatureOnly = 2;

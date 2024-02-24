@@ -394,6 +394,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"beb94909-e451-438b-b5a7-d79e767b75d8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -471,6 +472,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"f1346df2-c282-4e22-b918-743a929a8d55"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -520,6 +522,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"b5c49650-99bc-481c-9a34-3d53a4106708"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -592,6 +595,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"9099e33b-246f-41e4-881a-008eb613f858"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -629,6 +633,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"2cf5c4fd-e54c-4ea5-ba4e-f8c4b105a8c8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -652,6 +657,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"a83aacd3-41c0-4501-b8a3-74164f50b2fd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -676,6 +682,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"91df827b-94fd-468f-827b-57f41b2f6f2e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -746,6 +753,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"f007eeaf-9831-411c-9847-917cdc62d1fe"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -792,6 +800,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"5efec991-bca3-42d1-9ec2-e92d609ec22a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -851,6 +860,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"277672ac-4f63-42c1-8abc-beae3600eb59"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -922,6 +932,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"02b856a2-4262-4070-bacb-1a8cbbc42305"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -968,6 +979,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"75cf3930-3244-4fe0-a8c8-e0bcb270b889"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1003,6 +1015,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"6b429b5b-36ef-479e-b9eb-0c1482b49e16"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1049,6 +1062,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"4e1bd148-55a0-4480-a3d1-15544710637c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1168,6 +1182,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"d06f67bc-b31d-4eba-a8af-638e73e77b4d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IAppxManifestReader","TargetKind":"Com","Api":"Storage.Packaging.Appx","Parents":[]}
 		,"Methods":[
 			{
@@ -1190,6 +1205,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c43825ab-69b7-400a-9709-cc37f5a72d24"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IAppxManifestReader2","TargetKind":"Com","Api":"Storage.Packaging.Appx","Parents":[]}
 		,"Methods":[
 			{
@@ -1225,6 +1241,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"4579bb7c-741d-4161-b5a1-47bd3b78ad9b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IAppxManifestReader3","TargetKind":"Com","Api":"Storage.Packaging.Appx","Parents":[]}
 		,"Methods":[
 			{
@@ -1247,6 +1264,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"8d7ae132-a690-4c00-b75a-6aae1feaac80"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1269,6 +1287,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"34deaca4-d3c0-4e3e-b312-e42625e3807e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1291,6 +1310,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8efe6f27-0ce0-4988-b32d-738eb63db3b7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1337,6 +1357,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"fe039db2-467f-4755-8404-8f5eb6865b33"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1383,6 +1404,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1210cb94-5a92-4602-be24-79f318af4af9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1405,6 +1427,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"d402b2d1-f600-49e0-95e6-975d8da13d89"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1451,6 +1474,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c031bee4-bbcc-48ea-a237-c34045c80a07"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1497,6 +1521,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"b84e2fc3-f8ec-4bc1-8ae2-156346f5ffea"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1543,6 +1568,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"154995ee-54a6-4f14-ac97-d8cf0519644b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1577,6 +1603,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6427a646-7f49-433e-b1a6-0da309f6885a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1623,6 +1650,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3455d234-8414-410d-95c7-7b35255b8391"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1669,6 +1697,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"c26f23a8-ee10-4ad6-b898-2b4d7aebfe6a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1691,6 +1720,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"2634847d-5b5d-4fe5-a243-002ff95edc7e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1725,6 +1755,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"a99c4f00-51d2-4f0f-ba46-7ed5255ebdff"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1771,6 +1802,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"05d0611c-bc29-46d5-97e2-84b9c79bd8ae"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1817,6 +1849,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"283ce2d7-7153-4a91-9649-7a0f7240945f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1924,6 +1957,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"2256999d-d617-42f1-880e-0ba4542319d5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IAppxManifestPackageId","TargetKind":"Com","Api":"Storage.Packaging.Appx","Parents":[]}
 		,"Methods":[
 			{
@@ -1946,6 +1980,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"03faf64d-f26f-4b2c-aaf7-8fe7789b8bca"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1982,6 +2017,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"36537f36-27a4-4788-88c0-733819575017"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2028,6 +2064,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"9091b09b-c8d5-4f31-8687-a338259faefb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2074,6 +2111,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"b43bbcf9-65a6-42dd-bac0-8c6741e7f5a4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2120,6 +2158,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"e4946b59-733e-43f0-a724-3bde4c1285a0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2166,6 +2205,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"dda0b713-f3ff-49d3-898a-2786780c5d98"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IAppxManifestPackageDependency","TargetKind":"Com","Api":"Storage.Packaging.Appx","Parents":[]}
 		,"Methods":[
 			{
@@ -2188,6 +2228,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"1ac56374-6198-4d6b-92e4-749d5ab8a895"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2210,6 +2251,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"de4dfbbd-881a-48bb-858c-d6f2baeae6ed"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2256,6 +2298,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"30204541-427b-4a1c-bacf-655bf463a540"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2302,6 +2345,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"11d22258-f470-42c1-b291-8361c5437e41"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2348,6 +2392,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"9eb8a55a-f04b-4d0d-808d-686185d4847a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2394,6 +2439,7 @@
 		,"Platform":"windows8.0"
 		,"Kind":"Com"
 		,"Guid":"5da89bf4-3773-46be-b650-7e744863b7e8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2429,6 +2475,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"8ef6adfe-3762-4a8f-9373-2fc5d444c8d2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2475,6 +2522,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"3b53a497-3c5c-48d1-9ea3-bb7eac8cd7d4"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2521,6 +2569,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"bba65864-965f-4a5f-855f-f074bdbf3a7b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2571,6 +2620,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"ec446fe8-bfec-4c64-ab4f-49f038f0c6d2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2605,6 +2655,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"6d8fe971-01cc-49a0-b685-233851279962"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2628,6 +2679,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"ad711152-f969-4193-82d5-9ddf2786d21a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2663,6 +2715,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"9cd9d523-5009-4c01-9882-dc029fbd47a3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2715,6 +2768,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"dd75b8c0-ba76-43b0-ae0f-68656a1dc5c8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2787,6 +2841,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"cf0ebbc1-cc99-4106-91eb-e67462e04fb0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2833,6 +2888,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"5517df70-033f-4af2-8213-87d766805c02"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2855,6 +2911,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"f9b856ee-49a6-4e19-b2b0-6a2406d63a32"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2901,6 +2958,7 @@
 		,"Platform":"windows8.1"
 		,"Kind":"Com"
 		,"Guid":"54cd06c1-268f-40bb-8ed2-757a9ebaec8d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2983,6 +3041,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"44c2acbc-b2cf-4ccb-bbdb-9c6da8c3bc9e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3029,6 +3088,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6ba74b98-bb74-4296-80d0-5f4256a99675"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3051,6 +3111,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"5da6f13d-a8a7-4532-857c-1393d659371d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3073,6 +3134,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"9a178793-f97e-46ac-aaca-dd5ba4c177c8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3119,6 +3181,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"515bf2e8-bcb0-4d69-8c48-e383147b6e12"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3165,6 +3228,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"1a09a2fd-7440-44eb-8c84-848205a6a1cc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3211,6 +3275,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"328f6468-c04f-4e3c-b6fa-6b8d27f3003a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3245,6 +3310,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"3264e477-16d1-4d63-823e-7d2984696634"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3291,6 +3357,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"418726d8-dd99-4f5d-9886-157add20de01"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3325,6 +3392,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"f329791d-540b-4a9f-bc75-3282b7d73193"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3359,6 +3427,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"d07ab776-a9de-4798-8c14-3db31e687c78"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3404,6 +3473,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"17239d47-6adb-45d2-80f6-f9cbc3bf059d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3442,6 +3512,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"369648fa-a7eb-4909-a15d-6954a078f18a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3540,6 +3611,7 @@
 		,"Platform":"windows10.0.14393"
 		,"Kind":"Com"
 		,"Guid":"80e8e04d-8c88-44ae-a011-7cadf6fb2e72"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3672,6 +3744,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"c1b11eee-c4ba-4ab2-a55d-d015fe8ff64f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3700,6 +3773,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"09edca37-cd64-47d6-b7e8-1cb11d4f7e05"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3777,6 +3851,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"a879611f-12fd-41fe-85d5-06ae779bbaf5"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3804,6 +3879,7 @@
 		,"Platform":"windows10.0.14393"
 		,"Kind":"Com"
 		,"Guid":"f43d0b0b-1379-40e2-9b29-682ea2bf42af"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3839,6 +3915,7 @@
 		,"Platform":"windows10.0.14393"
 		,"Kind":"Com"
 		,"Guid":"3e475447-3a25-40b5-8ad2-f953ae50c92d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3863,6 +3940,7 @@
 		,"Platform":"windows10.0.14393"
 		,"Kind":"Com"
 		,"Guid":"80b0902f-7bf0-4117-b8c6-4279ef81ee77"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3897,6 +3975,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"e644be82-f0fa-42b8-a956-8d1cb48ee379"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3946,6 +4025,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"0d34deb3-5cae-4dd3-977c-504932a51d31"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3984,6 +4064,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"e2adb6dc-5e71-4416-86b6-86e5f5291a6b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4402,7 +4483,7 @@
 		"Name":"GetCurrentPackageId"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4416,7 +4497,7 @@
 		"Name":"GetCurrentPackageFullName"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4430,7 +4511,7 @@
 		"Name":"GetCurrentPackageFamilyName"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4444,7 +4525,7 @@
 		"Name":"GetCurrentPackagePath"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4458,7 +4539,7 @@
 		"Name":"GetPackageId"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4473,7 +4554,7 @@
 		"Name":"GetPackageFullName"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4488,7 +4569,7 @@
 		"Name":"GetPackageFullNameFromToken"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-appmodel-runtime-l1-1-1"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4503,7 +4584,7 @@
 		"Name":"GetPackageFamilyName"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4518,7 +4599,7 @@
 		"Name":"GetPackageFamilyNameFromToken"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-appmodel-runtime-l1-1-1"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4533,7 +4614,7 @@
 		"Name":"GetPackagePath"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4549,7 +4630,7 @@
 		"Name":"GetPackagePathByFullName"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.1"
@@ -4564,7 +4645,7 @@
 		"Name":"GetStagedPackagePathByFullName"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.1"
@@ -4579,7 +4660,7 @@
 		"Name":"GetPackagePathByFullName2"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-appmodel-runtime-l1-1-3"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows10.0.10240"
@@ -4595,7 +4676,7 @@
 		"Name":"GetStagedPackagePathByFullName2"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-appmodel-runtime-l1-1-3"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows10.0.10240"
@@ -4611,7 +4692,7 @@
 		"Name":"GetCurrentPackageInfo2"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-appmodel-runtime-l1-1-3"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows10.0.10240"
@@ -4628,7 +4709,7 @@
 		"Name":"GetCurrentPackagePath2"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-appmodel-runtime-l1-1-3"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows10.0.10240"
@@ -4643,7 +4724,7 @@
 		"Name":"GetCurrentApplicationUserModelId"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -4657,7 +4738,7 @@
 		"Name":"GetApplicationUserModelId"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -4672,7 +4753,7 @@
 		"Name":"GetApplicationUserModelIdFromToken"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-appmodel-runtime-l1-1-1"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -4687,7 +4768,7 @@
 		"Name":"VerifyPackageFullName"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-appmodel-runtime-l1-1-1"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -4700,7 +4781,7 @@
 		"Name":"VerifyPackageFamilyName"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-appmodel-runtime-l1-1-1"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -4713,7 +4794,7 @@
 		"Name":"VerifyPackageId"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-appmodel-runtime-l1-1-1"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -4726,7 +4807,7 @@
 		"Name":"VerifyApplicationUserModelId"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-appmodel-runtime-l1-1-1"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -4739,7 +4820,7 @@
 		"Name":"VerifyPackageRelativeApplicationId"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-appmodel-runtime-l1-1-1"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -4752,7 +4833,7 @@
 		"Name":"PackageIdFromFullName"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4768,7 +4849,7 @@
 		"Name":"PackageFullNameFromId"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4783,7 +4864,7 @@
 		"Name":"PackageFamilyNameFromId"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4798,7 +4879,7 @@
 		"Name":"PackageFamilyNameFromFullName"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4813,7 +4894,7 @@
 		"Name":"PackageNameAndPublisherIdFromFamilyName"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4830,7 +4911,7 @@
 		"Name":"FormatApplicationUserModelId"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.1"
@@ -4846,7 +4927,7 @@
 		"Name":"ParseApplicationUserModelId"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.1"
@@ -4863,7 +4944,7 @@
 		"Name":"GetPackagesByPackageFamily"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4880,7 +4961,7 @@
 		"Name":"FindPackagesByPackageFamily"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.1"
@@ -4899,7 +4980,7 @@
 		"Name":"GetStagedPackageOrigin"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-appmodel-runtime-l1-1-1"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.1"
@@ -4913,7 +4994,7 @@
 		"Name":"GetCurrentPackageInfo"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4929,7 +5010,7 @@
 		"Name":"OpenPackageInfoByFullName"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4944,7 +5025,7 @@
 		"Name":"OpenPackageInfoByFullNameForUser"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-appmodel-runtime-l1-1-1"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -4960,7 +5041,7 @@
 		"Name":"ClosePackageInfo"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4973,7 +5054,7 @@
 		"Name":"GetPackageInfo"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.0"
@@ -4990,7 +5071,7 @@
 		"Name":"GetPackageApplicationIds"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows8.1"
@@ -5006,7 +5087,7 @@
 		"Name":"GetPackageInfo2"
 		,"SetLastError":false
 		,"DllImport":"api-ms-win-appmodel-runtime-l1-1-3"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":"windows10.0.10240"
@@ -5037,7 +5118,7 @@
 	,{
 		"Name":"TryCreatePackageDependency"
 		,"SetLastError":false
-		,"DllImport":"KERNEL32"
+		,"DllImport":"KERNELBASE"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -5057,7 +5138,7 @@
 	,{
 		"Name":"DeletePackageDependency"
 		,"SetLastError":false
-		,"DllImport":"KERNEL32"
+		,"DllImport":"KERNELBASE"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -5070,7 +5151,7 @@
 	,{
 		"Name":"AddPackageDependency"
 		,"SetLastError":false
-		,"DllImport":"KERNEL32"
+		,"DllImport":"KERNELBASE"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -5087,7 +5168,7 @@
 	,{
 		"Name":"RemovePackageDependency"
 		,"SetLastError":false
-		,"DllImport":"KERNEL32"
+		,"DllImport":"KERNELBASE"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -5100,7 +5181,7 @@
 	,{
 		"Name":"GetResolvedPackageFullNameForPackageDependency"
 		,"SetLastError":false
-		,"DllImport":"KERNEL32"
+		,"DllImport":"KERNELBASE"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -5114,7 +5195,7 @@
 	,{
 		"Name":"GetIdForPackageDependencyContext"
 		,"SetLastError":false
-		,"DllImport":"KERNEL32"
+		,"DllImport":"KERNELBASE"
 		,"ReturnType":{"Kind":"ApiRef","Name":"HRESULT","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
@@ -5129,7 +5210,7 @@
 		"Name":"AppPolicyGetLifecycleManagement"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -5143,7 +5224,7 @@
 		"Name":"AppPolicyGetWindowingModel"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -5157,7 +5238,7 @@
 		"Name":"AppPolicyGetMediaFoundationCodecLoading"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -5171,7 +5252,7 @@
 		"Name":"AppPolicyGetClrCompat"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -5185,7 +5266,7 @@
 		"Name":"AppPolicyGetThreadInitializationType"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -5199,7 +5280,7 @@
 		"Name":"AppPolicyGetShowDeveloperDiagnostic"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -5213,7 +5294,7 @@
 		"Name":"AppPolicyGetProcessTerminationMethod"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null
@@ -5227,7 +5308,7 @@
 		"Name":"AppPolicyGetCreateFileAccess"
 		,"SetLastError":false
 		,"DllImport":"KERNEL32"
-		,"ReturnType":{"Kind":"Native","Name":"Int32"}
+		,"ReturnType":{"Kind":"ApiRef","Name":"WIN32_ERROR","TargetKind":"Default","Api":"Foundation","Parents":[]}
 		,"ReturnAttrs":[]
 		,"Architectures":[]
 		,"Platform":null

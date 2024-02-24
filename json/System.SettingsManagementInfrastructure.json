@@ -2,6 +2,55 @@
 
 "Constants":[
 	{
+		"Name":"WCM_SETTINGS_ID_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"name"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WCM_SETTINGS_ID_VERSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"version"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WCM_SETTINGS_ID_LANGUAGE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"language"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WCM_SETTINGS_ID_ARCHITECTURE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"architecture"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WCM_SETTINGS_ID_TOKEN"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"token"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WCM_SETTINGS_ID_URI"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"uri"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"WCM_SETTINGS_ID_VERSION_SCOPE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"versionScope"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"WCM_SETTINGS_ID_FLAG_REFERENCE"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -509,6 +558,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9f7d7bb7-20b3-11da-81a5-0030f1642e3c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -554,6 +604,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9f7d7bb6-20b3-11da-81a5-0030f1642e3c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -616,6 +667,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9f7d7bb8-20b3-11da-81a5-0030f1642e3c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -891,6 +943,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9f7d7bb9-20b3-11da-81a5-0030f1642e3c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1108,6 +1161,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9f7d7bbb-20b3-11da-81a5-0030f1642e3c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1392,6 +1446,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9f7d7bba-20b3-11da-81a5-0030f1642e3c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1490,6 +1545,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9f7d7bbc-20b3-11da-81a5-0030f1642e3c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1572,6 +1628,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"9f7d7bbd-20b3-11da-81a5-0030f1642e3c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

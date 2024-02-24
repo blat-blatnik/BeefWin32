@@ -59,6 +59,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6eb22870-8a19-11d0-81b6-00a0c9231c29"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -123,6 +124,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6eb22873-8a19-11d0-81b6-00a0c9231c29"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -185,6 +187,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6eb22874-8a19-11d0-81b6-00a0c9231c29"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -235,6 +238,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6eb22875-8a19-11d0-81b6-00a0c9231c29"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -273,6 +277,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"6eb22876-8a19-11d0-81b6-00a0c9231c29"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

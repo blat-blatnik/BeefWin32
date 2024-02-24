@@ -191,6 +191,153 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"LBSELCHSTRINGA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_LBSelChangedNotify"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SHAREVISTRINGA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_ShareViolation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"FILEOKSTRINGA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_FileNameOK"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"COLOROKSTRINGA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_ColorOK"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SETRGBSTRINGA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_SetRGBColor"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HELPMSGSTRINGA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_help"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"FINDMSGSTRINGA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_FindReplace"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LBSELCHSTRINGW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_LBSelChangedNotify"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SHAREVISTRINGW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_ShareViolation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"FILEOKSTRINGW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_FileNameOK"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"COLOROKSTRINGW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_ColorOK"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SETRGBSTRINGW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_SetRGBColor"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HELPMSGSTRINGW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_help"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"FINDMSGSTRINGW"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_FindReplace"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"LBSELCHSTRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_LBSelChangedNotify"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SHAREVISTRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_ShareViolation"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"FILEOKSTRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_FileNameOK"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"COLOROKSTRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_ColorOK"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"SETRGBSTRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_SetRGBColor"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"HELPMSGSTRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_help"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"FINDMSGSTRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"commdlg_FindReplace"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"CD_LBSELNOITEMS"
 		,"Type":{"Kind":"Native","Name":"Int32"}
 		,"ValueType":"Int32"
@@ -1285,6 +1432,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"5852a2c3-6530-11d1-b6a3-0000f8757bf9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -1333,6 +1481,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"509aaeda-5639-11d1-b6a1-0000f8757bf9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

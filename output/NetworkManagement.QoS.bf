@@ -34,13 +34,41 @@ static
 	public const uint32 TC_NONCONF_SHAPE = 1;
 	public const uint32 TC_NONCONF_DISCARD = 2;
 	public const uint32 TC_NONCONF_BORROW_PLUS = 3;
+	public const uint32 class_NULL = 0;
+	public const uint32 class_SESSION = 1;
+	public const uint32 class_SESSION_GROUP = 2;
+	public const uint32 class_RSVP_HOP = 3;
+	public const uint32 class_INTEGRITY = 4;
+	public const uint32 class_TIME_VALUES = 5;
+	public const uint32 class_ERROR_SPEC = 6;
+	public const uint32 class_SCOPE = 7;
+	public const uint32 class_STYLE = 8;
+	public const uint32 class_FLOWSPEC = 9;
+	public const uint32 class_IS_FLOWSPEC = 9;
+	public const uint32 class_FILTER_SPEC = 10;
+	public const uint32 class_SENDER_TEMPLATE = 11;
+	public const uint32 class_SENDER_TSPEC = 12;
+	public const uint32 class_ADSPEC = 13;
+	public const uint32 class_POLICY_DATA = 14;
+	public const uint32 class_CONFIRM = 15;
+	public const uint32 class_MAX = 15;
+	public const uint32 ctype_SESSION_ipv4 = 1;
+	public const uint32 ctype_SESSION_ipv4GPI = 3;
 	public const uint32 SESSFLG_E_Police = 1;
+	public const uint32 ctype_RSVP_HOP_ipv4 = 1;
 	public const uint32 Opt_Share_mask = 24;
 	public const uint32 Opt_Distinct = 8;
 	public const uint32 Opt_Shared = 16;
 	public const uint32 Opt_SndSel_mask = 7;
 	public const uint32 Opt_Wildcard = 1;
 	public const uint32 Opt_Explicit = 2;
+	public const uint32 ctype_STYLE = 1;
+	public const uint32 ctype_FILTER_SPEC_ipv4 = 1;
+	public const uint32 ctype_FILTER_SPEC_ipv4GPI = 4;
+	public const uint32 ctype_SENDER_TEMPLATE_ipv4 = 1;
+	public const uint32 ctype_SENDER_TEMPLATE_ipv4GPI = 4;
+	public const uint32 ctype_SCOPE_list_ipv4 = 1;
+	public const uint32 ctype_ERROR_SPEC_ipv4 = 1;
 	public const uint32 ERROR_SPECF_InPlace = 1;
 	public const uint32 ERROR_SPECF_NotGuilty = 2;
 	public const uint32 ERR_FORWARD_OK = 32768;
@@ -48,6 +76,7 @@ static
 	public const uint32 ERR_Usage_local = 16;
 	public const uint32 ERR_Usage_serv = 17;
 	public const uint32 ERR_global_mask = 4095;
+	public const uint32 ctype_POLICY_DATA = 1;
 	public const uint32 GENERAL_INFO = 1;
 	public const uint32 GUARANTEED_SERV = 2;
 	public const uint32 PREDICTIVE_SERV = 3;
@@ -58,6 +87,9 @@ static
 	public const uint32 INTSERV_VERSION0 = 0;
 	public const uint32 ISSH_BREAK_BIT = 128;
 	public const uint32 ISPH_FLG_INV = 128;
+	public const uint32 ctype_SENDER_TSPEC = 2;
+	public const uint32 ctype_FLOWSPEC_Intserv0 = 2;
+	public const uint32 ctype_ADSPEC_INTSERV = 2;
 	public const uint32 RSVP_PATH = 1;
 	public const uint32 RSVP_RESV = 2;
 	public const uint32 RSVP_PATH_ERR = 3;
@@ -207,6 +239,11 @@ static
 	public const uint32 RSVP_FIXED_FILTER_STYLE = 2;
 	public const uint32 RSVP_SHARED_EXPLICIT_STYLE = 3;
 	public const uint32 AD_FLAG_BREAK_BIT = 1;
+	public const uint32 mIOC_IN = 2147483648;
+	public const uint32 mIOC_OUT = 1073741824;
+	public const uint32 mIOC_VENDOR = 67108864;
+	public const uint32 mCOMPANY = 402653184;
+	public const uint32 ioctl_code = 1;
 	public const uint32 QOSSPBASE = 50000;
 	public const uint32 ALLOWED_TO_SEND_DATA = 50001;
 	public const uint32 ABLE_TO_RECV_RSVP = 50002;
@@ -281,6 +318,7 @@ static
 	public const Guid GUID_QOS_ENABLE_AVG_STATS = .(0xbafb6d11, 0x27c4, 0x4801, 0xa4, 0x6f, 0xef, 0x80, 0x80, 0xc1, 0x88, 0xc8);
 	public const Guid GUID_QOS_ENABLE_WINDOW_ADJUSTMENT = .(0xaa966725, 0xd3e9, 0x4c55, 0xb3, 0x35, 0x2a, 0x00, 0x27, 0x9a, 0x1e, 0x64);
 	public const uint32 FSCTL_TCP_BASE = 18;
+	public const String DD_TCP_DEVICE_NAME = "\\Device\\Tcp";
 	public const uint32 IF_MIB_STATS_ID = 1;
 	public const uint32 IP_MIB_STATS_ID = 1;
 	public const uint32 IP_MIB_ADDRTABLE_ENTRY_ID = 258;
@@ -575,18 +613,6 @@ static
 	#endregion
 	
 	#region Structs
-	[CRepr]
-	public struct FLOWSPEC
-	{
-		public uint32 TokenRate;
-		public uint32 TokenBucketSize;
-		public uint32 PeakBandwidth;
-		public uint32 Latency;
-		public uint32 DelayVariation;
-		public uint32 ServiceType;
-		public uint32 MaxSduSize;
-		public uint32 MinimumPolicedSize;
-	}
 	[CRepr]
 	public struct QOS_OBJECT_HDR
 	{
@@ -1416,13 +1442,6 @@ static
 		public uint8[1] VarData_array;
 		
 		public uint8* VarData mut => &VarData_array[0];
-	}
-	[CRepr]
-	public struct QOS
-	{
-		public FLOWSPEC SendingFlowspec;
-		public FLOWSPEC ReceivingFlowspec;
-		public WSABUF ProviderSpecific;
 	}
 	#endregion
 	

@@ -203,6 +203,8 @@ static
 	public const uint32 TF_DISABLE_SPEECH = 1;
 	public const uint32 TF_DISABLE_DICTATION = 2;
 	public const uint32 TF_DISABLE_COMMANDING = 4;
+	public const String TF_PROCESS_ATOM = "_CTF_PROCESS_ATOM_";
+	public const String TF_ENABLE_PROCESS_ATOM = "_CTF_ENABLE_PROCESS_ATOM_";
 	public const uint32 TF_CLUIE_DOCUMENTMGR = 1;
 	public const uint32 TF_CLUIE_COUNT = 2;
 	public const uint32 TF_CLUIE_SELECTION = 4;
@@ -311,6 +313,9 @@ static
 	public const uint32 TKBL_OPT_KOREAN_HANGUL_2_BULSIK = 1042;
 	public const uint32 TKBL_OPT_SIMPLIFIED_CHINESE_PINYIN = 2052;
 	public const uint32 TKBL_OPT_TRADITIONAL_CHINESE_PHONETIC = 1028;
+	public const String TF_FLOATINGLANGBAR_WNDTITLEW = "TF_FloatingLangBar_WndTitle";
+	public const String TF_FLOATINGLANGBAR_WNDTITLEA = "TF_FloatingLangBar_WndTitle";
+	public const String TF_FLOATINGLANGBAR_WNDTITLE = "TF_FloatingLangBar_WndTitle";
 	public const uint32 TF_LBI_ICON = 1;
 	public const uint32 TF_LBI_TEXT = 2;
 	public const uint32 TF_LBI_TOOLTIP = 4;

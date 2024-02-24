@@ -3633,6 +3633,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"a976c28d-75a1-42aa-94ae-8af8b872089a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3655,6 +3656,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"eff90582-2ddc-480f-a06d-60f3fbc362c3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3664,9 +3666,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -3679,9 +3679,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"value","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
@@ -3798,6 +3796,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"174c81fe-aecd-4dae-b8a0-2c6318dd86a8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4000,6 +3999,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"ade87bf7-7b56-4275-8fab-b9b0e591844b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4038,6 +4038,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"85713fa1-7796-4fa2-be3b-e2d6124dd373"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4061,6 +4062,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"e7a4d634-7942-4dd9-a111-82228ba33901"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4099,6 +4101,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"2ee48f22-af3c-405f-8970-f71be12ee9a2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4243,6 +4246,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"6abc136a-c3ca-4384-8171-cb2b1e59b8dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IAutomaticUpdatesSettings","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -4295,6 +4299,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"b587f5c3-f57e-485f-bbf5-0d181c5cd0dc"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IAutomaticUpdatesSettings2","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -4361,6 +4366,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"673425bf-c082-4c7c-bdfd-569464b8e0ce"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4454,6 +4460,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"4a2f5c31-cfd9-410e-b7fb-29a653973a0f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IAutomaticUpdates","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -4478,6 +4485,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"46297823-9940-4c09-aed9-cd3ea6d05968"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4516,6 +4524,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"7c907864-346c-4aeb-8f3f-57da289f969f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4582,6 +4591,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"81ddc1b8-9d35-47a6-b471-5b80f519223b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4718,6 +4728,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"3a56bfb8-576c-43f7-9335-fe4838fd7e37"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4727,9 +4738,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"ICategory","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -4771,6 +4780,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"d9a59339-e245-4dbd-9686-4d5763e39624"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4837,6 +4847,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"54a2cb2d-9a0c-48b6-8a50-9abb69ee2d02"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4861,6 +4872,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c97ad11b-f257-420b-9d9f-377f733f6f68"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdateDownloadContent","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -4885,6 +4897,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"bc5513c8-b3b8-4bf7-a4d4-361c0d8c88ba"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4894,9 +4907,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUpdateDownloadContent","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -4938,6 +4949,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"6a92b07a-d821-4682-b423-5c805022cc4d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5574,6 +5586,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"b383cd1a-5ce9-4504-9f63-764b1236f191"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdate","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -5696,6 +5709,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"144fe9b0-d23d-4a8b-8634-fb4457533b7a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdate","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -5760,6 +5774,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"112eda6b-95b3-476f-9d90-aee82c6b8181"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdate2","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -5784,6 +5799,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"27e94b0d-5139-49a2-9a61-93522dc54652"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdate3","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -5808,6 +5824,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c1c2f21a-d2f4-4902-b5c6-8a081c19a890"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdate4","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -5846,6 +5863,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"615c4269-7a48-43bd-96b7-bf6ca27d6c3e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWindowsDriverUpdate","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -5910,6 +5928,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"49ebd502-4a96-41bd-9e3e-4c5057f4250c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWindowsDriverUpdate2","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -5934,6 +5953,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"ed8bfe40-a60b-42ea-9652-817dfcfa23ec"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6056,6 +6076,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"0d521700-a372-4bef-828b-3d00c10adebd"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6065,9 +6086,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IWindowsDriverUpdateEntry","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -6109,6 +6128,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"004c6a2b-0c19-4c69-9f5c-a269b2560db9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWindowsDriverUpdate3","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -6147,6 +6167,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"70cf5c82-8642-42bb-9dbc-0cfd263c6c4f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWindowsDriverUpdate4","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -6185,6 +6206,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"07f7438c-7709-4ca5-b518-91279288134e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6194,9 +6216,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUpdate","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -6209,9 +6229,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"value","Type":{"Kind":"ApiRef","Name":"IUpdate","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]},"Attrs":["In"]}
@@ -6328,6 +6346,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"a376dd5e-09d4-427f-af7c-fed5b6e1c1d6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6380,6 +6399,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"a37d00f5-7bb0-4953-b414-f9e98326f2e8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdateException","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -6404,6 +6424,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"503626a3-8e14-4729-9355-0fe664bd2321"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6413,9 +6434,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUpdateException","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -6457,6 +6476,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"d40cff62-e08c-4498-941a-01e25f0fd33c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6523,6 +6543,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"7366ea16-7a1a-4ea2-b042-973d3e9cd99b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6583,6 +6604,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"a700a634-2850-4c47-938a-9e4b6e5af9a6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -6593,6 +6615,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"88aee058-d4b0-4725-a2f1-814a67ae964c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6616,6 +6639,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"be56a644-af0e-4e0e-a311-c1d8e695cbff"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6822,6 +6846,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c2bfb780-4539-4132-ab8c-0a8772013ab6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdateHistoryEntry","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -6846,6 +6871,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"a7f04f3c-a290-435b-aadf-a116c3357a5c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6855,9 +6881,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUpdateHistoryEntry","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -6899,6 +6923,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"8f45abf1-f9ae-4b95-a933-f0f66e5056ea"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7157,6 +7182,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"4cbdcb2d-1589-4beb-bd1c-3e582ff0add0"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdateSearcher","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -7195,6 +7221,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"04c6895d-eaf2-4034-97f3-311de9be413a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdateSearcher2","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -7233,6 +7260,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"bf99af76-b575-42ad-8aa4-33cbb5477af1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7271,6 +7299,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"daa4fdd0-4727-4dbe-a1e7-745dca317144"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7322,6 +7351,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"d31a5bac-f719-4178-9dbb-5e2cb47fd18a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7457,6 +7487,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"c574de85-7358-43f6-aae8-8697e62d8ba7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7543,6 +7574,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"fa565b23-498c-47a0-979d-e7d5b1813360"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -7553,6 +7585,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"77254866-9f5b-4c8e-b9e2-c77a8530d64b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7576,6 +7609,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"324ff2c6-4981-4b04-9412-57481745ab24"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7600,6 +7634,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"8c3f1cdd-6173-4591-aebd-a56a53ca77c1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7623,6 +7658,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"68f1c6f9-7ecc-4666-a464-247fe12496c3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7785,6 +7821,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"d940f0f8-3cbb-4fd0-993f-471e7f2328ad"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7837,6 +7874,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"a43c56d6-7451-48d4-af96-b6cd2d0d9b7a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7902,6 +7940,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"345c8244-43a3-4e32-a368-65f073b76f36"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -7967,6 +8006,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"5c209f0b-bad5-432a-9556-4699bed2638a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8053,6 +8093,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"250e2106-8efb-4705-9653-ef13c581b6a1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 		]
@@ -8063,6 +8104,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"45f4f6f3-d602-4f98-9a8a-3efa152ad2d3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8086,6 +8128,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"e4f14e1e-689d-4218-a0b9-bc189c484a01"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8110,6 +8153,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"e01402d5-f8da-43ba-a012-38894bd048f1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8133,6 +8177,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"7b929c68-ccdc-4226-96b1-8724600b54c2"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8432,6 +8477,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"3442d4fe-224d-4cee-98cf-30e0c4d229e6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdateInstaller","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -8470,6 +8516,7 @@
 		,"Platform":"windows10.0.17134"
 		,"Kind":"Com"
 		,"Guid":"16d11c35-099a-48d0-8338-5fae64047f8e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdateInstaller2","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -8508,6 +8555,7 @@
 		,"Platform":"windows10.0.10240"
 		,"Kind":"Com"
 		,"Guid":"ef8208ea-2304-492d-9109-23813b0958e1"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdateInstaller3","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -8530,6 +8578,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"816858a4-260d-4260-933a-2585f1abc76b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8646,6 +8695,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"91caf7b0-eb23-49ed-9937-c52d817f46f7"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdateSession","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -8684,6 +8734,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"918efd1e-b5d8-4c90-8540-aeb9bdc56f9d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdateSession2","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -8721,6 +8772,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"76b3b17e-aed6-4da5-85f0-83587f81abe3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8913,6 +8965,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"1518b460-6518-4172-940f-c75883b24ceb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdateService","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -8937,6 +8990,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"9b0353aa-0e52-44ff-b8b0-1f7fa0437f88"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -8946,9 +9000,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"index","Type":{"Kind":"Native","Name":"Int32"},"Attrs":["In"]}
 					,{"Name":"retval","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IUpdateService","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -8990,6 +9042,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"dde02280-12b3-4e0b-937b-6747f6acb286"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9056,6 +9109,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"23857e3c-02ba-44a3-9423-b1c900805f37"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -9158,6 +9212,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"0bb8531d-7e8d-424f-986c-a0b8f60a3e7b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUpdateServiceManager","TargetKind":"Com","Api":"System.UpdateAgent","Parents":[]}
 		,"Methods":[
 			{
@@ -9224,6 +9279,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"925cbc18-a2ea-4648-bf1c-ec8badcfe20a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

@@ -2,6 +2,27 @@
 
 "Constants":[
 	{
+		"Name":"EA_CONTAINER_NAME"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ContainerName"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"EA_CONTAINER_SIZE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"ContainerSize"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLFS_BASELOG_EXTENSION"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":".blf"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"CLFS_FLAG_REENTRANT_FILE_SYSTEM"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -76,6 +97,20 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":32
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLFS_CONTAINER_STREAM_PREFIX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"%BLF%:"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CLFS_CONTAINER_RELATIVE_PREFIX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"%BLF%\\"
 		,"Attrs":[]
 	}
 	,{
@@ -391,6 +426,34 @@
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
 		,"Value":1073741824
+		,"Attrs":[]
+	}
+	,{
+		"Name":"TRANSACTIONMANAGER_OBJECT_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\TransactionManager\\"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"TRANSACTION_OBJECT_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Transaction\\"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"ENLISTMENT_OBJECT_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\Enlistment\\"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"RESOURCE_MANAGER_OBJECT_PATH"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"\\ResourceManager\\"
 		,"Attrs":[]
 	}
 	,{
@@ -2694,6 +2757,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"FindClose"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"FindFileNameHandle"
@@ -2703,6 +2767,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"FindClose"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"FindStreamHandle"
@@ -2712,6 +2777,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"FindClose"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"FindChangeNotificationHandle"
@@ -2721,6 +2787,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"FindCloseChangeNotification"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"FindVolumeHandle"
@@ -2730,6 +2797,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"FindVolumeClose"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"FindVolumeMointPointHandle"
@@ -2739,6 +2807,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":"FindVolumeMountPointClose"
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"WIN32_FIND_DATAA"
@@ -5510,6 +5579,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"7988b574-ec89-11cf-9c00-00aa00a14f56"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5711,6 +5781,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"7988b577-ec89-11cf-9c00-00aa00a14f56"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5770,6 +5841,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"7988b576-ec89-11cf-9c00-00aa00a14f56"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -5826,6 +5898,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"7988b572-ec89-11cf-9c00-00aa00a14f56"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IConnectionPointContainer","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6099,6 +6172,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Kind":"Com"
 		,"Guid":"7988b579-ec89-11cf-9c00-00aa00a14f56"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -6868,7 +6942,7 @@
 			,{"Name":"shi502_path","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"shi502_passwd","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"shi502_reserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"shi502_security_descriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":[]}
+			,{"Name":"shi502_security_descriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":[]}
 		]
 		,"NestedTypes":[
 		]
@@ -6891,7 +6965,7 @@
 			,{"Name":"shi503_passwd","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"shi503_servername","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 			,{"Name":"shi503_reserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"shi503_security_descriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":[]}
+			,{"Name":"shi503_security_descriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":[]}
 		]
 		,"NestedTypes":[
 		]
@@ -6944,7 +7018,7 @@
 		,"PackingSize":0
 		,"Fields":[
 			{"Name":"shi1501_reserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-			,{"Name":"shi1501_security_descriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":[]}
+			,{"Name":"shi1501_security_descriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":[]}
 		]
 		,"NestedTypes":[
 		]
@@ -7403,7 +7477,7 @@
 		,"ReturnAttrs":[]
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"pSecurityDescriptor","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"SECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["In","Out"]}
+			{"Name":"pSecurityDescriptor","Type":{"Kind":"ApiRef","Name":"PSECURITY_DESCRIPTOR","TargetKind":"Default","Api":"Security","Parents":[]},"Attrs":["In"]}
 			,{"Name":"hClientToken","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"dwDesiredAccess","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"GenericMapping","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"GENERIC_MAPPING","TargetKind":"Default","Api":"Security","Parents":[]}},"Attrs":["In","Out"]}
@@ -8129,14 +8203,19 @@
 						]
 					}
 					,{
-						"Name":"_PollContinue_e__Struct"
+						"Name":"_StreamStarted_e__Struct"
 						,"Architectures":[]
 						,"Platform":null
 						,"Kind":"Struct"
 						,"Size":0
 						,"PackingSize":0
 						,"Fields":[
-							{"Name":"dwReserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+							{"Name":"dwStreamNumber","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+							,{"Name":"dwReserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+							,{"Name":"hSourceFile","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
+							,{"Name":"hDestinationFile","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
+							,{"Name":"uliStreamSize","Type":{"Kind":"ApiRef","Name":"ULARGE_INTEGER","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
+							,{"Name":"uliTotalFileSize","Type":{"Kind":"ApiRef","Name":"ULARGE_INTEGER","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
 						]
 						,"NestedTypes":[
 						]
@@ -8162,19 +8241,14 @@
 						]
 					}
 					,{
-						"Name":"_StreamStarted_e__Struct"
+						"Name":"_PollContinue_e__Struct"
 						,"Architectures":[]
 						,"Platform":null
 						,"Kind":"Struct"
 						,"Size":0
 						,"PackingSize":0
 						,"Fields":[
-							{"Name":"dwStreamNumber","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-							,{"Name":"dwReserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-							,{"Name":"hSourceFile","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
-							,{"Name":"hDestinationFile","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
-							,{"Name":"uliStreamSize","Type":{"Kind":"ApiRef","Name":"ULARGE_INTEGER","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
-							,{"Name":"uliTotalFileSize","Type":{"Kind":"ApiRef","Name":"ULARGE_INTEGER","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":[]}
+							{"Name":"dwReserved","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 						]
 						,"NestedTypes":[
 						]
@@ -8597,19 +8671,6 @@
 						]
 						,"NestedTypes":[
 							{
-								"Name":"_Server_e__Struct"
-								,"Architectures":[]
-								,"Platform":null
-								,"Kind":"Struct"
-								,"Size":0
-								,"PackingSize":0
-								,"Fields":[
-									{"Name":"Capabilities","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
-								]
-								,"NestedTypes":[
-								]
-							}
-							,{
 								"Name":"_Share_e__Struct"
 								,"Architectures":[]
 								,"Platform":null
@@ -8619,6 +8680,19 @@
 								,"Fields":[
 									{"Name":"Capabilities","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 									,{"Name":"CachingFlags","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+								]
+								,"NestedTypes":[
+								]
+							}
+							,{
+								"Name":"_Server_e__Struct"
+								,"Architectures":[]
+								,"Platform":null
+								,"Kind":"Struct"
+								,"Size":0
+								,"PackingSize":0
+								,"Fields":[
+									{"Name":"Capabilities","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 								]
 								,"NestedTypes":[
 								]
@@ -8884,7 +8958,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"hFindFile","Type":{"Kind":"ApiRef","Name":"FindFileHandle","TargetKind":"Default","Api":"Storage.FileSystem","Parents":[]},"Attrs":["In","Out"]}
+			{"Name":"hFindFile","Type":{"Kind":"ApiRef","Name":"FindFileHandle","TargetKind":"Default","Api":"Storage.FileSystem","Parents":[]},"Attrs":["In"]}
 		]
 	}
 	,{
@@ -9059,7 +9133,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"hFindVolume","Type":{"Kind":"ApiRef","Name":"FindVolumeHandle","TargetKind":"Default","Api":"Storage.FileSystem","Parents":[]},"Attrs":["In","Out"]}
+			{"Name":"hFindVolume","Type":{"Kind":"ApiRef","Name":"FindVolumeHandle","TargetKind":"Default","Api":"Storage.FileSystem","Parents":[]},"Attrs":["In"]}
 			,{"Name":"lpszVolumeName","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":2,"Child":{"Kind":"Native","Name":"Char"}},"Attrs":["Out"]}
 			,{"Name":"cchBufferLength","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 		]
@@ -14756,7 +14830,7 @@
 		,"Platform":"windows5.1.2600"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"hFindVolume","Type":{"Kind":"ApiRef","Name":"FindVolumeHandle","TargetKind":"Default","Api":"Storage.FileSystem","Parents":[]},"Attrs":["In","Out"]}
+			{"Name":"hFindVolume","Type":{"Kind":"ApiRef","Name":"FindVolumeHandle","TargetKind":"Default","Api":"Storage.FileSystem","Parents":[]},"Attrs":["In"]}
 			,{"Name":"lpszVolumeName","Type":{"Kind":"LPArray","NullNullTerm":false,"CountConst":-1,"CountParamIndex":2,"Child":{"Kind":"Native","Name":"Byte"}},"Attrs":["Out"]}
 			,{"Name":"cchBufferLength","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 		]

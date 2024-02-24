@@ -53,6 +53,10 @@ static
 	public const uint32 PARM_ERROR_UNKNOWN = 4294967295;
 	public const uint32 PARM_ERROR_NONE = 0;
 	public const uint32 PARMNUM_BASE_INFOLEVEL = 1000;
+	public const String MESSAGE_FILENAME = "NETMSG";
+	public const String OS2MSG_FILENAME = "BASE";
+	public const String HELP_MSG_FILENAME = "NETH";
+	public const String BACKUP_MSG_FILENAME = "BAK.MSG";
 	public const uint32 PLATFORM_ID_DOS = 300;
 	public const uint32 PLATFORM_ID_OS2 = 400;
 	public const uint32 PLATFORM_ID_NT = 500;
@@ -430,6 +434,7 @@ static
 	public const uint32 USER_PROFILE = 52;
 	public const uint32 USER_PROFILE_PARMNUM = 52;
 	public const uint32 USER_HOME_DIR_DRIVE_PARMNUM = 53;
+	public const String NULL_USERSETINFO_PASSWD = "              ";
 	public const uint32 UNITS_PER_DAY = 24;
 	public const uint32 USER_PRIV_MASK = 3;
 	public const uint32 MAX_PASSWD_LEN = 256;
@@ -454,6 +459,10 @@ static
 	public const uint32 MODALS_LOCKOUT_OBSERVATION_WINDOW_PARMNUM = 11;
 	public const uint32 MODALS_LOCKOUT_THRESHOLD_PARMNUM = 12;
 	public const uint32 GROUPIDMASK = 32768;
+	public const String GROUP_SPECIALGRP_USERS = "USERS";
+	public const String GROUP_SPECIALGRP_ADMINS = "ADMINS";
+	public const String GROUP_SPECIALGRP_GUESTS = "GUESTS";
+	public const String GROUP_SPECIALGRP_LOCAL = "LOCAL";
 	public const uint32 GROUP_ALL_PARMNUM = 0;
 	public const uint32 GROUP_NAME_PARMNUM = 1;
 	public const uint32 GROUP_COMMENT_PARMNUM = 2;
@@ -479,6 +488,7 @@ static
 	public const uint32 ACCESS_ATTR_PARMNUM = 2;
 	public const uint32 ACCESS_COUNT_PARMNUM = 3;
 	public const uint32 ACCESS_ACCESS_LIST_PARMNUM = 4;
+	public const String ACCESS_LETTERS = "RWCXDAP         ";
 	public const uint32 NET_VALIDATE_PASSWORD_LAST_SET = 1;
 	public const uint32 NET_VALIDATE_BAD_PASSWORD_TIME = 2;
 	public const uint32 NET_VALIDATE_LOCKOUT_TIME = 4;
@@ -511,11 +521,19 @@ static
 	public const uint32 NETLOGON_HAS_TIMESERV = 32;
 	public const uint32 NETLOGON_DNS_UPDATE_FAILURE = 64;
 	public const uint32 NETLOGON_VERIFY_STATUS_RETURNED = 128;
+	public const String SERVICE_ACCOUNT_PASSWORD = "_SA_{262E99C9-6160-4871-ACEC-4E61736B6F21}";
+	public const String SERVICE_ACCOUNT_SECRET_PREFIX = "_SC_{262E99C9-6160-4871-ACEC-4E61736B6F21}_";
 	public const Guid ServiceAccountPasswordGUID = .(0x262e99c9, 0x6160, 0x4871, 0xac, 0xec, 0x4e, 0x61, 0x73, 0x6b, 0x6f, 0x21);
 	public const int32 SERVICE_ACCOUNT_FLAG_LINK_TO_HOST_ONLY = 1;
 	public const int32 SERVICE_ACCOUNT_FLAG_ADD_AGAINST_RODC = 2;
 	public const int32 SERVICE_ACCOUNT_FLAG_UNLINK_FROM_HOST_ONLY = 1;
 	public const int32 SERVICE_ACCOUNT_FLAG_REMOVE_OFFLINE = 2;
+	public const String ALERTER_MAILSLOT = "\\\\.\\MAILSLOT\\Alerter";
+	public const String ALERT_PRINT_EVENT = "PRINTING";
+	public const String ALERT_MESSAGE_EVENT = "MESSAGE";
+	public const String ALERT_ERRORLOG_EVENT = "ERRORLOG";
+	public const String ALERT_ADMIN_EVENT = "ADMIN";
+	public const String ALERT_USER_EVENT = "USER";
 	public const uint32 PRJOB_QSTATUS = 3;
 	public const uint32 PRJOB_DEVSTATUS = 508;
 	public const uint32 PRJOB_COMPLETE = 4;
@@ -1061,6 +1079,7 @@ static
 	public const uint32 SERVICE_REDIR_DISK_PAUSED = 256;
 	public const uint32 SERVICE_REDIR_PRINT_PAUSED = 512;
 	public const uint32 SERVICE_REDIR_COMM_PAUSED = 1024;
+	public const String SERVICE_DOS_ENCRYPTION = "ENCRYPT";
 	public const uint32 SERVICE_CTRL_INTERROGATE = 0;
 	public const uint32 SERVICE_CTRL_PAUSE = 1;
 	public const uint32 SERVICE_CTRL_CONTINUE = 2;
@@ -1850,6 +1869,77 @@ static
 	public const uint32 REPL_STATE_NO_MASTER = 1;
 	public const uint32 REPL_STATE_NO_SYNC = 2;
 	public const uint32 REPL_STATE_NEVER_REPLICATED = 3;
+	public const String SERVICE_WORKSTATION = "LanmanWorkstation";
+	public const String SERVICE_LM20_WORKSTATION = "WORKSTATION";
+	public const String WORKSTATION_DISPLAY_NAME = "Workstation";
+	public const String SERVICE_SERVER = "LanmanServer";
+	public const String SERVICE_LM20_SERVER = "SERVER";
+	public const String SERVER_DISPLAY_NAME = "Server";
+	public const String SERVICE_BROWSER = "BROWSER";
+	public const String SERVICE_LM20_BROWSER = "BROWSER";
+	public const String SERVICE_MESSENGER = "MESSENGER";
+	public const String SERVICE_LM20_MESSENGER = "MESSENGER";
+	public const String SERVICE_NETRUN = "NETRUN";
+	public const String SERVICE_LM20_NETRUN = "NETRUN";
+	public const String SERVICE_SPOOLER = "SPOOLER";
+	public const String SERVICE_LM20_SPOOLER = "SPOOLER";
+	public const String SERVICE_ALERTER = "ALERTER";
+	public const String SERVICE_LM20_ALERTER = "ALERTER";
+	public const String SERVICE_NETLOGON = "NETLOGON";
+	public const String SERVICE_LM20_NETLOGON = "NETLOGON";
+	public const String SERVICE_NETPOPUP = "NETPOPUP";
+	public const String SERVICE_LM20_NETPOPUP = "NETPOPUP";
+	public const String SERVICE_SQLSERVER = "SQLSERVER";
+	public const String SERVICE_LM20_SQLSERVER = "SQLSERVER";
+	public const String SERVICE_REPL = "REPLICATOR";
+	public const String SERVICE_LM20_REPL = "REPLICATOR";
+	public const String SERVICE_RIPL = "REMOTEBOOT";
+	public const String SERVICE_LM20_RIPL = "REMOTEBOOT";
+	public const String SERVICE_TIMESOURCE = "TIMESOURCE";
+	public const String SERVICE_LM20_TIMESOURCE = "TIMESOURCE";
+	public const String SERVICE_AFP = "AFP";
+	public const String SERVICE_LM20_AFP = "AFP";
+	public const String SERVICE_UPS = "UPS";
+	public const String SERVICE_LM20_UPS = "UPS";
+	public const String SERVICE_XACTSRV = "XACTSRV";
+	public const String SERVICE_LM20_XACTSRV = "XACTSRV";
+	public const String SERVICE_TCPIP = "TCPIP";
+	public const String SERVICE_LM20_TCPIP = "TCPIP";
+	public const String SERVICE_NBT = "NBT";
+	public const String SERVICE_LM20_NBT = "NBT";
+	public const String SERVICE_LMHOSTS = "LMHOSTS";
+	public const String SERVICE_LM20_LMHOSTS = "LMHOSTS";
+	public const String SERVICE_TELNET = "Telnet";
+	public const String SERVICE_LM20_TELNET = "Telnet";
+	public const String SERVICE_SCHEDULE = "Schedule";
+	public const String SERVICE_LM20_SCHEDULE = "Schedule";
+	public const String SERVICE_NTLMSSP = "NtLmSsp";
+	public const String SERVICE_DHCP = "DHCP";
+	public const String SERVICE_LM20_DHCP = "DHCP";
+	public const String SERVICE_NWSAP = "NwSapAgent";
+	public const String SERVICE_LM20_NWSAP = "NwSapAgent";
+	public const String NWSAP_DISPLAY_NAME = "NW Sap Agent";
+	public const String SERVICE_NWCS = "NWCWorkstation";
+	public const String SERVICE_DNS_CACHE = "DnsCache";
+	public const String SERVICE_W32TIME = "w32time";
+	public const String SERVCE_LM20_W32TIME = "w32time";
+	public const String SERVICE_KDC = "kdc";
+	public const String SERVICE_LM20_KDC = "kdc";
+	public const String SERVICE_RPCLOCATOR = "RPCLOCATOR";
+	public const String SERVICE_LM20_RPCLOCATOR = "RPCLOCATOR";
+	public const String SERVICE_TRKSVR = "TrkSvr";
+	public const String SERVICE_LM20_TRKSVR = "TrkSvr";
+	public const String SERVICE_TRKWKS = "TrkWks";
+	public const String SERVICE_LM20_TRKWKS = "TrkWks";
+	public const String SERVICE_NTFRS = "NtFrs";
+	public const String SERVICE_LM20_NTFRS = "NtFrs";
+	public const String SERVICE_ISMSERV = "IsmServ";
+	public const String SERVICE_LM20_ISMSERV = "IsmServ";
+	public const String SERVICE_NTDS = "NTDS";
+	public const String SERVICE_LM20_NTDS = "NTDS";
+	public const String SERVICE_ADWS = "ADWS";
+	public const String SERVICE_DSROLE = "DsRoleSvc";
+	public const String SERVICE_LM20_DSROLE = "DsRoleSvc";
 	public const HRESULT NETCFG_E_ALREADY_INITIALIZED = -2147180512;
 	public const HRESULT NETCFG_E_NOT_INITIALIZED = -2147180511;
 	public const HRESULT NETCFG_E_IN_USE = -2147180510;
@@ -1866,6 +1956,17 @@ static
 	public const HRESULT NETCFG_S_STILL_REFERENCED = 303139;
 	public const HRESULT NETCFG_S_CAUSED_SETUP_CHANGE = 303140;
 	public const HRESULT NETCFG_S_COMMIT_NOW = 303141;
+	public const String NETCFG_CLIENT_CID_MS_MSClient = "ms_msclient";
+	public const String NETCFG_SERVICE_CID_MS_SERVER = "ms_server";
+	public const String NETCFG_SERVICE_CID_MS_NETBIOS = "ms_netbios";
+	public const String NETCFG_SERVICE_CID_MS_PSCHED = "ms_pschedpc";
+	public const String NETCFG_SERVICE_CID_MS_WLBS = "ms_wlbs";
+	public const String NETCFG_TRANS_CID_MS_APPLETALK = "ms_appletalk";
+	public const String NETCFG_TRANS_CID_MS_NETBEUI = "ms_netbeui";
+	public const String NETCFG_TRANS_CID_MS_NETMON = "ms_netmon";
+	public const String NETCFG_TRANS_CID_MS_NWIPX = "ms_nwipx";
+	public const String NETCFG_TRANS_CID_MS_NWSPX = "ms_nwspx";
+	public const String NETCFG_TRANS_CID_MS_TCPIP = "ms_tcpip";
 	public const uint32 WZC_PROFILE_SUCCESS = 0;
 	public const uint32 WZC_PROFILE_XML_ERROR_NO_VERSION = 1;
 	public const uint32 WZC_PROFILE_XML_ERROR_BAD_VERSION = 2;
@@ -1963,6 +2064,7 @@ static
 	public const uint32 MFE_NOT_LAST_HOP = 10;
 	public const uint32 MFE_PROHIBITED = 12;
 	public const uint32 MFE_NO_SPACE = 13;
+	public const String REGISTER_PROTOCOL_ENTRY_POINT_STRING = "RegisterProtocol";
 	public const uint32 ALIGN_SIZE = 8;
 	public const uint32 RTR_INFO_BLOCK_VERSION = 1;
 	public const uint32 TRACE_USE_FILE = 1;
@@ -5028,14 +5130,14 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT GetInterfaceIdsForAdapter(ref INetCfgComponent pAdapter, out uint32 pdwNumInterfaces, Guid** ppguidInterfaceIds) mut => VT.GetInterfaceIdsForAdapter(ref this, ref pAdapter, out pdwNumInterfaces, ppguidInterfaceIds);
-		public HRESULT AddInterfacesToAdapter() mut => VT.AddInterfacesToAdapter(ref this);
+		public HRESULT AddInterfacesToAdapter(ref INetCfgComponent pAdapter, uint32 dwNumInterfaces) mut => VT.AddInterfacesToAdapter(ref this, ref pAdapter, dwNumInterfaces);
 		public HRESULT RemoveInterfacesFromAdapter(ref INetCfgComponent pAdapter, uint32 dwNumInterfaces, Guid* pguidInterfaceIds) mut => VT.RemoveInterfacesFromAdapter(ref this, ref pAdapter, dwNumInterfaces, pguidInterfaceIds);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentUpperEdge self, ref INetCfgComponent pAdapter, out uint32 pdwNumInterfaces, Guid** ppguidInterfaceIds) GetInterfaceIdsForAdapter;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentUpperEdge self) AddInterfacesToAdapter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentUpperEdge self, ref INetCfgComponent pAdapter, uint32 dwNumInterfaces) AddInterfacesToAdapter;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentUpperEdge self, ref INetCfgComponent pAdapter, uint32 dwNumInterfaces, Guid* pguidInterfaceIds) RemoveInterfacesFromAdapter;
 		}
 	}

@@ -6,6 +6,8 @@ using Win32.Foundation;
 static
 {
 	#region Constants
+	public const String ICW_REGPATHSETTINGS = "Software\\Microsoft\\Internet Connection Wizard";
+	public const String ICW_REGKEYCOMPLETED = "Completed";
 	public const uint32 ICW_MAX_ACCTNAME = 256;
 	public const uint32 ICW_MAX_PASSWORD = 256;
 	public const uint32 ICW_MAX_LOGONNAME = 256;

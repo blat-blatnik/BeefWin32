@@ -10,6 +10,7 @@ using Win32.Graphics.Imaging;
 using Win32.Security;
 using Win32.Storage.Xps;
 using Win32.System.Com;
+using Win32.System.Ole;
 using Win32.System.Registry;
 using Win32.UI.WindowsAndMessaging;
 
@@ -594,6 +595,23 @@ static
 	public const uint32 IDS_CPSUI_NUP_BORDER = 64891;
 	public const uint32 IDS_CPSUI_NUP_BORDERED = 64892;
 	public const uint32 IDS_CPSUI_STRID_LAST = 64892;
+	public const String XPS_FP_PRINTER_NAME = "PrinterName";
+	public const String XPS_FP_PROGRESS_REPORT = "ProgressReport";
+	public const String XPS_FP_PRINTER_HANDLE = "PrinterHandle";
+	public const String XPS_FP_USER_PRINT_TICKET = "PerUserPrintTicket";
+	public const String XPS_FP_USER_TOKEN = "UserSecurityToken";
+	public const String XPS_FP_JOB_ID = "PrintJobId";
+	public const String XPS_FP_PRINT_CLASS_FACTORY = "PrintClassFactory";
+	public const String XPS_FP_OUTPUT_FILE = "PrintOutputFileName";
+	public const String XPS_FP_MS_CONTENT_TYPE = "DriverMultiContentType";
+	public const String XPS_FP_MS_CONTENT_TYPE_XPS = "XPS";
+	public const String XPS_FP_MS_CONTENT_TYPE_OPENXPS = "OpenXPS";
+	public const String XPS_FP_DRIVER_PROPERTY_BAG = "DriverPropertyBag";
+	public const String XPS_FP_QUEUE_PROPERTY_BAG = "QueuePropertyBag";
+	public const String XPS_FP_MERGED_DATAFILE_PATH = "MergedDataFilePath";
+	public const String XPS_FP_RESOURCE_DLL_PATHS = "ResourceDLLPaths";
+	public const String XPS_FP_JOB_LEVEL_PRINTTICKET = "JobPrintTicket";
+	public const String XPS_FP_PRINTDEVICECAPABILITIES = "PrintDeviceCapabilities";
 	public const uint32 MXDC_ESCAPE = 4122;
 	public const uint32 MXDCOP_GET_FILENAME = 14;
 	public const uint32 MXDCOP_PRINTTICKET_FIXED_DOC_SEQ = 22;
@@ -852,6 +870,7 @@ static
 	public const uint32 QCP_SOURCEPROFILE = 1;
 	public const uint32 QCP_PROFILEMEMORY = 1;
 	public const uint32 QCP_PROFILEDISK = 2;
+	public const String SPLPRINTER_USER_MODE_PRINTER_DRIVER = "SPLUserModePrinterDriver";
 	public const uint32 EMF_PP_COLOR_OPTIMIZATION = 1;
 	public const uint32 PRINTER_NOTIFY_STATUS_ENDPOINT = 1;
 	public const uint32 PRINTER_NOTIFY_STATUS_POLL = 2;
@@ -1100,6 +1119,11 @@ static
 	public const uint32 PRINTER_NOTIFY_CATEGORY_3D = 8192;
 	public const uint32 PRINTER_NOTIFY_OPTIONS_REFRESH = 1;
 	public const uint32 PRINTER_NOTIFY_INFO_DISCARDED = 1;
+	public const String BIDI_ACTION_ENUM_SCHEMA = "EnumSchema";
+	public const String BIDI_ACTION_GET = "Get";
+	public const String BIDI_ACTION_SET = "Set";
+	public const String BIDI_ACTION_GET_ALL = "GetAll";
+	public const String BIDI_ACTION_GET_WITH_ARGUMENT = "GetWithArgument";
 	public const uint32 BIDI_ACCESS_ADMINISTRATOR = 1;
 	public const uint32 BIDI_ACCESS_USER = 2;
 	public const uint32 ERROR_BIDI_STATUS_OK = 0;
@@ -1156,19 +1180,98 @@ static
 	public const uint32 PRINTER_ERROR_OUTOFPAPER = 1;
 	public const uint32 PRINTER_ERROR_JAM = 2;
 	public const uint32 PRINTER_ERROR_OUTOFTONER = 4;
-	public const uint32 SERVER_ACCESS_ADMINISTER = 1;
-	public const uint32 SERVER_ACCESS_ENUMERATE = 2;
-	public const uint32 PRINTER_ACCESS_ADMINISTER = 4;
-	public const uint32 PRINTER_ACCESS_USE = 8;
+	public const String SPLREG_DEFAULT_SPOOL_DIRECTORY = "DefaultSpoolDirectory";
+	public const String SPLREG_PORT_THREAD_PRIORITY_DEFAULT = "PortThreadPriorityDefault";
+	public const String SPLREG_PORT_THREAD_PRIORITY = "PortThreadPriority";
+	public const String SPLREG_SCHEDULER_THREAD_PRIORITY_DEFAULT = "SchedulerThreadPriorityDefault";
+	public const String SPLREG_SCHEDULER_THREAD_PRIORITY = "SchedulerThreadPriority";
+	public const String SPLREG_BEEP_ENABLED = "BeepEnabled";
+	public const String SPLREG_NET_POPUP = "NetPopup";
+	public const String SPLREG_RETRY_POPUP = "RetryPopup";
+	public const String SPLREG_NET_POPUP_TO_COMPUTER = "NetPopupToComputer";
+	public const String SPLREG_EVENT_LOG = "EventLog";
+	public const String SPLREG_MAJOR_VERSION = "MajorVersion";
+	public const String SPLREG_MINOR_VERSION = "MinorVersion";
+	public const String SPLREG_ARCHITECTURE = "Architecture";
+	public const String SPLREG_OS_VERSION = "OSVersion";
+	public const String SPLREG_OS_VERSIONEX = "OSVersionEx";
+	public const String SPLREG_DS_PRESENT = "DsPresent";
+	public const String SPLREG_DS_PRESENT_FOR_USER = "DsPresentForUser";
+	public const String SPLREG_REMOTE_FAX = "RemoteFax";
+	public const String SPLREG_RESTART_JOB_ON_POOL_ERROR = "RestartJobOnPoolError";
+	public const String SPLREG_RESTART_JOB_ON_POOL_ENABLED = "RestartJobOnPoolEnabled";
+	public const String SPLREG_DNS_MACHINE_NAME = "DNSMachineName";
+	public const String SPLREG_ALLOW_USER_MANAGEFORMS = "AllowUserManageForms";
+	public const String SPLREG_WEBSHAREMGMT = "WebShareMgmt";
+	public const String SPLREG_PRINT_DRIVER_ISOLATION_GROUPS = "PrintDriverIsolationGroups";
+	public const String SPLREG_PRINT_DRIVER_ISOLATION_TIME_BEFORE_RECYCLE = "PrintDriverIsolationTimeBeforeRecycle";
+	public const String SPLREG_PRINT_DRIVER_ISOLATION_MAX_OBJECTS_BEFORE_RECYCLE = "PrintDriverIsolationMaxobjsBeforeRecycle";
+	public const String SPLREG_PRINT_DRIVER_ISOLATION_IDLE_TIMEOUT = "PrintDriverIsolationIdleTimeout";
+	public const String SPLREG_PRINT_DRIVER_ISOLATION_EXECUTION_POLICY = "PrintDriverIsolationExecutionPolicy";
+	public const String SPLREG_PRINT_DRIVER_ISOLATION_OVERRIDE_POLICY = "PrintDriverIsolationOverrideCompat";
+	public const String SPLREG_PRINT_QUEUE_V4_DRIVER_DIRECTORY = "PrintQueueV4DriverDirectory";
 	public const uint32 JOB_ACCESS_ADMINISTER = 16;
 	public const uint32 JOB_ACCESS_READ = 32;
-	public const uint32 PRINTER_ACCESS_MANAGE_LIMITED = 64;
+	public const String SPLDS_SPOOLER_KEY = "DsSpooler";
+	public const String SPLDS_DRIVER_KEY = "DsDriver";
+	public const String SPLDS_USER_KEY = "DsUser";
+	public const String SPLDS_ASSET_NUMBER = "assetNumber";
+	public const String SPLDS_BYTES_PER_MINUTE = "bytesPerMinute";
+	public const String SPLDS_DESCRIPTION = "description";
+	public const String SPLDS_DRIVER_NAME = "driverName";
+	public const String SPLDS_DRIVER_VERSION = "driverVersion";
+	public const String SPLDS_LOCATION = "location";
+	public const String SPLDS_PORT_NAME = "portName";
+	public const String SPLDS_PRINT_ATTRIBUTES = "printAttributes";
+	public const String SPLDS_PRINT_BIN_NAMES = "printBinNames";
+	public const String SPLDS_PRINT_COLLATE = "printCollate";
+	public const String SPLDS_PRINT_COLOR = "printColor";
+	public const String SPLDS_PRINT_DUPLEX_SUPPORTED = "printDuplexSupported";
+	public const String SPLDS_PRINT_END_TIME = "printEndTime";
+	public const String SPLDS_PRINTER_CLASS = "printQueue";
+	public const String SPLDS_PRINTER_NAME = "printerName";
+	public const String SPLDS_PRINT_KEEP_PRINTED_JOBS = "printKeepPrintedJobs";
+	public const String SPLDS_PRINT_LANGUAGE = "printLanguage";
+	public const String SPLDS_PRINT_MAC_ADDRESS = "printMACAddress";
+	public const String SPLDS_PRINT_MAX_X_EXTENT = "printMaxXExtent";
+	public const String SPLDS_PRINT_MAX_Y_EXTENT = "printMaxYExtent";
+	public const String SPLDS_PRINT_MAX_RESOLUTION_SUPPORTED = "printMaxResolutionSupported";
+	public const String SPLDS_PRINT_MEDIA_READY = "printMediaReady";
+	public const String SPLDS_PRINT_MEDIA_SUPPORTED = "printMediaSupported";
+	public const String SPLDS_PRINT_MEMORY = "printMemory";
+	public const String SPLDS_PRINT_MIN_X_EXTENT = "printMinXExtent";
+	public const String SPLDS_PRINT_MIN_Y_EXTENT = "printMinYExtent";
+	public const String SPLDS_PRINT_NETWORK_ADDRESS = "printNetworkAddress";
+	public const String SPLDS_PRINT_NOTIFY = "printNotify";
+	public const String SPLDS_PRINT_NUMBER_UP = "printNumberUp";
+	public const String SPLDS_PRINT_ORIENTATIONS_SUPPORTED = "printOrientationsSupported";
+	public const String SPLDS_PRINT_OWNER = "printOwner";
+	public const String SPLDS_PRINT_PAGES_PER_MINUTE = "printPagesPerMinute";
+	public const String SPLDS_PRINT_RATE = "printRate";
+	public const String SPLDS_PRINT_RATE_UNIT = "printRateUnit";
+	public const String SPLDS_PRINT_SEPARATOR_FILE = "printSeparatorFile";
+	public const String SPLDS_PRINT_SHARE_NAME = "printShareName";
+	public const String SPLDS_PRINT_SPOOLING = "printSpooling";
+	public const String SPLDS_PRINT_STAPLING_SUPPORTED = "printStaplingSupported";
+	public const String SPLDS_PRINT_START_TIME = "printStartTime";
+	public const String SPLDS_PRINT_STATUS = "printStatus";
+	public const String SPLDS_PRIORITY = "priority";
+	public const String SPLDS_SERVER_NAME = "serverName";
+	public const String SPLDS_SHORT_SERVER_NAME = "shortServerName";
+	public const String SPLDS_UNC_NAME = "uNCName";
+	public const String SPLDS_URL = "url";
+	public const String SPLDS_FLAGS = "flags";
+	public const String SPLDS_VERSION_NUMBER = "versionNumber";
+	public const String SPLDS_PRINTER_NAME_ALIASES = "printerNameAliases";
+	public const String SPLDS_PRINTER_LOCATIONS = "printerLocations";
+	public const String SPLDS_PRINTER_MODEL = "printerModel";
 	public const uint32 PRINTER_CONNECTION_MISMATCH = 32;
 	public const uint32 PRINTER_CONNECTION_NO_UI = 64;
 	public const uint32 IPDFP_COPY_ALL_FILES = 1;
 	public const uint32 UPDP_SILENT_UPLOAD = 1;
 	public const uint32 UPDP_UPLOAD_ALWAYS = 2;
 	public const uint32 UPDP_CHECK_DRIVERSTORE = 4;
+	public const String MS_PRINT_JOB_OUTPUT_FILE = "MsPrintJobOutputFile";
 	public const uint32 DISPID_PRINTSCHEMA_ELEMENT = 10000;
 	public const uint32 DISPID_PRINTSCHEMA_ELEMENT_XMLNODE = 10001;
 	public const uint32 DISPID_PRINTSCHEMA_ELEMENT_NAME = 10002;
@@ -1311,6 +1414,32 @@ static
 	#endregion
 	
 	#region Enums
+	[AllowDuplicates]
+	public enum PRINTER_ACCESS_RIGHTS : uint32
+	{
+		PRINTER_ALL_ACCESS = 983052,
+		PRINTER_READ = 131080,
+		PRINTER_WRITE = 131080,
+		PRINTER_EXECUTE = 131080,
+		SERVER_ALL_ACCESS = 983043,
+		SERVER_READ = 131074,
+		SERVER_WRITE = 131075,
+		SERVER_EXECUTE = 131074,
+		PRINTER_DELETE = 65536,
+		PRINTER_READ_CONTROL = 131072,
+		PRINTER_WRITE_DAC = 262144,
+		PRINTER_WRITE_OWNER = 524288,
+		PRINTER_SYNCHRONIZE = 1048576,
+		PRINTER_STANDARD_RIGHTS_REQUIRED = 983040,
+		PRINTER_STANDARD_RIGHTS_READ = 131072,
+		PRINTER_STANDARD_RIGHTS_WRITE = 131072,
+		PRINTER_STANDARD_RIGHTS_EXECUTE = 131072,
+		SERVER_ACCESS_ADMINISTER = 1,
+		SERVER_ACCESS_ENUMERATE = 2,
+		PRINTER_ACCESS_ADMINISTER = 4,
+		PRINTER_ACCESS_USE = 8,
+		PRINTER_ACCESS_MANAGE_LIMITED = 64,
+	}
 	public enum EXpsCompressionOptions : int32
 	{
 		NotCompressed = 0,
@@ -1573,70 +1702,6 @@ static
 	
 	#region Structs
 	[CRepr]
-	public struct IBidiRequestVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int SetSchema;
-		public int SetInputData;
-		public int GetResult;
-		public int GetOutputData;
-		public int GetEnumCount;
-	}
-	[CRepr]
-	public struct IBidiRequest
-	{
-		public IBidiRequestVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IBidiRequestContainerVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int AddRequest;
-		public int GetEnumObject;
-		public int GetRequestCount;
-	}
-	[CRepr]
-	public struct IBidiRequestContainer
-	{
-		public IBidiRequestContainerVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IBidiSplVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int BindDevice;
-		public int UnbindDevice;
-		public int SendRecv;
-		public int MultiSendRecv;
-	}
-	[CRepr]
-	public struct IBidiSpl
-	{
-		public IBidiSplVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IBidiSpl2Vtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int BindDevice;
-		public int UnbindDevice;
-		public int SendRecvXMLString;
-		public int SendRecvXMLStream;
-	}
-	[CRepr]
-	public struct IBidiSpl2
-	{
-		public IBidiSpl2Vtbl* lpVtbl;
-	}
-	[CRepr]
 	public struct __MIDL___MIDL_itf_imgerror_0000_0000_0001
 	{
 		public BSTR description;
@@ -1650,453 +1715,6 @@ static
 		public BSTR* aUserParameters;
 		public BSTR userFallback;
 		public uint32 exceptionID;
-	}
-	[CRepr]
-	public struct IImgErrorInfoVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetGUID;
-		public int GetSource;
-		public int GetDescription;
-		public int GetHelpFile;
-		public int GetHelpContext;
-		public int GetDeveloperDescription;
-		public int GetUserErrorId;
-		public int GetUserParameterCount;
-		public int GetUserParameter;
-		public int GetUserFallback;
-		public int GetExceptionId;
-		public int DetachErrorInfo;
-	}
-	[CRepr]
-	public struct IImgErrorInfo
-	{
-		public IImgErrorInfoVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IImgCreateErrorInfoVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int SetGUID;
-		public int SetSource;
-		public int SetDescription;
-		public int SetHelpFile;
-		public int SetHelpContext;
-		public int AttachToErrorInfo;
-	}
-	[CRepr]
-	public struct IImgCreateErrorInfo
-	{
-		public IImgCreateErrorInfoVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPrintReadStreamVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int Seek;
-		public int ReadBytes;
-	}
-	[CRepr]
-	public struct IPrintReadStream
-	{
-		public IPrintReadStreamVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPrintWriteStreamVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int WriteBytes;
-		public int Close;
-	}
-	[CRepr]
-	public struct IPrintWriteStream
-	{
-		public IPrintWriteStreamVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPrintWriteStreamFlushVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int FlushData;
-	}
-	[CRepr]
-	public struct IPrintWriteStreamFlush
-	{
-		public IPrintWriteStreamFlushVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IInterFilterCommunicatorVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int RequestReader;
-		public int RequestWriter;
-	}
-	[CRepr]
-	public struct IInterFilterCommunicator
-	{
-		public IInterFilterCommunicatorVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPrintPipelineManagerControlVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int RequestShutdown;
-		public int FilterFinished;
-	}
-	[CRepr]
-	public struct IPrintPipelineManagerControl
-	{
-		public IPrintPipelineManagerControlVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPrintPipelinePropertyBagVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int AddProperty;
-		public int GetProperty;
-		public int DeleteProperty;
-	}
-	[CRepr]
-	public struct IPrintPipelinePropertyBag
-	{
-		public IPrintPipelinePropertyBagVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPrintPipelineProgressReportVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int ReportProgress;
-	}
-	[CRepr]
-	public struct IPrintPipelineProgressReport
-	{
-		public IPrintPipelineProgressReportVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPrintClassObjectFactoryVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetPrintClassObject;
-	}
-	[CRepr]
-	public struct IPrintClassObjectFactory
-	{
-		public IPrintClassObjectFactoryVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPrintPipelineFilterVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int InitializeFilter;
-		public int ShutdownOperation;
-		public int StartOperation;
-	}
-	[CRepr]
-	public struct IPrintPipelineFilter
-	{
-		public IPrintPipelineFilterVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IXpsDocumentProviderVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetXpsPart;
-	}
-	[CRepr]
-	public struct IXpsDocumentProvider
-	{
-		public IXpsDocumentProviderVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IXpsDocumentConsumerVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int SendXpsUnknown;
-		public int SendXpsDocument;
-		public int SendFixedDocumentSequence;
-		public int SendFixedDocument;
-		public int SendFixedPage;
-		public int CloseSender;
-		public int GetNewEmptyPart;
-	}
-	[CRepr]
-	public struct IXpsDocumentConsumer
-	{
-		public IXpsDocumentConsumerVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IXpsDocumentVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetThumbnail;
-		public int SetThumbnail;
-	}
-	[CRepr]
-	public struct IXpsDocument
-	{
-		public IXpsDocumentVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IFixedDocumentSequenceVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetUri;
-		public int GetPrintTicket;
-		public int SetPrintTicket;
-	}
-	[CRepr]
-	public struct IFixedDocumentSequence
-	{
-		public IFixedDocumentSequenceVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IFixedDocumentVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetUri;
-		public int GetPrintTicket;
-		public int SetPrintTicket;
-	}
-	[CRepr]
-	public struct IFixedDocument
-	{
-		public IFixedDocumentVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPartBaseVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetUri;
-		public int GetStream;
-		public int GetPartCompression;
-		public int SetPartCompression;
-	}
-	[CRepr]
-	public struct IPartBase
-	{
-		public IPartBaseVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IFixedPageVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetUri;
-		public int GetStream;
-		public int GetPartCompression;
-		public int SetPartCompression;
-		public int GetPrintTicket;
-		public int GetPagePart;
-		public int GetWriteStream;
-		public int SetPrintTicket;
-		public int SetPagePart;
-		public int DeleteResource;
-		public int GetXpsPartIterator;
-	}
-	[CRepr]
-	public struct IFixedPage
-	{
-		public IFixedPageVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPartImageVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetUri;
-		public int GetStream;
-		public int GetPartCompression;
-		public int SetPartCompression;
-		public int GetImageProperties;
-		public int SetImageContent;
-	}
-	[CRepr]
-	public struct IPartImage
-	{
-		public IPartImageVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPartFontVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetUri;
-		public int GetStream;
-		public int GetPartCompression;
-		public int SetPartCompression;
-		public int GetFontProperties;
-		public int SetFontContent;
-		public int SetFontOptions;
-	}
-	[CRepr]
-	public struct IPartFont
-	{
-		public IPartFontVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPartFont2Vtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetUri;
-		public int GetStream;
-		public int GetPartCompression;
-		public int SetPartCompression;
-		public int GetFontProperties;
-		public int SetFontContent;
-		public int SetFontOptions;
-		public int GetFontRestriction;
-	}
-	[CRepr]
-	public struct IPartFont2
-	{
-		public IPartFont2Vtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPartThumbnailVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetUri;
-		public int GetStream;
-		public int GetPartCompression;
-		public int SetPartCompression;
-		public int GetThumbnailProperties;
-		public int SetThumbnailContent;
-	}
-	[CRepr]
-	public struct IPartThumbnail
-	{
-		public IPartThumbnailVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPartPrintTicketVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetUri;
-		public int GetStream;
-		public int GetPartCompression;
-		public int SetPartCompression;
-	}
-	[CRepr]
-	public struct IPartPrintTicket
-	{
-		public IPartPrintTicketVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPartColorProfileVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetUri;
-		public int GetStream;
-		public int GetPartCompression;
-		public int SetPartCompression;
-	}
-	[CRepr]
-	public struct IPartColorProfile
-	{
-		public IPartColorProfileVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPartResourceDictionaryVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetUri;
-		public int GetStream;
-		public int GetPartCompression;
-		public int SetPartCompression;
-	}
-	[CRepr]
-	public struct IPartResourceDictionary
-	{
-		public IPartResourceDictionaryVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IXpsPartIteratorVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int Reset;
-		public int Current;
-		public int IsDone;
-		public int Next;
-	}
-	[CRepr]
-	public struct IXpsPartIterator
-	{
-		public IXpsPartIteratorVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPrintReadStreamFactoryVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetStream;
-	}
-	[CRepr]
-	public struct IPrintReadStreamFactory
-	{
-		public IPrintReadStreamFactoryVtbl* lpVtbl;
-	}
-	[CRepr]
-	public struct IPartDiscardControlVtbl
-	{
-		public int QueryInterface;
-		public int AddRef;
-		public int Release;
-		public int GetDiscardProperties;
-	}
-	[CRepr]
-	public struct IPartDiscardControl
-	{
-		public IPartDiscardControlVtbl* lpVtbl;
 	}
 	[CRepr]
 	public struct OPTPARAM
@@ -2370,7 +1988,7 @@ static
 		public PSTR pPrintProcessor;
 		public PSTR pDatatype;
 		public PSTR pParameters;
-		public SECURITY_DESCRIPTOR* pSecurityDescriptor;
+		public PSECURITY_DESCRIPTOR pSecurityDescriptor;
 		public uint32 Attributes;
 		public uint32 Priority;
 		public uint32 DefaultPriority;
@@ -2395,7 +2013,7 @@ static
 		public PWSTR pPrintProcessor;
 		public PWSTR pDatatype;
 		public PWSTR pParameters;
-		public SECURITY_DESCRIPTOR* pSecurityDescriptor;
+		public PSECURITY_DESCRIPTOR pSecurityDescriptor;
 		public uint32 Attributes;
 		public uint32 Priority;
 		public uint32 DefaultPriority;
@@ -2408,7 +2026,7 @@ static
 	[CRepr]
 	public struct PRINTER_INFO_3
 	{
-		public SECURITY_DESCRIPTOR* pSecurityDescriptor;
+		public PSECURITY_DESCRIPTOR pSecurityDescriptor;
 	}
 	[CRepr]
 	public struct PRINTER_INFO_4A
@@ -2528,7 +2146,7 @@ static
 		public PSTR pDriverName;
 		public DEVMODEA* pDevMode;
 		public PSTR pStatus;
-		public SECURITY_DESCRIPTOR* pSecurityDescriptor;
+		public PSECURITY_DESCRIPTOR pSecurityDescriptor;
 		public uint32 Status;
 		public uint32 Priority;
 		public uint32 Position;
@@ -2555,7 +2173,7 @@ static
 		public PWSTR pDriverName;
 		public DEVMODEW* pDevMode;
 		public PWSTR pStatus;
-		public SECURITY_DESCRIPTOR* pSecurityDescriptor;
+		public PSECURITY_DESCRIPTOR pSecurityDescriptor;
 		public uint32 Status;
 		public uint32 Priority;
 		public uint32 Position;
@@ -2589,7 +2207,7 @@ static
 		public PSTR pDriverName;
 		public DEVMODEA* pDevMode;
 		public PSTR pStatus;
-		public SECURITY_DESCRIPTOR* pSecurityDescriptor;
+		public PSECURITY_DESCRIPTOR pSecurityDescriptor;
 		public uint32 Status;
 		public uint32 Priority;
 		public uint32 Position;
@@ -2617,7 +2235,7 @@ static
 		public PWSTR pDriverName;
 		public DEVMODEW* pDevMode;
 		public PWSTR pStatus;
-		public SECURITY_DESCRIPTOR* pSecurityDescriptor;
+		public PSECURITY_DESCRIPTOR pSecurityDescriptor;
 		public uint32 Status;
 		public uint32 Priority;
 		public uint32 Position;
@@ -3060,14 +2678,14 @@ static
 	{
 		public PSTR pDatatype;
 		public DEVMODEA* pDevMode;
-		public uint32 DesiredAccess;
+		public PRINTER_ACCESS_RIGHTS DesiredAccess;
 	}
 	[CRepr]
 	public struct PRINTER_DEFAULTSW
 	{
 		public PWSTR pDatatype;
 		public DEVMODEW* pDevMode;
-		public uint32 DesiredAccess;
+		public PRINTER_ACCESS_RIGHTS DesiredAccess;
 	}
 	[CRepr]
 	public struct PRINTER_ENUM_VALUESA
@@ -3223,13 +2841,13 @@ static
 	public struct PRINTER_OPTIONSA
 	{
 		public uint32 cbSize;
-		public uint32 dwFlags;
+		public PRINTER_OPTION_FLAGS dwFlags;
 	}
 	[CRepr]
 	public struct PRINTER_OPTIONSW
 	{
 		public uint32 cbSize;
-		public uint32 dwFlags;
+		public PRINTER_OPTION_FLAGS dwFlags;
 	}
 	[CRepr]
 	public struct PRINTER_CONNECTION_INFO_1A
@@ -4299,6 +3917,577 @@ static
 	#endregion
 	
 	#region COM interfaces
+	[CRepr]
+	public struct IBidiRequest : IUnknown
+	{
+		public const new Guid IID = .(0x8f348bd7, 0x4b47, 0x4755, 0x8a, 0x9d, 0x0f, 0x42, 0x2d, 0xf3, 0xdc, 0x89);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT SetSchema(PWSTR pszSchema) mut => VT.SetSchema(ref this, pszSchema);
+		public HRESULT SetInputData(uint32 dwType, in uint8 pData, uint32 uSize) mut => VT.SetInputData(ref this, dwType, pData, uSize);
+		public HRESULT GetResult(out HRESULT phr) mut => VT.GetResult(ref this, out phr);
+		public HRESULT GetOutputData(uint32 dwIndex, out PWSTR ppszSchema, out uint32 pdwType, out uint8* ppData, out uint32 uSize) mut => VT.GetOutputData(ref this, dwIndex, out ppszSchema, out pdwType, out ppData, out uSize);
+		public HRESULT GetEnumCount(out uint32 pdwTotal) mut => VT.GetEnumCount(ref this, out pdwTotal);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiRequest self, PWSTR pszSchema) SetSchema;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiRequest self, uint32 dwType, in uint8 pData, uint32 uSize) SetInputData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiRequest self, out HRESULT phr) GetResult;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiRequest self, uint32 dwIndex, out PWSTR ppszSchema, out uint32 pdwType, out uint8* ppData, out uint32 uSize) GetOutputData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiRequest self, out uint32 pdwTotal) GetEnumCount;
+		}
+	}
+	[CRepr]
+	public struct IBidiRequestContainer : IUnknown
+	{
+		public const new Guid IID = .(0xd752f6c0, 0x94a8, 0x4275, 0xa7, 0x7d, 0x8f, 0x1d, 0x1a, 0x11, 0x21, 0xae);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT AddRequest(IBidiRequest* pRequest) mut => VT.AddRequest(ref this, pRequest);
+		public HRESULT GetEnumObject(out IEnumUnknown* ppenum) mut => VT.GetEnumObject(ref this, out ppenum);
+		public HRESULT GetRequestCount(out uint32 puCount) mut => VT.GetRequestCount(ref this, out puCount);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiRequestContainer self, IBidiRequest* pRequest) AddRequest;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiRequestContainer self, out IEnumUnknown* ppenum) GetEnumObject;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiRequestContainer self, out uint32 puCount) GetRequestCount;
+		}
+	}
+	[CRepr]
+	public struct IBidiSpl : IUnknown
+	{
+		public const new Guid IID = .(0xd580dc0e, 0xde39, 0x4649, 0xba, 0xa8, 0xbf, 0x0b, 0x85, 0xa0, 0x3a, 0x97);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT BindDevice(PWSTR pszDeviceName, uint32 dwAccess) mut => VT.BindDevice(ref this, pszDeviceName, dwAccess);
+		public HRESULT UnbindDevice() mut => VT.UnbindDevice(ref this);
+		public HRESULT SendRecv(PWSTR pszAction, IBidiRequest* pRequest) mut => VT.SendRecv(ref this, pszAction, pRequest);
+		public HRESULT MultiSendRecv(PWSTR pszAction, IBidiRequestContainer* pRequestContainer) mut => VT.MultiSendRecv(ref this, pszAction, pRequestContainer);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiSpl self, PWSTR pszDeviceName, uint32 dwAccess) BindDevice;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiSpl self) UnbindDevice;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiSpl self, PWSTR pszAction, IBidiRequest* pRequest) SendRecv;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiSpl self, PWSTR pszAction, IBidiRequestContainer* pRequestContainer) MultiSendRecv;
+		}
+	}
+	[CRepr]
+	public struct IBidiSpl2 : IUnknown
+	{
+		public const new Guid IID = .(0x0e8f51b8, 0x8273, 0x4906, 0x8e, 0x7b, 0xbe, 0x45, 0x3f, 0xfd, 0x2e, 0x2b);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT BindDevice(PWSTR pszDeviceName, uint32 dwAccess) mut => VT.BindDevice(ref this, pszDeviceName, dwAccess);
+		public HRESULT UnbindDevice() mut => VT.UnbindDevice(ref this);
+		public HRESULT SendRecvXMLString(BSTR bstrRequest, out BSTR pbstrResponse) mut => VT.SendRecvXMLString(ref this, bstrRequest, out pbstrResponse);
+		public HRESULT SendRecvXMLStream(IStream* pSRequest, out IStream* ppSResponse) mut => VT.SendRecvXMLStream(ref this, pSRequest, out ppSResponse);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiSpl2 self, PWSTR pszDeviceName, uint32 dwAccess) BindDevice;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiSpl2 self) UnbindDevice;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiSpl2 self, BSTR bstrRequest, out BSTR pbstrResponse) SendRecvXMLString;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IBidiSpl2 self, IStream* pSRequest, out IStream* ppSResponse) SendRecvXMLStream;
+		}
+	}
+	[CRepr]
+	public struct IImgErrorInfo : IErrorInfo
+	{
+		public const new Guid IID = .(0x2bce4ece, 0xd30e, 0x445a, 0x94, 0x23, 0x68, 0x29, 0xbe, 0x94, 0x5a, 0xd8);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT GetDeveloperDescription(out BSTR pbstrDevDescription) mut => VT.GetDeveloperDescription(ref this, out pbstrDevDescription);
+		public HRESULT GetUserErrorId(out Guid pErrorId) mut => VT.GetUserErrorId(ref this, out pErrorId);
+		public HRESULT GetUserParameterCount(out uint32 pcUserParams) mut => VT.GetUserParameterCount(ref this, out pcUserParams);
+		public HRESULT GetUserParameter(uint32 cParam, out BSTR pbstrParam) mut => VT.GetUserParameter(ref this, cParam, out pbstrParam);
+		public HRESULT GetUserFallback(out BSTR pbstrFallback) mut => VT.GetUserFallback(ref this, out pbstrFallback);
+		public HRESULT GetExceptionId(out uint32 pExceptionId) mut => VT.GetExceptionId(ref this, out pExceptionId);
+		public HRESULT DetachErrorInfo(out __MIDL___MIDL_itf_imgerror_0000_0000_0001 pErrorInfo) mut => VT.DetachErrorInfo(ref this, out pErrorInfo);
+
+		[CRepr]
+		public struct VTable : IErrorInfo.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IImgErrorInfo self, out BSTR pbstrDevDescription) GetDeveloperDescription;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IImgErrorInfo self, out Guid pErrorId) GetUserErrorId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IImgErrorInfo self, out uint32 pcUserParams) GetUserParameterCount;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IImgErrorInfo self, uint32 cParam, out BSTR pbstrParam) GetUserParameter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IImgErrorInfo self, out BSTR pbstrFallback) GetUserFallback;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IImgErrorInfo self, out uint32 pExceptionId) GetExceptionId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IImgErrorInfo self, out __MIDL___MIDL_itf_imgerror_0000_0000_0001 pErrorInfo) DetachErrorInfo;
+		}
+	}
+	[CRepr]
+	public struct IImgCreateErrorInfo : ICreateErrorInfo
+	{
+		public const new Guid IID = .(0x1c55a64c, 0x07cd, 0x4fb5, 0x90, 0xf7, 0xb7, 0x53, 0xd9, 0x1f, 0x0c, 0x9e);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT AttachToErrorInfo(out __MIDL___MIDL_itf_imgerror_0000_0000_0001 pErrorInfo) mut => VT.AttachToErrorInfo(ref this, out pErrorInfo);
+
+		[CRepr]
+		public struct VTable : ICreateErrorInfo.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IImgCreateErrorInfo self, out __MIDL___MIDL_itf_imgerror_0000_0000_0001 pErrorInfo) AttachToErrorInfo;
+		}
+	}
+	[CRepr]
+	public struct IPrintReadStream : IUnknown
+	{
+		public const new Guid IID = .(0x4d47a67c, 0x66cc, 0x4430, 0x85, 0x0e, 0xda, 0xf4, 0x66, 0xfe, 0x5b, 0xc4);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT Seek(int64 dlibMove, uint32 dwOrigin, uint64* plibNewPosition) mut => VT.Seek(ref this, dlibMove, dwOrigin, plibNewPosition);
+		public HRESULT ReadBytes(void* pvBuffer, uint32 cbRequested, out uint32 pcbRead, out BOOL pbEndOfFile) mut => VT.ReadBytes(ref this, pvBuffer, cbRequested, out pcbRead, out pbEndOfFile);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintReadStream self, int64 dlibMove, uint32 dwOrigin, uint64* plibNewPosition) Seek;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintReadStream self, void* pvBuffer, uint32 cbRequested, out uint32 pcbRead, out BOOL pbEndOfFile) ReadBytes;
+		}
+	}
+	[CRepr]
+	public struct IPrintWriteStream : IUnknown
+	{
+		public const new Guid IID = .(0x65bb7f1b, 0x371e, 0x4571, 0x8a, 0xc7, 0x91, 0x2f, 0x51, 0x0c, 0x1a, 0x38);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT WriteBytes(void* pvBuffer, uint32 cbBuffer, out uint32 pcbWritten) mut => VT.WriteBytes(ref this, pvBuffer, cbBuffer, out pcbWritten);
+		public void Close() mut => VT.Close(ref this);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintWriteStream self, void* pvBuffer, uint32 cbBuffer, out uint32 pcbWritten) WriteBytes;
+			public new function [CallingConvention(.Stdcall)] void(ref IPrintWriteStream self) Close;
+		}
+	}
+	[CRepr]
+	public struct IPrintWriteStreamFlush : IUnknown
+	{
+		public const new Guid IID = .(0x07d11ff8, 0x1753, 0x4873, 0xb7, 0x49, 0x6c, 0xda, 0xf0, 0x68, 0xe4, 0xc3);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT FlushData() mut => VT.FlushData(ref this);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintWriteStreamFlush self) FlushData;
+		}
+	}
+	[CRepr]
+	public struct IInterFilterCommunicator : IUnknown
+	{
+		public const new Guid IID = .(0x4daf1e69, 0x81fd, 0x462d, 0x94, 0x0f, 0x8c, 0xd3, 0xdd, 0xf5, 0x6f, 0xca);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT RequestReader(void** ppIReader) mut => VT.RequestReader(ref this, ppIReader);
+		public HRESULT RequestWriter(void** ppIWriter) mut => VT.RequestWriter(ref this, ppIWriter);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IInterFilterCommunicator self, void** ppIReader) RequestReader;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IInterFilterCommunicator self, void** ppIWriter) RequestWriter;
+		}
+	}
+	[CRepr]
+	public struct IPrintPipelineManagerControl : IUnknown
+	{
+		public const new Guid IID = .(0xaa3e4910, 0x5889, 0x4681, 0x91, 0xef, 0x82, 0x3a, 0xd4, 0xed, 0x4e, 0x44);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT RequestShutdown(HRESULT hrReason, ref IImgErrorInfo pReason) mut => VT.RequestShutdown(ref this, hrReason, ref pReason);
+		public HRESULT FilterFinished() mut => VT.FilterFinished(ref this);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintPipelineManagerControl self, HRESULT hrReason, ref IImgErrorInfo pReason) RequestShutdown;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintPipelineManagerControl self) FilterFinished;
+		}
+	}
+	[CRepr]
+	public struct IPrintPipelinePropertyBag : IUnknown
+	{
+		public const new Guid IID = .(0x8b8c99dc, 0x7892, 0x4a95, 0x8a, 0x04, 0x57, 0x42, 0x2e, 0x9f, 0xbb, 0x47);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT AddProperty(PWSTR pszName, in VARIANT pVar) mut => VT.AddProperty(ref this, pszName, pVar);
+		public HRESULT GetProperty(PWSTR pszName, out VARIANT pVar) mut => VT.GetProperty(ref this, pszName, out pVar);
+		public BOOL DeleteProperty(PWSTR pszName) mut => VT.DeleteProperty(ref this, pszName);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintPipelinePropertyBag self, PWSTR pszName, in VARIANT pVar) AddProperty;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintPipelinePropertyBag self, PWSTR pszName, out VARIANT pVar) GetProperty;
+			public new function [CallingConvention(.Stdcall)] BOOL(ref IPrintPipelinePropertyBag self, PWSTR pszName) DeleteProperty;
+		}
+	}
+	[CRepr]
+	public struct IPrintPipelineProgressReport : IUnknown
+	{
+		public const new Guid IID = .(0xedc12c7c, 0xed40, 0x4ea5, 0x96, 0xa6, 0x5e, 0x43, 0x97, 0x49, 0x7a, 0x61);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT ReportProgress(EXpsJobConsumption update) mut => VT.ReportProgress(ref this, update);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintPipelineProgressReport self, EXpsJobConsumption update) ReportProgress;
+		}
+	}
+	[CRepr]
+	public struct IPrintClassObjectFactory : IUnknown
+	{
+		public const new Guid IID = .(0x9af593dd, 0x9b02, 0x48a8, 0x9b, 0xad, 0x69, 0xac, 0xe4, 0x23, 0xf8, 0x8b);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT GetPrintClassObject(PWSTR pszPrinterName, in Guid riid, void** ppNewObject) mut => VT.GetPrintClassObject(ref this, pszPrinterName, riid, ppNewObject);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintClassObjectFactory self, PWSTR pszPrinterName, in Guid riid, void** ppNewObject) GetPrintClassObject;
+		}
+	}
+	[CRepr]
+	public struct IPrintPipelineFilter : IUnknown
+	{
+		public const new Guid IID = .(0xcdb62fc0, 0x8bed, 0x434e, 0x86, 0xfb, 0xa2, 0xca, 0xe5, 0x5f, 0x19, 0xea);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT InitializeFilter(ref IInterFilterCommunicator pINegotiation, ref IPrintPipelinePropertyBag pIPropertyBag, ref IPrintPipelineManagerControl pIPipelineControl) mut => VT.InitializeFilter(ref this, ref pINegotiation, ref pIPropertyBag, ref pIPipelineControl);
+		public HRESULT ShutdownOperation() mut => VT.ShutdownOperation(ref this);
+		public HRESULT StartOperation() mut => VT.StartOperation(ref this);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintPipelineFilter self, ref IInterFilterCommunicator pINegotiation, ref IPrintPipelinePropertyBag pIPropertyBag, ref IPrintPipelineManagerControl pIPipelineControl) InitializeFilter;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintPipelineFilter self) ShutdownOperation;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintPipelineFilter self) StartOperation;
+		}
+	}
+	[CRepr]
+	public struct IXpsDocumentProvider : IUnknown
+	{
+		public const new Guid IID = .(0xb8cf8530, 0x5562, 0x47c4, 0xab, 0x67, 0xb1, 0xf6, 0x9e, 0xcf, 0x96, 0x1e);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT GetXpsPart(out IUnknown* ppIXpsPart) mut => VT.GetXpsPart(ref this, out ppIXpsPart);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsDocumentProvider self, out IUnknown* ppIXpsPart) GetXpsPart;
+		}
+	}
+	[CRepr]
+	public struct IXpsDocumentConsumer : IUnknown
+	{
+		public const new Guid IID = .(0x4368d8a2, 0x4181, 0x4a9f, 0xb2, 0x95, 0x3d, 0x9a, 0x38, 0xbb, 0x9b, 0xa0);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT SendXpsUnknown(ref IUnknown pUnknown) mut => VT.SendXpsUnknown(ref this, ref pUnknown);
+		public HRESULT SendXpsDocument(ref IXpsDocument pIXpsDocument) mut => VT.SendXpsDocument(ref this, ref pIXpsDocument);
+		public HRESULT SendFixedDocumentSequence(ref IFixedDocumentSequence pIFixedDocumentSequence) mut => VT.SendFixedDocumentSequence(ref this, ref pIFixedDocumentSequence);
+		public HRESULT SendFixedDocument(ref IFixedDocument pIFixedDocument) mut => VT.SendFixedDocument(ref this, ref pIFixedDocument);
+		public HRESULT SendFixedPage(ref IFixedPage pIFixedPage) mut => VT.SendFixedPage(ref this, ref pIFixedPage);
+		public HRESULT CloseSender() mut => VT.CloseSender(ref this);
+		public HRESULT GetNewEmptyPart(PWSTR uri, in Guid riid, void** ppNewObject, out IPrintWriteStream* ppWriteStream) mut => VT.GetNewEmptyPart(ref this, uri, riid, ppNewObject, out ppWriteStream);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsDocumentConsumer self, ref IUnknown pUnknown) SendXpsUnknown;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsDocumentConsumer self, ref IXpsDocument pIXpsDocument) SendXpsDocument;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsDocumentConsumer self, ref IFixedDocumentSequence pIFixedDocumentSequence) SendFixedDocumentSequence;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsDocumentConsumer self, ref IFixedDocument pIFixedDocument) SendFixedDocument;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsDocumentConsumer self, ref IFixedPage pIFixedPage) SendFixedPage;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsDocumentConsumer self) CloseSender;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsDocumentConsumer self, PWSTR uri, in Guid riid, void** ppNewObject, out IPrintWriteStream* ppWriteStream) GetNewEmptyPart;
+		}
+	}
+	[CRepr]
+	public struct IXpsDocument : IUnknown
+	{
+		public const new Guid IID = .(0xe8d907db, 0x62a9, 0x4a95, 0xab, 0xe7, 0xe0, 0x17, 0x63, 0xdd, 0x30, 0xf8);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT GetThumbnail(out IPartThumbnail* ppThumbnail) mut => VT.GetThumbnail(ref this, out ppThumbnail);
+		public HRESULT SetThumbnail(ref IPartThumbnail pThumbnail) mut => VT.SetThumbnail(ref this, ref pThumbnail);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsDocument self, out IPartThumbnail* ppThumbnail) GetThumbnail;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsDocument self, ref IPartThumbnail pThumbnail) SetThumbnail;
+		}
+	}
+	[CRepr]
+	public struct IFixedDocumentSequence : IUnknown
+	{
+		public const new Guid IID = .(0x8028d181, 0x2c32, 0x4249, 0x84, 0x93, 0x1b, 0xfb, 0x22, 0x04, 0x55, 0x74);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT GetUri(out BSTR uri) mut => VT.GetUri(ref this, out uri);
+		public HRESULT GetPrintTicket(out IPartPrintTicket* ppPrintTicket) mut => VT.GetPrintTicket(ref this, out ppPrintTicket);
+		public HRESULT SetPrintTicket(ref IPartPrintTicket pPrintTicket) mut => VT.SetPrintTicket(ref this, ref pPrintTicket);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFixedDocumentSequence self, out BSTR uri) GetUri;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFixedDocumentSequence self, out IPartPrintTicket* ppPrintTicket) GetPrintTicket;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFixedDocumentSequence self, ref IPartPrintTicket pPrintTicket) SetPrintTicket;
+		}
+	}
+	[CRepr]
+	public struct IFixedDocument : IUnknown
+	{
+		public const new Guid IID = .(0xf222ca9f, 0x9968, 0x4db9, 0x81, 0xbd, 0xab, 0xae, 0xbf, 0x15, 0xf9, 0x3f);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT GetUri(out BSTR uri) mut => VT.GetUri(ref this, out uri);
+		public HRESULT GetPrintTicket(out IPartPrintTicket* ppPrintTicket) mut => VT.GetPrintTicket(ref this, out ppPrintTicket);
+		public HRESULT SetPrintTicket(ref IPartPrintTicket pPrintTicket) mut => VT.SetPrintTicket(ref this, ref pPrintTicket);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFixedDocument self, out BSTR uri) GetUri;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFixedDocument self, out IPartPrintTicket* ppPrintTicket) GetPrintTicket;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFixedDocument self, ref IPartPrintTicket pPrintTicket) SetPrintTicket;
+		}
+	}
+	[CRepr]
+	public struct IPartBase : IUnknown
+	{
+		public const new Guid IID = .(0x36d51e28, 0x369e, 0x43ba, 0xa6, 0x66, 0x95, 0x40, 0xc6, 0x2c, 0x3f, 0x58);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT GetUri(out BSTR uri) mut => VT.GetUri(ref this, out uri);
+		public HRESULT GetStream(out IPrintReadStream* ppStream) mut => VT.GetStream(ref this, out ppStream);
+		public HRESULT GetPartCompression(out EXpsCompressionOptions pCompression) mut => VT.GetPartCompression(ref this, out pCompression);
+		public HRESULT SetPartCompression(EXpsCompressionOptions compression) mut => VT.SetPartCompression(ref this, compression);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPartBase self, out BSTR uri) GetUri;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPartBase self, out IPrintReadStream* ppStream) GetStream;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPartBase self, out EXpsCompressionOptions pCompression) GetPartCompression;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPartBase self, EXpsCompressionOptions compression) SetPartCompression;
+		}
+	}
+	[CRepr]
+	public struct IFixedPage : IPartBase
+	{
+		public const new Guid IID = .(0x3d9f6448, 0x7e95, 0x4cb5, 0x94, 0xfb, 0x01, 0x80, 0xc2, 0x88, 0x3a, 0x57);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT GetPrintTicket(out IPartPrintTicket* ppPrintTicket) mut => VT.GetPrintTicket(ref this, out ppPrintTicket);
+		public HRESULT GetPagePart(PWSTR uri, out IUnknown* ppUnk) mut => VT.GetPagePart(ref this, uri, out ppUnk);
+		public HRESULT GetWriteStream(out IPrintWriteStream* ppWriteStream) mut => VT.GetWriteStream(ref this, out ppWriteStream);
+		public HRESULT SetPrintTicket(ref IPartPrintTicket ppPrintTicket) mut => VT.SetPrintTicket(ref this, ref ppPrintTicket);
+		public HRESULT SetPagePart(ref IUnknown pUnk) mut => VT.SetPagePart(ref this, ref pUnk);
+		public HRESULT DeleteResource(PWSTR uri) mut => VT.DeleteResource(ref this, uri);
+		public HRESULT GetXpsPartIterator(out IXpsPartIterator* pXpsPartIt) mut => VT.GetXpsPartIterator(ref this, out pXpsPartIt);
+
+		[CRepr]
+		public struct VTable : IPartBase.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFixedPage self, out IPartPrintTicket* ppPrintTicket) GetPrintTicket;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFixedPage self, PWSTR uri, out IUnknown* ppUnk) GetPagePart;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFixedPage self, out IPrintWriteStream* ppWriteStream) GetWriteStream;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFixedPage self, ref IPartPrintTicket ppPrintTicket) SetPrintTicket;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFixedPage self, ref IUnknown pUnk) SetPagePart;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFixedPage self, PWSTR uri) DeleteResource;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFixedPage self, out IXpsPartIterator* pXpsPartIt) GetXpsPartIterator;
+		}
+	}
+	[CRepr]
+	public struct IPartImage : IPartBase
+	{
+		public const new Guid IID = .(0x725f2e3c, 0x401a, 0x4705, 0x9d, 0xe0, 0xfe, 0x6f, 0x13, 0x53, 0xb8, 0x7f);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT GetImageProperties(out BSTR pContentType) mut => VT.GetImageProperties(ref this, out pContentType);
+		public HRESULT SetImageContent(PWSTR pContentType) mut => VT.SetImageContent(ref this, pContentType);
+
+		[CRepr]
+		public struct VTable : IPartBase.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPartImage self, out BSTR pContentType) GetImageProperties;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPartImage self, PWSTR pContentType) SetImageContent;
+		}
+	}
+	[CRepr]
+	public struct IPartFont : IPartBase
+	{
+		public const new Guid IID = .(0xe07fe0ab, 0x1124, 0x43d0, 0xa8, 0x65, 0xe8, 0xff, 0xb6, 0xa3, 0xea, 0x82);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT GetFontProperties(out BSTR pContentType, out EXpsFontOptions pFontOptions) mut => VT.GetFontProperties(ref this, out pContentType, out pFontOptions);
+		public HRESULT SetFontContent(PWSTR pContentType) mut => VT.SetFontContent(ref this, pContentType);
+		public HRESULT SetFontOptions(EXpsFontOptions options) mut => VT.SetFontOptions(ref this, options);
+
+		[CRepr]
+		public struct VTable : IPartBase.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPartFont self, out BSTR pContentType, out EXpsFontOptions pFontOptions) GetFontProperties;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPartFont self, PWSTR pContentType) SetFontContent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPartFont self, EXpsFontOptions options) SetFontOptions;
+		}
+	}
+	[CRepr]
+	public struct IPartFont2 : IPartFont
+	{
+		public const new Guid IID = .(0x511e025f, 0xd6cb, 0x43be, 0xbf, 0x65, 0x63, 0xfe, 0x88, 0x51, 0x5a, 0x39);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT GetFontRestriction(out EXpsFontRestriction pRestriction) mut => VT.GetFontRestriction(ref this, out pRestriction);
+
+		[CRepr]
+		public struct VTable : IPartFont.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPartFont2 self, out EXpsFontRestriction pRestriction) GetFontRestriction;
+		}
+	}
+	[CRepr]
+	public struct IPartThumbnail : IPartBase
+	{
+		public const new Guid IID = .(0x027ed1c9, 0xba39, 0x4cc5, 0xaa, 0x55, 0x7e, 0xc3, 0xa0, 0xde, 0x17, 0x1a);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT GetThumbnailProperties(out BSTR pContentType) mut => VT.GetThumbnailProperties(ref this, out pContentType);
+		public HRESULT SetThumbnailContent(PWSTR pContentType) mut => VT.SetThumbnailContent(ref this, pContentType);
+
+		[CRepr]
+		public struct VTable : IPartBase.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPartThumbnail self, out BSTR pContentType) GetThumbnailProperties;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPartThumbnail self, PWSTR pContentType) SetThumbnailContent;
+		}
+	}
+	[CRepr]
+	public struct IPartPrintTicket : IPartBase
+	{
+		public const new Guid IID = .(0x4a0f50f6, 0xf9a2, 0x41f0, 0x99, 0xe7, 0x5a, 0xe9, 0x55, 0xbe, 0x8e, 0x9e);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		[CRepr]
+		public struct VTable : IPartBase.VTable {}
+	}
+	[CRepr]
+	public struct IPartColorProfile : IPartBase
+	{
+		public const new Guid IID = .(0x63cca95b, 0x7d18, 0x4762, 0xb1, 0x5e, 0x98, 0x65, 0x86, 0x93, 0xd2, 0x4a);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		[CRepr]
+		public struct VTable : IPartBase.VTable {}
+	}
+	[CRepr]
+	public struct IPartResourceDictionary : IPartBase
+	{
+		public const new Guid IID = .(0x16cfce6d, 0xe744, 0x4fb3, 0xb4, 0x74, 0xf1, 0xd5, 0x4f, 0x02, 0x4a, 0x01);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		[CRepr]
+		public struct VTable : IPartBase.VTable {}
+	}
+	[CRepr]
+	public struct IXpsPartIterator : IUnknown
+	{
+		public const new Guid IID = .(0x0021d3cd, 0xaf6f, 0x42ab, 0x99, 0x99, 0x14, 0xbc, 0x82, 0xa6, 0x2d, 0x2e);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public void Reset() mut => VT.Reset(ref this);
+		public HRESULT Current(out BSTR pUri, out IUnknown* ppXpsPart) mut => VT.Current(ref this, out pUri, out ppXpsPart);
+		public BOOL IsDone() mut => VT.IsDone(ref this);
+		public void Next() mut => VT.Next(ref this);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] void(ref IXpsPartIterator self) Reset;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsPartIterator self, out BSTR pUri, out IUnknown* ppXpsPart) Current;
+			public new function [CallingConvention(.Stdcall)] BOOL(ref IXpsPartIterator self) IsDone;
+			public new function [CallingConvention(.Stdcall)] void(ref IXpsPartIterator self) Next;
+		}
+	}
+	[CRepr]
+	public struct IPrintReadStreamFactory : IUnknown
+	{
+		public const new Guid IID = .(0xacb971e3, 0xdf8d, 0x4fc2, 0xbe, 0xe6, 0x06, 0x09, 0xd1, 0x5f, 0x3c, 0xf9);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT GetStream(out IPrintReadStream* ppStream) mut => VT.GetStream(ref this, out ppStream);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintReadStreamFactory self, out IPrintReadStream* ppStream) GetStream;
+		}
+	}
+	[CRepr]
+	public struct IPartDiscardControl : IUnknown
+	{
+		public const new Guid IID = .(0xcc350c00, 0x095b, 0x42a5, 0xbf, 0x0f, 0xc8, 0x78, 0x0e, 0xda, 0xdb, 0x3c);
+		
+		public new VTable* VT { get => (.)vt; }
+		
+		public HRESULT GetDiscardProperties(out BSTR uriSentinelPage, out BSTR uriPartToDiscard) mut => VT.GetDiscardProperties(ref this, out uriSentinelPage, out uriPartToDiscard);
+
+		[CRepr]
+		public struct VTable : IUnknown.VTable
+		{
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPartDiscardControl self, out BSTR uriSentinelPage, out BSTR uriPartToDiscard) GetDiscardProperties;
+		}
+	}
 	[CRepr]
 	public struct IPrintCoreHelper : IUnknown
 	{
@@ -5523,13 +5712,13 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT RasterizeRect(int32 x, int32 y, int32 width, int32 height, IXpsRasterizerNotificationCallback* notificationCallback, IWICBitmap** bitmap) mut => VT.RasterizeRect(ref this, x, y, width, height, notificationCallback, bitmap);
+		public HRESULT RasterizeRect(int32 x, int32 y, int32 width, int32 height, IXpsRasterizerNotificationCallback* notificationCallback, out IWICBitmap* bitmap) mut => VT.RasterizeRect(ref this, x, y, width, height, notificationCallback, out bitmap);
 		public HRESULT SetMinimalLineWidth(int32 width) mut => VT.SetMinimalLineWidth(ref this, width);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsRasterizer self, int32 x, int32 y, int32 width, int32 height, IXpsRasterizerNotificationCallback* notificationCallback, IWICBitmap** bitmap) RasterizeRect;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsRasterizer self, int32 x, int32 y, int32 width, int32 height, IXpsRasterizerNotificationCallback* notificationCallback, out IWICBitmap* bitmap) RasterizeRect;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsRasterizer self, int32 width) SetMinimalLineWidth;
 		}
 	}
@@ -5540,12 +5729,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT CreateRasterizer(IXpsOMPage* xpsPage, float DPI, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, IXpsRasterizer** ppIXPSRasterizer) mut => VT.CreateRasterizer(ref this, xpsPage, DPI, nonTextRenderingMode, textRenderingMode, ppIXPSRasterizer);
+		public HRESULT CreateRasterizer(IXpsOMPage* xpsPage, float DPI, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, out IXpsRasterizer* ppIXPSRasterizer) mut => VT.CreateRasterizer(ref this, xpsPage, DPI, nonTextRenderingMode, textRenderingMode, out ppIXPSRasterizer);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsRasterizationFactory self, IXpsOMPage* xpsPage, float DPI, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, IXpsRasterizer** ppIXPSRasterizer) CreateRasterizer;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsRasterizationFactory self, IXpsOMPage* xpsPage, float DPI, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, out IXpsRasterizer* ppIXPSRasterizer) CreateRasterizer;
 		}
 	}
 	[CRepr]
@@ -5555,12 +5744,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT CreateRasterizer(IXpsOMPage* xpsPage, float DPI, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, XPSRAS_PIXEL_FORMAT pixelFormat, IXpsRasterizer** ppIXPSRasterizer) mut => VT.CreateRasterizer(ref this, xpsPage, DPI, nonTextRenderingMode, textRenderingMode, pixelFormat, ppIXPSRasterizer);
+		public HRESULT CreateRasterizer(IXpsOMPage* xpsPage, float DPI, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, XPSRAS_PIXEL_FORMAT pixelFormat, out IXpsRasterizer* ppIXPSRasterizer) mut => VT.CreateRasterizer(ref this, xpsPage, DPI, nonTextRenderingMode, textRenderingMode, pixelFormat, out ppIXPSRasterizer);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsRasterizationFactory1 self, IXpsOMPage* xpsPage, float DPI, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, XPSRAS_PIXEL_FORMAT pixelFormat, IXpsRasterizer** ppIXPSRasterizer) CreateRasterizer;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsRasterizationFactory1 self, IXpsOMPage* xpsPage, float DPI, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, XPSRAS_PIXEL_FORMAT pixelFormat, out IXpsRasterizer* ppIXPSRasterizer) CreateRasterizer;
 		}
 	}
 	[CRepr]
@@ -5570,12 +5759,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT CreateRasterizer(IXpsOMPage* xpsPage, float DPIX, float DPIY, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, XPSRAS_PIXEL_FORMAT pixelFormat, XPSRAS_BACKGROUND_COLOR backgroundColor, IXpsRasterizer** ppIXpsRasterizer) mut => VT.CreateRasterizer(ref this, xpsPage, DPIX, DPIY, nonTextRenderingMode, textRenderingMode, pixelFormat, backgroundColor, ppIXpsRasterizer);
+		public HRESULT CreateRasterizer(IXpsOMPage* xpsPage, float DPIX, float DPIY, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, XPSRAS_PIXEL_FORMAT pixelFormat, XPSRAS_BACKGROUND_COLOR backgroundColor, out IXpsRasterizer* ppIXpsRasterizer) mut => VT.CreateRasterizer(ref this, xpsPage, DPIX, DPIY, nonTextRenderingMode, textRenderingMode, pixelFormat, backgroundColor, out ppIXpsRasterizer);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsRasterizationFactory2 self, IXpsOMPage* xpsPage, float DPIX, float DPIY, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, XPSRAS_PIXEL_FORMAT pixelFormat, XPSRAS_BACKGROUND_COLOR backgroundColor, IXpsRasterizer** ppIXpsRasterizer) CreateRasterizer;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsRasterizationFactory2 self, IXpsOMPage* xpsPage, float DPIX, float DPIY, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, XPSRAS_PIXEL_FORMAT pixelFormat, XPSRAS_BACKGROUND_COLOR backgroundColor, out IXpsRasterizer* ppIXpsRasterizer) CreateRasterizer;
 		}
 	}
 	[CRepr]
@@ -5608,335 +5797,335 @@ static
 	public static extern uint GetCPSUIUserData(HWND hDlg);
 	[Import("compstui.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetCPSUIUserData(HWND hDlg, uint CPSUIUserData);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumPrintersA(uint32 Flags, PSTR Name, uint32 Level, uint8* pPrinterEnum, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumPrintersW(uint32 Flags, PWSTR Name, uint32 Level, uint8* pPrinterEnum, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE GetSpoolFileHandle(HANDLE hPrinter);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE CommitSpoolData(HANDLE hPrinter, HANDLE hSpoolFile, uint32 cbCommit);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CloseSpoolFileHandle(HANDLE hPrinter, HANDLE hSpoolFile);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL OpenPrinterA(PSTR pPrinterName, out HANDLE phPrinter, PRINTER_DEFAULTSA* pDefault);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL OpenPrinterW(PWSTR pPrinterName, out HANDLE phPrinter, PRINTER_DEFAULTSW* pDefault);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ResetPrinterA(HANDLE hPrinter, PRINTER_DEFAULTSA* pDefault);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ResetPrinterW(HANDLE hPrinter, PRINTER_DEFAULTSW* pDefault);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetJobA(HANDLE hPrinter, uint32 JobId, uint32 Level, uint8* pJob, uint32 Command);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetJobW(HANDLE hPrinter, uint32 JobId, uint32 Level, uint8* pJob, uint32 Command);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetJobA(HANDLE hPrinter, uint32 JobId, uint32 Level, uint8* pJob, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetJobW(HANDLE hPrinter, uint32 JobId, uint32 Level, uint8* pJob, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumJobsA(HANDLE hPrinter, uint32 FirstJob, uint32 NoJobs, uint32 Level, uint8* pJob, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumJobsW(HANDLE hPrinter, uint32 FirstJob, uint32 NoJobs, uint32 Level, uint8* pJob, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE AddPrinterA(PSTR pName, uint32 Level, ref uint8 pPrinter);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE AddPrinterW(PWSTR pName, uint32 Level, ref uint8 pPrinter);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeletePrinter(HANDLE hPrinter);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetPrinterA(HANDLE hPrinter, uint32 Level, uint8* pPrinter, uint32 Command);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetPrinterW(HANDLE hPrinter, uint32 Level, uint8* pPrinter, uint32 Command);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPrinterA(HANDLE hPrinter, uint32 Level, uint8* pPrinter, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPrinterW(HANDLE hPrinter, uint32 Level, uint8* pPrinter, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddPrinterDriverA(PSTR pName, uint32 Level, ref uint8 pDriverInfo);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddPrinterDriverW(PWSTR pName, uint32 Level, ref uint8 pDriverInfo);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddPrinterDriverExA(PSTR pName, uint32 Level, ref uint8 lpbDriverInfo, uint32 dwFileCopyFlags);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddPrinterDriverExW(PWSTR pName, uint32 Level, ref uint8 lpbDriverInfo, uint32 dwFileCopyFlags);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumPrinterDriversA(PSTR pName, PSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumPrinterDriversW(PWSTR pName, PWSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPrinterDriverA(HANDLE hPrinter, PSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPrinterDriverW(HANDLE hPrinter, PWSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPrinterDriverDirectoryA(PSTR pName, PSTR pEnvironment, uint32 Level, uint8* pDriverDirectory, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPrinterDriverDirectoryW(PWSTR pName, PWSTR pEnvironment, uint32 Level, uint8* pDriverDirectory, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeletePrinterDriverA(PSTR pName, PSTR pEnvironment, PSTR pDriverName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeletePrinterDriverW(PWSTR pName, PWSTR pEnvironment, PWSTR pDriverName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeletePrinterDriverExA(PSTR pName, PSTR pEnvironment, PSTR pDriverName, uint32 dwDeleteFlag, uint32 dwVersionFlag);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeletePrinterDriverExW(PWSTR pName, PWSTR pEnvironment, PWSTR pDriverName, uint32 dwDeleteFlag, uint32 dwVersionFlag);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddPrintProcessorA(PSTR pName, PSTR pEnvironment, PSTR pPathName, PSTR pPrintProcessorName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddPrintProcessorW(PWSTR pName, PWSTR pEnvironment, PWSTR pPathName, PWSTR pPrintProcessorName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumPrintProcessorsA(PSTR pName, PSTR pEnvironment, uint32 Level, uint8* pPrintProcessorInfo, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumPrintProcessorsW(PWSTR pName, PWSTR pEnvironment, uint32 Level, uint8* pPrintProcessorInfo, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPrintProcessorDirectoryA(PSTR pName, PSTR pEnvironment, uint32 Level, uint8* pPrintProcessorInfo, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPrintProcessorDirectoryW(PWSTR pName, PWSTR pEnvironment, uint32 Level, uint8* pPrintProcessorInfo, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumPrintProcessorDatatypesA(PSTR pName, PSTR pPrintProcessorName, uint32 Level, uint8* pDatatypes, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumPrintProcessorDatatypesW(PWSTR pName, PWSTR pPrintProcessorName, uint32 Level, uint8* pDatatypes, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeletePrintProcessorA(PSTR pName, PSTR pEnvironment, PSTR pPrintProcessorName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeletePrintProcessorW(PWSTR pName, PWSTR pEnvironment, PWSTR pPrintProcessorName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 StartDocPrinterA(HANDLE hPrinter, uint32 Level, ref DOC_INFO_1A pDocInfo);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 StartDocPrinterW(HANDLE hPrinter, uint32 Level, ref DOC_INFO_1W pDocInfo);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL StartPagePrinter(HANDLE hPrinter);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WritePrinter(HANDLE hPrinter, void* pBuf, uint32 cbBuf, out uint32 pcWritten);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FlushPrinter(HANDLE hPrinter, void* pBuf, uint32 cbBuf, out uint32 pcWritten, uint32 cSleep);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EndPagePrinter(HANDLE hPrinter);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AbortPrinter(HANDLE hPrinter);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ReadPrinter(HANDLE hPrinter, void* pBuf, uint32 cbBuf, out uint32 pNoBytesRead);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EndDocPrinter(HANDLE hPrinter);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddJobA(HANDLE hPrinter, uint32 Level, uint8* pData, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddJobW(HANDLE hPrinter, uint32 Level, uint8* pData, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ScheduleJob(HANDLE hPrinter, uint32 JobId);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PrinterProperties(HWND hWnd, HANDLE hPrinter);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DocumentPropertiesA(HWND hWnd, HANDLE hPrinter, PSTR pDeviceName, DEVMODEA* pDevModeOutput, DEVMODEA* pDevModeInput, uint32 fMode);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DocumentPropertiesW(HWND hWnd, HANDLE hPrinter, PWSTR pDeviceName, DEVMODEW* pDevModeOutput, DEVMODEW* pDevModeInput, uint32 fMode);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 AdvancedDocumentPropertiesA(HWND hWnd, HANDLE hPrinter, PSTR pDeviceName, DEVMODEA* pDevModeOutput, DEVMODEA* pDevModeInput);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 AdvancedDocumentPropertiesW(HWND hWnd, HANDLE hPrinter, PWSTR pDeviceName, DEVMODEW* pDevModeOutput, DEVMODEW* pDevModeInput);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ExtDeviceMode(HWND hWnd, HANDLE hInst, DEVMODEA* pDevModeOutput, PSTR pDeviceName, PSTR pPort, DEVMODEA* pDevModeInput, PSTR pProfile, uint32 fMode);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetPrinterDataA(HANDLE hPrinter, PSTR pValueName, uint32* pType, uint8* pData, uint32 nSize, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetPrinterDataW(HANDLE hPrinter, PWSTR pValueName, uint32* pType, uint8* pData, uint32 nSize, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetPrinterDataExA(HANDLE hPrinter, PSTR pKeyName, PSTR pValueName, uint32* pType, uint8* pData, uint32 nSize, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetPrinterDataExW(HANDLE hPrinter, PWSTR pKeyName, PWSTR pValueName, uint32* pType, uint8* pData, uint32 nSize, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EnumPrinterDataA(HANDLE hPrinter, uint32 dwIndex, PSTR pValueName, uint32 cbValueName, out uint32 pcbValueName, uint32* pType, uint8* pData, uint32 cbData, uint32* pcbData);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EnumPrinterDataW(HANDLE hPrinter, uint32 dwIndex, PWSTR pValueName, uint32 cbValueName, out uint32 pcbValueName, uint32* pType, uint8* pData, uint32 cbData, uint32* pcbData);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EnumPrinterDataExA(HANDLE hPrinter, PSTR pKeyName, uint8* pEnumValues, uint32 cbEnumValues, out uint32 pcbEnumValues, out uint32 pnEnumValues);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EnumPrinterDataExW(HANDLE hPrinter, PWSTR pKeyName, uint8* pEnumValues, uint32 cbEnumValues, out uint32 pcbEnumValues, out uint32 pnEnumValues);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EnumPrinterKeyA(HANDLE hPrinter, PSTR pKeyName, PSTR pSubkey, uint32 cbSubkey, out uint32 pcbSubkey);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EnumPrinterKeyW(HANDLE hPrinter, PWSTR pKeyName, PWSTR pSubkey, uint32 cbSubkey, out uint32 pcbSubkey);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetPrinterDataA(HANDLE hPrinter, PSTR pValueName, uint32 Type, ref uint8 pData, uint32 cbData);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetPrinterDataW(HANDLE hPrinter, PWSTR pValueName, uint32 Type, ref uint8 pData, uint32 cbData);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetPrinterDataExA(HANDLE hPrinter, PSTR pKeyName, PSTR pValueName, uint32 Type, ref uint8 pData, uint32 cbData);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetPrinterDataExW(HANDLE hPrinter, PWSTR pKeyName, PWSTR pValueName, uint32 Type, ref uint8 pData, uint32 cbData);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 DeletePrinterDataA(HANDLE hPrinter, PSTR pValueName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 DeletePrinterDataW(HANDLE hPrinter, PWSTR pValueName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 DeletePrinterDataExA(HANDLE hPrinter, PSTR pKeyName, PSTR pValueName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 DeletePrinterDataExW(HANDLE hPrinter, PWSTR pKeyName, PWSTR pValueName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 DeletePrinterKeyA(HANDLE hPrinter, PSTR pKeyName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 DeletePrinterKeyW(HANDLE hPrinter, PWSTR pKeyName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 WaitForPrinterChange(HANDLE hPrinter, uint32 Flags);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE FindFirstPrinterChangeNotification(HANDLE hPrinter, uint32 fdwFilter, uint32 fdwOptions, void* pPrinterNotifyOptions);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindNextPrinterChangeNotification(HANDLE hChange, uint32* pdwChange, void* pvReserved, void** ppPrinterNotifyInfo);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FreePrinterNotifyInfo(ref PRINTER_NOTIFY_INFO pPrinterNotifyInfo);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindClosePrinterChangeNotification(HANDLE hChange);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PrinterMessageBoxA(HANDLE hPrinter, uint32 Error, HWND hWnd, PSTR pText, PSTR pCaption, uint32 dwType);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PrinterMessageBoxW(HANDLE hPrinter, uint32 Error, HWND hWnd, PWSTR pText, PWSTR pCaption, uint32 dwType);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ClosePrinter(HANDLE hPrinter);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddFormA(HANDLE hPrinter, uint32 Level, ref uint8 pForm);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddFormW(HANDLE hPrinter, uint32 Level, ref uint8 pForm);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeleteFormA(HANDLE hPrinter, PSTR pFormName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeleteFormW(HANDLE hPrinter, PWSTR pFormName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFormA(HANDLE hPrinter, PSTR pFormName, uint32 Level, uint8* pForm, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFormW(HANDLE hPrinter, PWSTR pFormName, uint32 Level, uint8* pForm, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFormA(HANDLE hPrinter, PSTR pFormName, uint32 Level, ref uint8 pForm);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFormW(HANDLE hPrinter, PWSTR pFormName, uint32 Level, ref uint8 pForm);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumFormsA(HANDLE hPrinter, uint32 Level, uint8* pForm, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumFormsW(HANDLE hPrinter, uint32 Level, uint8* pForm, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumMonitorsA(PSTR pName, uint32 Level, uint8* pMonitor, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumMonitorsW(PWSTR pName, uint32 Level, uint8* pMonitor, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddMonitorA(PSTR pName, uint32 Level, uint8* pMonitors);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddMonitorW(PWSTR pName, uint32 Level, uint8* pMonitors);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeleteMonitorA(PSTR pName, PSTR pEnvironment, PSTR pMonitorName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeleteMonitorW(PWSTR pName, PWSTR pEnvironment, PWSTR pMonitorName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumPortsA(PSTR pName, uint32 Level, uint8* pPort, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumPortsW(PWSTR pName, uint32 Level, uint8* pPort, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddPortA(PSTR pName, HWND hWnd, PSTR pMonitorName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddPortW(PWSTR pName, HWND hWnd, PWSTR pMonitorName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ConfigurePortA(PSTR pName, HWND hWnd, PSTR pPortName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ConfigurePortW(PWSTR pName, HWND hWnd, PWSTR pPortName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeletePortA(PSTR pName, HWND hWnd, PSTR pPortName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeletePortW(PWSTR pName, HWND hWnd, PWSTR pPortName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL XcvDataW(HANDLE hXcv, PWSTR pszDataName, uint8* pInputData, uint32 cbInputData, uint8* pOutputData, uint32 cbOutputData, out uint32 pcbOutputNeeded, uint32* pdwStatus);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetDefaultPrinterA(uint8* pszBuffer, out uint32 pcchBuffer);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetDefaultPrinterW(char16* pszBuffer, out uint32 pcchBuffer);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetDefaultPrinterA(PSTR pszPrinter);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetDefaultPrinterW(PWSTR pszPrinter);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetPortA(PSTR pName, PSTR pPortName, uint32 dwLevel, ref uint8 pPortInfo);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetPortW(PWSTR pName, PWSTR pPortName, uint32 dwLevel, ref uint8 pPortInfo);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddPrinterConnectionA(PSTR pName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddPrinterConnectionW(PWSTR pName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeletePrinterConnectionA(PSTR pName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeletePrinterConnectionW(PWSTR pName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE ConnectToPrinterDlg(HWND hwnd, uint32 Flags);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddPrintProvidorA(PSTR pName, uint32 Level, ref uint8 pProvidorInfo);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddPrintProvidorW(PWSTR pName, uint32 Level, ref uint8 pProvidorInfo);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeletePrintProvidorA(PSTR pName, PSTR pEnvironment, PSTR pPrintProvidorName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeletePrintProvidorW(PWSTR pName, PWSTR pEnvironment, PWSTR pPrintProvidorName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsValidDevmodeA(DEVMODEA* pDevmode, uint DevmodeSize);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsValidDevmodeW(DEVMODEW* pDevmode, uint DevmodeSize);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL OpenPrinter2A(PSTR pPrinterName, out HANDLE phPrinter, PRINTER_DEFAULTSA* pDefault, PRINTER_OPTIONSA* pOptions);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL OpenPrinter2W(PWSTR pPrinterName, out HANDLE phPrinter, PRINTER_DEFAULTSW* pDefault, PRINTER_OPTIONSW* pOptions);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddPrinterConnection2A(HWND hWnd, PSTR pszName, uint32 dwLevel, void* pConnectionInfo);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AddPrinterConnection2W(HWND hWnd, PWSTR pszName, uint32 dwLevel, void* pConnectionInfo);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT InstallPrinterDriverFromPackageA(PSTR pszServer, PSTR pszInfPath, PSTR pszDriverName, PSTR pszEnvironment, uint32 dwFlags);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT InstallPrinterDriverFromPackageW(PWSTR pszServer, PWSTR pszInfPath, PWSTR pszDriverName, PWSTR pszEnvironment, uint32 dwFlags);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT UploadPrinterDriverPackageA(PSTR pszServer, PSTR pszInfPath, PSTR pszEnvironment, uint32 dwFlags, HWND hwnd, uint8* pszDestInfPath, out uint32 pcchDestInfPath);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT UploadPrinterDriverPackageW(PWSTR pszServer, PWSTR pszInfPath, PWSTR pszEnvironment, uint32 dwFlags, HWND hwnd, char16* pszDestInfPath, out uint32 pcchDestInfPath);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetCorePrinterDriversA(PSTR pszServer, PSTR pszEnvironment, PSTR pszzCoreDriverDependencies, uint32 cCorePrinterDrivers, CORE_PRINTER_DRIVERA* pCorePrinterDrivers);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetCorePrinterDriversW(PWSTR pszServer, PWSTR pszEnvironment, PWSTR pszzCoreDriverDependencies, uint32 cCorePrinterDrivers, CORE_PRINTER_DRIVERW* pCorePrinterDrivers);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CorePrinterDriverInstalledA(PSTR pszServer, PSTR pszEnvironment, Guid CoreDriverGUID, FILETIME ftDriverDate, uint64 dwlDriverVersion, out BOOL pbDriverInstalled);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CorePrinterDriverInstalledW(PWSTR pszServer, PWSTR pszEnvironment, Guid CoreDriverGUID, FILETIME ftDriverDate, uint64 dwlDriverVersion, out BOOL pbDriverInstalled);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetPrinterDriverPackagePathA(PSTR pszServer, PSTR pszEnvironment, PSTR pszLanguage, PSTR pszPackageID, uint8* pszDriverPackageCab, uint32 cchDriverPackageCab, out uint32 pcchRequiredSize);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetPrinterDriverPackagePathW(PWSTR pszServer, PWSTR pszEnvironment, PWSTR pszLanguage, PWSTR pszPackageID, char16* pszDriverPackageCab, uint32 cchDriverPackageCab, out uint32 pcchRequiredSize);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT DeletePrinterDriverPackageA(PSTR pszServer, PSTR pszInfPath, PSTR pszEnvironment);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT DeletePrinterDriverPackageW(PWSTR pszServer, PWSTR pszInfPath, PWSTR pszEnvironment);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT ReportJobProcessingProgress(HANDLE printerHandle, uint32 jobId, EPrintXPSJobOperation jobOperation, EPrintXPSJobProgress jobProgress);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPrinterDriver2A(HWND hWnd, HANDLE hPrinter, PSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPrinterDriver2W(HWND hWnd, HANDLE hPrinter, PWSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, out uint32 pcbNeeded);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPrintExecutionData(out PRINT_EXECUTION_DATA pData);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetJobNamedPropertyValue(HANDLE hPrinter, uint32 JobId, PWSTR pszName, out PrintPropertyValue pValue);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void FreePrintPropertyValue(out PrintPropertyValue pValue);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void FreePrintNamedPropertyArray(uint32 cProperties, PrintNamedProperty** ppProperties);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetJobNamedProperty(HANDLE hPrinter, uint32 JobId, in PrintNamedProperty pProperty);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 DeleteJobNamedProperty(HANDLE hPrinter, uint32 JobId, PWSTR pszName);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EnumJobNamedProperties(HANDLE hPrinter, uint32 JobId, out uint32 pcProperties, out PrintNamedProperty* ppProperties);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetPrintOutputInfo(HWND hWnd, PWSTR pszPrinter, out HANDLE phFile, out PWSTR ppszOutputFile);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DevQueryPrintEx(out DEVQUERYPRINT_INFO pDQPInfo);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT RegisterForPrintAsyncNotifications(PWSTR pszName, ref Guid pNotificationType, PrintAsyncNotifyUserFilter eUserFilter, PrintAsyncNotifyConversationStyle eConversationStyle, ref IPrintAsyncNotifyCallback pCallback, out HANDLE phNotify);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT UnRegisterForPrintAsyncNotifications(HANDLE param0);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreatePrintAsyncNotifyChannel(PWSTR pszName, ref Guid pNotificationType, PrintAsyncNotifyUserFilter eUserFilter, PrintAsyncNotifyConversationStyle eConversationStyle, IPrintAsyncNotifyCallback* pCallback, out IPrintAsyncNotifyChannel* ppIAsynchNotification);
 	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE GdiGetSpoolFileHandle(PWSTR pwszPrinterName, out DEVMODEW pDevmode, PWSTR pwszDocName);
@@ -5966,13 +6155,13 @@ static
 	public static extern BOOL GetJobAttributes(PWSTR pPrinterName, ref DEVMODEW pDevmode, out ATTRIBUTE_INFO_3 pAttributeInfo);
 	[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetJobAttributesEx(PWSTR pPrinterName, ref DEVMODEW pDevmode, uint32 dwLevel, out uint8 pAttributeInfo, uint32 nSize, uint32 dwFlags);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE CreatePrinterIC(HANDLE hPrinter, DEVMODEW* pDevMode);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PlayGdiScriptOnPrinterIC(HANDLE hPrinterIC, ref uint8 pIn, uint32 cIn, out uint8 pOut, uint32 cOut, uint32 ul);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeletePrinterIC(HANDLE hPrinterIC);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DevQueryPrint(HANDLE hPrinter, ref DEVMODEA pDevMode, out uint32 pResID);
 	[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE RevertToPrinterSelf();
@@ -5992,7 +6181,7 @@ static
 	public static extern BIDI_RESPONSE_CONTAINER* RouterAllocBidiResponseContainer(uint32 Count);
 	[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* RouterAllocBidiMem(uint NumBytes);
-	[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 RouterFreeBidiResponseContainer(ref BIDI_RESPONSE_CONTAINER pData);
 	[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void RouterFreeBidiMem(void* pMemPointer);

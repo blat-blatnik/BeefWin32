@@ -638,6 +638,18 @@ static
 	public const uint32 DEBUG_OUTPUT_SYMBOLS_NO_OFFSETS = 2;
 	public const uint32 DEBUG_OUTPUT_SYMBOLS_NO_VALUES = 4;
 	public const uint32 DEBUG_OUTPUT_SYMBOLS_NO_TYPES = 16;
+	public const String DEBUG_OUTPUT_NAME_END = "**NAME**";
+	public const String DEBUG_OUTPUT_OFFSET_END = "**OFF**";
+	public const String DEBUG_OUTPUT_VALUE_END = "**VALUE**";
+	public const String DEBUG_OUTPUT_TYPE_END = "**TYPE**";
+	public const String DEBUG_OUTPUT_NAME_END_WIDE = "**NAME**";
+	public const String DEBUG_OUTPUT_OFFSET_END_WIDE = "**OFF**";
+	public const String DEBUG_OUTPUT_VALUE_END_WIDE = "**VALUE**";
+	public const String DEBUG_OUTPUT_TYPE_END_WIDE = "**TYPE**";
+	public const String DEBUG_OUTPUT_NAME_END_T = "**NAME**";
+	public const String DEBUG_OUTPUT_OFFSET_END_T = "**OFF**";
+	public const String DEBUG_OUTPUT_VALUE_END_T = "**VALUE**";
+	public const String DEBUG_OUTPUT_TYPE_END_T = "**TYPE**";
 	public const uint32 DEBUG_SYMBOL_EXPANSION_LEVEL_MASK = 15;
 	public const uint32 DEBUG_SYMBOL_EXPANDED = 16;
 	public const uint32 DEBUG_SYMBOL_READ_ONLY = 32;
@@ -1173,6 +1185,9 @@ static
 	public const uint32 WCT_MAX_NODE_COUNT = 16;
 	public const uint32 WCT_OBJNAME_LENGTH = 128;
 	public const uint32 WCT_NETWORK_IO_FLAG = 8;
+	public const String RESTORE_LAST_ERROR_NAME_A = "RestoreLastError";
+	public const String RESTORE_LAST_ERROR_NAME_W = "RestoreLastError";
+	public const String RESTORE_LAST_ERROR_NAME = "RestoreLastError";
 	public const uint32 APPBREAKFLAG_DEBUGGER_BLOCK = 1;
 	public const uint32 APPBREAKFLAG_DEBUGGER_HALT = 2;
 	public const uint32 APPBREAKFLAG_STEP = 65536;
@@ -4959,22 +4974,6 @@ static
 				public uint64 Lr;
 			}
 		}
-	}
-	[CRepr]
-	public struct DISPATCHER_CONTEXT_ARM64
-	{
-		public uint ControlPc;
-		public uint ImageBase;
-		public IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY* FunctionEntry;
-		public uint EstablisherFrame;
-		public uint TargetPc;
-		public ARM64_NT_CONTEXT* ContextRecord;
-		public EXCEPTION_ROUTINE LanguageHandler;
-		public void* HandlerData;
-		public UNWIND_HISTORY_TABLE* HistoryTable;
-		public uint32 ScopeIndex;
-		public BOOLEAN ControlPcIsUnwound;
-		public uint8* NonVolatileRegisters;
 	}
 	[CRepr]
 	public struct LDT_ENTRY

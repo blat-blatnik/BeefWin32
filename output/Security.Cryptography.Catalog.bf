@@ -8,6 +8,10 @@ using Win32.Security.Cryptography.Sip;
 static
 {
 	#region Constants
+	public const String szOID_CATALOG_LIST = "1.3.6.1.4.1.311.12.1.1";
+	public const String szOID_CATALOG_LIST_MEMBER = "1.3.6.1.4.1.311.12.1.2";
+	public const String szOID_CATALOG_LIST_MEMBER2 = "1.3.6.1.4.1.311.12.1.3";
+	public const String CRYPTCAT_FILEEXT = "CAT";
 	public const uint32 CRYPTCAT_MAX_MEMBERTAG = 64;
 	public const uint32 CRYPTCAT_MEMBER_SORTED = 1073741824;
 	public const uint32 CRYPTCAT_ATTR_AUTHENTICATED = 268435456;
@@ -114,6 +118,13 @@ static
 	{
 		public uint32 cbStruct;
 		public char16[260] wszCatalogFile;
+	}
+	[CRepr]
+	public struct MS_ADDINFO_CATALOGMEMBER
+	{
+		public uint32 cbStruct;
+		public CRYPTCATSTORE* pStore;
+		public CRYPTCATMEMBER* pMember;
 	}
 	#endregion
 	

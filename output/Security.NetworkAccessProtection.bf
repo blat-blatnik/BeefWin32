@@ -6,8 +6,21 @@ using Win32.Foundation;
 static
 {
 	#region Constants
+	public const uint32 maxSoHAttributeCount = 100;
+	public const uint32 maxSoHAttributeSize = 4000;
+	public const uint32 minNetworkSoHSize = 12;
+	public const uint32 maxNetworkSoHSize = 4000;
+	public const uint32 maxStringLength = 1024;
+	public const uint32 maxSystemHealthEntityCount = 20;
+	public const uint32 maxEnforcerCount = 20;
+	public const uint32 maxPrivateDataSize = 200;
+	public const uint32 maxConnectionCountPerEnforcer = 20;
+	public const uint32 freshSoHRequest = 1;
+	public const uint32 shaFixup = 1;
+	public const uint32 failureCategoryCount = 5;
 	public const uint32 ComponentTypeEnforcementClientSoH = 1;
 	public const uint32 ComponentTypeEnforcementClientRp = 2;
+	public const uint32 percentageNotSupported = 101;
 	#endregion
 	
 	#region Enums

@@ -7,6 +7,9 @@ using Win32.Graphics.Gdi;
 static
 {
 	#region Constants
+	public const String WC_MAGNIFIERA = "Magnifier";
+	public const String WC_MAGNIFIERW = "Magnifier";
+	public const String WC_MAGNIFIER = "Magnifier";
 	public const int32 MS_SHOWMAGNIFIEDCURSOR = 1;
 	public const int32 MS_CLIPAROUNDCURSOR = 2;
 	public const int32 MS_INVERTCOLORS = 4;

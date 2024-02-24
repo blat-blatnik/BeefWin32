@@ -205,6 +205,125 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"wszGRAVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"̀"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszACUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"́"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszCIRCUMFLEX"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"̂"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszTILDE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"̃"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszMACRON"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"̄"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszOVERSCORE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"̅"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszBREVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"̆"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszDOT_ABOVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"̇"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszUMLAUT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"̈"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszHOOK_ABOVE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"̉"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszRING"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"̊"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszDOUBLE_ACUTE"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"̋"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszHACEK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"̌"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszCEDILLA"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"̧"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszOGONEK"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"̨"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszTONOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"΄"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"wszDIARESIS_TONOS"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"΅"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"SHFT_INVALID"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1784,7 +1903,7 @@
 		,"Fields":[
 			{"Name":"dx","Type":{"Kind":"Native","Name":"Int32"},"Attrs":[]}
 			,{"Name":"dy","Type":{"Kind":"Native","Name":"Int32"},"Attrs":[]}
-			,{"Name":"mouseData","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"mouseData","Type":{"Kind":"Native","Name":"Int32"},"Attrs":[]}
 			,{"Name":"dwFlags","Type":{"Kind":"ApiRef","Name":"MOUSE_EVENT_FLAGS","TargetKind":"Default","Api":"UI.Input.KeyboardAndMouse","Parents":[]},"Attrs":[]}
 			,{"Name":"time","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
 			,{"Name":"dwExtraInfo","Type":{"Kind":"Native","Name":"UIntPtr"},"Attrs":[]}

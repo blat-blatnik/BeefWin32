@@ -197,6 +197,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"f0db4c7f-fe5a-42a2-bd62-f2a6cf6fc83e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -338,6 +339,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"526c7776-40e9-459b-b711-f32ad76dfc28"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -422,6 +424,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"78ee5945-c36e-4b13-a669-005dd11c0f06"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{

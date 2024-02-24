@@ -3919,18 +3919,6 @@
 		]
 	}
 	,{
-		"Name":"LPWINHTTP_STATUS_CALLBACK"
-		,"Architectures":[]
-		,"Platform":null
-		,"Kind":"FunctionPointer"
-		,"SetLastError":false
-		,"ReturnType":{"Kind":"Native","Name":"Void"}
-		,"ReturnAttrs":[]
-		,"Attrs":[]
-		,"Params":[
-		]
-	}
-	,{
 		"Name":"WINHTTP_CURRENT_USER_IE_PROXY_CONFIG"
 		,"Architectures":[]
 		,"Platform":null

@@ -2,6 +2,34 @@
 
 "Constants":[
 	{
+		"Name":"szOID_CATALOG_LIST"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.12.1.1"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szOID_CATALOG_LIST_MEMBER"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.12.1.2"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"szOID_CATALOG_LIST_MEMBER2"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"1.3.6.1.4.1.311.12.1.3"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"CRYPTCAT_FILEEXT"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"CAT"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"CRYPTCAT_MAX_MEMBERTAG"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -314,6 +342,21 @@
 			{"Name":"dwErrorArea","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"dwLocalError","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 			,{"Name":"pwszLine","Type":{"Kind":"ApiRef","Name":"PWSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
+		]
+	}
+	,{
+		"Name":"MS_ADDINFO_CATALOGMEMBER"
+		,"Architectures":[]
+		,"Platform":null
+		,"Kind":"Struct"
+		,"Size":0
+		,"PackingSize":0
+		,"Fields":[
+			{"Name":"cbStruct","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":[]}
+			,{"Name":"pStore","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CRYPTCATSTORE","TargetKind":"Default","Api":"Security.Cryptography.Catalog","Parents":[]}},"Attrs":[]}
+			,{"Name":"pMember","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"CRYPTCATMEMBER","TargetKind":"Default","Api":"Security.Cryptography.Catalog","Parents":[]}},"Attrs":[]}
+		]
+		,"NestedTypes":[
 		]
 	}
 ]

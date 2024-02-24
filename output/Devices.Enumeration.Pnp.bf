@@ -54,6 +54,8 @@ static
 	public const HRESULT UPNP_E_VALUE_TOO_LONG = -2147180496;
 	public const HRESULT UPNP_E_DEVICE_RUNNING = -2147180495;
 	public const HRESULT UPNP_E_DEVICE_NOTREGISTERED = -2147180494;
+	public const String REMOTE_ADDRESS_VALUE_NAME = "RemoteAddress";
+	public const String ADDRESS_FAMILY_VALUE_NAME = "AddressFamily";
 	#endregion
 	
 	#region Typedefs

@@ -2,6 +2,27 @@
 
 "Constants":[
 	{
+		"Name":"XINPUT_DLL_A"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"xinput1_4.dll"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XINPUT_DLL_W"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"xinput1_4.dll"
+		,"Attrs":[]
+	}
+	,{
+		"Name":"XINPUT_DLL"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"xinput1_4.dll"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"XINPUT_DEVTYPE_GAMEPAD"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"

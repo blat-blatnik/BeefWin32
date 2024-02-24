@@ -114,28 +114,28 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetItemName(BSTR* pbstrItemName) mut => VT.GetItemName(ref this, pbstrItemName);
-		public HRESULT GetThumbnail(SIZE sizeThumbnail, HBITMAP* phbmpThumbnail) mut => VT.GetThumbnail(ref this, sizeThumbnail, phbmpThumbnail);
+		public HRESULT GetItemName(out BSTR pbstrItemName) mut => VT.GetItemName(ref this, out pbstrItemName);
+		public HRESULT GetThumbnail(SIZE sizeThumbnail, out HBITMAP phbmpThumbnail) mut => VT.GetThumbnail(ref this, sizeThumbnail, out phbmpThumbnail);
 		public HRESULT GetProperty(in PROPERTYKEY key, out PROPVARIANT pv) mut => VT.GetProperty(ref this, key, out pv);
 		public HRESULT SetProperty(in PROPERTYKEY key, in PROPVARIANT pv) mut => VT.SetProperty(ref this, key, pv);
-		public HRESULT GetStream(IStream** ppStream) mut => VT.GetStream(ref this, ppStream);
+		public HRESULT GetStream(out IStream* ppStream) mut => VT.GetStream(ref this, out ppStream);
 		public HRESULT CanDelete(out BOOL pfCanDelete) mut => VT.CanDelete(ref this, out pfCanDelete);
 		public HRESULT Delete() mut => VT.Delete(ref this);
 		public HRESULT GetSubItemCount(out uint32 pnCount) mut => VT.GetSubItemCount(ref this, out pnCount);
-		public HRESULT GetSubItemAt(uint32 nItemIndex, IPhotoAcquireItem** ppPhotoAcquireItem) mut => VT.GetSubItemAt(ref this, nItemIndex, ppPhotoAcquireItem);
+		public HRESULT GetSubItemAt(uint32 nItemIndex, out IPhotoAcquireItem* ppPhotoAcquireItem) mut => VT.GetSubItemAt(ref this, nItemIndex, out ppPhotoAcquireItem);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireItem self, BSTR* pbstrItemName) GetItemName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireItem self, SIZE sizeThumbnail, HBITMAP* phbmpThumbnail) GetThumbnail;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireItem self, out BSTR pbstrItemName) GetItemName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireItem self, SIZE sizeThumbnail, out HBITMAP phbmpThumbnail) GetThumbnail;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireItem self, in PROPERTYKEY key, out PROPVARIANT pv) GetProperty;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireItem self, in PROPERTYKEY key, in PROPVARIANT pv) SetProperty;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireItem self, IStream** ppStream) GetStream;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireItem self, out IStream* ppStream) GetStream;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireItem self, out BOOL pfCanDelete) CanDelete;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireItem self) Delete;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireItem self, out uint32 pnCount) GetSubItemCount;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireItem self, uint32 nItemIndex, IPhotoAcquireItem** ppPhotoAcquireItem) GetSubItemAt;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireItem self, uint32 nItemIndex, out IPhotoAcquireItem* ppPhotoAcquireItem) GetSubItemAt;
 		}
 	}
 	[CRepr]
@@ -145,29 +145,29 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetSubmitButtonText(BSTR* pbstrSubmitButtonText) mut => VT.GetSubmitButtonText(ref this, pbstrSubmitButtonText);
-		public HRESULT GetPrompt(BSTR* pbstrPromptTitle) mut => VT.GetPrompt(ref this, pbstrPromptTitle);
-		public HRESULT GetStringId(BSTR* pbstrStringId) mut => VT.GetStringId(ref this, pbstrStringId);
+		public HRESULT GetSubmitButtonText(out BSTR pbstrSubmitButtonText) mut => VT.GetSubmitButtonText(ref this, out pbstrSubmitButtonText);
+		public HRESULT GetPrompt(out BSTR pbstrPromptTitle) mut => VT.GetPrompt(ref this, out pbstrPromptTitle);
+		public HRESULT GetStringId(out BSTR pbstrStringId) mut => VT.GetStringId(ref this, out pbstrStringId);
 		public HRESULT GetStringType(out USER_INPUT_STRING_TYPE pnStringType) mut => VT.GetStringType(ref this, out pnStringType);
-		public HRESULT GetTooltipText(BSTR* pbstrTooltipText) mut => VT.GetTooltipText(ref this, pbstrTooltipText);
+		public HRESULT GetTooltipText(out BSTR pbstrTooltipText) mut => VT.GetTooltipText(ref this, out pbstrTooltipText);
 		public HRESULT GetMaxLength(out uint32 pcchMaxLength) mut => VT.GetMaxLength(ref this, out pcchMaxLength);
-		public HRESULT GetDefault(BSTR* pbstrDefault) mut => VT.GetDefault(ref this, pbstrDefault);
+		public HRESULT GetDefault(out BSTR pbstrDefault) mut => VT.GetDefault(ref this, out pbstrDefault);
 		public HRESULT GetMruCount(out uint32 pnMruCount) mut => VT.GetMruCount(ref this, out pnMruCount);
-		public HRESULT GetMruEntryAt(uint32 nIndex, BSTR* pbstrMruEntry) mut => VT.GetMruEntryAt(ref this, nIndex, pbstrMruEntry);
+		public HRESULT GetMruEntryAt(uint32 nIndex, out BSTR pbstrMruEntry) mut => VT.GetMruEntryAt(ref this, nIndex, out pbstrMruEntry);
 		public HRESULT GetImage(uint32 nSize, HBITMAP* phBitmap, HICON* phIcon) mut => VT.GetImage(ref this, nSize, phBitmap, phIcon);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, BSTR* pbstrSubmitButtonText) GetSubmitButtonText;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, BSTR* pbstrPromptTitle) GetPrompt;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, BSTR* pbstrStringId) GetStringId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, out BSTR pbstrSubmitButtonText) GetSubmitButtonText;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, out BSTR pbstrPromptTitle) GetPrompt;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, out BSTR pbstrStringId) GetStringId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, out USER_INPUT_STRING_TYPE pnStringType) GetStringType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, BSTR* pbstrTooltipText) GetTooltipText;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, out BSTR pbstrTooltipText) GetTooltipText;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, out uint32 pcchMaxLength) GetMaxLength;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, BSTR* pbstrDefault) GetDefault;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, out BSTR pbstrDefault) GetDefault;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, out uint32 pnMruCount) GetMruCount;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, uint32 nIndex, BSTR* pbstrMruEntry) GetMruEntryAt;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, uint32 nIndex, out BSTR pbstrMruEntry) GetMruEntryAt;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserInputString self, uint32 nSize, HBITMAP* phBitmap, HICON* phIcon) GetImage;
 		}
 	}
@@ -245,7 +245,7 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT Create(HWND hwndParent) mut => VT.Create(ref this, hwndParent);
-		public HRESULT GetWindow(HWND* phwndProgressDialog) mut => VT.GetWindow(ref this, phwndProgressDialog);
+		public HRESULT GetWindow(out HWND phwndProgressDialog) mut => VT.GetWindow(ref this, out phwndProgressDialog);
 		public HRESULT Destroy() mut => VT.Destroy(ref this);
 		public HRESULT SetTitle(PWSTR pszTitle) mut => VT.SetTitle(ref this, pszTitle);
 		public HRESULT ShowCheckbox(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, BOOL fShow) mut => VT.ShowCheckbox(ref this, nCheckboxId, fShow);
@@ -267,7 +267,7 @@ static
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoProgressDialog self, HWND hwndParent) Create;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoProgressDialog self, HWND* phwndProgressDialog) GetWindow;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoProgressDialog self, out HWND phwndProgressDialog) GetWindow;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoProgressDialog self) Destroy;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoProgressDialog self, PWSTR pszTitle) SetTitle;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoProgressDialog self, PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, BOOL fShow) ShowCheckbox;
@@ -293,25 +293,25 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetFriendlyName(BSTR* pbstrFriendlyName) mut => VT.GetFriendlyName(ref this, pbstrFriendlyName);
+		public HRESULT GetFriendlyName(out BSTR pbstrFriendlyName) mut => VT.GetFriendlyName(ref this, out pbstrFriendlyName);
 		public HRESULT GetDeviceIcons(uint32 nSize, HICON* phLargeIcon, HICON* phSmallIcon) mut => VT.GetDeviceIcons(ref this, nSize, phLargeIcon, phSmallIcon);
 		public HRESULT InitializeItemList(BOOL fForceEnumeration, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB, uint32* pnItemCount) mut => VT.InitializeItemList(ref this, fForceEnumeration, pPhotoAcquireProgressCB, pnItemCount);
 		public HRESULT GetItemCount(out uint32 pnItemCount) mut => VT.GetItemCount(ref this, out pnItemCount);
-		public HRESULT GetItemAt(uint32 nIndex, IPhotoAcquireItem** ppPhotoAcquireItem) mut => VT.GetItemAt(ref this, nIndex, ppPhotoAcquireItem);
-		public HRESULT GetPhotoAcquireSettings(IPhotoAcquireSettings** ppPhotoAcquireSettings) mut => VT.GetPhotoAcquireSettings(ref this, ppPhotoAcquireSettings);
-		public HRESULT GetDeviceId(BSTR* pbstrDeviceId) mut => VT.GetDeviceId(ref this, pbstrDeviceId);
+		public HRESULT GetItemAt(uint32 nIndex, out IPhotoAcquireItem* ppPhotoAcquireItem) mut => VT.GetItemAt(ref this, nIndex, out ppPhotoAcquireItem);
+		public HRESULT GetPhotoAcquireSettings(out IPhotoAcquireSettings* ppPhotoAcquireSettings) mut => VT.GetPhotoAcquireSettings(ref this, out ppPhotoAcquireSettings);
+		public HRESULT GetDeviceId(out BSTR pbstrDeviceId) mut => VT.GetDeviceId(ref this, out pbstrDeviceId);
 		public HRESULT BindToObject(in Guid riid, void** ppv) mut => VT.BindToObject(ref this, riid, ppv);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSource self, BSTR* pbstrFriendlyName) GetFriendlyName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSource self, out BSTR pbstrFriendlyName) GetFriendlyName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSource self, uint32 nSize, HICON* phLargeIcon, HICON* phSmallIcon) GetDeviceIcons;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSource self, BOOL fForceEnumeration, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB, uint32* pnItemCount) InitializeItemList;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSource self, out uint32 pnItemCount) GetItemCount;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSource self, uint32 nIndex, IPhotoAcquireItem** ppPhotoAcquireItem) GetItemAt;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSource self, IPhotoAcquireSettings** ppPhotoAcquireSettings) GetPhotoAcquireSettings;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSource self, BSTR* pbstrDeviceId) GetDeviceId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSource self, uint32 nIndex, out IPhotoAcquireItem* ppPhotoAcquireItem) GetItemAt;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSource self, out IPhotoAcquireSettings* ppPhotoAcquireSettings) GetPhotoAcquireSettings;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSource self, out BSTR pbstrDeviceId) GetDeviceId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSource self, in Guid riid, void** ppv) BindToObject;
 		}
 	}
@@ -322,16 +322,16 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT CreatePhotoSource(PWSTR pszDevice, IPhotoAcquireSource** ppPhotoAcquireSource) mut => VT.CreatePhotoSource(ref this, pszDevice, ppPhotoAcquireSource);
+		public HRESULT CreatePhotoSource(PWSTR pszDevice, out IPhotoAcquireSource* ppPhotoAcquireSource) mut => VT.CreatePhotoSource(ref this, pszDevice, out ppPhotoAcquireSource);
 		public HRESULT Acquire(IPhotoAcquireSource* pPhotoAcquireSource, BOOL fShowProgress, HWND hWndParent, PWSTR pszApplicationName, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB) mut => VT.Acquire(ref this, pPhotoAcquireSource, fShowProgress, hWndParent, pszApplicationName, pPhotoAcquireProgressCB);
-		public HRESULT EnumResults(IEnumString** ppEnumFilePaths) mut => VT.EnumResults(ref this, ppEnumFilePaths);
+		public HRESULT EnumResults(out IEnumString* ppEnumFilePaths) mut => VT.EnumResults(ref this, out ppEnumFilePaths);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquire self, PWSTR pszDevice, IPhotoAcquireSource** ppPhotoAcquireSource) CreatePhotoSource;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquire self, PWSTR pszDevice, out IPhotoAcquireSource* ppPhotoAcquireSource) CreatePhotoSource;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquire self, IPhotoAcquireSource* pPhotoAcquireSource, BOOL fShowProgress, HWND hWndParent, PWSTR pszApplicationName, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB) Acquire;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquire self, IEnumString** ppEnumFilePaths) EnumResults;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquire self, out IEnumString* ppEnumFilePaths) EnumResults;
 		}
 	}
 	[CRepr]
@@ -349,10 +349,10 @@ static
 		public HRESULT SetGroupTag(PWSTR pszGroupTag) mut => VT.SetGroupTag(ref this, pszGroupTag);
 		public HRESULT SetAcquisitionTime(in FILETIME pftAcquisitionTime) mut => VT.SetAcquisitionTime(ref this, pftAcquisitionTime);
 		public HRESULT ComGetFlags(out uint32 pdwPhotoAcquireFlags) mut => VT.ComGetFlags(ref this, out pdwPhotoAcquireFlags);
-		public HRESULT GetOutputFilenameTemplate(BSTR* pbstrTemplate) mut => VT.GetOutputFilenameTemplate(ref this, pbstrTemplate);
+		public HRESULT GetOutputFilenameTemplate(out BSTR pbstrTemplate) mut => VT.GetOutputFilenameTemplate(ref this, out pbstrTemplate);
 		public HRESULT GetSequencePaddingWidth(out uint32 pdwWidth) mut => VT.GetSequencePaddingWidth(ref this, out pdwWidth);
 		public HRESULT GetSequenceZeroPadding(out BOOL pfZeroPad) mut => VT.GetSequenceZeroPadding(ref this, out pfZeroPad);
-		public HRESULT GetGroupTag(BSTR* pbstrGroupTag) mut => VT.GetGroupTag(ref this, pbstrGroupTag);
+		public HRESULT GetGroupTag(out BSTR pbstrGroupTag) mut => VT.GetGroupTag(ref this, out pbstrGroupTag);
 		public HRESULT GetAcquisitionTime(out FILETIME pftAcquisitionTime) mut => VT.GetAcquisitionTime(ref this, out pftAcquisitionTime);
 
 		[CRepr]
@@ -366,10 +366,10 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSettings self, PWSTR pszGroupTag) SetGroupTag;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSettings self, in FILETIME pftAcquisitionTime) SetAcquisitionTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSettings self, out uint32 pdwPhotoAcquireFlags) ComGetFlags;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSettings self, BSTR* pbstrTemplate) GetOutputFilenameTemplate;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSettings self, out BSTR pbstrTemplate) GetOutputFilenameTemplate;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSettings self, out uint32 pdwWidth) GetSequencePaddingWidth;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSettings self, out BOOL pfZeroPad) GetSequenceZeroPadding;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSettings self, BSTR* pbstrGroupTag) GetGroupTag;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSettings self, out BSTR pbstrGroupTag) GetGroupTag;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireSettings self, out FILETIME pftAcquisitionTime) GetAcquisitionTime;
 		}
 	}
@@ -381,7 +381,7 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT Initialize(PWSTR pszRegistryRoot) mut => VT.Initialize(ref this, pszRegistryRoot);
-		public HRESULT Create(HWND hWndParent, HWND* phWndDialog) mut => VT.Create(ref this, hWndParent, phWndDialog);
+		public HRESULT Create(HWND hWndParent, out HWND phWndDialog) mut => VT.Create(ref this, hWndParent, out phWndDialog);
 		public HRESULT Destroy() mut => VT.Destroy(ref this);
 		public HRESULT DoModal(HWND hWndParent, int* ppnReturnCode) mut => VT.DoModal(ref this, hWndParent, ppnReturnCode);
 		public HRESULT SaveData() mut => VT.SaveData(ref this);
@@ -390,7 +390,7 @@ static
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireOptionsDialog self, PWSTR pszRegistryRoot) Initialize;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireOptionsDialog self, HWND hWndParent, HWND* phWndDialog) Create;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireOptionsDialog self, HWND hWndParent, out HWND phWndDialog) Create;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireOptionsDialog self) Destroy;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireOptionsDialog self, HWND hWndParent, int* ppnReturnCode) DoModal;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquireOptionsDialog self) SaveData;

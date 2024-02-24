@@ -193,16 +193,16 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetRelationshipsPartUri(IOpcPartUri** relationshipPartUri) mut => VT.GetRelationshipsPartUri(ref this, relationshipPartUri);
-		public HRESULT GetRelativeUri(IOpcPartUri* targetPartUri, IUri** relativeUri) mut => VT.GetRelativeUri(ref this, targetPartUri, relativeUri);
-		public HRESULT CombinePartUri(IUri* relativeUri, IOpcPartUri** combinedUri) mut => VT.CombinePartUri(ref this, relativeUri, combinedUri);
+		public HRESULT GetRelationshipsPartUri(out IOpcPartUri* relationshipPartUri) mut => VT.GetRelationshipsPartUri(ref this, out relationshipPartUri);
+		public HRESULT GetRelativeUri(IOpcPartUri* targetPartUri, out IUri* relativeUri) mut => VT.GetRelativeUri(ref this, targetPartUri, out relativeUri);
+		public HRESULT CombinePartUri(IUri* relativeUri, out IOpcPartUri* combinedUri) mut => VT.CombinePartUri(ref this, relativeUri, out combinedUri);
 
 		[CRepr]
 		public struct VTable : IUri.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcUri self, IOpcPartUri** relationshipPartUri) GetRelationshipsPartUri;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcUri self, IOpcPartUri* targetPartUri, IUri** relativeUri) GetRelativeUri;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcUri self, IUri* relativeUri, IOpcPartUri** combinedUri) CombinePartUri;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcUri self, out IOpcPartUri* relationshipPartUri) GetRelationshipsPartUri;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcUri self, IOpcPartUri* targetPartUri, out IUri* relativeUri) GetRelativeUri;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcUri self, IUri* relativeUri, out IOpcPartUri* combinedUri) CombinePartUri;
 		}
 	}
 	[CRepr]
@@ -213,14 +213,14 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT ComparePartUri(IOpcPartUri* partUri, out int32 comparisonResult) mut => VT.ComparePartUri(ref this, partUri, out comparisonResult);
-		public HRESULT GetSourceUri(IOpcUri** sourceUri) mut => VT.GetSourceUri(ref this, sourceUri);
+		public HRESULT GetSourceUri(out IOpcUri* sourceUri) mut => VT.GetSourceUri(ref this, out sourceUri);
 		public HRESULT IsRelationshipsPartUri(out BOOL isRelationshipUri) mut => VT.IsRelationshipsPartUri(ref this, out isRelationshipUri);
 
 		[CRepr]
 		public struct VTable : IOpcUri.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartUri self, IOpcPartUri* partUri, out int32 comparisonResult) ComparePartUri;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartUri self, IOpcUri** sourceUri) GetSourceUri;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartUri self, out IOpcUri* sourceUri) GetSourceUri;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartUri self, out BOOL isRelationshipUri) IsRelationshipsPartUri;
 		}
 	}
@@ -231,14 +231,14 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetPartSet(IOpcPartSet** partSet) mut => VT.GetPartSet(ref this, partSet);
-		public HRESULT GetRelationshipSet(IOpcRelationshipSet** relationshipSet) mut => VT.GetRelationshipSet(ref this, relationshipSet);
+		public HRESULT GetPartSet(out IOpcPartSet* partSet) mut => VT.GetPartSet(ref this, out partSet);
+		public HRESULT GetRelationshipSet(out IOpcRelationshipSet* relationshipSet) mut => VT.GetRelationshipSet(ref this, out relationshipSet);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPackage self, IOpcPartSet** partSet) GetPartSet;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPackage self, IOpcRelationshipSet** relationshipSet) GetRelationshipSet;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPackage self, out IOpcPartSet* partSet) GetPartSet;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPackage self, out IOpcRelationshipSet* relationshipSet) GetRelationshipSet;
 		}
 	}
 	[CRepr]
@@ -248,19 +248,19 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetRelationshipSet(IOpcRelationshipSet** relationshipSet) mut => VT.GetRelationshipSet(ref this, relationshipSet);
-		public HRESULT GetContentStream(IStream** stream) mut => VT.GetContentStream(ref this, stream);
-		public HRESULT GetName(IOpcPartUri** name) mut => VT.GetName(ref this, name);
-		public HRESULT GetContentType(PWSTR* contentType) mut => VT.GetContentType(ref this, contentType);
+		public HRESULT GetRelationshipSet(out IOpcRelationshipSet* relationshipSet) mut => VT.GetRelationshipSet(ref this, out relationshipSet);
+		public HRESULT GetContentStream(out IStream* stream) mut => VT.GetContentStream(ref this, out stream);
+		public HRESULT GetName(out IOpcPartUri* name) mut => VT.GetName(ref this, out name);
+		public HRESULT GetContentType(out PWSTR contentType) mut => VT.GetContentType(ref this, out contentType);
 		public HRESULT GetCompressionOptions(out OPC_COMPRESSION_OPTIONS compressionOptions) mut => VT.GetCompressionOptions(ref this, out compressionOptions);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPart self, IOpcRelationshipSet** relationshipSet) GetRelationshipSet;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPart self, IStream** stream) GetContentStream;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPart self, IOpcPartUri** name) GetName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPart self, PWSTR* contentType) GetContentType;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPart self, out IOpcRelationshipSet* relationshipSet) GetRelationshipSet;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPart self, out IStream* stream) GetContentStream;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPart self, out IOpcPartUri* name) GetName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPart self, out PWSTR contentType) GetContentType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPart self, out OPC_COMPRESSION_OPTIONS compressionOptions) GetCompressionOptions;
 		}
 	}
@@ -271,19 +271,19 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetId(PWSTR* relationshipIdentifier) mut => VT.GetId(ref this, relationshipIdentifier);
-		public HRESULT GetRelationshipType(PWSTR* relationshipType) mut => VT.GetRelationshipType(ref this, relationshipType);
-		public HRESULT GetSourceUri(IOpcUri** sourceUri) mut => VT.GetSourceUri(ref this, sourceUri);
-		public HRESULT GetTargetUri(IUri** targetUri) mut => VT.GetTargetUri(ref this, targetUri);
+		public HRESULT GetId(out PWSTR relationshipIdentifier) mut => VT.GetId(ref this, out relationshipIdentifier);
+		public HRESULT GetRelationshipType(out PWSTR relationshipType) mut => VT.GetRelationshipType(ref this, out relationshipType);
+		public HRESULT GetSourceUri(out IOpcUri* sourceUri) mut => VT.GetSourceUri(ref this, out sourceUri);
+		public HRESULT GetTargetUri(out IUri* targetUri) mut => VT.GetTargetUri(ref this, out targetUri);
 		public HRESULT GetTargetMode(out OPC_URI_TARGET_MODE targetMode) mut => VT.GetTargetMode(ref this, out targetMode);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationship self, PWSTR* relationshipIdentifier) GetId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationship self, PWSTR* relationshipType) GetRelationshipType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationship self, IOpcUri** sourceUri) GetSourceUri;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationship self, IUri** targetUri) GetTargetUri;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationship self, out PWSTR relationshipIdentifier) GetId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationship self, out PWSTR relationshipType) GetRelationshipType;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationship self, out IOpcUri* sourceUri) GetSourceUri;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationship self, out IUri* targetUri) GetTargetUri;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationship self, out OPC_URI_TARGET_MODE targetMode) GetTargetMode;
 		}
 	}
@@ -294,20 +294,20 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetPart(IOpcPartUri* name, IOpcPart** part) mut => VT.GetPart(ref this, name, part);
-		public HRESULT CreatePart(IOpcPartUri* name, PWSTR contentType, OPC_COMPRESSION_OPTIONS compressionOptions, IOpcPart** part) mut => VT.CreatePart(ref this, name, contentType, compressionOptions, part);
+		public HRESULT GetPart(IOpcPartUri* name, out IOpcPart* part) mut => VT.GetPart(ref this, name, out part);
+		public HRESULT CreatePart(IOpcPartUri* name, PWSTR contentType, OPC_COMPRESSION_OPTIONS compressionOptions, out IOpcPart* part) mut => VT.CreatePart(ref this, name, contentType, compressionOptions, out part);
 		public HRESULT DeletePart(IOpcPartUri* name) mut => VT.DeletePart(ref this, name);
 		public HRESULT PartExists(IOpcPartUri* name, out BOOL partExists) mut => VT.PartExists(ref this, name, out partExists);
-		public HRESULT GetEnumerator(IOpcPartEnumerator** partEnumerator) mut => VT.GetEnumerator(ref this, partEnumerator);
+		public HRESULT GetEnumerator(out IOpcPartEnumerator* partEnumerator) mut => VT.GetEnumerator(ref this, out partEnumerator);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartSet self, IOpcPartUri* name, IOpcPart** part) GetPart;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartSet self, IOpcPartUri* name, PWSTR contentType, OPC_COMPRESSION_OPTIONS compressionOptions, IOpcPart** part) CreatePart;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartSet self, IOpcPartUri* name, out IOpcPart* part) GetPart;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartSet self, IOpcPartUri* name, PWSTR contentType, OPC_COMPRESSION_OPTIONS compressionOptions, out IOpcPart* part) CreatePart;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartSet self, IOpcPartUri* name) DeletePart;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartSet self, IOpcPartUri* name, out BOOL partExists) PartExists;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartSet self, IOpcPartEnumerator** partEnumerator) GetEnumerator;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartSet self, out IOpcPartEnumerator* partEnumerator) GetEnumerator;
 		}
 	}
 	[CRepr]
@@ -317,24 +317,24 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetRelationship(PWSTR relationshipIdentifier, IOpcRelationship** relationship) mut => VT.GetRelationship(ref this, relationshipIdentifier, relationship);
-		public HRESULT CreateRelationship(PWSTR relationshipIdentifier, PWSTR relationshipType, IUri* targetUri, OPC_URI_TARGET_MODE targetMode, IOpcRelationship** relationship) mut => VT.CreateRelationship(ref this, relationshipIdentifier, relationshipType, targetUri, targetMode, relationship);
+		public HRESULT GetRelationship(PWSTR relationshipIdentifier, out IOpcRelationship* relationship) mut => VT.GetRelationship(ref this, relationshipIdentifier, out relationship);
+		public HRESULT CreateRelationship(PWSTR relationshipIdentifier, PWSTR relationshipType, IUri* targetUri, OPC_URI_TARGET_MODE targetMode, out IOpcRelationship* relationship) mut => VT.CreateRelationship(ref this, relationshipIdentifier, relationshipType, targetUri, targetMode, out relationship);
 		public HRESULT DeleteRelationship(PWSTR relationshipIdentifier) mut => VT.DeleteRelationship(ref this, relationshipIdentifier);
 		public HRESULT RelationshipExists(PWSTR relationshipIdentifier, out BOOL relationshipExists) mut => VT.RelationshipExists(ref this, relationshipIdentifier, out relationshipExists);
-		public HRESULT GetEnumerator(IOpcRelationshipEnumerator** relationshipEnumerator) mut => VT.GetEnumerator(ref this, relationshipEnumerator);
-		public HRESULT GetEnumeratorForType(PWSTR relationshipType, IOpcRelationshipEnumerator** relationshipEnumerator) mut => VT.GetEnumeratorForType(ref this, relationshipType, relationshipEnumerator);
-		public HRESULT GetRelationshipsContentStream(IStream** contents) mut => VT.GetRelationshipsContentStream(ref this, contents);
+		public HRESULT GetEnumerator(out IOpcRelationshipEnumerator* relationshipEnumerator) mut => VT.GetEnumerator(ref this, out relationshipEnumerator);
+		public HRESULT GetEnumeratorForType(PWSTR relationshipType, out IOpcRelationshipEnumerator* relationshipEnumerator) mut => VT.GetEnumeratorForType(ref this, relationshipType, out relationshipEnumerator);
+		public HRESULT GetRelationshipsContentStream(out IStream* contents) mut => VT.GetRelationshipsContentStream(ref this, out contents);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSet self, PWSTR relationshipIdentifier, IOpcRelationship** relationship) GetRelationship;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSet self, PWSTR relationshipIdentifier, PWSTR relationshipType, IUri* targetUri, OPC_URI_TARGET_MODE targetMode, IOpcRelationship** relationship) CreateRelationship;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSet self, PWSTR relationshipIdentifier, out IOpcRelationship* relationship) GetRelationship;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSet self, PWSTR relationshipIdentifier, PWSTR relationshipType, IUri* targetUri, OPC_URI_TARGET_MODE targetMode, out IOpcRelationship* relationship) CreateRelationship;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSet self, PWSTR relationshipIdentifier) DeleteRelationship;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSet self, PWSTR relationshipIdentifier, out BOOL relationshipExists) RelationshipExists;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSet self, IOpcRelationshipEnumerator** relationshipEnumerator) GetEnumerator;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSet self, PWSTR relationshipType, IOpcRelationshipEnumerator** relationshipEnumerator) GetEnumeratorForType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSet self, IStream** contents) GetRelationshipsContentStream;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSet self, out IOpcRelationshipEnumerator* relationshipEnumerator) GetEnumerator;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSet self, PWSTR relationshipType, out IOpcRelationshipEnumerator* relationshipEnumerator) GetEnumeratorForType;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSet self, out IStream* contents) GetRelationshipsContentStream;
 		}
 	}
 	[CRepr]
@@ -346,16 +346,16 @@ static
 		
 		public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
 		public HRESULT MovePrevious(out BOOL hasPrevious) mut => VT.MovePrevious(ref this, out hasPrevious);
-		public HRESULT GetCurrent(IOpcPart** part) mut => VT.GetCurrent(ref this, part);
-		public HRESULT Clone(IOpcPartEnumerator** copy) mut => VT.Clone(ref this, copy);
+		public HRESULT GetCurrent(out IOpcPart* part) mut => VT.GetCurrent(ref this, out part);
+		public HRESULT Clone(out IOpcPartEnumerator* copy) mut => VT.Clone(ref this, out copy);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartEnumerator self, out BOOL hasNext) MoveNext;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartEnumerator self, out BOOL hasPrevious) MovePrevious;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartEnumerator self, IOpcPart** part) GetCurrent;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartEnumerator self, IOpcPartEnumerator** copy) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartEnumerator self, out IOpcPart* part) GetCurrent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcPartEnumerator self, out IOpcPartEnumerator* copy) Clone;
 		}
 	}
 	[CRepr]
@@ -367,16 +367,16 @@ static
 		
 		public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
 		public HRESULT MovePrevious(out BOOL hasPrevious) mut => VT.MovePrevious(ref this, out hasPrevious);
-		public HRESULT GetCurrent(IOpcRelationship** relationship) mut => VT.GetCurrent(ref this, relationship);
-		public HRESULT Clone(IOpcRelationshipEnumerator** copy) mut => VT.Clone(ref this, copy);
+		public HRESULT GetCurrent(out IOpcRelationship* relationship) mut => VT.GetCurrent(ref this, out relationship);
+		public HRESULT Clone(out IOpcRelationshipEnumerator* copy) mut => VT.Clone(ref this, out copy);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipEnumerator self, out BOOL hasNext) MoveNext;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipEnumerator self, out BOOL hasPrevious) MovePrevious;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipEnumerator self, IOpcRelationship** relationship) GetCurrent;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipEnumerator self, IOpcRelationshipEnumerator** copy) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipEnumerator self, out IOpcRelationship* relationship) GetCurrent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipEnumerator self, out IOpcRelationshipEnumerator* copy) Clone;
 		}
 	}
 	[CRepr]
@@ -386,18 +386,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetPartName(IOpcPartUri** partName) mut => VT.GetPartName(ref this, partName);
-		public HRESULT GetContentType(PWSTR* contentType) mut => VT.GetContentType(ref this, contentType);
-		public HRESULT GetDigestMethod(PWSTR* digestMethod) mut => VT.GetDigestMethod(ref this, digestMethod);
+		public HRESULT GetPartName(out IOpcPartUri* partName) mut => VT.GetPartName(ref this, out partName);
+		public HRESULT GetContentType(out PWSTR contentType) mut => VT.GetContentType(ref this, out contentType);
+		public HRESULT GetDigestMethod(out PWSTR digestMethod) mut => VT.GetDigestMethod(ref this, out digestMethod);
 		public HRESULT GetDigestValue(uint8** digestValue, out uint32 count) mut => VT.GetDigestValue(ref this, digestValue, out count);
 		public HRESULT GetTransformMethod(out OPC_CANONICALIZATION_METHOD transformMethod) mut => VT.GetTransformMethod(ref this, out transformMethod);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReference self, IOpcPartUri** partName) GetPartName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReference self, PWSTR* contentType) GetContentType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReference self, PWSTR* digestMethod) GetDigestMethod;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReference self, out IOpcPartUri* partName) GetPartName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReference self, out PWSTR contentType) GetContentType;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReference self, out PWSTR digestMethod) GetDigestMethod;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReference self, uint8** digestValue, out uint32 count) GetDigestValue;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReference self, out OPC_CANONICALIZATION_METHOD transformMethod) GetTransformMethod;
 		}
@@ -409,22 +409,22 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetSourceUri(IOpcUri** sourceUri) mut => VT.GetSourceUri(ref this, sourceUri);
-		public HRESULT GetDigestMethod(PWSTR* digestMethod) mut => VT.GetDigestMethod(ref this, digestMethod);
+		public HRESULT GetSourceUri(out IOpcUri* sourceUri) mut => VT.GetSourceUri(ref this, out sourceUri);
+		public HRESULT GetDigestMethod(out PWSTR digestMethod) mut => VT.GetDigestMethod(ref this, out digestMethod);
 		public HRESULT GetDigestValue(uint8** digestValue, out uint32 count) mut => VT.GetDigestValue(ref this, digestValue, out count);
 		public HRESULT GetTransformMethod(out OPC_CANONICALIZATION_METHOD transformMethod) mut => VT.GetTransformMethod(ref this, out transformMethod);
 		public HRESULT GetRelationshipSigningOption(out OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption) mut => VT.GetRelationshipSigningOption(ref this, out relationshipSigningOption);
-		public HRESULT GetRelationshipSelectorEnumerator(IOpcRelationshipSelectorEnumerator** selectorEnumerator) mut => VT.GetRelationshipSelectorEnumerator(ref this, selectorEnumerator);
+		public HRESULT GetRelationshipSelectorEnumerator(out IOpcRelationshipSelectorEnumerator* selectorEnumerator) mut => VT.GetRelationshipSelectorEnumerator(ref this, out selectorEnumerator);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReference self, IOpcUri** sourceUri) GetSourceUri;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReference self, PWSTR* digestMethod) GetDigestMethod;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReference self, out IOpcUri* sourceUri) GetSourceUri;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReference self, out PWSTR digestMethod) GetDigestMethod;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReference self, uint8** digestValue, out uint32 count) GetDigestValue;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReference self, out OPC_CANONICALIZATION_METHOD transformMethod) GetTransformMethod;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReference self, out OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption) GetRelationshipSigningOption;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReference self, IOpcRelationshipSelectorEnumerator** selectorEnumerator) GetRelationshipSelectorEnumerator;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReference self, out IOpcRelationshipSelectorEnumerator* selectorEnumerator) GetRelationshipSelectorEnumerator;
 		}
 	}
 	[CRepr]
@@ -435,13 +435,13 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT GetSelectorType(out OPC_RELATIONSHIP_SELECTOR selector) mut => VT.GetSelectorType(ref this, out selector);
-		public HRESULT GetSelectionCriterion(PWSTR* selectionCriterion) mut => VT.GetSelectionCriterion(ref this, selectionCriterion);
+		public HRESULT GetSelectionCriterion(out PWSTR selectionCriterion) mut => VT.GetSelectionCriterion(ref this, out selectionCriterion);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSelector self, out OPC_RELATIONSHIP_SELECTOR selector) GetSelectorType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSelector self, PWSTR* selectionCriterion) GetSelectionCriterion;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSelector self, out PWSTR selectionCriterion) GetSelectionCriterion;
 		}
 	}
 	[CRepr]
@@ -451,21 +451,21 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetId(PWSTR* referenceId) mut => VT.GetId(ref this, referenceId);
-		public HRESULT GetUri(IUri** referenceUri) mut => VT.GetUri(ref this, referenceUri);
-		public HRESULT ComGetType(PWSTR* type) mut => VT.ComGetType(ref this, type);
+		public HRESULT GetId(out PWSTR referenceId) mut => VT.GetId(ref this, out referenceId);
+		public HRESULT GetUri(out IUri* referenceUri) mut => VT.GetUri(ref this, out referenceUri);
+		public HRESULT ComGetType(out PWSTR type) mut => VT.ComGetType(ref this, out type);
 		public HRESULT GetTransformMethod(out OPC_CANONICALIZATION_METHOD transformMethod) mut => VT.GetTransformMethod(ref this, out transformMethod);
-		public HRESULT GetDigestMethod(PWSTR* digestMethod) mut => VT.GetDigestMethod(ref this, digestMethod);
+		public HRESULT GetDigestMethod(out PWSTR digestMethod) mut => VT.GetDigestMethod(ref this, out digestMethod);
 		public HRESULT GetDigestValue(uint8** digestValue, out uint32 count) mut => VT.GetDigestValue(ref this, digestValue, out count);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReference self, PWSTR* referenceId) GetId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReference self, IUri** referenceUri) GetUri;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReference self, PWSTR* type) ComGetType;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReference self, out PWSTR referenceId) GetId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReference self, out IUri* referenceUri) GetUri;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReference self, out PWSTR type) ComGetType;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReference self, out OPC_CANONICALIZATION_METHOD transformMethod) GetTransformMethod;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReference self, PWSTR* digestMethod) GetDigestMethod;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReference self, out PWSTR digestMethod) GetDigestMethod;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReference self, uint8** digestValue, out uint32 count) GetDigestValue;
 		}
 	}
@@ -492,14 +492,14 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT GetNamespaces(PWSTR** prefixes, PWSTR** namespaces, out uint32 count) mut => VT.GetNamespaces(ref this, prefixes, namespaces, out count);
-		public HRESULT GetSignatureId(PWSTR* signatureId) mut => VT.GetSignatureId(ref this, signatureId);
+		public HRESULT GetSignatureId(out PWSTR signatureId) mut => VT.GetSignatureId(ref this, out signatureId);
 		public HRESULT GetSignaturePartName(out IOpcPartUri* signaturePartName) mut => VT.GetSignaturePartName(ref this, out signaturePartName);
-		public HRESULT GetSignatureMethod(PWSTR* signatureMethod) mut => VT.GetSignatureMethod(ref this, signatureMethod);
+		public HRESULT GetSignatureMethod(out PWSTR signatureMethod) mut => VT.GetSignatureMethod(ref this, out signatureMethod);
 		public HRESULT GetCanonicalizationMethod(out OPC_CANONICALIZATION_METHOD canonicalizationMethod) mut => VT.GetCanonicalizationMethod(ref this, out canonicalizationMethod);
 		public HRESULT GetSignatureValue(uint8** signatureValue, out uint32 count) mut => VT.GetSignatureValue(ref this, signatureValue, out count);
 		public HRESULT GetSignaturePartReferenceEnumerator(out IOpcSignaturePartReferenceEnumerator* partReferenceEnumerator) mut => VT.GetSignaturePartReferenceEnumerator(ref this, out partReferenceEnumerator);
 		public HRESULT GetSignatureRelationshipReferenceEnumerator(out IOpcSignatureRelationshipReferenceEnumerator* relationshipReferenceEnumerator) mut => VT.GetSignatureRelationshipReferenceEnumerator(ref this, out relationshipReferenceEnumerator);
-		public HRESULT GetSigningTime(PWSTR* signingTime) mut => VT.GetSigningTime(ref this, signingTime);
+		public HRESULT GetSigningTime(out PWSTR signingTime) mut => VT.GetSigningTime(ref this, out signingTime);
 		public HRESULT GetTimeFormat(out OPC_SIGNATURE_TIME_FORMAT timeFormat) mut => VT.GetTimeFormat(ref this, out timeFormat);
 		public HRESULT GetPackageObjectReference(out IOpcSignatureReference* packageObjectReference) mut => VT.GetPackageObjectReference(ref this, out packageObjectReference);
 		public HRESULT GetCertificateEnumerator(out IOpcCertificateEnumerator* certificateEnumerator) mut => VT.GetCertificateEnumerator(ref this, out certificateEnumerator);
@@ -511,14 +511,14 @@ static
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignature self, PWSTR** prefixes, PWSTR** namespaces, out uint32 count) GetNamespaces;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignature self, PWSTR* signatureId) GetSignatureId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignature self, out PWSTR signatureId) GetSignatureId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignature self, out IOpcPartUri* signaturePartName) GetSignaturePartName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignature self, PWSTR* signatureMethod) GetSignatureMethod;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignature self, out PWSTR signatureMethod) GetSignatureMethod;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignature self, out OPC_CANONICALIZATION_METHOD canonicalizationMethod) GetCanonicalizationMethod;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignature self, uint8** signatureValue, out uint32 count) GetSignatureValue;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignature self, out IOpcSignaturePartReferenceEnumerator* partReferenceEnumerator) GetSignaturePartReferenceEnumerator;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignature self, out IOpcSignatureRelationshipReferenceEnumerator* relationshipReferenceEnumerator) GetSignatureRelationshipReferenceEnumerator;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignature self, PWSTR* signingTime) GetSigningTime;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignature self, out PWSTR signingTime) GetSigningTime;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignature self, out OPC_SIGNATURE_TIME_FORMAT timeFormat) GetTimeFormat;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignature self, out IOpcSignatureReference* packageObjectReference) GetPackageObjectReference;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignature self, out IOpcCertificateEnumerator* certificateEnumerator) GetCertificateEnumerator;
@@ -534,43 +534,43 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetSignatureId(PWSTR* signatureId) mut => VT.GetSignatureId(ref this, signatureId);
+		public HRESULT GetSignatureId(out PWSTR signatureId) mut => VT.GetSignatureId(ref this, out signatureId);
 		public HRESULT SetSignatureId(PWSTR signatureId) mut => VT.SetSignatureId(ref this, signatureId);
-		public HRESULT GetSignatureMethod(PWSTR* signatureMethod) mut => VT.GetSignatureMethod(ref this, signatureMethod);
+		public HRESULT GetSignatureMethod(out PWSTR signatureMethod) mut => VT.GetSignatureMethod(ref this, out signatureMethod);
 		public HRESULT SetSignatureMethod(PWSTR signatureMethod) mut => VT.SetSignatureMethod(ref this, signatureMethod);
-		public HRESULT GetDefaultDigestMethod(PWSTR* digestMethod) mut => VT.GetDefaultDigestMethod(ref this, digestMethod);
+		public HRESULT GetDefaultDigestMethod(out PWSTR digestMethod) mut => VT.GetDefaultDigestMethod(ref this, out digestMethod);
 		public HRESULT SetDefaultDigestMethod(PWSTR digestMethod) mut => VT.SetDefaultDigestMethod(ref this, digestMethod);
 		public HRESULT GetCertificateEmbeddingOption(out OPC_CERTIFICATE_EMBEDDING_OPTION embeddingOption) mut => VT.GetCertificateEmbeddingOption(ref this, out embeddingOption);
 		public HRESULT SetCertificateEmbeddingOption(OPC_CERTIFICATE_EMBEDDING_OPTION embeddingOption) mut => VT.SetCertificateEmbeddingOption(ref this, embeddingOption);
 		public HRESULT GetTimeFormat(out OPC_SIGNATURE_TIME_FORMAT timeFormat) mut => VT.GetTimeFormat(ref this, out timeFormat);
 		public HRESULT SetTimeFormat(OPC_SIGNATURE_TIME_FORMAT timeFormat) mut => VT.SetTimeFormat(ref this, timeFormat);
-		public HRESULT GetSignaturePartReferenceSet(IOpcSignaturePartReferenceSet** partReferenceSet) mut => VT.GetSignaturePartReferenceSet(ref this, partReferenceSet);
-		public HRESULT GetSignatureRelationshipReferenceSet(IOpcSignatureRelationshipReferenceSet** relationshipReferenceSet) mut => VT.GetSignatureRelationshipReferenceSet(ref this, relationshipReferenceSet);
-		public HRESULT GetCustomObjectSet(IOpcSignatureCustomObjectSet** customObjectSet) mut => VT.GetCustomObjectSet(ref this, customObjectSet);
-		public HRESULT GetCustomReferenceSet(IOpcSignatureReferenceSet** customReferenceSet) mut => VT.GetCustomReferenceSet(ref this, customReferenceSet);
-		public HRESULT GetCertificateSet(IOpcCertificateSet** certificateSet) mut => VT.GetCertificateSet(ref this, certificateSet);
-		public HRESULT GetSignaturePartName(IOpcPartUri** signaturePartName) mut => VT.GetSignaturePartName(ref this, signaturePartName);
+		public HRESULT GetSignaturePartReferenceSet(out IOpcSignaturePartReferenceSet* partReferenceSet) mut => VT.GetSignaturePartReferenceSet(ref this, out partReferenceSet);
+		public HRESULT GetSignatureRelationshipReferenceSet(out IOpcSignatureRelationshipReferenceSet* relationshipReferenceSet) mut => VT.GetSignatureRelationshipReferenceSet(ref this, out relationshipReferenceSet);
+		public HRESULT GetCustomObjectSet(out IOpcSignatureCustomObjectSet* customObjectSet) mut => VT.GetCustomObjectSet(ref this, out customObjectSet);
+		public HRESULT GetCustomReferenceSet(out IOpcSignatureReferenceSet* customReferenceSet) mut => VT.GetCustomReferenceSet(ref this, out customReferenceSet);
+		public HRESULT GetCertificateSet(out IOpcCertificateSet* certificateSet) mut => VT.GetCertificateSet(ref this, out certificateSet);
+		public HRESULT GetSignaturePartName(out IOpcPartUri* signaturePartName) mut => VT.GetSignaturePartName(ref this, out signaturePartName);
 		public HRESULT SetSignaturePartName(IOpcPartUri* signaturePartName) mut => VT.SetSignaturePartName(ref this, signaturePartName);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, PWSTR* signatureId) GetSignatureId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, out PWSTR signatureId) GetSignatureId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, PWSTR signatureId) SetSignatureId;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, PWSTR* signatureMethod) GetSignatureMethod;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, out PWSTR signatureMethod) GetSignatureMethod;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, PWSTR signatureMethod) SetSignatureMethod;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, PWSTR* digestMethod) GetDefaultDigestMethod;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, out PWSTR digestMethod) GetDefaultDigestMethod;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, PWSTR digestMethod) SetDefaultDigestMethod;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, out OPC_CERTIFICATE_EMBEDDING_OPTION embeddingOption) GetCertificateEmbeddingOption;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, OPC_CERTIFICATE_EMBEDDING_OPTION embeddingOption) SetCertificateEmbeddingOption;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, out OPC_SIGNATURE_TIME_FORMAT timeFormat) GetTimeFormat;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, OPC_SIGNATURE_TIME_FORMAT timeFormat) SetTimeFormat;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, IOpcSignaturePartReferenceSet** partReferenceSet) GetSignaturePartReferenceSet;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, IOpcSignatureRelationshipReferenceSet** relationshipReferenceSet) GetSignatureRelationshipReferenceSet;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, IOpcSignatureCustomObjectSet** customObjectSet) GetCustomObjectSet;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, IOpcSignatureReferenceSet** customReferenceSet) GetCustomReferenceSet;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, IOpcCertificateSet** certificateSet) GetCertificateSet;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, IOpcPartUri** signaturePartName) GetSignaturePartName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, out IOpcSignaturePartReferenceSet* partReferenceSet) GetSignaturePartReferenceSet;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, out IOpcSignatureRelationshipReferenceSet* relationshipReferenceSet) GetSignatureRelationshipReferenceSet;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, out IOpcSignatureCustomObjectSet* customObjectSet) GetCustomObjectSet;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, out IOpcSignatureReferenceSet* customReferenceSet) GetCustomReferenceSet;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, out IOpcCertificateSet* certificateSet) GetCertificateSet;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, out IOpcPartUri* signaturePartName) GetSignaturePartName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSigningOptions self, IOpcPartUri* signaturePartName) SetSignaturePartName;
 		}
 	}
@@ -612,16 +612,16 @@ static
 		
 		public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
 		public HRESULT MovePrevious(out BOOL hasPrevious) mut => VT.MovePrevious(ref this, out hasPrevious);
-		public HRESULT GetCurrent(IOpcSignaturePartReference** partReference) mut => VT.GetCurrent(ref this, partReference);
-		public HRESULT Clone(IOpcSignaturePartReferenceEnumerator** copy) mut => VT.Clone(ref this, copy);
+		public HRESULT GetCurrent(out IOpcSignaturePartReference* partReference) mut => VT.GetCurrent(ref this, out partReference);
+		public HRESULT Clone(out IOpcSignaturePartReferenceEnumerator* copy) mut => VT.Clone(ref this, out copy);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReferenceEnumerator self, out BOOL hasNext) MoveNext;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReferenceEnumerator self, out BOOL hasPrevious) MovePrevious;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReferenceEnumerator self, IOpcSignaturePartReference** partReference) GetCurrent;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReferenceEnumerator self, IOpcSignaturePartReferenceEnumerator** copy) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReferenceEnumerator self, out IOpcSignaturePartReference* partReference) GetCurrent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReferenceEnumerator self, out IOpcSignaturePartReferenceEnumerator* copy) Clone;
 		}
 	}
 	[CRepr]
@@ -633,16 +633,16 @@ static
 		
 		public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
 		public HRESULT MovePrevious(out BOOL hasPrevious) mut => VT.MovePrevious(ref this, out hasPrevious);
-		public HRESULT GetCurrent(IOpcSignatureRelationshipReference** relationshipReference) mut => VT.GetCurrent(ref this, relationshipReference);
-		public HRESULT Clone(IOpcSignatureRelationshipReferenceEnumerator** copy) mut => VT.Clone(ref this, copy);
+		public HRESULT GetCurrent(out IOpcSignatureRelationshipReference* relationshipReference) mut => VT.GetCurrent(ref this, out relationshipReference);
+		public HRESULT Clone(out IOpcSignatureRelationshipReferenceEnumerator* copy) mut => VT.Clone(ref this, out copy);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReferenceEnumerator self, out BOOL hasNext) MoveNext;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReferenceEnumerator self, out BOOL hasPrevious) MovePrevious;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReferenceEnumerator self, IOpcSignatureRelationshipReference** relationshipReference) GetCurrent;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReferenceEnumerator self, IOpcSignatureRelationshipReferenceEnumerator** copy) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReferenceEnumerator self, out IOpcSignatureRelationshipReference* relationshipReference) GetCurrent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReferenceEnumerator self, out IOpcSignatureRelationshipReferenceEnumerator* copy) Clone;
 		}
 	}
 	[CRepr]
@@ -654,16 +654,16 @@ static
 		
 		public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
 		public HRESULT MovePrevious(out BOOL hasPrevious) mut => VT.MovePrevious(ref this, out hasPrevious);
-		public HRESULT GetCurrent(IOpcRelationshipSelector** relationshipSelector) mut => VT.GetCurrent(ref this, relationshipSelector);
-		public HRESULT Clone(IOpcRelationshipSelectorEnumerator** copy) mut => VT.Clone(ref this, copy);
+		public HRESULT GetCurrent(out IOpcRelationshipSelector* relationshipSelector) mut => VT.GetCurrent(ref this, out relationshipSelector);
+		public HRESULT Clone(out IOpcRelationshipSelectorEnumerator* copy) mut => VT.Clone(ref this, out copy);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSelectorEnumerator self, out BOOL hasNext) MoveNext;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSelectorEnumerator self, out BOOL hasPrevious) MovePrevious;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSelectorEnumerator self, IOpcRelationshipSelector** relationshipSelector) GetCurrent;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSelectorEnumerator self, IOpcRelationshipSelectorEnumerator** copy) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSelectorEnumerator self, out IOpcRelationshipSelector* relationshipSelector) GetCurrent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSelectorEnumerator self, out IOpcRelationshipSelectorEnumerator* copy) Clone;
 		}
 	}
 	[CRepr]
@@ -675,16 +675,16 @@ static
 		
 		public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
 		public HRESULT MovePrevious(out BOOL hasPrevious) mut => VT.MovePrevious(ref this, out hasPrevious);
-		public HRESULT GetCurrent(IOpcSignatureReference** reference) mut => VT.GetCurrent(ref this, reference);
-		public HRESULT Clone(IOpcSignatureReferenceEnumerator** copy) mut => VT.Clone(ref this, copy);
+		public HRESULT GetCurrent(out IOpcSignatureReference* reference) mut => VT.GetCurrent(ref this, out reference);
+		public HRESULT Clone(out IOpcSignatureReferenceEnumerator* copy) mut => VT.Clone(ref this, out copy);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReferenceEnumerator self, out BOOL hasNext) MoveNext;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReferenceEnumerator self, out BOOL hasPrevious) MovePrevious;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReferenceEnumerator self, IOpcSignatureReference** reference) GetCurrent;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReferenceEnumerator self, IOpcSignatureReferenceEnumerator** copy) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReferenceEnumerator self, out IOpcSignatureReference* reference) GetCurrent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReferenceEnumerator self, out IOpcSignatureReferenceEnumerator* copy) Clone;
 		}
 	}
 	[CRepr]
@@ -696,16 +696,16 @@ static
 		
 		public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
 		public HRESULT MovePrevious(out BOOL hasPrevious) mut => VT.MovePrevious(ref this, out hasPrevious);
-		public HRESULT GetCurrent(IOpcSignatureCustomObject** customObject) mut => VT.GetCurrent(ref this, customObject);
-		public HRESULT Clone(IOpcSignatureCustomObjectEnumerator** copy) mut => VT.Clone(ref this, copy);
+		public HRESULT GetCurrent(out IOpcSignatureCustomObject* customObject) mut => VT.GetCurrent(ref this, out customObject);
+		public HRESULT Clone(out IOpcSignatureCustomObjectEnumerator* copy) mut => VT.Clone(ref this, out copy);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureCustomObjectEnumerator self, out BOOL hasNext) MoveNext;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureCustomObjectEnumerator self, out BOOL hasPrevious) MovePrevious;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureCustomObjectEnumerator self, IOpcSignatureCustomObject** customObject) GetCurrent;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureCustomObjectEnumerator self, IOpcSignatureCustomObjectEnumerator** copy) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureCustomObjectEnumerator self, out IOpcSignatureCustomObject* customObject) GetCurrent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureCustomObjectEnumerator self, out IOpcSignatureCustomObjectEnumerator* copy) Clone;
 		}
 	}
 	[CRepr]
@@ -738,16 +738,16 @@ static
 		
 		public HRESULT MoveNext(out BOOL hasNext) mut => VT.MoveNext(ref this, out hasNext);
 		public HRESULT MovePrevious(out BOOL hasPrevious) mut => VT.MovePrevious(ref this, out hasPrevious);
-		public HRESULT GetCurrent(IOpcDigitalSignature** digitalSignature) mut => VT.GetCurrent(ref this, digitalSignature);
-		public HRESULT Clone(IOpcDigitalSignatureEnumerator** copy) mut => VT.Clone(ref this, copy);
+		public HRESULT GetCurrent(out IOpcDigitalSignature* digitalSignature) mut => VT.GetCurrent(ref this, out digitalSignature);
+		public HRESULT Clone(out IOpcDigitalSignatureEnumerator* copy) mut => VT.Clone(ref this, out copy);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignatureEnumerator self, out BOOL hasNext) MoveNext;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignatureEnumerator self, out BOOL hasPrevious) MovePrevious;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignatureEnumerator self, IOpcDigitalSignature** digitalSignature) GetCurrent;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignatureEnumerator self, IOpcDigitalSignatureEnumerator** copy) Clone;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignatureEnumerator self, out IOpcDigitalSignature* digitalSignature) GetCurrent;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcDigitalSignatureEnumerator self, out IOpcDigitalSignatureEnumerator* copy) Clone;
 		}
 	}
 	[CRepr]
@@ -757,16 +757,16 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Create(IOpcPartUri* partUri, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignaturePartReference** partReference) mut => VT.Create(ref this, partUri, digestMethod, transformMethod, partReference);
+		public HRESULT Create(IOpcPartUri* partUri, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, out IOpcSignaturePartReference* partReference) mut => VT.Create(ref this, partUri, digestMethod, transformMethod, out partReference);
 		public HRESULT Delete(IOpcSignaturePartReference* partReference) mut => VT.Delete(ref this, partReference);
-		public HRESULT GetEnumerator(IOpcSignaturePartReferenceEnumerator** partReferenceEnumerator) mut => VT.GetEnumerator(ref this, partReferenceEnumerator);
+		public HRESULT GetEnumerator(out IOpcSignaturePartReferenceEnumerator* partReferenceEnumerator) mut => VT.GetEnumerator(ref this, out partReferenceEnumerator);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReferenceSet self, IOpcPartUri* partUri, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignaturePartReference** partReference) Create;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReferenceSet self, IOpcPartUri* partUri, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, out IOpcSignaturePartReference* partReference) Create;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReferenceSet self, IOpcSignaturePartReference* partReference) Delete;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReferenceSet self, IOpcSignaturePartReferenceEnumerator** partReferenceEnumerator) GetEnumerator;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignaturePartReferenceSet self, out IOpcSignaturePartReferenceEnumerator* partReferenceEnumerator) GetEnumerator;
 		}
 	}
 	[CRepr]
@@ -776,18 +776,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Create(IOpcUri* sourceUri, PWSTR digestMethod, OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption, IOpcRelationshipSelectorSet* selectorSet, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignatureRelationshipReference** relationshipReference) mut => VT.Create(ref this, sourceUri, digestMethod, relationshipSigningOption, selectorSet, transformMethod, relationshipReference);
-		public HRESULT CreateRelationshipSelectorSet(IOpcRelationshipSelectorSet** selectorSet) mut => VT.CreateRelationshipSelectorSet(ref this, selectorSet);
+		public HRESULT Create(IOpcUri* sourceUri, PWSTR digestMethod, OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption, IOpcRelationshipSelectorSet* selectorSet, OPC_CANONICALIZATION_METHOD transformMethod, out IOpcSignatureRelationshipReference* relationshipReference) mut => VT.Create(ref this, sourceUri, digestMethod, relationshipSigningOption, selectorSet, transformMethod, out relationshipReference);
+		public HRESULT CreateRelationshipSelectorSet(out IOpcRelationshipSelectorSet* selectorSet) mut => VT.CreateRelationshipSelectorSet(ref this, out selectorSet);
 		public HRESULT Delete(IOpcSignatureRelationshipReference* relationshipReference) mut => VT.Delete(ref this, relationshipReference);
-		public HRESULT GetEnumerator(IOpcSignatureRelationshipReferenceEnumerator** relationshipReferenceEnumerator) mut => VT.GetEnumerator(ref this, relationshipReferenceEnumerator);
+		public HRESULT GetEnumerator(out IOpcSignatureRelationshipReferenceEnumerator* relationshipReferenceEnumerator) mut => VT.GetEnumerator(ref this, out relationshipReferenceEnumerator);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReferenceSet self, IOpcUri* sourceUri, PWSTR digestMethod, OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption, IOpcRelationshipSelectorSet* selectorSet, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignatureRelationshipReference** relationshipReference) Create;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReferenceSet self, IOpcRelationshipSelectorSet** selectorSet) CreateRelationshipSelectorSet;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReferenceSet self, IOpcUri* sourceUri, PWSTR digestMethod, OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption, IOpcRelationshipSelectorSet* selectorSet, OPC_CANONICALIZATION_METHOD transformMethod, out IOpcSignatureRelationshipReference* relationshipReference) Create;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReferenceSet self, out IOpcRelationshipSelectorSet* selectorSet) CreateRelationshipSelectorSet;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReferenceSet self, IOpcSignatureRelationshipReference* relationshipReference) Delete;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReferenceSet self, IOpcSignatureRelationshipReferenceEnumerator** relationshipReferenceEnumerator) GetEnumerator;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureRelationshipReferenceSet self, out IOpcSignatureRelationshipReferenceEnumerator* relationshipReferenceEnumerator) GetEnumerator;
 		}
 	}
 	[CRepr]
@@ -797,16 +797,16 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Create(OPC_RELATIONSHIP_SELECTOR selector, PWSTR selectionCriterion, IOpcRelationshipSelector** relationshipSelector) mut => VT.Create(ref this, selector, selectionCriterion, relationshipSelector);
+		public HRESULT Create(OPC_RELATIONSHIP_SELECTOR selector, PWSTR selectionCriterion, out IOpcRelationshipSelector* relationshipSelector) mut => VT.Create(ref this, selector, selectionCriterion, out relationshipSelector);
 		public HRESULT Delete(IOpcRelationshipSelector* relationshipSelector) mut => VT.Delete(ref this, relationshipSelector);
-		public HRESULT GetEnumerator(IOpcRelationshipSelectorEnumerator** relationshipSelectorEnumerator) mut => VT.GetEnumerator(ref this, relationshipSelectorEnumerator);
+		public HRESULT GetEnumerator(out IOpcRelationshipSelectorEnumerator* relationshipSelectorEnumerator) mut => VT.GetEnumerator(ref this, out relationshipSelectorEnumerator);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSelectorSet self, OPC_RELATIONSHIP_SELECTOR selector, PWSTR selectionCriterion, IOpcRelationshipSelector** relationshipSelector) Create;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSelectorSet self, OPC_RELATIONSHIP_SELECTOR selector, PWSTR selectionCriterion, out IOpcRelationshipSelector* relationshipSelector) Create;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSelectorSet self, IOpcRelationshipSelector* relationshipSelector) Delete;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSelectorSet self, IOpcRelationshipSelectorEnumerator** relationshipSelectorEnumerator) GetEnumerator;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcRelationshipSelectorSet self, out IOpcRelationshipSelectorEnumerator* relationshipSelectorEnumerator) GetEnumerator;
 		}
 	}
 	[CRepr]
@@ -816,16 +816,16 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Create(IUri* referenceUri, PWSTR referenceId, PWSTR type, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignatureReference** reference) mut => VT.Create(ref this, referenceUri, referenceId, type, digestMethod, transformMethod, reference);
+		public HRESULT Create(IUri* referenceUri, PWSTR referenceId, PWSTR type, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, out IOpcSignatureReference* reference) mut => VT.Create(ref this, referenceUri, referenceId, type, digestMethod, transformMethod, out reference);
 		public HRESULT Delete(IOpcSignatureReference* reference) mut => VT.Delete(ref this, reference);
-		public HRESULT GetEnumerator(IOpcSignatureReferenceEnumerator** referenceEnumerator) mut => VT.GetEnumerator(ref this, referenceEnumerator);
+		public HRESULT GetEnumerator(out IOpcSignatureReferenceEnumerator* referenceEnumerator) mut => VT.GetEnumerator(ref this, out referenceEnumerator);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReferenceSet self, IUri* referenceUri, PWSTR referenceId, PWSTR type, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignatureReference** reference) Create;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReferenceSet self, IUri* referenceUri, PWSTR referenceId, PWSTR type, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, out IOpcSignatureReference* reference) Create;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReferenceSet self, IOpcSignatureReference* reference) Delete;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReferenceSet self, IOpcSignatureReferenceEnumerator** referenceEnumerator) GetEnumerator;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureReferenceSet self, out IOpcSignatureReferenceEnumerator* referenceEnumerator) GetEnumerator;
 		}
 	}
 	[CRepr]
@@ -835,16 +835,16 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT Create(uint8* xmlMarkup, uint32 count, IOpcSignatureCustomObject** customObject) mut => VT.Create(ref this, xmlMarkup, count, customObject);
+		public HRESULT Create(uint8* xmlMarkup, uint32 count, out IOpcSignatureCustomObject* customObject) mut => VT.Create(ref this, xmlMarkup, count, out customObject);
 		public HRESULT Delete(IOpcSignatureCustomObject* customObject) mut => VT.Delete(ref this, customObject);
-		public HRESULT GetEnumerator(IOpcSignatureCustomObjectEnumerator** customObjectEnumerator) mut => VT.GetEnumerator(ref this, customObjectEnumerator);
+		public HRESULT GetEnumerator(out IOpcSignatureCustomObjectEnumerator* customObjectEnumerator) mut => VT.GetEnumerator(ref this, out customObjectEnumerator);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureCustomObjectSet self, uint8* xmlMarkup, uint32 count, IOpcSignatureCustomObject** customObject) Create;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureCustomObjectSet self, uint8* xmlMarkup, uint32 count, out IOpcSignatureCustomObject* customObject) Create;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureCustomObjectSet self, IOpcSignatureCustomObject* customObject) Delete;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureCustomObjectSet self, IOpcSignatureCustomObjectEnumerator** customObjectEnumerator) GetEnumerator;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcSignatureCustomObjectSet self, out IOpcSignatureCustomObjectEnumerator* customObjectEnumerator) GetEnumerator;
 		}
 	}
 	[CRepr]

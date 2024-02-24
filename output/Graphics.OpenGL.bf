@@ -716,6 +716,42 @@ static
 	public typealias HGLRC = int;
 	#endregion
 	
+	#region Enums
+	public enum PFD_PIXEL_TYPE : int8
+	{
+		RGBA = 0,
+		COLORINDEX = 1,
+	}
+	public enum PFD_LAYER_TYPE : int8
+	{
+		UNDERLAY_PLANE = -1,
+		MAIN_PLANE = 0,
+		OVERLAY_PLANE = 1,
+	}
+	public enum PFD_FLAGS : uint32
+	{
+		DOUBLEBUFFER = 1,
+		STEREO = 2,
+		DRAW_TO_WINDOW = 4,
+		DRAW_TO_BITMAP = 8,
+		SUPPORT_GDI = 16,
+		SUPPORT_OPENGL = 32,
+		GENERIC_FORMAT = 64,
+		NEED_PALETTE = 128,
+		NEED_SYSTEM_PALETTE = 256,
+		SWAP_EXCHANGE = 512,
+		SWAP_COPY = 1024,
+		SWAP_LAYER_BUFFERS = 2048,
+		GENERIC_ACCELERATED = 4096,
+		SUPPORT_DIRECTDRAW = 8192,
+		DIRECT3D_ACCELERATED = 16384,
+		SUPPORT_COMPOSITION = 32768,
+		DEPTH_DONTCARE = 536870912,
+		DOUBLEBUFFER_DONTCARE = 1073741824,
+		STEREO_DONTCARE = 2147483648,
+	}
+	#endregion
+	
 	#region Function pointers
 	public function void PFNGLARRAYELEMENTEXTPROC(int32 i);
 	public function void PFNGLDRAWARRAYSEXTPROC(uint32 mode, int32 first, int32 count);
@@ -756,8 +792,8 @@ static
 	{
 		public uint16 nSize;
 		public uint16 nVersion;
-		public uint32 dwFlags;
-		public uint8 iPixelType;
+		public PFD_FLAGS dwFlags;
+		public PFD_PIXEL_TYPE iPixelType;
 		public uint8 cColorBits;
 		public uint8 cRedBits;
 		public uint8 cRedShift;
@@ -775,7 +811,7 @@ static
 		public uint8 cDepthBits;
 		public uint8 cStencilBits;
 		public uint8 cAuxBuffers;
-		public uint8 iLayerType;
+		public PFD_LAYER_TYPE iLayerType;
 		public uint8 bReserved;
 		public uint32 dwLayerMask;
 		public uint32 dwVisibleMask;
@@ -842,7 +878,7 @@ static
 	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ChoosePixelFormat(HDC hdc, in PIXELFORMATDESCRIPTOR ppfd);
 	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-	public static extern int32 DescribePixelFormat(HDC hdc, int32 iPixelFormat, uint32 nBytes, PIXELFORMATDESCRIPTOR* ppfd);
+	public static extern int32 DescribePixelFormat(HDC hdc, PFD_PIXEL_TYPE iPixelFormat, uint32 nBytes, PIXELFORMATDESCRIPTOR* ppfd);
 	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetPixelFormat(HDC hdc);
 	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]

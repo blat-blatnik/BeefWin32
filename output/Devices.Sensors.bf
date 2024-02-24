@@ -522,18 +522,18 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetSensorsByCategory(ref Guid sensorCategory, ISensorCollection** ppSensorsFound) mut => VT.GetSensorsByCategory(ref this, ref sensorCategory, ppSensorsFound);
-		public HRESULT GetSensorsByType(ref Guid sensorType, ISensorCollection** ppSensorsFound) mut => VT.GetSensorsByType(ref this, ref sensorType, ppSensorsFound);
-		public HRESULT GetSensorByID(ref Guid sensorID, ISensor** ppSensor) mut => VT.GetSensorByID(ref this, ref sensorID, ppSensor);
+		public HRESULT GetSensorsByCategory(ref Guid sensorCategory, out ISensorCollection* ppSensorsFound) mut => VT.GetSensorsByCategory(ref this, ref sensorCategory, out ppSensorsFound);
+		public HRESULT GetSensorsByType(ref Guid sensorType, out ISensorCollection* ppSensorsFound) mut => VT.GetSensorsByType(ref this, ref sensorType, out ppSensorsFound);
+		public HRESULT GetSensorByID(ref Guid sensorID, out ISensor* ppSensor) mut => VT.GetSensorByID(ref this, ref sensorID, out ppSensor);
 		public HRESULT SetEventSink(ISensorManagerEvents* pEvents) mut => VT.SetEventSink(ref this, pEvents);
 		public HRESULT RequestPermissions(HWND hParent, ISensorCollection* pSensors, BOOL fModal) mut => VT.RequestPermissions(ref this, hParent, pSensors, fModal);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorManager self, ref Guid sensorCategory, ISensorCollection** ppSensorsFound) GetSensorsByCategory;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorManager self, ref Guid sensorType, ISensorCollection** ppSensorsFound) GetSensorsByType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorManager self, ref Guid sensorID, ISensor** ppSensor) GetSensorByID;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorManager self, ref Guid sensorCategory, out ISensorCollection* ppSensorsFound) GetSensorsByCategory;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorManager self, ref Guid sensorType, out ISensorCollection* ppSensorsFound) GetSensorsByType;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorManager self, ref Guid sensorID, out ISensor* ppSensor) GetSensorByID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorManager self, ISensorManagerEvents* pEvents) SetEventSink;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorManager self, HWND hParent, ISensorCollection* pSensors, BOOL fModal) RequestPermissions;
 		}
@@ -562,7 +562,7 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetAt(uint32 ulIndex, ISensor** ppSensor) mut => VT.GetAt(ref this, ulIndex, ppSensor);
+		public HRESULT GetAt(uint32 ulIndex, out ISensor* ppSensor) mut => VT.GetAt(ref this, ulIndex, out ppSensor);
 		public HRESULT GetCount(out uint32 pCount) mut => VT.GetCount(ref this, out pCount);
 		public HRESULT Add(ISensor* pSensor) mut => VT.Add(ref this, pSensor);
 		public HRESULT Remove(ISensor* pSensor) mut => VT.Remove(ref this, pSensor);
@@ -572,7 +572,7 @@ static
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorCollection self, uint32 ulIndex, ISensor** ppSensor) GetAt;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorCollection self, uint32 ulIndex, out ISensor* ppSensor) GetAt;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorCollection self, out uint32 pCount) GetCount;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorCollection self, ISensor* pSensor) Add;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorCollection self, ISensor* pSensor) Remove;
@@ -590,14 +590,14 @@ static
 		public HRESULT GetID(out Guid pID) mut => VT.GetID(ref this, out pID);
 		public HRESULT GetCategory(out Guid pSensorCategory) mut => VT.GetCategory(ref this, out pSensorCategory);
 		public HRESULT ComGetType(out Guid pSensorType) mut => VT.ComGetType(ref this, out pSensorType);
-		public HRESULT GetFriendlyName(BSTR* pFriendlyName) mut => VT.GetFriendlyName(ref this, pFriendlyName);
+		public HRESULT GetFriendlyName(out BSTR pFriendlyName) mut => VT.GetFriendlyName(ref this, out pFriendlyName);
 		public HRESULT GetProperty(in PROPERTYKEY key, out PROPVARIANT pProperty) mut => VT.GetProperty(ref this, key, out pProperty);
-		public HRESULT GetProperties(IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppProperties) mut => VT.GetProperties(ref this, pKeys, ppProperties);
-		public HRESULT GetSupportedDataFields(IPortableDeviceKeyCollection** ppDataFields) mut => VT.GetSupportedDataFields(ref this, ppDataFields);
-		public HRESULT SetProperties(IPortableDeviceValues* pProperties, IPortableDeviceValues** ppResults) mut => VT.SetProperties(ref this, pProperties, ppResults);
+		public HRESULT GetProperties(IPortableDeviceKeyCollection* pKeys, out IPortableDeviceValues* ppProperties) mut => VT.GetProperties(ref this, pKeys, out ppProperties);
+		public HRESULT GetSupportedDataFields(out IPortableDeviceKeyCollection* ppDataFields) mut => VT.GetSupportedDataFields(ref this, out ppDataFields);
+		public HRESULT SetProperties(IPortableDeviceValues* pProperties, out IPortableDeviceValues* ppResults) mut => VT.SetProperties(ref this, pProperties, out ppResults);
 		public HRESULT SupportsDataField(in PROPERTYKEY key, out int16 pIsSupported) mut => VT.SupportsDataField(ref this, key, out pIsSupported);
 		public HRESULT GetState(out SensorState pState) mut => VT.GetState(ref this, out pState);
-		public HRESULT GetData(ISensorDataReport** ppDataReport) mut => VT.GetData(ref this, ppDataReport);
+		public HRESULT GetData(out ISensorDataReport* ppDataReport) mut => VT.GetData(ref this, out ppDataReport);
 		public HRESULT SupportsEvent(in Guid eventGuid, out int16 pIsSupported) mut => VT.SupportsEvent(ref this, eventGuid, out pIsSupported);
 		public HRESULT GetEventInterest(Guid** ppValues, out uint32 pCount) mut => VT.GetEventInterest(ref this, ppValues, out pCount);
 		public HRESULT SetEventInterest(Guid* pValues, uint32 count) mut => VT.SetEventInterest(ref this, pValues, count);
@@ -609,14 +609,14 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, out Guid pID) GetID;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, out Guid pSensorCategory) GetCategory;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, out Guid pSensorType) ComGetType;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, BSTR* pFriendlyName) GetFriendlyName;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, out BSTR pFriendlyName) GetFriendlyName;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, in PROPERTYKEY key, out PROPVARIANT pProperty) GetProperty;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppProperties) GetProperties;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, IPortableDeviceKeyCollection** ppDataFields) GetSupportedDataFields;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, IPortableDeviceValues* pProperties, IPortableDeviceValues** ppResults) SetProperties;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, IPortableDeviceKeyCollection* pKeys, out IPortableDeviceValues* ppProperties) GetProperties;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, out IPortableDeviceKeyCollection* ppDataFields) GetSupportedDataFields;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, IPortableDeviceValues* pProperties, out IPortableDeviceValues* ppResults) SetProperties;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, in PROPERTYKEY key, out int16 pIsSupported) SupportsDataField;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, out SensorState pState) GetState;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, ISensorDataReport** ppDataReport) GetData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, out ISensorDataReport* ppDataReport) GetData;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, in Guid eventGuid, out int16 pIsSupported) SupportsEvent;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, Guid** ppValues, out uint32 pCount) GetEventInterest;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, Guid* pValues, uint32 count) SetEventInterest;
@@ -632,14 +632,14 @@ static
 		
 		public HRESULT GetTimestamp(out SYSTEMTIME pTimeStamp) mut => VT.GetTimestamp(ref this, out pTimeStamp);
 		public HRESULT GetSensorValue(in PROPERTYKEY pKey, out PROPVARIANT pValue) mut => VT.GetSensorValue(ref this, pKey, out pValue);
-		public HRESULT GetSensorValues(IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppValues) mut => VT.GetSensorValues(ref this, pKeys, ppValues);
+		public HRESULT GetSensorValues(IPortableDeviceKeyCollection* pKeys, out IPortableDeviceValues* ppValues) mut => VT.GetSensorValues(ref this, pKeys, out ppValues);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorDataReport self, out SYSTEMTIME pTimeStamp) GetTimestamp;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorDataReport self, in PROPERTYKEY pKey, out PROPVARIANT pValue) GetSensorValue;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorDataReport self, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppValues) GetSensorValues;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorDataReport self, IPortableDeviceKeyCollection* pKeys, out IPortableDeviceValues* ppValues) GetSensorValues;
 		}
 	}
 	[CRepr]

@@ -8,6 +8,12 @@ using Win32.System.Com;
 static
 {
 	#region Constants
+	public const String IISADMIN_EXTENSIONS_REG_KEYA = "SOFTWARE\\Microsoft\\InetStp\\Extensions";
+	public const String IISADMIN_EXTENSIONS_REG_KEYW = "SOFTWARE\\Microsoft\\InetStp\\Extensions";
+	public const String IISADMIN_EXTENSIONS_REG_KEY = "SOFTWARE\\Microsoft\\InetStp\\Extensions";
+	public const String IISADMIN_EXTENSIONS_CLSID_MD_KEYA = "LM/IISADMIN/EXTENSIONS/DCOMCLSIDS";
+	public const String IISADMIN_EXTENSIONS_CLSID_MD_KEYW = "LM/IISADMIN/EXTENSIONS/DCOMCLSIDS";
+	public const String IISADMIN_EXTENSIONS_CLSID_MD_KEY = "LM/IISADMIN/EXTENSIONS/DCOMCLSIDS";
 	public const uint32 ADMINDATA_MAX_NAME_LEN = 256;
 	public const Guid CLSID_MSAdminBase_W = .(0xa9e69610, 0xb80d, 0x11d0, 0xb9, 0xb9, 0x00, 0xa0, 0xc9, 0x22, 0xe7, 0x50);
 	public const uint32 IMGCHG_SIZE = 1;
@@ -35,6 +41,12 @@ static
 	public const uint32 DWN_RAWIMAGE = 256;
 	public const uint32 DWN_MIRRORIMAGE = 512;
 	public const Guid CLSID_IImgCtx = .(0x3050f3d6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+	public const String IIS_MD_LOCAL_MACHINE_PATH = "LM";
+	public const String IIS_MD_INSTANCE_ROOT = "Root";
+	public const String IIS_MD_ISAPI_FILTERS = "/Filters";
+	public const String IIS_MD_SVC_INFO_PATH = "Info";
+	public const String IIS_MD_ADSI_SCHEMA_PATH_A = "/Schema";
+	public const String IIS_MD_ADSI_SCHEMA_PATH_W = "/Schema";
 	public const uint32 IIS_MD_ADSI_METAID_BEGIN = 130000;
 	public const uint32 IIS_MD_UT_SERVER = 1;
 	public const uint32 IIS_MD_UT_FILE = 2;
@@ -679,8 +691,48 @@ static
 	public const uint32 MD_USER_ISOLATION_BASIC = 1;
 	public const uint32 MD_USER_ISOLATION_AD = 2;
 	public const uint32 MD_USER_ISOLATION_LAST = 2;
+	public const String IIS_CLASS_COMPUTER = "IIsComputer";
+	public const String IIS_CLASS_WEB_SERVICE = "IIsWebService";
+	public const String IIS_CLASS_WEB_SERVER = "IIsWebServer";
+	public const String IIS_CLASS_WEB_INFO = "IIsWebInfo";
+	public const String IIS_CLASS_WEB_DIR = "IIsWebDirectory";
+	public const String IIS_CLASS_WEB_VDIR = "IIsWebVirtualDir";
+	public const String IIS_CLASS_WEB_FILE = "IIsWebFile";
+	public const String IIS_CLASS_FTP_SERVICE = "IIsFtpService";
+	public const String IIS_CLASS_FTP_SERVER = "IIsFtpServer";
+	public const String IIS_CLASS_FTP_INFO = "IIsFtpInfo";
+	public const String IIS_CLASS_FTP_VDIR = "IIsFtpVirtualDir";
+	public const String IIS_CLASS_FILTERS = "IIsFilters";
+	public const String IIS_CLASS_FILTER = "IIsFilter";
+	public const String IIS_CLASS_LOG_MODULES = "IIsLogModules";
+	public const String IIS_CLASS_LOG_MODULE = "IIsLogModule";
+	public const String IIS_CLASS_MIMEMAP = "IIsMimeMap";
+	public const String IIS_CLASS_CERTMAPPER = "IIsCertMapper";
+	public const String IIS_CLASS_COMPRESS_SCHEMES = "IIsCompressionSchemes";
+	public const String IIS_CLASS_COMPRESS_SCHEME = "IIsCompressionScheme";
+	public const String IIS_CLASS_COMPUTER_W = "IIsComputer";
+	public const String IIS_CLASS_WEB_SERVICE_W = "IIsWebService";
+	public const String IIS_CLASS_WEB_SERVER_W = "IIsWebServer";
+	public const String IIS_CLASS_WEB_INFO_W = "IIsWebInfo";
+	public const String IIS_CLASS_WEB_DIR_W = "IIsWebDirectory";
+	public const String IIS_CLASS_WEB_VDIR_W = "IIsWebVirtualDir";
+	public const String IIS_CLASS_WEB_FILE_W = "IIsWebFile";
+	public const String IIS_CLASS_FTP_SERVICE_W = "IIsFtpService";
+	public const String IIS_CLASS_FTP_SERVER_W = "IIsFtpServer";
+	public const String IIS_CLASS_FTP_INFO_W = "IIsFtpInfo";
+	public const String IIS_CLASS_FTP_VDIR_W = "IIsFtpVirtualDir";
+	public const String IIS_CLASS_FILTERS_W = "IIsFilters";
+	public const String IIS_CLASS_FILTER_W = "IIsFilter";
+	public const String IIS_CLASS_LOG_MODULES_W = "IIsLogModules";
+	public const String IIS_CLASS_LOG_MODULE_W = "IIsLogModule";
+	public const String IIS_CLASS_MIMEMAP_W = "IIsMimeMap";
+	public const String IIS_CLASS_CERTMAPPER_W = "IIsCertMapper";
+	public const String IIS_CLASS_COMPRESS_SCHEMES_W = "IIsCompressionSchemes";
+	public const String IIS_CLASS_COMPRESS_SCHEME_W = "IIsCompressionScheme";
 	public const Guid CLSID_IisServiceControl = .(0xe8fb8621, 0x588f, 0x11d2, 0x9d, 0x61, 0x00, 0xc0, 0x4f, 0x79, 0xc5, 0xfe);
 	public const Guid LIBID_IISRSTALib = .(0xe8fb8614, 0x588f, 0x11d2, 0x9d, 0x61, 0x00, 0xc0, 0x4f, 0x79, 0xc5, 0xfe);
+	public const String IIS_WEBSOCKET = "websockets";
+	public const String IIS_WEBSOCKET_SERVER_VARIABLE = "IIS_WEBSOCK";
 	public const Guid LIBID_WAMREGLib = .(0x29822aa8, 0xf302, 0x11d0, 0x99, 0x53, 0x00, 0xc0, 0x4f, 0xd9, 0x19, 0xc1);
 	public const Guid CLSID_WamAdmin = .(0x61738644, 0xf196, 0x11d0, 0x99, 0x53, 0x00, 0xc0, 0x4f, 0xd9, 0x19, 0xc1);
 	public const uint32 APPSTATUS_STOPPED = 0;
@@ -707,12 +759,15 @@ static
 	public const uint32 MD_BACKUP_HIGHEST_VERSION = 4294967294;
 	public const uint32 MD_BACKUP_MAX_VERSION = 9999;
 	public const uint32 MD_BACKUP_MAX_LEN = 100;
+	public const String MD_DEFAULT_BACKUP_LOCATION = "MDBackUp";
 	public const uint32 MD_HISTORY_LATEST = 1;
 	public const uint32 MD_EXPORT_INHERITED = 1;
 	public const uint32 MD_EXPORT_NODE_ONLY = 2;
 	public const uint32 MD_IMPORT_INHERITED = 1;
 	public const uint32 MD_IMPORT_NODE_ONLY = 2;
 	public const uint32 MD_IMPORT_MERGE = 4;
+	public const String MD_INSERT_PATH_STRINGA = "<%INSERT_PATH%>";
+	public const String MD_INSERT_PATH_STRING = "<%INSERT_PATH%>";
 	public const uint32 METADATA_MASTER_ROOT_HANDLE = 0;
 	public const uint32 MD_CHANGE_TYPE_DELETE_OBJECT = 1;
 	public const uint32 MD_CHANGE_TYPE_ADD_OBJECT = 2;
@@ -793,6 +848,14 @@ static
 	public const uint32 HSE_REQ_GET_CHANNEL_BINDING_TOKEN = 1050;
 	public const uint32 HSE_TERM_ADVISORY_UNLOAD = 1;
 	public const uint32 HSE_TERM_MUST_UNLOAD = 2;
+	public const uint32 HSE_IO_SYNC = 1;
+	public const uint32 HSE_IO_ASYNC = 2;
+	public const uint32 HSE_IO_DISCONNECT_AFTER_SEND = 4;
+	public const uint32 HSE_IO_SEND_HEADERS = 8;
+	public const uint32 HSE_IO_NODELAY = 4096;
+	public const uint32 HSE_IO_FINAL_SEND = 16;
+	public const uint32 HSE_IO_CACHE_RESPONSE = 32;
+	public const uint32 HSE_IO_TRY_SKIP_CUSTOM_ERRORS = 64;
 	public const uint32 HSE_URL_FLAGS_READ = 1;
 	public const uint32 HSE_URL_FLAGS_WRITE = 2;
 	public const uint32 HSE_URL_FLAGS_EXECUTE = 4;
@@ -870,6 +933,10 @@ static
 	public const Guid GUID_IIS_ASP_TRACE_TRACE_PROVIDER = .(0x06b94d9a, 0xb15e, 0x456e, 0xa4, 0xef, 0x37, 0xc9, 0x84, 0xa2, 0xcb, 0x4b);
 	public const Guid GUID_IIS_WWW_GLOBAL_TRACE_PROVIDER = .(0xd55d3bc9, 0xcba9, 0x44df, 0x82, 0x7e, 0x13, 0x2d, 0x3a, 0x45, 0x96, 0xc2);
 	public const Guid GUID_IIS_ISAPI_TRACE_PROVIDER = .(0xa1c2040e, 0x8840, 0x4c31, 0xba, 0x11, 0x98, 0x71, 0x03, 0x1a, 0x19, 0xea);
+	public const String WEB_CORE_DLL_NAME = "hwebcore.dll";
+	public const String WEB_CORE_ACTIVATE_DLL_ENTRY = "WebCoreActivate";
+	public const String WEB_CORE_SHUTDOWN_DLL_ENTRY = "WebCoreShutdown";
+	public const String WEB_CORE_SET_METADATA_DLL_ENTRY = "WebCoreSetMetadata";
 	#endregion
 	
 	#region Enums
@@ -1395,12 +1462,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT AuthenticateUser(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword, PWSTR* ppszCanonicalUserName, out BOOL pfAuthenticated) mut => VT.AuthenticateUser(ref this, pszSessionId, pszSiteName, pszUserName, pszPassword, ppszCanonicalUserName, out pfAuthenticated);
+		public HRESULT AuthenticateUser(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword, out PWSTR ppszCanonicalUserName, out BOOL pfAuthenticated) mut => VT.AuthenticateUser(ref this, pszSessionId, pszSiteName, pszUserName, pszPassword, out ppszCanonicalUserName, out pfAuthenticated);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFtpAuthenticationProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword, PWSTR* ppszCanonicalUserName, out BOOL pfAuthenticated) AuthenticateUser;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFtpAuthenticationProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword, out PWSTR ppszCanonicalUserName, out BOOL pfAuthenticated) AuthenticateUser;
 		}
 	}
 	[CRepr]
@@ -1411,13 +1478,13 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT Begin_AuthenticateUser(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword) mut => VT.Begin_AuthenticateUser(ref this, pszSessionId, pszSiteName, pszUserName, pszPassword);
-		public HRESULT Finish_AuthenticateUser(PWSTR* ppszCanonicalUserName, out BOOL pfAuthenticated) mut => VT.Finish_AuthenticateUser(ref this, ppszCanonicalUserName, out pfAuthenticated);
+		public HRESULT Finish_AuthenticateUser(out PWSTR ppszCanonicalUserName, out BOOL pfAuthenticated) mut => VT.Finish_AuthenticateUser(ref this, out ppszCanonicalUserName, out pfAuthenticated);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpAuthenticationProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword) Begin_AuthenticateUser;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpAuthenticationProvider self, PWSTR* ppszCanonicalUserName, out BOOL pfAuthenticated) Finish_AuthenticateUser;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpAuthenticationProvider self, out PWSTR ppszCanonicalUserName, out BOOL pfAuthenticated) Finish_AuthenticateUser;
 		}
 	}
 	[CRepr]
@@ -1459,12 +1526,12 @@ static
 		
 		public new VTable* VT { get => (.)vt; }
 		
-		public HRESULT GetUserHomeDirectoryData(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR* ppszHomeDirectoryData) mut => VT.GetUserHomeDirectoryData(ref this, pszSessionId, pszSiteName, pszUserName, ppszHomeDirectoryData);
+		public HRESULT GetUserHomeDirectoryData(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, out PWSTR ppszHomeDirectoryData) mut => VT.GetUserHomeDirectoryData(ref this, pszSessionId, pszSiteName, pszUserName, out ppszHomeDirectoryData);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFtpHomeDirectoryProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR* ppszHomeDirectoryData) GetUserHomeDirectoryData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IFtpHomeDirectoryProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, out PWSTR ppszHomeDirectoryData) GetUserHomeDirectoryData;
 		}
 	}
 	[CRepr]
@@ -1475,13 +1542,13 @@ static
 		public new VTable* VT { get => (.)vt; }
 		
 		public HRESULT Begin_GetUserHomeDirectoryData(PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName) mut => VT.Begin_GetUserHomeDirectoryData(ref this, pszSessionId, pszSiteName, pszUserName);
-		public HRESULT Finish_GetUserHomeDirectoryData(PWSTR* ppszHomeDirectoryData) mut => VT.Finish_GetUserHomeDirectoryData(ref this, ppszHomeDirectoryData);
+		public HRESULT Finish_GetUserHomeDirectoryData(out PWSTR ppszHomeDirectoryData) mut => VT.Finish_GetUserHomeDirectoryData(ref this, out ppszHomeDirectoryData);
 
 		[CRepr]
 		public struct VTable : IUnknown.VTable
 		{
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpHomeDirectoryProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName) Begin_GetUserHomeDirectoryData;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpHomeDirectoryProvider self, PWSTR* ppszHomeDirectoryData) Finish_GetUserHomeDirectoryData;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpHomeDirectoryProvider self, out PWSTR ppszHomeDirectoryData) Finish_GetUserHomeDirectoryData;
 		}
 	}
 	[CRepr]
@@ -1667,7 +1734,7 @@ static
 		public HRESULT Restore(PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags) mut => VT.Restore(ref this, pszMDBackupLocation, dwMDVersion, dwMDFlags);
 		public HRESULT EnumBackups(char16* pszMDBackupLocation, out uint32 pdwMDVersion, out FILETIME pftMDBackupTime, uint32 dwMDEnumIndex) mut => VT.EnumBackups(ref this, pszMDBackupLocation, out pdwMDVersion, out pftMDBackupTime, dwMDEnumIndex);
 		public HRESULT DeleteBackup(PWSTR pszMDBackupLocation, uint32 dwMDVersion) mut => VT.DeleteBackup(ref this, pszMDBackupLocation, dwMDVersion);
-		public HRESULT UnmarshalInterface(IMSAdminBaseW** piadmbwInterface) mut => VT.UnmarshalInterface(ref this, piadmbwInterface);
+		public HRESULT UnmarshalInterface(out IMSAdminBaseW* piadmbwInterface) mut => VT.UnmarshalInterface(ref this, out piadmbwInterface);
 		public HRESULT GetServerGuid() mut => VT.GetServerGuid(ref this);
 
 		[CRepr]
@@ -1702,7 +1769,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags) Restore;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, char16* pszMDBackupLocation, out uint32 pdwMDVersion, out FILETIME pftMDBackupTime, uint32 dwMDEnumIndex) EnumBackups;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, PWSTR pszMDBackupLocation, uint32 dwMDVersion) DeleteBackup;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, IMSAdminBaseW** piadmbwInterface) UnmarshalInterface;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, out IMSAdminBaseW* piadmbwInterface) UnmarshalInterface;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self) GetServerGuid;
 		}
 	}

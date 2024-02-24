@@ -100,6 +100,13 @@
 		,"Attrs":[]
 	}
 	,{
+		"Name":"ALLJOYN_NAMED_PIPE_CONNECT_SPEC"
+		,"Type":{"Kind":"Native","Name":"String"}
+		,"ValueType":"String"
+		,"Value":"npipe:"
+		,"Attrs":[]
+	}
+	,{
 		"Name":"ALLJOYN_READ_READY"
 		,"Type":{"Kind":"Native","Name":"UInt32"}
 		,"ValueType":"UInt32"
@@ -1905,6 +1912,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_aboutdatalistener"
@@ -1914,6 +1922,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_aboutlistener"
@@ -1923,6 +1932,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_aboutobj"
@@ -1932,6 +1942,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_aboutobjectdescription"
@@ -1941,6 +1952,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_aboutproxy"
@@ -1950,6 +1962,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_applicationstatelistener"
@@ -1959,6 +1972,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_authlistener"
@@ -1968,6 +1982,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_autopinger"
@@ -1977,6 +1992,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_busattachment"
@@ -1986,6 +2002,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_buslistener"
@@ -1995,6 +2012,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_busobject"
@@ -2004,6 +2022,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_credentials"
@@ -2013,6 +2032,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_interfacedescription"
@@ -2022,6 +2042,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_keystore"
@@ -2031,6 +2052,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_keystorelistener"
@@ -2040,6 +2062,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_message"
@@ -2049,6 +2072,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_msgarg"
@@ -2058,6 +2082,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_observer"
@@ -2067,6 +2092,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_observerlistener"
@@ -2076,6 +2102,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_permissionconfigurationlistener"
@@ -2085,6 +2112,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_permissionconfigurator"
@@ -2094,6 +2122,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_pinglistener"
@@ -2103,6 +2132,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_proxybusobject"
@@ -2112,6 +2142,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_proxybusobject_ref"
@@ -2121,6 +2152,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_securityapplicationproxy"
@@ -2130,6 +2162,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_sessionlistener"
@@ -2139,6 +2172,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_sessionopts"
@@ -2148,6 +2182,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 	,{
 		"Name":"alljoyn_sessionportlistener"
@@ -2157,6 +2192,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":null
 	}
 ]
 

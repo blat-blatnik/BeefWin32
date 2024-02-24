@@ -2239,6 +2239,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"46ad894b-0bab-47dc-84b2-7b553f1d8f80"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2296,6 +2297,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"b8ba4b1a-2ff4-43ab-996c-b2b10a91a6eb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2319,9 +2321,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"ulIndex","Type":{"Kind":"Native","Name":"UInt32"},"Attrs":["In"]}
 					,{"Name":"ppVal","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -2349,6 +2349,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"5b0d35f5-1b13-4afd-b878-6526dc340b5d"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2372,6 +2373,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"09ccd093-830d-4344-a30a-73ae8e8fca90"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2451,6 +2453,7 @@
 		,"Platform":"windowsServer2012"
 		,"Kind":"Com"
 		,"Guid":"256e999f-6df4-4538-81b9-857b9ab8fb47"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWdsTransportServer","TargetKind":"Com","Api":"System.DeploymentServices","Parents":[]}
 		,"Methods":[
 			{
@@ -2475,6 +2478,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"f7238425-efa8-40a4-aef9-c98d969c0b75"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2554,6 +2558,7 @@
 		,"Platform":"windowsServer2012"
 		,"Kind":"Com"
 		,"Guid":"02be79da-7e9e-4366-8b6e-2aa9a91be47f"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWdsTransportSetupManager","TargetKind":"Com","Api":"System.DeploymentServices","Parents":[]}
 		,"Methods":[
 			{
@@ -2592,6 +2597,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"84cc4779-42dd-4792-891e-1321d6d74b44"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2629,9 +2635,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"bRealtimeStatus","Type":{"Kind":"Native","Name":"Int16"},"Attrs":["In"]}
 					,{"Name":"pbServicesRunning","Type":{"Kind":"PointerTo","Child":{"Kind":"Native","Name":"Int16"}},"Attrs":["Out","RetVal"]}
@@ -2712,6 +2716,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"d0d85caf-a153-4f1d-a9dd-96f431c50717"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWdsTransportConfigurationManager","TargetKind":"Com","Api":"System.DeploymentServices","Parents":[]}
 		,"Methods":[
 			{
@@ -2736,6 +2741,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"3e22d9f6-3777-4d98-83e1-f98696717ba3"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2790,6 +2796,7 @@
 		,"Platform":"windowsServer2012"
 		,"Kind":"Com"
 		,"Guid":"1327a7c8-ae8a-4fb3-8150-136227c37e9a"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -2812,6 +2819,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"b9468578-9f2b-48cc-b27a-a60799c2750c"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWdsTransportCacheable","TargetKind":"Com","Api":"System.DeploymentServices","Parents":[]}
 		,"Methods":[
 			{
@@ -2821,9 +2829,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"AddressType","Type":{"Kind":"ApiRef","Name":"WDSTRANSPORT_IP_ADDRESS_TYPE","TargetKind":"Default","Api":"System.DeploymentServices","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pSourceType","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE","TargetKind":"Default","Api":"System.DeploymentServices","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -2836,9 +2842,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"AddressType","Type":{"Kind":"ApiRef","Name":"WDSTRANSPORT_IP_ADDRESS_TYPE","TargetKind":"Default","Api":"System.DeploymentServices","Parents":[]},"Attrs":["In"]}
 					,{"Name":"SourceType","Type":{"Kind":"ApiRef","Name":"WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE","TargetKind":"Default","Api":"System.DeploymentServices","Parents":[]},"Attrs":["In"]}
@@ -2851,9 +2855,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"AddressType","Type":{"Kind":"ApiRef","Name":"WDSTRANSPORT_IP_ADDRESS_TYPE","TargetKind":"Default","Api":"System.DeploymentServices","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pbszStartIpAddress","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -2866,9 +2868,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"AddressType","Type":{"Kind":"ApiRef","Name":"WDSTRANSPORT_IP_ADDRESS_TYPE","TargetKind":"Default","Api":"System.DeploymentServices","Parents":[]},"Attrs":["In"]}
 					,{"Name":"bszStartIpAddress","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
@@ -2881,9 +2881,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"AddressType","Type":{"Kind":"ApiRef","Name":"WDSTRANSPORT_IP_ADDRESS_TYPE","TargetKind":"Default","Api":"System.DeploymentServices","Parents":[]},"Attrs":["In"]}
 					,{"Name":"pbszEndIpAddress","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]}},"Attrs":["Out","RetVal"]}
@@ -2896,9 +2894,7 @@
 				,"ReturnAttrs":[]
 				,"Architectures":[]
 				,"Platform":null
-				,"Attrs":[
-					"SpecialName"
-				]
+				,"Attrs":[]
 				,"Params":[
 					{"Name":"AddressType","Type":{"Kind":"ApiRef","Name":"WDSTRANSPORT_IP_ADDRESS_TYPE","TargetKind":"Default","Api":"System.DeploymentServices","Parents":[]},"Attrs":["In"]}
 					,{"Name":"bszEndIpAddress","Type":{"Kind":"ApiRef","Name":"BSTR","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
@@ -2996,6 +2992,7 @@
 		,"Platform":"windowsServer2012"
 		,"Kind":"Com"
 		,"Guid":"65c19e5c-aa7e-4b91-8944-91e0e5572797"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWdsTransportServicePolicy","TargetKind":"Com","Api":"System.DeploymentServices","Parents":[]}
 		,"Methods":[
 			{
@@ -3090,6 +3087,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"13b33efc-7856-4f61-9a59-8de67b6b87b6"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWdsTransportCacheable","TargetKind":"Com","Api":"System.DeploymentServices","Parents":[]}
 		,"Methods":[
 			{
@@ -3156,6 +3154,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"4e5753cf-68ec-4504-a951-4a003266606b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWdsTransportCacheable","TargetKind":"Com","Api":"System.DeploymentServices","Parents":[]}
 		,"Methods":[
 			{
@@ -3278,6 +3277,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"fa561f57-fbef-4ed3-b056-127cb1b33b84"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3570,6 +3570,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"ad931a72-c4bd-4c41-8fbc-59c9c748df9e"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWdsTransportNamespace","TargetKind":"Com","Api":"System.DeploymentServices","Parents":[]}
 		,"Methods":[
 		]
@@ -3580,6 +3581,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"3840cecf-d76c-416e-a4cc-31c741d2874b"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWdsTransportNamespace","TargetKind":"Com","Api":"System.DeploymentServices","Parents":[]}
 		,"Methods":[
 			{
@@ -3601,6 +3603,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"013e6e4c-e6a7-4fb5-b7ff-d9f5da805c31"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWdsTransportNamespaceScheduledCast","TargetKind":"Com","Api":"System.DeploymentServices","Parents":[]}
 		,"Methods":[
 		]
@@ -3611,6 +3614,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"d606af3d-ea9c-4219-961e-7491d618d9b9"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IWdsTransportNamespaceScheduledCast","TargetKind":"Com","Api":"System.DeploymentServices","Parents":[]}
 		,"Methods":[
 			{
@@ -3677,6 +3681,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"d405d711-0296-4ab4-a860-ac7d32e65798"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3752,6 +3757,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"f4efea88-65b1-4f30-a4b9-2793987796fb"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -3869,6 +3875,7 @@
 		,"Platform":"windowsServer2008"
 		,"Kind":"Com"
 		,"Guid":"b5dbc93a-cabe-46ca-837f-3e44e93c6545"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4045,6 +4052,7 @@
 		,"Platform":"windowsServer2012"
 		,"Kind":"Com"
 		,"Guid":"b022d3ae-884d-4d85-b146-53320e76ef62"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4153,6 +4161,7 @@
 		,"Platform":"windowsServer2012"
 		,"Kind":"Com"
 		,"Guid":"b9489f24-f219-4acf-aad7-265c7c08a6ae"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IDispatch","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -4350,7 +4359,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Attrs":[]
 		,"Params":[
-			{"Name":"hSession","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In","Out"]}
+			{"Name":"hSession","Type":{"Kind":"ApiRef","Name":"HANDLE","TargetKind":"Default","Api":"Foundation","Parents":[]},"Attrs":["In"]}
 			,{"Name":"pCred","Type":{"Kind":"PointerTo","Child":{"Kind":"ApiRef","Name":"WDS_CLI_CRED","TargetKind":"Default","Api":"System.DeploymentServices","Parents":[]}},"Attrs":["In","Optional"]}
 		]
 	}

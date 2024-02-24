@@ -733,6 +733,7 @@
 		,"AlsoUsableFor":null
 		,"Def":{"Kind":"Native","Name":"IntPtr"}
 		,"FreeFunc":null
+		,"InvalidHandleValue":0
 	}
 	,{
 		"Name":"MMTIME"
@@ -852,6 +853,7 @@
 		,"Platform":"windows5.0"
 		,"Kind":"Com"
 		,"Guid":"56a86897-0ad4-11ce-b03a-0020af0ba770"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -916,6 +918,7 @@
 		,"Platform":"windows6.0.6000"
 		,"Kind":"Com"
 		,"Guid":"ebec459c-2eca-4d42-a8af-30df557614b8"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -950,6 +953,7 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"36b73885-c2c8-11cf-8b46-00805f6cef60"
+		,"Attrs":[]
 		,"Interface":{"Kind":"ApiRef","Name":"IReferenceClock","TargetKind":"Com","Api":"Media","Parents":[]}
 		,"Methods":[
 		]

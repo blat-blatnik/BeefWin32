@@ -48,6 +48,9 @@
 		,"Platform":null
 		,"Kind":"Com"
 		,"Guid":"85611e73-70a9-490e-9614-a9e302777904"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"IUnknown","TargetKind":"Com","Api":"System.Com","Parents":[]}
 		,"Methods":[
 			{
@@ -101,6 +104,9 @@
 		,"Platform":"windows10.0.18362"
 		,"Kind":"Com"
 		,"Guid":"bdb64df4-ea2f-4c70-b861-aaab1258bb5d"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11On12Device","TargetKind":"Com","Api":"Graphics.Direct3D11on12","Parents":[]}
 		,"Methods":[
 			{
@@ -124,6 +130,9 @@
 		,"Platform":"windows10.0.19041"
 		,"Kind":"Com"
 		,"Guid":"dc90f331-4740-43fa-866e-67f12cb58223"
+		,"Attrs":[
+			"Agile"
+		]
 		,"Interface":{"Kind":"ApiRef","Name":"ID3D11On12Device1","TargetKind":"Com","Api":"Graphics.Direct3D11on12","Parents":[]}
 		,"Methods":[
 			{

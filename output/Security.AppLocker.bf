@@ -37,6 +37,17 @@ static
 	public const uint32 SAFER_POLICY_UIFLAGS_INFORMATION_PROMPT = 1;
 	public const uint32 SAFER_POLICY_UIFLAGS_OPTION_PROMPT = 2;
 	public const uint32 SAFER_POLICY_UIFLAGS_HIDDEN = 4;
+	public const String SRP_POLICY_EXE = "EXE";
+	public const String SRP_POLICY_DLL = "DLL";
+	public const String SRP_POLICY_MSI = "MSI";
+	public const String SRP_POLICY_SCRIPT = "SCRIPT";
+	public const String SRP_POLICY_SHELL = "SHELL";
+	public const String SRP_POLICY_NOV2 = "IGNORESRPV2";
+	public const String SRP_POLICY_APPX = "APPX";
+	public const String SRP_POLICY_WLDPMSI = "WLDPMSI";
+	public const String SRP_POLICY_WLDPSCRIPT = "WLDPSCRIPT";
+	public const String SRP_POLICY_WLDPCONFIGCI = "WLDPCONFIGCI";
+	public const String SRP_POLICY_MANAGEDINSTALLER = "MANAGEDINSTALLER";
 	#endregion
 	
 	#region Enums
