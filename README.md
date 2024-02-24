@@ -1,17 +1,6 @@
 # BeefWin32
 
-[Beef](https://www.beeflang.org/) bindings for the various Win32 APIs.
-
-This is a **mostly untested work in progress**. Use at your own peril.
-
-## Current state
-
-- Most of the types, constants, functions, and COM classes should be working at the moment (I've only tested a few).
-- DirectInput API is not present in the win32 metadata at all - Microsoft is trying to kill DI. I still plan to add manual bindings to it.
-- Some types had name conflicts. When that happens, I rename one of them `XYZ -> XYZ_ALT` or `XyzAbc -> XyzAbcAlt`.
-- Some COM classes have `ToString`, `GetType`, `GetFlags`, or `Equals` methods. Since every class/struct in Beef implicitly defines these methods, I had to rename them `ComToString`, `ComGetType`, `ComGetFlags`, `ComEquals` respectively.
-- Some functions and COM methods take parameters with types that are never defined in the metadata. For now, I've changed their signature so they all take `void*` instead.
-- Bitfields are just smushed into an integral type in the metadata. Which makes working with some structures very tedious. The only way to fix this would be to manually add in properties for them.
+[Beef](https://www.beeflang.org/) bindings for the Win32 APIs.
 
 ## How to use
 
@@ -23,7 +12,7 @@ The [`namespaces.txt`](./namespaces.txt) file lists the namespace of all functio
 
 ## Examples
 
-Here's an example using QueryPerformanceCounter:
+Here's an example using `QueryPerformanceCounter`:
 
 ```c#
 namespace Example;
@@ -121,6 +110,13 @@ class Program {
     }
 }
 ```
+
+## Differences from real Win32 API
+
+- Some types have name conflicts. When that happens, I rename one of them `XYZ -> XYZ_ALT` or `XyzAbc -> XyzAbcAlt`.
+- Some COM classes have `ToString`, `GetType`, `GetFlags`, or `Equals` methods. These names conflict with the methods that Beef implicitly defines for all types. I renamed them `ComToString`, `ComGetType`, `ComGetFlags`, `ComEquals`.
+- Some functions take pointers to types that are never defined in the metadata. I've changed their signature so they take `void*` instead.
+- Bitfields are just smushed into an integral type in the metadata. Which makes working with some structures very tedious. The only way to fix this would be to manually add in properties for them.
 
 ## How to run the generator
 

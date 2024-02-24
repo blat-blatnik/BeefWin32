@@ -3750,31 +3750,31 @@ static
 	public static extern BOOL DeltaNormalizeProvidedB(int64 FileTypeSet, int64 NormalizeFlags, DELTA_INPUT NormalizeOptions, void* lpSource, uint uSourceSize);
 	[Import("msdelta.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeltaFree(void* lpMemory);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE CreateActCtxA(ref ACTCTXA pActCtx);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE CreateActCtxW(ref ACTCTXW pActCtx);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void AddRefActCtx(HANDLE hActCtx);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void ReleaseActCtx(HANDLE hActCtx);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ZombifyActCtx(HANDLE hActCtx);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ActivateActCtx(HANDLE hActCtx, out uint lpCookie);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeactivateActCtx(uint32 dwFlags, uint ulCookie);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCurrentActCtx(out HANDLE lphActCtx);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindActCtxSectionStringA(uint32 dwFlags, in Guid lpExtensionGuid, uint32 ulSectionId, PSTR lpStringToFind, out ACTCTX_SECTION_KEYED_DATA ReturnedData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindActCtxSectionStringW(uint32 dwFlags, in Guid lpExtensionGuid, uint32 ulSectionId, PWSTR lpStringToFind, out ACTCTX_SECTION_KEYED_DATA ReturnedData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindActCtxSectionGuid(uint32 dwFlags, in Guid lpExtensionGuid, uint32 ulSectionId, Guid* lpGuidToFind, out ACTCTX_SECTION_KEYED_DATA ReturnedData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL QueryActCtxW(uint32 dwFlags, HANDLE hActCtx, void* pvSubInstance, uint32 ulInfoClass, void* pvBuffer, uint cbBuffer, uint* pcbWrittenOrRequired);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL QueryActCtxSettingsW(uint32 dwFlags, HANDLE hActCtx, PWSTR settingsNameSpace, PWSTR settingName, PWSTR pvBuffer, uint dwBuffer, uint* pdwWrittenOrRequired);
 	#endregion
 }

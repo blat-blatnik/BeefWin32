@@ -34,9 +34,9 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL OperationStart(ref OPERATION_START_PARAMETERS OperationStartParams);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL OperationEnd(ref OPERATION_END_PARAMETERS OperationEndParams);
 	#endregion
 }

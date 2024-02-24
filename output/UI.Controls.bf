@@ -6138,61 +6138,61 @@ static
 	public static extern BOOL IsCompositionActive();
 	[Import("uxtheme.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetThemeTransitionDuration(int hTheme, int32 iPartId, int32 iStateIdFrom, int32 iStateIdTo, int32 iPropId, out uint32 pdwDuration);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CheckDlgButton(HWND hDlg, int32 nIDButton, DLG_BUTTON_CHECK_STATE uCheck);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CheckRadioButton(HWND hDlg, int32 nIDFirstButton, int32 nIDLastButton, int32 nIDCheckButton);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 IsDlgButtonChecked(HWND hDlg, int32 nIDButton);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsCharLowerW(char16 ch);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HSYNTHETICPOINTERDEVICE CreateSyntheticPointerDevice(POINTER_INPUT_TYPE pointerType, uint32 maxCount, POINTER_FEEDBACK_MODE mode);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void DestroySyntheticPointerDevice(HSYNTHETICPOINTERDEVICE device);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RegisterTouchHitTestingWindow(HWND hwnd, uint32 value);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EvaluateProximityToRect(in RECT controlBoundingBox, in TOUCH_HIT_TESTING_INPUT pHitTestingInput, out TOUCH_HIT_TESTING_PROXIMITY_EVALUATION pProximityEval);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EvaluateProximityToPolygon(uint32 numVertices, POINT* controlPolygon, in TOUCH_HIT_TESTING_INPUT pHitTestingInput, out TOUCH_HIT_TESTING_PROXIMITY_EVALUATION pProximityEval);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern LRESULT PackTouchHitTestingProximityEvaluation(in TOUCH_HIT_TESTING_INPUT pHitTestingInput, in TOUCH_HIT_TESTING_PROXIMITY_EVALUATION pProximityEval);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetWindowFeedbackSetting(HWND hwnd, FEEDBACK_TYPE feedback, uint32 dwFlags, out uint32 pSize, void* config);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetWindowFeedbackSetting(HWND hwnd, FEEDBACK_TYPE feedback, uint32 dwFlags, uint32 size, void* configuration);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetScrollPos(HWND hWnd, SCROLLBAR_CONSTANTS nBar, int32 nPos, BOOL bRedraw);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetScrollRange(HWND hWnd, SCROLLBAR_CONSTANTS nBar, int32 nMinPos, int32 nMaxPos, BOOL bRedraw);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ShowScrollBar(HWND hWnd, SCROLLBAR_CONSTANTS wBar, BOOL bShow);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnableScrollBar(HWND hWnd, SCROLLBAR_CONSTANTS wSBflags, ENABLE_SCROLL_BAR_ARROWS wArrows);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DlgDirListA(HWND hDlg, PSTR lpPathSpec, int32 nIDListBox, int32 nIDStaticPath, DLG_DIR_LIST_FILE_TYPE uFileType);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DlgDirListW(HWND hDlg, PWSTR lpPathSpec, int32 nIDListBox, int32 nIDStaticPath, DLG_DIR_LIST_FILE_TYPE uFileType);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DlgDirSelectExA(HWND hwndDlg, uint8* lpString, int32 chCount, int32 idListBox);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DlgDirSelectExW(HWND hwndDlg, char16* lpString, int32 chCount, int32 idListBox);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DlgDirListComboBoxA(HWND hDlg, PSTR lpPathSpec, int32 nIDComboBox, int32 nIDStaticPath, DLG_DIR_LIST_FILE_TYPE uFiletype);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DlgDirListComboBoxW(HWND hDlg, PWSTR lpPathSpec, int32 nIDComboBox, int32 nIDStaticPath, DLG_DIR_LIST_FILE_TYPE uFiletype);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DlgDirSelectComboBoxExA(HWND hwndDlg, uint8* lpString, int32 cchOut, int32 idComboBox);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DlgDirSelectComboBoxExW(HWND hwndDlg, char16* lpString, int32 cchOut, int32 idComboBox);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetScrollInfo(HWND hwnd, SCROLLBAR_CONSTANTS nBar, ref SCROLLINFO lpsi, BOOL redraw);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetComboBoxInfo(HWND hwndCombo, out COMBOBOXINFO pcbi);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetListBoxInfo(HWND hwnd);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RegisterPointerDeviceNotifications(HWND window, BOOL notifyRange);
 	#endregion
 }

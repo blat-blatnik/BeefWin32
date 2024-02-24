@@ -5370,127 +5370,127 @@ static
 	public static extern NTSTATUS LsaDeregisterLogonProcess(LsaHandle LsaHandle);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaConnectUntrusted(out HANDLE LsaHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaFreeMemory(void* Buffer);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaClose(void* ObjectHandle);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaEnumerateLogonSessions(out uint32 LogonSessionCount, out LUID* LogonSessionList);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaGetLogonSessionData(ref LUID LogonId, out SECURITY_LOGON_SESSION_DATA* ppLogonSessionData);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaOpenPolicy(UNICODE_STRING* SystemName, ref OBJECT_ATTRIBUTES ObjectAttributes, uint32 DesiredAccess, void** PolicyHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaSetCAPs(UNICODE_STRING* CAPDNs, uint32 CAPDNCount, uint32 Flags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaGetAppliedCAPIDs(UNICODE_STRING* SystemName, out PSID* CAPIDs, out uint32 CAPIDCount);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaQueryCAPs(PSID* CAPIDs, uint32 CAPIDCount, out CENTRAL_ACCESS_POLICY* CAPs, out uint32 CAPCount);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaQueryInformationPolicy(void* PolicyHandle, POLICY_INFORMATION_CLASS InformationClass, void** Buffer);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaSetInformationPolicy(void* PolicyHandle, POLICY_INFORMATION_CLASS InformationClass, void* Buffer);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaQueryDomainInformationPolicy(void* PolicyHandle, POLICY_DOMAIN_INFORMATION_CLASS InformationClass, void** Buffer);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaSetDomainInformationPolicy(void* PolicyHandle, POLICY_DOMAIN_INFORMATION_CLASS InformationClass, void* Buffer);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaRegisterPolicyChangeNotification(POLICY_NOTIFICATION_INFORMATION_CLASS InformationClass, HANDLE NotificationEventHandle);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaUnregisterPolicyChangeNotification(POLICY_NOTIFICATION_INFORMATION_CLASS InformationClass, HANDLE NotificationEventHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaEnumerateTrustedDomains(void* PolicyHandle, out uint32 EnumerationContext, void** Buffer, uint32 PreferedMaximumLength, out uint32 CountReturned);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaLookupNames(void* PolicyHandle, uint32 Count, ref UNICODE_STRING Names, out LSA_REFERENCED_DOMAIN_LIST* ReferencedDomains, out LSA_TRANSLATED_SID* Sids);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaLookupNames2(void* PolicyHandle, uint32 Flags, uint32 Count, ref UNICODE_STRING Names, out LSA_REFERENCED_DOMAIN_LIST* ReferencedDomains, out LSA_TRANSLATED_SID2* Sids);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaLookupSids(void* PolicyHandle, uint32 Count, ref PSID Sids, out LSA_REFERENCED_DOMAIN_LIST* ReferencedDomains, out LSA_TRANSLATED_NAME* Names);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaLookupSids2(void* PolicyHandle, uint32 LookupOptions, uint32 Count, ref PSID Sids, out LSA_REFERENCED_DOMAIN_LIST* ReferencedDomains, out LSA_TRANSLATED_NAME* Names);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaEnumerateAccountsWithUserRight(void* PolicyHandle, UNICODE_STRING* UserRight, void** Buffer, out uint32 CountReturned);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaEnumerateAccountRights(void* PolicyHandle, PSID AccountSid, out UNICODE_STRING* UserRights, out uint32 CountOfRights);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaAddAccountRights(void* PolicyHandle, PSID AccountSid, UNICODE_STRING* UserRights, uint32 CountOfRights);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaRemoveAccountRights(void* PolicyHandle, PSID AccountSid, BOOLEAN AllRights, UNICODE_STRING* UserRights, uint32 CountOfRights);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaOpenTrustedDomainByName(void* PolicyHandle, ref UNICODE_STRING TrustedDomainName, uint32 DesiredAccess, void** TrustedDomainHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaQueryTrustedDomainInfo(void* PolicyHandle, PSID TrustedDomainSid, TRUSTED_INFORMATION_CLASS InformationClass, void** Buffer);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaSetTrustedDomainInformation(void* PolicyHandle, PSID TrustedDomainSid, TRUSTED_INFORMATION_CLASS InformationClass, void* Buffer);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaDeleteTrustedDomain(void* PolicyHandle, PSID TrustedDomainSid);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaQueryTrustedDomainInfoByName(void* PolicyHandle, ref UNICODE_STRING TrustedDomainName, TRUSTED_INFORMATION_CLASS InformationClass, void** Buffer);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaSetTrustedDomainInfoByName(void* PolicyHandle, ref UNICODE_STRING TrustedDomainName, TRUSTED_INFORMATION_CLASS InformationClass, void* Buffer);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaEnumerateTrustedDomainsEx(void* PolicyHandle, out uint32 EnumerationContext, void** Buffer, uint32 PreferedMaximumLength, out uint32 CountReturned);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaCreateTrustedDomainEx(void* PolicyHandle, ref TRUSTED_DOMAIN_INFORMATION_EX TrustedDomainInformation, ref TRUSTED_DOMAIN_AUTH_INFORMATION AuthenticationInformation, uint32 DesiredAccess, void** TrustedDomainHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaQueryForestTrustInformation(void* PolicyHandle, ref UNICODE_STRING TrustedDomainName, out LSA_FOREST_TRUST_INFORMATION* ForestTrustInfo);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaSetForestTrustInformation(void* PolicyHandle, ref UNICODE_STRING TrustedDomainName, ref LSA_FOREST_TRUST_INFORMATION ForestTrustInfo, BOOLEAN CheckOnly, out LSA_FOREST_TRUST_COLLISION_INFORMATION* CollisionInfo);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaStorePrivateData(void* PolicyHandle, ref UNICODE_STRING KeyName, UNICODE_STRING* PrivateData);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS LsaRetrievePrivateData(void* PolicyHandle, ref UNICODE_STRING KeyName, out UNICODE_STRING* PrivateData);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 LsaNtStatusToWinError(NTSTATUS Status);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN SystemFunction036(void* RandomBuffer, uint32 RandomBufferLength);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS SystemFunction040(void* Memory, uint32 MemorySize, uint32 OptionFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS SystemFunction041(void* Memory, uint32 MemorySize, uint32 OptionFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditSetSystemPolicy(AUDIT_POLICY_INFORMATION* pAuditPolicy, uint32 dwPolicyCount);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditSetPerUserPolicy(PSID pSid, AUDIT_POLICY_INFORMATION* pAuditPolicy, uint32 dwPolicyCount);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditQuerySystemPolicy(Guid* pSubCategoryGuids, uint32 dwPolicyCount, out AUDIT_POLICY_INFORMATION* ppAuditPolicy);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditQueryPerUserPolicy(PSID pSid, Guid* pSubCategoryGuids, uint32 dwPolicyCount, out AUDIT_POLICY_INFORMATION* ppAuditPolicy);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditEnumeratePerUserPolicy(out POLICY_AUDIT_SID_ARRAY* ppAuditSidArray);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditComputeEffectivePolicyBySid(PSID pSid, Guid* pSubCategoryGuids, uint32 dwPolicyCount, out AUDIT_POLICY_INFORMATION* ppAuditPolicy);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditComputeEffectivePolicyByToken(HANDLE hTokenHandle, Guid* pSubCategoryGuids, uint32 dwPolicyCount, out AUDIT_POLICY_INFORMATION* ppAuditPolicy);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditEnumerateCategories(out Guid* ppAuditCategoriesArray, out uint32 pdwCountReturned);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditEnumerateSubCategories(Guid* pAuditCategoryGuid, BOOLEAN bRetrieveAllSubCategories, out Guid* ppAuditSubCategoriesArray, out uint32 pdwCountReturned);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditLookupCategoryNameW(in Guid pAuditCategoryGuid, out PWSTR ppszCategoryName);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditLookupCategoryNameA(in Guid pAuditCategoryGuid, out PSTR ppszCategoryName);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditLookupSubCategoryNameW(in Guid pAuditSubCategoryGuid, out PWSTR ppszSubCategoryName);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditLookupSubCategoryNameA(in Guid pAuditSubCategoryGuid, out PSTR ppszSubCategoryName);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditLookupCategoryIdFromCategoryGuid(in Guid pAuditCategoryGuid, out POLICY_AUDIT_EVENT_TYPE pAuditCategoryId);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditLookupCategoryGuidFromCategoryId(POLICY_AUDIT_EVENT_TYPE AuditCategoryId, out Guid pAuditCategoryGuid);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditSetSecurity(uint32 SecurityInformation, PSECURITY_DESCRIPTOR pSecurityDescriptor);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditQuerySecurity(uint32 SecurityInformation, out PSECURITY_DESCRIPTOR ppSecurityDescriptor);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditSetGlobalSaclW(PWSTR ObjectTypeName, ACL* Acl);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditSetGlobalSaclA(PSTR ObjectTypeName, ACL* Acl);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditQueryGlobalSaclW(PWSTR ObjectTypeName, out ACL* Acl);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN AuditQueryGlobalSaclA(PSTR ObjectTypeName, out ACL* Acl);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void AuditFree(void* Buffer);
 	[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT AcquireCredentialsHandleW(PWSTR pszPrincipal, PWSTR pszPackage, SECPKG_CRED fCredentialUse, void* pvLogonId, void* pAuthData, SEC_GET_KEY_FN pGetKeyFn, void* pvGetKeyArgument, out SecHandle phCredential, LARGE_INTEGER* ptsExpiry);

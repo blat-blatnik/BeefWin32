@@ -1628,13 +1628,13 @@ static
 	public static extern uint32 RtlRaiseCustomSystemEventTrigger(ref CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG TriggerConfig);
 	[Import("api-ms-win-core-apiquery-l2-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsApiSetImplemented(PSTR Contract);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL QueryThreadCycleTime(HANDLE ThreadHandle, out uint64 CycleTime);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL QueryProcessCycleTime(HANDLE ProcessHandle, out uint64 CycleTime);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL QueryIdleProcessorCycleTime(out uint32 BufferLength, uint64* ProcessorIdleCycleTime);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL QueryIdleProcessorCycleTimeEx(uint16 Group, out uint32 BufferLength, uint64* ProcessorIdleCycleTime);
 	[Import("api-ms-win-core-realtime-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void QueryInterruptTimePrecise(out uint64 lpInterruptTimePrecise);
@@ -1642,7 +1642,7 @@ static
 	public static extern void QueryUnbiasedInterruptTimePrecise(out uint64 lpUnbiasedInterruptTimePrecise);
 	[Import("api-ms-win-core-realtime-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void QueryInterruptTime(out uint64 lpInterruptTime);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL QueryUnbiasedInterruptTime(out uint64 UnbiasedTime);
 	[Import("api-ms-win-core-realtime-l1-1-2.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT QueryAuxiliaryCounterFrequency(out uint64 lpAuxiliaryCounterFrequency);
@@ -1650,183 +1650,183 @@ static
 	public static extern HRESULT ConvertAuxiliaryCounterToPerformanceCounter(uint64 ullAuxiliaryCounterValue, out uint64 lpPerformanceCounterValue, uint64* lpConversionError);
 	[Import("api-ms-win-core-realtime-l1-1-2.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT ConvertPerformanceCounterToAuxiliaryCounter(uint64 ullPerformanceCounterValue, out uint64 lpAuxiliaryCounterValue, uint64* lpConversionError);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint GlobalCompact(uint32 dwMinFree);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void GlobalFix(int hMem);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void GlobalUnfix(int hMem);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* GlobalWire(int hMem);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GlobalUnWire(int hMem);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint LocalShrink(int hMem, uint32 cbNewSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint LocalCompact(uint32 uMinFree);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetEnvironmentStringsA(PSTR NewEnvironment);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetHandleCount(uint32 uNumber);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RequestDeviceWakeup(HANDLE hDevice);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CancelDeviceWakeupRequest(HANDLE hDevice);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetMessageWaitingIndicator(HANDLE hMsgIndicator, uint32 ulMsgCount);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 MulDiv(int32 nNumber, int32 nNumerator, int32 nDenominator);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetSystemRegistryQuota(uint32* pdwQuotaAllowed, uint32* pdwQuotaUsed);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FileTimeToDosDateTime(in FILETIME lpFileTime, out uint16 lpFatDate, out uint16 lpFatTime);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DosDateTimeToFileTime(uint16 wFatDate, uint16 wFatTime, out FILETIME lpFileTime);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 _lopen(PSTR lpPathName, int32 iReadWrite);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 _lcreat(PSTR lpPathName, int32 iAttribute);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 _lread(int32 hFile, void* lpBuffer, uint32 uBytes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 _lwrite(int32 hFile, PSTR lpBuffer, uint32 uBytes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 _hread(int32 hFile, void* lpBuffer, int32 lBytes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 _hwrite(int32 hFile, PSTR lpBuffer, int32 lBytes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 _lclose(int32 hFile);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 _llseek(int32 hFile, int32 lOffset, int32 iOrigin);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SignalObjectAndWait(HANDLE hObjectToSignal, HANDLE hObjectToWaitOn, uint32 dwMilliseconds, BOOL bAlertable);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE OpenMutexA(uint32 dwDesiredAccess, BOOL bInheritHandle, PSTR lpName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE OpenSemaphoreA(uint32 dwDesiredAccess, BOOL bInheritHandle, PSTR lpName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE CreateWaitableTimerA(SECURITY_ATTRIBUTES* lpTimerAttributes, BOOL bManualReset, PSTR lpTimerName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE OpenWaitableTimerA(uint32 dwDesiredAccess, BOOL bInheritHandle, PSTR lpTimerName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE CreateWaitableTimerExA(SECURITY_ATTRIBUTES* lpTimerAttributes, PSTR lpTimerName, uint32 dwFlags, uint32 dwDesiredAccess);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFirmwareEnvironmentVariableA(PSTR lpName, PSTR lpGuid, void* pBuffer, uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFirmwareEnvironmentVariableW(PWSTR lpName, PWSTR lpGuid, void* pBuffer, uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFirmwareEnvironmentVariableExA(PSTR lpName, PSTR lpGuid, void* pBuffer, uint32 nSize, uint32* pdwAttribubutes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFirmwareEnvironmentVariableExW(PWSTR lpName, PWSTR lpGuid, void* pBuffer, uint32 nSize, uint32* pdwAttribubutes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFirmwareEnvironmentVariableA(PSTR lpName, PSTR lpGuid, void* pValue, uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFirmwareEnvironmentVariableW(PWSTR lpName, PWSTR lpGuid, void* pValue, uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFirmwareEnvironmentVariableExA(PSTR lpName, PSTR lpGuid, void* pValue, uint32 nSize, uint32 dwAttributes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFirmwareEnvironmentVariableExW(PWSTR lpName, PWSTR lpGuid, void* pValue, uint32 nSize, uint32 dwAttributes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsNativeVhdBoot(out BOOL NativeVhdBoot);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetProfileIntA(PSTR lpAppName, PSTR lpKeyName, int32 nDefault);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetProfileIntW(PWSTR lpAppName, PWSTR lpKeyName, int32 nDefault);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetProfileStringA(PSTR lpAppName, PSTR lpKeyName, PSTR lpDefault, uint8* lpReturnedString, uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetProfileStringW(PWSTR lpAppName, PWSTR lpKeyName, PWSTR lpDefault, char16* lpReturnedString, uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WriteProfileStringA(PSTR lpAppName, PSTR lpKeyName, PSTR lpString);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WriteProfileStringW(PWSTR lpAppName, PWSTR lpKeyName, PWSTR lpString);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetProfileSectionA(PSTR lpAppName, uint8* lpReturnedString, uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetProfileSectionW(PWSTR lpAppName, char16* lpReturnedString, uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WriteProfileSectionA(PSTR lpAppName, PSTR lpString);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WriteProfileSectionW(PWSTR lpAppName, PWSTR lpString);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetPrivateProfileIntA(PSTR lpAppName, PSTR lpKeyName, int32 nDefault, PSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetPrivateProfileIntW(PWSTR lpAppName, PWSTR lpKeyName, int32 nDefault, PWSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetPrivateProfileStringA(PSTR lpAppName, PSTR lpKeyName, PSTR lpDefault, uint8* lpReturnedString, uint32 nSize, PSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetPrivateProfileStringW(PWSTR lpAppName, PWSTR lpKeyName, PWSTR lpDefault, char16* lpReturnedString, uint32 nSize, PWSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WritePrivateProfileStringA(PSTR lpAppName, PSTR lpKeyName, PSTR lpString, PSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WritePrivateProfileStringW(PWSTR lpAppName, PWSTR lpKeyName, PWSTR lpString, PWSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetPrivateProfileSectionA(PSTR lpAppName, uint8* lpReturnedString, uint32 nSize, PSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetPrivateProfileSectionW(PWSTR lpAppName, char16* lpReturnedString, uint32 nSize, PWSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WritePrivateProfileSectionA(PSTR lpAppName, PSTR lpString, PSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WritePrivateProfileSectionW(PWSTR lpAppName, PWSTR lpString, PWSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetPrivateProfileSectionNamesA(uint8* lpszReturnBuffer, uint32 nSize, PSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetPrivateProfileSectionNamesW(char16* lpszReturnBuffer, uint32 nSize, PWSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPrivateProfileStructA(PSTR lpszSection, PSTR lpszKey, void* lpStruct, uint32 uSizeStruct, PSTR szFile);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPrivateProfileStructW(PWSTR lpszSection, PWSTR lpszKey, void* lpStruct, uint32 uSizeStruct, PWSTR szFile);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WritePrivateProfileStructA(PSTR lpszSection, PSTR lpszKey, void* lpStruct, uint32 uSizeStruct, PSTR szFile);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WritePrivateProfileStructW(PWSTR lpszSection, PWSTR lpszKey, void* lpStruct, uint32 uSizeStruct, PWSTR szFile);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsBadHugeReadPtr(void* lp, uint ucb);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsBadHugeWritePtr(void* lp, uint ucb);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetComputerNameA(uint8* lpBuffer, out uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetComputerNameW(char16* lpBuffer, out uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DnsHostnameToComputerNameA(PSTR Hostname, uint8* ComputerName, out uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DnsHostnameToComputerNameW(PWSTR Hostname, char16* ComputerName, out uint32 nSize);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetUserNameA(uint8* lpBuffer, out uint32 pcbBuffer);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetUserNameW(char16* lpBuffer, out uint32 pcbBuffer);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsTokenUntrusted(HANDLE TokenHandle);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CancelTimerQueueTimer(HANDLE TimerQueue, HANDLE Timer);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCurrentHwProfileA(out HW_PROFILE_INFOA lpHwProfileInfo);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCurrentHwProfileW(out HW_PROFILE_INFOW lpHwProfileInfo);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ReplacePartitionUnit(PWSTR TargetPartition, PWSTR SparePartition, uint32 Flags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint64 GetThreadEnabledXStateFeatures();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnableProcessOptionalXStateFeatures(uint64 Features);
 	[Import("api-ms-win-core-backgroundtask-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 RaiseCustomSystemEventTrigger(ref CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG CustomSystemEventTriggerConfig);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 uaw_lstrcmpW(ref uint16 String1, ref uint16 String2);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 uaw_lstrcmpiW(ref uint16 String1, ref uint16 String2);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 uaw_lstrlenW(ref uint16 String);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint16* uaw_wcschr(ref uint16 String, char16 Character);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint16* uaw_wcscpy(out uint16 Destination, ref uint16 Source);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 uaw_wcsicmp(ref uint16 String1, ref uint16 String2);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint uaw_wcslen(ref uint16 String);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint16* uaw_wcsrchr(ref uint16 String, char16 Character);
 	[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS NtClose(HANDLE Handle);
@@ -2040,27 +2040,27 @@ static
 	public static extern HRESULT SetPerUserSecValuesA(out PERUSERSECTIONA pPerUser);
 	[Import("advpack.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SetPerUserSecValuesW(out PERUSERSECTIONW pPerUser);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern LRESULT SendIMEMessageExA(HWND param0, LPARAM param1);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern LRESULT SendIMEMessageExW(HWND param0, LPARAM param1);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IMPGetIMEA(HWND param0, out IMEPROA param1);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IMPGetIMEW(HWND param0, out IMEPROW param1);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IMPQueryIMEA(out IMEPROA param0);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IMPQueryIMEW(out IMEPROW param0);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IMPSetIMEA(HWND param0, out IMEPROA param1);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IMPSetIMEW(HWND param0, out IMEPROW param1);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 WINNLSGetIMEHotkey(HWND param0);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WINNLSEnableIME(HWND param0, BOOL param1);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WINNLSGetEnableStatus(HWND param0);
 	[Import("apphelp.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ApphelpCheckShellObject(in Guid ObjectCLSID, BOOL bShimIfNecessary, out uint64 pullFlags);

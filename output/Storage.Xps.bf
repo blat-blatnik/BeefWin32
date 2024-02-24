@@ -2458,25 +2458,25 @@ static
 	public static extern int32 DeviceCapabilitiesA(PSTR pDevice, PSTR pPort, DEVICE_CAPABILITIES fwCapability, PSTR pOutput, DEVMODEA* pDevMode);
 	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DeviceCapabilitiesW(PWSTR pDevice, PWSTR pPort, DEVICE_CAPABILITIES fwCapability, PWSTR pOutput, DEVMODEW* pDevMode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 Escape(HDC hdc, int32 iEscape, int32 cjIn, PSTR pvIn, void* pvOut);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ExtEscape(HDC hdc, int32 iEscape, int32 cjInput, PSTR lpInData, int32 cjOutput, PSTR lpOutData);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 StartDocA(HDC hdc, in DOCINFOA lpdi);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 StartDocW(HDC hdc, in DOCINFOW lpdi);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 EndDoc(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 StartPage(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 EndPage(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 AbortDoc(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetAbortProc(HDC hdc, ABORTPROC proc);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PrintWindow(HWND hwnd, HDC hdcBlt, PRINT_WINDOW_FLAGS nFlags);
 	#endregion
 }

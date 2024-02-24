@@ -9993,41 +9993,41 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BSTR SysAllocString(PWSTR psz);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SysReAllocString(out BSTR pbstr, PWSTR psz);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BSTR SysAllocStringLen(char16* strIn, uint32 ui);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SysReAllocStringLen(out BSTR pbstr, PWSTR psz, uint32 len);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SysAddRefString(BSTR bstrString);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SysReleaseString(BSTR bstrString);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SysFreeString(BSTR bstrString);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SysStringLen(BSTR pbstr);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SysStringByteLen(BSTR bstr);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BSTR SysAllocStringByteLen(PSTR psz, uint32 len);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CloseHandle(HANDLE hObject);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DuplicateHandle(HANDLE hSourceProcessHandle, HANDLE hSourceHandle, HANDLE hTargetProcessHandle, out HANDLE lpTargetHandle, uint32 dwDesiredAccess, BOOL bInheritHandle, DUPLICATE_HANDLE_OPTIONS dwOptions);
 	[Import("api-ms-win-core-handle-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CompareObjectHandles(HANDLE hFirstObjectHandle, HANDLE hSecondObjectHandle);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetHandleInformation(HANDLE hObject, out uint32 lpdwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetHandleInformation(HANDLE hObject, uint32 dwMask, HANDLE_FLAGS dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern WIN32_ERROR GetLastError();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SetLastError(WIN32_ERROR dwErrCode);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SetLastErrorEx(WIN32_ERROR dwErrCode, uint32 dwType);
 	[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 RtlNtStatusToDosError(NTSTATUS Status);

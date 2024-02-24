@@ -3599,419 +3599,419 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetObjectA(HGDIOBJ h, int32 c, void* pv);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 AddFontResourceA(PSTR param0);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 AddFontResourceW(PWSTR param0);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AnimatePalette(HPALETTE hPal, uint32 iStartIndex, uint32 cEntries, PALETTEENTRY* ppe);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Arc(HDC hdc, int32 x1, int32 y1, int32 x2, int32 y2, int32 x3, int32 y3, int32 x4, int32 y4);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL BitBlt(HDC hdc, int32 x, int32 y, int32 cx, int32 cy, HDC hdcSrc, int32 x1, int32 y1, ROP_CODE rop);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CancelDC(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Chord(HDC hdc, int32 x1, int32 y1, int32 x2, int32 y2, int32 x3, int32 y3, int32 x4, int32 y4);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HMETAFILE CloseMetaFile(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 CombineRgn(HRGN hrgnDst, HRGN hrgnSrc1, HRGN hrgnSrc2, RGN_COMBINE_MODE iMode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HMETAFILE CopyMetaFileA(HMETAFILE param0, PSTR param1);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HMETAFILE CopyMetaFileW(HMETAFILE param0, PWSTR param1);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBITMAP CreateBitmap(int32 nWidth, int32 nHeight, uint32 nPlanes, uint32 nBitCount, void* lpBits);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBITMAP CreateBitmapIndirect(in BITMAP pbm);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBRUSH CreateBrushIndirect(in LOGBRUSH plbrush);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBITMAP CreateCompatibleBitmap(HDC hdc, int32 cx, int32 cy);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBITMAP CreateDiscardableBitmap(HDC hdc, int32 cx, int32 cy);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern CreatedHDC CreateCompatibleDC(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern CreatedHDC CreateDCA(PSTR pwszDriver, PSTR pwszDevice, PSTR pszPort, DEVMODEA* pdm);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern CreatedHDC CreateDCW(PWSTR pwszDriver, PWSTR pwszDevice, PWSTR pszPort, DEVMODEW* pdm);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBITMAP CreateDIBitmap(HDC hdc, BITMAPINFOHEADER* pbmih, uint32 flInit, void* pjBits, BITMAPINFO* pbmi, DIB_USAGE iUsage);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBRUSH CreateDIBPatternBrush(int h, DIB_USAGE iUsage);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBRUSH CreateDIBPatternBrushPt(void* lpPackedDIB, DIB_USAGE iUsage);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRGN CreateEllipticRgn(int32 x1, int32 y1, int32 x2, int32 y2);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRGN CreateEllipticRgnIndirect(in RECT lprect);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HFONT CreateFontIndirectA(in LOGFONTA lplf);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HFONT CreateFontIndirectW(in LOGFONTW lplf);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HFONT CreateFontA(int32 cHeight, int32 cWidth, int32 cEscapement, int32 cOrientation, int32 cWeight, uint32 bItalic, uint32 bUnderline, uint32 bStrikeOut, uint32 iCharSet, FONT_OUTPUT_PRECISION iOutPrecision, FONT_CLIP_PRECISION iClipPrecision, FONT_QUALITY iQuality, FONT_PITCH_AND_FAMILY iPitchAndFamily, PSTR pszFaceName);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HFONT CreateFontW(int32 cHeight, int32 cWidth, int32 cEscapement, int32 cOrientation, int32 cWeight, uint32 bItalic, uint32 bUnderline, uint32 bStrikeOut, uint32 iCharSet, FONT_OUTPUT_PRECISION iOutPrecision, FONT_CLIP_PRECISION iClipPrecision, FONT_QUALITY iQuality, FONT_PITCH_AND_FAMILY iPitchAndFamily, PWSTR pszFaceName);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBRUSH CreateHatchBrush(HATCH_BRUSH_STYLE iHatch, uint32 color);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern CreatedHDC CreateICA(PSTR pszDriver, PSTR pszDevice, PSTR pszPort, DEVMODEA* pdm);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern CreatedHDC CreateICW(PWSTR pszDriver, PWSTR pszDevice, PWSTR pszPort, DEVMODEW* pdm);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HdcMetdataFileHandle CreateMetaFileA(PSTR pszFile);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HdcMetdataFileHandle CreateMetaFileW(PWSTR pszFile);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HPALETTE CreatePalette(in LOGPALETTE plpal);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HPEN CreatePen(PEN_STYLE iStyle, int32 cWidth, uint32 color);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HPEN CreatePenIndirect(in LOGPEN plpen);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRGN CreatePolyPolygonRgn(in POINT pptl, int32* pc, int32 cPoly, CREATE_POLYGON_RGN_MODE iMode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBRUSH CreatePatternBrush(HBITMAP hbm);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRGN CreateRectRgn(int32 x1, int32 y1, int32 x2, int32 y2);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRGN CreateRectRgnIndirect(in RECT lprect);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRGN CreateRoundRectRgn(int32 x1, int32 y1, int32 x2, int32 y2, int32 w, int32 h);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CreateScalableFontResourceA(uint32 fdwHidden, PSTR lpszFont, PSTR lpszFile, PSTR lpszPath);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CreateScalableFontResourceW(uint32 fdwHidden, PWSTR lpszFont, PWSTR lpszFile, PWSTR lpszPath);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBRUSH CreateSolidBrush(uint32 color);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeleteDC(CreatedHDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeleteMetaFile(HMETAFILE hmf);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeleteObject(HGDIOBJ ho);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DrawEscape(HDC hdc, int32 iEscape, int32 cjIn, PSTR lpIn);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Ellipse(HDC hdc, int32 left, int32 top, int32 right, int32 bottom);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 EnumFontFamiliesExA(HDC hdc, ref LOGFONTA lpLogfont, FONTENUMPROCA lpProc, LPARAM lParam, uint32 dwFlags);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 EnumFontFamiliesExW(HDC hdc, ref LOGFONTW lpLogfont, FONTENUMPROCW lpProc, LPARAM lParam, uint32 dwFlags);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 EnumFontFamiliesA(HDC hdc, PSTR lpLogfont, FONTENUMPROCA lpProc, LPARAM lParam);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 EnumFontFamiliesW(HDC hdc, PWSTR lpLogfont, FONTENUMPROCW lpProc, LPARAM lParam);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 EnumFontsA(HDC hdc, PSTR lpLogfont, FONTENUMPROCA lpProc, LPARAM lParam);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 EnumFontsW(HDC hdc, PWSTR lpLogfont, FONTENUMPROCW lpProc, LPARAM lParam);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 EnumObjects(HDC hdc, OBJ_TYPE nType, GOBJENUMPROC lpFunc, LPARAM lParam);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EqualRgn(HRGN hrgn1, HRGN hrgn2);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ExcludeClipRect(HDC hdc, int32 left, int32 top, int32 right, int32 bottom);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRGN ExtCreateRegion(XFORM* lpx, uint32 nCount, in RGNDATA lpData);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ExtFloodFill(HDC hdc, int32 x, int32 y, uint32 color, EXT_FLOOD_FILL_TYPE type);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FillRgn(HDC hdc, HRGN hrgn, HBRUSH hbr);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FloodFill(HDC hdc, int32 x, int32 y, uint32 color);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FrameRgn(HDC hdc, HRGN hrgn, HBRUSH hbr, int32 w, int32 h);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetROP2(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetAspectRatioFilterEx(HDC hdc, out SIZE lpsize);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetBkColor(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetDCBrushColor(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetDCPenColor(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetBkMode(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetBitmapBits(HBITMAP hbit, int32 cb, void* lpvBits);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetBitmapDimensionEx(HBITMAP hbit, out SIZE lpsize);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetBoundsRect(HDC hdc, out RECT lprect, uint32 flags);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetBrushOrgEx(HDC hdc, out POINT lppt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCharWidthA(HDC hdc, uint32 iFirst, uint32 iLast, out int32 lpBuffer);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCharWidthW(HDC hdc, uint32 iFirst, uint32 iLast, out int32 lpBuffer);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCharWidth32A(HDC hdc, uint32 iFirst, uint32 iLast, out int32 lpBuffer);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCharWidth32W(HDC hdc, uint32 iFirst, uint32 iLast, out int32 lpBuffer);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCharWidthFloatA(HDC hdc, uint32 iFirst, uint32 iLast, out float lpBuffer);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCharWidthFloatW(HDC hdc, uint32 iFirst, uint32 iLast, out float lpBuffer);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCharABCWidthsA(HDC hdc, uint32 wFirst, uint32 wLast, out ABC lpABC);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCharABCWidthsW(HDC hdc, uint32 wFirst, uint32 wLast, out ABC lpABC);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCharABCWidthsFloatA(HDC hdc, uint32 iFirst, uint32 iLast, out ABCFLOAT lpABC);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCharABCWidthsFloatW(HDC hdc, uint32 iFirst, uint32 iLast, out ABCFLOAT lpABC);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetClipBox(HDC hdc, out RECT lprect);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetClipRgn(HDC hdc, HRGN hrgn);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetMetaRgn(HDC hdc, HRGN hrgn);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HGDIOBJ GetCurrentObject(HDC hdc, OBJ_TYPE type);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCurrentPositionEx(HDC hdc, out POINT lppt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetDeviceCaps(HDC hdc, GET_DEVICE_CAPS_INDEX index);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetDIBits(HDC hdc, HBITMAP hbm, uint32 start, uint32 cLines, void* lpvBits, out BITMAPINFO lpbmi, DIB_USAGE usage);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFontData(HDC hdc, uint32 dwTable, uint32 dwOffset, void* pvBuffer, uint32 cjBuffer);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetGlyphOutlineA(HDC hdc, uint32 uChar, GET_GLYPH_OUTLINE_FORMAT fuFormat, out GLYPHMETRICS lpgm, uint32 cjBuffer, void* pvBuffer, in MAT2 lpmat2);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetGlyphOutlineW(HDC hdc, uint32 uChar, GET_GLYPH_OUTLINE_FORMAT fuFormat, out GLYPHMETRICS lpgm, uint32 cjBuffer, void* pvBuffer, in MAT2 lpmat2);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetGraphicsMode(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetMapMode(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetMetaFileBitsEx(HMETAFILE hMF, uint32 cbBuffer, void* lpData);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HMETAFILE GetMetaFileA(PSTR lpName);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HMETAFILE GetMetaFileW(PWSTR lpName);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetNearestColor(HDC hdc, uint32 color);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetNearestPaletteIndex(HPALETTE h, uint32 color);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetObjectType(HGDIOBJ h);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetOutlineTextMetricsA(HDC hdc, uint32 cjCopy, OUTLINETEXTMETRICA* potm);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetOutlineTextMetricsW(HDC hdc, uint32 cjCopy, OUTLINETEXTMETRICW* potm);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetPaletteEntries(HPALETTE hpal, uint32 iStart, uint32 cEntries, PALETTEENTRY* pPalEntries);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetPixel(HDC hdc, int32 x, int32 y);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetPolyFillMode(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetRasterizerCaps(out RASTERIZER_STATUS lpraststat, uint32 cjBytes);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetRandomRgn(HDC hdc, HRGN hrgn, int32 i);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetRegionData(HRGN hrgn, uint32 nCount, RGNDATA* lpRgnData);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetRgnBox(HRGN hrgn, out RECT lprc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HGDIOBJ GetStockObject(GET_STOCK_OBJECT_FLAGS i);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetStretchBltMode(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetSystemPaletteEntries(HDC hdc, uint32 iStart, uint32 cEntries, PALETTEENTRY* pPalEntries);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetSystemPaletteUse(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetTextCharacterExtra(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetTextAlign(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetTextColor(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetTextExtentPointA(HDC hdc, uint8* lpString, int32 c, out SIZE lpsz);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetTextExtentPointW(HDC hdc, char16* lpString, int32 c, out SIZE lpsz);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetTextExtentPoint32A(HDC hdc, uint8* lpString, int32 c, out SIZE psizl);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetTextExtentPoint32W(HDC hdc, char16* lpString, int32 c, out SIZE psizl);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetTextExtentExPointA(HDC hdc, uint8* lpszString, int32 cchString, int32 nMaxExtent, int32* lpnFit, int32* lpnDx, out SIZE lpSize);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetTextExtentExPointW(HDC hdc, char16* lpszString, int32 cchString, int32 nMaxExtent, int32* lpnFit, int32* lpnDx, out SIZE lpSize);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFontLanguageInfo(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetCharacterPlacementA(HDC hdc, uint8* lpString, int32 nCount, int32 nMexExtent, out GCP_RESULTSA lpResults, GET_CHARACTER_PLACEMENT_FLAGS dwFlags);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetCharacterPlacementW(HDC hdc, char16* lpString, int32 nCount, int32 nMexExtent, out GCP_RESULTSW lpResults, GET_CHARACTER_PLACEMENT_FLAGS dwFlags);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFontUnicodeRanges(HDC hdc, GLYPHSET* lpgs);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetGlyphIndicesA(HDC hdc, uint8* lpstr, int32 c, uint16* pgi, uint32 fl);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetGlyphIndicesW(HDC hdc, char16* lpstr, int32 c, uint16* pgi, uint32 fl);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetTextExtentPointI(HDC hdc, uint16* pgiIn, int32 cgi, out SIZE psize);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetTextExtentExPointI(HDC hdc, uint16* lpwszString, int32 cwchString, int32 nMaxExtent, int32* lpnFit, int32* lpnDx, out SIZE lpSize);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCharWidthI(HDC hdc, uint32 giFirst, uint32 cgi, uint16* pgi, int32* piWidths);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCharABCWidthsI(HDC hdc, uint32 giFirst, uint32 cgi, uint16* pgi, ABC* pabc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 AddFontResourceExA(PSTR name, FONT_RESOURCE_CHARACTERISTICS fl, void* res);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 AddFontResourceExW(PWSTR name, FONT_RESOURCE_CHARACTERISTICS fl, void* res);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RemoveFontResourceExA(PSTR name, uint32 fl, void* pdv);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RemoveFontResourceExW(PWSTR name, uint32 fl, void* pdv);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE AddFontMemResourceEx(void* pFileView, uint32 cjSize, void* pvResrved, ref uint32 pNumFonts);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RemoveFontMemResourceEx(HANDLE h);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HFONT CreateFontIndirectExA(in ENUMLOGFONTEXDVA param0);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HFONT CreateFontIndirectExW(in ENUMLOGFONTEXDVW param0);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetViewportExtEx(HDC hdc, out SIZE lpsize);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetViewportOrgEx(HDC hdc, out POINT lppoint);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetWindowExtEx(HDC hdc, out SIZE lpsize);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetWindowOrgEx(HDC hdc, out POINT lppoint);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 IntersectClipRect(HDC hdc, int32 left, int32 top, int32 right, int32 bottom);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InvertRgn(HDC hdc, HRGN hrgn);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL LineDDA(int32 xStart, int32 yStart, int32 xEnd, int32 yEnd, LINEDDAPROC lpProc, LPARAM data);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL LineTo(HDC hdc, int32 x, int32 y);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL MaskBlt(HDC hdcDest, int32 xDest, int32 yDest, int32 width, int32 height, HDC hdcSrc, int32 xSrc, int32 ySrc, HBITMAP hbmMask, int32 xMask, int32 yMask, uint32 rop);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PlgBlt(HDC hdcDest, POINT* lpPoint, HDC hdcSrc, int32 xSrc, int32 ySrc, int32 width, int32 height, HBITMAP hbmMask, int32 xMask, int32 yMask);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 OffsetClipRgn(HDC hdc, int32 x, int32 y);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 OffsetRgn(HRGN hrgn, int32 x, int32 y);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PatBlt(HDC hdc, int32 x, int32 y, int32 w, int32 h, ROP_CODE rop);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Pie(HDC hdc, int32 left, int32 top, int32 right, int32 bottom, int32 xr1, int32 yr1, int32 xr2, int32 yr2);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PlayMetaFile(HDC hdc, HMETAFILE hmf);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PaintRgn(HDC hdc, HRGN hrgn);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PolyPolygon(HDC hdc, in POINT apt, int32* asz, int32 csz);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PtInRegion(HRGN hrgn, int32 x, int32 y);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PtVisible(HDC hdc, int32 x, int32 y);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RectInRegion(HRGN hrgn, in RECT lprect);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RectVisible(HDC hdc, in RECT lprect);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Rectangle(HDC hdc, int32 left, int32 top, int32 right, int32 bottom);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RestoreDC(HDC hdc, int32 nSavedDC);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HDC ResetDCA(HDC hdc, in DEVMODEA lpdm);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HDC ResetDCW(HDC hdc, in DEVMODEW lpdm);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 RealizePalette(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RemoveFontResourceA(PSTR lpFileName);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RemoveFontResourceW(PWSTR lpFileName);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RoundRect(HDC hdc, int32 left, int32 top, int32 right, int32 bottom, int32 width, int32 height);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ResizePalette(HPALETTE hpal, uint32 n);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SaveDC(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SelectClipRgn(HDC hdc, HRGN hrgn);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ExtSelectClipRgn(HDC hdc, HRGN hrgn, RGN_COMBINE_MODE mode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetMetaRgn(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HGDIOBJ SelectObject(HDC hdc, HGDIOBJ h);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HPALETTE SelectPalette(HDC hdc, HPALETTE hPal, BOOL bForceBkgd);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetBkColor(HDC hdc, uint32 color);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetDCBrushColor(HDC hdc, uint32 color);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetDCPenColor(HDC hdc, uint32 color);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetBkMode(HDC hdc, BACKGROUND_MODE mode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetBitmapBits(HBITMAP hbm, uint32 cb, void* pvBits);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetBoundsRect(HDC hdc, RECT* lprect, SET_BOUNDS_RECT_FLAGS flags);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetDIBits(HDC hdc, HBITMAP hbm, uint32 start, uint32 cLines, void* lpBits, in BITMAPINFO lpbmi, DIB_USAGE ColorUse);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetDIBitsToDevice(HDC hdc, int32 xDest, int32 yDest, uint32 w, uint32 h, int32 xSrc, int32 ySrc, uint32 StartScan, uint32 cLines, void* lpvBits, in BITMAPINFO lpbmi, DIB_USAGE ColorUse);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetMapperFlags(HDC hdc, uint32 flags);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetGraphicsMode(HDC hdc, GRAPHICS_MODE iMode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetMapMode(HDC hdc, HDC_MAP_MODE iMode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetLayout(HDC hdc, DC_LAYOUT l);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetLayout(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HMETAFILE SetMetaFileBitsEx(uint32 cbBuffer, in uint8 lpData);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetPaletteEntries(HPALETTE hpal, uint32 iStart, uint32 cEntries, PALETTEENTRY* pPalEntries);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetPixel(HDC hdc, int32 x, int32 y, uint32 color);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetPixelV(HDC hdc, int32 x, int32 y, uint32 color);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetPolyFillMode(HDC hdc, CREATE_POLYGON_RGN_MODE mode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL StretchBlt(HDC hdcDest, int32 xDest, int32 yDest, int32 wDest, int32 hDest, HDC hdcSrc, int32 xSrc, int32 ySrc, int32 wSrc, int32 hSrc, ROP_CODE rop);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetRectRgn(HRGN hrgn, int32 left, int32 top, int32 right, int32 bottom);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 StretchDIBits(HDC hdc, int32 xDest, int32 yDest, int32 DestWidth, int32 DestHeight, int32 xSrc, int32 ySrc, int32 SrcWidth, int32 SrcHeight, void* lpBits, in BITMAPINFO lpbmi, DIB_USAGE iUsage, ROP_CODE rop);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetROP2(HDC hdc, R2_MODE rop2);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetStretchBltMode(HDC hdc, STRETCH_BLT_MODE mode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetSystemPaletteUse(HDC hdc, SYSTEM_PALETTE_USE use);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetTextCharacterExtra(HDC hdc, int32 extra);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetTextColor(HDC hdc, uint32 color);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetTextAlign(HDC hdc, TEXT_ALIGN_OPTIONS align);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetTextJustification(HDC hdc, int32 extra, int32 count);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UpdateColors(HDC hdc);
 	[Import("msimg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AlphaBlend(HDC hdcDest, int32 xoriginDest, int32 yoriginDest, int32 wDest, int32 hDest, HDC hdcSrc, int32 xoriginSrc, int32 yoriginSrc, int32 wSrc, int32 hSrc, BLENDFUNCTION ftn);
@@ -4019,193 +4019,193 @@ static
 	public static extern BOOL TransparentBlt(HDC hdcDest, int32 xoriginDest, int32 yoriginDest, int32 wDest, int32 hDest, HDC hdcSrc, int32 xoriginSrc, int32 yoriginSrc, int32 wSrc, int32 hSrc, uint32 crTransparent);
 	[Import("msimg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GradientFill(HDC hdc, TRIVERTEX* pVertex, uint32 nVertex, void* pMesh, uint32 nMesh, GRADIENT_FILL ulMode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GdiAlphaBlend(HDC hdcDest, int32 xoriginDest, int32 yoriginDest, int32 wDest, int32 hDest, HDC hdcSrc, int32 xoriginSrc, int32 yoriginSrc, int32 wSrc, int32 hSrc, BLENDFUNCTION ftn);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GdiTransparentBlt(HDC hdcDest, int32 xoriginDest, int32 yoriginDest, int32 wDest, int32 hDest, HDC hdcSrc, int32 xoriginSrc, int32 yoriginSrc, int32 wSrc, int32 hSrc, uint32 crTransparent);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GdiGradientFill(HDC hdc, TRIVERTEX* pVertex, uint32 nVertex, void* pMesh, uint32 nCount, GRADIENT_FILL ulMode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PlayMetaFileRecord(HDC hdc, HANDLETABLE* lpHandleTable, ref METARECORD lpMR, uint32 noObjs);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumMetaFile(HDC hdc, HMETAFILE hmf, MFENUMPROC proc, LPARAM param3);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HENHMETAFILE CloseEnhMetaFile(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HENHMETAFILE CopyEnhMetaFileA(HENHMETAFILE hEnh, PSTR lpFileName);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HENHMETAFILE CopyEnhMetaFileW(HENHMETAFILE hEnh, PWSTR lpFileName);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HdcMetdataEnhFileHandle CreateEnhMetaFileA(HDC hdc, PSTR lpFilename, RECT* lprc, PSTR lpDesc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HdcMetdataEnhFileHandle CreateEnhMetaFileW(HDC hdc, PWSTR lpFilename, RECT* lprc, PWSTR lpDesc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeleteEnhMetaFile(HENHMETAFILE hmf);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumEnhMetaFile(HDC hdc, HENHMETAFILE hmf, ENHMFENUMPROC proc, void* param3, RECT* lpRect);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HENHMETAFILE GetEnhMetaFileA(PSTR lpName);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HENHMETAFILE GetEnhMetaFileW(PWSTR lpName);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetEnhMetaFileBits(HENHMETAFILE hEMF, uint32 nSize, uint8* lpData);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetEnhMetaFileDescriptionA(HENHMETAFILE hemf, uint32 cchBuffer, uint8* lpDescription);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetEnhMetaFileDescriptionW(HENHMETAFILE hemf, uint32 cchBuffer, char16* lpDescription);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetEnhMetaFileHeader(HENHMETAFILE hemf, uint32 nSize, ENHMETAHEADER* lpEnhMetaHeader);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetEnhMetaFilePaletteEntries(HENHMETAFILE hemf, uint32 nNumEntries, PALETTEENTRY* lpPaletteEntries);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetWinMetaFileBits(HENHMETAFILE hemf, uint32 cbData16, uint8* pData16, int32 iMapMode, HDC hdcRef);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PlayEnhMetaFile(HDC hdc, HENHMETAFILE hmf, in RECT lprect);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PlayEnhMetaFileRecord(HDC hdc, HANDLETABLE* pht, in ENHMETARECORD pmr, uint32 cht);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HENHMETAFILE SetEnhMetaFileBits(uint32 nSize, in uint8 pb);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GdiComment(HDC hdc, uint32 nSize, in uint8 lpData);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetTextMetricsA(HDC hdc, out TEXTMETRICA lptm);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetTextMetricsW(HDC hdc, out TEXTMETRICW lptm);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AngleArc(HDC hdc, int32 x, int32 y, uint32 r, float StartAngle, float SweepAngle);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PolyPolyline(HDC hdc, in POINT apt, uint32* asz, uint32 csz);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetWorldTransform(HDC hdc, out XFORM lpxf);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetWorldTransform(HDC hdc, in XFORM lpxf);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ModifyWorldTransform(HDC hdc, XFORM* lpxf, MODIFY_WORLD_TRANSFORM_MODE mode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CombineTransform(out XFORM lpxfOut, in XFORM lpxf1, in XFORM lpxf2);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBITMAP CreateDIBSection(HDC hdc, in BITMAPINFO pbmi, DIB_USAGE usage, void** ppvBits, HANDLE hSection, uint32 offset);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetDIBColorTable(HDC hdc, uint32 iStart, uint32 cEntries, RGBQUAD* prgbq);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetDIBColorTable(HDC hdc, uint32 iStart, uint32 cEntries, RGBQUAD* prgbq);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetColorAdjustment(HDC hdc, in COLORADJUSTMENT lpca);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetColorAdjustment(HDC hdc, out COLORADJUSTMENT lpca);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HPALETTE CreateHalftonePalette(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AbortPath(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ArcTo(HDC hdc, int32 left, int32 top, int32 right, int32 bottom, int32 xr1, int32 yr1, int32 xr2, int32 yr2);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL BeginPath(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CloseFigure(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EndPath(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FillPath(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FlattenPath(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetPath(HDC hdc, POINT* apt, uint8* aj, int32 cpt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRGN PathToRegion(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PolyDraw(HDC hdc, POINT* apt, uint8* aj, int32 cpt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SelectClipPath(HDC hdc, RGN_COMBINE_MODE mode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetArcDirection(HDC hdc, ARC_DIRECTION dir);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetMiterLimit(HDC hdc, float limit, float* old);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL StrokeAndFillPath(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL StrokePath(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WidenPath(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HPEN ExtCreatePen(PEN_STYLE iPenStyle, uint32 cWidth, in LOGBRUSH plbrush, uint32 cStyle, uint32* pstyle);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetMiterLimit(HDC hdc, out float plimit);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetArcDirection(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetObjectW(HGDIOBJ h, int32 c, void* pv);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL MoveToEx(HDC hdc, int32 x, int32 y, POINT* lppt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL TextOutA(HDC hdc, int32 x, int32 y, uint8* lpString, int32 c);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL TextOutW(HDC hdc, int32 x, int32 y, char16* lpString, int32 c);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ExtTextOutA(HDC hdc, int32 x, int32 y, ETO_OPTIONS options, RECT* lprect, uint8* lpString, uint32 c, int32* lpDx);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ExtTextOutW(HDC hdc, int32 x, int32 y, ETO_OPTIONS options, RECT* lprect, char16* lpString, uint32 c, int32* lpDx);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PolyTextOutA(HDC hdc, POLYTEXTA* ppt, int32 nstrings);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PolyTextOutW(HDC hdc, POLYTEXTW* ppt, int32 nstrings);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRGN CreatePolygonRgn(POINT* pptl, int32 cPoint, CREATE_POLYGON_RGN_MODE iMode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DPtoLP(HDC hdc, POINT* lppt, int32 c);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL LPtoDP(HDC hdc, POINT* lppt, int32 c);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Polygon(HDC hdc, POINT* apt, int32 cpt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Polyline(HDC hdc, POINT* apt, int32 cpt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PolyBezier(HDC hdc, POINT* apt, uint32 cpt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PolyBezierTo(HDC hdc, POINT* apt, uint32 cpt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PolylineTo(HDC hdc, POINT* apt, uint32 cpt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetViewportExtEx(HDC hdc, int32 x, int32 y, SIZE* lpsz);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetViewportOrgEx(HDC hdc, int32 x, int32 y, POINT* lppt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetWindowExtEx(HDC hdc, int32 x, int32 y, SIZE* lpsz);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetWindowOrgEx(HDC hdc, int32 x, int32 y, POINT* lppt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL OffsetViewportOrgEx(HDC hdc, int32 x, int32 y, POINT* lppt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL OffsetWindowOrgEx(HDC hdc, int32 x, int32 y, POINT* lppt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ScaleViewportExtEx(HDC hdc, int32 xn, int32 dx, int32 yn, int32 yd, SIZE* lpsz);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ScaleWindowExtEx(HDC hdc, int32 xn, int32 xd, int32 yn, int32 yd, SIZE* lpsz);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetBitmapDimensionEx(HBITMAP hbm, int32 w, int32 h, SIZE* lpsz);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetBrushOrgEx(HDC hdc, int32 x, int32 y, POINT* lppt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetTextFaceA(HDC hdc, int32 c, uint8* lpName);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetTextFaceW(HDC hdc, int32 c, char16* lpName);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetKerningPairsA(HDC hdc, uint32 nPairs, KERNINGPAIR* lpKernPair);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetKerningPairsW(HDC hdc, uint32 nPairs, KERNINGPAIR* lpKernPair);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetDCOrgEx(HDC hdc, out POINT lppt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FixBrushOrgEx(HDC hdc, int32 x, int32 y, POINT* ptl);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UnrealizeObject(HGDIOBJ h);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GdiFlush();
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GdiSetBatchLimit(uint32 dw);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GdiGetBatchLimit();
-	[Import("opengl32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("opengl32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 wglSwapMultipleBuffers(uint32 param0, in WGLSWAP param1);
 	[Import("fontsub.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CreateFontPackage(in uint8 puchSrcBuffer, uint32 ulSrcBufferSize, out uint8* ppuchFontPackageBuffer, out uint32 pulFontPackageBufferSize, out uint32 pulBytesWritten, uint16 usFlag, uint16 usTTCIndex, uint16 usSubsetFormat, uint16 usSubsetLanguage, CREATE_FONT_PACKAGE_SUBSET_PLATFORM usSubsetPlatform, CREATE_FONT_PACKAGE_SUBSET_ENCODING usSubsetEncoding, in uint16 pusSubsetKeepList, uint16 usSubsetListCount, CFP_ALLOCPROC lpfnAllocate, CFP_REALLOCPROC lpfnReAllocate, CFP_FREEPROC lpfnFree, void* lpvReserved);
@@ -4239,153 +4239,153 @@ static
 	public static extern int32 TTRunValidationTestsEx(HDC hDC, ref TTVALIDATIONTESTSPARAMSEX pTestParam);
 	[Import("t2embed.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 TTGetNewFontName(ref HANDLE phFontReference, char16* wzWinFamilyName, int32 cchMaxWinName, uint8* szMacFamilyName, int32 cchMaxMacName);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DrawEdge(HDC hdc, out RECT qrc, DRAWEDGE_FLAGS edge, DRAW_EDGE_FLAGS grfFlags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DrawFrameControl(HDC param0, out RECT param1, DFC_TYPE param2, DFCS_STATE param3);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DrawCaption(HWND hwnd, HDC hdc, in RECT lprect, DRAW_CAPTION_FLAGS flags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DrawAnimatedRects(HWND hwnd, int32 idAni, in RECT lprcFrom, in RECT lprcTo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DrawTextA(HDC hdc, uint8* lpchText, int32 cchText, out RECT lprc, DRAW_TEXT_FORMAT format);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DrawTextW(HDC hdc, char16* lpchText, int32 cchText, out RECT lprc, DRAW_TEXT_FORMAT format);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DrawTextExA(HDC hdc, uint8* lpchText, int32 cchText, out RECT lprc, DRAW_TEXT_FORMAT format, DRAWTEXTPARAMS* lpdtp);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DrawTextExW(HDC hdc, char16* lpchText, int32 cchText, out RECT lprc, DRAW_TEXT_FORMAT format, DRAWTEXTPARAMS* lpdtp);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GrayStringA(HDC hDC, HBRUSH hBrush, GRAYSTRINGPROC lpOutputFunc, LPARAM lpData, int32 nCount, int32 X, int32 Y, int32 nWidth, int32 nHeight);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GrayStringW(HDC hDC, HBRUSH hBrush, GRAYSTRINGPROC lpOutputFunc, LPARAM lpData, int32 nCount, int32 X, int32 Y, int32 nWidth, int32 nHeight);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DrawStateA(HDC hdc, HBRUSH hbrFore, DRAWSTATEPROC qfnCallBack, LPARAM lData, WPARAM wData, int32 x, int32 y, int32 cx, int32 cy, DRAWSTATE_FLAGS uFlags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DrawStateW(HDC hdc, HBRUSH hbrFore, DRAWSTATEPROC qfnCallBack, LPARAM lData, WPARAM wData, int32 x, int32 y, int32 cx, int32 cy, DRAWSTATE_FLAGS uFlags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 TabbedTextOutA(HDC hdc, int32 x, int32 y, uint8* lpString, int32 chCount, int32 nTabPositions, int32* lpnTabStopPositions, int32 nTabOrigin);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 TabbedTextOutW(HDC hdc, int32 x, int32 y, char16* lpString, int32 chCount, int32 nTabPositions, int32* lpnTabStopPositions, int32 nTabOrigin);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetTabbedTextExtentA(HDC hdc, uint8* lpString, int32 chCount, int32 nTabPositions, int32* lpnTabStopPositions);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetTabbedTextExtentW(HDC hdc, char16* lpString, int32 chCount, int32 nTabPositions, int32* lpnTabStopPositions);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UpdateWindow(HWND hWnd);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PaintDesktop(HDC hdc);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HWND WindowFromDC(HDC hDC);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HDC GetDC(HWND hWnd);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HDC GetDCEx(HWND hWnd, HRGN hrgnClip, GET_DCX_FLAGS flags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HDC GetWindowDC(HWND hWnd);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ReleaseDC(HWND hWnd, HDC hDC);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HDC BeginPaint(HWND hWnd, out PAINTSTRUCT lpPaint);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EndPaint(HWND hWnd, in PAINTSTRUCT lpPaint);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetUpdateRect(HWND hWnd, RECT* lpRect, BOOL bErase);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetUpdateRgn(HWND hWnd, HRGN hRgn, BOOL bErase);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetWindowRgn(HWND hWnd, HRGN hRgn, BOOL bRedraw);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetWindowRgn(HWND hWnd, HRGN hRgn);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetWindowRgnBox(HWND hWnd, out RECT lprc);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ExcludeUpdateRgn(HDC hDC, HWND hWnd);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InvalidateRect(HWND hWnd, RECT* lpRect, BOOL bErase);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ValidateRect(HWND hWnd, RECT* lpRect);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InvalidateRgn(HWND hWnd, HRGN hRgn, BOOL bErase);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ValidateRgn(HWND hWnd, HRGN hRgn);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RedrawWindow(HWND hWnd, RECT* lprcUpdate, HRGN hrgnUpdate, REDRAW_WINDOW_FLAGS flags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL LockWindowUpdate(HWND hWndLock);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ClientToScreen(HWND hWnd, out POINT lpPoint);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ScreenToClient(HWND hWnd, out POINT lpPoint);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 MapWindowPoints(HWND hWndFrom, HWND hWndTo, POINT* lpPoints, uint32 cPoints);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBRUSH GetSysColorBrush(int32 nIndex);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DrawFocusRect(HDC hDC, in RECT lprc);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 FillRect(HDC hDC, in RECT lprc, HBRUSH hbr);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 FrameRect(HDC hDC, in RECT lprc, HBRUSH hbr);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InvertRect(HDC hDC, in RECT lprc);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetRect(out RECT lprc, int32 xLeft, int32 yTop, int32 xRight, int32 yBottom);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetRectEmpty(out RECT lprc);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CopyRect(out RECT lprcDst, in RECT lprcSrc);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InflateRect(out RECT lprc, int32 dx, int32 dy);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IntersectRect(out RECT lprcDst, in RECT lprcSrc1, in RECT lprcSrc2);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UnionRect(out RECT lprcDst, in RECT lprcSrc1, in RECT lprcSrc2);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SubtractRect(out RECT lprcDst, in RECT lprcSrc1, in RECT lprcSrc2);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL OffsetRect(out RECT lprc, int32 dx, int32 dy);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsRectEmpty(in RECT lprc);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EqualRect(in RECT lprc1, in RECT lprc2);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PtInRect(in RECT lprc, POINT pt);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBITMAP LoadBitmapA(HINSTANCE hInstance, PSTR lpBitmapName);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBITMAP LoadBitmapW(HINSTANCE hInstance, PWSTR lpBitmapName);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern DISP_CHANGE ChangeDisplaySettingsA(DEVMODEA* lpDevMode, CDS_TYPE dwFlags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern DISP_CHANGE ChangeDisplaySettingsW(DEVMODEW* lpDevMode, CDS_TYPE dwFlags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern DISP_CHANGE ChangeDisplaySettingsExA(PSTR lpszDeviceName, DEVMODEA* lpDevMode, HWND hwnd, CDS_TYPE dwflags, void* lParam);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern DISP_CHANGE ChangeDisplaySettingsExW(PWSTR lpszDeviceName, DEVMODEW* lpDevMode, HWND hwnd, CDS_TYPE dwflags, void* lParam);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumDisplaySettingsA(PSTR lpszDeviceName, ENUM_DISPLAY_SETTINGS_MODE iModeNum, out DEVMODEA lpDevMode);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumDisplaySettingsW(PWSTR lpszDeviceName, ENUM_DISPLAY_SETTINGS_MODE iModeNum, out DEVMODEW lpDevMode);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumDisplaySettingsExA(PSTR lpszDeviceName, ENUM_DISPLAY_SETTINGS_MODE iModeNum, out DEVMODEA lpDevMode, uint32 dwFlags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumDisplaySettingsExW(PWSTR lpszDeviceName, ENUM_DISPLAY_SETTINGS_MODE iModeNum, out DEVMODEW lpDevMode, uint32 dwFlags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumDisplayDevicesA(PSTR lpDevice, uint32 iDevNum, out DISPLAY_DEVICEA lpDisplayDevice, uint32 dwFlags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumDisplayDevicesW(PWSTR lpDevice, uint32 iDevNum, out DISPLAY_DEVICEW lpDisplayDevice, uint32 dwFlags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HMONITOR MonitorFromPoint(POINT pt, MONITOR_FROM_FLAGS dwFlags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HMONITOR MonitorFromRect(ref RECT lprc, MONITOR_FROM_FLAGS dwFlags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HMONITOR MonitorFromWindow(HWND hwnd, MONITOR_FROM_FLAGS dwFlags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetMonitorInfoA(HMONITOR hMonitor, out MONITORINFO lpmi);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetMonitorInfoW(HMONITOR hMonitor, out MONITORINFO lpmi);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumDisplayMonitors(HDC hdc, RECT* lprcClip, MONITORENUMPROC lpfnEnum, LPARAM dwData);
 	#endregion
 }

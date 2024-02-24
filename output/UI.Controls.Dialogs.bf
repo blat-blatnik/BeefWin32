@@ -731,47 +731,47 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetOpenFileNameA(out OPENFILENAMEA param0);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetOpenFileNameW(out OPENFILENAMEW param0);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetSaveFileNameA(out OPENFILENAMEA param0);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetSaveFileNameW(out OPENFILENAMEW param0);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 GetFileTitleA(PSTR param0, uint8* Buf, uint16 cchSize);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 GetFileTitleW(PWSTR param0, char16* Buf, uint16 cchSize);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ChooseColorA(out CHOOSECOLORA param0);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ChooseColorW(out CHOOSECOLORW param0);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HWND FindTextA(out FINDREPLACEA param0);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HWND FindTextW(out FINDREPLACEW param0);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HWND ReplaceTextA(out FINDREPLACEA param0);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HWND ReplaceTextW(out FINDREPLACEW param0);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ChooseFontA(out CHOOSEFONTA param0);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ChooseFontW(out CHOOSEFONTW param0);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PrintDlgA(out PRINTDLGA pPD);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PrintDlgW(out PRINTDLGW pPD);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT PrintDlgExA(out PRINTDLGEXA pPD);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT PrintDlgExW(out PRINTDLGEXW pPD);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern COMMON_DLG_ERRORS CommDlgExtendedError();
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PageSetupDlgA(out PAGESETUPDLGA param0);
-	[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("comdlg32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PageSetupDlgW(out PAGESETUPDLGW param0);
 	#endregion
 }

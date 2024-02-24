@@ -3126,179 +3126,179 @@ static
 	public static extern int32 RestoreMonitorFactoryColorDefaults(HANDLE hMonitor);
 	[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 RestoreMonitorFactoryDefaults(HANDLE hMonitor);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* BRUSHOBJ_pvAllocRbrush(out BRUSHOBJ pbo, uint32 cj);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* BRUSHOBJ_pvGetRbrush(out BRUSHOBJ pbo);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 BRUSHOBJ_ulGetBrushColor(out BRUSHOBJ pbo);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE BRUSHOBJ_hGetColorTransform(out BRUSHOBJ pbo);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CLIPOBJ_cEnumStart(out CLIPOBJ pco, BOOL bAll, uint32 iType, uint32 iDirection, uint32 cLimit);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CLIPOBJ_bEnum(out CLIPOBJ pco, uint32 cj, out uint32 pul);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PATHOBJ* CLIPOBJ_ppoGetPath(out CLIPOBJ pco);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 FONTOBJ_cGetAllGlyphHandles(out FONTOBJ pfo, out uint32 phg);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void FONTOBJ_vGetInfo(out FONTOBJ pfo, uint32 cjSize, out FONTINFO pfi);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 FONTOBJ_cGetGlyphs(out FONTOBJ pfo, uint32 iMode, uint32 cGlyph, out uint32 phg, void** ppvGlyph);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern XFORMOBJ* FONTOBJ_pxoGetXform(ref FONTOBJ pfo);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern IFIMETRICS* FONTOBJ_pifi(ref FONTOBJ pfo);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FD_GLYPHSET* FONTOBJ_pfdg(out FONTOBJ pfo);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* FONTOBJ_pvTrueTypeFontFile(out FONTOBJ pfo, out uint32 pcjFile);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FD_GLYPHATTR* FONTOBJ_pQueryGlyphAttrs(out FONTOBJ pfo, uint32 iMode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void PATHOBJ_vEnumStart(out PATHOBJ ppo);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PATHOBJ_bEnum(out PATHOBJ ppo, out PATHDATA ppd);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void PATHOBJ_vEnumStartClipLines(out PATHOBJ ppo, out CLIPOBJ pco, out SURFOBJ pso, out LINEATTRS pla);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PATHOBJ_bEnumClipLines(out PATHOBJ ppo, uint32 cb, out CLIPLINE pcl);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void PATHOBJ_vGetBounds(out PATHOBJ ppo, out RECTFX prectfx);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void STROBJ_vEnumStart(out STROBJ pstro);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL STROBJ_bEnum(out STROBJ pstro, out uint32 pc, out GLYPHPOS* ppgpos);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL STROBJ_bEnumPositionsOnly(out STROBJ pstro, out uint32 pc, out GLYPHPOS* ppgpos);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 STROBJ_dwGetCodePage(out STROBJ pstro);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL STROBJ_bGetAdvanceWidths(out STROBJ pso, uint32 iFirst, uint32 c, out POINTQF pptqD);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 XFORMOBJ_iGetXform(ref XFORMOBJ pxo, XFORML* pxform);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL XFORMOBJ_bApplyXform(out XFORMOBJ pxo, uint32 iMode, uint32 cPoints, void* pvIn, void* pvOut);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 XLATEOBJ_iXlate(out XLATEOBJ pxlo, uint32 iColor);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32* XLATEOBJ_piVector(out XLATEOBJ pxlo);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 XLATEOBJ_cGetPalette(out XLATEOBJ pxlo, uint32 iPal, uint32 cPal, out uint32 pPal);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE XLATEOBJ_hGetColorTransform(out XLATEOBJ pxlo);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBITMAP EngCreateBitmap(SIZE sizl, int32 lWidth, uint32 iFormat, uint32 fl, void* pvBits);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HSURF EngCreateDeviceSurface(DHSURF dhsurf, SIZE sizl, uint32 iFormatCompat);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HBITMAP EngCreateDeviceBitmap(DHSURF dhsurf, SIZE sizl, uint32 iFormatCompat);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngDeleteSurface(HSURF hsurf);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern SURFOBJ* EngLockSurface(HSURF hsurf);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void EngUnlockSurface(out SURFOBJ pso);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngEraseSurface(out SURFOBJ pso, out RECTL prcl, uint32 iColor);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngAssociateSurface(HSURF hsurf, HDEV hdev, uint32 flHooks);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngMarkBandingSurface(HSURF hsurf);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngCheckAbort(out SURFOBJ pso);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void EngDeletePath(out PATHOBJ ppo);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HPALETTE EngCreatePalette(uint32 iMode, uint32 cColors, out uint32 pulColors, uint32 flRed, uint32 flGreen, uint32 flBlue);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngDeletePalette(HPALETTE hpal);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern CLIPOBJ* EngCreateClip();
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void EngDeleteClip(CLIPOBJ* pco);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngBitBlt(ref SURFOBJ psoTrg, ref SURFOBJ psoSrc, ref SURFOBJ psoMask, ref CLIPOBJ pco, ref XLATEOBJ pxlo, ref RECTL prclTrg, ref POINTL pptlSrc, ref POINTL pptlMask, ref BRUSHOBJ pbo, ref POINTL pptlBrush, uint32 rop4);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngLineTo(out SURFOBJ pso, out CLIPOBJ pco, out BRUSHOBJ pbo, int32 x1, int32 y1, int32 x2, int32 y2, out RECTL prclBounds, uint32 mix);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngStretchBlt(out SURFOBJ psoDest, out SURFOBJ psoSrc, out SURFOBJ psoMask, out CLIPOBJ pco, out XLATEOBJ pxlo, out COLORADJUSTMENT pca, out POINTL pptlHTOrg, out RECTL prclDest, out RECTL prclSrc, out POINTL pptlMask, uint32 iMode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngStretchBltROP(out SURFOBJ psoDest, out SURFOBJ psoSrc, out SURFOBJ psoMask, out CLIPOBJ pco, out XLATEOBJ pxlo, out COLORADJUSTMENT pca, out POINTL pptlHTOrg, out RECTL prclDest, out RECTL prclSrc, out POINTL pptlMask, uint32 iMode, out BRUSHOBJ pbo, uint32 rop4);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngAlphaBlend(out SURFOBJ psoDest, out SURFOBJ psoSrc, out CLIPOBJ pco, out XLATEOBJ pxlo, out RECTL prclDest, out RECTL prclSrc, out BLENDOBJ pBlendObj);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngGradientFill(out SURFOBJ psoDest, out CLIPOBJ pco, out XLATEOBJ pxlo, out TRIVERTEX pVertex, uint32 nVertex, void* pMesh, uint32 nMesh, out RECTL prclExtents, out POINTL pptlDitherOrg, uint32 ulMode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngTransparentBlt(ref SURFOBJ psoDst, ref SURFOBJ psoSrc, CLIPOBJ* pco, XLATEOBJ* pxlo, ref RECTL prclDst, ref RECTL prclSrc, uint32 TransColor, uint32 bCalledFromBitBlt);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngTextOut(out SURFOBJ pso, out STROBJ pstro, out FONTOBJ pfo, out CLIPOBJ pco, out RECTL prclExtra, out RECTL prclOpaque, out BRUSHOBJ pboFore, out BRUSHOBJ pboOpaque, out POINTL pptlOrg, uint32 mix);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngStrokePath(out SURFOBJ pso, out PATHOBJ ppo, out CLIPOBJ pco, out XFORMOBJ pxo, out BRUSHOBJ pbo, out POINTL pptlBrushOrg, out LINEATTRS plineattrs, uint32 mix);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngFillPath(out SURFOBJ pso, out PATHOBJ ppo, out CLIPOBJ pco, out BRUSHOBJ pbo, out POINTL pptlBrushOrg, uint32 mix, uint32 flOptions);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngStrokeAndFillPath(out SURFOBJ pso, out PATHOBJ ppo, out CLIPOBJ pco, out XFORMOBJ pxo, out BRUSHOBJ pboStroke, out LINEATTRS plineattrs, out BRUSHOBJ pboFill, out POINTL pptlBrushOrg, uint32 mixFill, uint32 flOptions);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngPaint(out SURFOBJ pso, out CLIPOBJ pco, out BRUSHOBJ pbo, out POINTL pptlBrushOrg, uint32 mix);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngCopyBits(out SURFOBJ psoDest, out SURFOBJ psoSrc, out CLIPOBJ pco, out XLATEOBJ pxlo, out RECTL prclDest, out POINTL pptlSrc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngPlgBlt(out SURFOBJ psoTrg, out SURFOBJ psoSrc, out SURFOBJ psoMsk, out CLIPOBJ pco, out XLATEOBJ pxlo, out COLORADJUSTMENT pca, out POINTL pptlBrushOrg, out POINTFIX pptfx, out RECTL prcl, out POINTL pptl, uint32 iMode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 HT_Get8BPPFormatPalette(PALETTEENTRY* pPaletteEntry, uint16 RedGamma, uint16 GreenGamma, uint16 BlueGamma);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 HT_Get8BPPMaskPalette(PALETTEENTRY* pPaletteEntry, BOOL Use8BPPMaskPal, uint8 CMYMask, uint16 RedGamma, uint16 GreenGamma, uint16 BlueGamma);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PWSTR EngGetPrinterDataFileName(HDEV hdev);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PWSTR EngGetDriverName(HDEV hdev);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE EngLoadModule(PWSTR pwsz);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* EngFindResource(HANDLE h, int32 iName, int32 iType, out uint32 pulSize);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void EngFreeModule(HANDLE h);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HSEMAPHORE EngCreateSemaphore();
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void EngAcquireSemaphore(HSEMAPHORE hsem);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void EngReleaseSemaphore(HSEMAPHORE hsem);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void EngDeleteSemaphore(HSEMAPHORE hsem);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void EngMultiByteToUnicodeN(PWSTR UnicodeString, uint32 MaxBytesInUnicodeString, uint32* BytesInUnicodeString, PSTR MultiByteString, uint32 BytesInMultiByteString);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void EngUnicodeToMultiByteN(PSTR MultiByteString, uint32 MaxBytesInMultiByteString, uint32* BytesInMultiByteString, PWSTR UnicodeString, uint32 BytesInUnicodeString);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void EngQueryLocalTime(out ENG_TIME_FIELDS param0);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FD_GLYPHSET* EngComputeGlyphSet(int32 nCodePage, int32 nFirstChar, int32 cChars);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 EngMultiByteToWideChar(uint32 CodePage, PWSTR WideCharString, int32 BytesInWideCharString, PSTR MultiByteString, int32 BytesInMultiByteString);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 EngWideCharToMultiByte(uint32 CodePage, PWSTR WideCharString, int32 BytesInWideCharString, PSTR MultiByteString, int32 BytesInMultiByteString);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void EngGetCurrentCodePage(out uint16 OemCodePage, out uint16 AnsiCodePage);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EngQueryEMFInfo(HDEV hdev, out EMFINFO pEMFInfo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetDisplayConfigBufferSizes(uint32 flags, out uint32 numPathArrayElements, out uint32 numModeInfoArrayElements);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetDisplayConfig(uint32 numPathArrayElements, DISPLAYCONFIG_PATH_INFO* pathArray, uint32 numModeInfoArrayElements, DISPLAYCONFIG_MODE_INFO* modeInfoArray, uint32 flags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 QueryDisplayConfig(uint32 flags, out uint32 numPathArrayElements, DISPLAYCONFIG_PATH_INFO* pathArray, out uint32 numModeInfoArrayElements, DISPLAYCONFIG_MODE_INFO* modeInfoArray, out DISPLAYCONFIG_TOPOLOGY_ID currentTopologyId);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DisplayConfigGetDeviceInfo(out DISPLAYCONFIG_DEVICE_INFO_HEADER requestPacket);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DisplayConfigSetDeviceInfo(ref DISPLAYCONFIG_DEVICE_INFO_HEADER setPacket);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetAutoRotationState(out AR_STATE pState);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetDisplayAutoRotationPreferences(out ORIENTATION_PREFERENCE pOrientation);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetDisplayAutoRotationPreferences(ORIENTATION_PREFERENCE orientation);
 	#endregion
 }

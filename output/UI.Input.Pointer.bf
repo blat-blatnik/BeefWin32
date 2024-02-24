@@ -139,61 +139,61 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetUnpredictedMessagePos();
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InitializeTouchInjection(uint32 maxCount, TOUCH_FEEDBACK_MODE dwMode);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InjectTouchInput(uint32 count, POINTER_TOUCH_INFO* contacts);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerType(uint32 pointerId, out POINTER_INPUT_TYPE pointerType);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerCursorId(uint32 pointerId, out uint32 cursorId);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerInfo(uint32 pointerId, out POINTER_INFO pointerInfo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerInfoHistory(uint32 pointerId, out uint32 entriesCount, POINTER_INFO* pointerInfo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerFrameInfo(uint32 pointerId, out uint32 pointerCount, POINTER_INFO* pointerInfo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerFrameInfoHistory(uint32 pointerId, out uint32 entriesCount, out uint32 pointerCount, POINTER_INFO* pointerInfo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerTouchInfo(uint32 pointerId, out POINTER_TOUCH_INFO touchInfo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerTouchInfoHistory(uint32 pointerId, out uint32 entriesCount, POINTER_TOUCH_INFO* touchInfo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerFrameTouchInfo(uint32 pointerId, out uint32 pointerCount, POINTER_TOUCH_INFO* touchInfo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerFrameTouchInfoHistory(uint32 pointerId, out uint32 entriesCount, out uint32 pointerCount, POINTER_TOUCH_INFO* touchInfo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerPenInfo(uint32 pointerId, out POINTER_PEN_INFO penInfo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerPenInfoHistory(uint32 pointerId, out uint32 entriesCount, POINTER_PEN_INFO* penInfo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerFramePenInfo(uint32 pointerId, out uint32 pointerCount, POINTER_PEN_INFO* penInfo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerFramePenInfoHistory(uint32 pointerId, out uint32 entriesCount, out uint32 pointerCount, POINTER_PEN_INFO* penInfo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SkipPointerFrameMessages(uint32 pointerId);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InjectSyntheticPointerInput(HSYNTHETICPOINTERDEVICE device, POINTER_TYPE_INFO* pointerInfo, uint32 count);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnableMouseInPointer(BOOL fEnable);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsMouseInPointerEnabled();
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerInputTransform(uint32 pointerId, uint32 historyCount, INPUT_TRANSFORM* inputTransform);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerDevices(out uint32 deviceCount, POINTER_DEVICE_INFO* pointerDevices);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerDevice(HANDLE device, out POINTER_DEVICE_INFO pointerDevice);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerDeviceProperties(HANDLE device, out uint32 propertyCount, POINTER_DEVICE_PROPERTY* pointerProperties);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerDeviceRects(HANDLE device, out RECT pointerDeviceRect, out RECT displayRect);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetPointerDeviceCursors(HANDLE device, out uint32 cursorCount, POINTER_DEVICE_CURSOR_INFO* deviceCursors);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetRawPointerDeviceData(uint32 pointerId, uint32 historyCount, uint32 propertiesCount, POINTER_DEVICE_PROPERTY* pProperties, out int32 pValues);
 	#endregion
 }

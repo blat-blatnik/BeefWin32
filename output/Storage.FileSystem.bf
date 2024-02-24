@@ -3643,203 +3643,203 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SearchPathW(PWSTR lpPath, PWSTR lpFileName, PWSTR lpExtension, uint32 nBufferLength, char16* lpBuffer, PWSTR* lpFilePart);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SearchPathA(PSTR lpPath, PSTR lpFileName, PSTR lpExtension, uint32 nBufferLength, uint8* lpBuffer, PSTR* lpFilePart);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 CompareFileTime(in FILETIME lpFileTime1, in FILETIME lpFileTime2);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CreateDirectoryA(PSTR lpPathName, SECURITY_ATTRIBUTES* lpSecurityAttributes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CreateDirectoryW(PWSTR lpPathName, SECURITY_ATTRIBUTES* lpSecurityAttributes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE CreateFileA(PSTR lpFileName, FILE_ACCESS_FLAGS dwDesiredAccess, FILE_SHARE_MODE dwShareMode, SECURITY_ATTRIBUTES* lpSecurityAttributes, FILE_CREATION_DISPOSITION dwCreationDisposition, FILE_FLAGS_AND_ATTRIBUTES dwFlagsAndAttributes, HANDLE hTemplateFile);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE CreateFileW(PWSTR lpFileName, FILE_ACCESS_FLAGS dwDesiredAccess, FILE_SHARE_MODE dwShareMode, SECURITY_ATTRIBUTES* lpSecurityAttributes, FILE_CREATION_DISPOSITION dwCreationDisposition, FILE_FLAGS_AND_ATTRIBUTES dwFlagsAndAttributes, HANDLE hTemplateFile);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DefineDosDeviceW(DEFINE_DOS_DEVICE_FLAGS dwFlags, PWSTR lpDeviceName, PWSTR lpTargetPath);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeleteFileA(PSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeleteFileW(PWSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeleteVolumeMountPointW(PWSTR lpszVolumeMountPoint);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FileTimeToLocalFileTime(in FILETIME lpFileTime, out FILETIME lpLocalFileTime);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindClose(FindFileHandle hFindFile);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindCloseChangeNotification(FindChangeNotificationHandle hChangeHandle);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindChangeNotificationHandle FindFirstChangeNotificationA(PSTR lpPathName, BOOL bWatchSubtree, FILE_NOTIFY_CHANGE dwNotifyFilter);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindChangeNotificationHandle FindFirstChangeNotificationW(PWSTR lpPathName, BOOL bWatchSubtree, FILE_NOTIFY_CHANGE dwNotifyFilter);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindFileHandle FindFirstFileA(PSTR lpFileName, out WIN32_FIND_DATAA lpFindFileData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindFileHandle FindFirstFileW(PWSTR lpFileName, out WIN32_FIND_DATAW lpFindFileData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindFileHandle FindFirstFileExA(PSTR lpFileName, FINDEX_INFO_LEVELS fInfoLevelId, void* lpFindFileData, FINDEX_SEARCH_OPS fSearchOp, void* lpSearchFilter, FIND_FIRST_EX_FLAGS dwAdditionalFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindFileHandle FindFirstFileExW(PWSTR lpFileName, FINDEX_INFO_LEVELS fInfoLevelId, void* lpFindFileData, FINDEX_SEARCH_OPS fSearchOp, void* lpSearchFilter, FIND_FIRST_EX_FLAGS dwAdditionalFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindVolumeHandle FindFirstVolumeW(char16* lpszVolumeName, uint32 cchBufferLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindNextChangeNotification(FindChangeNotificationHandle hChangeHandle);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindNextFileA(FindFileHandle hFindFile, out WIN32_FIND_DATAA lpFindFileData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindNextFileW(HANDLE hFindFile, out WIN32_FIND_DATAW lpFindFileData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindNextVolumeW(FindVolumeHandle hFindVolume, char16* lpszVolumeName, uint32 cchBufferLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindVolumeClose(FindVolumeHandle hFindVolume);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FlushFileBuffers(HANDLE hFile);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetDiskFreeSpaceA(PSTR lpRootPathName, uint32* lpSectorsPerCluster, uint32* lpBytesPerSector, uint32* lpNumberOfFreeClusters, uint32* lpTotalNumberOfClusters);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetDiskFreeSpaceW(PWSTR lpRootPathName, uint32* lpSectorsPerCluster, uint32* lpBytesPerSector, uint32* lpNumberOfFreeClusters, uint32* lpTotalNumberOfClusters);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetDiskFreeSpaceExA(PSTR lpDirectoryName, ULARGE_INTEGER* lpFreeBytesAvailableToCaller, ULARGE_INTEGER* lpTotalNumberOfBytes, ULARGE_INTEGER* lpTotalNumberOfFreeBytes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetDiskFreeSpaceExW(PWSTR lpDirectoryName, ULARGE_INTEGER* lpFreeBytesAvailableToCaller, ULARGE_INTEGER* lpTotalNumberOfBytes, ULARGE_INTEGER* lpTotalNumberOfFreeBytes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetDiskSpaceInformationA(PSTR rootPath, out DISK_SPACE_INFORMATION diskSpaceInfo);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetDiskSpaceInformationW(PWSTR rootPath, out DISK_SPACE_INFORMATION diskSpaceInfo);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetDriveTypeA(PSTR lpRootPathName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetDriveTypeW(PWSTR lpRootPathName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFileAttributesA(PSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFileAttributesW(PWSTR lpFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileAttributesExA(PSTR lpFileName, GET_FILEEX_INFO_LEVELS fInfoLevelId, void* lpFileInformation);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileAttributesExW(PWSTR lpFileName, GET_FILEEX_INFO_LEVELS fInfoLevelId, void* lpFileInformation);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileInformationByHandle(HANDLE hFile, out BY_HANDLE_FILE_INFORMATION lpFileInformation);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFileSize(HANDLE hFile, uint32* lpFileSizeHigh);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileSizeEx(HANDLE hFile, out LARGE_INTEGER lpFileSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFileType(HANDLE hFile);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFinalPathNameByHandleA(HANDLE hFile, uint8* lpszFilePath, uint32 cchFilePath, FILE_NAME dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFinalPathNameByHandleW(HANDLE hFile, char16* lpszFilePath, uint32 cchFilePath, FILE_NAME dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileTime(HANDLE hFile, FILETIME* lpCreationTime, FILETIME* lpLastAccessTime, FILETIME* lpLastWriteTime);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFullPathNameW(PWSTR lpFileName, uint32 nBufferLength, char16* lpBuffer, PWSTR* lpFilePart);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFullPathNameA(PSTR lpFileName, uint32 nBufferLength, uint8* lpBuffer, PSTR* lpFilePart);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetLogicalDrives();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetLogicalDriveStringsW(uint32 nBufferLength, char16* lpBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetLongPathNameA(PSTR lpszShortPath, uint8* lpszLongPath, uint32 cchBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetLongPathNameW(PWSTR lpszShortPath, char16* lpszLongPath, uint32 cchBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AreShortNamesEnabled(HANDLE Handle, out BOOL Enabled);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetShortPathNameW(PWSTR lpszLongPath, char16* lpszShortPath, uint32 cchBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetTempFileNameW(PWSTR lpPathName, PWSTR lpPrefixString, uint32 uUnique, char16* lpTempFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetVolumeInformationByHandleW(HANDLE hFile, char16* lpVolumeNameBuffer, uint32 nVolumeNameSize, uint32* lpVolumeSerialNumber, uint32* lpMaximumComponentLength, uint32* lpFileSystemFlags, char16* lpFileSystemNameBuffer, uint32 nFileSystemNameSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetVolumeInformationW(PWSTR lpRootPathName, char16* lpVolumeNameBuffer, uint32 nVolumeNameSize, uint32* lpVolumeSerialNumber, uint32* lpMaximumComponentLength, uint32* lpFileSystemFlags, char16* lpFileSystemNameBuffer, uint32 nFileSystemNameSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetVolumePathNameW(PWSTR lpszFileName, char16* lpszVolumePathName, uint32 cchBufferLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL LocalFileTimeToFileTime(in FILETIME lpLocalFileTime, out FILETIME lpFileTime);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL LockFile(HANDLE hFile, uint32 dwFileOffsetLow, uint32 dwFileOffsetHigh, uint32 nNumberOfBytesToLockLow, uint32 nNumberOfBytesToLockHigh);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL LockFileEx(HANDLE hFile, LOCK_FILE_FLAGS dwFlags, uint32 dwReserved, uint32 nNumberOfBytesToLockLow, uint32 nNumberOfBytesToLockHigh, out OVERLAPPED lpOverlapped);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 QueryDosDeviceW(PWSTR lpDeviceName, char16* lpTargetPath, uint32 ucchMax);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ReadFile(HANDLE hFile, void* lpBuffer, uint32 nNumberOfBytesToRead, uint32* lpNumberOfBytesRead, OVERLAPPED* lpOverlapped);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ReadFileEx(HANDLE hFile, void* lpBuffer, uint32 nNumberOfBytesToRead, out OVERLAPPED lpOverlapped, LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ReadFileScatter(HANDLE hFile, ref FILE_SEGMENT_ELEMENT aSegmentArray, uint32 nNumberOfBytesToRead, out uint32 lpReserved, out OVERLAPPED lpOverlapped);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RemoveDirectoryA(PSTR lpPathName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RemoveDirectoryW(PWSTR lpPathName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetEndOfFile(HANDLE hFile);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFileAttributesA(PSTR lpFileName, FILE_FLAGS_AND_ATTRIBUTES dwFileAttributes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFileAttributesW(PWSTR lpFileName, FILE_FLAGS_AND_ATTRIBUTES dwFileAttributes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFileInformationByHandle(HANDLE hFile, FILE_INFO_BY_HANDLE_CLASS FileInformationClass, void* lpFileInformation, uint32 dwBufferSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetFilePointer(HANDLE hFile, int32 lDistanceToMove, int32* lpDistanceToMoveHigh, SET_FILE_POINTER_MOVE_METHOD dwMoveMethod);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFilePointerEx(HANDLE hFile, LARGE_INTEGER liDistanceToMove, LARGE_INTEGER* lpNewFilePointer, SET_FILE_POINTER_MOVE_METHOD dwMoveMethod);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFileTime(HANDLE hFile, FILETIME* lpCreationTime, FILETIME* lpLastAccessTime, FILETIME* lpLastWriteTime);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFileValidData(HANDLE hFile, int64 ValidDataLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UnlockFile(HANDLE hFile, uint32 dwFileOffsetLow, uint32 dwFileOffsetHigh, uint32 nNumberOfBytesToUnlockLow, uint32 nNumberOfBytesToUnlockHigh);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UnlockFileEx(HANDLE hFile, uint32 dwReserved, uint32 nNumberOfBytesToUnlockLow, uint32 nNumberOfBytesToUnlockHigh, out OVERLAPPED lpOverlapped);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WriteFile(HANDLE hFile, void* lpBuffer, uint32 nNumberOfBytesToWrite, uint32* lpNumberOfBytesWritten, OVERLAPPED* lpOverlapped);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WriteFileEx(HANDLE hFile, void* lpBuffer, uint32 nNumberOfBytesToWrite, out OVERLAPPED lpOverlapped, LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WriteFileGather(HANDLE hFile, ref FILE_SEGMENT_ELEMENT aSegmentArray, uint32 nNumberOfBytesToWrite, out uint32 lpReserved, out OVERLAPPED lpOverlapped);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetTempPathW(uint32 nBufferLength, char16* lpBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetVolumeNameForVolumeMountPointW(PWSTR lpszVolumeMountPoint, char16* lpszVolumeName, uint32 cchBufferLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetVolumePathNamesForVolumeNameW(PWSTR lpszVolumeName, char16* lpszVolumePathNames, uint32 cchBufferLength, out uint32 lpcchReturnLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE CreateFile2(PWSTR lpFileName, FILE_ACCESS_FLAGS dwDesiredAccess, FILE_SHARE_MODE dwShareMode, FILE_CREATION_DISPOSITION dwCreationDisposition, CREATEFILE2_EXTENDED_PARAMETERS* pCreateExParams);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFileIoOverlappedRange(HANDLE FileHandle, ref uint8 OverlappedRangeStart, uint32 Length);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetCompressedFileSizeA(PSTR lpFileName, uint32* lpFileSizeHigh);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetCompressedFileSizeW(PWSTR lpFileName, uint32* lpFileSizeHigh);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindStreamHandle FindFirstStreamW(PWSTR lpFileName, STREAM_INFO_LEVELS InfoLevel, void* lpFindStreamData, uint32 dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindNextStreamW(FindStreamHandle hFindStream, void* lpFindStreamData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AreFileApisANSI();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetTempPathA(uint32 nBufferLength, uint8* lpBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindFileNameHandle FindFirstFileNameW(PWSTR lpFileName, uint32 dwFlags, out uint32 StringLength, char16* LinkName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindNextFileNameW(FindFileNameHandle hFindStream, out uint32 StringLength, char16* LinkName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetVolumeInformationA(PSTR lpRootPathName, uint8* lpVolumeNameBuffer, uint32 nVolumeNameSize, uint32* lpVolumeSerialNumber, uint32* lpMaximumComponentLength, uint32* lpFileSystemFlags, uint8* lpFileSystemNameBuffer, uint32 nFileSystemNameSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetTempFileNameA(PSTR lpPathName, PSTR lpPrefixString, uint32 uUnique, uint8* lpTempFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SetFileApisToOEM();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SetFileApisToANSI();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetTempPath2W(uint32 BufferLength, char16* Buffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetTempPath2A(uint32 BufferLength, uint8* Buffer);
 	[Import("api-ms-win-core-file-fromapp-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CopyFileFromAppW(PWSTR lpExistingFileName, PWSTR lpNewFileName, BOOL bFailIfExists);
@@ -3863,37 +3863,37 @@ static
 	public static extern BOOL ReplaceFileFromAppW(PWSTR lpReplacedFileName, PWSTR lpReplacementFileName, PWSTR lpBackupFileName, uint32 dwReplaceFlags, void* lpExclude, void* lpReserved);
 	[Import("api-ms-win-core-file-fromapp-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFileAttributesFromAppW(PWSTR lpFileName, uint32 dwFileAttributes);
-	[Import("version.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("version.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern VER_FIND_FILE_STATUS VerFindFileA(VER_FIND_FILE_FLAGS uFlags, PSTR szFileName, PSTR szWinDir, PSTR szAppDir, uint8* szCurDir, out uint32 puCurDirLen, uint8* szDestDir, out uint32 puDestDirLen);
-	[Import("version.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("version.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern VER_FIND_FILE_STATUS VerFindFileW(VER_FIND_FILE_FLAGS uFlags, PWSTR szFileName, PWSTR szWinDir, PWSTR szAppDir, char16* szCurDir, out uint32 puCurDirLen, char16* szDestDir, out uint32 puDestDirLen);
-	[Import("version.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("version.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern VER_INSTALL_FILE_STATUS VerInstallFileA(VER_INSTALL_FILE_FLAGS uFlags, PSTR szSrcFileName, PSTR szDestFileName, PSTR szSrcDir, PSTR szDestDir, PSTR szCurDir, uint8* szTmpFile, out uint32 puTmpFileLen);
-	[Import("version.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("version.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern VER_INSTALL_FILE_STATUS VerInstallFileW(VER_INSTALL_FILE_FLAGS uFlags, PWSTR szSrcFileName, PWSTR szDestFileName, PWSTR szSrcDir, PWSTR szDestDir, PWSTR szCurDir, char16* szTmpFile, out uint32 puTmpFileLen);
-	[Import("version.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("version.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFileVersionInfoSizeA(PSTR lptstrFilename, uint32* lpdwHandle);
-	[Import("version.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("version.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFileVersionInfoSizeW(PWSTR lptstrFilename, uint32* lpdwHandle);
-	[Import("version.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("version.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileVersionInfoA(PSTR lptstrFilename, uint32 dwHandle, uint32 dwLen, void* lpData);
-	[Import("version.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("version.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileVersionInfoW(PWSTR lptstrFilename, uint32 dwHandle, uint32 dwLen, void* lpData);
-	[Import("version.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("version.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFileVersionInfoSizeExA(GET_FILE_VERSION_INFO_FLAGS dwFlags, PSTR lpwstrFilename, out uint32 lpdwHandle);
-	[Import("version.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("version.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFileVersionInfoSizeExW(GET_FILE_VERSION_INFO_FLAGS dwFlags, PWSTR lpwstrFilename, out uint32 lpdwHandle);
-	[Import("version.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("version.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileVersionInfoExA(GET_FILE_VERSION_INFO_FLAGS dwFlags, PSTR lpwstrFilename, uint32 dwHandle, uint32 dwLen, void* lpData);
-	[Import("version.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("version.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileVersionInfoExW(GET_FILE_VERSION_INFO_FLAGS dwFlags, PWSTR lpwstrFilename, uint32 dwHandle, uint32 dwLen, void* lpData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 VerLanguageNameA(uint32 wLang, uint8* szLang, uint32 cchLang);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 VerLanguageNameW(uint32 wLang, char16* szLang, uint32 cchLang);
-	[Import("version.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("version.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL VerQueryValueA(void* pBlock, PSTR lpSubBlock, void** lplpBuffer, out uint32 puLen);
-	[Import("version.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("version.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL VerQueryValueW(void* pBlock, PWSTR lpSubBlock, void** lplpBuffer, out uint32 puLen);
 	[Import("clfsw32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN LsnEqual(in CLS_LSN plsn1, in CLS_LSN plsn2);
@@ -4013,53 +4013,53 @@ static
 	public static extern BOOL LogTailAdvanceFailure(HANDLE hLog, uint32 dwReason);
 	[Import("clfsw32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RegisterForLogWriteNotification(HANDLE hLog, uint32 cbThreshold, BOOL fEnable);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 QueryUsersOnEncryptedFile(PWSTR lpFileName, out ENCRYPTION_CERTIFICATE_HASH_LIST* pUsers);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 QueryRecoveryAgentsOnEncryptedFile(PWSTR lpFileName, out ENCRYPTION_CERTIFICATE_HASH_LIST* pRecoveryAgents);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 RemoveUsersFromEncryptedFile(PWSTR lpFileName, ref ENCRYPTION_CERTIFICATE_HASH_LIST pHashes);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 AddUsersToEncryptedFile(PWSTR lpFileName, ref ENCRYPTION_CERTIFICATE_LIST pEncryptionCertificates);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetUserFileEncryptionKey(ENCRYPTION_CERTIFICATE* pEncryptionCertificate);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetUserFileEncryptionKeyEx(ENCRYPTION_CERTIFICATE* pEncryptionCertificate, uint32 dwCapabilities, uint32 dwFlags, void* pvReserved);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void FreeEncryptionCertificateHashList(ref ENCRYPTION_CERTIFICATE_HASH_LIST pUsers);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EncryptionDisable(PWSTR DirPath, BOOL Disable);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 DuplicateEncryptionInfoFile(PWSTR SrcFileName, PWSTR DstFileName, uint32 dwCreationDistribution, uint32 dwAttributes, SECURITY_ATTRIBUTES* lpSecurityAttributes);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetEncryptedFileMetadata(PWSTR lpFileName, out uint32 pcbMetadata, out uint8* ppbMetadata);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetEncryptedFileMetadata(PWSTR lpFileName, uint8* pbOldMetadata, ref uint8 pbNewMetadata, ref ENCRYPTION_CERTIFICATE_HASH pOwnerHash, uint32 dwOperation, ENCRYPTION_CERTIFICATE_HASH_LIST* pCertificatesAdded);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void FreeEncryptedFileMetadata(ref uint8 pbMetadata);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 LZStart();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void LZDone();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 CopyLZFile(int32 hfSource, int32 hfDest);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 LZCopy(int32 hfSource, int32 hfDest);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 LZInit(int32 hfSource);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetExpandedNameA(PSTR lpszSource, uint8* lpszBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetExpandedNameW(PWSTR lpszSource, char16* lpszBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 LZOpenFileA(PSTR lpFileName, out OFSTRUCT lpReOpenBuf, LZOPENFILE_STYLE wStyle);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 LZOpenFileW(PWSTR lpFileName, out OFSTRUCT lpReOpenBuf, LZOPENFILE_STYLE wStyle);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 LZSeek(int32 hFile, int32 lOffset, int32 iOrigin);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 LZRead(int32 hFile, PSTR lpBuffer, int32 cbRead);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void LZClose(int32 hFile);
 	[Import("wofutil.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WofShouldCompressBinaries(PWSTR Volume, out uint32 Algorithm);
@@ -4243,225 +4243,225 @@ static
 	public static extern HRESULT BuildIoRingRegisterFileHandles(ref HIORING__ ioRing, uint32 count, HANDLE* handles, uint userData);
 	[Import("api-ms-win-core-ioring-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT BuildIoRingRegisterBuffers(ref HIORING__ ioRing, uint32 count, IORING_BUFFER_INFO* buffers, uint userData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN Wow64EnableWow64FsRedirection(BOOLEAN Wow64FsEnableRedirection);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Wow64DisableWow64FsRedirection(void** OldValue);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Wow64RevertWow64FsRedirection(void* OlValue);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetBinaryTypeA(PSTR lpApplicationName, out uint32 lpBinaryType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetBinaryTypeW(PWSTR lpApplicationName, out uint32 lpBinaryType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetShortPathNameA(PSTR lpszLongPath, uint8* lpszShortPath, uint32 cchBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetLongPathNameTransactedA(PSTR lpszShortPath, uint8* lpszLongPath, uint32 cchBuffer, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetLongPathNameTransactedW(PWSTR lpszShortPath, char16* lpszLongPath, uint32 cchBuffer, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFileCompletionNotificationModes(HANDLE FileHandle, uint8 Flags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFileShortNameA(HANDLE hFile, PSTR lpShortName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFileShortNameW(HANDLE hFile, PWSTR lpShortName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetTapePosition(HANDLE hDevice, TAPE_POSITION_METHOD dwPositionMethod, uint32 dwPartition, uint32 dwOffsetLow, uint32 dwOffsetHigh, BOOL bImmediate);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetTapePosition(HANDLE hDevice, TAPE_POSITION_TYPE dwPositionType, out uint32 lpdwPartition, out uint32 lpdwOffsetLow, out uint32 lpdwOffsetHigh);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PrepareTape(HANDLE hDevice, PREPARE_TAPE_OPERATION dwOperation, BOOL bImmediate);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EraseTape(HANDLE hDevice, ERASE_TAPE_TYPE dwEraseType, BOOL bImmediate);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CreateTapePartition(HANDLE hDevice, CREATE_TAPE_PARTITION_METHOD dwPartitionMethod, uint32 dwCount, uint32 dwSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 WriteTapemark(HANDLE hDevice, TAPEMARK_TYPE dwTapemarkType, uint32 dwTapemarkCount, BOOL bImmediate);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetTapeStatus(HANDLE hDevice);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetTapeParameters(HANDLE hDevice, GET_TAPE_DRIVE_PARAMETERS_OPERATION dwOperation, out uint32 lpdwSize, void* lpTapeInformation);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetTapeParameters(HANDLE hDevice, TAPE_INFORMATION_TYPE dwOperation, void* lpTapeInformation);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EncryptFileA(PSTR lpFileName);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EncryptFileW(PWSTR lpFileName);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DecryptFileA(PSTR lpFileName, uint32 dwReserved);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DecryptFileW(PWSTR lpFileName, uint32 dwReserved);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FileEncryptionStatusA(PSTR lpFileName, out uint32 lpStatus);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FileEncryptionStatusW(PWSTR lpFileName, out uint32 lpStatus);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 OpenEncryptedFileRawA(PSTR lpFileName, uint32 ulFlags, void** pvContext);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 OpenEncryptedFileRawW(PWSTR lpFileName, uint32 ulFlags, void** pvContext);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 ReadEncryptedFileRaw(PFE_EXPORT_FUNC pfExportCallback, void* pvCallbackContext, void* pvContext);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 WriteEncryptedFileRaw(PFE_IMPORT_FUNC pfImportCallback, void* pvCallbackContext, void* pvContext);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void CloseEncryptedFileRaw(void* pvContext);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 OpenFile(PSTR lpFileName, out OFSTRUCT lpReOpenBuff, LZOPENFILE_STYLE uStyle);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL BackupRead(HANDLE hFile, out uint8 lpBuffer, uint32 nNumberOfBytesToRead, out uint32 lpNumberOfBytesRead, BOOL bAbort, BOOL bProcessSecurity, void** lpContext);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL BackupSeek(HANDLE hFile, uint32 dwLowBytesToSeek, uint32 dwHighBytesToSeek, out uint32 lpdwLowByteSeeked, out uint32 lpdwHighByteSeeked, void** lpContext);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL BackupWrite(HANDLE hFile, ref uint8 lpBuffer, uint32 nNumberOfBytesToWrite, out uint32 lpNumberOfBytesWritten, BOOL bAbort, BOOL bProcessSecurity, void** lpContext);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetLogicalDriveStringsA(uint32 nBufferLength, uint8* lpBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetSearchPathMode(uint32 Flags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CreateDirectoryExA(PSTR lpTemplateDirectory, PSTR lpNewDirectory, SECURITY_ATTRIBUTES* lpSecurityAttributes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CreateDirectoryExW(PWSTR lpTemplateDirectory, PWSTR lpNewDirectory, SECURITY_ATTRIBUTES* lpSecurityAttributes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CreateDirectoryTransactedA(PSTR lpTemplateDirectory, PSTR lpNewDirectory, SECURITY_ATTRIBUTES* lpSecurityAttributes, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CreateDirectoryTransactedW(PWSTR lpTemplateDirectory, PWSTR lpNewDirectory, SECURITY_ATTRIBUTES* lpSecurityAttributes, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RemoveDirectoryTransactedA(PSTR lpPathName, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RemoveDirectoryTransactedW(PWSTR lpPathName, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFullPathNameTransactedA(PSTR lpFileName, uint32 nBufferLength, uint8* lpBuffer, PSTR* lpFilePart, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetFullPathNameTransactedW(PWSTR lpFileName, uint32 nBufferLength, char16* lpBuffer, PWSTR* lpFilePart, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DefineDosDeviceA(DEFINE_DOS_DEVICE_FLAGS dwFlags, PSTR lpDeviceName, PSTR lpTargetPath);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 QueryDosDeviceA(PSTR lpDeviceName, uint8* lpTargetPath, uint32 ucchMax);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE CreateFileTransactedA(PSTR lpFileName, uint32 dwDesiredAccess, FILE_SHARE_MODE dwShareMode, SECURITY_ATTRIBUTES* lpSecurityAttributes, FILE_CREATION_DISPOSITION dwCreationDisposition, FILE_FLAGS_AND_ATTRIBUTES dwFlagsAndAttributes, HANDLE hTemplateFile, HANDLE hTransaction, TXFS_MINIVERSION* pusMiniVersion, void* lpExtendedParameter);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE CreateFileTransactedW(PWSTR lpFileName, uint32 dwDesiredAccess, FILE_SHARE_MODE dwShareMode, SECURITY_ATTRIBUTES* lpSecurityAttributes, FILE_CREATION_DISPOSITION dwCreationDisposition, FILE_FLAGS_AND_ATTRIBUTES dwFlagsAndAttributes, HANDLE hTemplateFile, HANDLE hTransaction, TXFS_MINIVERSION* pusMiniVersion, void* lpExtendedParameter);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE ReOpenFile(HANDLE hOriginalFile, FILE_ACCESS_FLAGS dwDesiredAccess, FILE_SHARE_MODE dwShareMode, FILE_FLAGS_AND_ATTRIBUTES dwFlagsAndAttributes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFileAttributesTransactedA(PSTR lpFileName, uint32 dwFileAttributes, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFileAttributesTransactedW(PWSTR lpFileName, uint32 dwFileAttributes, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileAttributesTransactedA(PSTR lpFileName, GET_FILEEX_INFO_LEVELS fInfoLevelId, void* lpFileInformation, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileAttributesTransactedW(PWSTR lpFileName, GET_FILEEX_INFO_LEVELS fInfoLevelId, void* lpFileInformation, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetCompressedFileSizeTransactedA(PSTR lpFileName, uint32* lpFileSizeHigh, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetCompressedFileSizeTransactedW(PWSTR lpFileName, uint32* lpFileSizeHigh, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeleteFileTransactedA(PSTR lpFileName, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeleteFileTransactedW(PWSTR lpFileName, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CheckNameLegalDOS8Dot3A(PSTR lpName, uint8* lpOemName, uint32 OemNameSize, BOOL* pbNameContainsSpaces, out BOOL pbNameLegal);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CheckNameLegalDOS8Dot3W(PWSTR lpName, uint8* lpOemName, uint32 OemNameSize, BOOL* pbNameContainsSpaces, out BOOL pbNameLegal);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindFileHandle FindFirstFileTransactedA(PSTR lpFileName, FINDEX_INFO_LEVELS fInfoLevelId, void* lpFindFileData, FINDEX_SEARCH_OPS fSearchOp, void* lpSearchFilter, uint32 dwAdditionalFlags, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindFileHandle FindFirstFileTransactedW(PWSTR lpFileName, FINDEX_INFO_LEVELS fInfoLevelId, void* lpFindFileData, FINDEX_SEARCH_OPS fSearchOp, void* lpSearchFilter, uint32 dwAdditionalFlags, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CopyFileA(PSTR lpExistingFileName, PSTR lpNewFileName, BOOL bFailIfExists);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CopyFileW(PWSTR lpExistingFileName, PWSTR lpNewFileName, BOOL bFailIfExists);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CopyFileExA(PSTR lpExistingFileName, PSTR lpNewFileName, LPPROGRESS_ROUTINE lpProgressRoutine, void* lpData, int32* pbCancel, uint32 dwCopyFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CopyFileExW(PWSTR lpExistingFileName, PWSTR lpNewFileName, LPPROGRESS_ROUTINE lpProgressRoutine, void* lpData, int32* pbCancel, uint32 dwCopyFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CopyFileTransactedA(PSTR lpExistingFileName, PSTR lpNewFileName, LPPROGRESS_ROUTINE lpProgressRoutine, void* lpData, int32* pbCancel, uint32 dwCopyFlags, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CopyFileTransactedW(PWSTR lpExistingFileName, PWSTR lpNewFileName, LPPROGRESS_ROUTINE lpProgressRoutine, void* lpData, int32* pbCancel, uint32 dwCopyFlags, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CopyFile2(PWSTR pwszExistingFileName, PWSTR pwszNewFileName, COPYFILE2_EXTENDED_PARAMETERS* pExtendedParameters);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL MoveFileA(PSTR lpExistingFileName, PSTR lpNewFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL MoveFileW(PWSTR lpExistingFileName, PWSTR lpNewFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL MoveFileExA(PSTR lpExistingFileName, PSTR lpNewFileName, MOVE_FILE_FLAGS dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL MoveFileExW(PWSTR lpExistingFileName, PWSTR lpNewFileName, MOVE_FILE_FLAGS dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL MoveFileWithProgressA(PSTR lpExistingFileName, PSTR lpNewFileName, LPPROGRESS_ROUTINE lpProgressRoutine, void* lpData, MOVE_FILE_FLAGS dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL MoveFileWithProgressW(PWSTR lpExistingFileName, PWSTR lpNewFileName, LPPROGRESS_ROUTINE lpProgressRoutine, void* lpData, MOVE_FILE_FLAGS dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL MoveFileTransactedA(PSTR lpExistingFileName, PSTR lpNewFileName, LPPROGRESS_ROUTINE lpProgressRoutine, void* lpData, MOVE_FILE_FLAGS dwFlags, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL MoveFileTransactedW(PWSTR lpExistingFileName, PWSTR lpNewFileName, LPPROGRESS_ROUTINE lpProgressRoutine, void* lpData, MOVE_FILE_FLAGS dwFlags, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ReplaceFileA(PSTR lpReplacedFileName, PSTR lpReplacementFileName, PSTR lpBackupFileName, REPLACE_FILE_FLAGS dwReplaceFlags, void* lpExclude, void* lpReserved);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ReplaceFileW(PWSTR lpReplacedFileName, PWSTR lpReplacementFileName, PWSTR lpBackupFileName, REPLACE_FILE_FLAGS dwReplaceFlags, void* lpExclude, void* lpReserved);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CreateHardLinkA(PSTR lpFileName, PSTR lpExistingFileName, out SECURITY_ATTRIBUTES lpSecurityAttributes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CreateHardLinkW(PWSTR lpFileName, PWSTR lpExistingFileName, out SECURITY_ATTRIBUTES lpSecurityAttributes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CreateHardLinkTransactedA(PSTR lpFileName, PSTR lpExistingFileName, out SECURITY_ATTRIBUTES lpSecurityAttributes, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CreateHardLinkTransactedW(PWSTR lpFileName, PWSTR lpExistingFileName, out SECURITY_ATTRIBUTES lpSecurityAttributes, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindStreamHandle FindFirstStreamTransactedW(PWSTR lpFileName, STREAM_INFO_LEVELS InfoLevel, void* lpFindStreamData, uint32 dwFlags, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindFileNameHandle FindFirstFileNameTransactedW(PWSTR lpFileName, uint32 dwFlags, out uint32 StringLength, char16* LinkName, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetVolumeLabelA(PSTR lpRootPathName, PSTR lpVolumeName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetVolumeLabelW(PWSTR lpRootPathName, PWSTR lpVolumeName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetFileBandwidthReservation(HANDLE hFile, uint32 nPeriodMilliseconds, uint32 nBytesPerPeriod, BOOL bDiscardable, out uint32 lpTransferSize, out uint32 lpNumOutstandingRequests);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileBandwidthReservation(HANDLE hFile, out uint32 lpPeriodMilliseconds, out uint32 lpBytesPerPeriod, out int32 pDiscardable, out uint32 lpTransferSize, out uint32 lpNumOutstandingRequests);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ReadDirectoryChangesW(HANDLE hDirectory, void* lpBuffer, uint32 nBufferLength, BOOL bWatchSubtree, FILE_NOTIFY_CHANGE dwNotifyFilter, uint32* lpBytesReturned, OVERLAPPED* lpOverlapped, LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ReadDirectoryChangesExW(HANDLE hDirectory, void* lpBuffer, uint32 nBufferLength, BOOL bWatchSubtree, FILE_NOTIFY_CHANGE dwNotifyFilter, uint32* lpBytesReturned, OVERLAPPED* lpOverlapped, LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine, READ_DIRECTORY_NOTIFY_INFORMATION_CLASS ReadDirectoryNotifyInformationClass);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindVolumeHandle FindFirstVolumeA(uint8* lpszVolumeName, uint32 cchBufferLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindNextVolumeA(FindVolumeHandle hFindVolume, uint8* lpszVolumeName, uint32 cchBufferLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindVolumeMointPointHandle FindFirstVolumeMountPointA(PSTR lpszRootPathName, uint8* lpszVolumeMountPoint, uint32 cchBufferLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FindVolumeMointPointHandle FindFirstVolumeMountPointW(PWSTR lpszRootPathName, char16* lpszVolumeMountPoint, uint32 cchBufferLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindNextVolumeMountPointA(FindVolumeMointPointHandle hFindVolumeMountPoint, uint8* lpszVolumeMountPoint, uint32 cchBufferLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindNextVolumeMountPointW(FindVolumeMointPointHandle hFindVolumeMountPoint, char16* lpszVolumeMountPoint, uint32 cchBufferLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FindVolumeMountPointClose(FindVolumeMointPointHandle hFindVolumeMountPoint);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetVolumeMountPointA(PSTR lpszVolumeMountPoint, PSTR lpszVolumeName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetVolumeMountPointW(PWSTR lpszVolumeMountPoint, PWSTR lpszVolumeName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeleteVolumeMountPointA(PSTR lpszVolumeMountPoint);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetVolumeNameForVolumeMountPointA(PSTR lpszVolumeMountPoint, uint8* lpszVolumeName, uint32 cchBufferLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetVolumePathNameA(PSTR lpszFileName, uint8* lpszVolumePathName, uint32 cchBufferLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetVolumePathNamesForVolumeNameA(PSTR lpszVolumeName, uint8* lpszVolumePathNames, uint32 cchBufferLength, out uint32 lpcchReturnLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileInformationByHandleEx(HANDLE hFile, FILE_INFO_BY_HANDLE_CLASS FileInformationClass, void* lpFileInformation, uint32 dwBufferSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE OpenFileById(HANDLE hVolumeHint, ref FILE_ID_DESCRIPTOR lpFileId, FILE_ACCESS_FLAGS dwDesiredAccess, FILE_SHARE_MODE dwShareMode, SECURITY_ATTRIBUTES* lpSecurityAttributes, FILE_FLAGS_AND_ATTRIBUTES dwFlagsAndAttributes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN CreateSymbolicLinkA(PSTR lpSymlinkFileName, PSTR lpTargetFileName, SYMBOLIC_LINK_FLAGS dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN CreateSymbolicLinkW(PWSTR lpSymlinkFileName, PWSTR lpTargetFileName, SYMBOLIC_LINK_FLAGS dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN CreateSymbolicLinkTransactedA(PSTR lpSymlinkFileName, PSTR lpTargetFileName, SYMBOLIC_LINK_FLAGS dwFlags, HANDLE hTransaction);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN CreateSymbolicLinkTransactedW(PWSTR lpSymlinkFileName, PWSTR lpTargetFileName, SYMBOLIC_LINK_FLAGS dwFlags, HANDLE hTransaction);
 	[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS NtCreateFile(out HANDLE FileHandle, uint32 DesiredAccess, out OBJECT_ATTRIBUTES ObjectAttributes, out IO_STATUS_BLOCK IoStatusBlock, out LARGE_INTEGER AllocationSize, uint32 FileAttributes, FILE_SHARE_MODE ShareAccess, NT_CREATE_FILE_DISPOSITION CreateDisposition, uint32 CreateOptions, void* EaBuffer, uint32 EaLength);

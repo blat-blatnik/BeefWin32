@@ -404,41 +404,41 @@ static
 	public static extern HRESULT WerReportAddDump(HREPORT hReportHandle, HANDLE hProcess, HANDLE hThread, WER_DUMP_TYPE dumpType, WER_EXCEPTION_INFORMATION* pExceptionParam, WER_DUMP_CUSTOM_OPTIONS* pDumpCustomOptions, uint32 dwFlags);
 	[Import("wer.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerReportCloseHandle(HREPORT hReportHandle);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerRegisterFile(PWSTR pwzFile, WER_REGISTER_FILE_TYPE regFileType, WER_FILE dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerUnregisterFile(PWSTR pwzFilePath);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerRegisterMemoryBlock(void* pvAddress, uint32 dwSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerUnregisterMemoryBlock(void* pvAddress);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerRegisterExcludedMemoryBlock(void* address, uint32 size);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerUnregisterExcludedMemoryBlock(void* address);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerRegisterCustomMetadata(PWSTR key, PWSTR value);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerUnregisterCustomMetadata(PWSTR key);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerRegisterAdditionalProcess(uint32 processId, uint32 captureExtraInfoForThreadId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerUnregisterAdditionalProcess(uint32 processId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerRegisterAppLocalDump(PWSTR localAppDataRelativePath);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerUnregisterAppLocalDump();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerSetFlags(WER_FAULT_REPORTING dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerGetFlags(HANDLE hProcess, out WER_FAULT_REPORTING pdwFlags);
 	[Import("wer.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerAddExcludedApplication(PWSTR pwzExeName, BOOL bAllUsers);
 	[Import("wer.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerRemoveExcludedApplication(PWSTR pwzExeName, BOOL bAllUsers);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerRegisterRuntimeExceptionModule(PWSTR pwszOutOfProcessCallbackDll, void* pContext);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerUnregisterRuntimeExceptionModule(PWSTR pwszOutOfProcessCallbackDll, void* pContext);
 	[Import("wer.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WerStoreOpen(REPORT_STORE_TYPES repStoreType, out HREPORTSTORE phReportStore);

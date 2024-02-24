@@ -3603,213 +3603,213 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CoBuildVersion();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoInitialize(void* pvReserved);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRegisterMallocSpy(ref IMallocSpy pMallocSpy);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRevokeMallocSpy();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRegisterInitializeSpy(ref IInitializeSpy pSpy, out ULARGE_INTEGER puliCookie);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRevokeInitializeSpy(ULARGE_INTEGER uliCookie);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetSystemSecurityPermissions(COMSD comSDType, out PSECURITY_DESCRIPTOR ppSD);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HINSTANCE CoLoadLibrary(PWSTR lpszLibName, BOOL bAutoFree);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void CoFreeLibrary(HINSTANCE hInst);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void CoFreeAllLibraries();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoAllowSetForegroundWindow(ref IUnknown pUnk, void* lpvReserved);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT DcomChannelSetHResult(void* pvReserved, uint32* pulReserved, HRESULT appsHR);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CoIsOle1Class(in Guid rclsid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CLSIDFromProgIDEx(PWSTR lpszProgID, out Guid lpclsid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CoFileTimeToDosDateTime(ref FILETIME lpFileTime, out uint16 lpDosDate, out uint16 lpDosTime);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CoDosDateTimeToFileTime(uint16 nDosDate, uint16 nDosTime, out FILETIME lpFileTime);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoFileTimeNow(out FILETIME lpFileTime);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRegisterChannelHook(in Guid ExtensionUuid, ref IChannelHook pChannelHook);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoTreatAsClass(in Guid clsidOld, in Guid clsidNew);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateDataAdviseHolder(out IDataAdviseHolder* ppDAHolder);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateDataCache(IUnknown* pUnkOuter, in Guid rclsid, in Guid iid, void** ppv);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoInstall(ref IBindCtx pbc, uint32 dwFlags, ref uCLSSPEC pClassSpec, ref QUERYCONTEXT pQuery, PWSTR pszCodeBase);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT BindMoniker(ref IMoniker pmk, uint32 grfOpt, in Guid iidResult, void** ppvResult);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetObject(PWSTR pszName, BIND_OPTS* pBindOptions, in Guid riid, void** ppv);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT MkParseDisplayName(ref IBindCtx pbc, PWSTR szUserName, out uint32 pchEaten, out IMoniker* ppmk);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT MonikerRelativePathTo(ref IMoniker pmkSrc, ref IMoniker pmkDest, out IMoniker* ppmkRelPath, BOOL dwReserved);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT MonikerCommonPrefixWith(ref IMoniker pmkThis, ref IMoniker pmkOther, out IMoniker* ppmkCommon);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateBindCtx(uint32 reserved, out IBindCtx* ppbc);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateGenericComposite(IMoniker* pmkFirst, IMoniker* pmkRest, out IMoniker* ppmkComposite);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetClassFile(PWSTR szFilename, out Guid pclsid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateClassMoniker(in Guid rclsid, out IMoniker* ppmk);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateFileMoniker(PWSTR lpszPathName, out IMoniker* ppmk);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateItemMoniker(PWSTR lpszDelim, PWSTR lpszItem, out IMoniker* ppmk);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateAntiMoniker(out IMoniker* ppmk);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreatePointerMoniker(IUnknown* punk, out IMoniker* ppmk);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateObjrefMoniker(IUnknown* punk, out IMoniker* ppmk);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetRunningObjectTable(uint32 reserved, out IRunningObjectTable* pprot);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateStdProgressIndicator(HWND hwndParent, PWSTR pszTitle, ref IBindStatusCallback pIbscCaller, out IBindStatusCallback* ppIbsc);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetMalloc(uint32 dwMemContext, out IMalloc* ppMalloc);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void CoUninitialize();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CoGetCurrentProcess();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoInitializeEx(void* pvReserved, COINIT dwCoInit);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetCallerTID(out uint32 lpdwTID);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetCurrentLogicalThreadId(out Guid pguid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetContextToken(out uint pToken);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetApartmentType(out APTTYPE pAptType, out APTTYPEQUALIFIER pAptQualifier);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoIncrementMTAUsage(out CO_MTA_USAGE_COOKIE pCookie);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoDecrementMTAUsage(CO_MTA_USAGE_COOKIE Cookie);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoAllowUnmarshalerCLSID(in Guid clsid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetObjectContext(in Guid riid, void** ppv);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetClassObject(in Guid rclsid, CLSCTX dwClsContext, void* pvReserved, in Guid riid, void** ppv);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRegisterClassObject(in Guid rclsid, ref IUnknown pUnk, CLSCTX dwClsContext, REGCLS flags, out uint32 lpdwRegister);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRevokeClassObject(uint32 dwRegister);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoResumeClassObjects();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoSuspendClassObjects();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CoAddRefServerProcess();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CoReleaseServerProcess();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetPSClsid(in Guid riid, out Guid pClsid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRegisterPSClsid(in Guid riid, in Guid rclsid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRegisterSurrogate(ref ISurrogate pSurrogate);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoDisconnectObject(ref IUnknown pUnk, uint32 dwReserved);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoLockObjectExternal(ref IUnknown pUnk, BOOL fLock, BOOL fLastUnlockReleases);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CoIsHandlerConnected(ref IUnknown pUnk);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoCreateFreeThreadedMarshaler(IUnknown* punkOuter, out IUnknown* ppunkMarshal);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void CoFreeUnusedLibraries();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void CoFreeUnusedLibrariesEx(uint32 dwUnloadDelay, uint32 dwReserved);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoDisconnectContext(uint32 dwTimeout);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoInitializeSecurity(PSECURITY_DESCRIPTOR pSecDesc, int32 cAuthSvc, SOLE_AUTHENTICATION_SERVICE* asAuthSvc, void* pReserved1, RPC_C_AUTHN_LEVEL dwAuthnLevel, RPC_C_IMP_LEVEL dwImpLevel, void* pAuthList, EOLE_AUTHENTICATION_CAPABILITIES dwCapabilities, void* pReserved3);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetCallContext(in Guid riid, void** ppInterface);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoQueryProxyBlanket(ref IUnknown pProxy, uint32* pwAuthnSvc, uint32* pAuthzSvc, PWSTR* pServerPrincName, uint32* pAuthnLevel, uint32* pImpLevel, void** pAuthInfo, uint32* pCapabilites);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoSetProxyBlanket(ref IUnknown pProxy, uint32 dwAuthnSvc, uint32 dwAuthzSvc, PWSTR pServerPrincName, RPC_C_AUTHN_LEVEL dwAuthnLevel, RPC_C_IMP_LEVEL dwImpLevel, void* pAuthInfo, EOLE_AUTHENTICATION_CAPABILITIES dwCapabilities);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoCopyProxy(ref IUnknown pProxy, out IUnknown* ppCopy);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoQueryClientBlanket(uint32* pAuthnSvc, uint32* pAuthzSvc, PWSTR* pServerPrincName, uint32* pAuthnLevel, uint32* pImpLevel, void** pPrivs, uint32* pCapabilities);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoImpersonateClient();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRevertToSelf();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoQueryAuthenticationServices(out uint32 pcAuthSvc, out SOLE_AUTHENTICATION_SERVICE* asAuthSvc);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoSwitchCallContext(IUnknown* pNewObject, out IUnknown* ppOldObject);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoCreateInstance(in Guid rclsid, IUnknown* pUnkOuter, CLSCTX dwClsContext, in Guid riid, void** ppv);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoCreateInstanceEx(in Guid Clsid, IUnknown* punkOuter, CLSCTX dwClsCtx, COSERVERINFO* pServerInfo, uint32 dwCount, MULTI_QI* pResults);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoCreateInstanceFromApp(in Guid Clsid, IUnknown* punkOuter, CLSCTX dwClsCtx, void* reserved, uint32 dwCount, MULTI_QI* pResults);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRegisterActivationFilter(ref IActivationFilter pActivationFilter);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetCancelObject(uint32 dwThreadId, in Guid iid, void** ppUnk);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoSetCancelObject(IUnknown* pUnk);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoCancelCall(uint32 dwThreadId, uint32 ulTimeout);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoTestCancel();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoEnableCallCancellation(void* pReserved);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoDisableCallCancellation(void* pReserved);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StringFromCLSID(in Guid rclsid, out PWSTR lplpsz);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CLSIDFromString(PWSTR lpsz, out Guid pclsid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StringFromIID(in Guid rclsid, out PWSTR lplpsz);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT IIDFromString(PWSTR lpsz, out Guid lpiid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT ProgIDFromCLSID(in Guid clsid, out PWSTR lplpszProgID);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CLSIDFromProgID(PWSTR lpszProgID, out Guid lpclsid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 StringFromGUID2(in Guid rguid, char16* lpsz, int32 cchMax);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoCreateGuid(out Guid pguid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoWaitForMultipleHandles(uint32 dwFlags, uint32 dwTimeout, uint32 cHandles, HANDLE* pHandles, out uint32 lpdwindex);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoWaitForMultipleObjects(uint32 dwFlags, uint32 dwTimeout, uint32 cHandles, HANDLE* pHandles, out uint32 lpdwindex);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetTreatAsClass(in Guid clsidOld, out Guid pClsidNew);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoInvalidateRemoteMachineBindings(PWSTR pszMachineName);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* CoTaskMemAlloc(uint cb);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* CoTaskMemRealloc(void* pv, uint cb);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void CoTaskMemFree(void* pv);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRegisterDeviceCatalog(PWSTR deviceInstanceId, out CO_DEVICE_CATALOG_COOKIE cookie);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRevokeDeviceCatalog(CO_DEVICE_CATALOG_COOKIE cookie);
 	[Import("urlmon.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateUri(PWSTR pwzURI, URI_CREATE_FLAGS dwFlags, uint dwReserved, out IUri* ppURI);
@@ -3819,9 +3819,9 @@ static
 	public static extern HRESULT CreateUriFromMultiByteString(PSTR pszANSIInputUri, uint32 dwEncodingFlags, uint32 dwCodePage, uint32 dwCreateFlags, uint dwReserved, out IUri* ppUri);
 	[Import("urlmon.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateIUriBuilder(IUri* pIUri, uint32 dwFlags, uint dwReserved, out IUriBuilder* ppIUriBuilder);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SetErrorInfo(uint32 dwReserved, IErrorInfo* perrinfo);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetErrorInfo(uint32 dwReserved, out IErrorInfo* pperrinfo);
 	#endregion
 }

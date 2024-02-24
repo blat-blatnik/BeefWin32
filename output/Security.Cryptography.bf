@@ -7212,83 +7212,83 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptAcquireContextA(out uint phProv, PSTR szContainer, PSTR szProvider, uint32 dwProvType, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptAcquireContextW(out uint phProv, PWSTR szContainer, PWSTR szProvider, uint32 dwProvType, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptReleaseContext(uint hProv, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptGenKey(uint hProv, uint32 Algid, CRYPT_KEY_FLAGS dwFlags, out uint phKey);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptDeriveKey(uint hProv, uint32 Algid, uint hBaseData, uint32 dwFlags, out uint phKey);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptDestroyKey(uint hKey);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptSetKeyParam(uint hKey, CRYPT_KEY_PARAM_ID dwParam, in uint8 pbData, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptGetKeyParam(uint hKey, CRYPT_KEY_PARAM_ID dwParam, uint8* pbData, out uint32 pdwDataLen, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptSetHashParam(uint hHash, CRYPT_SET_HASH_PARAM dwParam, in uint8 pbData, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptGetHashParam(uint hHash, uint32 dwParam, uint8* pbData, out uint32 pdwDataLen, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptSetProvParam(uint hProv, CRYPT_SET_PROV_PARAM_ID dwParam, in uint8 pbData, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptGetProvParam(uint hProv, uint32 dwParam, uint8* pbData, out uint32 pdwDataLen, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptGenRandom(uint hProv, uint32 dwLen, out uint8 pbBuffer);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptGetUserKey(uint hProv, uint32 dwKeySpec, out uint phUserKey);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptExportKey(uint hKey, uint hExpKey, uint32 dwBlobType, CRYPT_KEY_FLAGS dwFlags, uint8* pbData, out uint32 pdwDataLen);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptImportKey(uint hProv, in uint8 pbData, uint32 dwDataLen, uint hPubKey, CRYPT_KEY_FLAGS dwFlags, out uint phKey);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptEncrypt(uint hKey, uint hHash, BOOL Final, uint32 dwFlags, uint8* pbData, out uint32 pdwDataLen, uint32 dwBufLen);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptDecrypt(uint hKey, uint hHash, BOOL Final, uint32 dwFlags, out uint8 pbData, out uint32 pdwDataLen);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptCreateHash(uint hProv, uint32 Algid, uint hKey, uint32 dwFlags, out uint phHash);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptHashData(uint hHash, in uint8 pbData, uint32 dwDataLen, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptHashSessionKey(uint hHash, uint hKey, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptDestroyHash(uint hHash);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptSignHashA(uint hHash, uint32 dwKeySpec, PSTR szDescription, uint32 dwFlags, uint8* pbSignature, out uint32 pdwSigLen);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptSignHashW(uint hHash, uint32 dwKeySpec, PWSTR szDescription, uint32 dwFlags, uint8* pbSignature, out uint32 pdwSigLen);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptVerifySignatureA(uint hHash, in uint8 pbSignature, uint32 dwSigLen, uint hPubKey, PSTR szDescription, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptVerifySignatureW(uint hHash, in uint8 pbSignature, uint32 dwSigLen, uint hPubKey, PWSTR szDescription, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptSetProviderA(PSTR pszProvName, uint32 dwProvType);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptSetProviderW(PWSTR pszProvName, uint32 dwProvType);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptSetProviderExA(PSTR pszProvName, uint32 dwProvType, out uint32 pdwReserved, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptSetProviderExW(PWSTR pszProvName, uint32 dwProvType, out uint32 pdwReserved, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptGetDefaultProviderA(uint32 dwProvType, out uint32 pdwReserved, uint32 dwFlags, PSTR pszProvName, out uint32 pcbProvName);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptGetDefaultProviderW(uint32 dwProvType, out uint32 pdwReserved, uint32 dwFlags, PWSTR pszProvName, out uint32 pcbProvName);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptEnumProviderTypesA(uint32 dwIndex, out uint32 pdwReserved, uint32 dwFlags, out uint32 pdwProvType, PSTR szTypeName, out uint32 pcbTypeName);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptEnumProviderTypesW(uint32 dwIndex, out uint32 pdwReserved, uint32 dwFlags, out uint32 pdwProvType, PWSTR szTypeName, out uint32 pcbTypeName);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptEnumProvidersA(uint32 dwIndex, out uint32 pdwReserved, uint32 dwFlags, out uint32 pdwProvType, PSTR szProvName, out uint32 pcbProvName);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptEnumProvidersW(uint32 dwIndex, out uint32 pdwReserved, uint32 dwFlags, out uint32 pdwProvType, PWSTR szProvName, out uint32 pcbProvName);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptContextAddRef(uint hProv, out uint32 pdwReserved, uint32 dwFlags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptDuplicateKey(uint hKey, out uint32 pdwReserved, uint32 dwFlags, out uint phKey);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CryptDuplicateHash(uint hHash, out uint32 pdwReserved, uint32 dwFlags, out uint phHash);
 	[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern NTSTATUS BCryptOpenAlgorithmProvider(out BCRYPT_ALG_HANDLE phAlgorithm, PWSTR pszAlgId, PWSTR pszImplementation, BCRYPT_OPEN_ALGORITHM_PROVIDER_FLAGS dwFlags);

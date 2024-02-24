@@ -1782,19 +1782,19 @@ static
 	public static extern HRESULT RsopResetPolicySettingStatus(uint32 dwFlags, ref IWbemServices pServices, ref IWbemClassObject pSettingInstance);
 	[Import("userenv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GenerateGPNotification(BOOL bMachine, PWSTR lpwszMgmtProduct, uint32 dwMgmtProductOptions);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 InstallApplication(ref INSTALLDATA pInstallInfo);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 UninstallApplication(PWSTR ProductCode, uint32 dwStatus);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CommandLineFromMsiDescriptor(PWSTR Descriptor, char16* CommandLine, out uint32 CommandLineLength);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetManagedApplications(ref Guid pCategory, uint32 dwQueryFlags, uint32 dwInfoLevel, out uint32 pdwApps, out MANAGEDAPPLICATION* prgManagedApps);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetLocalManagedApplications(BOOL bUserApps, out uint32 pdwApps, out LOCALMANAGEDAPPLICATION* prgLocalApps);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void GetLocalManagedApplicationData(PWSTR ProductCode, out PWSTR DisplayName, out PWSTR SupportUrl);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetManagedApplicationCategories(uint32 dwReserved, out APPCATEGORYINFOLIST pAppCategory);
 	[Import("gpedit.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateGPOLink(PWSTR lpGPO, PWSTR lpContainer, BOOL fHighPriority);

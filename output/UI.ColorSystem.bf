@@ -637,47 +637,47 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetICMMode(HDC hdc, ICM_MODE mode);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CheckColorsInGamut(HDC hdc, RGBTRIPLE* lpRGBTriple, void* dlpBuffer, uint32 nCount);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HCOLORSPACE GetColorSpace(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetLogColorSpaceA(HCOLORSPACE hColorSpace, out LOGCOLORSPACEA lpBuffer, uint32 nSize);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetLogColorSpaceW(HCOLORSPACE hColorSpace, out LOGCOLORSPACEW lpBuffer, uint32 nSize);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HCOLORSPACE CreateColorSpaceA(ref LOGCOLORSPACEA lplcs);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HCOLORSPACE CreateColorSpaceW(ref LOGCOLORSPACEW lplcs);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HCOLORSPACE SetColorSpace(HDC hdc, HCOLORSPACE hcs);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DeleteColorSpace(HCOLORSPACE hcs);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetICMProfileA(HDC hdc, out uint32 pBufSize, uint8* pszFilename);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetICMProfileW(HDC hdc, out uint32 pBufSize, char16* pszFilename);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetICMProfileA(HDC hdc, PSTR lpFileName);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetICMProfileW(HDC hdc, PWSTR lpFileName);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetDeviceGammaRamp(HDC hdc, void* lpRamp);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetDeviceGammaRamp(HDC hdc, void* lpRamp);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ColorMatchToTarget(HDC hdc, HDC hdcTarget, COLOR_MATCH_TO_TARGET_ACTION action);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 EnumICMProfilesA(HDC hdc, ICMENUMPROCA proc, LPARAM param2);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 EnumICMProfilesW(HDC hdc, ICMENUMPROCW proc, LPARAM param2);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UpdateICMRegKeyA(uint32 reserved, PSTR lpszCMID, PSTR lpszFileName, ICM_COMMAND command);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UpdateICMRegKeyW(uint32 reserved, PWSTR lpszCMID, PWSTR lpszFileName, ICM_COMMAND command);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ColorCorrectPalette(HDC hdc, HPALETTE hPal, uint32 deFirst, uint32 num);
 	[Import("mscms.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int OpenColorProfileA(ref PROFILE pProfile, uint32 dwDesiredAccess, uint32 dwShareMode, uint32 dwCreationMode);

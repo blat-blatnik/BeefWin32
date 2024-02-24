@@ -748,107 +748,107 @@ static
 	#region Functions
 	[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL _TrackMouseEvent(out TRACKMOUSEEVENT lpEventTrack);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HKL LoadKeyboardLayoutA(PSTR pwszKLID, ACTIVATE_KEYBOARD_LAYOUT_FLAGS Flags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HKL LoadKeyboardLayoutW(PWSTR pwszKLID, ACTIVATE_KEYBOARD_LAYOUT_FLAGS Flags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HKL ActivateKeyboardLayout(HKL hkl, ACTIVATE_KEYBOARD_LAYOUT_FLAGS Flags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ToUnicodeEx(uint32 wVirtKey, uint32 wScanCode, uint8* lpKeyState, char16* pwszBuff, int32 cchBuff, uint32 wFlags, HKL dwhkl);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UnloadKeyboardLayout(HKL hkl);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetKeyboardLayoutNameA(uint8* pwszKLID);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetKeyboardLayoutNameW(char16* pwszKLID);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetKeyboardLayoutList(int32 nBuff, HKL* lpList);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HKL GetKeyboardLayout(uint32 idThread);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetMouseMovePointsEx(uint32 cbSize, ref MOUSEMOVEPOINT lppt, MOUSEMOVEPOINT* lpptBuf, int32 nBufPoints, GET_MOUSE_MOVE_POINTS_EX_RESOLUTION resolution);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL TrackMouseEvent(out TRACKMOUSEEVENT lpEventTrack);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RegisterHotKey(HWND hWnd, int32 id, HOT_KEY_MODIFIERS fsModifiers, uint32 vk);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UnregisterHotKey(HWND hWnd, int32 id);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SwapMouseButton(BOOL fSwap);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetDoubleClickTime();
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetDoubleClickTime(uint32 param0);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HWND SetFocus(HWND hWnd);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HWND GetActiveWindow();
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HWND GetFocus();
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetKBCodePage();
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 GetKeyState(int32 nVirtKey);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 GetAsyncKeyState(int32 vKey);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetKeyboardState(uint8* lpKeyState);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetKeyboardState(uint8* lpKeyState);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetKeyNameTextA(int32 lParam, uint8* lpString, int32 cchSize);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetKeyNameTextW(int32 lParam, char16* lpString, int32 cchSize);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetKeyboardType(int32 nTypeFlag);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ToAscii(uint32 uVirtKey, uint32 uScanCode, uint8* lpKeyState, out uint16 lpChar, uint32 uFlags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ToAsciiEx(uint32 uVirtKey, uint32 uScanCode, uint8* lpKeyState, out uint16 lpChar, uint32 uFlags, HKL dwhkl);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ToUnicode(uint32 wVirtKey, uint32 wScanCode, uint8* lpKeyState, char16* pwszBuff, int32 cchBuff, uint32 wFlags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 OemKeyScan(uint16 wOemChar);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 VkKeyScanA(CHAR ch);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 VkKeyScanW(char16 ch);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 VkKeyScanExA(CHAR ch, HKL dwhkl);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 VkKeyScanExW(char16 ch, HKL dwhkl);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void keybd_event(uint8 bVk, uint8 bScan, KEYBD_EVENT_FLAGS dwFlags, uint dwExtraInfo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void mouse_event(MOUSE_EVENT_FLAGS dwFlags, int32 dx, int32 dy, uint32 dwData, uint dwExtraInfo);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SendInput(uint32 cInputs, INPUT* pInputs, int32 cbSize);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetLastInputInfo(out LASTINPUTINFO plii);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 MapVirtualKeyA(uint32 uCode, uint32 uMapType);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 MapVirtualKeyW(uint32 uCode, uint32 uMapType);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 MapVirtualKeyExA(uint32 uCode, uint32 uMapType, HKL dwhkl);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 MapVirtualKeyExW(uint32 uCode, uint32 uMapType, HKL dwhkl);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HWND GetCapture();
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HWND SetCapture(HWND hWnd);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ReleaseCapture();
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnableWindow(HWND hWnd, BOOL bEnable);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsWindowEnabled(HWND hWnd);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DragDetect(HWND hwnd, POINT pt);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HWND SetActiveWindow(HWND hWnd);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL BlockInput(BOOL fBlockIt);
 	#endregion
 }

@@ -456,33 +456,33 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsProcessInJob(HANDLE ProcessHandle, HANDLE JobHandle, out BOOL Result);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE CreateJobObjectW(SECURITY_ATTRIBUTES* lpJobAttributes, PWSTR lpName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void FreeMemoryJobObject(void* Buffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE OpenJobObjectW(uint32 dwDesiredAccess, BOOL bInheritHandle, PWSTR lpName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AssignProcessToJobObject(HANDLE hJob, HANDLE hProcess);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL TerminateJobObject(HANDLE hJob, uint32 uExitCode);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetInformationJobObject(HANDLE hJob, JOBOBJECTINFOCLASS JobObjectInformationClass, void* lpJobObjectInformation, uint32 cbJobObjectInformationLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetIoRateControlInformationJobObject(HANDLE hJob, ref JOBOBJECT_IO_RATE_CONTROL_INFORMATION IoRateControlInfo);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL QueryInformationJobObject(HANDLE hJob, JOBOBJECTINFOCLASS JobObjectInformationClass, void* lpJobObjectInformation, uint32 cbJobObjectInformationLength, uint32* lpReturnLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 QueryIoRateControlInformationJobObject(HANDLE hJob, PWSTR VolumeName, out JOBOBJECT_IO_RATE_CONTROL_INFORMATION* InfoBlocks, out uint32 InfoBlockCount);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UserHandleGrantAccess(HANDLE hUserHandle, HANDLE hJob, BOOL bGrant);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE CreateJobObjectA(SECURITY_ATTRIBUTES* lpJobAttributes, PSTR lpName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE OpenJobObjectA(uint32 dwDesiredAccess, BOOL bInheritHandle, PSTR lpName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CreateJobSet(uint32 NumJob, JOB_SET_ARRAY* UserJobSet, uint32 Flags);
 	#endregion
 }

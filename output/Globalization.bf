@@ -4957,259 +4957,259 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetTextCharset(HDC hdc);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetTextCharsetInfo(HDC hdc, FONTSIGNATURE* lpSig, uint32 dwFlags);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL TranslateCharsetInfo(out uint32 lpSrc, out CHARSETINFO lpCs, TRANSLATE_CHARSET_INFO_FLAGS dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetDateFormatA(uint32 Locale, uint32 dwFlags, SYSTEMTIME* lpDate, PSTR lpFormat, uint8* lpDateStr, int32 cchDate);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetDateFormatW(uint32 Locale, uint32 dwFlags, SYSTEMTIME* lpDate, PWSTR lpFormat, char16* lpDateStr, int32 cchDate);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetTimeFormatA(uint32 Locale, uint32 dwFlags, SYSTEMTIME* lpTime, PSTR lpFormat, uint8* lpTimeStr, int32 cchTime);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetTimeFormatW(uint32 Locale, uint32 dwFlags, SYSTEMTIME* lpTime, PWSTR lpFormat, char16* lpTimeStr, int32 cchTime);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetTimeFormatEx(PWSTR lpLocaleName, TIME_FORMAT_FLAGS dwFlags, SYSTEMTIME* lpTime, PWSTR lpFormat, char16* lpTimeStr, int32 cchTime);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetDateFormatEx(PWSTR lpLocaleName, ENUM_DATE_FORMATS_FLAGS dwFlags, SYSTEMTIME* lpDate, PWSTR lpFormat, char16* lpDateStr, int32 cchDate, PWSTR lpCalendar);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetDurationFormatEx(PWSTR lpLocaleName, uint32 dwFlags, SYSTEMTIME* lpDuration, uint64 ullDuration, PWSTR lpFormat, char16* lpDurationStr, int32 cchDuration);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 CompareStringEx(PWSTR lpLocaleName, COMPARE_STRING_FLAGS dwCmpFlags, char16* lpString1, int32 cchCount1, char16* lpString2, int32 cchCount2, out NLSVERSIONINFO lpVersionInformation, void* lpReserved, LPARAM lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 CompareStringOrdinal(char16* lpString1, int32 cchCount1, char16* lpString2, int32 cchCount2, BOOL bIgnoreCase);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 CompareStringW(uint32 Locale, uint32 dwCmpFlags, char16* lpString1, int32 cchCount1, char16* lpString2, int32 cchCount2);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 FoldStringW(FOLD_STRING_MAP_FLAGS dwMapFlags, char16* lpSrcStr, int32 cchSrc, char16* lpDestStr, int32 cchDest);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetStringTypeExW(uint32 Locale, uint32 dwInfoType, char16* lpSrcStr, int32 cchSrc, uint16* lpCharType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetStringTypeW(uint32 dwInfoType, char16* lpSrcStr, int32 cchSrc, out uint16 lpCharType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 MultiByteToWideChar(uint32 CodePage, MULTI_BYTE_TO_WIDE_CHAR_FLAGS dwFlags, uint8* lpMultiByteStr, int32 cbMultiByte, char16* lpWideCharStr, int32 cchWideChar);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WideCharToMultiByte(uint32 CodePage, uint32 dwFlags, char16* lpWideCharStr, int32 cchWideChar, PSTR lpMultiByteStr, int32 cbMultiByte, PSTR lpDefaultChar, int32* lpUsedDefaultChar);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsValidCodePage(uint32 CodePage);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetACP();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetOEMCP();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCPInfo(uint32 CodePage, out CPINFO lpCPInfo);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCPInfoExA(uint32 CodePage, uint32 dwFlags, out CPINFOEXA lpCPInfoEx);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetCPInfoExW(uint32 CodePage, uint32 dwFlags, out CPINFOEXW lpCPInfoEx);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 CompareStringA(uint32 Locale, uint32 dwCmpFlags, int8* lpString1, int32 cchCount1, int8* lpString2, int32 cchCount2);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 FindNLSString(uint32 Locale, uint32 dwFindNLSStringFlags, char16* lpStringSource, int32 cchSource, char16* lpStringValue, int32 cchValue, int32* pcchFound);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 LCMapStringW(uint32 Locale, uint32 dwMapFlags, char16* lpSrcStr, int32 cchSrc, PWSTR lpDestStr, int32 cchDest);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 LCMapStringA(uint32 Locale, uint32 dwMapFlags, uint8* lpSrcStr, int32 cchSrc, PSTR lpDestStr, int32 cchDest);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetLocaleInfoW(uint32 Locale, uint32 LCType, char16* lpLCData, int32 cchData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetLocaleInfoA(uint32 Locale, uint32 LCType, uint8* lpLCData, int32 cchData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetLocaleInfoA(uint32 Locale, uint32 LCType, PSTR lpLCData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetLocaleInfoW(uint32 Locale, uint32 LCType, PWSTR lpLCData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetCalendarInfoA(uint32 Locale, uint32 Calendar, uint32 CalType, uint8* lpCalData, int32 cchData, uint32* lpValue);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetCalendarInfoW(uint32 Locale, uint32 Calendar, uint32 CalType, char16* lpCalData, int32 cchData, uint32* lpValue);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetCalendarInfoA(uint32 Locale, uint32 Calendar, uint32 CalType, PSTR lpCalData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetCalendarInfoW(uint32 Locale, uint32 Calendar, uint32 CalType, PWSTR lpCalData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsDBCSLeadByte(uint8 TestChar);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsDBCSLeadByteEx(uint32 CodePage, uint8 TestChar);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 LocaleNameToLCID(PWSTR lpName, uint32 dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 LCIDToLocaleName(uint32 Locale, char16* lpName, int32 cchName, uint32 dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetDurationFormat(uint32 Locale, uint32 dwFlags, SYSTEMTIME* lpDuration, uint64 ullDuration, PWSTR lpFormat, char16* lpDurationStr, int32 cchDuration);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetNumberFormatA(uint32 Locale, uint32 dwFlags, PSTR lpValue, NUMBERFMTA* lpFormat, uint8* lpNumberStr, int32 cchNumber);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetNumberFormatW(uint32 Locale, uint32 dwFlags, PWSTR lpValue, NUMBERFMTW* lpFormat, char16* lpNumberStr, int32 cchNumber);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetCurrencyFormatA(uint32 Locale, uint32 dwFlags, PSTR lpValue, CURRENCYFMTA* lpFormat, uint8* lpCurrencyStr, int32 cchCurrency);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetCurrencyFormatW(uint32 Locale, uint32 dwFlags, PWSTR lpValue, CURRENCYFMTW* lpFormat, char16* lpCurrencyStr, int32 cchCurrency);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumCalendarInfoA(CALINFO_ENUMPROCA lpCalInfoEnumProc, uint32 Locale, uint32 Calendar, uint32 CalType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumCalendarInfoW(CALINFO_ENUMPROCW lpCalInfoEnumProc, uint32 Locale, uint32 Calendar, uint32 CalType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumCalendarInfoExA(CALINFO_ENUMPROCEXA lpCalInfoEnumProcEx, uint32 Locale, uint32 Calendar, uint32 CalType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumCalendarInfoExW(CALINFO_ENUMPROCEXW lpCalInfoEnumProcEx, uint32 Locale, uint32 Calendar, uint32 CalType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumTimeFormatsA(TIMEFMT_ENUMPROCA lpTimeFmtEnumProc, uint32 Locale, TIME_FORMAT_FLAGS dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumTimeFormatsW(TIMEFMT_ENUMPROCW lpTimeFmtEnumProc, uint32 Locale, TIME_FORMAT_FLAGS dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumDateFormatsA(DATEFMT_ENUMPROCA lpDateFmtEnumProc, uint32 Locale, uint32 dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumDateFormatsW(DATEFMT_ENUMPROCW lpDateFmtEnumProc, uint32 Locale, uint32 dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumDateFormatsExA(DATEFMT_ENUMPROCEXA lpDateFmtEnumProcEx, uint32 Locale, uint32 dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumDateFormatsExW(DATEFMT_ENUMPROCEXW lpDateFmtEnumProcEx, uint32 Locale, uint32 dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsValidLanguageGroup(uint32 LanguageGroup, ENUM_SYSTEM_LANGUAGE_GROUPS_FLAGS dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetNLSVersion(uint32 Function, uint32 Locale, out NLSVERSIONINFO lpVersionInformation);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsValidLocale(uint32 Locale, IS_VALID_LOCALE_FLAGS dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetGeoInfoA(int32 Location, uint32 GeoType, uint8* lpGeoData, int32 cchData, uint16 LangId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetGeoInfoW(int32 Location, uint32 GeoType, char16* lpGeoData, int32 cchData, uint16 LangId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetGeoInfoEx(PWSTR location, uint32 geoType, char16* geoData, int32 geoDataCount);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumSystemGeoID(uint32 GeoClass, int32 ParentGeoId, GEO_ENUMPROC lpGeoEnumProc);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumSystemGeoNames(uint32 geoClass, GEO_ENUMNAMEPROC geoEnumProc, LPARAM data);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetUserGeoID(uint32 GeoClass);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetUserDefaultGeoName(char16* geoName, int32 geoNameCount);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetUserGeoID(int32 GeoId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetUserGeoName(PWSTR geoName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 ConvertDefaultLocale(uint32 Locale);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint16 GetSystemDefaultUILanguage();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetThreadLocale();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetThreadLocale(uint32 Locale);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint16 GetUserDefaultUILanguage();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint16 GetUserDefaultLangID();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint16 GetSystemDefaultLangID();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetSystemDefaultLCID();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetUserDefaultLCID();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint16 SetThreadUILanguage(uint16 LangId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint16 GetThreadUILanguage();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetProcessPreferredUILanguages(uint32 dwFlags, out uint32 pulNumLanguages, char16* pwszLanguagesBuffer, out uint32 pcchLanguagesBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetProcessPreferredUILanguages(uint32 dwFlags, PWSTR pwszLanguagesBuffer, uint32* pulNumLanguages);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetUserPreferredUILanguages(uint32 dwFlags, out uint32 pulNumLanguages, char16* pwszLanguagesBuffer, out uint32 pcchLanguagesBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetSystemPreferredUILanguages(uint32 dwFlags, out uint32 pulNumLanguages, char16* pwszLanguagesBuffer, out uint32 pcchLanguagesBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetThreadPreferredUILanguages(uint32 dwFlags, out uint32 pulNumLanguages, char16* pwszLanguagesBuffer, out uint32 pcchLanguagesBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetThreadPreferredUILanguages(uint32 dwFlags, PWSTR pwszLanguagesBuffer, uint32* pulNumLanguages);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileMUIInfo(uint32 dwFlags, PWSTR pcwszFilePath, FILEMUIINFO* pFileMUIInfo, out uint32 pcbFileMUIInfo);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileMUIPath(uint32 dwFlags, PWSTR pcwszFilePath, char16* pwszLanguage, out uint32 pcchLanguage, char16* pwszFileMUIPath, out uint32 pcchFileMUIPath, out uint64 pululEnumerator);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetUILanguageInfo(uint32 dwFlags, PWSTR pwmszLanguage, char16* pwszFallbackLanguages, uint32* pcchFallbackLanguages, out uint32 pAttributes);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetThreadPreferredUILanguages2(uint32 flags, PWSTR languages, uint32* numLanguagesSet, HSAVEDUILANGUAGES* snapshot);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void RestoreThreadPreferredUILanguages(HSAVEDUILANGUAGES snapshot);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL NotifyUILanguageChange(uint32 dwFlags, PWSTR pcwstrNewLanguage, PWSTR pcwstrPreviousLanguage, uint32 dwReserved, uint32* pdwStatusRtrn);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetStringTypeExA(uint32 Locale, uint32 dwInfoType, uint8* lpSrcStr, int32 cchSrc, uint16* lpCharType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetStringTypeA(uint32 Locale, uint32 dwInfoType, uint8* lpSrcStr, int32 cchSrc, out uint16 lpCharType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 FoldStringA(FOLD_STRING_MAP_FLAGS dwMapFlags, uint8* lpSrcStr, int32 cchSrc, uint8* lpDestStr, int32 cchDest);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumSystemLocalesA(LOCALE_ENUMPROCA lpLocaleEnumProc, uint32 dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumSystemLocalesW(LOCALE_ENUMPROCW lpLocaleEnumProc, uint32 dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumSystemLanguageGroupsA(LANGUAGEGROUP_ENUMPROCA lpLanguageGroupEnumProc, ENUM_SYSTEM_LANGUAGE_GROUPS_FLAGS dwFlags, int lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumSystemLanguageGroupsW(LANGUAGEGROUP_ENUMPROCW lpLanguageGroupEnumProc, ENUM_SYSTEM_LANGUAGE_GROUPS_FLAGS dwFlags, int lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumLanguageGroupLocalesA(LANGGROUPLOCALE_ENUMPROCA lpLangGroupLocaleEnumProc, uint32 LanguageGroup, uint32 dwFlags, int lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumLanguageGroupLocalesW(LANGGROUPLOCALE_ENUMPROCW lpLangGroupLocaleEnumProc, uint32 LanguageGroup, uint32 dwFlags, int lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumUILanguagesA(UILANGUAGE_ENUMPROCA lpUILanguageEnumProc, uint32 dwFlags, int lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumUILanguagesW(UILANGUAGE_ENUMPROCW lpUILanguageEnumProc, uint32 dwFlags, int lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumSystemCodePagesA(CODEPAGE_ENUMPROCA lpCodePageEnumProc, ENUM_SYSTEM_CODE_PAGES_FLAGS dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumSystemCodePagesW(CODEPAGE_ENUMPROCW lpCodePageEnumProc, ENUM_SYSTEM_CODE_PAGES_FLAGS dwFlags);
 	[Import("normaliz.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 IdnToAscii(uint32 dwFlags, char16* lpUnicodeCharStr, int32 cchUnicodeChar, char16* lpASCIICharStr, int32 cchASCIIChar);
 	[Import("normaliz.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 IdnToUnicode(uint32 dwFlags, char16* lpASCIICharStr, int32 cchASCIIChar, char16* lpUnicodeCharStr, int32 cchUnicodeChar);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 IdnToNameprepUnicode(uint32 dwFlags, char16* lpUnicodeCharStr, int32 cchUnicodeChar, char16* lpNameprepCharStr, int32 cchNameprepChar);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 NormalizeString(NORM_FORM NormForm, char16* lpSrcString, int32 cwSrcLength, char16* lpDstString, int32 cwDstLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsNormalizedString(NORM_FORM NormForm, char16* lpString, int32 cwLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL VerifyScripts(uint32 dwFlags, PWSTR lpLocaleScripts, int32 cchLocaleScripts, PWSTR lpTestScripts, int32 cchTestScripts);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetStringScripts(uint32 dwFlags, PWSTR lpString, int32 cchString, char16* lpScripts, int32 cchScripts);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetLocaleInfoEx(PWSTR lpLocaleName, uint32 LCType, char16* lpLCData, int32 cchData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetCalendarInfoEx(PWSTR lpLocaleName, uint32 Calendar, PWSTR lpReserved, uint32 CalType, char16* lpCalData, int32 cchData, uint32* lpValue);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetNumberFormatEx(PWSTR lpLocaleName, uint32 dwFlags, PWSTR lpValue, NUMBERFMTW* lpFormat, char16* lpNumberStr, int32 cchNumber);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetCurrencyFormatEx(PWSTR lpLocaleName, uint32 dwFlags, PWSTR lpValue, CURRENCYFMTW* lpFormat, char16* lpCurrencyStr, int32 cchCurrency);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetUserDefaultLocaleName(char16* lpLocaleName, int32 cchLocaleName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetSystemDefaultLocaleName(char16* lpLocaleName, int32 cchLocaleName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsNLSDefinedString(uint32 Function, uint32 dwFlags, ref NLSVERSIONINFO lpVersionInformation, char16* lpString, int32 cchStr);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetNLSVersionEx(uint32 @function, PWSTR lpLocaleName, out NLSVERSIONINFOEX lpVersionInformation);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 IsValidNLSVersion(uint32 @function, PWSTR lpLocaleName, ref NLSVERSIONINFOEX lpVersionInformation);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 FindNLSStringEx(PWSTR lpLocaleName, uint32 dwFindNLSStringFlags, char16* lpStringSource, int32 cchSource, char16* lpStringValue, int32 cchValue, int32* pcchFound, NLSVERSIONINFO* lpVersionInformation, void* lpReserved, LPARAM sortHandle);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 LCMapStringEx(PWSTR lpLocaleName, uint32 dwMapFlags, char16* lpSrcStr, int32 cchSrc, char16* lpDestStr, int32 cchDest, NLSVERSIONINFO* lpVersionInformation, void* lpReserved, LPARAM sortHandle);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsValidLocaleName(PWSTR lpLocaleName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumCalendarInfoExEx(CALINFO_ENUMPROCEXEX pCalInfoEnumProcExEx, PWSTR lpLocaleName, uint32 Calendar, PWSTR lpReserved, uint32 CalType, LPARAM lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumDateFormatsExEx(DATEFMT_ENUMPROCEXEX lpDateFmtEnumProcExEx, PWSTR lpLocaleName, ENUM_DATE_FORMATS_FLAGS dwFlags, LPARAM lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumTimeFormatsEx(TIMEFMT_ENUMPROCEX lpTimeFmtEnumProcEx, PWSTR lpLocaleName, uint32 dwFlags, LPARAM lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumSystemLocalesEx(LOCALE_ENUMPROCEX lpLocaleEnumProcEx, uint32 dwFlags, LPARAM lParam, void* lpReserved);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ResolveLocaleName(PWSTR lpNameToResolve, char16* lpLocaleName, int32 cchLocaleName);
 	[Import("elscore.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT MappingGetServices(MAPPING_ENUM_OPTIONS* pOptions, out MAPPING_SERVICE_INFO* prgServices, out uint32 pdwServicesCount);
@@ -7355,33 +7355,33 @@ static
 	public static extern HRESULT GetDistanceOfClosestLanguageInList(PWSTR pszLanguage, PWSTR pszLanguagesList, char16 wchListDelimiter, out double pClosestDistance);
 	[Import("bcp47mrm.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint8 IsWellFormedTag(PWSTR pszTag);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 FindStringOrdinal(uint32 dwFindStringOrdinalFlags, char16* lpStringSource, int32 cchSource, char16* lpStringValue, int32 cchValue, BOOL bIgnoreCase);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 lstrcmpA(PSTR lpString1, PSTR lpString2);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 lstrcmpW(PWSTR lpString1, PWSTR lpString2);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 lstrcmpiA(PSTR lpString1, PSTR lpString2);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 lstrcmpiW(PWSTR lpString1, PWSTR lpString2);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PSTR lstrcpynA(uint8* lpString1, PSTR lpString2, int32 iMaxLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PWSTR lstrcpynW(char16* lpString1, PWSTR lpString2, int32 iMaxLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PSTR lstrcpyA(PSTR lpString1, PSTR lpString2);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PWSTR lstrcpyW(PWSTR lpString1, PWSTR lpString2);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PSTR lstrcatA(PSTR lpString1, PSTR lpString2);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PWSTR lstrcatW(PWSTR lpString1, PWSTR lpString2);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 lstrlenA(PSTR lpString);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 lstrlenW(PWSTR lpString);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsTextUnicode(void* lpv, int32 iSize, IS_TEXT_UNICODE_RESULT* lpiResult);
 	#endregion
 }

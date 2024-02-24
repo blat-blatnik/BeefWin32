@@ -4103,9 +4103,9 @@ static
 	public static extern BOOL WTSGetChildSessionId(out uint32 pSessionId);
 	[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WTSSetRenderHint(out uint64 pRenderHintID, HWND hwndOwner, uint32 renderHintType, uint32 cbHintDataLength, uint8* pHintData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ProcessIdToSessionId(uint32 dwProcessId, out uint32 pSessionId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 WTSGetActiveConsoleSessionId();
 	#endregion
 }

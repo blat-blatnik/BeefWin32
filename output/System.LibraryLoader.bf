@@ -78,103 +78,103 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DisableThreadLibraryCalls(HINSTANCE hLibModule);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRSRC FindResourceExW(HINSTANCE hModule, PWSTR lpType, PWSTR lpName, uint16 wLanguage);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FreeLibrary(HINSTANCE hLibModule);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void FreeLibraryAndExitThread(HINSTANCE hLibModule, uint32 dwExitCode);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FreeResource(int hResData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetModuleFileNameA(HINSTANCE hModule, uint8* lpFilename, uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetModuleFileNameW(HINSTANCE hModule, char16* lpFilename, uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HINSTANCE GetModuleHandleA(PSTR lpModuleName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HINSTANCE GetModuleHandleW(PWSTR lpModuleName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetModuleHandleExA(uint32 dwFlags, PSTR lpModuleName, out HINSTANCE phModule);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetModuleHandleExW(uint32 dwFlags, PWSTR lpModuleName, out HINSTANCE phModule);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FARPROC GetProcAddress(HINSTANCE hModule, PSTR lpProcName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HINSTANCE LoadLibraryExA(PSTR lpLibFileName, HANDLE hFile, LOAD_LIBRARY_FLAGS dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HINSTANCE LoadLibraryExW(PWSTR lpLibFileName, HANDLE hFile, LOAD_LIBRARY_FLAGS dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int LoadResource(HINSTANCE hModule, HRSRC hResInfo);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* LockResource(int hResData);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SizeofResource(HINSTANCE hModule, HRSRC hResInfo);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* AddDllDirectory(PWSTR NewDirectory);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RemoveDllDirectory(void* Cookie);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetDefaultDllDirectories(LOAD_LIBRARY_FLAGS DirectoryFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumResourceLanguagesExA(HINSTANCE hModule, PSTR lpType, PSTR lpName, ENUMRESLANGPROCA lpEnumFunc, int lParam, uint32 dwFlags, uint16 LangId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumResourceLanguagesExW(HINSTANCE hModule, PWSTR lpType, PWSTR lpName, ENUMRESLANGPROCW lpEnumFunc, int lParam, uint32 dwFlags, uint16 LangId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumResourceNamesExA(HINSTANCE hModule, PSTR lpType, ENUMRESNAMEPROCA lpEnumFunc, int lParam, uint32 dwFlags, uint16 LangId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumResourceNamesExW(HINSTANCE hModule, PWSTR lpType, ENUMRESNAMEPROCW lpEnumFunc, int lParam, uint32 dwFlags, uint16 LangId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumResourceTypesExA(HINSTANCE hModule, ENUMRESTYPEPROCA lpEnumFunc, int lParam, uint32 dwFlags, uint16 LangId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumResourceTypesExW(HINSTANCE hModule, ENUMRESTYPEPROCW lpEnumFunc, int lParam, uint32 dwFlags, uint16 LangId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRSRC FindResourceW(HINSTANCE hModule, PWSTR lpName, PWSTR lpType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HINSTANCE LoadLibraryA(PSTR lpLibFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HINSTANCE LoadLibraryW(PWSTR lpLibFileName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumResourceNamesW(HINSTANCE hModule, PWSTR lpType, ENUMRESNAMEPROCW lpEnumFunc, int lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumResourceNamesA(HINSTANCE hModule, PSTR lpType, ENUMRESNAMEPROCA lpEnumFunc, int lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 LoadModule(PSTR lpModuleName, void* lpParameterBlock);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HINSTANCE LoadPackagedLibrary(PWSTR lpwLibFileName, uint32 Reserved);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRSRC FindResourceA(HINSTANCE hModule, PSTR lpName, PSTR lpType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRSRC FindResourceExA(HINSTANCE hModule, PSTR lpType, PSTR lpName, uint16 wLanguage);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumResourceTypesA(HINSTANCE hModule, ENUMRESTYPEPROCA lpEnumFunc, int lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumResourceTypesW(HINSTANCE hModule, ENUMRESTYPEPROCW lpEnumFunc, int lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumResourceLanguagesA(HINSTANCE hModule, PSTR lpType, PSTR lpName, ENUMRESLANGPROCA lpEnumFunc, int lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EnumResourceLanguagesW(HINSTANCE hModule, PWSTR lpType, PWSTR lpName, ENUMRESLANGPROCW lpEnumFunc, int lParam);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE BeginUpdateResourceA(PSTR pFileName, BOOL bDeleteExistingResources);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE BeginUpdateResourceW(PWSTR pFileName, BOOL bDeleteExistingResources);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UpdateResourceA(HANDLE hUpdate, PSTR lpType, PSTR lpName, uint16 wLanguage, void* lpData, uint32 cb);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UpdateResourceW(HANDLE hUpdate, PWSTR lpType, PWSTR lpName, uint16 wLanguage, void* lpData, uint32 cb);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EndUpdateResourceA(HANDLE hUpdate, BOOL fDiscard);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL EndUpdateResourceW(HANDLE hUpdate, BOOL fDiscard);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetDllDirectoryA(PSTR lpPathName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetDllDirectoryW(PWSTR lpPathName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetDllDirectoryA(uint32 nBufferLength, uint8* lpBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetDllDirectoryW(uint32 nBufferLength, char16* lpBuffer);
 	#endregion
 }

@@ -818,91 +818,91 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetInstanceFromFile(COSERVERINFO* pServerInfo, Guid* pClsid, IUnknown* punkOuter, CLSCTX dwClsCtx, uint32 grfMode, PWSTR pwszName, uint32 dwCount, MULTI_QI* pResults);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetInstanceFromIStorage(COSERVERINFO* pServerInfo, Guid* pClsid, IUnknown* punkOuter, CLSCTX dwClsCtx, ref IStorage pstg, uint32 dwCount, MULTI_QI* pResults);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgOpenAsyncDocfileOnIFillLockBytes(ref IFillLockBytes pflb, uint32 grfMode, uint32 asyncFlags, out IStorage* ppstgOpen);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgGetIFillLockBytesOnILockBytes(ref ILockBytes pilb, out IFillLockBytes* ppflb);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgGetIFillLockBytesOnFile(PWSTR pwcsName, out IFillLockBytes* ppflb);
 	[Import("dflayout.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgOpenLayoutDocfile(PWSTR pwcsDfName, uint32 grfMode, uint32 reserved, out IStorage* ppstgOpen);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateStreamOnHGlobal(int hGlobal, BOOL fDeleteOnRelease, out IStream* ppstm);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetHGlobalFromStream(ref IStream pstm, out int phglobal);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetInterfaceAndReleaseStream(ref IStream pStm, in Guid iid, void** ppv);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT PropVariantCopy(out PROPVARIANT pvarDest, in PROPVARIANT pvarSrc);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT PropVariantClear(out PROPVARIANT pvar);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT FreePropVariantArray(uint32 cVariants, PROPVARIANT* rgvars);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgCreateDocfile(PWSTR pwcsName, STGM grfMode, uint32 reserved, out IStorage* ppstgOpen);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgCreateDocfileOnILockBytes(ref ILockBytes plkbyt, STGM grfMode, uint32 reserved, out IStorage* ppstgOpen);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgOpenStorage(PWSTR pwcsName, IStorage* pstgPriority, STGM grfMode, uint16** snbExclude, uint32 reserved, out IStorage* ppstgOpen);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgOpenStorageOnILockBytes(ref ILockBytes plkbyt, IStorage* pstgPriority, uint32 grfMode, uint16** snbExclude, uint32 reserved, out IStorage* ppstgOpen);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgIsStorageFile(PWSTR pwcsName);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgIsStorageILockBytes(ref ILockBytes plkbyt);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgSetTimes(PWSTR lpszName, FILETIME* pctime, FILETIME* patime, FILETIME* pmtime);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgCreateStorageEx(PWSTR pwcsName, STGM grfMode, STGFMT stgfmt, uint32 grfAttrs, STGOPTIONS* pStgOptions, PSECURITY_DESCRIPTOR pSecurityDescriptor, in Guid riid, void** ppObjectOpen);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgOpenStorageEx(PWSTR pwcsName, STGM grfMode, STGFMT stgfmt, uint32 grfAttrs, STGOPTIONS* pStgOptions, PSECURITY_DESCRIPTOR pSecurityDescriptor, in Guid riid, void** ppObjectOpen);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgCreatePropStg(ref IUnknown pUnk, in Guid fmtid, in Guid pclsid, uint32 grfFlags, uint32 dwReserved, out IPropertyStorage* ppPropStg);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgOpenPropStg(ref IUnknown pUnk, in Guid fmtid, uint32 grfFlags, uint32 dwReserved, out IPropertyStorage* ppPropStg);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgCreatePropSetStg(ref IStorage pStorage, uint32 dwReserved, out IPropertySetStorage* ppPropSetStg);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT FmtIdToPropStgName(in Guid pfmtid, PWSTR oszName);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT PropStgNameToFmtId(PWSTR oszName, out Guid pfmtid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT ReadClassStg(ref IStorage pStg, out Guid pclsid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WriteClassStg(ref IStorage pStg, in Guid rclsid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT ReadClassStm(ref IStream pStm, out Guid pclsid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WriteClassStm(ref IStream pStm, in Guid rclsid);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetHGlobalFromILockBytes(ref ILockBytes plkbyt, out int phglobal);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateILockBytesOnHGlobal(int hGlobal, BOOL fDeleteOnRelease, out ILockBytes* pplkbyt);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetConvertStg(ref IStorage pStg);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern SERIALIZEDPROPERTYVALUE* StgConvertVariantToProperty(in PROPVARIANT pvar, uint16 CodePage, SERIALIZEDPROPERTYVALUE* pprop, out uint32 pcb, uint32 pid, BOOLEAN fReserved, uint32* pcIndirect);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN StgConvertPropertyToVariant(in SERIALIZEDPROPERTYVALUE pprop, uint16 CodePage, out PROPVARIANT pvar, ref PMemoryAllocator pma);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 StgPropertyLengthAsVariant(in SERIALIZEDPROPERTYVALUE pProp, uint32 cbProp, uint16 CodePage, uint8 bReserved);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT WriteFmtUserTypeStg(ref IStorage pstg, uint16 cf, PWSTR lpszUserType);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT ReadFmtUserTypeStg(ref IStorage pstg, out uint16 pcf, PWSTR* lplpszUserType);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleConvertOLESTREAMToIStorage(out OLESTREAM lpolestream, ref IStorage pstg, in DVTARGETDEVICE ptd);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleConvertIStorageToOLESTREAM(ref IStorage pstg, out OLESTREAM lpolestream);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SetConvertStg(ref IStorage pStg, BOOL fConvert);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleConvertIStorageToOLESTREAMEx(ref IStorage pstg, uint16 cfFormat, int32 lWidth, int32 lHeight, uint32 dwSize, out STGMEDIUM pmedium, out OLESTREAM polestm);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleConvertOLESTREAMToIStorageEx(out OLESTREAM polestm, ref IStorage pstg, out uint16 pcfFormat, out int32 plwWidth, out int32 plHeight, out uint32 pdwSize, out STGMEDIUM pmedium);
 	[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgSerializePropVariant(in PROPVARIANT ppropvar, out SERIALIZEDPROPERTYVALUE* ppProp, out uint32 pcb);

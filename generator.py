@@ -49,27 +49,6 @@ REPLACE_COM_METHOD_NAMES = {
 	'ToString':'ComToString'
 }
 
-# If you want to pull in a function from a .lib file instead of a .dll (dll is default)
-USE_LIB_INSTEAD_OF_DLL = {
-	'kernel32',
-	'user32',
-	'opengl32',
-	'ole32',
-	'oleaut32',
-	'gdi32',
-	'winspool',
-	'comdlg32',
-	'advapi32',
-	'shell32',
-	'shellwapi',
-	'uuid',
-	'version',
-	'odbc32',
-	'odbccp32',
-	'ws2_32',
-	'mswsock',
-}
-
 # If a name in the Json data is a Beef keyword, add it to this list and it will be prepended with '@' 
 # e.g. void Foo(int var) -> void Foo(int @var)
 REPLACE_KEYWORD_NAMES = {
@@ -716,12 +695,8 @@ with open('namespaces.txt', 'wt') as namespace_map:
 
 					for function in functions:
 						name = replace_name(function['Name'])
-						import_name = function['DllImport'].lower()
+						import_name = function['DllImport'].lower() + '.dll'
 						namespace_map.write(f'{name}, {namespace}\n')
-						if import_name in USE_LIB_INSTEAD_OF_DLL:
-							import_name += '.lib'
-						else:
-							import_name += '.dll'
 						return_type = get_type_name(function['ReturnType'])
 						output.write(f'{indent}[Import("{import_name}"), CLink, CallingConvention(.Stdcall)]\n')
 						output.write(f'{indent}public static extern {return_type} {name}(')

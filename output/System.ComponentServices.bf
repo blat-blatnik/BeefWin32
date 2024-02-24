@@ -3331,7 +3331,7 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetDefaultContext(APTTYPE aptType, in Guid riid, void** ppv);
 	[Import("comsvcs.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoCreateActivity(ref IUnknown pIUnknown, in Guid riid, void** ppObj);

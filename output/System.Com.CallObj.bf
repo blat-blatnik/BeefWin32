@@ -230,9 +230,9 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetInterceptor(in Guid iidIntercepted, ref IUnknown punkOuter, in Guid iid, void** ppv);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoGetInterceptorFromTypeInfo(in Guid iidIntercepted, ref IUnknown punkOuter, ref ITypeInfo typeInfo, in Guid iid, void** ppv);
 	#endregion
 }

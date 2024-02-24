@@ -4680,219 +4680,219 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 __WSAFDIsSet(SOCKET fd, out fd_set param1);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern SOCKET accept(SOCKET s, SOCKADDR* addr, int32* addrlen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 bind(SOCKET s, in SOCKADDR name, int32 namelen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 closesocket(SOCKET s);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 connect(SOCKET s, in SOCKADDR name, int32 namelen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ioctlsocket(SOCKET s, int32 cmd, out uint32 argp);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 getpeername(SOCKET s, out SOCKADDR name, out int32 namelen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 getsockname(SOCKET s, out SOCKADDR name, out int32 namelen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 getsockopt(SOCKET s, int32 level, int32 optname, PSTR optval, out int32 optlen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 htonl(uint32 hostlong);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint16 htons(uint16 hostshort);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 inet_addr(PSTR cp);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PSTR inet_ntoa(IN_ADDR @in);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 listen(SOCKET s, int32 backlog);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 ntohl(uint32 netlong);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint16 ntohs(uint16 netshort);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 recv(SOCKET s, PSTR buf, int32 len, SEND_RECV_FLAGS flags);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 recvfrom(SOCKET s, PSTR buf, int32 len, int32 flags, SOCKADDR* from, int32* fromlen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 select(int32 nfds, fd_set* readfds, fd_set* writefds, fd_set* exceptfds, timeval* timeout);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 send(SOCKET s, PSTR buf, int32 len, SEND_RECV_FLAGS flags);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 sendto(SOCKET s, PSTR buf, int32 len, int32 flags, in SOCKADDR to, int32 tolen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 setsockopt(SOCKET s, int32 level, int32 optname, PSTR optval, int32 optlen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 shutdown(SOCKET s, int32 how);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern SOCKET socket(int32 af, int32 type, int32 protocol);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern hostent* gethostbyaddr(PSTR addr, int32 len, int32 type);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern hostent* gethostbyname(PSTR name);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 gethostname(PSTR name, int32 namelen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetHostNameW(char16* name, int32 namelen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern servent* getservbyport(int32 port, PSTR proto);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern servent* getservbyname(PSTR name, PSTR proto);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern protoent* getprotobynumber(int32 number);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern protoent* getprotobyname(PSTR name);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAStartup(uint16 wVersionRequested, out WSAData lpWSAData);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSACleanup();
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void WSASetLastError(int32 iError);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern WSA_ERROR WSAGetLastError();
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WSAIsBlocking();
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAUnhookBlockingHook();
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern FARPROC WSASetBlockingHook(FARPROC lpBlockFunc);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSACancelBlockingCall();
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE WSAAsyncGetServByName(HWND hWnd, uint32 wMsg, PSTR name, PSTR proto, PSTR buf, int32 buflen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE WSAAsyncGetServByPort(HWND hWnd, uint32 wMsg, int32 port, PSTR proto, PSTR buf, int32 buflen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE WSAAsyncGetProtoByName(HWND hWnd, uint32 wMsg, PSTR name, PSTR buf, int32 buflen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE WSAAsyncGetProtoByNumber(HWND hWnd, uint32 wMsg, int32 number, PSTR buf, int32 buflen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE WSAAsyncGetHostByName(HWND hWnd, uint32 wMsg, PSTR name, PSTR buf, int32 buflen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE WSAAsyncGetHostByAddr(HWND hWnd, uint32 wMsg, PSTR addr, int32 len, int32 type, PSTR buf, int32 buflen);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSACancelAsyncRequest(HANDLE hAsyncTaskHandle);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAAsyncSelect(SOCKET s, HWND hWnd, uint32 wMsg, int32 lEvent);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern SOCKET WSAAccept(SOCKET s, SOCKADDR* addr, int32* addrlen, LPCONDITIONPROC lpfnCondition, uint dwCallbackData);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WSACloseEvent(HANDLE hEvent);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAConnect(SOCKET s, in SOCKADDR name, int32 namelen, WSABUF* lpCallerData, WSABUF* lpCalleeData, QOS* lpSQOS, QOS* lpGQOS);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WSAConnectByNameW(SOCKET s, PWSTR nodename, PWSTR servicename, uint32* LocalAddressLength, SOCKADDR* LocalAddress, uint32* RemoteAddressLength, SOCKADDR* RemoteAddress, timeval* timeout, out OVERLAPPED Reserved);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WSAConnectByNameA(SOCKET s, PSTR nodename, PSTR servicename, uint32* LocalAddressLength, SOCKADDR* LocalAddress, uint32* RemoteAddressLength, SOCKADDR* RemoteAddress, timeval* timeout, out OVERLAPPED Reserved);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WSAConnectByList(SOCKET s, ref SOCKET_ADDRESS_LIST SocketAddress, uint32* LocalAddressLength, SOCKADDR* LocalAddress, uint32* RemoteAddressLength, SOCKADDR* RemoteAddress, timeval* timeout, out OVERLAPPED Reserved);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE WSACreateEvent();
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSADuplicateSocketA(SOCKET s, uint32 dwProcessId, out WSAPROTOCOL_INFOA lpProtocolInfo);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSADuplicateSocketW(SOCKET s, uint32 dwProcessId, out WSAPROTOCOL_INFOW lpProtocolInfo);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAEnumNetworkEvents(SOCKET s, HANDLE hEventObject, out WSANETWORKEVENTS lpNetworkEvents);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAEnumProtocolsA(int32* lpiProtocols, WSAPROTOCOL_INFOA* lpProtocolBuffer, out uint32 lpdwBufferLength);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAEnumProtocolsW(int32* lpiProtocols, WSAPROTOCOL_INFOW* lpProtocolBuffer, out uint32 lpdwBufferLength);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAEventSelect(SOCKET s, HANDLE hEventObject, int32 lNetworkEvents);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WSAGetOverlappedResult(SOCKET s, ref OVERLAPPED lpOverlapped, out uint32 lpcbTransfer, BOOL fWait, out uint32 lpdwFlags);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WSAGetQOSByName(SOCKET s, ref WSABUF lpQOSName, out QOS lpQOS);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAHtonl(SOCKET s, uint32 hostlong, out uint32 lpnetlong);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAHtons(SOCKET s, uint16 hostshort, out uint16 lpnetshort);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAIoctl(SOCKET s, uint32 dwIoControlCode, void* lpvInBuffer, uint32 cbInBuffer, void* lpvOutBuffer, uint32 cbOutBuffer, out uint32 lpcbBytesReturned, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern SOCKET WSAJoinLeaf(SOCKET s, in SOCKADDR name, int32 namelen, WSABUF* lpCallerData, WSABUF* lpCalleeData, QOS* lpSQOS, QOS* lpGQOS, uint32 dwFlags);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSANtohl(SOCKET s, uint32 netlong, out uint32 lphostlong);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSANtohs(SOCKET s, uint16 netshort, out uint16 lphostshort);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSARecv(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesRecvd, out uint32 lpFlags, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSARecvDisconnect(SOCKET s, WSABUF* lpInboundDisconnectData);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSARecvFrom(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesRecvd, out uint32 lpFlags, SOCKADDR* lpFrom, int32* lpFromlen, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WSAResetEvent(HANDLE hEvent);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSASend(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesSent, uint32 dwFlags, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSASendMsg(SOCKET Handle, ref WSAMSG lpMsg, uint32 dwFlags, uint32* lpNumberOfBytesSent, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSASendDisconnect(SOCKET s, WSABUF* lpOutboundDisconnectData);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSASendTo(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesSent, uint32 dwFlags, SOCKADDR* lpTo, int32 iTolen, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WSASetEvent(HANDLE hEvent);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern SOCKET WSASocketA(int32 af, int32 type, int32 protocol, WSAPROTOCOL_INFOA* lpProtocolInfo, uint32 g, uint32 dwFlags);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern SOCKET WSASocketW(int32 af, int32 type, int32 protocol, WSAPROTOCOL_INFOW* lpProtocolInfo, uint32 g, uint32 dwFlags);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 WSAWaitForMultipleEvents(uint32 cEvents, HANDLE* lphEvents, BOOL fWaitAll, uint32 dwTimeout, BOOL fAlertable);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAAddressToStringA(ref SOCKADDR lpsaAddress, uint32 dwAddressLength, WSAPROTOCOL_INFOA* lpProtocolInfo, uint8* lpszAddressString, out uint32 lpdwAddressStringLength);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAAddressToStringW(ref SOCKADDR lpsaAddress, uint32 dwAddressLength, WSAPROTOCOL_INFOW* lpProtocolInfo, char16* lpszAddressString, out uint32 lpdwAddressStringLength);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAStringToAddressA(PSTR AddressString, int32 AddressFamily, WSAPROTOCOL_INFOA* lpProtocolInfo, out SOCKADDR lpAddress, out int32 lpAddressLength);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAStringToAddressW(PWSTR AddressString, int32 AddressFamily, WSAPROTOCOL_INFOW* lpProtocolInfo, out SOCKADDR lpAddress, out int32 lpAddressLength);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSALookupServiceBeginA(ref WSAQUERYSETA lpqsRestrictions, uint32 dwControlFlags, out HANDLE lphLookup);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSALookupServiceBeginW(ref WSAQUERYSETW lpqsRestrictions, uint32 dwControlFlags, out HANDLE lphLookup);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSALookupServiceNextA(HANDLE hLookup, uint32 dwControlFlags, out uint32 lpdwBufferLength, out WSAQUERYSETA lpqsResults);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSALookupServiceNextW(HANDLE hLookup, uint32 dwControlFlags, out uint32 lpdwBufferLength, WSAQUERYSETW* lpqsResults);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSANSPIoctl(HANDLE hLookup, uint32 dwControlCode, void* lpvInBuffer, uint32 cbInBuffer, void* lpvOutBuffer, uint32 cbOutBuffer, out uint32 lpcbBytesReturned, WSACOMPLETION* lpCompletion);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSALookupServiceEnd(HANDLE hLookup);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAInstallServiceClassA(ref WSASERVICECLASSINFOA lpServiceClassInfo);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAInstallServiceClassW(ref WSASERVICECLASSINFOW lpServiceClassInfo);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSARemoveServiceClass(ref Guid lpServiceClassId);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAGetServiceClassInfoA(ref Guid lpProviderId, ref Guid lpServiceClassId, out uint32 lpdwBufSize, out WSASERVICECLASSINFOA lpServiceClassInfo);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAGetServiceClassInfoW(ref Guid lpProviderId, ref Guid lpServiceClassId, out uint32 lpdwBufSize, out WSASERVICECLASSINFOW lpServiceClassInfo);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAEnumNameSpaceProvidersA(out uint32 lpdwBufferLength, out WSANAMESPACE_INFOA lpnspBuffer);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAEnumNameSpaceProvidersW(out uint32 lpdwBufferLength, out WSANAMESPACE_INFOW lpnspBuffer);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAEnumNameSpaceProvidersExA(out uint32 lpdwBufferLength, out WSANAMESPACE_INFOEXA lpnspBuffer);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAEnumNameSpaceProvidersExW(out uint32 lpdwBufferLength, out WSANAMESPACE_INFOEXW lpnspBuffer);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAGetServiceClassNameByClassIdA(ref Guid lpServiceClassId, PSTR lpszServiceClassName, out uint32 lpdwBufferLength);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAGetServiceClassNameByClassIdW(ref Guid lpServiceClassId, PWSTR lpszServiceClassName, out uint32 lpdwBufferLength);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSASetServiceA(ref WSAQUERYSETA lpqsRegInfo, WSAESETSERVICEOP essoperation, uint32 dwControlFlags);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSASetServiceW(ref WSAQUERYSETW lpqsRegInfo, WSAESETSERVICEOP essoperation, uint32 dwControlFlags);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAProviderConfigChange(out HANDLE lpNotificationHandle, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAPoll(out WSAPOLLFD fdArray, uint32 fds, int32 timeout);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 ProcessSocketNotifications(HANDLE completionPort, uint32 registrationCount, SOCK_NOTIFY_REGISTRATION* registrationInfos, uint32 timeoutMs, uint32 completionCount, OVERLAPPED_ENTRY* completionPortEntries, uint32* receivedEntryCount);
 	[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PSTR RtlIpv4AddressToStringA(in IN_ADDR Addr, uint8* S);
@@ -4934,135 +4934,135 @@ static
 	public static extern int32 RtlEthernetStringToAddressA(PSTR S, out PSTR Terminator, out DL_EUI48 Addr);
 	[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 RtlEthernetStringToAddressW(PWSTR S, out PWSTR Terminator, out DL_EUI48 Addr);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSARecvEx(SOCKET s, PSTR buf, int32 len, out int32 flags);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL TransmitFile(SOCKET hSocket, HANDLE hFile, uint32 nNumberOfBytesToWrite, uint32 nNumberOfBytesPerSend, OVERLAPPED* lpOverlapped, TRANSMIT_FILE_BUFFERS* lpTransmitBuffers, uint32 dwReserved);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AcceptEx(SOCKET sListenSocket, SOCKET sAcceptSocket, void* lpOutputBuffer, uint32 dwReceiveDataLength, uint32 dwLocalAddressLength, uint32 dwRemoteAddressLength, out uint32 lpdwBytesReceived, out OVERLAPPED lpOverlapped);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void GetAcceptExSockaddrs(void* lpOutputBuffer, uint32 dwReceiveDataLength, uint32 dwLocalAddressLength, uint32 dwRemoteAddressLength, out SOCKADDR* LocalSockaddr, out int32 LocalSockaddrLength, out SOCKADDR* RemoteSockaddr, out int32 RemoteSockaddrLength);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCEnumProtocols(int32* lpiProtocols, WSAPROTOCOL_INFOW* lpProtocolBuffer, out uint32 lpdwBufferLength, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCEnumProtocols32(int32* lpiProtocols, out WSAPROTOCOL_INFOW lpProtocolBuffer, out uint32 lpdwBufferLength, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCDeinstallProvider(ref Guid lpProviderId, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCDeinstallProvider32(ref Guid lpProviderId, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCInstallProvider(ref Guid lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCInstallProvider64_32(ref Guid lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCGetProviderPath(ref Guid lpProviderId, char16* lpszProviderDllPath, out int32 lpProviderDllPathLen, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCGetProviderPath32(ref Guid lpProviderId, char16* lpszProviderDllPath, out int32 lpProviderDllPathLen, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCUpdateProvider(ref Guid lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCUpdateProvider32(ref Guid lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCSetProviderInfo(ref Guid lpProviderId, WSC_PROVIDER_INFO_TYPE InfoType, ref uint8 Info, uint InfoSize, uint32 Flags, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCGetProviderInfo(ref Guid lpProviderId, WSC_PROVIDER_INFO_TYPE InfoType, out uint8 Info, out uint InfoSize, uint32 Flags, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCSetProviderInfo32(ref Guid lpProviderId, WSC_PROVIDER_INFO_TYPE InfoType, ref uint8 Info, uint InfoSize, uint32 Flags, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCGetProviderInfo32(ref Guid lpProviderId, WSC_PROVIDER_INFO_TYPE InfoType, out uint8 Info, out uint InfoSize, uint32 Flags, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCSetApplicationCategory(char16* Path, uint32 PathLength, char16* Extra, uint32 ExtraLength, uint32 PermittedLspCategories, uint32* pPrevPermLspCat, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCGetApplicationCategory(char16* Path, uint32 PathLength, char16* Extra, uint32 ExtraLength, out uint32 pPermittedLspCategories, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WPUCompleteOverlappedRequest(SOCKET s, out OVERLAPPED lpOverlapped, uint32 dwError, uint32 cbTransferred, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCEnumNameSpaceProviders32(out uint32 lpdwBufferLength, out WSANAMESPACE_INFOW lpnspBuffer);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCEnumNameSpaceProvidersEx32(out uint32 lpdwBufferLength, out WSANAMESPACE_INFOEXW lpnspBuffer);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCInstallNameSpace(PWSTR lpszIdentifier, PWSTR lpszPathName, uint32 dwNameSpace, uint32 dwVersion, ref Guid lpProviderId);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCInstallNameSpace32(PWSTR lpszIdentifier, PWSTR lpszPathName, uint32 dwNameSpace, uint32 dwVersion, ref Guid lpProviderId);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCUnInstallNameSpace(ref Guid lpProviderId);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCInstallNameSpaceEx(PWSTR lpszIdentifier, PWSTR lpszPathName, uint32 dwNameSpace, uint32 dwVersion, ref Guid lpProviderId, ref BLOB lpProviderSpecific);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCInstallNameSpaceEx32(PWSTR lpszIdentifier, PWSTR lpszPathName, uint32 dwNameSpace, uint32 dwVersion, ref Guid lpProviderId, ref BLOB lpProviderSpecific);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCUnInstallNameSpace32(ref Guid lpProviderId);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCEnableNSProvider(ref Guid lpProviderId, BOOL fEnable);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCEnableNSProvider32(ref Guid lpProviderId, BOOL fEnable);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCInstallProviderAndChains64_32(ref Guid lpProviderId, PWSTR lpszProviderDllPath, PWSTR lpszProviderDllPath32, PWSTR lpszLspName, uint32 dwServiceFlags, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, uint32* lpdwCatalogEntryId, out int32 lpErrno);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAAdvertiseProvider(in Guid puuidProviderId, in NSPV2_ROUTINE pNSPv2Routine);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAUnadvertiseProvider(in Guid puuidProviderId);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSAProviderCompleteAsyncCall(HANDLE hAsyncCall, int32 iRetCode);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 EnumProtocolsA(int32* lpiProtocols, void* lpProtocolBuffer, out uint32 lpdwBufferLength);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 EnumProtocolsW(int32* lpiProtocols, void* lpProtocolBuffer, out uint32 lpdwBufferLength);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetAddressByNameA(uint32 dwNameSpace, ref Guid lpServiceType, PSTR lpServiceName, int32* lpiProtocols, uint32 dwResolution, SERVICE_ASYNC_INFO* lpServiceAsyncInfo, void* lpCsaddrBuffer, out uint32 lpdwBufferLength, uint8* lpAliasBuffer, out uint32 lpdwAliasBufferLength);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetAddressByNameW(uint32 dwNameSpace, ref Guid lpServiceType, PWSTR lpServiceName, int32* lpiProtocols, uint32 dwResolution, SERVICE_ASYNC_INFO* lpServiceAsyncInfo, void* lpCsaddrBuffer, out uint32 lpdwBufferLength, char16* lpAliasBuffer, out uint32 lpdwAliasBufferLength);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetTypeByNameA(PSTR lpServiceName, out Guid lpServiceType);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetTypeByNameW(PWSTR lpServiceName, out Guid lpServiceType);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetNameByTypeA(ref Guid lpServiceType, PSTR lpServiceName, uint32 dwNameLength);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetNameByTypeW(ref Guid lpServiceType, PWSTR lpServiceName, uint32 dwNameLength);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetServiceA(uint32 dwNameSpace, SET_SERVICE_OPERATION dwOperation, uint32 dwFlags, ref SERVICE_INFOA lpServiceInfo, SERVICE_ASYNC_INFO* lpServiceAsyncInfo, out uint32 lpdwStatusFlags);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetServiceW(uint32 dwNameSpace, SET_SERVICE_OPERATION dwOperation, uint32 dwFlags, ref SERVICE_INFOW lpServiceInfo, SERVICE_ASYNC_INFO* lpServiceAsyncInfo, out uint32 lpdwStatusFlags);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetServiceA(uint32 dwNameSpace, ref Guid lpGuid, PSTR lpServiceName, uint32 dwProperties, void* lpBuffer, out uint32 lpdwBufferSize, SERVICE_ASYNC_INFO* lpServiceAsyncInfo);
-	[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("mswsock.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetServiceW(uint32 dwNameSpace, ref Guid lpGuid, PWSTR lpServiceName, uint32 dwProperties, void* lpBuffer, out uint32 lpdwBufferSize, SERVICE_ASYNC_INFO* lpServiceAsyncInfo);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 getaddrinfo(PSTR pNodeName, PSTR pServiceName, ADDRINFOA* pHints, out ADDRINFOA* ppResult);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetAddrInfoW(PWSTR pNodeName, PWSTR pServiceName, addrinfoW* pHints, out addrinfoW* ppResult);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetAddrInfoExA(PSTR pName, PSTR pServiceName, uint32 dwNameSpace, Guid* lpNspId, addrinfoexA* hints, out addrinfoexA* ppResult, timeval* timeout, OVERLAPPED* lpOverlapped, LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine, HANDLE* lpNameHandle);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetAddrInfoExW(PWSTR pName, PWSTR pServiceName, uint32 dwNameSpace, Guid* lpNspId, addrinfoexW* hints, out addrinfoexW* ppResult, timeval* timeout, OVERLAPPED* lpOverlapped, LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine, HANDLE* lpHandle);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetAddrInfoExCancel(ref HANDLE lpHandle);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetAddrInfoExOverlappedResult(ref OVERLAPPED lpOverlapped);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetAddrInfoExA(PSTR pName, PSTR pServiceName, SOCKET_ADDRESS* pAddresses, uint32 dwAddressCount, BLOB* lpBlob, uint32 dwFlags, uint32 dwNameSpace, Guid* lpNspId, timeval* timeout, OVERLAPPED* lpOverlapped, LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine, HANDLE* lpNameHandle);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SetAddrInfoExW(PWSTR pName, PWSTR pServiceName, SOCKET_ADDRESS* pAddresses, uint32 dwAddressCount, BLOB* lpBlob, uint32 dwFlags, uint32 dwNameSpace, Guid* lpNspId, timeval* timeout, OVERLAPPED* lpOverlapped, LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine, HANDLE* lpNameHandle);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void freeaddrinfo(ADDRINFOA* pAddrInfo);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void FreeAddrInfoW(addrinfoW* pAddrInfo);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void FreeAddrInfoEx(addrinfoexA* pAddrInfoEx);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void FreeAddrInfoExW(addrinfoexW* pAddrInfoEx);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 getnameinfo(in SOCKADDR pSockaddr, int32 SockaddrLength, uint8* pNodeBuffer, uint32 NodeBufferSize, uint8* pServiceBuffer, uint32 ServiceBufferSize, int32 Flags);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 GetNameInfoW(in SOCKADDR pSockaddr, int32 SockaddrLength, char16* pNodeBuffer, uint32 NodeBufferSize, char16* pServiceBuffer, uint32 ServiceBufferSize, int32 Flags);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 inet_pton(int32 Family, PSTR pszAddrString, void* pAddrBuf);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 InetPtonW(int32 Family, PWSTR pszAddrString, void* pAddrBuf);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PSTR inet_ntop(int32 Family, void* pAddr, uint8* pStringBuf, uint StringBufSize);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PWSTR InetNtopW(int32 Family, void* pAddr, char16* pStringBuf, uint StringBufSize);
 	[Import("fwpuclnt.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSASetSocketSecurity(SOCKET Socket, SOCKET_SECURITY_SETTINGS* SecuritySettings, uint32 SecuritySettingsLen, OVERLAPPED* Overlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE CompletionRoutine);
@@ -5078,13 +5078,13 @@ static
 	public static extern int32 WSARevertImpersonation();
 	[Import("windows.networking.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SetSocketMediaStreamingMode(BOOL value);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCWriteProviderOrder(out uint32 lpwdCatalogEntryId, uint32 dwNumberOfEntries);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCWriteProviderOrder32(out uint32 lpwdCatalogEntryId, uint32 dwNumberOfEntries);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCWriteNameSpaceOrder(out Guid lpProviderId, uint32 dwNumberOfEntries);
-	[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ws2_32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 WSCWriteNameSpaceOrder32(out Guid lpProviderId, uint32 dwNumberOfEntries);
 	#endregion
 }

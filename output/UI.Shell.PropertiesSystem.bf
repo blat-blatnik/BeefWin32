@@ -1311,27 +1311,27 @@ static
 	public static extern void ClearVariantArray(VARIANT* pvars, uint32 cvars);
 	[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 VariantCompare(in VARIANT var1, in VARIANT var2);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetPropertyStoreFromIDList(ref ITEMIDLIST pidl, GETPROPERTYSTOREFLAGS flags, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetPropertyStoreFromParsingName(PWSTR pszPath, IBindCtx* pbc, GETPROPERTYSTOREFLAGS flags, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHAddDefaultPropertiesByExt(PWSTR pszExt, ref IPropertyStore pPropStore);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE PifMgr_OpenProperties(PWSTR pszApp, PWSTR pszPIF, uint32 hInf, uint32 flOpt);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 PifMgr_GetProperties(HANDLE hProps, PSTR pszGroup, void* lpProps, int32 cbProps, uint32 flOpt);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 PifMgr_SetProperties(HANDLE hProps, PSTR pszGroup, void* lpProps, int32 cbProps, uint32 flOpt);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE PifMgr_CloseProperties(HANDLE hProps, uint32 flOpt);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHPropStgCreate(ref IPropertySetStorage psstg, in Guid fmtid, Guid* pclsid, uint32 grfFlags, uint32 grfMode, uint32 dwDisposition, out IPropertyStorage* ppstg, uint32* puCodePage);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHPropStgReadMultiple(ref IPropertyStorage pps, uint32 uCodePage, uint32 cpspec, PROPSPEC* rgpspec, out PROPVARIANT rgvar);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHPropStgWriteMultiple(ref IPropertyStorage pps, uint32* puCodePage, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgvar, uint32 propidNameFirst);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetPropertyStoreForWindow(HWND hwnd, in Guid riid, void** ppv);
 	#endregion
 }

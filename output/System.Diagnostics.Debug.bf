@@ -17622,15 +17622,15 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN RtlAddFunctionTable(IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY* FunctionTable, uint32 EntryCount, uint BaseAddress);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN RtlDeleteFunctionTable(ref IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY FunctionTable);
 	[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 RtlAddGrowableFunctionTable(void** DynamicTable, IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY* FunctionTable, uint32 EntryCount, uint32 MaximumEntryCount, uint RangeBase, uint RangeEnd);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY* RtlLookupFunctionEntry(uint ControlPc, out uint ImageBase, UNWIND_HISTORY_TABLE* HistoryTable);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern EXCEPTION_ROUTINE RtlVirtualUnwind(RTL_VIRTUAL_UNWIND_HANDLER_TYPE HandlerType, uint ImageBase, uint ControlPc, ref IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY FunctionEntry, out CONTEXT ContextRecord, void** HandlerData, out uint EstablisherFrame, KNONVOLATILE_CONTEXT_POINTERS_ARM64* ContextPointers);
 	[Import("dbgeng.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT DebugConnect(PSTR RemoteOptions, in Guid InterfaceId, void** Interface);
@@ -17642,113 +17642,113 @@ static
 	public static extern HRESULT DebugCreateEx(in Guid InterfaceId, uint32 DbgEngOptions, void** Interface);
 	[Import("dbgmodel.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateDataModelManager(ref IDebugHost debugHost, out IDataModelManager* manager);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ReadProcessMemory(HANDLE hProcess, void* lpBaseAddress, void* lpBuffer, uint nSize, uint* lpNumberOfBytesRead);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WriteProcessMemory(HANDLE hProcess, void* lpBaseAddress, void* lpBuffer, uint nSize, uint* lpNumberOfBytesWritten);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetThreadContext(HANDLE hThread, out CONTEXT lpContext);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetThreadContext(HANDLE hThread, in CONTEXT lpContext);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FlushInstructionCache(HANDLE hProcess, void* lpBaseAddress, uint dwSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Wow64GetThreadContext(HANDLE hThread, out WOW64_CONTEXT lpContext);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Wow64SetThreadContext(HANDLE hThread, in WOW64_CONTEXT lpContext);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint16 RtlCaptureStackBackTrace(uint32 FramesToSkip, uint32 FramesToCapture, void** BackTrace, uint32* BackTraceHash);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void RtlCaptureContext(out CONTEXT ContextRecord);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void RtlCaptureContext2(out CONTEXT ContextRecord);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void RtlUnwind(void* TargetFrame, void* TargetIp, EXCEPTION_RECORD* ExceptionRecord, void* ReturnValue);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN RtlInstallFunctionTableCallback(uint64 TableIdentifier, uint64 BaseAddress, uint32 Length, PGET_RUNTIME_FUNCTION_CALLBACK Callback, void* Context, PWSTR OutOfProcessCallbackDll);
 	[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void RtlGrowFunctionTable(void* DynamicTable, uint32 NewEntryCount);
 	[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void RtlDeleteGrowableFunctionTable(void* DynamicTable);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void RtlRestoreContext(ref CONTEXT ContextRecord, EXCEPTION_RECORD* ExceptionRecord);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void RtlUnwindEx(void* TargetFrame, void* TargetIp, EXCEPTION_RECORD* ExceptionRecord, void* ReturnValue, ref CONTEXT ContextRecord, UNWIND_HISTORY_TABLE* HistoryTable);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void RtlRaiseException(ref EXCEPTION_RECORD ExceptionRecord);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* RtlPcToFileHeader(void* PcValue, void** BaseOfImage);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsDebuggerPresent();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void DebugBreak();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void OutputDebugStringA(PSTR lpOutputString);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void OutputDebugStringW(PWSTR lpOutputString);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ContinueDebugEvent(uint32 dwProcessId, uint32 dwThreadId, uint32 dwContinueStatus);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WaitForDebugEvent(out DEBUG_EVENT lpDebugEvent, uint32 dwMilliseconds);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DebugActiveProcess(uint32 dwProcessId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DebugActiveProcessStop(uint32 dwProcessId);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CheckRemoteDebuggerPresent(HANDLE hProcess, out BOOL pbDebuggerPresent);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WaitForDebugEventEx(out DEBUG_EVENT lpDebugEvent, uint32 dwMilliseconds);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* EncodePointer(void* Ptr);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* DecodePointer(void* Ptr);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* EncodeSystemPointer(void* Ptr);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* DecodeSystemPointer(void* Ptr);
 	[Import("api-ms-win-core-util-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT EncodeRemotePointer(HANDLE ProcessHandle, void* Ptr, void** EncodedPtr);
 	[Import("api-ms-win-core-util-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT DecodeRemotePointer(HANDLE ProcessHandle, void* Ptr, void** DecodedPtr);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Beep(uint32 dwFreq, uint32 dwDuration);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void RaiseException(uint32 dwExceptionCode, uint32 dwExceptionFlags, uint32 nNumberOfArguments, uint* lpArguments);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 UnhandledExceptionFilter(ref EXCEPTION_POINTERS ExceptionInfo);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern LPTOP_LEVEL_EXCEPTION_FILTER SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetErrorMode();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetErrorMode(THREAD_ERROR_MODE uMode);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* AddVectoredExceptionHandler(uint32 First, PVECTORED_EXCEPTION_HANDLER Handler);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 RemoveVectoredExceptionHandler(void* Handle);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* AddVectoredContinueHandler(uint32 First, PVECTORED_EXCEPTION_HANDLER Handler);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 RemoveVectoredContinueHandler(void* Handle);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void RaiseFailFastException(EXCEPTION_RECORD* pExceptionRecord, CONTEXT* pContextRecord, uint32 dwFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void FatalAppExitA(uint32 uAction, PSTR lpMessageText);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void FatalAppExitW(uint32 uAction, PWSTR lpMessageText);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetThreadErrorMode();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetThreadErrorMode(THREAD_ERROR_MODE dwNewMode, THREAD_ERROR_MODE* lpOldMode);
 	[Import("api-ms-win-core-errorhandling-l1-1-3.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void TerminateProcessOnMemoryExhaustion(uint FailedAllocationSize);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* OpenThreadWaitChainSession(OPEN_THREAD_WAIT_CHAIN_SESSION_FLAGS Flags, PWAITCHAINCALLBACK callback);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void CloseThreadWaitChainSession(void* WctHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetThreadWaitChain(void* WctHandle, uint Context, WAIT_CHAIN_THREAD_OPTIONS Flags, uint32 ThreadId, out uint32 NodeCount, WAITCHAIN_NODE_INFO* NodeInfoArray, out int32 IsCycle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void RegisterWaitChainCOMCallback(PCOGETCALLSTATE CallStateCallback, PCOGETACTIVATIONSTATE ActivationStateCallback);
 	[Import("dbghelp.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL MiniDumpWriteDump(HANDLE hProcess, uint32 ProcessId, HANDLE hFile, MINIDUMP_TYPE DumpType, MINIDUMP_EXCEPTION_INFORMATION* ExceptionParam, MINIDUMP_USER_STREAM_INFORMATION* UserStreamParam, MINIDUMP_CALLBACK_INFORMATION* CallbackParam);
@@ -18182,35 +18182,35 @@ static
 	public static extern BOOL RangeMapRead(void* RmapHandle, uint64 Offset, void* Buffer, uint32 RequestBytes, uint32 Flags, uint32* DoneBytes);
 	[Import("dbghelp.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RangeMapWrite(void* RmapHandle, uint64 Offset, void* Buffer, uint32 RequestBytes, uint32 Flags, uint32* DoneBytes);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL MessageBeep(uint32 uType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void FatalExit(int32 ExitCode);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetThreadSelectorEntry(HANDLE hThread, uint32 dwSelector, out LDT_ENTRY lpSelectorEntry);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Wow64GetThreadSelectorEntry(HANDLE hThread, uint32 dwSelector, out WOW64_LDT_ENTRY lpSelectorEntry);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DebugSetProcessKillOnExit(BOOL KillOnExit);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DebugBreakProcess(HANDLE Process);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 FormatMessageA(FORMAT_MESSAGE_OPTIONS dwFlags, void* lpSource, uint32 dwMessageId, uint32 dwLanguageId, PSTR lpBuffer, uint32 nSize, int8** Arguments);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 FormatMessageW(FORMAT_MESSAGE_OPTIONS dwFlags, void* lpSource, uint32 dwMessageId, uint32 dwLanguageId, PWSTR lpBuffer, uint32 nSize, int8** Arguments);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CopyContext(out CONTEXT Destination, uint32 ContextFlags, ref CONTEXT Source);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InitializeContext(void* Buffer, uint32 ContextFlags, out CONTEXT* Context, out uint32 ContextLength);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InitializeContext2(void* Buffer, uint32 ContextFlags, out CONTEXT* Context, out uint32 ContextLength, uint64 XStateCompactionMask);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint64 GetEnabledXStateFeatures();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetXStateFeaturesMask(ref CONTEXT Context, out uint64 FeatureMask);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* LocateXStateFeature(ref CONTEXT Context, uint32 FeatureId, uint32* Length);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetXStateFeaturesMask(out CONTEXT Context, uint64 FeatureMask);
 	[Import("dbghelp.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL StackWalk(uint32 MachineType, HANDLE hProcess, HANDLE hThread, out STACKFRAME StackFrame, void* ContextRecord, PREAD_PROCESS_MEMORY_ROUTINE ReadMemoryRoutine, PFUNCTION_TABLE_ACCESS_ROUTINE FunctionTableAccessRoutine, PGET_MODULE_BASE_ROUTINE GetModuleBaseRoutine, PTRANSLATE_ADDRESS_ROUTINE TranslateAddress);

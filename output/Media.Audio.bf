@@ -3371,7 +3371,7 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoRegisterMessageFilter(IMessageFilter* lpMessageFilter, IMessageFilter** lplpMessageFilter);
 	[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL sndPlaySoundA(PSTR pszSound, uint32 fuSound);

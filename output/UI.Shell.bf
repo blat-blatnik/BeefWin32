@@ -15340,373 +15340,373 @@ static
 	public static extern BOOL RemoveWindowSubclass(HWND hWnd, SUBCLASSPROC pfnSubclass, uint uIdSubclass);
 	[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern LRESULT DefSubclassProc(HWND hWnd, uint32 uMsg, WPARAM wParam, LPARAM lParam);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetWindowContextHelpId(HWND param0, uint32 param1);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetWindowContextHelpId(HWND param0);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetMenuContextHelpId(HMENU param0, uint32 param1);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetMenuContextHelpId(HMENU param0);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WinHelpA(HWND hWndMain, PSTR lpszHelp, uint32 uCommand, uint dwData);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WinHelpW(HWND hWndMain, PWSTR lpszHelp, uint32 uCommand, uint dwData);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern ITEMIDLIST* SHSimpleIDListFromPath(PWSTR pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateItemFromIDList(ref ITEMIDLIST pidl, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateItemFromParsingName(PWSTR pszPath, IBindCtx* pbc, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateItemWithParent(ITEMIDLIST* pidlParent, IShellFolder* psfParent, ref ITEMIDLIST pidl, in Guid riid, void** ppvItem);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateItemFromRelativeName(ref IShellItem psiParent, PWSTR pszName, IBindCtx* pbc, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateItemInKnownFolder(in Guid kfid, uint32 dwKFFlags, PWSTR pszItem, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetIDListFromObject(ref IUnknown punk, out ITEMIDLIST* ppidl);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetItemFromObject(ref IUnknown punk, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetNameFromIDList(ref ITEMIDLIST pidl, SIGDN sigdnName, out PWSTR ppszName);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetItemFromDataObject(ref IDataObject pdtobj, DATAOBJ_GET_ITEM_FLAGS dwFlags, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateShellItemArray(ITEMIDLIST* pidlParent, IShellFolder* psf, uint32 cidl, ITEMIDLIST** ppidl, out IShellItemArray* ppsiItemArray);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateShellItemArrayFromDataObject(ref IDataObject pdo, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateShellItemArrayFromIDLists(uint32 cidl, ITEMIDLIST** rgpidl, out IShellItemArray* ppsiItemArray);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateShellItemArrayFromShellItem(ref IShellItem psi, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateAssociationRegistration(in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateDefaultExtractIcon(in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SetCurrentProcessExplicitAppUserModelID(PWSTR AppID);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetCurrentProcessExplicitAppUserModelID(out PWSTR AppID);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetTemporaryPropertyForItem(ref IShellItem psi, in PROPERTYKEY propkey, out PROPVARIANT ppropvar);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHSetTemporaryPropertyForItem(ref IShellItem psi, in PROPERTYKEY propkey, in PROPVARIANT propvar);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHShowManageLibraryUI(ref IShellItem psiLibrary, HWND hwndOwner, PWSTR pszTitle, PWSTR pszInstruction, LIBRARYMANAGEDIALOGOPTIONS lmdOptions);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHResolveLibrary(ref IShellItem psiLibrary);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHAssocEnumHandlers(PWSTR pszExtra, ASSOC_FILTER afFilter, out IEnumAssocHandlers* ppEnumHandler);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHAssocEnumHandlersForProtocolByApplication(PWSTR protocol, in Guid riid, void** enumHandlers);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 HMONITOR_UserSize(ref uint32 param0, uint32 param1, ref HMONITOR param2);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint8* HMONITOR_UserMarshal(ref uint32 param0, out uint8 param1, ref HMONITOR param2);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint8* HMONITOR_UserUnmarshal(ref uint32 param0, uint8* param1, out HMONITOR param2);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void HMONITOR_UserFree(ref uint32 param0, ref HMONITOR param1);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 HMONITOR_UserSize64(ref uint32 param0, uint32 param1, ref HMONITOR param2);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint8* HMONITOR_UserMarshal64(ref uint32 param0, out uint8 param1, ref HMONITOR param2);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint8* HMONITOR_UserUnmarshal64(ref uint32 param0, uint8* param1, out HMONITOR param2);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void HMONITOR_UserFree64(ref uint32 param0, ref HMONITOR param1);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateDefaultPropertiesOp(ref IShellItem psi, out IFileOperation* ppFileOp);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHSetDefaultProperties(HWND hwnd, ref IShellItem psi, uint32 dwFileOpFlags, IFileOperationProgressSink* pfops);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetMalloc(out IMalloc* ppMalloc);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* SHAlloc(uint cb);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SHFree(void* pv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SHGetIconOverlayIndexA(PSTR pszIconPath, int32 iIconIndex);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SHGetIconOverlayIndexW(PWSTR pszIconPath, int32 iIconIndex);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern ITEMIDLIST* ILClone(ref ITEMIDLIST pidl);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern ITEMIDLIST* ILCloneFirst(ref ITEMIDLIST pidl);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern ITEMIDLIST* ILCombine(ITEMIDLIST* pidl1, ITEMIDLIST* pidl2);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void ILFree(ITEMIDLIST* pidl);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern ITEMIDLIST* ILGetNext(ITEMIDLIST* pidl);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 ILGetSize(ITEMIDLIST* pidl);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern ITEMIDLIST* ILFindChild(ref ITEMIDLIST pidlParent, ref ITEMIDLIST pidlChild);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern ITEMIDLIST* ILFindLastID(ref ITEMIDLIST pidl);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ILRemoveLastID(ITEMIDLIST* pidl);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ILIsEqual(ref ITEMIDLIST pidl1, ref ITEMIDLIST pidl2);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ILIsParent(ref ITEMIDLIST pidl1, ref ITEMIDLIST pidl2, BOOL fImmediate);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT ILSaveToStream(ref IStream pstm, ref ITEMIDLIST pidl);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT ILLoadFromStreamEx(ref IStream pstm, out ITEMIDLIST* pidl);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern ITEMIDLIST* ILCreateFromPathA(PSTR pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern ITEMIDLIST* ILCreateFromPathW(PWSTR pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHILCreateFromPath(PWSTR pszPath, out ITEMIDLIST* ppidl, uint32* rgfInOut);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern ITEMIDLIST* ILAppendID(ITEMIDLIST* pidl, ref SHITEMID pmkid, BOOL fAppend);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHGetPathFromIDListEx(ref ITEMIDLIST pidl, char16* pszPath, uint32 cchPath, int32 uOpts);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHGetPathFromIDListA(ref ITEMIDLIST pidl, uint8* pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHGetPathFromIDListW(ref ITEMIDLIST pidl, char16* pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SHCreateDirectory(HWND hwnd, PWSTR pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SHCreateDirectoryExA(HWND hwnd, PSTR pszPath, SECURITY_ATTRIBUTES* psa);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SHCreateDirectoryExW(HWND hwnd, PWSTR pszPath, SECURITY_ATTRIBUTES* psa);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHOpenFolderAndSelectItems(ref ITEMIDLIST pidlFolder, uint32 cidl, ITEMIDLIST** apidl, uint32 dwFlags);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateShellItem(ITEMIDLIST* pidlParent, IShellFolder* psfParent, ref ITEMIDLIST pidl, out IShellItem* ppsi);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetSpecialFolderLocation(HWND hwnd, int32 csidl, out ITEMIDLIST* ppidl);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern ITEMIDLIST* SHCloneSpecialIDList(HWND hwnd, int32 csidl, BOOL fCreate);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHGetSpecialFolderPathA(HWND hwnd, uint8* pszPath, int32 csidl, BOOL fCreate);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHGetSpecialFolderPathW(HWND hwnd, char16* pszPath, int32 csidl, BOOL fCreate);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SHFlushSFCache();
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetFolderPathA(HWND hwnd, int32 csidl, HANDLE hToken, uint32 dwFlags, uint8* pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetFolderPathW(HWND hwnd, int32 csidl, HANDLE hToken, uint32 dwFlags, char16* pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetFolderLocation(HWND hwnd, int32 csidl, HANDLE hToken, uint32 dwFlags, out ITEMIDLIST* ppidl);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHSetFolderPathA(int32 csidl, HANDLE hToken, uint32 dwFlags, PSTR pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHSetFolderPathW(int32 csidl, HANDLE hToken, uint32 dwFlags, PWSTR pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetFolderPathAndSubDirA(HWND hwnd, int32 csidl, HANDLE hToken, uint32 dwFlags, PSTR pszSubDir, uint8* pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetFolderPathAndSubDirW(HWND hwnd, int32 csidl, HANDLE hToken, uint32 dwFlags, PWSTR pszSubDir, char16* pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetKnownFolderIDList(in Guid rfid, uint32 dwFlags, HANDLE hToken, out ITEMIDLIST* ppidl);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHSetKnownFolderPath(in Guid rfid, uint32 dwFlags, HANDLE hToken, PWSTR pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetKnownFolderPath(in Guid rfid, uint32 dwFlags, HANDLE hToken, out PWSTR ppszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetKnownFolderItem(in Guid rfid, KNOWN_FOLDER_FLAG flags, HANDLE hToken, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetSetFolderCustomSettings(out SHFOLDERCUSTOMSETTINGS pfcs, PWSTR pszPath, uint32 dwReadWrite);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern ITEMIDLIST* SHBrowseForFolderA(ref BROWSEINFOA lpbi);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern ITEMIDLIST* SHBrowseForFolderW(ref BROWSEINFOW lpbi);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHLoadInProc(in Guid rclsid);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetDesktopFolder(out IShellFolder* ppshf);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SHChangeNotify(SHCNE_ID wEventId, SHCNF_FLAGS uFlags, void* dwItem1, void* dwItem2);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SHAddToRecentDocs(uint32 uFlags, void* pv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SHHandleUpdateImage(ref ITEMIDLIST pidlExtra);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SHUpdateImageA(PSTR pszHashItem, int32 iIndex, uint32 uFlags, int32 iImageIndex);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SHUpdateImageW(PWSTR pszHashItem, int32 iIndex, uint32 uFlags, int32 iImageIndex);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SHChangeNotifyRegister(HWND hwnd, SHCNRF_SOURCE fSources, int32 fEvents, uint32 wMsg, int32 cEntries, in SHChangeNotifyEntry pshcne);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHChangeNotifyDeregister(uint32 ulID);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern ShFindChangeNotificationHandle SHChangeNotification_Lock(HANDLE hChange, uint32 dwProcId, ITEMIDLIST*** pppidl, int32* plEvent);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHChangeNotification_Unlock(HANDLE hLock);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetRealIDL(ref IShellFolder psf, ref ITEMIDLIST pidlSimple, out ITEMIDLIST* ppidlReal);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetInstanceExplorer(out IUnknown* ppunk);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetDataFromIDListA(ref IShellFolder psf, ref ITEMIDLIST pidl, SHGDFIL_FORMAT nFormat, void* pv, int32 cb);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetDataFromIDListW(ref IShellFolder psf, ref ITEMIDLIST pidl, SHGDFIL_FORMAT nFormat, void* pv, int32 cb);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 RestartDialog(HWND hwnd, PWSTR pszPrompt, uint32 dwReturn);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 RestartDialogEx(HWND hwnd, PWSTR pszPrompt, uint32 dwReturn, uint32 dwReasonCode);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCoCreateInstance(PWSTR pszCLSID, Guid* pclsid, IUnknown* pUnkOuter, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateDataObject(ITEMIDLIST* pidlFolder, uint32 cidl, ITEMIDLIST** apidl, IDataObject* pdtInner, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CIDLData_CreateFromIDArray(ref ITEMIDLIST pidlFolder, uint32 cidl, ITEMIDLIST** apidl, out IDataObject* ppdtobj);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateStdEnumFmtEtc(uint32 cfmt, FORMATETC* afmt, out IEnumFORMATETC* ppenumFormatEtc);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHDoDragDrop(HWND hwnd, ref IDataObject pdata, IDropSource* pdsrc, uint32 dwEffect, out uint32 pdwEffect);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DAD_SetDragImage(HIMAGELIST him, out POINT pptOffset);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DAD_DragEnterEx(HWND hwndTarget, POINT ptStart);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DAD_DragEnterEx2(HWND hwndTarget, POINT ptStart, IDataObject* pdtObject);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DAD_ShowDragImage(BOOL fShow);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DAD_DragMove(POINT pt);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DAD_DragLeave();
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DAD_AutoScroll(HWND hwnd, out AUTO_SCROLL_DATA pad, in POINT pptNow);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ReadCabinetState(out CABINETSTATE pcs, int32 cLength);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL WriteCabinetState(ref CABINETSTATE pcs);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PathMakeUniqueName(char16* pszUniqueName, uint32 cchMax, PWSTR pszTemplate, PWSTR pszLongPlate, PWSTR pszDir);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PathIsExe(PWSTR pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PCS_RET PathCleanupSpec(PWSTR pszDir, PWSTR pszSpec);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 PathResolve(char16* pszPath, uint16** dirs, PRF_FLAGS fFlags);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetFileNameFromBrowse(HWND hwnd, char16* pszFilePath, uint32 cchFilePath, PWSTR pszWorkingDir, PWSTR pszDefExt, PWSTR pszFilters, PWSTR pszTitle);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DriveType(int32 iDrive);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 RealDriveType(int32 iDrive, BOOL fOKToHitNet);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 IsNetDrive(int32 iDrive);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 Shell_MergeMenus(HMENU hmDst, HMENU hmSrc, uint32 uInsert, uint32 uIDAdjust, uint32 uIDAdjustMax, MM_FLAGS uFlags);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHObjectProperties(HWND hwnd, SHOP_TYPE shopObjectType, PWSTR pszObjectName, PWSTR pszPropertyPage);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SHFormatDrive(HWND hwnd, uint32 drive, SHFMT_ID fmtID, SHFMT_OPT options);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SHDestroyPropSheetExtArray(HPSXA hpsxa);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SHAddFromPropSheetExtArray(HPSXA hpsxa, LPFNSVADDPROPSHEETPAGE lpfnAddPage, LPARAM lParam);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SHReplaceFromPropSheetExtArray(HPSXA hpsxa, uint32 uPageID, LPFNSVADDPROPSHEETPAGE lpfnReplaceWith, LPARAM lParam);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern IStream* OpenRegStream(HKEY hkey, PWSTR pszSubkey, PWSTR pszValue, uint32 grfMode);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHFindFiles(ITEMIDLIST* pidlFolder, ITEMIDLIST* pidlSaveFile);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void PathGetShortPath(char16* pszLongPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PathYetAnotherMakeUniqueName(char16* pszUniqueName, PWSTR pszPath, PWSTR pszShort, PWSTR pszFileSpec);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Win32DeleteFile(PWSTR pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SHRestricted(RESTRICTIONS rest);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SignalFileOpen(ref ITEMIDLIST pidl);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT AssocGetDetailsOfPropKey(ref IShellFolder psf, ref ITEMIDLIST pidl, in PROPERTYKEY pkey, out VARIANT pv, BOOL* pfFoundPropKey);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHStartNetConnectionDialogW(HWND hwnd, PWSTR pszRemoteName, uint32 dwType);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHDefExtractIconA(PSTR pszIconFile, int32 iIndex, uint32 uFlags, HICON* phiconLarge, HICON* phiconSmall, uint32 nIconSize);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHDefExtractIconW(PWSTR pszIconFile, int32 iIndex, uint32 uFlags, HICON* phiconLarge, HICON* phiconSmall, uint32 nIconSize);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHOpenWithDialog(HWND hwndParent, in OPENASINFO poainfo);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Shell_GetImageLists(HIMAGELIST* phiml, HIMAGELIST* phimlSmall);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 Shell_GetCachedImageIndex(PWSTR pwszIconPath, int32 iIconIndex, uint32 uIconFlags);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 Shell_GetCachedImageIndexA(PSTR pszIconPath, int32 iIconIndex, uint32 uIconFlags);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 Shell_GetCachedImageIndexW(PWSTR pszIconPath, int32 iIconIndex, uint32 uIconFlags);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHValidateUNC(HWND hwndOwner, PWSTR pszFile, VALIDATEUNC_OPTION fConnect);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SHSetInstanceExplorer(IUnknown* punk);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsUserAnAdmin();
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern LRESULT SHShellFolderView_Message(HWND hwndMain, uint32 uMsg, LPARAM lParam);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateShellFolderView(in SFV_CREATE pcsfv, out IShellView* ppsv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CDefFolderMenu_Create2(ITEMIDLIST* pidlFolder, HWND hwnd, uint32 cidl, ITEMIDLIST** apidl, IShellFolder* psf, LPFNDFMCALLBACK pfn, uint32 nKeys, HKEY* ahkeys, out IContextMenu* ppcm);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateDefaultContextMenu(in DEFCONTEXTMENU pdcm, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern IContextMenu* SHFind_InitMenuPopup(HMENU hmenu, HWND hwndOwner, uint32 idCmdFirst, uint32 idCmdLast);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateShellFolderViewEx(ref CSFV pcsfv, out IShellView* ppsv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SHGetSetSettings(SHELLSTATEA* lpss, SSF_MASK dwMask, BOOL bSet);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SHGetSettings(out SHELLFLAGSTATE psfs, uint32 dwMask);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHBindToParent(ref ITEMIDLIST pidl, in Guid riid, void** ppv, ITEMIDLIST** ppidlLast);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHBindToFolderIDListParent(IShellFolder* psfRoot, ref ITEMIDLIST pidl, in Guid riid, void** ppv, ITEMIDLIST** ppidlLast);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHBindToFolderIDListParentEx(IShellFolder* psfRoot, ref ITEMIDLIST pidl, IBindCtx* ppbc, in Guid riid, void** ppv, ITEMIDLIST** ppidlLast);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHBindToObject(IShellFolder* psf, ref ITEMIDLIST pidl, IBindCtx* pbc, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHParseDisplayName(PWSTR pszName, IBindCtx* pbc, out ITEMIDLIST* ppidl, uint32 sfgaoIn, uint32* psfgaoOut);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHPathPrepareForWriteA(HWND hwnd, IUnknown* punkEnableModless, PSTR pszPath, uint32 dwFlags);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHPathPrepareForWriteW(HWND hwnd, IUnknown* punkEnableModless, PWSTR pszPath, uint32 dwFlags);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateFileExtractIconW(PWSTR pszFile, uint32 dwFileAttributes, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHLimitInputEdit(HWND hwndEdit, ref IShellFolder psf);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetAttributesFromDataObject(IDataObject* pdo, uint32 dwAttributeMask, uint32* pdwAttributes, uint32* pcItems);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SHMapPIDLToSystemImageListIndex(ref IShellFolder pshf, ref ITEMIDLIST pidl, int32* piIndexSel);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCLSIDFromString(PWSTR psz, out Guid pclsid);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 PickIconDlg(HWND hwnd, char16* pszIconPath, uint32 cchIconPath, int32* piIconIndex);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT StgMakeUniqueName(ref IStorage pstgParent, PWSTR pszFileSpec, uint32 grfMode, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SHChangeNotifyRegisterThread(SCNRT_STATUS status);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void PathQualify(PWSTR psz);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PathIsSlowA(PSTR pszFile, uint32 dwAttr);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PathIsSlowW(PWSTR pszFile, uint32 dwAttr);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HPSXA SHCreatePropSheetExtArray(HKEY hKey, PWSTR pszSubKey, uint32 max_iface);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHOpenPropSheetW(PWSTR pszCaption, HKEY* ahkeys, uint32 ckeys, Guid* pclsidDefault, ref IDataObject pdtobj, IShellBrowser* psb, PWSTR pStartPage);
 	[Import("shdocvw.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SoftwareUpdateMessageBox(HWND hWnd, PWSTR pszDistUnit, uint32 dwFlags, SOFTDISTINFO* psdi);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHMultiFileProperties(ref IDataObject pdtobj, uint32 dwFlags);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHCreateQueryCancelAutoPlayMoniker(out IMoniker* ppmoniker);
 	[Import("shdocvw.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ImportPrivacySettings(PWSTR pszFilename, out BOOL pfParsePrivacyPreferences, out BOOL pfParsePerSiteRules);
@@ -15724,135 +15724,135 @@ static
 	public static extern HRESULT UnregisterScaleChangeEvent(uint dwCookie);
 	[Import("api-ms-win-shcore-scaling-l1-1-2.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetDpiForShellUIComponent(SHELL_UI_COMPONENT param0);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PWSTR* CommandLineToArgvW(PWSTR lpCmdLine, out int32 pNumArgs);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 DragQueryFileA(HDROP hDrop, uint32 iFile, uint8* lpszFile, uint32 cch);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 DragQueryFileW(HDROP hDrop, uint32 iFile, char16* lpszFile, uint32 cch);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL DragQueryPoint(HDROP hDrop, out POINT ppt);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void DragFinish(HDROP hDrop);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void DragAcceptFiles(HWND hWnd, BOOL fAccept);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HINSTANCE ShellExecuteA(HWND hwnd, PSTR lpOperation, PSTR lpFile, PSTR lpParameters, PSTR lpDirectory, int32 nShowCmd);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HINSTANCE ShellExecuteW(HWND hwnd, PWSTR lpOperation, PWSTR lpFile, PWSTR lpParameters, PWSTR lpDirectory, int32 nShowCmd);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HINSTANCE FindExecutableA(PSTR lpFile, PSTR lpDirectory, uint8* lpResult);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HINSTANCE FindExecutableW(PWSTR lpFile, PWSTR lpDirectory, char16* lpResult);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ShellAboutA(HWND hWnd, PSTR szApp, PSTR szOtherStuff, HICON hIcon);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ShellAboutW(HWND hWnd, PWSTR szApp, PWSTR szOtherStuff, HICON hIcon);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HICON DuplicateIcon(HINSTANCE hInst, HICON hIcon);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HICON ExtractAssociatedIconA(HINSTANCE hInst, uint8* pszIconPath, out uint16 piIcon);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HICON ExtractAssociatedIconW(HINSTANCE hInst, char16* pszIconPath, out uint16 piIcon);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HICON ExtractAssociatedIconExA(HINSTANCE hInst, uint8* pszIconPath, out uint16 piIconIndex, out uint16 piIconId);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HICON ExtractAssociatedIconExW(HINSTANCE hInst, char16* pszIconPath, out uint16 piIconIndex, out uint16 piIconId);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HICON ExtractIconA(HINSTANCE hInst, PSTR pszExeFileName, uint32 nIconIndex);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HICON ExtractIconW(HINSTANCE hInst, PWSTR pszExeFileName, uint32 nIconIndex);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint SHAppBarMessage(uint32 dwMessage, out APPBARDATA pData);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 DoEnvironmentSubstA(uint8* pszSrc, uint32 cchSrc);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 DoEnvironmentSubstW(char16* pszSrc, uint32 cchSrc);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 ExtractIconExA(PSTR lpszFile, int32 nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint32 nIcons);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 ExtractIconExW(PWSTR lpszFile, int32 nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint32 nIcons);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SHFileOperationA(out SHFILEOPSTRUCTA lpFileOp);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SHFileOperationW(out SHFILEOPSTRUCTW lpFileOp);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SHFreeNameMappings(HANDLE hNameMappings);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ShellExecuteExA(out SHELLEXECUTEINFOA pExecInfo);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ShellExecuteExW(out SHELLEXECUTEINFOW pExecInfo);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHCreateProcessAsUserW(out SHCREATEPROCESSINFOW pscpi);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHEvaluateSystemCommandTemplate(PWSTR pszCmdTemplate, out PWSTR ppszApplication, PWSTR* ppszCommandLine, PWSTR* ppszParameters);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT AssocCreateForClasses(ASSOCIATIONELEMENT* rgClasses, uint32 cClasses, in Guid riid, void** ppv);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHQueryRecycleBinA(PSTR pszRootPath, out SHQUERYRBINFO pSHQueryRBInfo);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHQueryRecycleBinW(PWSTR pszRootPath, out SHQUERYRBINFO pSHQueryRBInfo);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHEmptyRecycleBinA(HWND hwnd, PSTR pszRootPath, uint32 dwFlags);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHEmptyRecycleBinW(HWND hwnd, PWSTR pszRootPath, uint32 dwFlags);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHQueryUserNotificationState(out QUERY_USER_NOTIFICATION_STATE pquns);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Shell_NotifyIconA(NOTIFY_ICON_MESSAGE dwMessage, ref NOTIFYICONDATAA lpData);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL Shell_NotifyIconW(NOTIFY_ICON_MESSAGE dwMessage, ref NOTIFYICONDATAW lpData);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT Shell_NotifyIconGetRect(in NOTIFYICONIDENTIFIER identifier, out RECT iconLocation);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint SHGetFileInfoA(PSTR pszPath, FILE_FLAGS_AND_ATTRIBUTES dwFileAttributes, SHFILEINFOA* psfi, uint32 cbFileInfo, SHGFI_FLAGS uFlags);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint SHGetFileInfoW(PWSTR pszPath, FILE_FLAGS_AND_ATTRIBUTES dwFileAttributes, SHFILEINFOW* psfi, uint32 cbFileInfo, SHGFI_FLAGS uFlags);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetStockIconInfo(SHSTOCKICONID siid, uint32 uFlags, out SHSTOCKICONINFO psii);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHGetDiskFreeSpaceExA(PSTR pszDirectoryName, ULARGE_INTEGER* pulFreeBytesAvailableToCaller, ULARGE_INTEGER* pulTotalNumberOfBytes, ULARGE_INTEGER* pulTotalNumberOfFreeBytes);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHGetDiskFreeSpaceExW(PWSTR pszDirectoryName, ULARGE_INTEGER* pulFreeBytesAvailableToCaller, ULARGE_INTEGER* pulTotalNumberOfBytes, ULARGE_INTEGER* pulTotalNumberOfFreeBytes);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHGetNewLinkInfoA(PSTR pszLinkTo, PSTR pszDir, uint8* pszName, out BOOL pfMustCopy, uint32 uFlags);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHGetNewLinkInfoW(PWSTR pszLinkTo, PWSTR pszDir, char16* pszName, out BOOL pfMustCopy, uint32 uFlags);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHInvokePrinterCommandA(HWND hwnd, uint32 uAction, PSTR lpBuf1, PSTR lpBuf2, BOOL fModal);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHInvokePrinterCommandW(HWND hwnd, uint32 uAction, PWSTR lpBuf1, PWSTR lpBuf2, BOOL fModal);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHLoadNonloadedIconOverlayIdentifiers();
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHIsFileAvailableOffline(PWSTR pwszPath, uint32* pdwStatus);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHSetLocalizedName(PWSTR pszPath, PWSTR pszResModule, int32 idsRes);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHRemoveLocalizedName(PWSTR pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetLocalizedName(PWSTR pszPath, char16* pszResModule, uint32 cch, out int32 pidsRes);
 	[Import("shlwapi.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ShellMessageBoxA(HINSTANCE hAppInst, HWND hWnd, PSTR lpcText, PSTR lpcTitle, uint32 fuStyle);
 	[Import("shlwapi.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 ShellMessageBoxW(HINSTANCE hAppInst, HWND hWnd, PWSTR lpcText, PWSTR lpcTitle, uint32 fuStyle);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsLFNDriveA(PSTR pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsLFNDriveW(PWSTR pszPath);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHEnumerateUnreadMailAccountsW(HKEY hKeyUser, uint32 dwIndex, char16* pszMailAddress, int32 cchMailAddress);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetUnreadMailCountW(HKEY hKeyUser, PWSTR pszMailAddress, uint32* pdwCount, FILETIME* pFileTime, char16* pszShellExecuteCommand, int32 cchShellExecuteCommand);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHSetUnreadMailCountW(PWSTR pszMailAddress, uint32 dwCount, PWSTR pszShellExecuteCommand);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SHTestTokenMembership(HANDLE hToken, uint32 ulRID);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetImageList(int32 iImageList, in Guid riid, void** ppvObj);
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InitNetworkAddressControl();
-	[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("shell32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SHGetDriveMedia(PWSTR pszDrive, out uint32 pdwMediaContent);
 	[Import("shlwapi.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PSTR StrChrA(PSTR pszStart, uint16 wMatch);

@@ -181,25 +181,25 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SaferGetPolicyInformation(uint32 dwScopeId, SAFER_POLICY_INFO_CLASS SaferPolicyInfoClass, uint32 InfoBufferSize, void* InfoBuffer, out uint32 InfoBufferRetSize, void* lpReserved);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SaferSetPolicyInformation(uint32 dwScopeId, SAFER_POLICY_INFO_CLASS SaferPolicyInfoClass, uint32 InfoBufferSize, void* InfoBuffer, void* lpReserved);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SaferCreateLevel(uint32 dwScopeId, uint32 dwLevelId, uint32 OpenFlags, out SAFER_LEVEL_HANDLE pLevelHandle, void* lpReserved);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SaferCloseLevel(SAFER_LEVEL_HANDLE hLevelHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SaferIdentifyLevel(uint32 dwNumProperties, SAFER_CODE_PROPERTIES_V2* pCodeProperties, out SAFER_LEVEL_HANDLE pLevelHandle, void* lpReserved);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SaferComputeTokenFromLevel(SAFER_LEVEL_HANDLE LevelHandle, HANDLE InAccessToken, out HANDLE OutAccessToken, SAFER_COMPUTE_TOKEN_FROM_LEVEL_FLAGS dwFlags, void* lpReserved);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SaferGetLevelInformation(SAFER_LEVEL_HANDLE LevelHandle, SAFER_OBJECT_INFO_CLASS dwInfoType, void* lpQueryBuffer, uint32 dwInBufferSize, out uint32 lpdwOutBufferSize);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SaferSetLevelInformation(SAFER_LEVEL_HANDLE LevelHandle, SAFER_OBJECT_INFO_CLASS dwInfoType, void* lpQueryBuffer, uint32 dwInBufferSize);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SaferRecordEventLogEntry(SAFER_LEVEL_HANDLE hLevel, PWSTR szTargetPath, void* lpReserved);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SaferiIsExecutableFileType(PWSTR szFullPathname, BOOLEAN bFromShellExecute);
 	#endregion
 }

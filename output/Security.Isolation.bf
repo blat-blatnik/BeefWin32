@@ -40,7 +40,7 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetAppContainerNamedObjectPath(HANDLE Token, PSID AppContainerSid, uint32 ObjectPathLength, char16* ObjectPath, out uint32 ReturnLength);
 	[Import("api-ms-win-security-isolatedcontainer-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT IsProcessInWDAGContainer(void* Reserved, out BOOL isProcessInWDAGContainer);

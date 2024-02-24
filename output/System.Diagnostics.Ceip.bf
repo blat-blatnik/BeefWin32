@@ -6,7 +6,7 @@ using Win32.Foundation;
 static
 {
 	#region Functions
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CeipIsOptedIn();
 	#endregion
 }

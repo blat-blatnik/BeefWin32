@@ -6174,7 +6174,7 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UnregisterDeviceNotification(void* Handle);
 	#endregion
 }

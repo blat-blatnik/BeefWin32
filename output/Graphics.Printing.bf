@@ -6127,29 +6127,29 @@ static
 	public static extern HRESULT UnRegisterForPrintAsyncNotifications(HANDLE param0);
 	[Import("winspool.drv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreatePrintAsyncNotifyChannel(PWSTR pszName, ref Guid pNotificationType, PrintAsyncNotifyUserFilter eUserFilter, PrintAsyncNotifyConversationStyle eConversationStyle, IPrintAsyncNotifyCallback* pCallback, out IPrintAsyncNotifyChannel* ppIAsynchNotification);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE GdiGetSpoolFileHandle(PWSTR pwszPrinterName, out DEVMODEW pDevmode, PWSTR pwszDocName);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GdiDeleteSpoolFileHandle(HANDLE SpoolFileHandle);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GdiGetPageCount(HANDLE SpoolFileHandle);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HDC GdiGetDC(HANDLE SpoolFileHandle);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE GdiGetPageHandle(HANDLE SpoolFileHandle, uint32 Page, out uint32 pdwPageType);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GdiStartDocEMF(HANDLE SpoolFileHandle, out DOCINFOW pDocInfo);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GdiStartPageEMF(HANDLE SpoolFileHandle);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GdiPlayPageEMF(HANDLE SpoolFileHandle, HANDLE hemf, out RECT prectDocument, out RECT prectBorder, out RECT prectClip);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GdiEndPageEMF(HANDLE SpoolFileHandle, uint32 dwOptimization);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GdiEndDocEMF(HANDLE SpoolFileHandle);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GdiGetDevmodeForPage(HANDLE SpoolFileHandle, uint32 dwPageNumber, out DEVMODEW* pCurrDM, out DEVMODEW* pLastDM);
-	[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("gdi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GdiResetDCEMF(HANDLE SpoolFileHandle, out DEVMODEW pCurrDM);
 	[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetJobAttributes(PWSTR pPrinterName, ref DEVMODEW pDevmode, out ATTRIBUTE_INFO_3 pAttributeInfo);

@@ -820,9 +820,9 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CoDecodeProxy(uint32 dwClientPid, uint64 ui64ProxyAddress, out ServerInformation pServerInformation);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT RoGetAgileReference(AgileReferenceOptions options, in Guid riid, ref IUnknown pUnk, out IAgileReference* ppAgileReference);
 	[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 HSTRING_UserSize(ref uint32 param0, uint32 param1, ref HSTRING param2);

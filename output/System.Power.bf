@@ -1095,31 +1095,31 @@ static
 	public static extern BOOLEAN DevicePowerClose();
 	[Import("powrprof.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PowerReportThermalEvent(ref THERMAL_EVENT Event);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HPOWERNOTIFY RegisterPowerSettingNotification(HANDLE hRecipient, in Guid PowerSettingGuid, uint32 Flags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UnregisterPowerSettingNotification(HPOWERNOTIFY Handle);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HPOWERNOTIFY RegisterSuspendResumeNotification(HANDLE hRecipient, uint32 Flags);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL UnregisterSuspendResumeNotification(HPOWERNOTIFY Handle);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL RequestWakeupLatency(LATENCY_TIME latency);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsSystemResumeAutomatic();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE PowerCreateRequest(ref REASON_CONTEXT Context);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PowerSetRequest(HANDLE PowerRequest, POWER_REQUEST_TYPE RequestType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL PowerClearRequest(HANDLE PowerRequest, POWER_REQUEST_TYPE RequestType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetDevicePowerState(HANDLE hDevice, out BOOL pfOn);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetSystemPowerState(BOOL fSuspend, BOOL fForce);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL GetSystemPowerStatus(out SYSTEM_POWER_STATUS lpSystemPowerStatus);
 	#endregion
 }

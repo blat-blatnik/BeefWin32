@@ -109,33 +109,33 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InitiateSystemShutdownA(PSTR lpMachineName, PSTR lpMessage, uint32 dwTimeout, BOOL bForceAppsClosed, BOOL bRebootAfterShutdown);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InitiateSystemShutdownW(PWSTR lpMachineName, PWSTR lpMessage, uint32 dwTimeout, BOOL bForceAppsClosed, BOOL bRebootAfterShutdown);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AbortSystemShutdownA(PSTR lpMachineName);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL AbortSystemShutdownW(PWSTR lpMachineName);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InitiateSystemShutdownExA(PSTR lpMachineName, PSTR lpMessage, uint32 dwTimeout, BOOL bForceAppsClosed, BOOL bRebootAfterShutdown, SHUTDOWN_REASON dwReason);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InitiateSystemShutdownExW(PWSTR lpMachineName, PWSTR lpMessage, uint32 dwTimeout, BOOL bForceAppsClosed, BOOL bRebootAfterShutdown, SHUTDOWN_REASON dwReason);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 InitiateShutdownA(PSTR lpMachineName, PSTR lpMessage, uint32 dwGracePeriod, SHUTDOWN_FLAGS dwShutdownFlags, SHUTDOWN_REASON dwReason);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 InitiateShutdownW(PWSTR lpMachineName, PWSTR lpMessage, uint32 dwGracePeriod, SHUTDOWN_FLAGS dwShutdownFlags, SHUTDOWN_REASON dwReason);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CheckForHiberboot(out BOOLEAN pHiberboot, BOOLEAN bClearFlag);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ExitWindowsEx(EXIT_WINDOWS_FLAGS uFlags, SHUTDOWN_REASON dwReason);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL LockWorkStation();
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ShutdownBlockReasonCreate(HWND hWnd, PWSTR pwszReason);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ShutdownBlockReasonQuery(HWND hWnd, char16* pwszBuff, out uint32 pcchBuff);
-	[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("user32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ShutdownBlockReasonDestroy(HWND hWnd);
 	#endregion
 }

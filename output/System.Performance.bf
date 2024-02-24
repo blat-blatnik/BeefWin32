@@ -2532,9 +2532,9 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL QueryPerformanceCounter(out LARGE_INTEGER lpPerformanceCount);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL QueryPerformanceFrequency(out LARGE_INTEGER lpFrequency);
 	[Import("loadperf.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 InstallPerfDllW(PWSTR szComputerName, PWSTR lpIniFile, uint dwFlags);
@@ -2560,51 +2560,51 @@ static
 	public static extern uint32 BackupPerfRegistryToFileW(PWSTR szFileName, PWSTR szCommentString);
 	[Import("loadperf.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 RestorePerfRegistryFromFileW(PWSTR szFileName, PWSTR szLangId);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfStartProvider(ref Guid ProviderGuid, PERFLIBREQUEST ControlCallback, out PerfProviderHandle phProvider);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfStartProviderEx(ref Guid ProviderGuid, PERF_PROVIDER_CONTEXT* ProviderContext, out PerfProviderHandle Provider);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfStopProvider(PerfProviderHandle ProviderHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfSetCounterSetInfo(HANDLE ProviderHandle, out PERF_COUNTERSET_INFO Template, uint32 TemplateSize);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PERF_COUNTERSET_INSTANCE* PerfCreateInstance(PerfProviderHandle ProviderHandle, in Guid CounterSetGuid, PWSTR Name, uint32 Id);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfDeleteInstance(PerfProviderHandle Provider, ref PERF_COUNTERSET_INSTANCE InstanceBlock);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PERF_COUNTERSET_INSTANCE* PerfQueryInstance(HANDLE ProviderHandle, in Guid CounterSetGuid, PWSTR Name, uint32 Id);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfSetCounterRefValue(HANDLE Provider, out PERF_COUNTERSET_INSTANCE Instance, uint32 CounterId, void* Address);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfSetULongCounterValue(HANDLE Provider, out PERF_COUNTERSET_INSTANCE Instance, uint32 CounterId, uint32 Value);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfSetULongLongCounterValue(HANDLE Provider, out PERF_COUNTERSET_INSTANCE Instance, uint32 CounterId, uint64 Value);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfIncrementULongCounterValue(HANDLE Provider, out PERF_COUNTERSET_INSTANCE Instance, uint32 CounterId, uint32 Value);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfIncrementULongLongCounterValue(HANDLE Provider, out PERF_COUNTERSET_INSTANCE Instance, uint32 CounterId, uint64 Value);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfDecrementULongCounterValue(HANDLE Provider, out PERF_COUNTERSET_INSTANCE Instance, uint32 CounterId, uint32 Value);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfDecrementULongLongCounterValue(HANDLE Provider, out PERF_COUNTERSET_INSTANCE Instance, uint32 CounterId, uint64 Value);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfEnumerateCounterSet(PWSTR szMachine, Guid* pCounterSetIds, uint32 cCounterSetIds, out uint32 pcCounterSetIdsActual);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfEnumerateCounterSetInstances(PWSTR szMachine, in Guid pCounterSetId, PERF_INSTANCE_HEADER* pInstances, uint32 cbInstances, out uint32 pcbInstancesActual);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfQueryCounterSetRegistrationInfo(PWSTR szMachine, in Guid pCounterSetId, PerfRegInfoType requestCode, uint32 requestLangId, uint8* pbRegInfo, uint32 cbRegInfo, out uint32 pcbRegInfoActual);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfOpenQueryHandle(PWSTR szMachine, out PerfQueryHandle phQuery);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfCloseQueryHandle(HANDLE hQuery);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfQueryCounterInfo(PerfQueryHandle hQuery, PERF_COUNTER_IDENTIFIER* pCounters, uint32 cbCounters, out uint32 pcbCountersActual);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfQueryCounterData(PerfQueryHandle hQuery, PERF_DATA_HEADER* pCounterBlock, uint32 cbCounterBlock, out uint32 pcbCounterBlockActual);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfAddCounters(PerfQueryHandle hQuery, ref PERF_COUNTER_IDENTIFIER pCounters, uint32 cbCounters);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 PerfDeleteCounters(PerfQueryHandle hQuery, ref PERF_COUNTER_IDENTIFIER pCounters, uint32 cbCounters);
 	[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 PdhGetDllVersion(PDH_DLL_VERSION* lpdwVersion);

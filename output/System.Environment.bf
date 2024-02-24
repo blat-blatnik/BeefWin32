@@ -175,43 +175,43 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetEnvironmentStringsW(PWSTR NewEnvironment);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PSTR GetCommandLineA();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PWSTR GetCommandLineW();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PSTR GetEnvironmentStrings();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern PWSTR GetEnvironmentStringsW();
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FreeEnvironmentStringsA(PSTR penv);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL FreeEnvironmentStringsW(PWSTR penv);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetEnvironmentVariableA(PSTR lpName, uint8* lpBuffer, uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetEnvironmentVariableW(PWSTR lpName, char16* lpBuffer, uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetEnvironmentVariableA(PSTR lpName, PSTR lpValue);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetEnvironmentVariableW(PWSTR lpName, PWSTR lpValue);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 ExpandEnvironmentStringsA(PSTR lpSrc, uint8* lpDst, uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 ExpandEnvironmentStringsW(PWSTR lpSrc, char16* lpDst, uint32 nSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetCurrentDirectoryA(PSTR lpPathName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL SetCurrentDirectoryW(PWSTR lpPathName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetCurrentDirectoryA(uint32 nBufferLength, uint8* lpBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetCurrentDirectoryW(uint32 nBufferLength, char16* lpBuffer);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL NeedCurrentDirectoryForExePathA(PSTR ExeName);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL NeedCurrentDirectoryForExePathW(PWSTR ExeName);
 	[Import("userenv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CreateEnvironmentBlock(void** lpEnvironment, HANDLE hToken, BOOL bInherit);
@@ -221,13 +221,13 @@ static
 	public static extern BOOL ExpandEnvironmentStringsForUserA(HANDLE hToken, PSTR lpSrc, uint8* lpDest, uint32 dwSize);
 	[Import("userenv.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ExpandEnvironmentStringsForUserW(HANDLE hToken, PWSTR lpSrc, char16* lpDest, uint32 dwSize);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsEnclaveTypeSupported(uint32 flEnclaveType);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void* CreateEnclave(HANDLE hProcess, void* lpAddress, uint dwSize, uint dwInitialCommitment, uint32 flEnclaveType, void* lpEnclaveInformation, uint32 dwInfoLength, uint32* lpEnclaveError);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL LoadEnclaveData(HANDLE hProcess, void* lpAddress, void* lpBuffer, uint nSize, uint32 flProtect, void* lpPageInformation, uint32 dwInfoLength, out uint lpNumberOfBytesWritten, uint32* lpEnclaveError);
-	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("kernel32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL InitializeEnclave(HANDLE hProcess, void* lpAddress, void* lpEnclaveInformation, uint32 dwInfoLength, uint32* lpEnclaveError);
 	[Import("api-ms-win-core-enclave-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL LoadEnclaveImageA(void* lpEnclaveAddress, PSTR lpImageName);

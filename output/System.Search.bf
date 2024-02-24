@@ -8998,123 +8998,123 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLAllocConnect(void* EnvironmentHandle, void** ConnectionHandle);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLAllocEnv(void** EnvironmentHandle);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLAllocHandle(int16 HandleType, void* InputHandle, void** OutputHandle);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLAllocStmt(void* ConnectionHandle, void** StatementHandle);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLBindCol(void* StatementHandle, uint16 ColumnNumber, int16 TargetType, void* TargetValue, int64 BufferLength, int64* StrLen_or_Ind);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLBindParam(void* StatementHandle, uint16 ParameterNumber, int16 ValueType, int16 ParameterType, uint64 LengthPrecision, int16 ParameterScale, void* ParameterValue, out int64 StrLen_or_Ind);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLCancel(void* StatementHandle);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLCancelHandle(int16 HandleType, void* InputHandle);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLCloseCursor(void* StatementHandle);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLColAttribute(void* StatementHandle, uint16 ColumnNumber, uint16 FieldIdentifier, void* CharacterAttribute, int16 BufferLength, int16* StringLength, int64* NumericAttribute);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLColumns(void* StatementHandle, uint8* CatalogName, int16 NameLength1, uint8* SchemaName, int16 NameLength2, uint8* TableName, int16 NameLength3, uint8* ColumnName, int16 NameLength4);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLCompleteAsync(int16 HandleType, void* Handle, out int16 AsyncRetCodePtr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLConnect(void* ConnectionHandle, uint8* ServerName, int16 NameLength1, uint8* UserName, int16 NameLength2, uint8* Authentication, int16 NameLength3);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLCopyDesc(void* SourceDescHandle, void* TargetDescHandle);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLDataSources(void* EnvironmentHandle, uint16 Direction, uint8* ServerName, int16 BufferLength1, int16* NameLength1Ptr, uint8* Description, int16 BufferLength2, int16* NameLength2Ptr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLDescribeCol(void* StatementHandle, uint16 ColumnNumber, uint8* ColumnName, int16 BufferLength, int16* NameLength, int16* DataType, uint64* ColumnSize, int16* DecimalDigits, int16* Nullable);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLDisconnect(void* ConnectionHandle);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLEndTran(int16 HandleType, void* Handle, int16 CompletionType);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLError(void* EnvironmentHandle, void* ConnectionHandle, void* StatementHandle, uint8* Sqlstate, int32* NativeError, uint8* MessageText, int16 BufferLength, int16* TextLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLExecDirect(void* StatementHandle, uint8* StatementText, int32 TextLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLExecute(void* StatementHandle);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLFetch(void* StatementHandle);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLFetchScroll(void* StatementHandle, int16 FetchOrientation, int64 FetchOffset);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLFreeConnect(void* ConnectionHandle);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLFreeEnv(void* EnvironmentHandle);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLFreeHandle(int16 HandleType, void* Handle);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLFreeStmt(void* StatementHandle, uint16 Option);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetConnectAttr(void* ConnectionHandle, int32 Attribute, void* Value, int32 BufferLength, int32* StringLengthPtr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetConnectOption(void* ConnectionHandle, uint16 Option, void* Value);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetCursorName(void* StatementHandle, uint8* CursorName, int16 BufferLength, int16* NameLengthPtr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetData(void* StatementHandle, uint16 ColumnNumber, int16 TargetType, void* TargetValue, int64 BufferLength, int64* StrLen_or_IndPtr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetDescField(void* DescriptorHandle, int16 RecNumber, int16 FieldIdentifier, void* Value, int32 BufferLength, int32* StringLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetDescRec(void* DescriptorHandle, int16 RecNumber, uint8* Name, int16 BufferLength, int16* StringLengthPtr, int16* TypePtr, int16* SubTypePtr, int64* LengthPtr, int16* PrecisionPtr, int16* ScalePtr, int16* NullablePtr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetDiagField(int16 HandleType, void* Handle, int16 RecNumber, int16 DiagIdentifier, void* DiagInfo, int16 BufferLength, int16* StringLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetDiagRec(int16 HandleType, void* Handle, int16 RecNumber, uint8* Sqlstate, out int32 NativeError, uint8* MessageText, int16 BufferLength, int16* TextLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetEnvAttr(void* EnvironmentHandle, int32 Attribute, void* Value, int32 BufferLength, int32* StringLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetFunctions(void* ConnectionHandle, uint16 FunctionId, uint16* Supported);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetInfo(void* ConnectionHandle, uint16 InfoType, void* InfoValue, int16 BufferLength, int16* StringLengthPtr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetStmtAttr(void* StatementHandle, int32 Attribute, void* Value, int32 BufferLength, int32* StringLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetStmtOption(void* StatementHandle, uint16 Option, void* Value);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetTypeInfo(void* StatementHandle, int16 DataType);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLNumResultCols(void* StatementHandle, out int16 ColumnCount);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLParamData(void* StatementHandle, void** Value);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLPrepare(void* StatementHandle, uint8* StatementText, int32 TextLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLPutData(void* StatementHandle, void* Data, int64 StrLen_or_Ind);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLRowCount(void* StatementHandle, out int64 RowCount);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetConnectAttr(void* ConnectionHandle, int32 Attribute, void* Value, int32 StringLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetConnectOption(void* ConnectionHandle, uint16 Option, uint64 Value);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetCursorName(void* StatementHandle, uint8* CursorName, int16 NameLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetDescField(void* DescriptorHandle, int16 RecNumber, int16 FieldIdentifier, void* Value, int32 BufferLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetDescRec(void* DescriptorHandle, int16 RecNumber, int16 Type, int16 SubType, int64 Length, int16 Precision, int16 Scale, void* Data, int64* StringLength, int64* Indicator);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetEnvAttr(void* EnvironmentHandle, int32 Attribute, void* Value, int32 StringLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetParam(void* StatementHandle, uint16 ParameterNumber, int16 ValueType, int16 ParameterType, uint64 LengthPrecision, int16 ParameterScale, void* ParameterValue, out int64 StrLen_or_Ind);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetStmtAttr(void* StatementHandle, int32 Attribute, void* Value, int32 StringLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetStmtOption(void* StatementHandle, uint16 Option, uint64 Value);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSpecialColumns(void* StatementHandle, uint16 IdentifierType, uint8* CatalogName, int16 NameLength1, uint8* SchemaName, int16 NameLength2, uint8* TableName, int16 NameLength3, uint16 Scope, uint16 Nullable);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLStatistics(void* StatementHandle, uint8* CatalogName, int16 NameLength1, uint8* SchemaName, int16 NameLength2, uint8* TableName, int16 NameLength3, uint16 Unique, uint16 Reserved);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLTables(void* StatementHandle, uint8* CatalogName, int16 NameLength1, uint8* SchemaName, int16 NameLength2, uint8* TableName, int16 NameLength3, uint8* TableType, int16 NameLength4);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLTransact(void* EnvironmentHandle, void* ConnectionHandle, uint16 CompletionType);
 	[Import("odbcbcp.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 bcp_batch(void* param0);
@@ -9170,195 +9170,195 @@ static
 	public static extern int16 SQLGetNextEnumeration(HANDLE hEnumHandle, out uint8 prgEnumData, out int32 piEnumLength);
 	[Import("odbcbcp.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLCloseEnumServers(HANDLE hEnumHandle);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLDriverConnect(void* hdbc, int hwnd, uint8* szConnStrIn, int16 cchConnStrIn, uint8* szConnStrOut, int16 cchConnStrOutMax, int16* pcchConnStrOut, uint16 fDriverCompletion);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLBrowseConnect(void* hdbc, uint8* szConnStrIn, int16 cchConnStrIn, uint8* szConnStrOut, int16 cchConnStrOutMax, int16* pcchConnStrOut);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLBulkOperations(void* StatementHandle, int16 Operation);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLColAttributes(void* hstmt, uint16 icol, uint16 fDescType, void* rgbDesc, int16 cbDescMax, out int16 pcbDesc, out int64 pfDesc);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLColumnPrivileges(void* hstmt, uint8* szCatalogName, int16 cchCatalogName, uint8* szSchemaName, int16 cchSchemaName, uint8* szTableName, int16 cchTableName, uint8* szColumnName, int16 cchColumnName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLDescribeParam(void* hstmt, uint16 ipar, int16* pfSqlType, uint64* pcbParamDef, int16* pibScale, int16* pfNullable);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLExtendedFetch(void* hstmt, uint16 fFetchType, int64 irow, uint64* pcrow, uint16* rgfRowStatus);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLForeignKeys(void* hstmt, uint8* szPkCatalogName, int16 cchPkCatalogName, uint8* szPkSchemaName, int16 cchPkSchemaName, uint8* szPkTableName, int16 cchPkTableName, uint8* szFkCatalogName, int16 cchFkCatalogName, uint8* szFkSchemaName, int16 cchFkSchemaName, uint8* szFkTableName, int16 cchFkTableName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLMoreResults(void* hstmt);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLNativeSql(void* hdbc, uint8* szSqlStrIn, int32 cchSqlStrIn, uint8* szSqlStr, int32 cchSqlStrMax, out int32 pcbSqlStr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLNumParams(void* hstmt, int16* pcpar);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLParamOptions(void* hstmt, uint64 crow, out uint64 pirow);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLPrimaryKeys(void* hstmt, uint8* szCatalogName, int16 cchCatalogName, uint8* szSchemaName, int16 cchSchemaName, uint8* szTableName, int16 cchTableName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLProcedureColumns(void* hstmt, uint8* szCatalogName, int16 cchCatalogName, uint8* szSchemaName, int16 cchSchemaName, uint8* szProcName, int16 cchProcName, uint8* szColumnName, int16 cchColumnName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLProcedures(void* hstmt, uint8* szCatalogName, int16 cchCatalogName, uint8* szSchemaName, int16 cchSchemaName, uint8* szProcName, int16 cchProcName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetPos(void* hstmt, uint64 irow, uint16 fOption, uint16 fLock);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLTablePrivileges(void* hstmt, uint8* szCatalogName, int16 cchCatalogName, uint8* szSchemaName, int16 cchSchemaName, uint8* szTableName, int16 cchTableName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLDrivers(void* henv, uint16 fDirection, uint8* szDriverDesc, int16 cchDriverDescMax, int16* pcchDriverDesc, uint8* szDriverAttributes, int16 cchDrvrAttrMax, int16* pcchDrvrAttr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLBindParameter(void* hstmt, uint16 ipar, int16 fParamType, int16 fCType, int16 fSqlType, uint64 cbColDef, int16 ibScale, void* rgbValue, int64 cbValueMax, out int64 pcbValue);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLAllocHandleStd(int16 fHandleType, void* hInput, void** phOutput);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetScrollOptions(void* hstmt, uint16 fConcurrency, int64 crowKeyset, uint16 crowRowset);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL ODBCSetTryWaitValue(uint32 dwValue);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 ODBCGetTryWaitValue();
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLColAttributeW(void* hstmt, uint16 iCol, uint16 iField, void* pCharAttr, int16 cbDescMax, int16* pcbCharAttr, int64* pNumAttr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLColAttributesW(void* hstmt, uint16 icol, uint16 fDescType, void* rgbDesc, int16 cbDescMax, int16* pcbDesc, int64* pfDesc);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLConnectW(void* hdbc, uint16* szDSN, int16 cchDSN, uint16* szUID, int16 cchUID, uint16* szAuthStr, int16 cchAuthStr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLDescribeColW(void* hstmt, uint16 icol, uint16* szColName, int16 cchColNameMax, int16* pcchColName, int16* pfSqlType, uint64* pcbColDef, int16* pibScale, int16* pfNullable);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLErrorW(void* henv, void* hdbc, void* hstmt, uint16* wszSqlState, int32* pfNativeError, uint16* wszErrorMsg, int16 cchErrorMsgMax, int16* pcchErrorMsg);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLExecDirectW(void* hstmt, uint16* szSqlStr, int32 TextLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetConnectAttrW(void* hdbc, int32 fAttribute, void* rgbValue, int32 cbValueMax, int32* pcbValue);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetCursorNameW(void* hstmt, uint16* szCursor, int16 cchCursorMax, int16* pcchCursor);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetDescFieldW(void* DescriptorHandle, int16 RecNumber, int16 FieldIdentifier, void* Value, int32 BufferLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetDescFieldW(void* hdesc, int16 iRecord, int16 iField, void* rgbValue, int32 cbBufferLength, int32* StringLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetDescRecW(void* hdesc, int16 iRecord, uint16* szName, int16 cchNameMax, int16* pcchName, int16* pfType, int16* pfSubType, int64* pLength, int16* pPrecision, int16* pScale, int16* pNullable);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetDiagFieldW(int16 fHandleType, void* handle, int16 iRecord, int16 fDiagField, void* rgbDiagInfo, int16 cbBufferLength, int16* pcbStringLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetDiagRecW(int16 fHandleType, void* handle, int16 iRecord, uint16* szSqlState, out int32 pfNativeError, uint16* szErrorMsg, int16 cchErrorMsgMax, out int16 pcchErrorMsg);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLPrepareW(void* hstmt, uint16* szSqlStr, int32 cchSqlStr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetConnectAttrW(void* hdbc, int32 fAttribute, void* rgbValue, int32 cbValue);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetCursorNameW(void* hstmt, uint16* szCursor, int16 cchCursor);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLColumnsW(void* hstmt, uint16* szCatalogName, int16 cchCatalogName, uint16* szSchemaName, int16 cchSchemaName, uint16* szTableName, int16 cchTableName, uint16* szColumnName, int16 cchColumnName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetConnectOptionW(void* hdbc, uint16 fOption, void* pvParam);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetInfoW(void* hdbc, uint16 fInfoType, void* rgbInfoValue, int16 cbInfoValueMax, int16* pcbInfoValue);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetTypeInfoW(void* StatementHandle, int16 DataType);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetConnectOptionW(void* hdbc, uint16 fOption, uint64 vParam);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSpecialColumnsW(void* hstmt, uint16 fColType, uint16* szCatalogName, int16 cchCatalogName, uint16* szSchemaName, int16 cchSchemaName, uint16* szTableName, int16 cchTableName, uint16 fScope, uint16 fNullable);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLStatisticsW(void* hstmt, uint16* szCatalogName, int16 cchCatalogName, uint16* szSchemaName, int16 cchSchemaName, uint16* szTableName, int16 cchTableName, uint16 fUnique, uint16 fAccuracy);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLTablesW(void* hstmt, uint16* szCatalogName, int16 cchCatalogName, uint16* szSchemaName, int16 cchSchemaName, uint16* szTableName, int16 cchTableName, uint16* szTableType, int16 cchTableType);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLDataSourcesW(void* henv, uint16 fDirection, uint16* szDSN, int16 cchDSNMax, int16* pcchDSN, uint16* wszDescription, int16 cchDescriptionMax, int16* pcchDescription);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLDriverConnectW(void* hdbc, int hwnd, uint16* szConnStrIn, int16 cchConnStrIn, uint16* szConnStrOut, int16 cchConnStrOutMax, int16* pcchConnStrOut, uint16 fDriverCompletion);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLBrowseConnectW(void* hdbc, uint16* szConnStrIn, int16 cchConnStrIn, uint16* szConnStrOut, int16 cchConnStrOutMax, int16* pcchConnStrOut);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLColumnPrivilegesW(void* hstmt, uint16* szCatalogName, int16 cchCatalogName, uint16* szSchemaName, int16 cchSchemaName, uint16* szTableName, int16 cchTableName, uint16* szColumnName, int16 cchColumnName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetStmtAttrW(void* hstmt, int32 fAttribute, void* rgbValue, int32 cbValueMax, out int32 pcbValue);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetStmtAttrW(void* hstmt, int32 fAttribute, void* rgbValue, int32 cbValueMax);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLForeignKeysW(void* hstmt, uint16* szPkCatalogName, int16 cchPkCatalogName, uint16* szPkSchemaName, int16 cchPkSchemaName, uint16* szPkTableName, int16 cchPkTableName, uint16* szFkCatalogName, int16 cchFkCatalogName, uint16* szFkSchemaName, int16 cchFkSchemaName, uint16* szFkTableName, int16 cchFkTableName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLNativeSqlW(void* hdbc, uint16* szSqlStrIn, int32 cchSqlStrIn, uint16* szSqlStr, int32 cchSqlStrMax, out int32 pcchSqlStr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLPrimaryKeysW(void* hstmt, uint16* szCatalogName, int16 cchCatalogName, uint16* szSchemaName, int16 cchSchemaName, uint16* szTableName, int16 cchTableName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLProcedureColumnsW(void* hstmt, uint16* szCatalogName, int16 cchCatalogName, uint16* szSchemaName, int16 cchSchemaName, uint16* szProcName, int16 cchProcName, uint16* szColumnName, int16 cchColumnName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLProceduresW(void* hstmt, uint16* szCatalogName, int16 cchCatalogName, uint16* szSchemaName, int16 cchSchemaName, uint16* szProcName, int16 cchProcName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLTablePrivilegesW(void* hstmt, uint16* szCatalogName, int16 cchCatalogName, uint16* szSchemaName, int16 cchSchemaName, uint16* szTableName, int16 cchTableName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLDriversW(void* henv, uint16 fDirection, uint16* szDriverDesc, int16 cchDriverDescMax, int16* pcchDriverDesc, uint16* szDriverAttributes, int16 cchDrvrAttrMax, int16* pcchDrvrAttr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLColAttributeA(void* hstmt, int16 iCol, int16 iField, void* pCharAttr, int16 cbCharAttrMax, int16* pcbCharAttr, int64* pNumAttr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLColAttributesA(void* hstmt, uint16 icol, uint16 fDescType, void* rgbDesc, int16 cbDescMax, int16* pcbDesc, int64* pfDesc);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLConnectA(void* hdbc, uint8* szDSN, int16 cbDSN, uint8* szUID, int16 cbUID, uint8* szAuthStr, int16 cbAuthStr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLDescribeColA(void* hstmt, uint16 icol, uint8* szColName, int16 cbColNameMax, int16* pcbColName, int16* pfSqlType, uint64* pcbColDef, int16* pibScale, int16* pfNullable);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLErrorA(void* henv, void* hdbc, void* hstmt, out uint8 szSqlState, int32* pfNativeError, uint8* szErrorMsg, int16 cbErrorMsgMax, int16* pcbErrorMsg);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLExecDirectA(void* hstmt, uint8* szSqlStr, int32 cbSqlStr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetConnectAttrA(void* hdbc, int32 fAttribute, void* rgbValue, int32 cbValueMax, int32* pcbValue);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetCursorNameA(void* hstmt, uint8* szCursor, int16 cbCursorMax, int16* pcbCursor);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetDescFieldA(void* hdesc, int16 iRecord, int16 iField, void* rgbValue, int32 cbBufferLength, int32* StringLength);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetDescRecA(void* hdesc, int16 iRecord, uint8* szName, int16 cbNameMax, int16* pcbName, int16* pfType, int16* pfSubType, int64* pLength, int16* pPrecision, int16* pScale, int16* pNullable);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetDiagFieldA(int16 fHandleType, void* handle, int16 iRecord, int16 fDiagField, void* rgbDiagInfo, int16 cbDiagInfoMax, int16* pcbDiagInfo);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetDiagRecA(int16 fHandleType, void* handle, int16 iRecord, uint8* szSqlState, out int32 pfNativeError, uint8* szErrorMsg, int16 cbErrorMsgMax, out int16 pcbErrorMsg);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetStmtAttrA(void* hstmt, int32 fAttribute, void* rgbValue, int32 cbValueMax, out int32 pcbValue);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetTypeInfoA(void* StatementHandle, int16 DataType);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLPrepareA(void* hstmt, uint8* szSqlStr, int32 cbSqlStr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetConnectAttrA(void* hdbc, int32 fAttribute, void* rgbValue, int32 cbValue);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetCursorNameA(void* hstmt, uint8* szCursor, int16 cbCursor);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLColumnsA(void* hstmt, uint8* szCatalogName, int16 cbCatalogName, uint8* szSchemaName, int16 cbSchemaName, uint8* szTableName, int16 cbTableName, uint8* szColumnName, int16 cbColumnName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetConnectOptionA(void* hdbc, uint16 fOption, void* pvParam);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLGetInfoA(void* hdbc, uint16 fInfoType, void* rgbInfoValue, int16 cbInfoValueMax, int16* pcbInfoValue);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSetConnectOptionA(void* hdbc, uint16 fOption, uint64 vParam);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLSpecialColumnsA(void* hstmt, uint16 fColType, uint8* szCatalogName, int16 cbCatalogName, uint8* szSchemaName, int16 cbSchemaName, uint8* szTableName, int16 cbTableName, uint16 fScope, uint16 fNullable);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLStatisticsA(void* hstmt, uint8* szCatalogName, int16 cbCatalogName, uint8* szSchemaName, int16 cbSchemaName, uint8* szTableName, int16 cbTableName, uint16 fUnique, uint16 fAccuracy);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLTablesA(void* hstmt, uint8* szCatalogName, int16 cbCatalogName, uint8* szSchemaName, int16 cbSchemaName, uint8* szTableName, int16 cbTableName, uint8* szTableType, int16 cbTableType);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLDataSourcesA(void* henv, uint16 fDirection, uint8* szDSN, int16 cbDSNMax, out int16 pcbDSN, uint8* szDescription, int16 cbDescriptionMax, out int16 pcbDescription);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLDriverConnectA(void* hdbc, int hwnd, uint8* szConnStrIn, int16 cbConnStrIn, uint8* szConnStrOut, int16 cbConnStrOutMax, int16* pcbConnStrOut, uint16 fDriverCompletion);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLBrowseConnectA(void* hdbc, uint8* szConnStrIn, int16 cbConnStrIn, uint8* szConnStrOut, int16 cbConnStrOutMax, int16* pcbConnStrOut);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLColumnPrivilegesA(void* hstmt, uint8* szCatalogName, int16 cbCatalogName, uint8* szSchemaName, int16 cbSchemaName, uint8* szTableName, int16 cbTableName, uint8* szColumnName, int16 cbColumnName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLForeignKeysA(void* hstmt, uint8* szPkCatalogName, int16 cbPkCatalogName, uint8* szPkSchemaName, int16 cbPkSchemaName, uint8* szPkTableName, int16 cbPkTableName, uint8* szFkCatalogName, int16 cbFkCatalogName, uint8* szFkSchemaName, int16 cbFkSchemaName, uint8* szFkTableName, int16 cbFkTableName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLNativeSqlA(void* hdbc, uint8* szSqlStrIn, int32 cbSqlStrIn, uint8* szSqlStr, int32 cbSqlStrMax, out int32 pcbSqlStr);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLPrimaryKeysA(void* hstmt, uint8* szCatalogName, int16 cbCatalogName, uint8* szSchemaName, int16 cbSchemaName, uint8* szTableName, int16 cbTableName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLProcedureColumnsA(void* hstmt, uint8* szCatalogName, int16 cbCatalogName, uint8* szSchemaName, int16 cbSchemaName, uint8* szProcName, int16 cbProcName, uint8* szColumnName, int16 cbColumnName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLProceduresA(void* hstmt, uint8* szCatalogName, int16 cbCatalogName, uint8* szSchemaName, int16 cbSchemaName, uint8* szProcName, int16 cbProcName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLTablePrivilegesA(void* hstmt, uint8* szCatalogName, int16 cbCatalogName, uint8* szSchemaName, int16 cbSchemaName, uint8* szTableName, int16 cbTableName);
-	[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("odbc32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int16 SQLDriversA(void* henv, uint16 fDirection, uint8* szDriverDesc, int16 cbDriverDescMax, int16* pcbDriverDesc, uint8* szDriverAttributes, int16 cbDrvrAttrMax, int16* pcbDrvrAttr);
 	#endregion
 }

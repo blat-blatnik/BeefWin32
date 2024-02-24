@@ -2091,109 +2091,109 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 StartTraceW(out uint64 TraceHandle, PWSTR InstanceName, out EVENT_TRACE_PROPERTIES Properties);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 StartTraceA(out uint64 TraceHandle, PSTR InstanceName, out EVENT_TRACE_PROPERTIES Properties);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 StopTraceW(uint64 TraceHandle, PWSTR InstanceName, out EVENT_TRACE_PROPERTIES Properties);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 StopTraceA(uint64 TraceHandle, PSTR InstanceName, out EVENT_TRACE_PROPERTIES Properties);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 QueryTraceW(uint64 TraceHandle, PWSTR InstanceName, out EVENT_TRACE_PROPERTIES Properties);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 QueryTraceA(uint64 TraceHandle, PSTR InstanceName, out EVENT_TRACE_PROPERTIES Properties);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 UpdateTraceW(uint64 TraceHandle, PWSTR InstanceName, out EVENT_TRACE_PROPERTIES Properties);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 UpdateTraceA(uint64 TraceHandle, PSTR InstanceName, out EVENT_TRACE_PROPERTIES Properties);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 FlushTraceW(uint64 TraceHandle, PWSTR InstanceName, out EVENT_TRACE_PROPERTIES Properties);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 FlushTraceA(uint64 TraceHandle, PSTR InstanceName, out EVENT_TRACE_PROPERTIES Properties);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 ControlTraceW(uint64 TraceHandle, PWSTR InstanceName, out EVENT_TRACE_PROPERTIES Properties, EVENT_TRACE_CONTROL ControlCode);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 ControlTraceA(uint64 TraceHandle, PSTR InstanceName, out EVENT_TRACE_PROPERTIES Properties, EVENT_TRACE_CONTROL ControlCode);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 QueryAllTracesW(EVENT_TRACE_PROPERTIES** PropertyArray, uint32 PropertyArrayCount, out uint32 LoggerCount);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 QueryAllTracesA(EVENT_TRACE_PROPERTIES** PropertyArray, uint32 PropertyArrayCount, out uint32 LoggerCount);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EnableTrace(uint32 Enable, uint32 EnableFlag, uint32 EnableLevel, in Guid ControlGuid, uint64 TraceHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EnableTraceEx(in Guid ProviderId, Guid* SourceId, uint64 TraceHandle, uint32 IsEnabled, uint8 Level, uint64 MatchAnyKeyword, uint64 MatchAllKeyword, uint32 EnableProperty, EVENT_FILTER_DESCRIPTOR* EnableFilterDesc);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EnableTraceEx2(uint64 TraceHandle, in Guid ProviderId, uint32 ControlCode, uint8 Level, uint64 MatchAnyKeyword, uint64 MatchAllKeyword, uint32 Timeout, ENABLE_TRACE_PARAMETERS* EnableParameters);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EnumerateTraceGuidsEx(TRACE_QUERY_INFO_CLASS TraceQueryInfoClass, void* InBuffer, uint32 InBufferSize, void* OutBuffer, uint32 OutBufferSize, out uint32 ReturnLength);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 TraceSetInformation(uint64 SessionHandle, TRACE_QUERY_INFO_CLASS InformationClass, void* TraceInformation, uint32 InformationLength);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 TraceQueryInformation(uint64 SessionHandle, TRACE_QUERY_INFO_CLASS InformationClass, void* TraceInformation, uint32 InformationLength, uint32* ReturnLength);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CreateTraceInstanceId(HANDLE RegHandle, out EVENT_INSTANCE_INFO InstInfo);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 TraceEvent(uint64 TraceHandle, ref EVENT_TRACE_HEADER EventTrace);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 TraceEventInstance(uint64 TraceHandle, ref EVENT_INSTANCE_HEADER EventTrace, ref EVENT_INSTANCE_INFO InstInfo, EVENT_INSTANCE_INFO* ParentInstInfo);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 RegisterTraceGuidsW(WMIDPREQUEST RequestAddress, void* RequestContext, in Guid ControlGuid, uint32 GuidCount, TRACE_GUID_REGISTRATION* TraceGuidReg, PWSTR MofImagePath, PWSTR MofResourceName, out uint64 RegistrationHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 RegisterTraceGuidsA(WMIDPREQUEST RequestAddress, void* RequestContext, in Guid ControlGuid, uint32 GuidCount, TRACE_GUID_REGISTRATION* TraceGuidReg, PSTR MofImagePath, PSTR MofResourceName, out uint64 RegistrationHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EnumerateTraceGuids(TRACE_GUID_PROPERTIES** GuidPropertiesArray, uint32 PropertyArrayCount, out uint32 GuidCount);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 UnregisterTraceGuids(uint64 RegistrationHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint64 GetTraceLoggerHandle(void* Buffer);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint8 GetTraceEnableLevel(uint64 TraceHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 GetTraceEnableFlags(uint64 TraceHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint64 OpenTraceW(out EVENT_TRACE_LOGFILEW Logfile);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 ProcessTrace(uint64* HandleArray, uint32 HandleCount, FILETIME* StartTime, FILETIME* EndTime);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CloseTrace(uint64 TraceHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 QueryTraceProcessingHandle(uint64 ProcessingHandle, ETW_PROCESS_HANDLE_INFO_TYPE InformationClass, void* InBuffer, uint32 InBufferSize, void* OutBuffer, uint32 OutBufferSize, out uint32 ReturnLength);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint64 OpenTraceA(out EVENT_TRACE_LOGFILEA Logfile);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SetTraceCallback(in Guid pGuid, PEVENT_CALLBACK EventCallback);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 RemoveTraceCallback(in Guid pGuid);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 TraceMessage(uint64 LoggerHandle, TRACE_MESSAGE_FLAGS MessageFlags, in Guid MessageGuid, uint16 MessageNumber);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 TraceMessageVa(uint64 LoggerHandle, TRACE_MESSAGE_FLAGS MessageFlags, in Guid MessageGuid, uint16 MessageNumber, ref int8 MessageArgList);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EventRegister(in Guid ProviderId, PENABLECALLBACK EnableCallback, void* CallbackContext, out uint64 RegHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EventUnregister(uint64 RegHandle);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EventSetInformation(uint64 RegHandle, EVENT_INFO_CLASS InformationClass, void* EventInformation, uint32 InformationLength);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN EventEnabled(uint64 RegHandle, in EVENT_DESCRIPTOR EventDescriptor);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOLEAN EventProviderEnabled(uint64 RegHandle, uint8 Level, uint64 Keyword);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EventWrite(uint64 RegHandle, in EVENT_DESCRIPTOR EventDescriptor, uint32 UserDataCount, EVENT_DATA_DESCRIPTOR* UserData);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EventWriteTransfer(uint64 RegHandle, in EVENT_DESCRIPTOR EventDescriptor, Guid* ActivityId, Guid* RelatedActivityId, uint32 UserDataCount, EVENT_DATA_DESCRIPTOR* UserData);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EventWriteEx(uint64 RegHandle, in EVENT_DESCRIPTOR EventDescriptor, uint64 Filter, uint32 Flags, Guid* ActivityId, Guid* RelatedActivityId, uint32 UserDataCount, EVENT_DATA_DESCRIPTOR* UserData);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EventWriteString(uint64 RegHandle, uint8 Level, uint64 Keyword, PWSTR String);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EventActivityIdControl(uint32 ControlCode, out Guid ActivityId);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EventAccessControl(ref Guid Guid, uint32 Operation, PSID Sid, uint32 Rights, BOOLEAN AllowOrDeny);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EventAccessQuery(ref Guid Guid, PSECURITY_DESCRIPTOR Buffer, out uint32 BufferSize);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 EventAccessRemove(ref Guid Guid);
 	[Import("tdh.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 TdhCreatePayloadFilter(in Guid ProviderGuid, in EVENT_DESCRIPTOR EventDescriptor, BOOLEAN EventMatchANY, uint32 PayloadPredicateCount, PAYLOAD_FILTER_PREDICATE* PayloadPredicates, void** PayloadFilter);
@@ -2249,7 +2249,7 @@ static
 	public static extern uint32 TdhEnumerateManifestProviderEvents(ref Guid ProviderGuid, PROVIDER_EVENT_INFO* Buffer, out uint32 BufferSize);
 	[Import("tdh.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 TdhGetManifestEventInformation(ref Guid ProviderGuid, ref EVENT_DESCRIPTOR EventDescriptor, TRACE_EVENT_INFO* Buffer, out uint32 BufferSize);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 CveEventWrite(PWSTR CveId, PWSTR AdditionalDetails);
 	#endregion
 }

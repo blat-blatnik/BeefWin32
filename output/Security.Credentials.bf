@@ -716,49 +716,49 @@ static
 	public static extern HRESULT KeyCredentialManagerGetInformation(out KeyCredentialManagerInfo* keyCredentialManagerInfo);
 	[Import("keycredmgr.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void KeyCredentialManagerFreeInformation(ref KeyCredentialManagerInfo keyCredentialManagerInfo);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredWriteW(ref CREDENTIALW Credential, uint32 Flags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredWriteA(ref CREDENTIALA Credential, uint32 Flags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredReadW(PWSTR TargetName, uint32 Type, uint32 Flags, out CREDENTIALW* Credential);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredReadA(PSTR TargetName, uint32 Type, uint32 Flags, out CREDENTIALA* Credential);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredEnumerateW(PWSTR Filter, CRED_ENUMERATE_FLAGS Flags, out uint32 Count, out CREDENTIALW** Credential);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredEnumerateA(PSTR Filter, CRED_ENUMERATE_FLAGS Flags, out uint32 Count, out CREDENTIALA** Credential);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredWriteDomainCredentialsW(ref CREDENTIAL_TARGET_INFORMATIONW TargetInfo, ref CREDENTIALW Credential, uint32 Flags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredWriteDomainCredentialsA(ref CREDENTIAL_TARGET_INFORMATIONA TargetInfo, ref CREDENTIALA Credential, uint32 Flags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredReadDomainCredentialsW(ref CREDENTIAL_TARGET_INFORMATIONW TargetInfo, uint32 Flags, out uint32 Count, out CREDENTIALW** Credential);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredReadDomainCredentialsA(ref CREDENTIAL_TARGET_INFORMATIONA TargetInfo, uint32 Flags, out uint32 Count, out CREDENTIALA** Credential);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredDeleteW(PWSTR TargetName, uint32 Type, uint32 Flags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredDeleteA(PSTR TargetName, uint32 Type, uint32 Flags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredRenameW(PWSTR OldTargetName, PWSTR NewTargetName, uint32 Type, uint32 Flags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredRenameA(PSTR OldTargetName, PSTR NewTargetName, uint32 Type, uint32 Flags);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredGetTargetInfoW(PWSTR TargetName, uint32 Flags, out CREDENTIAL_TARGET_INFORMATIONW* TargetInfo);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredGetTargetInfoA(PSTR TargetName, uint32 Flags, out CREDENTIAL_TARGET_INFORMATIONA* TargetInfo);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredMarshalCredentialW(CRED_MARSHAL_TYPE CredType, void* Credential, out PWSTR MarshaledCredential);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredMarshalCredentialA(CRED_MARSHAL_TYPE CredType, void* Credential, out PSTR MarshaledCredential);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredUnmarshalCredentialW(PWSTR MarshaledCredential, out CRED_MARSHAL_TYPE CredType, void** Credential);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredUnmarshalCredentialA(PSTR MarshaledCredential, out CRED_MARSHAL_TYPE CredType, void** Credential);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredIsMarshaledCredentialW(PWSTR MarshaledCredential);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredIsMarshaledCredentialA(PSTR MarshaledCredential);
 	[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredUnPackAuthenticationBufferW(CRED_PACK_FLAGS dwFlags, void* pAuthBuffer, uint32 cbAuthBuffer, char16* pszUserName, out uint32 pcchMaxUserName, char16* pszDomainName, uint32* pcchMaxDomainName, char16* pszPassword, out uint32 pcchMaxPassword);
@@ -768,25 +768,25 @@ static
 	public static extern BOOL CredPackAuthenticationBufferW(CRED_PACK_FLAGS dwFlags, PWSTR pszUserName, PWSTR pszPassword, uint8* pPackedCredentials, out uint32 pcbPackedCredentials);
 	[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredPackAuthenticationBufferA(CRED_PACK_FLAGS dwFlags, PSTR pszUserName, PSTR pszPassword, uint8* pPackedCredentials, out uint32 pcbPackedCredentials);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredProtectW(BOOL fAsSelf, char16* pszCredentials, uint32 cchCredentials, char16* pszProtectedCredentials, out uint32 pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredProtectA(BOOL fAsSelf, uint8* pszCredentials, uint32 cchCredentials, uint8* pszProtectedCredentials, out uint32 pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredUnprotectW(BOOL fAsSelf, char16* pszProtectedCredentials, uint32 cchProtectedCredentials, char16* pszCredentials, out uint32 pcchMaxChars);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredUnprotectA(BOOL fAsSelf, uint8* pszProtectedCredentials, uint32 cchProtectedCredentials, uint8* pszCredentials, out uint32 pcchMaxChars);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredIsProtectedW(PWSTR pszProtectedCredentials, out CRED_PROTECTION_TYPE pProtectionType);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredIsProtectedA(PSTR pszProtectedCredentials, out CRED_PROTECTION_TYPE pProtectionType);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredFindBestCredentialW(PWSTR TargetName, uint32 Type, uint32 Flags, out CREDENTIALW* Credential);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredFindBestCredentialA(PSTR TargetName, uint32 Type, uint32 Flags, out CREDENTIALA* Credential);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL CredGetSessionTypes(uint32 MaximumPersistCount, uint32* MaximumPersist);
-	[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("advapi32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void CredFree(void* Buffer);
 	[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 CredUIPromptForCredentialsW(CREDUI_INFOW* pUiInfo, PWSTR pszTargetName, out SecHandle pContext, uint32 dwAuthError, char16* pszUserName, uint32 ulUserNameBufferSize, char16* pszPassword, uint32 ulPasswordBufferSize, BOOL* save, CREDUI_FLAGS dwFlags);

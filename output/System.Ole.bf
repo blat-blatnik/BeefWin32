@@ -4188,839 +4188,839 @@ static
 	#endregion
 	
 	#region Functions
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 DosDateTimeToVariantTime(uint16 wDosDate, uint16 wDosTime, out double pvtime);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 VariantTimeToDosDateTime(double vtime, out uint16 pwDosDate, out uint16 pwDosTime);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 SystemTimeToVariantTime(ref SYSTEMTIME lpSystemTime, out double pvtime);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int32 VariantTimeToSystemTime(double vtime, out SYSTEMTIME lpSystemTime);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayAllocDescriptor(uint32 cDims, out SAFEARRAY* ppsaOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayAllocDescriptorEx(uint16 vt, uint32 cDims, out SAFEARRAY* ppsaOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayAllocData(ref SAFEARRAY psa);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern SAFEARRAY* SafeArrayCreate(uint16 vt, uint32 cDims, ref SAFEARRAYBOUND rgsabound);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern SAFEARRAY* SafeArrayCreateEx(uint16 vt, uint32 cDims, ref SAFEARRAYBOUND rgsabound, void* pvExtra);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayCopyData(ref SAFEARRAY psaSource, ref SAFEARRAY psaTarget);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SafeArrayReleaseDescriptor(ref SAFEARRAY psa);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayDestroyDescriptor(ref SAFEARRAY psa);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void SafeArrayReleaseData(void* pData);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayDestroyData(ref SAFEARRAY psa);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayAddRef(ref SAFEARRAY psa, void** ppDataToRelease);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayDestroy(ref SAFEARRAY psa);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayRedim(out SAFEARRAY psa, ref SAFEARRAYBOUND psaboundNew);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SafeArrayGetDim(ref SAFEARRAY psa);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 SafeArrayGetElemsize(ref SAFEARRAY psa);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayGetUBound(ref SAFEARRAY psa, uint32 nDim, out int32 plUbound);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayGetLBound(ref SAFEARRAY psa, uint32 nDim, out int32 plLbound);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayLock(ref SAFEARRAY psa);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayUnlock(ref SAFEARRAY psa);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayAccessData(ref SAFEARRAY psa, void** ppvData);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayUnaccessData(ref SAFEARRAY psa);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayGetElement(ref SAFEARRAY psa, ref int32 rgIndices, void* pv);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayPutElement(ref SAFEARRAY psa, ref int32 rgIndices, void* pv);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayCopy(ref SAFEARRAY psa, out SAFEARRAY* ppsaOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayPtrOfIndex(ref SAFEARRAY psa, ref int32 rgIndices, void** ppvData);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArraySetRecordInfo(ref SAFEARRAY psa, ref IRecordInfo prinfo);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayGetRecordInfo(ref SAFEARRAY psa, out IRecordInfo* prinfo);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArraySetIID(ref SAFEARRAY psa, in Guid guid);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayGetIID(ref SAFEARRAY psa, out Guid pguid);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT SafeArrayGetVartype(ref SAFEARRAY psa, out uint16 pvt);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern SAFEARRAY* SafeArrayCreateVector(uint16 vt, int32 lLbound, uint32 cElements);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern SAFEARRAY* SafeArrayCreateVectorEx(uint16 vt, int32 lLbound, uint32 cElements, void* pvExtra);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void VariantInit(out VARIANT pvarg);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VariantClear(out VARIANT pvarg);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VariantCopy(out VARIANT pvargDest, in VARIANT pvargSrc);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VariantCopyInd(out VARIANT pvarDest, in VARIANT pvargSrc);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VariantChangeType(out VARIANT pvargDest, in VARIANT pvarSrc, uint16 wFlags, uint16 vt);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VariantChangeTypeEx(out VARIANT pvargDest, in VARIANT pvarSrc, uint32 lcid, uint16 wFlags, uint16 vt);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VectorFromBstr(BSTR bstr, out SAFEARRAY* ppsa);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT BstrFromVector(ref SAFEARRAY psa, out BSTR pbstr);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI1FromI2(int16 sIn, out uint8 pbOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI1FromI4(int32 lIn, out uint8 pbOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI1FromI8(int64 i64In, out uint8 pbOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI1FromR4(float fltIn, out uint8 pbOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI1FromR8(double dblIn, out uint8 pbOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI1FromCy(CY cyIn, out uint8 pbOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI1FromDate(double dateIn, out uint8 pbOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI1FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, out uint8 pbOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI1FromDisp(ref IDispatch pdispIn, uint32 lcid, out uint8 pbOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI1FromBool(int16 boolIn, out uint8 pbOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI1FromI1(CHAR cIn, out uint8 pbOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI1FromUI2(uint16 uiIn, out uint8 pbOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI1FromUI4(uint32 ulIn, out uint8 pbOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI1FromUI8(uint64 ui64In, out uint8 pbOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI1FromDec(in DECIMAL pdecIn, out uint8 pbOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI2FromUI1(uint8 bIn, out int16 psOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI2FromI4(int32 lIn, out int16 psOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI2FromI8(int64 i64In, out int16 psOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI2FromR4(float fltIn, out int16 psOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI2FromR8(double dblIn, out int16 psOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI2FromCy(CY cyIn, out int16 psOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI2FromDate(double dateIn, out int16 psOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI2FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, out int16 psOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI2FromDisp(ref IDispatch pdispIn, uint32 lcid, out int16 psOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI2FromBool(int16 boolIn, out int16 psOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI2FromI1(CHAR cIn, out int16 psOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI2FromUI2(uint16 uiIn, out int16 psOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI2FromUI4(uint32 ulIn, out int16 psOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI2FromUI8(uint64 ui64In, out int16 psOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI2FromDec(in DECIMAL pdecIn, out int16 psOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI4FromUI1(uint8 bIn, out int32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI4FromI2(int16 sIn, out int32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI4FromI8(int64 i64In, out int32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI4FromR4(float fltIn, out int32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI4FromR8(double dblIn, out int32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI4FromCy(CY cyIn, out int32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI4FromDate(double dateIn, out int32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI4FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, out int32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI4FromDisp(ref IDispatch pdispIn, uint32 lcid, out int32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI4FromBool(int16 boolIn, out int32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI4FromI1(CHAR cIn, out int32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI4FromUI2(uint16 uiIn, out int32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI4FromUI4(uint32 ulIn, out int32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI4FromUI8(uint64 ui64In, out int32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI4FromDec(in DECIMAL pdecIn, out int32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI8FromUI1(uint8 bIn, out int64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI8FromI2(int16 sIn, out int64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI8FromR4(float fltIn, out int64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI8FromR8(double dblIn, out int64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI8FromCy(CY cyIn, out int64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI8FromDate(double dateIn, out int64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI8FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, out int64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI8FromDisp(ref IDispatch pdispIn, uint32 lcid, out int64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI8FromBool(int16 boolIn, out int64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI8FromI1(CHAR cIn, out int64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI8FromUI2(uint16 uiIn, out int64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI8FromUI4(uint32 ulIn, out int64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI8FromUI8(uint64 ui64In, out int64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI8FromDec(in DECIMAL pdecIn, out int64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4FromUI1(uint8 bIn, out float pfltOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4FromI2(int16 sIn, out float pfltOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4FromI4(int32 lIn, out float pfltOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4FromI8(int64 i64In, out float pfltOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4FromR8(double dblIn, out float pfltOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4FromCy(CY cyIn, out float pfltOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4FromDate(double dateIn, out float pfltOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, out float pfltOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4FromDisp(ref IDispatch pdispIn, uint32 lcid, out float pfltOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4FromBool(int16 boolIn, out float pfltOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4FromI1(CHAR cIn, out float pfltOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4FromUI2(uint16 uiIn, out float pfltOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4FromUI4(uint32 ulIn, out float pfltOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4FromUI8(uint64 ui64In, out float pfltOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4FromDec(in DECIMAL pdecIn, out float pfltOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8FromUI1(uint8 bIn, out double pdblOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8FromI2(int16 sIn, out double pdblOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8FromI4(int32 lIn, out double pdblOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8FromI8(int64 i64In, out double pdblOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8FromR4(float fltIn, out double pdblOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8FromCy(CY cyIn, out double pdblOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8FromDate(double dateIn, out double pdblOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, out double pdblOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8FromDisp(ref IDispatch pdispIn, uint32 lcid, out double pdblOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8FromBool(int16 boolIn, out double pdblOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8FromI1(CHAR cIn, out double pdblOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8FromUI2(uint16 uiIn, out double pdblOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8FromUI4(uint32 ulIn, out double pdblOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8FromUI8(uint64 ui64In, out double pdblOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8FromDec(in DECIMAL pdecIn, out double pdblOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromUI1(uint8 bIn, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromI2(int16 sIn, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromI4(int32 lIn, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromI8(int64 i64In, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromR4(float fltIn, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromR8(double dblIn, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromCy(CY cyIn, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromDisp(ref IDispatch pdispIn, uint32 lcid, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromBool(int16 boolIn, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromI1(CHAR cIn, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromUI2(uint16 uiIn, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromUI4(uint32 ulIn, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromUI8(uint64 ui64In, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromDec(in DECIMAL pdecIn, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFromUI1(uint8 bIn, out CY pcyOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFromI2(int16 sIn, out CY pcyOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFromI4(int32 lIn, out CY pcyOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFromI8(int64 i64In, out CY pcyOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFromR4(float fltIn, out CY pcyOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFromR8(double dblIn, out CY pcyOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFromDate(double dateIn, out CY pcyOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, out CY pcyOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFromDisp(ref IDispatch pdispIn, uint32 lcid, out CY pcyOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFromBool(int16 boolIn, out CY pcyOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFromI1(CHAR cIn, out CY pcyOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFromUI2(uint16 uiIn, out CY pcyOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFromUI4(uint32 ulIn, out CY pcyOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFromUI8(uint64 ui64In, out CY pcyOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFromDec(in DECIMAL pdecIn, out CY pcyOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrFromUI1(uint8 bVal, uint32 lcid, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrFromI2(int16 iVal, uint32 lcid, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrFromI4(int32 lIn, uint32 lcid, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrFromI8(int64 i64In, uint32 lcid, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrFromR4(float fltIn, uint32 lcid, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrFromR8(double dblIn, uint32 lcid, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrFromCy(CY cyIn, uint32 lcid, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrFromDate(double dateIn, uint32 lcid, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrFromDisp(ref IDispatch pdispIn, uint32 lcid, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrFromBool(int16 boolIn, uint32 lcid, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrFromI1(CHAR cIn, uint32 lcid, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrFromUI2(uint16 uiIn, uint32 lcid, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrFromUI4(uint32 ulIn, uint32 lcid, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrFromUI8(uint64 ui64In, uint32 lcid, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrFromDec(in DECIMAL pdecIn, uint32 lcid, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBoolFromUI1(uint8 bIn, out int16 pboolOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBoolFromI2(int16 sIn, out int16 pboolOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBoolFromI4(int32 lIn, out int16 pboolOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBoolFromI8(int64 i64In, out int16 pboolOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBoolFromR4(float fltIn, out int16 pboolOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBoolFromR8(double dblIn, out int16 pboolOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBoolFromDate(double dateIn, out int16 pboolOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBoolFromCy(CY cyIn, out int16 pboolOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBoolFromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, out int16 pboolOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBoolFromDisp(ref IDispatch pdispIn, uint32 lcid, out int16 pboolOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBoolFromI1(CHAR cIn, out int16 pboolOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBoolFromUI2(uint16 uiIn, out int16 pboolOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBoolFromUI4(uint32 ulIn, out int16 pboolOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBoolFromUI8(uint64 i64In, out int16 pboolOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBoolFromDec(in DECIMAL pdecIn, out int16 pboolOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI1FromUI1(uint8 bIn, PSTR pcOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI1FromI2(int16 uiIn, PSTR pcOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI1FromI4(int32 lIn, PSTR pcOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI1FromI8(int64 i64In, PSTR pcOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI1FromR4(float fltIn, PSTR pcOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI1FromR8(double dblIn, PSTR pcOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI1FromDate(double dateIn, PSTR pcOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI1FromCy(CY cyIn, PSTR pcOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI1FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, PSTR pcOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI1FromDisp(ref IDispatch pdispIn, uint32 lcid, PSTR pcOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI1FromBool(int16 boolIn, PSTR pcOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI1FromUI2(uint16 uiIn, PSTR pcOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI1FromUI4(uint32 ulIn, PSTR pcOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI1FromUI8(uint64 i64In, PSTR pcOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarI1FromDec(in DECIMAL pdecIn, PSTR pcOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI2FromUI1(uint8 bIn, out uint16 puiOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI2FromI2(int16 uiIn, out uint16 puiOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI2FromI4(int32 lIn, out uint16 puiOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI2FromI8(int64 i64In, out uint16 puiOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI2FromR4(float fltIn, out uint16 puiOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI2FromR8(double dblIn, out uint16 puiOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI2FromDate(double dateIn, out uint16 puiOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI2FromCy(CY cyIn, out uint16 puiOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI2FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, out uint16 puiOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI2FromDisp(ref IDispatch pdispIn, uint32 lcid, out uint16 puiOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI2FromBool(int16 boolIn, out uint16 puiOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI2FromI1(CHAR cIn, out uint16 puiOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI2FromUI4(uint32 ulIn, out uint16 puiOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI2FromUI8(uint64 i64In, out uint16 puiOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI2FromDec(in DECIMAL pdecIn, out uint16 puiOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI4FromUI1(uint8 bIn, out uint32 pulOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI4FromI2(int16 uiIn, out uint32 pulOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI4FromI4(int32 lIn, out uint32 pulOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI4FromI8(int64 i64In, out uint32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI4FromR4(float fltIn, out uint32 pulOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI4FromR8(double dblIn, out uint32 pulOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI4FromDate(double dateIn, out uint32 pulOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI4FromCy(CY cyIn, out uint32 pulOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI4FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, out uint32 pulOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI4FromDisp(ref IDispatch pdispIn, uint32 lcid, out uint32 pulOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI4FromBool(int16 boolIn, out uint32 pulOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI4FromI1(CHAR cIn, out uint32 pulOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI4FromUI2(uint16 uiIn, out uint32 pulOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI4FromUI8(uint64 ui64In, out uint32 plOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI4FromDec(in DECIMAL pdecIn, out uint32 pulOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI8FromUI1(uint8 bIn, out uint64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI8FromI2(int16 sIn, out uint64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI8FromI8(int64 ui64In, out uint64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI8FromR4(float fltIn, out uint64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI8FromR8(double dblIn, out uint64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI8FromCy(CY cyIn, out uint64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI8FromDate(double dateIn, out uint64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI8FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, out uint64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI8FromDisp(ref IDispatch pdispIn, uint32 lcid, out uint64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI8FromBool(int16 boolIn, out uint64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI8FromI1(CHAR cIn, out uint64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI8FromUI2(uint16 uiIn, out uint64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI8FromUI4(uint32 ulIn, out uint64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUI8FromDec(in DECIMAL pdecIn, out uint64 pi64Out);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFromUI1(uint8 bIn, out DECIMAL pdecOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFromI2(int16 uiIn, out DECIMAL pdecOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFromI4(int32 lIn, out DECIMAL pdecOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFromI8(int64 i64In, out DECIMAL pdecOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFromR4(float fltIn, out DECIMAL pdecOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFromR8(double dblIn, out DECIMAL pdecOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFromDate(double dateIn, out DECIMAL pdecOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFromCy(CY cyIn, out DECIMAL pdecOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, out DECIMAL pdecOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFromDisp(ref IDispatch pdispIn, uint32 lcid, out DECIMAL pdecOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFromBool(int16 boolIn, out DECIMAL pdecOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFromI1(CHAR cIn, out DECIMAL pdecOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFromUI2(uint16 uiIn, out DECIMAL pdecOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFromUI4(uint32 ulIn, out DECIMAL pdecOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFromUI8(uint64 ui64In, out DECIMAL pdecOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarParseNumFromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, out NUMPARSE pnumprs, out uint8 rgbDig);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarNumFromParseNum(ref NUMPARSE pnumprs, ref uint8 rgbDig, uint32 dwVtBits, out VARIANT pvar);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarAdd(ref VARIANT pvarLeft, ref VARIANT pvarRight, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarAnd(ref VARIANT pvarLeft, ref VARIANT pvarRight, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCat(ref VARIANT pvarLeft, ref VARIANT pvarRight, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDiv(ref VARIANT pvarLeft, ref VARIANT pvarRight, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarEqv(ref VARIANT pvarLeft, ref VARIANT pvarRight, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarIdiv(ref VARIANT pvarLeft, ref VARIANT pvarRight, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarImp(ref VARIANT pvarLeft, ref VARIANT pvarRight, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarMod(ref VARIANT pvarLeft, ref VARIANT pvarRight, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarMul(ref VARIANT pvarLeft, ref VARIANT pvarRight, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarOr(ref VARIANT pvarLeft, ref VARIANT pvarRight, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarPow(ref VARIANT pvarLeft, ref VARIANT pvarRight, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarSub(ref VARIANT pvarLeft, ref VARIANT pvarRight, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarXor(ref VARIANT pvarLeft, ref VARIANT pvarRight, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarAbs(ref VARIANT pvarIn, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarFix(ref VARIANT pvarIn, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarInt(ref VARIANT pvarIn, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarNeg(ref VARIANT pvarIn, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarNot(ref VARIANT pvarIn, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarRound(ref VARIANT pvarIn, int32 cDecimals, out VARIANT pvarResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCmp(ref VARIANT pvarLeft, ref VARIANT pvarRight, uint32 lcid, uint32 dwFlags);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecAdd(ref DECIMAL pdecLeft, ref DECIMAL pdecRight, out DECIMAL pdecResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecDiv(ref DECIMAL pdecLeft, ref DECIMAL pdecRight, out DECIMAL pdecResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecMul(ref DECIMAL pdecLeft, ref DECIMAL pdecRight, out DECIMAL pdecResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecSub(ref DECIMAL pdecLeft, ref DECIMAL pdecRight, out DECIMAL pdecResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecAbs(ref DECIMAL pdecIn, out DECIMAL pdecResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecFix(ref DECIMAL pdecIn, out DECIMAL pdecResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecInt(ref DECIMAL pdecIn, out DECIMAL pdecResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecNeg(ref DECIMAL pdecIn, out DECIMAL pdecResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecRound(ref DECIMAL pdecIn, int32 cDecimals, out DECIMAL pdecResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecCmp(ref DECIMAL pdecLeft, ref DECIMAL pdecRight);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDecCmpR8(ref DECIMAL pdecLeft, double dblRight);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyAdd(CY cyLeft, CY cyRight, out CY pcyResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyMul(CY cyLeft, CY cyRight, out CY pcyResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyMulI4(CY cyLeft, int32 lRight, out CY pcyResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyMulI8(CY cyLeft, int64 lRight, out CY pcyResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCySub(CY cyLeft, CY cyRight, out CY pcyResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyAbs(CY cyIn, out CY pcyResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyFix(CY cyIn, out CY pcyResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyInt(CY cyIn, out CY pcyResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyNeg(CY cyIn, out CY pcyResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyRound(CY cyIn, int32 cDecimals, out CY pcyResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyCmp(CY cyLeft, CY cyRight);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarCyCmpR8(CY cyLeft, double dblRight);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrCat(BSTR bstrLeft, BSTR bstrRight, out uint16* pbstrResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarBstrCmp(BSTR bstrLeft, BSTR bstrRight, uint32 lcid, uint32 dwFlags);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8Pow(double dblLeft, double dblRight, out double pdblResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR4CmpR8(float fltLeft, double dblRight);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarR8Round(double dblIn, int32 cDecimals, out double pdblResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromUdate(ref UDATE pudateIn, uint32 dwFlags, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarDateFromUdateEx(ref UDATE pudateIn, uint32 lcid, uint32 dwFlags, out double pdateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarUdateFromDate(double dateIn, uint32 dwFlags, out UDATE pudateOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetAltMonthNames(uint32 lcid, PWSTR** prgp);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarFormat(ref VARIANT pvarIn, PWSTR pstrFormat, int32 iFirstDay, int32 iFirstWeek, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarFormatDateTime(ref VARIANT pvarIn, int32 iNamedFormat, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarFormatNumber(ref VARIANT pvarIn, int32 iNumDig, int32 iIncLead, int32 iUseParens, int32 iGroup, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarFormatPercent(ref VARIANT pvarIn, int32 iNumDig, int32 iIncLead, int32 iUseParens, int32 iGroup, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarFormatCurrency(ref VARIANT pvarIn, int32 iNumDig, int32 iIncLead, int32 iUseParens, int32 iGroup, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarWeekdayName(int32 iWeekday, int32 fAbbrev, int32 iFirstDay, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarMonthName(int32 iMonth, int32 fAbbrev, uint32 dwFlags, out BSTR pbstrOut);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarFormatFromTokens(ref VARIANT pvarIn, PWSTR pstrFormat, ref uint8 pbTokCur, uint32 dwFlags, out BSTR pbstrOut, uint32 lcid);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT VarTokenizeFormatString(PWSTR pstrFormat, uint8* rgbTok, int32 cbTok, int32 iFirstDay, int32 iFirstWeek, uint32 lcid, int32* pcbActual);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 LHashValOfNameSysA(SYSKIND syskind, uint32 lcid, PSTR szName);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 LHashValOfNameSys(SYSKIND syskind, uint32 lcid, PWSTR szName);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT LoadTypeLib(PWSTR szFile, out ITypeLib* pptlib);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT LoadTypeLibEx(PWSTR szFile, REGKIND regkind, out ITypeLib* pptlib);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT LoadRegTypeLib(in Guid rguid, uint16 wVerMajor, uint16 wVerMinor, uint32 lcid, out ITypeLib* pptlib);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT QueryPathOfRegTypeLib(in Guid guid, uint16 wMaj, uint16 wMin, uint32 lcid, out uint16* lpbstrPathName);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT RegisterTypeLib(ref ITypeLib ptlib, PWSTR szFullPath, PWSTR szHelpDir);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT UnRegisterTypeLib(in Guid libID, uint16 wVerMajor, uint16 wVerMinor, uint32 lcid, SYSKIND syskind);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT RegisterTypeLibForUser(ref ITypeLib ptlib, PWSTR szFullPath, PWSTR szHelpDir);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT UnRegisterTypeLibForUser(in Guid libID, uint16 wMajorVerNum, uint16 wMinorVerNum, uint32 lcid, SYSKIND syskind);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateTypeLib(SYSKIND syskind, PWSTR szFile, out ICreateTypeLib* ppctlib);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateTypeLib2(SYSKIND syskind, PWSTR szFile, out ICreateTypeLib2* ppctlib);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT DispGetParam(ref DISPPARAMS pdispparams, uint32 position, uint16 vtTarg, out VARIANT pvarResult, uint32* puArgErr);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT DispGetIDsOfNames(ref ITypeInfo ptinfo, PWSTR* rgszNames, uint32 cNames, int32* rgdispid);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT DispInvoke(void* _this, ref ITypeInfo ptinfo, int32 dispidMember, uint16 wFlags, out DISPPARAMS pparams, out VARIANT pvarResult, out EXCEPINFO pexcepinfo, out uint32 puArgErr);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateDispTypeInfo(out INTERFACEDATA pidata, uint32 lcid, out ITypeInfo* pptinfo);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateStdDispatch(ref IUnknown punkOuter, void* pvThis, ref ITypeInfo ptinfo, out IUnknown* ppunkStdDisp);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT DispCallFunc(void* pvInstance, uint oVft, CALLCONV cc, uint16 vtReturn, uint32 cActuals, uint16* prgvt, VARIANT** prgpvarg, out VARIANT pvargResult);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT RegisterActiveObject(ref IUnknown punk, in Guid rclsid, uint32 dwFlags, out uint32 pdwRegister);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT RevokeActiveObject(uint32 dwRegister, void* pvReserved);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetActiveObject(in Guid rclsid, void* pvReserved, out IUnknown* ppunk);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateErrorInfo(out ICreateErrorInfo* pperrinfo);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetRecordInfoFromTypeInfo(ref ITypeInfo pTypeInfo, out IRecordInfo* ppRecInfo);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT GetRecordInfoFromGuids(in Guid rGuidTypeLib, uint32 uVerMajor, uint32 uVerMinor, uint32 lcid, in Guid rGuidTypeInfo, out IRecordInfo* ppRecInfo);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 OaBuildVersion();
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void ClearCustData(out CUSTDATA pCustData);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void OaEnablePerUserTLibRegistration();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 OleBuildVersion();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleInitialize(void* pvReserved);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void OleUninitialize();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleQueryLinkFromData(ref IDataObject pSrcDataObject);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleQueryCreateFromData(ref IDataObject pSrcDataObject);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreate(in Guid rclsid, in Guid riid, uint32 renderopt, out FORMATETC pFormatEtc, ref IOleClientSite pClientSite, ref IStorage pStg, void** ppvObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreateEx(in Guid rclsid, in Guid riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, out uint32 rgAdvf, out FORMATETC rgFormatEtc, ref IAdviseSink lpAdviseSink, out uint32 rgdwConnection, ref IOleClientSite pClientSite, ref IStorage pStg, void** ppvObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreateFromData(ref IDataObject pSrcDataObj, in Guid riid, uint32 renderopt, out FORMATETC pFormatEtc, ref IOleClientSite pClientSite, ref IStorage pStg, void** ppvObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreateFromDataEx(ref IDataObject pSrcDataObj, in Guid riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, out uint32 rgAdvf, out FORMATETC rgFormatEtc, ref IAdviseSink lpAdviseSink, out uint32 rgdwConnection, ref IOleClientSite pClientSite, ref IStorage pStg, void** ppvObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreateLinkFromData(ref IDataObject pSrcDataObj, in Guid riid, uint32 renderopt, out FORMATETC pFormatEtc, ref IOleClientSite pClientSite, ref IStorage pStg, void** ppvObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreateLinkFromDataEx(ref IDataObject pSrcDataObj, in Guid riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, out uint32 rgAdvf, out FORMATETC rgFormatEtc, ref IAdviseSink lpAdviseSink, out uint32 rgdwConnection, ref IOleClientSite pClientSite, ref IStorage pStg, void** ppvObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreateStaticFromData(ref IDataObject pSrcDataObj, in Guid iid, uint32 renderopt, out FORMATETC pFormatEtc, ref IOleClientSite pClientSite, ref IStorage pStg, void** ppvObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreateLink(ref IMoniker pmkLinkSrc, in Guid riid, uint32 renderopt, out FORMATETC lpFormatEtc, ref IOleClientSite pClientSite, ref IStorage pStg, void** ppvObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreateLinkEx(ref IMoniker pmkLinkSrc, in Guid riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, out uint32 rgAdvf, out FORMATETC rgFormatEtc, ref IAdviseSink lpAdviseSink, out uint32 rgdwConnection, ref IOleClientSite pClientSite, ref IStorage pStg, void** ppvObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreateLinkToFile(PWSTR lpszFileName, in Guid riid, uint32 renderopt, out FORMATETC lpFormatEtc, ref IOleClientSite pClientSite, ref IStorage pStg, void** ppvObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreateLinkToFileEx(PWSTR lpszFileName, in Guid riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, out uint32 rgAdvf, out FORMATETC rgFormatEtc, ref IAdviseSink lpAdviseSink, out uint32 rgdwConnection, ref IOleClientSite pClientSite, ref IStorage pStg, void** ppvObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreateFromFile(in Guid rclsid, PWSTR lpszFileName, in Guid riid, uint32 renderopt, out FORMATETC lpFormatEtc, ref IOleClientSite pClientSite, ref IStorage pStg, void** ppvObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreateFromFileEx(in Guid rclsid, PWSTR lpszFileName, in Guid riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, out uint32 rgAdvf, out FORMATETC rgFormatEtc, ref IAdviseSink lpAdviseSink, out uint32 rgdwConnection, ref IOleClientSite pClientSite, ref IStorage pStg, void** ppvObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleLoad(ref IStorage pStg, in Guid riid, ref IOleClientSite pClientSite, void** ppvObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleSave(ref IPersistStorage pPS, ref IStorage pStg, BOOL fSameAsLoad);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleLoadFromStream(ref IStream pStm, in Guid iidInterface, void** ppvObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleSaveToStream(ref IPersistStream pPStm, ref IStream pStm);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleSetContainedObject(ref IUnknown pUnknown, BOOL fContained);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleNoteObjectVisible(ref IUnknown pUnknown, BOOL fVisible);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT RegisterDragDrop(HWND hwnd, ref IDropTarget pDropTarget);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT RevokeDragDrop(HWND hwnd);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT DoDragDrop(ref IDataObject pDataObj, ref IDropSource pDropSource, uint32 dwOKEffects, out uint32 pdwEffect);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleSetClipboard(ref IDataObject pDataObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleGetClipboard(out IDataObject* ppDataObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleGetClipboardWithEnterpriseInfo(out IDataObject* dataObject, out PWSTR dataEnterpriseId, out PWSTR sourceDescription, out PWSTR targetDescription, out PWSTR dataDescription);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleFlushClipboard();
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleIsCurrentClipboard(ref IDataObject pDataObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int OleCreateMenuDescriptor(HMENU hmenuCombined, out OleMenuGroupWidths lpMenuWidths);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleSetMenuDescriptor(int holemenu, HWND hwndFrame, HWND hwndActiveObject, ref IOleInPlaceFrame lpFrame, ref IOleInPlaceActiveObject lpActiveObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleDestroyMenuDescriptor(int holemenu);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleTranslateAccelerator(ref IOleInPlaceFrame lpFrame, out OIFI lpFrameInfo, out MSG lpmsg);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HANDLE OleDuplicateData(HANDLE hSrc, uint16 cfFormat, uint32 uiFlags);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleDraw(ref IUnknown pUnknown, uint32 dwAspect, HDC hdcDraw, out RECT lprcBounds);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleRun(ref IUnknown pUnknown);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL OleIsRunning(ref IOleObject pObject);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleLockRunning(ref IUnknown pUnknown, BOOL fLock, BOOL fLastUnlockCloses);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void ReleaseStgMedium(out STGMEDIUM param0);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT CreateOleAdviseHolder(out IOleAdviseHolder* ppOAHolder);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreateDefaultHandler(in Guid clsid, ref IUnknown pUnkOuter, in Guid riid, void** lplpObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreateEmbeddingHelper(in Guid clsid, ref IUnknown pUnkOuter, uint32 flags, ref IClassFactory pCF, in Guid riid, void** lplpObj);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL IsAccelerator(HACCEL hAccel, int32 cAccelEntries, out MSG lpMsg, out uint16 lpwCmd);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int OleGetIconOfFile(PWSTR lpszPath, BOOL fUseFileAsLabel);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int OleGetIconOfClass(in Guid rclsid, PWSTR lpszLabel, BOOL fUseTypeAsLabel);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern int OleMetafilePictFromIconAndLabel(HICON hIcon, PWSTR lpszLabel, PWSTR lpszSourceFile, uint32 iIconIndex);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleRegGetUserType(in Guid clsid, uint32 dwFormOfType, out PWSTR pszUserType);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleRegGetMiscStatus(in Guid clsid, uint32 dwAspect, out uint32 pdwStatus);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleRegEnumFormatEtc(in Guid clsid, uint32 dwDirection, out IEnumFORMATETC* ppenum);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleRegEnumVerbs(in Guid clsid, out IEnumOLEVERB* ppenum);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleDoAutoConvert(ref IStorage pStg, out Guid pClsidNew);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleGetAutoConvert(in Guid clsidOld, out Guid pClsidNew);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleSetAutoConvert(in Guid clsidOld, in Guid clsidNew);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 HRGN_UserSize(ref uint32 param0, uint32 param1, ref HRGN param2);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint8* HRGN_UserMarshal(ref uint32 param0, out uint8 param1, ref HRGN param2);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint8* HRGN_UserUnmarshal(ref uint32 param0, uint8* param1, out HRGN param2);
-	[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("ole32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void HRGN_UserFree(ref uint32 param0, ref HRGN param1);
 	[Import("api-ms-win-core-marshal-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern uint32 HRGN_UserSize64(ref uint32 param0, uint32 param1, ref HRGN param2);
@@ -5030,29 +5030,29 @@ static
 	public static extern uint8* HRGN_UserUnmarshal64(ref uint32 param0, uint8* param1, out HRGN param2);
 	[Import("api-ms-win-core-marshal-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern void HRGN_UserFree64(ref uint32 param0, ref HRGN param1);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreatePropertyFrame(HWND hwndOwner, uint32 x, uint32 y, PWSTR lpszCaption, uint32 cObjects, out IUnknown* ppUnk, uint32 cPages, out Guid pPageClsID, uint32 lcid, uint32 dwReserved, void* pvReserved);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreatePropertyFrameIndirect(out OCPFIPARAMS lpParams);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleTranslateColor(uint32 clr, HPALETTE hpal, out uint32 lpcolorref);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreateFontIndirect(out FONTDESC lpFontDesc, in Guid riid, void** lplpvObj);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleCreatePictureIndirect(out PICTDESC lpPictDesc, in Guid riid, BOOL fOwn, void** lplpvObj);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleLoadPicture(ref IStream lpstream, int32 lSize, BOOL fRunmode, in Guid riid, void** lplpvObj);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleLoadPictureEx(ref IStream lpstream, int32 lSize, BOOL fRunmode, in Guid riid, uint32 xSizeDesired, uint32 ySizeDesired, uint32 dwFlags, void** lplpvObj);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleLoadPicturePath(PWSTR szURLorPath, ref IUnknown punkCaller, uint32 dwReserved, uint32 clrReserved, in Guid riid, void** ppvRet);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleLoadPictureFile(VARIANT varFileName, out IDispatch* lplpdispPicture);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleLoadPictureFileEx(VARIANT varFileName, uint32 xSizeDesired, uint32 ySizeDesired, uint32 dwFlags, out IDispatch* lplpdispPicture);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HRESULT OleSavePictureFile(ref IDispatch lpdispPicture, BSTR bstrFileName);
-	[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
+	[Import("oleaut32.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern HCURSOR OleIconToCursor(HINSTANCE hinstExe, HICON hIcon);
 	[Import("oledlg.dll"), CLink, CallingConvention(.Stdcall)]
 	public static extern BOOL OleUIAddVerbMenuW(IOleObject* lpOleObj, PWSTR lpszShortType, HMENU hMenu, uint32 uPos, uint32 uIDVerbMin, uint32 uIDVerbMax, BOOL bAddConvert, uint32 idConvert, out HMENU lphMenu);
