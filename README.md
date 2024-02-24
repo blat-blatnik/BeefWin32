@@ -116,7 +116,6 @@ class Program {
 - Some types have name conflicts. When that happens, I rename one of them `XYZ -> XYZ_ALT` or `XyzAbc -> XyzAbcAlt`.
 - Some COM classes have `ToString`, `GetType`, `GetFlags`, or `Equals` methods. These names conflict with the methods that Beef implicitly defines for all types. I renamed them `ComToString`, `ComGetType`, `ComGetFlags`, `ComEquals`.
 - Some functions take pointers to types that are never defined in the metadata. I've changed their signature so they take `void*` instead.
-- Bitfields are just smushed into an integral type in the metadata. Which makes working with some structures very tedious. The only way to fix this would be to manually add in properties for them.
 
 ## How to run the generator
 
