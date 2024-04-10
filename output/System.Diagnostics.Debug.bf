@@ -12208,7 +12208,7 @@ static
 		public HRESULT GetModuleParameters(uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) mut => VT.GetModuleParameters(ref this, Count, Bases, Start, Params);
 		public HRESULT GetSymbolModule(PSTR Symbol, out uint64 Base) mut => VT.GetSymbolModule(ref this, Symbol, out Base);
 		public HRESULT GetTypeName(uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) mut => VT.GetTypeName(ref this, Module, TypeId, NameBuffer, NameBufferSize, NameSize);
-		public HRESULT GetTypeId(uint64 Module, PSTR Name, out uint32 TypeId) mut => VT.GetTypeId(ref this, Module, Name, out TypeId);
+		public HRESULT ComGetTypeId(uint64 Module, PSTR Name, out uint32 TypeId) mut => VT.ComGetTypeId(ref this, Module, Name, out TypeId);
 		public HRESULT GetTypeSize(uint64 Module, uint32 TypeId, out uint32 Size) mut => VT.GetTypeSize(ref this, Module, TypeId, out Size);
 		public HRESULT GetFieldOffset(uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) mut => VT.GetFieldOffset(ref this, Module, TypeId, Field, out Offset);
 		public HRESULT GetSymbolTypeId(PSTR Symbol, out uint32 TypeId, uint64* Module) mut => VT.GetSymbolTypeId(ref this, Symbol, out TypeId, Module);
@@ -12261,7 +12261,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, PSTR Symbol, out uint64 Base) GetSymbolModule;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Module, PSTR Name, out uint32 TypeId) GetTypeId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Module, PSTR Name, out uint32 TypeId) ComGetTypeId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Module, uint32 TypeId, out uint32 Size) GetTypeSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) GetFieldOffset;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, PSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeId;
@@ -12319,7 +12319,7 @@ static
 		public HRESULT GetModuleParameters(uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) mut => VT.GetModuleParameters(ref this, Count, Bases, Start, Params);
 		public HRESULT GetSymbolModule(PSTR Symbol, out uint64 Base) mut => VT.GetSymbolModule(ref this, Symbol, out Base);
 		public HRESULT GetTypeName(uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) mut => VT.GetTypeName(ref this, Module, TypeId, NameBuffer, NameBufferSize, NameSize);
-		public HRESULT GetTypeId(uint64 Module, PSTR Name, out uint32 TypeId) mut => VT.GetTypeId(ref this, Module, Name, out TypeId);
+		public HRESULT ComGetTypeId(uint64 Module, PSTR Name, out uint32 TypeId) mut => VT.ComGetTypeId(ref this, Module, Name, out TypeId);
 		public HRESULT GetTypeSize(uint64 Module, uint32 TypeId, out uint32 Size) mut => VT.GetTypeSize(ref this, Module, TypeId, out Size);
 		public HRESULT GetFieldOffset(uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) mut => VT.GetFieldOffset(ref this, Module, TypeId, Field, out Offset);
 		public HRESULT GetSymbolTypeId(PSTR Symbol, out uint32 TypeId, uint64* Module) mut => VT.GetSymbolTypeId(ref this, Symbol, out TypeId, Module);
@@ -12380,7 +12380,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, PSTR Symbol, out uint64 Base) GetSymbolModule;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Module, PSTR Name, out uint32 TypeId) GetTypeId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Module, PSTR Name, out uint32 TypeId) ComGetTypeId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Module, uint32 TypeId, out uint32 Size) GetTypeSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) GetFieldOffset;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, PSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeId;
@@ -12446,7 +12446,7 @@ static
 		public HRESULT GetModuleParameters(uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) mut => VT.GetModuleParameters(ref this, Count, Bases, Start, Params);
 		public HRESULT GetSymbolModule(PSTR Symbol, out uint64 Base) mut => VT.GetSymbolModule(ref this, Symbol, out Base);
 		public HRESULT GetTypeName(uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) mut => VT.GetTypeName(ref this, Module, TypeId, NameBuffer, NameBufferSize, NameSize);
-		public HRESULT GetTypeId(uint64 Module, PSTR Name, out uint32 TypeId) mut => VT.GetTypeId(ref this, Module, Name, out TypeId);
+		public HRESULT ComGetTypeId(uint64 Module, PSTR Name, out uint32 TypeId) mut => VT.ComGetTypeId(ref this, Module, Name, out TypeId);
 		public HRESULT GetTypeSize(uint64 Module, uint32 TypeId, out uint32 Size) mut => VT.GetTypeSize(ref this, Module, TypeId, out Size);
 		public HRESULT GetFieldOffset(uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) mut => VT.GetFieldOffset(ref this, Module, TypeId, Field, out Offset);
 		public HRESULT GetSymbolTypeId(PSTR Symbol, out uint32 TypeId, uint64* Module) mut => VT.GetSymbolTypeId(ref this, Symbol, out TypeId, Module);
@@ -12573,7 +12573,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Symbol, out uint64 Base) GetSymbolModule;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, PSTR Name, out uint32 TypeId) GetTypeId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, PSTR Name, out uint32 TypeId) ComGetTypeId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, out uint32 Size) GetTypeSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) GetFieldOffset;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeId;
@@ -12705,7 +12705,7 @@ static
 		public HRESULT GetModuleParameters(uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) mut => VT.GetModuleParameters(ref this, Count, Bases, Start, Params);
 		public HRESULT GetSymbolModule(PSTR Symbol, out uint64 Base) mut => VT.GetSymbolModule(ref this, Symbol, out Base);
 		public HRESULT GetTypeName(uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) mut => VT.GetTypeName(ref this, Module, TypeId, NameBuffer, NameBufferSize, NameSize);
-		public HRESULT GetTypeId(uint64 Module, PSTR Name, out uint32 TypeId) mut => VT.GetTypeId(ref this, Module, Name, out TypeId);
+		public HRESULT ComGetTypeId(uint64 Module, PSTR Name, out uint32 TypeId) mut => VT.ComGetTypeId(ref this, Module, Name, out TypeId);
 		public HRESULT GetTypeSize(uint64 Module, uint32 TypeId, out uint32 Size) mut => VT.GetTypeSize(ref this, Module, TypeId, out Size);
 		public HRESULT GetFieldOffset(uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) mut => VT.GetFieldOffset(ref this, Module, TypeId, Field, out Offset);
 		public HRESULT GetSymbolTypeId(PSTR Symbol, out uint32 TypeId, uint64* Module) mut => VT.GetSymbolTypeId(ref this, Symbol, out TypeId, Module);
@@ -12839,7 +12839,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Symbol, out uint64 Base) GetSymbolModule;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, PSTR Name, out uint32 TypeId) GetTypeId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, PSTR Name, out uint32 TypeId) ComGetTypeId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, out uint32 Size) GetTypeSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) GetFieldOffset;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeId;
@@ -12978,7 +12978,7 @@ static
 		public HRESULT GetModuleParameters(uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) mut => VT.GetModuleParameters(ref this, Count, Bases, Start, Params);
 		public HRESULT GetSymbolModule(PSTR Symbol, out uint64 Base) mut => VT.GetSymbolModule(ref this, Symbol, out Base);
 		public HRESULT GetTypeName(uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) mut => VT.GetTypeName(ref this, Module, TypeId, NameBuffer, NameBufferSize, NameSize);
-		public HRESULT GetTypeId(uint64 Module, PSTR Name, out uint32 TypeId) mut => VT.GetTypeId(ref this, Module, Name, out TypeId);
+		public HRESULT ComGetTypeId(uint64 Module, PSTR Name, out uint32 TypeId) mut => VT.ComGetTypeId(ref this, Module, Name, out TypeId);
 		public HRESULT GetTypeSize(uint64 Module, uint32 TypeId, out uint32 Size) mut => VT.GetTypeSize(ref this, Module, TypeId, out Size);
 		public HRESULT GetFieldOffset(uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) mut => VT.GetFieldOffset(ref this, Module, TypeId, Field, out Offset);
 		public HRESULT GetSymbolTypeId(PSTR Symbol, out uint32 TypeId, uint64* Module) mut => VT.GetSymbolTypeId(ref this, Symbol, out TypeId, Module);
@@ -13114,7 +13114,7 @@ static
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Symbol, out uint64 Base) GetSymbolModule;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
-			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, PSTR Name, out uint32 TypeId) GetTypeId;
+			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, PSTR Name, out uint32 TypeId) ComGetTypeId;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, out uint32 Size) GetTypeSize;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) GetFieldOffset;
 			public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeId;

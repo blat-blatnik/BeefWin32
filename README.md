@@ -114,7 +114,7 @@ class Program {
 ## Differences from real Win32 API
 
 - Some types have name conflicts. When that happens, I rename one of them `XYZ -> XYZ_ALT` or `XyzAbc -> XyzAbcAlt`.
-- Some COM classes have `ToString`, `GetType`, `GetFlags`, or `Equals` methods. These names conflict with the methods that Beef implicitly defines for all types. I renamed them `ComToString`, `ComGetType`, `ComGetFlags`, `ComEquals`.
+- Some COM classes have `ToString`, `GetType`, `GetTypeId`, `GetFlags`, or `Equals` methods. These names conflict with the methods that Beef implicitly defines for all types. I renamed them `ComToString`, `ComGetType`, `ComGetTypeId`, `ComGetFlags`, `ComEquals`.
 - Some functions take pointers to types that are never defined in the metadata. I've changed their signature so they take `void*` instead.
 
 ## How to run the generator

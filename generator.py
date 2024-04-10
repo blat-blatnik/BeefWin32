@@ -44,6 +44,7 @@ REPLACE_TYPE_NAMES = {
 # But some COM classes also have these methods, so we replace their names.
 REPLACE_COM_METHOD_NAMES = {
 	'GetType':'ComGetType',
+	'GetTypeId':'ComGetTypeId',
 	'GetFlags':'ComGetFlags',
 	'Equals':'ComEquals',
 	'ToString':'ComToString'
